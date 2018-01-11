@@ -206,6 +206,13 @@ $block: ".boss-form"
       @media screen and (max-width: 960px)
         align-items: flex-start
 
+    // $Common form row MOD: layout nowrap
+    &_layout_nowrap
+      flex-direction: row
+
+      @media screen and (max-width: 960px)
+        flex-direction: row
+
     // $Common form row MOD: layout wrap-xs
     &_layout_wrap-xs
       flex-direction: row
@@ -260,6 +267,7 @@ $block: ".boss-form"
     &_layout_half,
     &_layout_third,
     &_layout_quarter,
+    &_layout_fifth,
     &_layout_max,
     &_layout_min,
     &_layout_min-half,
@@ -303,6 +311,12 @@ $block: ".boss-form"
 
     &_layout_quarter
       width: 25%
+
+      @media screen and (max-width: 960px)
+        width: 100%
+
+    &_layout_fifth
+      width: 20%
 
       @media screen and (max-width: 960px)
         width: 100%
@@ -568,6 +582,31 @@ $block: ".boss-form"
       height: 0
       border: 1px solid $boss-medium-gray
       transform: translate(-50%, -50%)
+
+    &_role_size
+      &:after
+        content: "\00D7"
+        width: auto
+        height: auto
+        border: none
+        font-size: 30px
+        line-height: 1
+        color: $boss-medium-gray
+
+
+  // $Common form interval units
+  &__interval-units
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    height: 53px
+    line-height: 53px
+
+    &_space_before
+      padding-left: 15px
+
+    &_space_after
+      padding-right: 15px
 
 
   // $Common form control
@@ -835,6 +874,13 @@ $block: ".boss-form"
 
     &_type_transparent
       background-color: transparent
+
+    &_adjust_checkbox
+      height: 22px
+      min-height: 22px
+      padding: 2px 10px
+      border-radius: 3px
+      font-size: 13px
 
     #{$block}__search &
       border: none
