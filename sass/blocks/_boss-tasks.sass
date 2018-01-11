@@ -75,8 +75,12 @@ $block: ".boss-tasks"
   &__actions
 
     // $Tasks actions MOD: nowrap
-    &_nowrap
+    &_nowrap-fluid
       white-space: nowrap
+
+      @media screen and (max-width: 640px)
+        white-space: normal
+
 
 
   // $Tasks action
@@ -89,6 +93,10 @@ $block: ".boss-tasks"
     outline: none
     cursor: pointer
     text-decoration: none
+    vertical-align: top
+
+    @media screen and (max-width: 640px)
+      display: block
 
     &:hover,
     &:focus
@@ -112,8 +120,13 @@ $block: ".boss-tasks"
     &:not(:last-child)
       margin-right: 20px
 
+      @media screen and (max-width: 640px)
+        margin-right: 0
+        margin-bottom: 10px
+
     // $Tasks action MOD: type icon
     &_type_icon
+      min-height: 24px
       font-size: 0
       line-height: 0
       color: transparent
