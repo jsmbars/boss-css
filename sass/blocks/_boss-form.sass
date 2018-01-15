@@ -1398,17 +1398,26 @@ $block: ".boss-form"
           width: 100%
           max-width: 100%
 
-      & .Select-staff-member-name
+      & .Select-staff-member-info
         +text-normalizer()
         display: inline-block
         width: calc(100% - 50px)
         padding: 0 20px 0 10px
-        font-size: 18px
         vertical-align: middle
         white-space: normal
 
         @media screen and (max-width: 479px)
           font-size: 16px
+
+      & .Select-staff-member-name
+        display: inline-block
+        width: 100%
+        max-width: 100%
+        font-size: 18px
+
+      & .Select-staff-member-type
+        display: inline-block
+
 
 
   // $Common form switcher
