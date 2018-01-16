@@ -658,7 +658,7 @@ $block: ".boss-button"
   // Bordered buttons
 
   // $Common button MOD: role edit-light
-  &_role_edit-light
+  &_role_edit-light,
     $primary-color: map-get($boss-app-palette, secondary)
     +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
     +button-with-icon-left($icon-url: '../icons/icon-pencil-secondary.svg', $background-size: 12px)
@@ -669,6 +669,12 @@ $block: ".boss-button"
     +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
     +button-with-icon-left($icon-url: '../icons/icon-pencil-primary.svg', $background-size: 12px)
     +button-bordered-hover-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-hover-url: '../icons/icon-pencil-white.svg')
+
+  &_role_view-notes-light
+    $primary-color: map-get($boss-app-palette, secondary)
+    +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
+    +button-with-icon-left($icon-url: '../icons/icon-text-paper-secondary.svg', $background-size: 12px)
+    +button-bordered-hover-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-hover-url: '../icons/icon-text-paper-white.svg')
 
   &_role_cancel-light
     $primary-color: map-get($boss-app-palette, alert)
@@ -683,7 +689,8 @@ $block: ".boss-button"
     +button-bordered-hover-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-hover-url: '../icons/checked-white.svg')
 
   // $Common button MOD: role view
-  &_role_view-details-light
+  &_role_view-details-light,
+  &_role_view-timeline-light
     $primary-color: map-get($boss-app-palette, primary)
     +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
     +button-with-icon-left($icon-url: '../icons/icon-zoom-primary.svg', $background-size: 12px)

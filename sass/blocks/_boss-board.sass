@@ -87,10 +87,37 @@ $block: ".boss-board"
       background-color: map-get($boss-app-palette, inactive)
 
     // $Board header MOD: status fail
-    &_status_failed
+    // $Board title MOD: role general tasks
+    // $Board title MOD: role artwork tasks
+    // $Board title MOD: role music tasks
+    // $Board title MOD: role sports tasks
+    &_status_failed,
+    &_role_tasks-general,
+    &_role_tasks-artwork,
+    &_role_tasks-music,
+    &_role_tasks-sports
       &:before
         height: 5px
+
+    &_status_failed
+      &:before
         background-color: map-get($boss-app-palette, alert)
+
+    &_role_tasks-general
+      &:before
+        background-color: map-get($boss-tasks-palette, general)
+
+    &_role_tasks-artwork
+      &:before
+        background-color: map-get($boss-tasks-palette, artwork)
+
+    &_role_tasks-music
+      &:before
+        background-color: map-get($boss-tasks-palette, music)
+
+    &_role_tasks-sports
+      &:before
+        background-color: map-get($boss-tasks-palette, sports)
 
     // $Board header MOD: type no boder
     &_type_no-border
@@ -128,6 +155,22 @@ $block: ".boss-board"
     // $Board title MOD: status failed
     &_status_failed
       color: map-get($boss-app-palette, alert)
+
+    // $Board title MOD: role general tasks
+    &_role_tasks-general
+      color: map-get($boss-tasks-palette, general)
+
+    // $Board title MOD: role artwork tasks
+    &_role_tasks-artwork
+      color: map-get($boss-tasks-palette, artwork)
+
+    // $Board title MOD: role music tasks
+    &_role_tasks-music
+      color: map-get($boss-tasks-palette, music)
+
+    // $Board title MOD: role sports tasks
+    &_role_tasks-sports
+      color: map-get($boss-tasks-palette, sports)
 
     &_size_medium
       font-size: 20px
@@ -506,6 +549,13 @@ $block: ".boss-board"
   &__main
     display: block
     width: 100%
+
+
+  // $Board main content area inner
+  &__main-inner
+    display: block
+    width: 100%
+    padding: 30px
 
 
   // $Board rota

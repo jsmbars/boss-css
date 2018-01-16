@@ -100,6 +100,23 @@ $block: ".boss-check"
         width: calc(100% - 50px)
 
 
+  &__header-group
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+
+  &__header-meta
+    display: block
+    margin-top: 10px
+
+
+  &__header-meta-item
+    display: inline-block
+
+    &:not(:last-child)
+      margin-right: 20px
+
+
   &__header-status
     flex-grow: 0
     flex-shrink: 0
@@ -245,6 +262,7 @@ $block: ".boss-check"
     padding: 10px
     border: 2px solid $boss-very-light-gray
     border-radius: 6px
+    text-align: left
 
     &:not(:last-child)
       margin-bottom: 15px
@@ -507,6 +525,10 @@ $block: ".boss-check"
     &_role_action
       cursor: pointer
 
+    // $Check block text MOD: role clickable edit-action
+    &_role_edit-action
+      cursor: pointer
+
     &_role_alert-action
       cursor: pointer
       color: map-get($boss-app-palette, alert)
@@ -525,6 +547,14 @@ $block: ".boss-check"
   // $Check block text label
   &__text-label
     color: #808080
+
+  // $Check block text marked
+  &__text-marked
+    font-weight: 600
+
+  // $Check block text action
+  &__text-action
+    cursor: pointer
 
 
   // $Check block link
@@ -565,6 +595,11 @@ $block: ".boss-check"
     border-radius: 50%
     background-color: map-get($boss-app-palette, primary)
 
+    #{$block}_page_marketing-index &
+      background-size: 15px 15px
+      background-position:  center center
+      background-repeat: no-repeat
+
     @media screen and (max-width: 400px)
       width: 30px
       height: 30px
@@ -592,11 +627,31 @@ $block: ".boss-check"
     &_priority_low
       background-color: map-get($boss-app-palette, secondary)
 
+    &_status_completed
+      background-color: map-get($boss-app-palette, secondary)
+
+      #{$block}_page_marketing-index &
+        background-image: url('../icons/icon-checked-white.svg')
+
+    &_status_pending
+      background-color: map-get($boss-app-palette, pending)
+
+      #{$block}_page_marketing-index &
+        background-image: url('../icons/icon-zoom-white.svg')
+
+    &_role_edit-action
+      cursor: pointer
+      transition: opacity .4s
+
+      &:hover
+        opacity: 0.8
+
 
   // $Check block dropdown
   &__dropdown
 
-    #{$block}_page_maintenance-index &
+    #{$block}_page_maintenance-index &,
+    #{$block}_page_marketing-index &
       background-color: #fbfbfb
 
     // $Check block dropdown CONTEXT: $Check block MOD: page message board
