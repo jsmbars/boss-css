@@ -83,7 +83,8 @@ $block: ".boss-check"
       padding: 20px
 
     @media screen and (max-width: 640px)
-      #{$block}_page_maintenance-index &
+      #{$block}_page_maintenance-index &,
+      #{$block}_page_marketing-index &
         flex-wrap: wrap
 
 
@@ -96,7 +97,8 @@ $block: ".boss-check"
     align-items: center
 
     @media screen and (max-width: 640px)
-      #{$block}_page_maintenance-index &
+      #{$block}_page_maintenance-index &,
+      #{$block}_page_marketing-index &
         width: calc(100% - 50px)
 
 
@@ -112,6 +114,7 @@ $block: ".boss-check"
 
   &__header-meta-item
     display: inline-block
+    margin-bottom: 5px
 
     &:not(:last-child)
       margin-right: 20px
@@ -133,6 +136,16 @@ $block: ".boss-check"
         margin-top: 20px
         padding: 20px 0 0
         border-top: 1px solid #eee
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_marketing-index &
+        order: -99
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        margin-bottom: 10px
+        padding: 0 0 20px
+        border-bottom: 1px solid #eee
 
 
   &__header-actions
@@ -596,7 +609,6 @@ $block: ".boss-check"
     background-color: map-get($boss-app-palette, primary)
 
     #{$block}_page_marketing-index &
-      background-size: 15px 15px
       background-position:  center center
       background-repeat: no-repeat
 
@@ -631,13 +643,22 @@ $block: ".boss-check"
       background-color: map-get($boss-app-palette, secondary)
 
       #{$block}_page_marketing-index &
+        background-size: 16px 16px
         background-image: url('../icons/icon-checked-white.svg')
 
     &_status_pending
       background-color: map-get($boss-app-palette, pending)
 
       #{$block}_page_marketing-index &
-        background-image: url('../icons/icon-zoom-white.svg')
+        background-size: 18px 18px
+        background-image: url('../icons/icon-hour-glass-white.svg')
+
+    &_status_deleted
+      background-color: map-get($boss-app-palette, alert)
+
+      #{$block}_page_marketing-index &
+        background-size: 18px 18px
+        background-image: url('../icons/icon-trash-white.svg')
 
     &_role_edit-action
       cursor: pointer

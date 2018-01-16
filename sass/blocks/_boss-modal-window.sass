@@ -123,11 +123,11 @@ $block: ".boss-modal-window"
       margin-top: 0
 
   // $Modal window MOD: role danger
-  &_role_danger
-    max-width: 400px
-
   // $Modal window MOD: role warning
-  &_role_warning
+  // $Modal window MOD: role action
+  &_role_danger,
+  &_role_warning,
+  &_role_action
     max-width: 400px
 
   &_role_rota
@@ -223,11 +223,15 @@ $block: ".boss-modal-window"
 
     // $Modal window header CONTEXT: $Modal window MOD: role danger
     #{$block}_role_danger &
-      background-color: #dd6f70
+      background-color: map-get($boss-app-palette, alert)
 
     // $Modal window header CONTEXT: $Modal window MOD: role warning
     #{$block}_role_warning &
-      background-color: #f3a74d
+      background-color: map-get($boss-app-palette, warning)
+
+    // $Modal window header CONTEXT: $Modal window MOD: role action
+    #{$block}_role_action &
+      background-color: map-get($boss-app-palette, primary)
 
     // $Modal window header CONTEXT: $Modal window MOD: role add new
     #{$block}_role_add-new &

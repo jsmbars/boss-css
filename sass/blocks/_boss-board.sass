@@ -557,6 +557,9 @@ $block: ".boss-board"
     width: 100%
     padding: 30px
 
+    @media screen and (max-width: 640px)
+      padding: 30px 15px
+
 
   // $Board rota
   &__rota
@@ -940,3 +943,10 @@ $block: ".boss-board"
 
     @media screen and (max-width: 960px)
       padding: 0 20px
+
+
+  // $Board text placeholder
+  &__text-placeholder
+    +text-normalizer()
+    font-size: 18px
+    line-height: 1

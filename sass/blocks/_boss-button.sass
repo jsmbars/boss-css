@@ -631,11 +631,20 @@ $block: ".boss-button"
 
   // $Common button MOD: role success
   // $Common button MOD: role restore
+  // $Common button MOD: role action-confirm
   &_role_success,
-  &_role_restore
+  &_role_restore,
+  &_role_confirmed-task
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-with-icon-left($icon-url: '../icons/checked-white.svg')
+    +button-common-hover-behavior($background-color: $background-color)
+
+
+  &_role_pending-task
+    $background-color: map-get($boss-app-palette, pending)
+    +button-common($background-color: $background-color)
+    +button-with-icon-left($icon-url: '../icons/icon-hour-glass-white.svg')
     +button-common-hover-behavior($background-color: $background-color)
 
 
