@@ -79,9 +79,17 @@ $block: ".boss-check"
     padding: 20px 30px
     border-bottom: 1px solid #eee
 
+    #{$block}_page_marketing-index &
+      min-height: 0
+      padding: 15px 15px 10px
+
     @media screen and (max-width: 960px)
       min-height: 60px
       padding: 20px
+
+      #{$block}_page_marketing-index &
+        min-height: 0
+        padding: 15px 10px 10px
 
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &,
@@ -446,6 +454,9 @@ $block: ".boss-check"
   &__title
     font-size: 18px
     font-weight: 600
+
+    #{$block}_page_marketing-index &
+      font-size: 16px
 
     &_role_date,
     &_role_date-calendar,
