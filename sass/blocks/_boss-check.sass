@@ -92,8 +92,7 @@ $block: ".boss-check"
         padding: 15px 10px 10px
 
     @media screen and (max-width: 640px)
-      #{$block}_page_maintenance-index &,
-      #{$block}_page_marketing-index &
+      #{$block}_page_maintenance-index &
         flex-wrap: wrap
 
 
@@ -106,10 +105,14 @@ $block: ".boss-check"
     justify-content: flex-start
     align-items: center
 
+    #{$block}_page_marketing-index &
+      width: calc(100% - 50px)
+
     @media screen and (max-width: 640px)
-      #{$block}_page_maintenance-index &,
-      #{$block}_page_marketing-index &
+      #{$block}_page_maintenance-index &
         width: calc(100% - 50px)
+
+      #{$block}_page_marketing-index &
         flex-wrap: wrap
 
 
@@ -754,7 +757,7 @@ $block: ".boss-check"
 
       &:before
         background-color: map-get($boss-app-palette, alert)
-        background-size: 18px 18px
+        background-size: 16px 16px
         background-image: url('../icons/icon-trash-white.svg')
 
     // $Check marker MOD: role edit action
