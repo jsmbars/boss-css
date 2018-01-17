@@ -67,6 +67,7 @@ $block: ".boss-check"
     background-color: #feeeee
 
 
+  // $Check block header
   &__header
     position: relative
     display: flex
@@ -88,6 +89,7 @@ $block: ".boss-check"
         flex-wrap: wrap
 
 
+  // $Check block header information
   &__header-info
     flex-grow: 1
     flex-shrink: 1
@@ -100,32 +102,51 @@ $block: ".boss-check"
       #{$block}_page_maintenance-index &,
       #{$block}_page_marketing-index &
         width: calc(100% - 50px)
+        flex-wrap: wrap
 
 
+  // $Check block header group
   &__header-group
     flex-grow: 1
     flex-shrink: 1
     display: block
 
+    @media screen and (max-width: 640px)
+      width: 100%
+      margin-top: 10px
+
+
+  // $Check block header meta
   &__header-meta
     display: block
     margin-top: 10px
 
 
+  // $Check block header meta item
   &__header-meta-item
     display: inline-block
     margin-bottom: 5px
 
+    @media screen and (max-width: 640px)
+      display: block
+      width: 100%
+
     &:not(:last-child)
       margin-right: 20px
 
+      @media screen and (max-width: 640px)
+        margin-right: 0
 
+
+  // $Check block header status
   &__header-status
     flex-grow: 0
     flex-shrink: 0
-    padding-right: 10px
-    padding-left: 10px
-    text-align: center
+
+    #{$block}_page_maintenance-index &
+      padding-right: 10px
+      padding-left: 10px
+      text-align: center
 
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &
@@ -137,22 +158,19 @@ $block: ".boss-check"
         padding: 20px 0 0
         border-top: 1px solid #eee
 
-    @media screen and (max-width: 640px)
       #{$block}_page_marketing-index &
-        order: -99
         flex-grow: 1
         flex-shrink: 1
         width: 100%
-        margin-bottom: 10px
-        padding: 0 0 20px
-        border-bottom: 1px solid #eee
 
 
+  // $Check block header actions
   &__header-actions
     flex-grow: 0
     flex-shrink: 0
 
 
+  // $Check block group
   &__group
 
   // $Check block row
@@ -275,7 +293,10 @@ $block: ".boss-check"
     padding: 10px
     border: 2px solid $boss-very-light-gray
     border-radius: 6px
-    text-align: left
+    text-align: center
+
+    #{$block}_page_marketing-index &
+      text-align: left
 
     &:not(:last-child)
       margin-bottom: 15px
@@ -534,6 +555,9 @@ $block: ".boss-check"
       color: #FFF
       text-align: center
 
+    &_role_alert
+      color: map-get($boss-app-palette, alert)
+
     // $Check block text MOD: role clickable action
     &_role_action
       cursor: pointer
@@ -593,6 +617,7 @@ $block: ".boss-check"
       padding: 6px 12px
 
 
+  // $Check indicator
   &__indicator
     +text-normalizer()
     flex-grow: 0
@@ -608,64 +633,148 @@ $block: ".boss-check"
     border-radius: 50%
     background-color: map-get($boss-app-palette, primary)
 
-    #{$block}_page_marketing-index &
-      background-position:  center center
-      background-repeat: no-repeat
-
     @media screen and (max-width: 400px)
       width: 30px
       height: 30px
       font-size: 18px
       line-height: 30px
 
+    // $Check indicator MOD: position before
     &_position_before
       margin-right: 20px
 
       @media screen and (max-width: 400px)
         margin-right: 10px
 
+    // $Check indicator MOD: position bafter
     &_position_after
       margin-left: 20px
 
       @media screen and (max-width: 400px)
         margin-left: 10px
 
+    // $Check indicator MOD: priority high
     &_priority_high
       background-color: map-get($boss-app-palette, alert)
 
+    // $Check indicator MOD: priority medium
     &_priority_medium
       background-color: map-get($boss-app-palette, warning)
 
+    // $Check indicator MOD: priority low
     &_priority_low
       background-color: map-get($boss-app-palette, secondary)
 
+    // $Check indicator MOD: status completed
     &_status_completed
       background-color: map-get($boss-app-palette, secondary)
 
-      #{$block}_page_marketing-index &
-        background-size: 16px 16px
-        background-image: url('../icons/icon-checked-white.svg')
-
+    // $Check indicator MOD: status pending
     &_status_pending
       background-color: map-get($boss-app-palette, pending)
 
-      #{$block}_page_marketing-index &
-        background-size: 18px 18px
-        background-image: url('../icons/icon-hour-glass-white.svg')
-
+    // $Check indicator MOD: status deleted
     &_status_deleted
       background-color: map-get($boss-app-palette, alert)
 
-      #{$block}_page_marketing-index &
+
+  // $Check marker
+  &__marker
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    display: inline-block
+    white-space: nowrap
+
+    @media screen and (max-width: 400px)
+      font-size: 18px
+      line-height: 30px
+
+    &:before
+      content: ""
+      display: inline-block
+      width: 35px
+      height: 35px
+      border-radius: 50%
+      background-color: map-get($boss-app-palette, primary)
+      background-position:  center center
+      background-repeat: no-repeat
+      vertical-align: middle
+
+      @media screen and (max-width: 400px)
+        width: 30px
+        height: 30px
+        font-size: 18px
+        line-height: 30px
+
+    // $Check marker MOD: position before
+    &_position_before
+      margin-right: 20px
+
+      @media screen and (max-width: 400px)
+        margin-right: 10px
+
+    // $Check marker MOD: position after
+    &_position_after
+      margin-left: 20px
+
+      @media screen and (max-width: 400px)
+        margin-left: 10px
+
+    // $Check marker MOD: status completed
+    &_status_completed
+      color: map-get($boss-app-palette, secondary)
+
+      &:before
+        background-color: map-get($boss-app-palette, secondary)
+        background-size: 16px 16px
+        background-image: url('../icons/icon-checked-white.svg')
+
+    // $Check marker MOD: status pending
+    &_status_pending
+      color: map-get($boss-app-palette, pending)
+
+      &:before
+        background-color: map-get($boss-app-palette, pending)
+        background-size: 18px 18px
+        background-image: url('../icons/icon-hour-glass-white.svg')
+
+    // $Check marker MOD: status deleted
+    &_status_deleted
+      color: map-get($boss-app-palette, alert)
+
+      &:before
+        background-color: map-get($boss-app-palette, alert)
         background-size: 18px 18px
         background-image: url('../icons/icon-trash-white.svg')
 
+    // $Check marker MOD: role edit action
     &_role_edit-action
       cursor: pointer
       transition: opacity .4s
 
       &:hover
         opacity: 0.8
+
+
+  // $Check marker MOD: marker label
+  &__marker-label
+    display: inline-block
+    margin-left: 5px
+    font-size: 18px
+    line-height: 1
+    font-weight: 600
+    vertical-align: middle
+
+    #{$block}_page_marketing-index &
+      display: none
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_marketing-index &
+        display: inline-block
+
+    @media screen and (max-width: 400px)
+      line-height: 30px
 
 
   // $Check block dropdown
