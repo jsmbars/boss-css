@@ -666,8 +666,13 @@ $block: ".boss-button"
 
   // Bordered buttons
 
+  &_primary-light
+    +button-bordered($color: #84bef0, $border-color: #84bef0, $background-color: #fff)
+    +button-bordered-hover-behavior($color: #fff, $border-color: #84bef0, $background-color: #84bef0)
+    font-weight: 600
+
   // $Common button MOD: role edit-light
-  &_role_edit-light,
+  &_role_edit-light
     $primary-color: map-get($boss-app-palette, secondary)
     +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
     +button-with-icon-left($icon-url: '../icons/icon-pencil-secondary.svg', $background-size: 12px)
