@@ -545,6 +545,13 @@ $block: ".boss-board"
       align-items: center
 
 
+  // $Board inner container
+  &__inner
+    display: block
+    width: 100%
+    padding: 20px 0
+
+
   // $Board main content area
   &__main
     display: block
@@ -565,10 +572,11 @@ $block: ".boss-board"
   &__tasks
     display: block
     width: 100%
-    padding: 0 30px
+    padding: 0 20px
 
-    @media screen and (max-width: 640px)
-      padding: 0 15px
+    @media screen and (max-width: 400px)
+      padding-left: 15px
+      padding-right: 15px
 
 
   // $Board rota
@@ -960,3 +968,15 @@ $block: ".boss-board"
     +text-normalizer()
     font-size: 18px
     line-height: 1
+
+
+  // $Board tactions
+  &__actions
+    display: block
+    width: 100%
+    padding: 30px 20px 10px
+    text-align: center
+
+    @media screen and (max-width: 400px)
+      padding-left: 15px
+      padding-right: 15px
