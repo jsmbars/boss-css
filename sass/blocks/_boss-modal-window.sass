@@ -66,21 +66,23 @@ $block: ".boss-modal-window"
     max-width: 800px
 
   // $Modal window MOD: role task create
+  // $Modal window MOD: role task edit
   // $Modal window MOD: role task overview
   // $Modal window MOD: role edit
   // $Modal window MOD: role add
   &_role_task-create,
+  &_role_task-edit,
   &_role_task-overview,
   &_role_venue-details,
   &_role_edit,
-  &_role_add,
-  &_role_shift-details
+  &_role_add
     width: 90%
     max-width: 800px
 
   &_role_preview,
   &_role_details,
   &_role_task-create,
+  &_role_task-edit,
   &_role_task-overview
     margin-top: 100px
 
@@ -120,11 +122,11 @@ $block: ".boss-modal-window"
       margin-top: 0
 
   // $Modal window MOD: role danger
-  &_role_danger
-    max-width: 400px
-
   // $Modal window MOD: role warning
-  &_role_warning
+  // $Modal window MOD: role action
+  &_role_danger,
+  &_role_warning,
+  &_role_action
     max-width: 400px
 
   &_role_rota
@@ -175,10 +177,12 @@ $block: ".boss-modal-window"
     // $Modal window close inner CONTEXT: $Modal window MOD: role edit
     // $Modal window close inner CONTEXT: $Modal window MOD: role add
     // $Modal window close inner CONTEXT: $Modal window MOD: role task create
+    // $Modal window close inner CONTEXT: $Modal window MOD: role task edit
     // $Modal window close inner CONTEXT: $Modal window MOD: role task overview
     #{$block}_role_edit &,
     #{$block}_role_add &,
     #{$block}_role_task-create &,
+    #{$block}_role_task-edit &,
     #{$block}_role_task-overview &,
     #{$block}_role_bounced-email &,
     #{$block}_role_venue-details &,
@@ -197,6 +201,7 @@ $block: ".boss-modal-window"
 
     @media screen and (max-width: 479px)
       #{$block}_role_task-create &,
+      #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
       #{$block}_role_bounced-email &,
       #{$block}_role_shift-details &
@@ -217,11 +222,15 @@ $block: ".boss-modal-window"
 
     // $Modal window header CONTEXT: $Modal window MOD: role danger
     #{$block}_role_danger &
-      background-color: #dd6f70
+      background-color: map-get($boss-app-palette, alert)
 
     // $Modal window header CONTEXT: $Modal window MOD: role warning
     #{$block}_role_warning &
-      background-color: #f3a74d
+      background-color: map-get($boss-app-palette, warning)
+
+    // $Modal window header CONTEXT: $Modal window MOD: role action
+    #{$block}_role_action &
+      background-color: map-get($boss-app-palette, primary)
 
     // $Modal window header CONTEXT: $Modal window MOD: role add new
     #{$block}_role_add-new &
@@ -232,10 +241,12 @@ $block: ".boss-modal-window"
     // $Modal window header CONTEXT: $Modal window MOD: role edit
     // $Modal window header CONTEXT: $Modal window MOD: role add
     // $Modal window header CONTEXT: $Modal window MOD: role task create
+    // $Modal window header CONTEXT: $Modal window MOD: role task edit
     // $Modal window header CONTEXT: $Modal window MOD: role task overview
     #{$block}_role_edit &,
     #{$block}_role_add &,
     #{$block}_role_task-create &,
+    #{$block}_role_task-edit &,
     #{$block}_role_task-overview &,
     #{$block}_role_bounced-email &,
     #{$block}_role_venue-details &,
@@ -297,6 +308,7 @@ $block: ".boss-modal-window"
         padding-right: 35px
 
       #{$block}_role_task-create &,
+      #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
       #{$block}_role_bounced-email &,
       #{$block}_role_shift-details &
@@ -312,6 +324,7 @@ $block: ".boss-modal-window"
         padding: 180px 15px 25px
 
       #{$block}_role_task-create &,
+      #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
       #{$block}_role_bounced-email &,
       #{$block}_role_shift-details &
@@ -322,6 +335,7 @@ $block: ".boss-modal-window"
       #{$block}_role_edit &,
       #{$block}_role_add &,
       #{$block}_role_task-create &,
+      #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
       #{$block}_role_bounced-email &,
       #{$block}_role_venue-details &,
@@ -414,6 +428,7 @@ $block: ".boss-modal-window"
     #{$block}_role_edit &,
     #{$block}_role_add &,
     #{$block}_role_task-create &,
+    #{$block}_role_task-edit &,
     #{$block}_role_task-overview &,
     #{$block}_role_login &,
     #{$block}_role_reset &,
@@ -440,6 +455,7 @@ $block: ".boss-modal-window"
       #{$block}_role_edit &,
       #{$block}_role_add &,
       #{$block}_role_task-create &,
+      #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
       #{$block}_role_login &,
       #{$block}_role_reset &,
@@ -505,7 +521,8 @@ $block: ".boss-modal-window"
     #{$block}_role_add &
       padding: 20px 30px 30px 30px
 
-    #{$block}_role_task-create &
+    #{$block}_role_task-create &,
+    #{$block}_role_task-edit &
       padding: 20px 30px 45px
 
     #{$block}_role_login &,
@@ -521,11 +538,13 @@ $block: ".boss-modal-window"
         padding-right: 15px
         padding-left: 15px
 
-      #{$block}_role_task-create &
+      #{$block}_role_task-create &,
+      #{$block}_role_task-edit &
         padding: 20px 30px 30px
 
     @media screen and (max-width: 479px)
       #{$block}_role_task-create &,
+      #{$block}_role_task-edit &,
       #{$block}_role_login &,
       #{$block}_role_reset &,
       #{$block}_role_change &,

@@ -40,7 +40,10 @@ $block: ".date-picker"
 
       &_state_error input,
       &_state_error .date-picker-input-field
-        outline: 1px solid map-get($boss-app-palette, alert-border)
+        outline: 1px solid map-get($boss-app-palette, alert-border) !important
+
+      &_state_error input:focus
+        box-shadow: 0 0 5px 0 map-get($boss-app-palette, alert) !important
 
       & input
         +text-normalizer()
@@ -58,7 +61,7 @@ $block: ".date-picker"
 
         &:focus
           outline: none
-          box-shadow: none
+          box-shadow: 0 0 5px 0 $boss-very-light-gray
           border-color: $boss-very-light-gray
 
         &[type=text]::-ms-clear

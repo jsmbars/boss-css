@@ -206,6 +206,21 @@ $block: ".boss-form"
       @media screen and (max-width: 960px)
         align-items: flex-start
 
+    // $Common form row MOD: layout nowrap
+    &_layout_nowrap
+      flex-direction: row
+
+      @media screen and (max-width: 960px)
+        flex-direction: row
+
+    // $Common form row MOD: layout flow fluid
+    &_layout_flow-fluid
+      flex-direction: row
+
+      @media screen and (max-width: 960px)
+        flex-direction: row
+        flex-wrap: wrap
+
     // $Common form row MOD: layout wrap-xs
     &_layout_wrap-xs
       flex-direction: row
@@ -260,9 +275,11 @@ $block: ".boss-form"
     &_layout_half,
     &_layout_third,
     &_layout_quarter,
+    &_layout_fifth,
     &_layout_max,
     &_layout_min,
     &_layout_min-half,
+    &_layout_min-third,
     &_layout_fluid
       flex-grow: 0
       flex-shrink: 1
@@ -303,6 +320,12 @@ $block: ".boss-form"
 
     &_layout_quarter
       width: 25%
+
+      @media screen and (max-width: 960px)
+        width: 100%
+
+    &_layout_fifth
+      width: 20%
 
       @media screen and (max-width: 960px)
         width: 100%
@@ -349,6 +372,16 @@ $block: ".boss-form"
         width: 100%
         max-width: 100%
 
+    &_layout_flow-fluid
+      margin-right: 30px
+      margin-bottom: 10px
+      flex-grow: 0
+      flex-shrink: 1
+      width: auto
+
+      @media screen and (max-width: 1280px)
+        margin-right: 20px
+
     &_layout_fluid
       flex-grow: 0
       flex-shrink: 0
@@ -385,7 +418,7 @@ $block: ".boss-form"
 
     // $Common form field MOD: no label
     &_no-label
-      padding-top: 30px
+      padding-top: 26px
 
       @media screen and (max-width: 960px)
         padding-top: 0
@@ -568,6 +601,79 @@ $block: ".boss-form"
       height: 0
       border: 1px solid $boss-medium-gray
       transform: translate(-50%, -50%)
+
+    &_role_size
+      &:after
+        content: "\00D7"
+        width: auto
+        height: auto
+        border: none
+        font-size: 30px
+        line-height: 1
+        color: $boss-medium-gray
+
+
+  // $Common form size
+  &__size
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-end
+    width: 100%
+
+
+  // $Common form size item
+  &__size-item
+    flex-grow: 1
+    flex-shrink: 1
+    width: calc(50% - 20px)
+
+    @media screen and (max-width: 400px)
+      width: calc(50% - 12px)
+
+
+  // $Common form size delimiter
+  &__size-delimiter
+    flex-grow: 0
+    flex-shrink: 0
+    position: relative
+    display: block
+    width: 40px
+    height: 53px
+
+    @media screen and (max-width: 640px)
+      width: 25px
+      height: 53px
+
+    &:after
+      content: "\00D7"
+      position: absolute
+      top: 50%
+      left: 50%
+      display: block
+      width: auto
+      height: auto
+      border: none
+      font-size: 30px
+      line-height: 1
+      color: $boss-medium-gray
+      transform: translate(-50%, -50%)
+
+
+  // $Common form size units
+  &__size-units
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    height: 53px
+    line-height: 53px
+
+    &_space_before
+      padding-left: 15px
+
+    &_space_after
+      padding-right: 15px
 
 
   // $Common form control
@@ -836,6 +942,14 @@ $block: ".boss-form"
     &_type_transparent
       background-color: transparent
 
+    &_adjust_checkbox
+      height: 20px
+      min-height: 20px
+      max-width: 100px
+      padding: 1px 10px
+      border-radius: 3px
+      font-size: 13px
+
     #{$block}__search &
       border: none
 
@@ -853,7 +967,7 @@ $block: ".boss-form"
 
     &:focus
       outline: none
-      box-shadow: none
+      box-shadow: 0 0 5px 0 $boss-very-light-gray
       border-color: $boss-very-light-gray
 
     &[type=text]::-ms-clear
@@ -869,6 +983,7 @@ $block: ".boss-form"
       color: map-get($boss-app-palette, alert)
 
       &:focus
+        box-shadow: 0 0 5px 0 map-get($boss-app-palette, alert)
         border-color: map-get($boss-app-palette, alert)
 
 
@@ -887,7 +1002,7 @@ $block: ".boss-form"
 
     &:focus
       outline: none
-      box-shadow: none
+      box-shadow: 0 0 5px 0 $boss-very-light-gray
       border-color: $boss-very-light-gray
 
     &_size_large
@@ -903,6 +1018,7 @@ $block: ".boss-form"
 
       &:focus
         border-color: map-get($boss-app-palette, alert)
+        box-shadow: 0 0 5px 0 map-get($boss-app-palette, alert)
 
 
   // $Common form submit button
@@ -1158,6 +1274,9 @@ $block: ".boss-form"
       &_status_waiting
         background-color: map-get($boss-app-palette, warning)
 
+      &_status_deleted
+        background-color: map-get($boss-app-palette, alert)
+
     & .Select--multi .Select-value-icon
       position: relative
       z-index: 1
@@ -1214,6 +1333,22 @@ $block: ".boss-form"
       & .Select-control,
       & .Select-menu-outer
         border-color: map-get($boss-app-palette, alert)
+
+    &_state_inactive
+      position: relative
+
+      &:after
+        content: ""
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        z-index: 10
+        display: block
+        width: 100%
+        height: 100%
+        background-color: rgba(20,20,20,.2)
 
     &_icon_time
       & .Select-arrow
@@ -1279,22 +1414,38 @@ $block: ".boss-form"
         border-radius: 50%
         vertical-align: middle
 
+        @media screen and (max-width: 479px)
+          width: 40px
+          height: 40px
+
         & > img
           display: block
           width: 100%
           max-width: 100%
 
-      & .Select-staff-member-name
+      & .Select-staff-member-info
         +text-normalizer()
         display: inline-block
         width: calc(100% - 50px)
         padding: 0 20px 0 10px
-        font-size: 18px
         vertical-align: middle
         white-space: normal
 
         @media screen and (max-width: 479px)
+          width: calc(100% - 40px)
+          padding-left: 5px
+
+      & .Select-staff-member-name
+        display: inline-block
+        width: 100%
+        max-width: 100%
+        font-size: 18px
+
+        @media screen and (max-width: 479px)
           font-size: 16px
+
+      & .Select-staff-member-type
+        display: inline-block
 
 
   // $Common form switcher
@@ -1351,7 +1502,7 @@ $block: ".boss-form"
     flex-shrink: 1
     display: block
     width: 100%
-    padding: 15px 30px
+    padding: 13px 30px
     border: 1px solid map-get($boss-app-palette, inactive)
     border-left: none
     border-radius: 2px
@@ -1382,8 +1533,6 @@ $block: ".boss-form"
       padding-right: 5px
 
     @media screen and (max-width: 960px)
-      padding: 13px 20px
-
       #{$block}__switcher_role_week &
         border-bottom: none
 
@@ -1444,6 +1593,18 @@ $block: ".boss-form"
         background-color: map-get($boss-app-palette, primary)
 
 
+  // $Common form checkbox control
+  &__checkbox-control
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+
+
+  // $Common form checkbox extra
+  &__checkbox-extra
+    margin-left: 20px
+
   // $Common form checkbox input
   &__checkbox-input
     display: none
@@ -1455,14 +1616,19 @@ $block: ".boss-form"
     display: block
     cursor: pointer
 
+    &_context_field
+      margin: 15px 0
+
 
   // $Common form checkbox label text
   &__checkbox-label-text
     position: relative
     display: inline-block
+    min-height: 20px
     padding-left: 30px
 
     @media screen and (max-width: 640px)
+      min-height: 15px
       padding-left: 25px
 
     &:before

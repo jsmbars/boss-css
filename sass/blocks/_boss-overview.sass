@@ -538,6 +538,14 @@ $block: ".boss-overview"
     padding-top: 15px
 
 
+  // $Overview notes placeholder
+  &__notes-placeholder
+    +text-normalizer()
+    display: block
+    width: 100%
+    text-align: center
+
+
   // $Overview meta information
   &__meta
     +text-normalizer()
@@ -566,17 +574,19 @@ $block: ".boss-overview"
 
 
   // $Overview meta information label
-  &__meta-label
+  // $Overview meta information user
+  // $Overview meta information status
+  // $Overview meta information marked
+  &__meta-label,
+  &__meta-user,
+  &__meta-marked
     font-weight: 600
-
 
   // $Overview meta information date
   &__meta-date
 
-
-  // $Overview meta information user
-  &__meta-user
-    font-weight: 600
+  // $Overview meta information text
+  &__meta-text
 
 
   // $Overview activity list
@@ -626,17 +636,18 @@ $block: ".boss-overview"
         background-color: $boss-very-light-gray
 
     // $Overview activity item MOD: role updated
-    &_role_updated
+    // $Overview activity item MOD: role assigned
+    &_role_updated,
+    &_role_assigned
       &:before
         background-color: map-get($boss-app-palette, primary)
 
     // $Overview activity item MOD: role accepted
-    &_role_accepted
-      &:before
-        background-color: map-get($boss-app-palette, secondary)
-
     // $Overview activity item MOD: role completed
-    &_role_completed
+    // $Overview activity item MOD: role changed
+    &_role_accepted,
+    &_role_completed,
+    &_role_changed
       &:before
         background-color: map-get($boss-app-palette, secondary)
 
@@ -646,7 +657,9 @@ $block: ".boss-overview"
         background-color: map-get($boss-app-palette, pending)
 
     // $Overview activity item MOD: role rejected
-    &_role_rejected
+    // $Overview activity item MOD: role deleted
+    &_role_rejected,
+    &_role_deleted
       &:before
         background-color: map-get($boss-app-palette, alert)
 
