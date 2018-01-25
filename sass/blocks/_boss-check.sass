@@ -79,7 +79,8 @@ $block: ".boss-check"
     padding: 20px 30px
     border-bottom: 1px solid #eee
 
-    #{$block}_page_marketing-index &
+    #{$block}_page_marketing-index &,
+    #{$block}_page_ops-diary-index &
       min-height: 0
       padding: 15px 15px 10px
 
@@ -87,13 +88,18 @@ $block: ".boss-check"
       min-height: 60px
       padding: 20px
 
-      #{$block}_page_marketing-index &
+      #{$block}_page_marketing-index &,
+      #{$block}_page_ops-diary-index &
         min-height: 0
         padding: 15px 10px 10px
 
     @media screen and (max-width: 640px)
-      #{$block}_page_maintenance-index &
+      #{$block}_page_maintenance-index &,
+      #{$block}_page_ops-diary-index &
         flex-wrap: wrap
+
+      #{$block}_page_ops-diary-index &
+        align-items: flex-start
 
 
   // $Check block header information
@@ -109,11 +115,15 @@ $block: ".boss-check"
       width: calc(100% - 50px)
 
     @media screen and (max-width: 640px)
-      #{$block}_page_maintenance-index &
+      #{$block}_page_maintenance-index &,
+      #{$block}_page_ops-diary-index &
         width: calc(100% - 50px)
 
       #{$block}_page_marketing-index &
         flex-wrap: wrap
+
+      #{$block}_page_ops-diary-index &
+        align-items: flex-start
 
 
   // $Check block header group
@@ -154,7 +164,8 @@ $block: ".boss-check"
     flex-grow: 0
     flex-shrink: 0
 
-    #{$block}_page_maintenance-index &
+    #{$block}_page_maintenance-index &,
+    #{$block}_page_ops-diary-index &
       padding-right: 10px
       padding-left: 10px
       text-align: center
@@ -167,12 +178,22 @@ $block: ".boss-check"
         width: 100%
         margin-top: 20px
         padding: 20px 0 0
-        border-top: 1px solid #eee
+        border-top: 1px solid #d8d8d8
 
       #{$block}_page_marketing-index &
         flex-grow: 1
         flex-shrink: 1
         width: 100%
+
+      #{$block}_page_ops-diary-index &
+        order: -99
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+
+        &:not(:empty)
+          padding: 0 0 15px
+          border-bottom: 1px solid #ccc
 
 
   // $Check block header actions
@@ -306,7 +327,8 @@ $block: ".boss-check"
     border-radius: 6px
     text-align: center
 
-    #{$block}_page_marketing-index &
+    #{$block}_page_marketing-index &,
+    #{$block}_page_ops-diary-index &
       text-align: left
 
     &:not(:last-child)
@@ -458,7 +480,8 @@ $block: ".boss-check"
     font-size: 18px
     font-weight: 600
 
-    #{$block}_page_marketing-index &
+    #{$block}_page_marketing-index &,
+    #{$block}_page_ops-diary-index &
       font-size: 16px
 
     &_role_date,
@@ -645,6 +668,10 @@ $block: ".boss-check"
     border-radius: 50%
     background-color: map-get($boss-app-palette, primary)
 
+    @media screen and (max-width: 640px)
+      #{$block}_page_ops-diary-index &
+        margin-top: 15px
+
     @media screen and (max-width: 400px)
       width: 30px
       height: 30px
@@ -808,7 +835,8 @@ $block: ".boss-check"
 
 
   // $Check block dropdown link
-  &__dropdown-link
+  &__dropdown-link,
+  &__tooltip-link
     +text-normalizer()
     color: $boss-dark-gray
     vertical-align: middle
@@ -835,28 +863,47 @@ $block: ".boss-check"
       background-position: center center
       background-size: contain
       vertical-align: middle
-      transform: rotate(180deg)
 
     &_type_icon
       font-size: 0
       line-height: 0
       color: transparent
+      opacity: .8
+      transition: .4s
 
       &:after
         width: 30px
         height: 30px
         background-size: 15px 15px
 
-    // $Check block dropdown link MOD: state closed
-    &_state_closed
+      &:hover
+        opacity: 1
+
+    &_role_settings
       &:after
-        transform: rotate(0)
+        background-size: 20px 20px
+        background-image: url('../icons/icon-gear-dark-gray.svg')
 
     // $Check block dropdown link MOD: state inactive
     &_state_inactive
       cursor: default
       &:after
         display: none
+
+
+  &__tooltip-link
+    @media screen and (max-width: 640px)
+      #{$block}_page_ops-diary-index &
+        margin-top: 20px
+
+  &__dropdown-link
+    &:after
+      transform: rotate(180deg)
+
+    // $Check block dropdown link MOD: state closed
+    &_state_closed
+      &:after
+        transform: rotate(0)
 
 
   // $Check block info
