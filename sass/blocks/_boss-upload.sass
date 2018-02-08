@@ -19,6 +19,9 @@ $block: ".boss-upload"
   display: block
   width: 100%
 
+  // $Upload control MOD: state error
+  &_state_error
+
 
   // $Upload control flow area
   &__flow
@@ -170,6 +173,9 @@ $block: ".boss-upload"
     background-color: $boss-extra-light-gray
     border: 2px dashed $boss-very-light-gray
     border-radius: 10px
+
+    #{$block}_state_error &
+      border-color: map-get($boss-app-palette, alert-border)
 
 
   // $Upload control area inner container
