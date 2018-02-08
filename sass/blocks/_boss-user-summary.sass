@@ -346,6 +346,9 @@ $block: ".boss-user-summary"
       margin-bottom: 0
       text-align: left
 
+    #{$block}_role_review-short &,
+      margin-bottom: 5px
+
     // $User summary avatar CONTEXT: $User summary MOD: role hours overview
     #{$block}_role_hours-overview &,
     #{$block}_role_ssr-details &,
@@ -513,7 +516,8 @@ $block: ".boss-user-summary"
 
     &_role_email,
     &_role_phone,
-    &_role_alert-action
+    &_role_alert-action,
+    &_role_data
       &:before
         content: ""
         display: inline-block
@@ -524,6 +528,11 @@ $block: ".boss-user-summary"
         background-repeat: no-repeat
         vertical-align: middle
 
+
+    // $User summary link MOD: role data
+    &_role_data
+      &:before
+        background-image: url(../icons/icon-text-paper-dark-gray.svg)
 
     // $User summary link MOD: role email
     &_role_email
@@ -664,6 +673,17 @@ $block: ".boss-user-summary"
     &_role_venue
       &:before
         background-image: url('../icons/icon-storefront-dark-gray.svg')
+
+
+  // $User summary review line
+  &__review-line
+    display: block
+
+
+  // $User summary review marked
+  &__review-marked
+    color: #4c4c4c
+    font-weight: 600
 
 
   // $User summary review label

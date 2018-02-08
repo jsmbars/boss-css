@@ -234,10 +234,11 @@ $block: ".boss-overview"
       word-break: break-word
       hyphens: auto
 
+    &_marked
+      font-weight: 600
 
-  // $Overview text line
-  &__text-line
-    display: block
+    &_faded
+      color: #808080
 
 
   // $Overview link
@@ -698,9 +699,21 @@ $block: ".boss-overview"
       &:nth-of-type(even)
         background-color: transparent
 
+    &_role_payments
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+
+      &:nth-of-type(even)
+        background-color: transparent
+
     &_state_alert,
     &_state_alert:nth-of-type(even)
       background-color: #feeeee
+
+
+  // $Overview list content
+  &__list-content
 
 
   // $Overview list name

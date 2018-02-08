@@ -515,7 +515,9 @@ $block: ".boss-report"
       margin-bottom: 0
 
     &_role_readings,
-    &_role_calculate
+    &_role_calculate,
+    &_role_data,
+    &_role_errors
       border-bottom: none
       padding-bottom: 0
 
@@ -531,13 +533,18 @@ $block: ".boss-report"
         background-position: center center
         vertical-align: middle
 
-    &_role_readings
+    &_role_readings,
+    &_role_data
       &:before
         background-image: url(../icons/icon-text-paper-dark-gray.svg)
 
     &_role_calculate
       &:before
         background-image: url(../icons/icon-calculator-dark-gray.svg)
+
+    &_role_errors
+      &:before
+        background-image: url(../icons/icon-danger-dark-gray.svg)
 
 
   // $Report text
@@ -546,8 +553,54 @@ $block: ".boss-report"
     display: block
     width: 100%
 
+    &:not(:last-child)
+      margin-bottom: 15px
+
+    &_adjust_wrap
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
+
     &_size_m
       font-size: 16px
+
+    &_size_l
+      font-size: 18px
+
+  &__text-label
+    display: block
+    font-style: italic
+
+  &__text-marked
+    font-weight: bold
+
+  &__list
+    list-style: none
+    margin: 0
+    padding: 0
+
+    &:not(:last-child)
+      margin-bottom: 15px
+
+  &__list-item
+    +text-normalizer()
+    position: relative
+    margin-bottom: 10px
+    padding-left: 12px
+
+    &:before
+      content: "-"
+      position: absolute
+      left: 0
+      top: 0
+      display: inline-block
+
+  &__list-item-details
+    padding: 10px 15px
+    background-color: #f8f8f8
+    border: 1px solid #f0f0f0
+    border-radius: 10px
 
 
   // $Report wysiwyg-generated content
@@ -556,7 +609,9 @@ $block: ".boss-report"
     // wysiwyg-generated paragraph
     p
       +text-normalizer()
-      margin-bottom: 15px
+
+      &:not(:last-child)
+        margin-bottom: 15px
 
     // wysiwyg-generated lists
     & ul,
@@ -564,12 +619,16 @@ $block: ".boss-report"
       list-style: none
       margin: 0
       padding: 0
-      margin-bottom: 15px
+
+      &:not(:last-child)
+        margin-bottom: 15px
 
       & li
         +text-normalizer()
         position: relative
-        margin-bottom: 10px
+
+        &:not(:last-child)
+          margin-bottom: 10px
 
     & ul
       & li
@@ -598,3 +657,11 @@ $block: ".boss-report"
     & ol ol
       padding-left: 30px
       margin-bottom: 0
+
+    & pre
+      font-family: monospace
+      font-size: 14px
+      line-height: 1.5
+
+      &:not(:last-child)
+        margin-bottom: 15px
