@@ -195,11 +195,18 @@ $block: ".boss-upload"
   // $Upload control area text
   &__area-text
     +text-normalizer()
+    max-width: 100%
     font-size: 16px
     text-align: center
 
     &:not(:last-child)
       margin-bottom: 15px
+
+    &_adjust_wrap
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
 
   &__area-text-marked
     font-weight: 600
