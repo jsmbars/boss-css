@@ -24,7 +24,7 @@ $block: ".boss-user-summary"
   width: 100%
   transition: all .4s
 
-  @media screen and(max-width: 960px)
+  @media screen and (max-width: 960px)
     flex-direction: column
     align-items: center
 
@@ -46,12 +46,12 @@ $block: ".boss-user-summary"
     border-radius: 10px
     border: 2px solid transparent
 
-    @media screen and(max-width: 960px)
+    @media screen and (max-width: 960px)
       flex-direction: row
       align-items: flex-start
       padding: 10px
 
-    @media screen and(max-width: 400px)
+    @media screen and (max-width: 400px)
       flex-direction: column
       align-items: center
 
@@ -64,14 +64,14 @@ $block: ".boss-user-summary"
   &_role_rotas-daily,
   &_role_review-short,
   &_role_hours-overview
-    @media screen and(max-width: 960px)
+    @media screen and (max-width: 960px)
       flex-direction: row
       align-items: flex-start
 
   &_role_hours-overview,
   &_role_ssr-details,
   &_role_user-profile
-    @media screen and(max-width: 479px)
+    @media screen and (max-width: 479px)
       flex-direction: column
       align-items: center
 
@@ -99,13 +99,15 @@ $block: ".boss-user-summary"
     display: block
     width: 115px
     height: 115px
-    margin-bottom: 20px
+
+    // $User summary avatar CONTEXT: $User summary MOD: role review
+    #{$block}_role_review &
+      margin-bottom: 20px
 
     // $User summary avatar CONTEXT: $User summary MOD: role report
     #{$block}_role_report &
       width: 100px
       height: 100px
-      margin-bottom: 0
 
     // $User summary avatar CONTEXT: $User summary MOD: role rotas daily
     // $User summary avatar CONTEXT: $User summary MOD: role review short
@@ -113,7 +115,6 @@ $block: ".boss-user-summary"
     #{$block}_role_review-short &
       width: 70px
       height: 70px
-      margin-bottom: 0
 
     // $User summary avatar CONTEXT: $User summary MOD: role hours overview
     #{$block}_role_hours-overview &,
@@ -121,22 +122,21 @@ $block: ".boss-user-summary"
     #{$block}_role_user-profile &
       width: 80px
       height: 80px
-      margin-bottom: 0
 
     // $User summary avatar CONTEXT: $User summary MOD: role rotas daily tooltip
     #{$block}_role_rotas-daily-tooltip &
       width: 70px
       height: 70px
-      margin-bottom: 0
 
-    @media screen and(max-width: 960px)
+    @media screen and (max-width: 960px)
+      margin-bottom: 20px
 
       #{$block}_role_report &,
       #{$block}_role_ssr-details &,
       #{$block}_role_user-profile &
         margin-bottom: 10px
 
-    @media screen and(max-width: 640px)
+    @media screen and (max-width: 640px)
       #{$block}_role_rotas-daily &
         width: 40px
         height: 40px
@@ -283,7 +283,7 @@ $block: ".boss-user-summary"
     #{$block}_role_rotas-daily-tooltip &
       padding-left: 20px
 
-    @media screen and(max-width: 960px)
+    @media screen and (max-width: 960px)
       padding-left: 0
 
       #{$block}_role_review &
@@ -299,17 +299,17 @@ $block: ".boss-user-summary"
       #{$block}_role_user-profile &
         padding-left: 0
 
-    @media screen and(max-width: 640px)
+    @media screen and (max-width: 640px)
       #{$block}_role_rotas-daily &,
       #{$block}_role_review-short &,
       #{$block}_role_hours-overview &
         padding-left: 15px
 
-    @media screen and(max-width: 479px)
+    @media screen and (max-width: 479px)
       #{$block}_role_hours-overview &
         padding-left: 0
 
-    @media screen and(max-width: 400px)
+    @media screen and (max-width: 400px)
       #{$block}_role_review &
         padding-left: 0
 
@@ -356,7 +356,7 @@ $block: ".boss-user-summary"
       margin-bottom: 0
       text-align: left
 
-    @media screen and(max-width: 960px)
+    @media screen and (max-width: 960px)
       text-align: center
 
       #{$block}_role_review &
@@ -374,13 +374,13 @@ $block: ".boss-user-summary"
       #{$block}_role_rotas-daily-tooltip &
         text-align: center
 
-    @media screen and(max-width: 479px)
+    @media screen and (max-width: 479px)
       #{$block}_role_hours-overview &,
       #{$block}_role_ssr-details &,
       #{$block}_role_user-profile &
         text-align: center
 
-    @media screen and(max-width: 400px)
+    @media screen and (max-width: 400px)
       #{$block}_role_review &
         text-align: center
 
@@ -439,7 +439,7 @@ $block: ".boss-user-summary"
       font-weight: 400
       color: #808080
 
-    @media screen and(max-width: 960px)
+    @media screen and (max-width: 960px)
       display: block
       margin: 0 auto 15px
       text-align: center
@@ -462,11 +462,11 @@ $block: ".boss-user-summary"
       #{$block}_role_rotas-daily-tooltip &
         margin-bottom: 10px
 
-    @media screen and(max-width: 479px)
+    @media screen and (max-width: 479px)
       #{$block}_role_hours-overview &
         text-align: center
 
-    @media screen and(max-width: 400px)
+    @media screen and (max-width: 400px)
       #{$block}_role_review &
         display: inline-block
         text-align: center
@@ -489,7 +489,7 @@ $block: ".boss-user-summary"
     max-width: 100%
     margin-bottom: 15px
 
-    @media screen and(max-width: 960px)
+    @media screen and (max-width: 960px)
       text-align: center
       margin-bottom: 20px
 
@@ -564,12 +564,12 @@ $block: ".boss-user-summary"
     flex-direction: row
     justify-content: flex-start
     align-items: flex-start
+    flex-wrap: wrap
     width: 100%
     max-width: 100%
 
-    @media screen and(max-width: 960px)
+    @media screen and (max-width: 960px)
       justify-content: center
-      flex-wrap: wrap
 
     @media screen and (max-width: 480px)
       flex-direction: column
@@ -579,11 +579,9 @@ $block: ".boss-user-summary"
   &__switch
     display: inline-block
     margin-right: 10px
-
-    @media screen and (max-width: 960px)
-      flex-grow: 0
-      flex-shrink: 0
-      margin-bottom: 15px
+    margin-bottom: 10px
+    flex-grow: 0
+    flex-shrink: 0
 
     @media screen and (max-width: 480px)
       flex-grow: 1
@@ -615,7 +613,7 @@ $block: ".boss-user-summary"
       flex-shrink: 1
       width: auto
 
-      @media screen and(max-width: 960px)
+      @media screen and (max-width: 960px)
         align-self: center
 
     &_type_box-alert
@@ -630,7 +628,7 @@ $block: ".boss-user-summary"
     margin-bottom: 5px
     color: $boss-medium-gray
 
-    @media screen and(max-width: 960px)
+    @media screen and (max-width: 960px)
       text-align: center
 
       #{$block}_role_review &,
