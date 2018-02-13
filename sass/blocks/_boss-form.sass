@@ -156,14 +156,46 @@ $block: ".boss-form"
     &_state_hidden
       display: none
 
+    // $Common form group MOD: l screens hidden
+    &_hidden-l
+      @media screen and(max-width: 1120px)
+        display: none
+
+    // $Common form group MOD: l screens
+    &_visible-l
+      @media screen and(min-width: 1121px)
+        display: none
+
     // $Common form group MOD: desktop visible
-    &_desktop
+    &_desktop,
+    &_hidden-m
       @media screen and (max-width: 960px)
         display: none
 
     // $Common form group MOD: mobile visible
-    &_mobile
+    &_mobile,
+    &_visible-m
       @media screen and (min-width: 961px)
+        display: none
+
+    // $Common form group MOD: s screens hidden
+    &_hidden-s
+      @media screen and(max-width: 640px)
+        display: none
+
+    // $Common form group MOD: s screens
+    &_visible-s
+      @media screen and(min-width: 641px)
+        display: none
+
+    // $Common form group MOD: xs screens hidden
+    &_hidden-xs
+      @media screen and(max-width: 480px)
+        display: none
+
+    // $Common form group MOD: xs screens
+    &_visible-xs
+      @media screen and(min-width: 481px)
         display: none
 
   &__group-title
@@ -236,14 +268,36 @@ $block: ".boss-form"
       align-items: stretch
       margin-bottom: 50px
 
+    // $Common form row MOD: l screens hidden
+    &_hidden-l
+      @media screen and(max-width: 1120px)
+        display: none
+
+    // $Common form row MOD: l screens
+    &_visible-l
+      @media screen and(min-width: 1121px)
+        display: none
+
     // $Common form row MOD: desktop visible
-    &_desktop
+    &_desktop,
+    &_hidden-m
       @media screen and (max-width: 960px)
         display: none
 
     // $Common form row MOD: mobile visible
-    &_mobile
+    &_mobile,
+    &_visible-m
       @media screen and (min-width: 961px)
+        display: none
+
+    // $Common form row MOD: s screens hidden
+    &_hidden-s
+      @media screen and(max-width: 640px)
+        display: none
+
+    // $Common form row MOD: s screens
+    &_visible-s
+      @media screen and(min-width: 641px)
         display: none
 
     // $Common form row MOD: xs screens hidden
@@ -1460,7 +1514,6 @@ $block: ".boss-form"
       @media screen and (max-width: 960px)
         flex-wrap: wrap
 
-
     // $Common form field MOD: size small
     &_size_small
       width: 33%
@@ -1470,6 +1523,10 @@ $block: ".boss-form"
 
       @media screen and (max-width: 960px)
         width: 100%
+
+    &_layout_vertical-s
+      @media screen and (max-width: 640px)
+        flex-direction: column
 
 
   // $Common form switcher radio
@@ -1487,6 +1544,14 @@ $block: ".boss-form"
     justify-content: flex-start
     align-items: stretch
 
+    &:not(:first-child)
+      margin-left: -1px
+
+      @media screen and (max-width: 640px)
+        #{$block}__switcher_layout_vertical-s &
+          margin-left: 0
+          margin-top: -1px
+
     @media screen and (max-width: 960px)
       #{$block}__switcher_role_week &
         width: 24.9%
@@ -1502,9 +1567,8 @@ $block: ".boss-form"
     flex-shrink: 1
     display: block
     width: 100%
-    padding: 13px 30px
+    padding: 13px 20px
     border: 1px solid map-get($boss-app-palette, inactive)
-    border-left: none
     border-radius: 2px
     white-space: nowrap
     text-align: center

@@ -89,6 +89,11 @@ $block: ".boss-timeline"
           top: 30px
           bottom: -50px
 
+    // $Timeline item MOD: state alert
+    &_state_alert
+      &:before
+        background-image: url('../icons/icon-clock-alert.svg')
+
 
   // $Timeline inner container
   &__inner
@@ -97,15 +102,19 @@ $block: ".boss-timeline"
     width: calc(100% - 40px)
     margin-left: 40px
 
+    @media screen and (max-width: 480px)
+      width: calc(100% - 35px)
+      margin-left: 35px
+
     // $Timeline inner container MOD: role card
     &_role_card
       background-color: #FFF
       border-radius: 10px
       box-shadow: 0 5px 15px rgba(0,0,0,.15)
 
-    @media screen and (max-width: 480px)
-      width: calc(100% - 35px)
-      margin-left: 35px
+    // $Timeline inner container MOD: state alert
+    &_state_alert
+      background-color: #feeeee
 
 
   // $Timeline header
