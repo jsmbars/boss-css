@@ -23,30 +23,44 @@ $block: ".boss-page-main"
     min-height: 100vh
     background-color: #fff
 
+  &_adjust_notifications
+    flex-grow: 1
+    flex-shrink: 1
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    overflow: hidden
+
+
   // $Page main container dashboard
   &__dashboard
     display: block
     width: 100%
-    padding: 30px 0 0
+    padding: 25px 40px 0
     background-color: #FFF
 
+    #{$block}_adjust_notifications &
+      flex-grow: 0
+      flex-shrink: 1
+
     @media screen and (max-width: 1280px)
-      padding: 30px 40px 0
+      padding: 25px 40px 0
 
     @media screen and (max-width: 1120px)
-      padding: 30px 35px 0
+      padding: 25px 35px 0
 
     @media screen and (max-width: 960px)
-      padding: 30px 30px 0
+      padding: 25px 30px 0
 
     @media screen and (max-width: 800px)
-      padding: 30px 25px 0
+      padding: 25px 25px 0
 
     @media screen and (max-width: 640px)
-      padding: 30px 20px 0
+      padding: 25px 20px 0
 
     @media screen and (max-width: 480px)
-      padding: 30px 15px 0
+      padding: 20px 15px 0
 
 
   // $Page main container content
@@ -54,9 +68,16 @@ $block: ".boss-page-main"
     position: relative
     display: flex
     flex-direction: column
+    justify-content: flex-start
     align-items: stretch
     width: 100%
-    padding: 25px 0 60px
+    padding: 25px 40px 60px
+
+    #{$block}_adjust_notifications &
+      flex-grow: 1
+      flex-shrink: 1
+      display: block
+      padding: 0
 
     @media screen and (max-width: 1280px)
       padding: 25px 40px 50px
@@ -94,7 +115,7 @@ $block: ".boss-page-main"
 
     // $Page main container content MOD: context stack
     &_context_stack
-      padding: 25px 0
+      padding: 25px 40px
 
       @media screen and (max-width: 1280px)
         padding: 25px 40px
@@ -127,6 +148,22 @@ $block: ".boss-page-main"
 
       @media screen and (max-width: 960px)
         display: flex
+
+
+  &__content-inner
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+
+    #{$block}_adjust_notifications &
+      overflow-y: hidden
+      overflow-x: auto
 
 
   // $Page main container inner
@@ -178,6 +215,43 @@ $block: ".boss-page-main"
 
       @media screen and (max-width: 400px)
         padding: 20px 15px 30px
+
+
+  // $Page main notifications
+  &__notifications
+    display: block
+    height: 100%
+    padding: 25px 40px
+    white-space: nowrap
+
+    @media screen and (max-width: 1280px)
+      padding: 25px 40px
+
+    @media screen and (max-width: 1120px)
+      padding: 25px 35px
+
+    @media screen and (max-width: 960px)
+      padding: 25px 30px
+
+    @media screen and (max-width: 800px)
+      padding: 25px 25px
+
+    @media screen and (max-width: 640px)
+      padding: 25px 20px
+
+    @media screen and (max-width: 480px)
+      padding: 20px 15px
+
+
+  // $Page main notifications column
+  &__notifications-column
+    display: inline-block
+    width: 300px
+    height: 100%
+    vertical-align: top
+
+    &:not(:last-child)
+      margin-right: 20px
 
 
   // $Page main container tabs

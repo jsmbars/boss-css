@@ -18,6 +18,7 @@ $block: ".boss-page-header"
   +box-model-normalizer()
   display: block
   width: 100%
+  padding: 0 40px
   background-color: #FFF
   border-bottom: 1px solid #f0f0f0
 
@@ -39,6 +40,10 @@ $block: ".boss-page-header"
   @media screen and (max-width: 480px)
     padding: 0 15px
 
+  &_adjust_notifications
+    flex-grow: 0
+    flex-shrink: 1
+
 
   // $Page header inner container
   &__inner
@@ -51,6 +56,9 @@ $block: ".boss-page-header"
     max-width: 1200px
     margin: 0 auto
     padding: 10px 0
+
+    #{$block}_adjust_notifications &
+      max-width: 100%
 
     @media screen and (max-width: 480px)
       flex-wrap: wrap
