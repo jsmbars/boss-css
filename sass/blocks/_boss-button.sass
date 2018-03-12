@@ -813,6 +813,14 @@ $block: ".boss-button"
     +button-bordered-active-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color)
     font-weight: 400
 
+  // $Common button MOD: role user light
+  &_role_user-light
+    $primary-color: #4c4c4c
+    +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
+    +button-with-icon-left($icon-url: '../icons/icon-user-dark-gray.svg')
+    +button-bordered-hover-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-hover-url: '../icons/icon-user-white.svg')
+    +button-bordered-active-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-active-url: '../icons/icon-user-white.svg')
+
 
   &__action
     position: absolute
