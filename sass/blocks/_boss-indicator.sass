@@ -15,7 +15,6 @@
 $block: ".boss-indicator"
 
 #{$block}
-  +text-normalizer()
   flex-grow: 0
   flex-shrink: 0
   display: inline-block
@@ -40,6 +39,7 @@ $block: ".boss-indicator"
 
   // $Indicator marker
   &__marker
+    +text-normalizer()
     display: inline-block
     width: 30px
     height: 30px
