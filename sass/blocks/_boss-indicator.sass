@@ -53,6 +53,14 @@ $block: ".boss-indicator"
     color: #fff
     vertical-align: middle
 
+    // $Indicator marker CONTEXT: $Indicator MOD: status success
+    #{$block}_status_success &
+      background-color: map-get($boss-app-palette, secondary)
+
+    // $Indicator marker CONTEXT: $Indicator MOD: status error
+    #{$block}_status_error &
+      background-color: map-get($boss-app-palette, alert)
+
     // $Indicator marker CONTEXT: $Indicator MOD: status collected
     #{$block}_status_collected &
       background-color: map-get($boss-app-palette, secondary)

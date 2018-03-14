@@ -448,6 +448,9 @@ $block: ".boss-report"
     align-items: center
     width: 100%
 
+    &_role_action
+      cursor: pointer
+
 
   // $Report dropdown switch
   &__dropdown-switch
@@ -510,6 +513,9 @@ $block: ".boss-report"
     font-size: 20px
     font-weight: 600
     border-bottom: 1px solid #eee
+
+    @media screen and (max-width: 640px)
+      font-size: 18px
 
     &_role_dropdown-header
       margin-bottom: 0
