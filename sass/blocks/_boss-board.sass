@@ -183,7 +183,8 @@ $block: ".boss-board"
     // $Board title MOD: role staff-type
     &_role_date,
     &_role_venue,
-    &_role_staff-type
+    &_role_staff-type,
+    &_role_errors
 
       &:before
         content: ""
@@ -206,6 +207,10 @@ $block: ".boss-board"
     &_role_staff-type
       &:before
         background-image: url(../icons/icon-user-dark-gray.svg)
+
+    &_role_errors
+      &:before
+        background-image: url(../icons/icon-danger-dark-gray.svg)
 
 
   // $Board title text
@@ -283,6 +288,10 @@ $block: ".boss-board"
       content: ")"
       display: inline-block
       font-weight: normal
+
+
+  &__indicator
+    margin-right: 15px
 
 
   // $Board subtitle
@@ -857,8 +866,12 @@ $block: ".boss-board"
       padding: 0
 
 
+  // $Board group
   // $Board checklist area
-  &__checklist
+  // $Board table area
+  &__group,
+  &__checklist,
+  &__table
     display: block
     width: 100%
     margin-bottom: 10px
@@ -926,17 +939,6 @@ $block: ".boss-board"
     display: block
     width: 100%
     padding: 5px 20px
-
-    @media screen and (max-width: 400px)
-      padding-left: 15px
-      padding-right: 15px
-
-
-  // $Board table area
-  &__table
-    display: block
-    width: 100%
-    padding: 0 20px
 
     @media screen and (max-width: 400px)
       padding-left: 15px

@@ -47,17 +47,78 @@ $block: ".boss-overview"
 
   // $Overview dropdown
   &__dropdown
+    display: block
+    width: 100%
 
     // $Overview dropdown MOD: context stack
     &_context_stack
       margin-bottom: 25px
 
+    // $Overview dropdown MOD: context accordion
+    &_context_accordion:not(:last-child)
+      margin-bottom: 15px
+      padding-bottom: 10px
+      border-bottom: 1px solid $boss-very-light-gray
+
 
   // $Overview dropdown header
   &__dropdown-header
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+
+    #{$block}__dropdown_context_accordion &
+      cursor: pointer
+
     @media screen and (min-width: 961px)
       #{$block}__dropdown_active-mobile &
         display: none
+
+  &__dropdown-title
+    flex-grow: 1
+
+
+  &__dropdown-icon
+    flex-grow: 0
+    flex-shrink: 0
+    position: relative
+    display: inline-block
+    margin-left: 15px
+    border-radius: 50%
+    width: 28px
+    height: 28px
+    vertical-align: middle
+    font-size: 0
+    line-height: 0
+    color: transparent
+    cursor: pointer
+    outline: none
+    transition: .4s
+
+    &:before
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      display: block
+      width: 20px
+      height: 15px
+      background-image: url(../icons/icon-arrow-down-dark-gray.svg)
+      transform: translate(-50%, -50%) rotate(180deg)
+      background-position: center center
+      background-repeat: no-repeat
+      background-size: contain
+      transform-origin: center center
+      transition: all .4s
+
+    // $Report dropdown switch MOD: state closed
+    &_state_closed
+      &:before
+        background-image: url(../icons/icon-arrow-down-dark-gray.svg)
+        transform: translate(-50%, -50%) rotate(0)
 
 
   // $Overview dropdown switch
@@ -125,7 +186,13 @@ $block: ".boss-overview"
 
   // $Overview dropdown content
   &__dropdown-content
+    display: block
+    width: 100%
     padding-top: 15px
+    padding-bottom: 15px
+
+    #{$block}__dropdown_context_accordion:not(:last-child) &
+      padding-bottom: 10px
 
     @media screen and (min-width: 961px)
       #{$block}__dropdown_active-mobile &

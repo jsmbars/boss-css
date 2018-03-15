@@ -28,11 +28,11 @@ $block: ".boss-popover"
   &:before
     content: ''
     position: absolute
-    z-index: 10001
+    z-index: 10002
     left: 50%
     bottom: 100%
     display: block
-    margin-left: -5px
+    margin-left: -10px
     border-bottom: 10px solid #fff
     border-left: 10px solid transparent
     border-right: 10px solid transparent
@@ -40,11 +40,11 @@ $block: ".boss-popover"
   &:after
     content: ''
     position: absolute
-    z-index: 10002
+    z-index: 10001
     left: 50%
     bottom: 100%
     display: block
-    margin-left: -6px
+    margin-left: -11px
     border-bottom: 11px solid $boss-very-light-gray
     border-left: 11px solid transparent
     border-right: 11px solid transparent
@@ -168,6 +168,18 @@ $block: ".boss-popover"
     &:after
       display: none
 
+  &_context_csv-upload-error
+    top: calc(100% + 8px)
+    left: 50%
+    width: 240px
+    transform: translateX(-50%)
+
+    @media screen and (max-width: 960px)
+      left: 0
+      right: 0
+      width: 100%
+      transform: translateX(0)
+
   // $Popover MOD: state opened
   &_state_opened
     display: block
@@ -197,15 +209,15 @@ $block: ".boss-popover"
   // $Popover close button
   &__close
     position: absolute
-    top: 20px
-    right: 20px
+    top: 0px
+    right: 0px
     display: block
-    width: 9px
-    height: 9px
+    width: 32px
+    height: 32px
     background-image: url(../icons/icon-close-alert.svg)
     background-position: center center
     background-repeat: no-repeat
-    background-size: contain
+    background-size: 8px 8px
     cursor: pointer
     font-size: 0
     color: transparent
@@ -264,7 +276,23 @@ $block: ".boss-popover"
   &__text
     +text-normalizer()
     margin: 0
-    margin-bottom: 15px
+
+    &:not(:last-child)
+      margin-bottom: 15px
+
+    &_role_primary
+      font-size: 16px
+
+    &_adjust_wrap
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
+
+
+  // $Popover text marked
+  &__text-marked
+    font-weight: bold
 
 
   // $Popover gallery

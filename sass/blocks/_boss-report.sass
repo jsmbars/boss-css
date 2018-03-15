@@ -448,6 +448,9 @@ $block: ".boss-report"
     align-items: center
     width: 100%
 
+    &_role_action
+      cursor: pointer
+
 
   // $Report dropdown switch
   &__dropdown-switch
@@ -492,7 +495,7 @@ $block: ".boss-report"
   &__dropdown-content
     display: block
     width: 100%
-    padding-top: 15px
+    padding-top: 20px
 
     // $Report dropdown area MOD: state closed
     &_state_closed
@@ -511,15 +514,18 @@ $block: ".boss-report"
     font-weight: 600
     border-bottom: 1px solid #eee
 
+    @media screen and (max-width: 640px)
+      font-size: 18px
+
     &_role_dropdown-header
       margin-bottom: 0
+      border-bottom: none
+      padding-bottom: 0
 
     &_role_readings,
     &_role_calculate,
     &_role_data,
     &_role_errors
-      border-bottom: none
-      padding-bottom: 0
 
       &:before
         content: ""
