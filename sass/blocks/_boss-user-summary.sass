@@ -604,7 +604,7 @@ $block: ".boss-user-summary"
     margin: 0
     padding: 0
 
-    &:not(:last-of-type)
+    &:not(:last-child)
       margin-bottom: 10px
 
     &_type_box,
@@ -705,8 +705,12 @@ $block: ".boss-user-summary"
 
 
   // $User summary controls
-  &__controls
-    margin-bottom: 10px
+  // $User summary actions
+  &__controls,
+  &__actions
+
+    &:not(:last-child)
+      margin-bottom: 10px
 
 
   // $User summary action
@@ -720,3 +724,7 @@ $block: ".boss-user-summary"
 
     #{$block}_state_dismissed:hover &
       opacity: 1
+
+
+  // $User summary footer
+  &__footer
