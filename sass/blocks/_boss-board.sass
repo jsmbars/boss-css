@@ -830,6 +830,12 @@ $block: ".boss-board"
       padding-right: 15px
       border-bottom: 1px solid $boss-very-light-gray
 
+    &_role_security
+      width: 80%
+
+      @media screen and (max-width: 1120px)
+        width: 100%
+
 
   // $Board graph inner
   &__graph-inner
@@ -843,6 +849,19 @@ $block: ".boss-board"
     flex-grow: 1
     flex-shrink: 1
     width: 40%
+    padding-right: 20px
+
+    @media screen and (max-width: 1120px)
+      width: 100%
+      padding-right: 15px
+      padding-left: 15px
+
+
+  // $Board staff count
+  &__staff-count
+    flex-grow: 1
+    flex-shrink: 1
+    width: 20%
     padding-right: 20px
 
     @media screen and (max-width: 1120px)

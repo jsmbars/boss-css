@@ -760,6 +760,15 @@ $block: ".boss-overview"
     &:nth-of-type(even)
       background-color: $boss-extra-light-gray
 
+    &_role_staff-count
+      padding: 5px 15px
+
+      &:not(:last-child)
+        border: none
+
+      &:nth-of-type(even)
+        background-color: transparent
+
     &_role_stats
       padding: 15px
 
@@ -795,3 +804,13 @@ $block: ".boss-overview"
     +text-normalizer()
     font-weight: 600
     text-align: right
+
+
+  // $Overview list name pointer
+  &__list-pointer
+    display: inline-block
+    width: 10px
+    height: 10px
+    margin-right: 5px
+    border-radius: 50%
+    vertical-align: middle

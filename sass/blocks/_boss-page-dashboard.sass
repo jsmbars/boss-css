@@ -241,7 +241,8 @@ $block: ".boss-page-dashboard"
       #{$block}_page_user-profile &,
       #{$block}_page_user-profile-disabled &,
       #{$block}_page_holidays-report &,
-      #{$block}_page_daily-reports &
+      #{$block}_page_daily-reports &,
+      #{$block}_page_rotas-daily-security &
         flex-direction: row
         justify-content: center
         align-items: center
@@ -251,7 +252,8 @@ $block: ".boss-page-dashboard"
         margin-bottom: 0
 
     @media screen and (min-width: 961px)
-      #{$block}_page_rotas-daily &
+      #{$block}_page_rotas-daily &,
+      #{$block}_page_rotas-daily-security &
         display: none
 
     @media screen and (max-width: 640px)
@@ -333,6 +335,7 @@ $block: ".boss-page-dashboard"
         #{$block}_page_fruit-order-form &,
         #{$block}_page_checklist &,
         #{$block}_page_rotas-weekly &,
+        #{$block}_page_security-rota-weekly &,
         #{$block}_page_incident-report-full &,
         #{$block}_page_venues &
           margin-right: 0
