@@ -31,6 +31,11 @@ $block: ".boss-overview"
     #{$block}_page_change-order-history &
       margin-bottom: 20px
 
+    #{$block}_page_security-rota-weekly &
+      min-height: 70px
+      align-items: center
+      border-bottom: 2px solid #000
+
     @media screen and (max-width: 960px)
       flex-direction: column
 
@@ -43,6 +48,16 @@ $block: ".boss-overview"
 
       @media screen and (max-width: 960px)
         flex-direction: column
+
+
+  &__title
+    +text-normalizer()
+
+    #{$block}_page_security-rota-weekly &
+      font-size: 16px
+      font-weight: bold
+      background-color: #FFF
+
 
 
   // $Overview dropdown
