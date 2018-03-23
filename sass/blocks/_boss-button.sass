@@ -446,7 +446,9 @@ $block: ".boss-button"
 
 
   // $Common button MOD: role view orders
-  &_role_view-orders
+  // $Common button MOD: role view assignments
+  &_role_view-orders,
+  &_role_view-assignments
     $background-color: map-get($boss-app-palette, primary)
     +button-common($background-color: $background-color)
     +button-with-icon-left($icon-url: '../icons/icon-text-paper-white.svg')
