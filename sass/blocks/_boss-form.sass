@@ -334,7 +334,8 @@ $block: ".boss-form"
     &_layout_min,
     &_layout_min-half,
     &_layout_min-third,
-    &_layout_fluid
+    &_layout_fluid,
+    &_layout_actual
       flex-grow: 0
       flex-shrink: 1
       margin-right: 30px
@@ -445,6 +446,21 @@ $block: ".boss-form"
         flex-grow: 1
         flex-shrink: 1
         width: 100%
+
+    &_layout_fluid-xs
+      flex-grow: 0
+      flex-shrink: 0
+      width: auto
+
+      @media screen and (max-width: 480px)
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+
+    &_layout_actual
+      flex-grow: 0
+      flex-shrink: 1
+      width: auto
 
     // $Common form field MOD: position last
     &:last-of-type,
