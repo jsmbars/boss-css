@@ -49,6 +49,12 @@ $block: ".boss-board"
       @media screen and (max-width: 960px)
         margin-bottom: 30px
 
+  // $Board MOD: role checklist
+  &_role_checklist
+
+  // $Board MOD: state edit-mode
+  &_state_edit-mode
+
   // $Board MOD: state edit
   &_state_edit
 
@@ -67,9 +73,14 @@ $block: ".boss-board"
     width: 100%
     padding: 20px
 
+    @media screen and (max-width: 960px)
+      #{$block}_state_edit-mode &
+        flex-wrap: wrap
+        overflow: hidden
+
     @media screen and (max-width: 640px)
-      #{$block}_state_edit-mode &,
-      #{$block}_state_edit &
+      #{$block}_state_edit &,
+      #{$block}_role_checklist &
         flex-wrap: wrap
         overflow: hidden
 
@@ -141,12 +152,15 @@ $block: ".boss-board"
     font-weight: 400
     color: $boss-global-font-color
 
+    @media screen and (max-width: 960px)
+      width: calc(100% - 50px)
+
     @media screen and (max-width: 640px)
       #{$block}__header_adjust_rotas-weekly &
         text-align: center
         margin-bottom: 15px
 
-      #{$block}_state_edit-mode &
+      #{$block}_role_checklist &
         width: calc(100% - 50px)
 
     @media screen and (max-width: 400px)
@@ -386,13 +400,21 @@ $block: ".boss-board"
       display: none
 
     &_role_edit
-      position: relative
-      white-space: nowrap
-      display: none
-
-      #{$block}_state_edit-mode &,
       #{$block}_state_edit &
         display: block
+
+    &_role_edit,
+    &_role_actions
+      position: relative
+      white-space: nowrap
+
+      @media screen and (max-width: 960px)
+        #{$block}_state_edit-mode &
+          order: -99
+          width: 100%
+          margin-bottom: 15px
+          padding-bottom: 20px
+          text-align: center
 
       @media screen and (max-width: 640px)
         order: -99
@@ -400,6 +422,9 @@ $block: ".boss-board"
         margin-bottom: 15px
         padding-bottom: 20px
         text-align: center
+
+      @media screen and (max-width: 480px)
+          white-space: normal
 
       &:after
         content: ""
@@ -411,6 +436,10 @@ $block: ".boss-board"
         height: 0
         border-bottom: 1px solid map-get($boss-app-palette, inactive)
 
+        @media screen and (max-width: 960px)
+          #{$block}_state_edit-mode &
+            display: block
+
         @media screen and (max-width: 640px)
           display: block
 
@@ -421,6 +450,21 @@ $block: ".boss-board"
 
     @media screen and (max-width: 960px)
       margin-left: 10px
+
+    @media screen and (max-width: 480px)
+      #{$block}_state_edit-mode &,
+      #{$block}_state_edit &,
+      #{$block}_role_checklist &
+        display: block
+        width: 100%
+        margin-left: 0
+
+    &:not(:last-child)
+      @media screen and (max-width: 480px)
+        #{$block}_state_edit-mode &,
+        #{$block}_state_edit &,
+        #{$block}_role_checklist &
+          margin-bottom: 10px
 
     &_type_fluid
       @media screen and (max-width: 480px)
