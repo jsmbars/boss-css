@@ -340,6 +340,10 @@ $block: ".boss-check"
       cursor: pointer
 
 
+  &__user-summary
+    width: auto
+
+
   &__title,
   &__text
     +text-normalizer()
@@ -921,6 +925,13 @@ $block: ".boss-check"
     &_state_closed
       &:after
         transform: rotate(0)
+
+
+  // $Check block table
+  &__table
+    display: block
+    width: 100%
+    padding: 10px 0
 
 
   // $Check block info

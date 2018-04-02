@@ -59,11 +59,14 @@ $block: ".boss-user-summary"
   &_role_user-profile
     align-items: center
 
+  &_role_card-header-short
+
   // $User summary MOD: role rotas daily
   // $User summary MOD: role review short
   &_role_rotas-daily,
   &_role_review-short,
-  &_role_hours-overview
+  &_role_hours-overview,
+  &_role_card-header-short
     @media screen and (max-width: 960px)
       flex-direction: row
       align-items: flex-start
@@ -112,7 +115,8 @@ $block: ".boss-user-summary"
     // $User summary avatar CONTEXT: $User summary MOD: role rotas daily
     // $User summary avatar CONTEXT: $User summary MOD: role review short
     #{$block}_role_rotas-daily &,
-    #{$block}_role_review-short &
+    #{$block}_role_review-short &,
+    #{$block}_role_card-header-short &
       width: 70px
       height: 70px
 
@@ -276,7 +280,8 @@ $block: ".boss-user-summary"
     #{$block}_role_review-short &,
     #{$block}_role_hours-overview &,
     #{$block}_role_ssr-details &,
-    #{$block}_role_user-profile &
+    #{$block}_role_user-profile &,
+    #{$block}_role_card-header-short &
       padding-left: 20px
 
     // $User summary content CONTEXT: $User summary MOD: role rotas daily tooltip
@@ -302,7 +307,8 @@ $block: ".boss-user-summary"
     @media screen and (max-width: 640px)
       #{$block}_role_rotas-daily &,
       #{$block}_role_review-short &,
-      #{$block}_role_hours-overview &
+      #{$block}_role_hours-overview &,
+      #{$block}_role_card-header-short &
         padding-left: 15px
 
     @media screen and (max-width: 479px)
@@ -342,11 +348,13 @@ $block: ".boss-user-summary"
     #{$block}_role_rotas-daily &,
     #{$block}_role_rotas-daily-tooltip &,
     #{$block}_role_review-short &,
+    #{$block}_role_card-header-short &
       margin-top: 5px
       margin-bottom: 0
       text-align: left
 
     #{$block}_role_review-short &,
+    #{$block}_role_card-header-short &
       margin-bottom: 5px
 
     // $User summary avatar CONTEXT: $User summary MOD: role hours overview
@@ -367,7 +375,8 @@ $block: ".boss-user-summary"
         white-space: normal
 
       #{$block}_role_rotas-daily &,
-      #{$block}_role_review-short &
+      #{$block}_role_review-short &,
+      #{$block}_role_card-header-short &
         margin-top: 0
         text-align: left
 
@@ -407,7 +416,8 @@ $block: ".boss-user-summary"
     // $User summary name CONTEXT: $User summary MOD: role rotas daily
     // $User summary name CONTEXT: $User summary MOD: role review short
     #{$block}_role_rotas-daily &,
-    #{$block}_role_review-short &
+    #{$block}_role_review-short &,
+    #{$block}_role_card-header-short &
       display: block
       margin-bottom: 5px
       margin-right: 0
@@ -456,7 +466,8 @@ $block: ".boss-user-summary"
 
       #{$block}_role_rotas-daily &,
       #{$block}_role_review-short &,
-      #{$block}_role_hours-overview &
+      #{$block}_role_hours-overview &,
+      #{$block}_role_card-header-short &
         text-align: left
 
       #{$block}_role_rotas-daily-tooltip &
@@ -478,7 +489,8 @@ $block: ".boss-user-summary"
     vertical-align: middle
     cursor: default
 
-    #{$block}_role_review-short &
+    #{$block}_role_review-short &,
+    #{$block}_role_card-header-short &
       margin-bottom: 3px
 
 

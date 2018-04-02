@@ -63,7 +63,8 @@ $block: ".boss-table"
   &_page_maintenance-index-card,
   &_page_accessory-requests-card,
   &_page_marketing-index-card,
-  &_page_marketing-managers-index-card
+  &_page_marketing-managers-index-card,
+  &_page_holiday-requests
     background-color: transparent
 
   &_page_invites-index,
@@ -293,7 +294,8 @@ $block: ".boss-table"
     #{$block}_page_accessory-requests-card &,
     #{$block}_page_daily-reports &,
     #{$block}_page_marketing-index-card &,
-    #{$block}_page_marketing-managers-index-card &
+    #{$block}_page_marketing-managers-index-card &,
+    #{$block}_page_holiday-requests &
       background-color: transparent
 
     #{$block}_page_marketing-index-card &,
@@ -348,7 +350,8 @@ $block: ".boss-table"
       #{$block}_page_maintenance-index &,
       #{$block}_page_invites-index &,
       #{$block}_page_accessory-requests-card &,
-      #{$block}_page_holidays-report-details &
+      #{$block}_page_holidays-report-details &,
+      #{$block}_page_holiday-requests &
         padding-top: 15px
         padding-bottom: 15px
 
@@ -420,7 +423,8 @@ $block: ".boss-table"
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_users-index &,
-        #{$block}_page_holidays-report-details &
+        #{$block}_page_holidays-report-details &,
+        #{$block}_page_holiday-requests &
           display: none
 
     &_role_header
@@ -484,7 +488,8 @@ $block: ".boss-table"
 
     #{$block}_page_smp-holidays &,
     #{$block}_page_smp-holiday-requests &,
-    #{$block}_page_holidays-report-details &
+    #{$block}_page_holidays-report-details &,
+    #{$block}_page_holiday-requests &
       min-height: 0
       padding: 15px 10px
 
@@ -554,7 +559,8 @@ $block: ".boss-table"
       #{$block}_page_smp-owed-hours &,
       #{$block}_page_message-board &,
       #{$block}_page_maintenance-index &,
-      #{$block}_page_holidays-report-details &
+      #{$block}_page_holidays-report-details &,
+      #{$block}_page_holiday-requests &
         padding: 10px
 
       #{$block}_page_maintenance-index &,
@@ -694,6 +700,9 @@ $block: ".boss-table"
         padding-left: 10px
         border-right: 1px solid #eee
 
+      #{$block}_page_holiday-requests &
+        width: 15%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -734,7 +743,8 @@ $block: ".boss-table"
         #{$block}_page_users-index &,
         #{$block}_page_accessory-requests-card &,
         #{$block}_page_holidays-report-details &,
-        #{$block}_page_csv-upload &
+        #{$block}_page_csv-upload &,
+        #{$block}_page_holiday-requests &
           width: 100%
           padding-left: 15px
 
@@ -748,7 +758,8 @@ $block: ".boss-table"
         #{$block}_page_fruit-order-history &,
         #{$block}_page_checklist-review &,
         #{$block}_page_vhci &,
-        #{$block}_page_holidays-report-details &
+        #{$block}_page_holidays-report-details &,
+        #{$block}_page_holiday-requests &
           padding-left: 10px
 
 
@@ -904,6 +915,9 @@ $block: ".boss-table"
         width: 12.5%
         border-right: 1px solid #eee
 
+      #{$block}_page_holiday-requests &
+        width: 20%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -936,7 +950,8 @@ $block: ".boss-table"
         #{$block}_page_message-board &,
         #{$block}_page_users-index &,
         #{$block}_page_holidays-report-details &,
-        #{$block}_page_csv-upload &
+        #{$block}_page_csv-upload &,
+        #{$block}_page_holiday-requests &
           width: 100%
 
         #{$block}_page_maintenance-index &
@@ -1084,6 +1099,9 @@ $block: ".boss-table"
         width: 12.5%
         border-right: 1px solid #eee
 
+      #{$block}_page_holiday-requests &
+        width: 20%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1112,7 +1130,8 @@ $block: ".boss-table"
         #{$block}_page_message-board &,
         #{$block}_page_users-index &,
         #{$block}_page_holidays-report-details &,
-        #{$block}_page_csv-upload &
+        #{$block}_page_csv-upload &,
+        #{$block}_page_holiday-requests &
           width: 100%
 
         #{$block}_page_maintenance-index &,
@@ -1242,6 +1261,10 @@ $block: ".boss-table"
         width: 12.5%
         border-right: 1px solid #eee
 
+      #{$block}_page_holiday-requests &
+          justify-content: center
+          width: 20%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1272,7 +1295,8 @@ $block: ".boss-table"
         #{$block}_page_message-board &,
         #{$block}_page_users-index &,
         #{$block}_page_holidays-report-details &,
-        #{$block}_page_csv-upload &
+        #{$block}_page_csv-upload &,
+        #{$block}_page_holiday-requests &
           width: 100%
 
         #{$block}_page_vhci &,
@@ -1373,6 +1397,12 @@ $block: ".boss-table"
         width: 12.5%
         border-right: 1px solid #eee
 
+      #{$block}_page_holiday-requests &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 230px
+        justify-content: center
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1396,7 +1426,8 @@ $block: ".boss-table"
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &,
-        #{$block}_page_csv-upload &
+        #{$block}_page_csv-upload &,
+        #{$block}_page_holiday-requests &
           width: 100%
 
         #{$block}_page_holidays-report &
@@ -1404,7 +1435,8 @@ $block: ".boss-table"
           flex-shrink: 1
 
         #{$block}_page_checklist-review &,
-        #{$block}_page_vouchers-index &
+        #{$block}_page_vouchers-index &,
+        #{$block}_page_holiday-requests &
           padding-right: 10px
 
         #{$block}_page_smp-holidays &,
@@ -1686,7 +1718,8 @@ $block: ".boss-table"
       #{$block}_page_smp-owed-hours &,
       #{$block}_page_message-board &,
       #{$block}_page_holidays-report-details &,
-      #{$block}_page_csv-upload &
+      #{$block}_page_csv-upload &,
+      #{$block}_page_holiday-requests &
         font-size: 14px
         text-transform: none
         font-weight: 600
@@ -1727,7 +1760,8 @@ $block: ".boss-table"
         #{$block}_page_vouchers-index &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &,
-        #{$block}_page_holidays-report-details &
+        #{$block}_page_holidays-report-details &,
+        #{$block}_page_holiday-requests &
           text-align: center
 
       &:nth-child(5)
@@ -1736,7 +1770,8 @@ $block: ".boss-table"
         #{$block}_page_smp-holidays &,
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
-        #{$block}_page_message-board &
+        #{$block}_page_message-board &,
+        #{$block}_page_holiday-requests &
           text-align: center
 
       @media screen and (max-width: 1120px)
@@ -1944,7 +1979,9 @@ $block: ".boss-table"
     #{$block}_page_maintenance-index-card &,
     #{$block}_page_accessory-requests-card &,
     #{$block}_page_holidays-report-details #{$block}__cell:nth-child(4) &,
-    #{$block}_page_venues-index &
+    #{$block}_page_venues-index &,
+    #{$block}_page_holiday-requests #{$block}__cell:nth-child(4) &,
+    #{$block}_page_holiday-requests #{$block}__cell:nth-child(5) &
       text-align: center
 
     #{$block}_page_holidays-report-details &
@@ -1994,7 +2031,9 @@ $block: ".boss-table"
       #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(5) &,
       #{$block}_page_message-board #{$block}__cell:nth-child(4) &,
       #{$block}_page_message-board #{$block}__cell:nth-child(5) &,
-      #{$block}_page_holidays-report-details #{$block}__cell:nth-child(4) &
+      #{$block}_page_holidays-report-details #{$block}__cell:nth-child(4) &,
+      #{$block}_page_holiday-requests #{$block}__cell:nth-child(4) &,
+      #{$block}_page_holiday-requests #{$block}__cell:nth-child(5) &
         text-align: left
 
       #{$block}_page_accessory-requests-card &
@@ -2149,7 +2188,8 @@ $block: ".boss-table"
     #{$block}_page_maintenance-index-card &,
     #{$block}_page_accessory-requests-card &,
     #{$block}_page_marketing-index-card &,
-    #{$block}_page_marketing-managers-index-card &
+    #{$block}_page_marketing-managers-index-card &,
+    #{$block}_page_holiday-requests &
       display: flex
       flex-direction: row
       justify-content: center
@@ -2195,7 +2235,8 @@ $block: ".boss-table"
       #{$block}_page_vouchers-index &,
       #{$block}_page_smp-holidays &,
       #{$block}_page_smp-holiday-requests &,
-      #{$block}_page_message-board &
+      #{$block}_page_message-board &,
+      #{$block}_page_holiday-requests &
         justify-content: flex-start
 
       #{$block}_page_accessory-requests-card &
@@ -2208,7 +2249,8 @@ $block: ".boss-table"
 
       #{$block}_page_smp-holidays &,
       #{$block}_page_smp-holiday-requests &,
-      #{$block}_page_message-board &
+      #{$block}_page_message-board &,
+      #{$block}_page_holiday-requests &
         flex-direction: column
         align-items: flex-start
 
@@ -2225,6 +2267,7 @@ $block: ".boss-table"
     #{$block}_page_smp-holidays &:not(:last-of-type),
     #{$block}_page_smp-holiday-requests &:not(:last-of-type),
     #{$block}_page_message-board &:not(:last-of-type),
+    #{$block}_page_holiday-requests &:not(:last-of-type)
       margin-right: 10px
 
     #{$block}_page_fruit-order-history &:not(:last-of-type)
@@ -2250,7 +2293,8 @@ $block: ".boss-table"
     @media screen and (max-width: 640px)
       #{$block}_page_smp-holidays &:not(:last-of-type),
       #{$block}_page_smp-holiday-requests &:not(:last-of-type),
-      #{$block}_page_message-board &:not(:last-of-type)
+      #{$block}_page_message-board &:not(:last-of-type),
+      #{$block}_page_holiday-requests &:not(:last-of-type)
         margin-right: 0
         margin-bottom: 10px
 
