@@ -76,6 +76,7 @@ $block: ".boss-table"
   &_page_vouchers-index,
   &_page_voucher-usage,
   &_page_smp-holidays,
+  &_page_smp-holiday-requests,
   &_page_smp-owed-hours,
   &_page_message-board,
   &_page_users-index,
@@ -341,6 +342,7 @@ $block: ".boss-table"
       #{$block}_page_vhci &,
       #{$block}_page_vouchers-index &,
       #{$block}_page_smp-holidays &,
+      #{$block}_page_smp-holiday-requests &,
       #{$block}_page_smp-owed-hours &,
       #{$block}_page_message-board &,
       #{$block}_page_maintenance-index &,
@@ -415,6 +417,7 @@ $block: ".boss-table"
         #{$block}_page_vouchers-index &,
         #{$block}_page_voucher-usage &,
         #{$block}_page_smp-holidays &,
+        #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_users-index &,
         #{$block}_page_holidays-report-details &
@@ -480,6 +483,7 @@ $block: ".boss-table"
       justify-content: center
 
     #{$block}_page_smp-holidays &,
+    #{$block}_page_smp-holiday-requests &,
     #{$block}_page_holidays-report-details &
       min-height: 0
       padding: 15px 10px
@@ -546,6 +550,7 @@ $block: ".boss-table"
         padding-right: 0
 
       #{$block}_page_smp-holidays &,
+      #{$block}_page_smp-holiday-requests &,
       #{$block}_page_smp-owed-hours &,
       #{$block}_page_message-board &,
       #{$block}_page_maintenance-index &,
@@ -621,8 +626,12 @@ $block: ".boss-table"
         padding-left: 40px
 
       #{$block}_page_smp-holidays &
-        width: 18%
-        padding-left: 40px
+        width: 17%
+        padding-left: 30px
+
+      #{$block}_page_smp-holiday-requests &
+        width: 14%
+        padding-left: 30px
 
       #{$block}_page_smp-owed-hours &
         width: 15%
@@ -719,6 +728,7 @@ $block: ".boss-table"
         #{$block}_page_vouchers-index &,
         #{$block}_page_voucher-usage &,
         #{$block}_page_smp-holidays &,
+        #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &,
         #{$block}_page_users-index &,
@@ -841,7 +851,11 @@ $block: ".boss-table"
         width: 35%
 
       #{$block}_page_smp-holidays &
-        width: 21%
+        width: 20%
+
+      #{$block}_page_smp-holiday-requests &
+        width: 13%
+        justify-content: center
 
       #{$block}_page_smp-owed-hours &
         width: 13%
@@ -917,6 +931,7 @@ $block: ".boss-table"
         #{$block}_page_vouchers-index &,
         #{$block}_page_voucher-usage &,
         #{$block}_page_smp-holidays &,
+        #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &,
         #{$block}_page_users-index &,
@@ -1022,6 +1037,9 @@ $block: ".boss-table"
       #{$block}_page_smp-holidays &
         width: 20%
 
+      #{$block}_page_smp-holiday-requests &
+        width: 15%
+
       #{$block}_page_smp-owed-hours &
         width: 10%
         justify-content: center
@@ -1089,6 +1107,7 @@ $block: ".boss-table"
         #{$block}_page_vouchers-index &,
         #{$block}_page_voucher-usage &,
         #{$block}_page_smp-holidays &,
+        #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &,
         #{$block}_page_users-index &,
@@ -1171,8 +1190,11 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_smp-holidays &
-        width: 21%
+        width: 20%
         justify-content: center
+
+      #{$block}_page_smp-holiday-requests &
+        width: 20%
 
       #{$block}_page_smp-owed-hours &
         width: 10%
@@ -1245,6 +1267,7 @@ $block: ".boss-table"
         #{$block}_page_vhci &,
         #{$block}_page_vouchers-index &,
         #{$block}_page_smp-holidays &,
+        #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &,
         #{$block}_page_users-index &,
@@ -1307,8 +1330,12 @@ $block: ".boss-table"
       #{$block}_page_smp-holidays &
         flex-grow: 0
         flex-shrink: 0
-        width: 220px
-        padding-right: 25px
+        width: 230px
+        padding-right: 30px
+        justify-content: center
+
+      #{$block}_page_smp-holiday-requests &
+        width: 15%
         justify-content: center
 
       #{$block}_page_smp-owed-hours &
@@ -1366,6 +1393,7 @@ $block: ".boss-table"
         #{$block}_page_checklist-review &,
         #{$block}_page_vouchers-index &,
         #{$block}_page_smp-holidays &,
+        #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &,
         #{$block}_page_csv-upload &
@@ -1402,6 +1430,13 @@ $block: ".boss-table"
 
       #{$block}_page_safe-checks-index &
         width: 12%
+
+      #{$block}_page_smp-holiday-requests &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 230px
+        padding-right: 30px
+        justify-content: center
 
       #{$block}_page_smp-owed-hours &
         width: 25%
@@ -1451,6 +1486,7 @@ $block: ".boss-table"
       @media screen and (max-width: 960px)
         width: 100%
 
+        #{$block}_page_smp-holiday-requests &,
         #{$block}_page_staff-members-index &,
         #{$block}_page_change-order-report &,
         #{$block}_page_change-order-history &,
@@ -1646,6 +1682,7 @@ $block: ".boss-table"
         text-align: center
 
       #{$block}_page_smp-holidays &,
+      #{$block}_page_smp-holiday-requests &,
       #{$block}_page_smp-owed-hours &,
       #{$block}_page_message-board &,
       #{$block}_page_holidays-report-details &,
@@ -1670,6 +1707,9 @@ $block: ".boss-table"
           text-align: left
 
       &:nth-child(2)
+        #{$block}_page_smp-holiday-requests &
+          text-align: center
+
         #{$block}_page_safe-checks-index &
           padding: 15px
           border-right: none
@@ -1694,6 +1734,7 @@ $block: ".boss-table"
         #{$block}_page_checklist-review &,
         #{$block}_page_vouchers-index &,
         #{$block}_page_smp-holidays &,
+        #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &
           text-align: center
@@ -1892,6 +1933,9 @@ $block: ".boss-table"
     #{$block}_page_vouchers-index #{$block}__cell:nth-child(5) &,
     #{$block}_page_smp-holidays #{$block}__cell:nth-child(4) &,
     #{$block}_page_smp-holidays #{$block}__cell:nth-child(5) &,
+    #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(2) &,
+    #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(5) &,
+    #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(6) &,
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(3) &,
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(4) &,
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(5) &,
@@ -1942,6 +1986,9 @@ $block: ".boss-table"
       #{$block}_page_vouchers-index #{$block}__cell:nth-child(5) &,
       #{$block}_page_smp-holidays #{$block}__cell:nth-child(4) &,
       #{$block}_page_smp-holidays #{$block}__cell:nth-child(5) &,
+      #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(2) &,
+      #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(5) &,
+      #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(6) &,
       #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(3) &,
       #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(4) &,
       #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(5) &,
@@ -2032,18 +2079,24 @@ $block: ".boss-table"
       word-break: break-word
       hyphens: auto
 
-    &_role_success-status
-      margin-bottom: 10px
-      color: #86dd75
+    &_role_success-status,
+    &_role_alert-status,
+    &_role_pending-status
       text-transform: uppercase
       font-weight: 600
       hyphens: auto
 
+      &:not(:last-child)
+        margin-bottom: 10px
+
+    &_role_success-status
+      color: #86dd75
+
     &_role_alert-status
-      margin-bottom: 10px
       color: #ed7f7e
-      text-transform: uppercase
-      font-weight: 600
+
+    &_role_pending-status
+      color: #808080
 
   &__text-line,
   &__text-meta
@@ -2102,6 +2155,12 @@ $block: ".boss-table"
       justify-content: center
       align-items: center
 
+    #{$block}_page_smp-holiday-requests &
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
+      align-items: center
+
     #{$block}_page_venues-index &
       text-align: center
 
@@ -2135,6 +2194,7 @@ $block: ".boss-table"
       #{$block}_page_checklist-review &,
       #{$block}_page_vouchers-index &,
       #{$block}_page_smp-holidays &,
+      #{$block}_page_smp-holiday-requests &,
       #{$block}_page_message-board &
         justify-content: flex-start
 
@@ -2147,6 +2207,7 @@ $block: ".boss-table"
         width: 60%
 
       #{$block}_page_smp-holidays &,
+      #{$block}_page_smp-holiday-requests &,
       #{$block}_page_message-board &
         flex-direction: column
         align-items: flex-start
@@ -2162,6 +2223,7 @@ $block: ".boss-table"
   // $Common table action
   &__action
     #{$block}_page_smp-holidays &:not(:last-of-type),
+    #{$block}_page_smp-holiday-requests &:not(:last-of-type),
     #{$block}_page_message-board &:not(:last-of-type),
       margin-right: 10px
 
@@ -2187,6 +2249,7 @@ $block: ".boss-table"
 
     @media screen and (max-width: 640px)
       #{$block}_page_smp-holidays &:not(:last-of-type),
+      #{$block}_page_smp-holiday-requests &:not(:last-of-type),
       #{$block}_page_message-board &:not(:last-of-type)
         margin-right: 0
         margin-bottom: 10px
