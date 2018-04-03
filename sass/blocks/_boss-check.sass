@@ -55,6 +55,7 @@ $block: ".boss-check"
   &_page_vouchers-index,
   &_page_voucher-usage,
   &_page_smp-holidays,
+  &_page_smp-holiday-requests,
   &_page_smp-owed-hours,
   &_page_message-board,
   &_page_users-index,
@@ -337,6 +338,10 @@ $block: ".boss-check"
     // $Check block box MOD: role clickable action
     &_role_action
       cursor: pointer
+
+
+  &__user-summary
+    width: auto
 
 
   &__title,
@@ -629,6 +634,22 @@ $block: ".boss-check"
     cursor: pointer
 
 
+  &__status
+    +text-normalizer()
+    font-size: 18px
+    text-transform: uppercase
+    text-align: center
+
+    &_role_success
+      color: #86dd75
+
+    &_role_alert
+      color: #ed7f7e
+
+    &_role_pending
+      color: #808080
+
+
   // $Check block link
   &__link
     +text-normalizer()
@@ -906,6 +927,13 @@ $block: ".boss-check"
         transform: rotate(0)
 
 
+  // $Check block table
+  &__table
+    display: block
+    width: 100%
+    padding: 10px 0
+
+
   // $Check block info
   &__info
     display: block
@@ -1016,7 +1044,7 @@ $block: ".boss-check"
   // $Check block action
   &__action
     flex-grow: 1
-    width: 50%
+    flex-basis: 50%
     padding: 15px
     border-radius: 0
     text-align: center
