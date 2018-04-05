@@ -15,10 +15,12 @@
 
 
 =button-common-hover-behavior($background-color, $amount: 3%)
+  &:hover,
+  &:focus
+    color: #FFF
 
   &:not(.boss-button_type_no-behavior):hover,
   &:not(.boss-button_type_no-behavior):focus
-    color: #FFF
     background-color: lighten($background-color, $amount)
 
 =button-bordered($color: '#4c4c4c', $border-color: '#4c4c4c', $background-color: '#fff')
@@ -229,7 +231,8 @@ $block: ".boss-button"
   // $Common button MOD: role primary
   // $Common button MOD: role submit
   &_role_primary,
-  &_role_submit
+  &_role_submit,
+  &_role_aasigned
     $background-color: map-get($boss-app-palette, primary)
     +button-common($background-color: $background-color)
     +button-common-hover-behavior($background-color: $background-color)
@@ -244,7 +247,8 @@ $block: ".boss-button"
   &_role_file,
   &_role_back,
   &_role_enabled,
-  &_role_ok
+  &_role_ok,
+  &_role_accepted
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover-behavior($background-color: $background-color)
@@ -253,7 +257,8 @@ $block: ".boss-button"
   // $Common button MOD: role alert
   // $Common button MOD: role disabled
   &_role_alert,
-  &_role_disabled
+  &_role_disabled,
+  &_role_rejected
     $background-color: map-get($boss-app-palette, alert)
     +button-common($background-color: $background-color)
     +button-common-hover-behavior($background-color: $background-color)
