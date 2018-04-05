@@ -57,7 +57,9 @@ $block: ".boss-table"
   &_page_users-index,
   &_page_venues-index,
   &_page_daily-reports,
-  &_page_csv-upload
+  &_page_csv-upload,
+  &_page_dsr-pending,
+  &_page_dsr-completed
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -393,17 +395,14 @@ $block: ".boss-table"
       #{$block}_page_vouchers-index &,
       #{$block}_page_voucher-usage &,
       #{$block}_page_invites-index &,
-      #{$block}_page_users-index &
+      #{$block}_page_users-index &,
+      #{$block}_page_dsr-pending &,
+      #{$block}_page_dsr-completed &
         background-color: #fbfbfb
 
     &:nth-child(even)
       #{$block}_page_weekly-reports &
         background-color: #fbfbfb
-
-      @media screen and (max-width: 960px)
-        #{$block}_page_dsr-pending &,
-        #{$block}_page_dsr-completed &
-          background-color: #fbfbfb
 
     // $Common table first row
     &:nth-child(1),
@@ -412,7 +411,9 @@ $block: ".boss-table"
       #{$block}_page_change-order-history &
         background-color: $boss-dark-gray
 
-      #{$block}_page_change-order-report &
+      #{$block}_page_change-order-report &,
+      #{$block}_page_dsr-pending &,
+      #{$block}_page_dsr-completed &
         background-color: #FFF
 
       #{$block}_page_smp-owed-hours &
