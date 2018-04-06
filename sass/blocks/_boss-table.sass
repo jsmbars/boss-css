@@ -355,7 +355,9 @@ $block: ".boss-table"
       #{$block}_page_holidays-report-details &,
       #{$block}_page_holiday-requests &,
       #{$block}_page_dsr-pending &,
-      #{$block}_page_dsr-completed &
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-pending &,
+      #{$block}_page_dsr-admin-completed &
         padding-top: 15px
         padding-bottom: 15px
 
@@ -397,7 +399,9 @@ $block: ".boss-table"
       #{$block}_page_invites-index &,
       #{$block}_page_users-index &,
       #{$block}_page_dsr-pending &,
-      #{$block}_page_dsr-completed &
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-pending &,
+      #{$block}_page_dsr-admin-completed &
         background-color: #fbfbfb
 
     &:nth-child(even)
@@ -413,7 +417,9 @@ $block: ".boss-table"
 
       #{$block}_page_change-order-report &,
       #{$block}_page_dsr-pending &,
-      #{$block}_page_dsr-completed &
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-pending &,
+      #{$block}_page_dsr-admin-completed &
         background-color: #FFF
 
       #{$block}_page_smp-owed-hours &
@@ -441,7 +447,9 @@ $block: ".boss-table"
         #{$block}_page_holidays-report-details &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_dsr-pending &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-pending &,
+        #{$block}_page_dsr-admin-completed &
           display: none
 
     &_role_header
@@ -523,7 +531,9 @@ $block: ".boss-table"
     #{$block}_page_daily-reports &,
     #{$block}_page_csv-upload &,
     #{$block}_page_dsr-pending &,
-    #{$block}_page_dsr-completed &
+    #{$block}_page_dsr-completed &,
+    #{$block}_page_dsr-admin-pending &,
+    #{$block}_page_dsr-admin-completed &
       padding: 15px 10px
 
     #{$block}_page_marketing-index-card &,
@@ -584,7 +594,9 @@ $block: ".boss-table"
       #{$block}_page_holidays-report-details &,
       #{$block}_page_holiday-requests &,
       #{$block}_page_dsr-pending &,
-      #{$block}_page_dsr-completed &
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-pending &,
+      #{$block}_page_dsr-admin-completed &
         padding: 10px
 
       #{$block}_page_maintenance-index &,
@@ -608,6 +620,20 @@ $block: ".boss-table"
 
       @media screen and (max-width: 960px)
         padding-right: 15px
+
+    &:not(:last-child)
+      #{$block}_page_dsr-pending &,
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-pending &,
+      #{$block}_page_dsr-admin-completed &
+        border-right: 1px solid #eee
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_dsr-pending &,
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-pending &,
+        #{$block}_page_dsr-admin-completed &
+          border-right: none
 
 
     // $Common table cell first column
@@ -728,10 +754,16 @@ $block: ".boss-table"
         width: 15%
 
       #{$block}_page_dsr-pending &
-        width: 25%
+        width: 20%
 
       #{$block}_page_dsr-completed &
-        width: 25%
+        width: 20%
+
+      #{$block}_page_dsr-admin-pending &
+        width: 20%
+
+      #{$block}_page_dsr-admin-completed &
+        width: 20%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
@@ -776,7 +808,9 @@ $block: ".boss-table"
         #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_dsr-pending &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-pending &,
+        #{$block}_page_dsr-admin-completed &
           width: 100%
           padding-left: 15px
 
@@ -790,7 +824,9 @@ $block: ".boss-table"
         #{$block}_page_holidays-report-details &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_dsr-pending &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-pending &,
+        #{$block}_page_dsr-admin-completed &
           padding-left: 10px
 
         #{$block}_page_staff-members-index &
@@ -952,10 +988,16 @@ $block: ".boss-table"
         width: 20%
 
       #{$block}_page_dsr-pending &
-        width: 10%
+        width: 15%
 
       #{$block}_page_dsr-completed &
-        width: 10%
+        width: 15%
+
+      #{$block}_page_dsr-admin-pending &
+        width: 15%
+
+      #{$block}_page_dsr-admin-completed &
+        width: 15%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
@@ -994,7 +1036,9 @@ $block: ".boss-table"
         #{$block}_page_dsr-pending &,
         #{$block}_page_dsr-completed &,
         #{$block}_page_dsr-pending &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-pending &,
+        #{$block}_page_dsr-admin-completed &
           width: 100%
 
         #{$block}_page_maintenance-index &
@@ -1151,6 +1195,12 @@ $block: ".boss-table"
       #{$block}_page_dsr-completed &
         width: 35%
 
+      #{$block}_page_dsr-admin-pending &
+        width: 35%
+
+      #{$block}_page_dsr-admin-completed &
+        width: 35%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1182,7 +1232,9 @@ $block: ".boss-table"
         #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_dsr-pending &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-pending &,
+        #{$block}_page_dsr-admin-completed &
           width: 100%
 
         #{$block}_page_maintenance-index &,
@@ -1317,14 +1369,25 @@ $block: ".boss-table"
         width: 20%
 
       #{$block}_page_dsr-pending &
-        flex-grow: 0
-        flex-shrink: 0
-        width: 150px
+        width: 15%
+        min-width: 160px
         padding-right: 25px
         justify-content: center
 
       #{$block}_page_dsr-completed &
         width: 15%
+        min-width: 160px
+        justify-content: center
+
+      #{$block}_page_dsr-admin-pending &
+        width: 30%
+        min-width: 320px
+        padding-right: 25px
+        justify-content: center
+
+      #{$block}_page_dsr-admin-completed &
+        width: 15%
+        min-width: 160px
         justify-content: center
 
 
@@ -1361,19 +1424,27 @@ $block: ".boss-table"
         #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_dsr-pending &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-pending &,
+        #{$block}_page_dsr-admin-completed &
           width: 100%
+
+        #{$block}_page_dsr-pending &,
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-pending &
+        #{$block}_page_dsr-admin-completed &
+          min-width: 0
 
         #{$block}_page_vhci &,
         #{$block}_page_users-index &,
-        #{$block}_page_dsr-pending &
+        #{$block}_page_dsr-pending &,
+        #{$block}_page_dsr-admin-pending &
           padding-right: 10px
 
         #{$block}_page_fruit-order-history &
           padding-right: 0
 
-        #{$block}_page_message-board &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_message-board &
           flex-grow: 1
           flex-shrink: 1
 
@@ -1471,9 +1542,14 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_dsr-completed &
-        flex-grow: 0
-        flex-shrink: 0
-        width: 150px
+        width: 15%
+        min-width: 160px
+        padding-right: 25px
+        justify-content: center
+
+      #{$block}_page_dsr-admin-completed &
+        width: 15%
+        min-width: 160px
         padding-right: 25px
         justify-content: center
 
@@ -1502,22 +1578,25 @@ $block: ".boss-table"
         #{$block}_page_message-board &,
         #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-completed &
           width: 100%
 
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-completed &
+          min-width: 0
 
         #{$block}_page_smp-holidays &,
         #{$block}_page_message-board &,
-        #{$block}_page_holidays-report &,
-        #{$block}_page_holiday-requests &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_holidays-report &
           flex-grow: 1
           flex-shrink: 1
 
         #{$block}_page_checklist-review &,
         #{$block}_page_vouchers-index &,
         #{$block}_page_holiday-requests &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-completed &
           padding-right: 10px
 
         #{$block}_page_maintenance-index &,
@@ -1797,7 +1876,9 @@ $block: ".boss-table"
       #{$block}_page_csv-upload &,
       #{$block}_page_holiday-requests &,
       #{$block}_page_dsr-pending &,
-      #{$block}_page_dsr-completed &
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-pending &,
+      #{$block}_page_dsr-admin-completed &
         font-size: 14px
         text-transform: none
         font-weight: 600
@@ -1841,7 +1922,9 @@ $block: ".boss-table"
         #{$block}_page_holidays-report-details &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_dsr-pending &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-pending &,
+        #{$block}_page_dsr-admin-completed &
           text-align: center
 
       &:nth-child(5)
@@ -1852,7 +1935,8 @@ $block: ".boss-table"
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &,
         #{$block}_page_holiday-requests &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-admin-completed &
           text-align: center
 
       @media screen and (max-width: 1120px)
@@ -1903,7 +1987,9 @@ $block: ".boss-table"
       align-items: center
 
       #{$block}_page_dsr-pending &,
-      #{$block}_page_dsr-completed &
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-pending &,
+      #{$block}_page_dsr-admin-completed &
         align-items: flex-start
 
       #{$block}_page_accessory-requests-card &
@@ -2012,7 +2098,9 @@ $block: ".boss-table"
 
       #{$block}_page_holidays-report &,
       #{$block}_page_dsr-pending &,
-      #{$block}_page_dsr-completed &
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-pending &,
+      #{$block}_page_dsr-admin-completed &
         width: 50%
         padding-right: 10px
 
@@ -2034,11 +2122,28 @@ $block: ".boss-table"
       color: #FFF
 
 
+  &__info-group
+    width: 100%
+
+    @media screen and (max-width: 960px)
+      flex-grow: 1
+      flex-shrink: 0
+      width: 50%
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-completed &
+        padding-left: 10px
+
+
   // $Common table text
   &__text
     +text-normalizer()
     max-width: 100%
     vertical-align: middle
+
+    &:not(:last-child)
+      margin-bottom: 10px
 
     #{$block}_page_holidays-report &
       color: $boss-medium-gray
@@ -2073,7 +2178,9 @@ $block: ".boss-table"
     #{$block}_page_holiday-requests #{$block}__cell:nth-child(5) &,
     #{$block}_page_dsr-pending #{$block}__cell:nth-child(4) &,
     #{$block}_page_dsr-completed #{$block}__cell:nth-child(4) &,
-    #{$block}_page_dsr-completed #{$block}__cell:nth-child(5) &
+    #{$block}_page_dsr-completed #{$block}__cell:nth-child(5) &,
+    #{$block}_page_dsr-admin-completed #{$block}__cell:nth-child(4) &,
+    #{$block}_page_dsr-admin-completed #{$block}__cell:nth-child(5) &
       text-align: center
 
     #{$block}_page_holidays-report-details &
@@ -2128,11 +2235,19 @@ $block: ".boss-table"
       #{$block}_page_holiday-requests #{$block}__cell:nth-child(5) &,
       #{$block}_page_dsr-pending #{$block}__cell:nth-child(4) &,
       #{$block}_page_dsr-completed #{$block}__cell:nth-child(4) &,
-      #{$block}_page_dsr-completed #{$block}__cell:nth-child(5) &
+      #{$block}_page_dsr-completed #{$block}__cell:nth-child(5) &,
+      #{$block}_page_dsr-admin-completed #{$block}__cell:nth-child(4) &,
+      #{$block}_page_dsr-admin-completed #{$block}__cell:nth-child(5) &
         text-align: left
 
       #{$block}_page_accessory-requests-card &
         width: 100%
+
+      #{$block}_page_dsr-completed #{$block}__cell:nth-child(4) &,
+      #{$block}_page_dsr-admin-completed #{$block}__cell:nth-child(4) &,
+      #{$block}_page_dsr-admin-completed #{$block}__cell:nth-child(5) &
+        width: 100%
+        padding-left: 0
 
     @media screen and (max-width: 640px)
       #{$block}_page_fruit-order-history &
@@ -2144,7 +2259,9 @@ $block: ".boss-table"
     @media screen and (max-width: 480px)
       #{$block}_page_holidays-report &,
       #{$block}_page_dsr-pending &,
-      #{$block}_page_dsr-completed &
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-pending &,
+      #{$block}_page_dsr-admin-completed &
         padding-left: 10px
         width: 50%
 
@@ -2217,22 +2334,23 @@ $block: ".boss-table"
 
     &_role_success-status,
     &_role_alert-status,
-    &_role_pending-status
+    &_role_pending-status,
+    &_role_status
       text-transform: uppercase
       font-weight: 600
       hyphens: auto
 
-      &:not(:last-child)
-        margin-bottom: 10px
+    &_role_status
+      color: map-get($boss-app-palette, primary)
 
     &_role_success-status
-      color: #86dd75
+      color: map-get($boss-app-palette, secondary)
 
     &_role_alert-status
-      color: #ed7f7e
+      color: map-get($boss-app-palette, alert)
 
     &_role_pending-status
-      color: #808080
+      color: map-get($boss-app-palette, pending)
 
   &__text-line,
   &__text-meta
@@ -2240,9 +2358,6 @@ $block: ".boss-table"
 
 
   &__text-line
-    &_adjust_button
-      &:not(:first-child)
-      margin-top: 5px
 
 
   &__text-meta
@@ -2274,6 +2389,10 @@ $block: ".boss-table"
     #{$block}_page_holidays-report &
       text-align: right
 
+    #{$block}_page_dsr-completed &,
+    #{$block}_page_dsr-admin-completed &
+      text-align: center
+
     #{$block}_page_change-order-report &,
     #{$block}_page_smp-owed-hours &,
     #{$block}_page_maintenance-managers-index #{$block}__cell:nth-child(6) &
@@ -2292,7 +2411,8 @@ $block: ".boss-table"
     #{$block}_page_accessory-requests-card &,
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &,
-    #{$block}_page_holiday-requests &
+    #{$block}_page_holiday-requests &,
+    #{$block}_page_dsr-admin-pending &
       display: flex
       flex-direction: row
       justify-content: center
@@ -2324,6 +2444,10 @@ $block: ".boss-table"
       flex-shrink: 0
       width: 50%
 
+      #{$block}_page_dsr-completed &,
+      #{$block}_page_dsr-admin-completed &
+        text-align: left
+
       #{$block}_page_holidays-report &
         flex-grow: 0
         width: auto
@@ -2345,6 +2469,10 @@ $block: ".boss-table"
       #{$block}_page_accessory-requests-card &
         width: 100%
 
+      #{$block}_page_dsr-admin-pending &
+        flex-direction: column
+        align-items: flex-start
+
 
     @media screen and (max-width: 640px)
       #{$block}_page_fruit-order-history &
@@ -2364,13 +2492,17 @@ $block: ".boss-table"
       #{$block}_page_marketing-managers-index-card &
         flex-direction: column
 
+      #{$block}_page_dsr-admin-pending &
+        padding-left: 10px
+
 
   // $Common table action
   &__action
     #{$block}_page_smp-holidays &:not(:last-of-type),
     #{$block}_page_smp-holiday-requests &:not(:last-of-type),
     #{$block}_page_message-board &:not(:last-of-type),
-    #{$block}_page_holiday-requests &:not(:last-of-type)
+    #{$block}_page_holiday-requests &:not(:last-of-type),
+    #{$block}_page_dsr-admin-pending &:not(:last-of-type)
       margin-right: 10px
 
     #{$block}_page_fruit-order-history &:not(:last-of-type)
@@ -2392,6 +2524,10 @@ $block: ".boss-table"
       #{$block}_page_smp-owed-hours &:not(:last-of-type)
         margin-bottom: 0
         margin-right: 10px
+
+      #{$block}_page_dsr-admin-pending &:not(:last-of-type)
+        margin-right: 0
+        margin-bottom: 10px
 
     @media screen and (max-width: 640px)
       #{$block}_page_smp-holidays &:not(:last-of-type),
