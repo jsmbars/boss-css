@@ -419,7 +419,8 @@ $block: ".boss-page-dashboard"
     &_role_voucher,
     &_role_venue,
     &_role_user,
-    &_role_date
+    &_role_date,
+    &_role_time
       &:before
         content: ""
         display: inline-block
@@ -455,6 +456,10 @@ $block: ".boss-page-dashboard"
     &_role_date#{&}_type_faded
       &:before
         background-image: url(../icons/icon-calendar-medium-gray.svg)
+
+    &_role_time
+      &:before
+        background-image: url(../icons/icon-clock-dark-gray.svg)
 
     &_role_popover
       cursor: pointer

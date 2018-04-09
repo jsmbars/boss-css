@@ -623,7 +623,8 @@ $block: ".boss-modal-window"
     // $Modal window message block CONTEXT: $Modal window MOD: role danger
     // $Modal window message block CONTEXT: $Modal window MOD: role warning
     #{$block}_role_danger &,
-    #{$block}_role_warning &
+    #{$block}_role_warning &,
+    #{$block}_role_action &
       margin-bottom: 30px
 
     // $Modal window message block CONTEXT: $Modal window MOD: role note
@@ -643,12 +644,16 @@ $block: ".boss-modal-window"
       margin-bottom: 1.7em
 
 
+  &__message-group
+    margin-bottom: 20px
+
+
   // $Modal window message text
   &__message-text
     display: block
     text-align: center
     color: $boss-medium-gray
-    font-size: 1.2rem
+    font-size: 18px
 
     // $Modal window message text CONTEXT: $Modal window MOD: role note
     #{$block}_role_note &
