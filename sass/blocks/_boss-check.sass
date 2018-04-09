@@ -81,7 +81,8 @@ $block: ".boss-check"
     border-bottom: 1px solid #eee
 
     #{$block}_page_marketing-index &,
-    #{$block}_page_ops-diary-index &
+    #{$block}_page_ops-diary-index &,
+    #{$block}_page_dsr-requests &
       min-height: 0
       padding: 15px 15px 10px
 
@@ -96,7 +97,8 @@ $block: ".boss-check"
 
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &,
-      #{$block}_page_ops-diary-index &
+      #{$block}_page_ops-diary-index &,
+      #{$block}_page_dsr-requests &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
@@ -136,6 +138,13 @@ $block: ".boss-check"
     @media screen and (max-width: 640px)
       width: 100%
       margin-top: 10px
+
+      #{$block}_page_dsr-requests &
+        margin-top: 0
+        margin-bottom: 10px
+        padding-bottom: 10px
+        text-align: center
+        border-bottom: 1px solid #eee
 
 
   // $Check block header meta
@@ -201,6 +210,44 @@ $block: ".boss-check"
   &__header-actions
     flex-grow: 0
     flex-shrink: 0
+
+    #{$block}_page_dsr-requests &
+      display: flex
+      flex-direction: row
+      justify-content: flex-start
+      align-items: center
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_dsr-requests &
+        flex-direction: column
+        align-items: stretch
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_dsr-requests &
+        flex-grow: 1
+        flex-shrink: 1
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        width: 100%
+
+
+  // $Check block header action
+  &__header-action
+    #{$block}_page_dsr-requests &
+
+    &:not(:first-child)
+      margin-left: 15px
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_dsr-requests &
+          margin-left: 0
+          margin-top: 10px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_dsr-requests &
+          margin-left: 15px
+          margin-top: 0
 
 
   // $Check block group
@@ -517,7 +564,8 @@ $block: ".boss-check"
       cursor: pointer
 
     // $Check block title status
-  &__title-status
+  &__title-status,
+  &__title-type
     font-weight: 400
     color: #808080
 

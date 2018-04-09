@@ -66,7 +66,8 @@ $block: ".boss-user-summary"
   &_role_rotas-daily,
   &_role_review-short,
   &_role_hours-overview,
-  &_role_card-header-short
+  &_role_card-header-short,
+  &_role_dsr-assign
     @media screen and (max-width: 960px)
       flex-direction: row
       align-items: flex-start
@@ -77,6 +78,11 @@ $block: ".boss-user-summary"
     @media screen and (max-width: 479px)
       flex-direction: column
       align-items: center
+
+  &_role_dsr-assign-confirmation
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
 
 
   // $User summary MOD: state dismissed
@@ -107,6 +113,9 @@ $block: ".boss-user-summary"
     #{$block}_role_review &
       margin-bottom: 20px
 
+    #{$block}_role_dsr-assign-confirmation &
+      margin-bottom: 15px
+
     // $User summary avatar CONTEXT: $User summary MOD: role report
     #{$block}_role_report &
       width: 100px
@@ -116,7 +125,8 @@ $block: ".boss-user-summary"
     // $User summary avatar CONTEXT: $User summary MOD: role review short
     #{$block}_role_rotas-daily &,
     #{$block}_role_review-short &,
-    #{$block}_role_card-header-short &
+    #{$block}_role_card-header-short &,
+    #{$block}_role_dsr-assign &
       width: 70px
       height: 70px
 
@@ -135,15 +145,23 @@ $block: ".boss-user-summary"
     @media screen and (max-width: 960px)
       margin-bottom: 20px
 
+      #{$block}_role_rotas-daily-tooltip &,
       #{$block}_role_report &,
       #{$block}_role_ssr-details &,
       #{$block}_role_user-profile &
         margin-bottom: 10px
 
+      #{$block}_role_dsr-assign &
+        margin-bottom: 0
+
     @media screen and (max-width: 640px)
       #{$block}_role_rotas-daily &
         width: 40px
         height: 40px
+
+    #{$block}_role_dsr-assign &
+      width: 50px
+      height: 50px
 
 
   // $User summary avatar inner
@@ -253,6 +271,10 @@ $block: ".boss-user-summary"
     display: block
     text-align: center
 
+    @media screen and (max-width: 960px)
+      #{$block}_role_review &
+        margin-bottom: 10px
+
 
   // $User summary content area
   &__content
@@ -281,12 +303,17 @@ $block: ".boss-user-summary"
     #{$block}_role_hours-overview &,
     #{$block}_role_ssr-details &,
     #{$block}_role_user-profile &,
-    #{$block}_role_card-header-short &
+    #{$block}_role_card-header-short &,
+    #{$block}_role_dsr-assign &
       padding-left: 20px
 
     // $User summary content CONTEXT: $User summary MOD: role rotas daily tooltip
     #{$block}_role_rotas-daily-tooltip &
       padding-left: 20px
+
+    #{$block}_role_dsr-assign-confirmation &
+      padding-left: 0
+      align-items: center
 
     @media screen and (max-width: 960px)
       padding-left: 0
@@ -299,7 +326,7 @@ $block: ".boss-user-summary"
         left: auto
         padding-left: 0
 
-      #{$block}_role_daily-tooltip &,
+      #{$block}_role_rotas-daily-tooltip &,
       #{$block}_role_ssr-details &,
       #{$block}_role_user-profile &
         padding-left: 0
@@ -308,7 +335,8 @@ $block: ".boss-user-summary"
       #{$block}_role_rotas-daily &,
       #{$block}_role_review-short &,
       #{$block}_role_hours-overview &,
-      #{$block}_role_card-header-short &
+      #{$block}_role_card-header-short &,
+      #{$block}_role_dsr-assign &
         padding-left: 15px
 
     @media screen and (max-width: 479px)
@@ -357,12 +385,19 @@ $block: ".boss-user-summary"
     #{$block}_role_card-header-short &
       margin-bottom: 5px
 
+    #{$block}_role_dsr-assign-confirmation &
+      text-align: center
+
     // $User summary avatar CONTEXT: $User summary MOD: role hours overview
     #{$block}_role_hours-overview &,
     #{$block}_role_ssr-details &,
-    #{$block}_role_user-profile &
+    #{$block}_role_user-profile &,
+    #{$block}_role_dsr-assign &
       margin-bottom: 0
       text-align: left
+
+    #{$block}_role_dsr-assign-confirmation &
+      margin-bottom: 10px
 
     @media screen and (max-width: 960px)
       text-align: center
@@ -382,6 +417,9 @@ $block: ".boss-user-summary"
 
       #{$block}_role_rotas-daily-tooltip &
         text-align: center
+
+      #{$block}_role_dsr-assign &
+        text-align: left
 
     @media screen and (max-width: 479px)
       #{$block}_role_hours-overview &,
@@ -417,7 +455,8 @@ $block: ".boss-user-summary"
     // $User summary name CONTEXT: $User summary MOD: role review short
     #{$block}_role_rotas-daily &,
     #{$block}_role_review-short &,
-    #{$block}_role_card-header-short &
+    #{$block}_role_card-header-short &,
+    #{$block}_role_dsr-assign &
       display: block
       margin-bottom: 5px
       margin-right: 0
@@ -449,6 +488,14 @@ $block: ".boss-user-summary"
       font-weight: 400
       color: #808080
 
+    #{$block}_role_dsr-assign &
+      margin-bottom: 0
+
+    #{$block}_role_dsr-assign-confirmation &
+      text-align: center
+      margin-right: 0
+      margin-bottom: 0
+
     @media screen and (max-width: 960px)
       display: block
       margin: 0 auto 15px
@@ -467,11 +514,15 @@ $block: ".boss-user-summary"
       #{$block}_role_rotas-daily &,
       #{$block}_role_review-short &,
       #{$block}_role_hours-overview &,
-      #{$block}_role_card-header-short &
+      #{$block}_role_card-header-short &,
+      #{$block}_role_dsr-assign &
         text-align: left
 
       #{$block}_role_rotas-daily-tooltip &
         margin-bottom: 10px
+
+      #{$block}_role_dsr-assign-confirmation &
+        margin-bottom: 0
 
     @media screen and (max-width: 479px)
       #{$block}_role_hours-overview &
@@ -656,6 +707,11 @@ $block: ".boss-user-summary"
     margin-bottom: 5px
     color: $boss-medium-gray
 
+    #{$block}_role_dsr-assign-confirmation &
+      text-align: center
+      color: $boss-dark-gray
+      font-size: 16px
+
     @media screen and (max-width: 960px)
       text-align: center
 
@@ -669,7 +725,8 @@ $block: ".boss-user-summary"
     &_role_date,
     &_role_user,
     &_role_reason,
-    &_role_venue
+    &_role_venue,
+    &_role_time
       text-align: left
 
       &:before
@@ -699,6 +756,10 @@ $block: ".boss-user-summary"
     &_role_venue
       &:before
         background-image: url('../icons/icon-storefront-dark-gray.svg')
+
+    &_role_time
+      &:before
+        background-image: url('../icons/icon-clock-dark-gray.svg')
 
 
   // $User summary review line

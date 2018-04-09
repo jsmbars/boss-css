@@ -368,6 +368,7 @@ $block: ".boss-page-dashboard"
     flex-shrink: 1
     position: relative
     display: inline-block
+    max-width: 100%
     margin-bottom: 25px
 
     @media screen and (max-width: 960px)
@@ -419,7 +420,8 @@ $block: ".boss-page-dashboard"
     &_role_voucher,
     &_role_venue,
     &_role_user,
-    &_role_date
+    &_role_date,
+    &_role_time
       &:before
         content: ""
         display: inline-block
@@ -455,6 +457,10 @@ $block: ".boss-page-dashboard"
     &_role_date#{&}_type_faded
       &:before
         background-image: url(../icons/icon-calendar-medium-gray.svg)
+
+    &_role_time
+      &:before
+        background-image: url(../icons/icon-clock-dark-gray.svg)
 
     &_role_popover
       cursor: pointer
