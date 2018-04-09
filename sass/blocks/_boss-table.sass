@@ -368,7 +368,8 @@ $block: ".boss-table"
       #{$block}_page_weekly-reports &,
       #{$block}_page_daily-reports &,
       #{$block}_page_marketing-index-card &,
-      #{$block}_page_marketing-managers-index-card &
+      #{$block}_page_marketing-managers-index-card &,
+      #{$block}_page_dsr-assign &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -380,7 +381,8 @@ $block: ".boss-table"
     &:last-child
       @media screen and (max-width: 960px)
         #{$block}_page_dsr-pending &,
-        #{$block}_page_dsr-completed &
+        #{$block}_page_dsr-completed &,
+        #{$block}_page_dsr-assign &
           border-bottom: none
 
 
@@ -517,7 +519,8 @@ $block: ".boss-table"
     #{$block}_page_smp-holidays &,
     #{$block}_page_smp-holiday-requests &,
     #{$block}_page_holidays-report-details &,
-    #{$block}_page_holiday-requests &
+    #{$block}_page_holiday-requests &,
+    #{$block}_page_dsr-assign &
       min-height: 0
       padding: 15px 10px
 
@@ -608,6 +611,9 @@ $block: ".boss-table"
 
       #{$block}_page_weekly-reports &
         flex-direction: row
+
+      #{$block}_page_dsr-assign &
+        padding: 10px 0
 
     &:first-child
       padding-left: 25px
@@ -765,6 +771,10 @@ $block: ".boss-table"
       #{$block}_page_dsr-admin-completed &
         width: 20%
 
+      #{$block}_page_dsr-assign &
+        width: calc(100% - 120px)
+        padding-left: 15px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -853,6 +863,11 @@ $block: ".boss-table"
           width: 100%
           padding-left: 20px
           padding-right: 20px
+
+        #{$block}_page_dsr-assign &
+          width: calc(100% - 120px)
+          padding-left: 10px
+
 
       @media screen and (max-width: 479px)
         #{$block}_page_maintenance-index &,
@@ -999,6 +1014,13 @@ $block: ".boss-table"
       #{$block}_page_dsr-admin-completed &
         width: 15%
 
+      #{$block}_page_dsr-assign &
+        flex-grow: 0
+        flex-shrink: 0
+        justify-content: flex-end
+        width: 120px
+        padding-right: 15px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1062,6 +1084,14 @@ $block: ".boss-table"
           width: 100%
           padding-left: 20px
           padding-right: 20px
+
+        #{$block}_page_dsr-assign &
+          flex-grow: 0
+          flex-shrink: 0
+          width: 120px
+          justify-content: center
+          align-items: flex-end
+          padding-right: 10px
 
       @media screen and (max-width: 640px)
         #{$block}_page_accessory-requests-card &
@@ -1431,7 +1461,7 @@ $block: ".boss-table"
 
         #{$block}_page_dsr-pending &,
         #{$block}_page_dsr-completed &,
-        #{$block}_page_dsr-admin-pending &
+        #{$block}_page_dsr-admin-pending &,
         #{$block}_page_dsr-admin-completed &
           min-width: 0
 
