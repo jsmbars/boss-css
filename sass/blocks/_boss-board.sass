@@ -867,10 +867,13 @@ $block: ".boss-board"
     padding-left: 20px
     padding-right: 20px
 
+    &_role_daily
+      width: 65%
+
     @media screen and (max-width: 1120px)
       width: 100%
-      margin-bottom: 5px
-      padding-bottom: 30px
+      margin-bottom: 10px
+      padding-bottom: 20px
       padding-left: 15px
       padding-right: 15px
       border-bottom: 1px solid $boss-very-light-gray
@@ -884,29 +887,75 @@ $block: ".boss-board"
 
 
   // $Board forecast
-  &__forecast
-    flex-grow: 1
-    flex-shrink: 1
-    width: 40%
-    padding-right: 20px
-
-    @media screen and (max-width: 1120px)
-      width: 100%
-      padding-right: 15px
-      padding-left: 15px
-
-
   // $Board staff count
-  &__staff-count
+  // $Board staff list
+  &__forecast,
+  &__staff-count,
+  &__list
+    position: relative
     flex-grow: 1
     flex-shrink: 1
     width: 40%
     padding-right: 20px
 
+    &_role_daily
+      width: 35%
+
     @media screen and (max-width: 1120px)
       width: 100%
       padding-right: 15px
       padding-left: 15px
+
+
+  &__list-inner
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    justify-content: flex-start
+
+    &_type_static
+      position: absolute
+      top: 0
+      right: 20px
+      bottom: 0
+      left: 0
+      min-height: 600px
+      overflow: hidden
+
+      @media screen and (max-width: 1120px)
+        position: relative
+        top: auto
+        right: auto
+        bottom: auto
+        left: auto
+        min-height: 0
+
+
+  &__list-header
+    flex-grow: 0
+    flex-shrink: 0
+    width: 100%
+    padding-top: 10px
+    padding-bottom: 20px
+
+
+  &__list-content
+    flex-grow: 1
+    flex-shrink: 1
+    width: 100%
+
+
+  &__list-scroll
+    position: relative
+    flex-grow: 1
+    flex-shrink: 1
+    width: 100%
+    overflow: hidden
+
+
+  &__list-scroll-content
+    display: inline-block
+    width: 100%
 
 
   // $Board report area
