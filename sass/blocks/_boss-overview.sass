@@ -327,6 +327,12 @@ $block: ".boss-overview"
     &_faded
       color: #808080
 
+    &_adjust_list-right
+      text-align: right
+
+      @media screen and (max-width:640px)
+        text-align-last: left
+
 
   // $Overview link
   &__link
@@ -803,6 +809,16 @@ $block: ".boss-overview"
       &:nth-of-type(even)
         background-color: transparent
 
+    &_role_shifts
+      &:nth-of-type(even)
+        background-color: transparent
+
+      @media screen and (max-width:640px)
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+
+
     &_state_alert,
     &_state_alert:nth-of-type(even)
       background-color: #feeeee
@@ -813,16 +829,18 @@ $block: ".boss-overview"
 
 
   // $Overview list name
-  &__list-name
-    +text-normalizer()
-    font-weight: 600
-    text-align: left
-
-
   // $Overview number
+  &__list-name,
   &__list-number
     +text-normalizer()
     font-weight: 600
+
+
+  &__list-name
+    text-align: left
+
+
+  &__list-number
     text-align: right
 
 
