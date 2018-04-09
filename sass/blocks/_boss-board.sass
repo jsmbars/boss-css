@@ -928,6 +928,10 @@ $block: ".boss-board"
         padding-left: 15px
 
 
+  &__list
+    min-height: 600px
+
+
   &__list-inner
     display: flex
     flex-direction: column
@@ -940,7 +944,6 @@ $block: ".boss-board"
       right: 20px
       bottom: 0
       left: 0
-      min-height: 600px
       overflow: hidden
 
       #{$block}__list_layout_reverse &
@@ -948,16 +951,12 @@ $block: ".boss-board"
         left: 20px
 
       @media screen and (max-width: 1120px)
-        position: relative
-        top: auto
-        right: auto
-        bottom: auto
-        left: auto
-        min-height: 0
+        left: 15px
+        right: 15px
 
         #{$block}__list_layout_reverse &
-          left: auto
-          right: auto
+          left: 15px
+          right: 15px
 
 
   &__list-header

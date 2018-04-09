@@ -314,6 +314,7 @@ $block: ".boss-overview"
   // $Overview text
   &__text
     +text-normalizer()
+    max-width: 100%
 
     &_adjust_wrap
       overflow-wrap: break-word
@@ -331,7 +332,7 @@ $block: ".boss-overview"
       text-align: right
 
       @media screen and (max-width:640px)
-        text-align-last: left
+        text-align: left
 
 
   // $Overview link
