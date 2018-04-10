@@ -821,6 +821,15 @@ $block: ".boss-form"
       border-right: 1px solid $boss-very-light-gray
 
 
+  // $Common form label group
+  &__label-group
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: flex-start
+    width: 100%
+
+
   // $Common form label
   &__label
     +text-normalizer()
@@ -1701,6 +1710,9 @@ $block: ".boss-form"
 
     &_context_field
       margin: 15px 0
+
+    &_context_label-group
+      margin-top: -5px
 
 
   // $Common form checkbox label text
