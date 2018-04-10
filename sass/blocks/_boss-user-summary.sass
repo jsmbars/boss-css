@@ -55,7 +55,6 @@ $block: ".boss-user-summary"
       flex-direction: column
       align-items: center
 
-  &_role_ssr-details,
   &_role_user-profile
     align-items: center
 
@@ -67,19 +66,18 @@ $block: ".boss-user-summary"
   &_role_review-short,
   &_role_hours-overview,
   &_role_card-header-short,
-  &_role_dsr-assign
+  &_role_ssr-assign
     @media screen and (max-width: 960px)
       flex-direction: row
       align-items: flex-start
 
-  &_role_hours-overview,
-  &_role_ssr-details,
+  &_role_hours-overview
   &_role_user-profile
     @media screen and (max-width: 479px)
       flex-direction: column
       align-items: center
 
-  &_role_dsr-assign-confirmation
+  &_role_ssr-assign-confirmation
     flex-direction: column
     justify-content: flex-start
     align-items: center
@@ -113,7 +111,7 @@ $block: ".boss-user-summary"
     #{$block}_role_review &
       margin-bottom: 20px
 
-    #{$block}_role_dsr-assign-confirmation &
+    #{$block}_role_ssr-assign-confirmation &
       margin-bottom: 15px
 
     // $User summary avatar CONTEXT: $User summary MOD: role report
@@ -126,13 +124,12 @@ $block: ".boss-user-summary"
     #{$block}_role_rotas-daily &,
     #{$block}_role_review-short &,
     #{$block}_role_card-header-short &,
-    #{$block}_role_dsr-assign &
+    #{$block}_role_ssr-assign &
       width: 70px
       height: 70px
 
     // $User summary avatar CONTEXT: $User summary MOD: role hours overview
-    #{$block}_role_hours-overview &,
-    #{$block}_role_ssr-details &,
+    #{$block}_role_hours-overview &
     #{$block}_role_user-profile &
       width: 80px
       height: 80px
@@ -147,11 +144,10 @@ $block: ".boss-user-summary"
 
       #{$block}_role_rotas-daily-tooltip &,
       #{$block}_role_report &,
-      #{$block}_role_ssr-details &,
       #{$block}_role_user-profile &
         margin-bottom: 10px
 
-      #{$block}_role_dsr-assign &
+      #{$block}_role_ssr-assign &
         margin-bottom: 0
 
     @media screen and (max-width: 640px)
@@ -159,7 +155,7 @@ $block: ".boss-user-summary"
         width: 40px
         height: 40px
 
-    #{$block}_role_dsr-assign &
+    #{$block}_role_ssr-assign &
       width: 50px
       height: 50px
 
@@ -301,17 +297,16 @@ $block: ".boss-user-summary"
     #{$block}_role_rotas-daily &,
     #{$block}_role_review-short &,
     #{$block}_role_hours-overview &,
-    #{$block}_role_ssr-details &,
     #{$block}_role_user-profile &,
     #{$block}_role_card-header-short &,
-    #{$block}_role_dsr-assign &
+    #{$block}_role_ssr-assign &
       padding-left: 20px
 
     // $User summary content CONTEXT: $User summary MOD: role rotas daily tooltip
     #{$block}_role_rotas-daily-tooltip &
       padding-left: 20px
 
-    #{$block}_role_dsr-assign-confirmation &
+    #{$block}_role_ssr-assign-confirmation &
       padding-left: 0
       align-items: center
 
@@ -327,7 +322,6 @@ $block: ".boss-user-summary"
         padding-left: 0
 
       #{$block}_role_rotas-daily-tooltip &,
-      #{$block}_role_ssr-details &,
       #{$block}_role_user-profile &
         padding-left: 0
 
@@ -336,7 +330,7 @@ $block: ".boss-user-summary"
       #{$block}_role_review-short &,
       #{$block}_role_hours-overview &,
       #{$block}_role_card-header-short &,
-      #{$block}_role_dsr-assign &
+      #{$block}_role_ssr-assign &
         padding-left: 15px
 
     @media screen and (max-width: 479px)
@@ -385,18 +379,17 @@ $block: ".boss-user-summary"
     #{$block}_role_card-header-short &
       margin-bottom: 5px
 
-    #{$block}_role_dsr-assign-confirmation &
+    #{$block}_role_ssr-assign-confirmation &
       text-align: center
 
     // $User summary avatar CONTEXT: $User summary MOD: role hours overview
     #{$block}_role_hours-overview &,
-    #{$block}_role_ssr-details &,
     #{$block}_role_user-profile &,
-    #{$block}_role_dsr-assign &
+    #{$block}_role_ssr-assign &
       margin-bottom: 0
       text-align: left
 
-    #{$block}_role_dsr-assign-confirmation &
+    #{$block}_role_ssr-assign-confirmation &
       margin-bottom: 10px
 
     @media screen and (max-width: 960px)
@@ -418,12 +411,11 @@ $block: ".boss-user-summary"
       #{$block}_role_rotas-daily-tooltip &
         text-align: center
 
-      #{$block}_role_dsr-assign &
+      #{$block}_role_ssr-assign &
         text-align: left
 
     @media screen and (max-width: 479px)
       #{$block}_role_hours-overview &,
-      #{$block}_role_ssr-details &,
       #{$block}_role_user-profile &
         text-align: center
 
@@ -456,7 +448,7 @@ $block: ".boss-user-summary"
     #{$block}_role_rotas-daily &,
     #{$block}_role_review-short &,
     #{$block}_role_card-header-short &,
-    #{$block}_role_dsr-assign &
+    #{$block}_role_ssr-assign &
       display: block
       margin-bottom: 5px
       margin-right: 0
@@ -465,7 +457,6 @@ $block: ".boss-user-summary"
 
     // $User summary avatar CONTEXT: $User summary MOD: role hours overview
     #{$block}_role_hours-overview &,
-    #{$block}_role_ssr-details &,
       display: block
       margin-bottom: 10px
       margin-right: 0
@@ -488,10 +479,10 @@ $block: ".boss-user-summary"
       font-weight: 400
       color: #808080
 
-    #{$block}_role_dsr-assign &
+    #{$block}_role_ssr-assign &
       margin-bottom: 0
 
-    #{$block}_role_dsr-assign-confirmation &
+    #{$block}_role_ssr-assign-confirmation &
       text-align: center
       margin-right: 0
       margin-bottom: 0
@@ -515,13 +506,13 @@ $block: ".boss-user-summary"
       #{$block}_role_review-short &,
       #{$block}_role_hours-overview &,
       #{$block}_role_card-header-short &,
-      #{$block}_role_dsr-assign &
+      #{$block}_role_ssr-assign &
         text-align: left
 
       #{$block}_role_rotas-daily-tooltip &
         margin-bottom: 10px
 
-      #{$block}_role_dsr-assign-confirmation &
+      #{$block}_role_ssr-assign-confirmation &
         margin-bottom: 0
 
     @media screen and (max-width: 479px)
@@ -707,7 +698,7 @@ $block: ".boss-user-summary"
     margin-bottom: 5px
     color: $boss-medium-gray
 
-    #{$block}_role_dsr-assign-confirmation &
+    #{$block}_role_ssr-assign-confirmation &
       text-align: center
       color: $boss-dark-gray
       font-size: 16px
