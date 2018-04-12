@@ -173,6 +173,10 @@ $block: ".boss-page-main"
     max-width: 1200px
     margin: 0 auto
 
+    #{$block}_adjust_finance-reports &
+      max-width: 100%
+
+
     // $Page main container inner MOD: opaque view
     &_opaque
       background-color: #FFF
@@ -439,6 +443,7 @@ $block: ".boss-page-main"
   &__scroll-content
     display: inline-block
     text-align: left
+    min-width: 100%
 
 
   // $Page main container flow layout
