@@ -173,6 +173,10 @@ $block: ".boss-page-main"
     max-width: 1200px
     margin: 0 auto
 
+    #{$block}_adjust_finance-reports &
+      max-width: 100%
+
+
     // $Page main container inner MOD: opaque view
     &_opaque
       background-color: #FFF
@@ -439,6 +443,7 @@ $block: ".boss-page-main"
   &__scroll-content
     display: inline-block
     text-align: left
+    min-width: 100%
 
 
   // $Page main container flow layout
@@ -706,14 +711,39 @@ $block: ".boss-page-main"
     &_role_alert
       border: 2px solid map-get($boss-app-palette, alert)
 
+    // $Page main container note MOD: role info
+    &_role_info
+      border: 2px solid map-get($boss-app-palette, primary)
+
+
+  // $Page main container note title
+  &__note-title
+    +text-normalizer()
+    display: block
+    font-size: 20px
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
   // $Page main container note text
   &__note-text
-    display: block
     +text-normalizer()
+    display: block
     font-size: 16px
+
+    &_role_important
+      font-weight: 600
+      margin-top: 5px
+      margin-bottom: 5px
 
     &_role_primary
       font-weight: 600
+
+
+  // $Page main container note actions
+  &__note-actions
+    margin-top: 15px
 
 
   // $Page main container text placeholder
