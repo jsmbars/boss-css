@@ -94,6 +94,7 @@ $block: ".boss-table"
   &_page_finance-reports
     min-width: 1600px
 
+
   // $Common table group
   &__group
     display: block
@@ -113,14 +114,12 @@ $block: ".boss-table"
       padding: 15px 25px
       background-color: #fbfbfb
 
-    #{$block}_page_holidays-report &,
-    #{$block}_page_finance-reports &
+    #{$block}_page_holidays-report &
       padding: 25px
       background-color: #fbfbfb
 
     @media screen and (max-width: 960px)
-      #{$block}_page_holidays-report &,
-      #{$block}_page_finance-reports &
+      #{$block}_page_holidays-report &
         padding: 15px 15px 25px
 
     // $Common table dropdown MOD: state closed
@@ -1924,7 +1923,7 @@ $block: ".boss-table"
     &:nth-child(11)
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 6%
 
     // $Common table cell ninth column
     &:nth-child(12)
@@ -1954,15 +1953,15 @@ $block: ".boss-table"
     &:nth-child(16)
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 6%
 
     // $Common table cell ninth column
     &:nth-child(17)
 
       #{$block}_page_finance-reports &
-        flex-grow: 0
-        flex-shrink: 0
-        width: 135px
+        width: 12%
+        max-width: 300px
+        min-width: 185px
         padding-right: 15px
 
     // $Common table cell MOD: role header
