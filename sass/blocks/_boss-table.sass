@@ -31,6 +31,7 @@ $block: ".boss-table"
 
     @media screen and (max-width: 960px)
       border: none
+      background-color: transparent
 
   &_page_safe-checks-index
     border: 1px solid #eee
@@ -99,6 +100,14 @@ $block: ".boss-table"
   &__group
     display: block
     width: 100%
+
+    &:not(:last-child)
+      #{$block}_page_holiday-requests &,
+      #{$block}_page_ssr-pending &,
+      #{$block}_page_ssr-completed &,
+      #{$block}_page_ssr-admin-pending &,
+      #{$block}_page_ssr-admin-completed &
+        border-bottom: 1px solid #eee
 
     &:nth-child(odd)
       #{$block}_page_maintenance-index &,
@@ -290,9 +299,18 @@ $block: ".boss-table"
     align-items: stretch
     width: 100%
     background-color: #FFF
+    border-bottom: 1px solid #eee
 
     #{$block}_type_common &
       display: table-row
+      border-bottom: none
+
+    #{$block}_page_change-order-history &,
+    #{$block}_page_maintenance-index-card &,
+    #{$block}_page_maintenance-managers-index-card &,
+    #{$block}_page_marketing-index-card &,
+    #{$block}_page_marketing-managers-index-card &
+      border-bottom: none
 
     #{$block}_page_maintenance-index &,
     #{$block}_page_maintenance-managers-index &,
@@ -317,15 +335,13 @@ $block: ".boss-table"
         display: block
         padding-top: 20px
         padding-bottom: 20px
-        border-bottom: 1px solid #eee
-
 
     @media screen and (max-width: 960px)
       display: block
-      border-bottom: 1px solid #eee
 
       #{$block}_type_common &
         display: block
+        border-bottom: 1px solid #eee
 
       #{$block}_page_fruit-order-history &
         padding-top: 20px
@@ -385,17 +401,7 @@ $block: ".boss-table"
         flex-wrap: wrap
 
     &:last-child
-      @media screen and (max-width: 960px)
-        #{$block}_page_ssr-pending &,
-        #{$block}_page_ssr-completed &,
-        #{$block}_page_ssr-assign &
-          border-bottom: none
-
-
-    &:not(:last-child)
-      #{$block}_page_accessory-requests-card &,
-      #{$block}_page_weekly-reports &
-        border-bottom: 1px solid #eee
+      border-bottom: none
 
     &:nth-child(odd)
       #{$block}_page_change-order-report &,
@@ -440,6 +446,7 @@ $block: ".boss-table"
           display: none
 
       @media screen and (max-width: 960px)
+        #{$block}_type_common &,
         #{$block}_page_staff-members-index &,
         #{$block}_page_fruit-order-history &,
         #{$block}_page_change-order-report &,
@@ -494,16 +501,13 @@ $block: ".boss-table"
     align-items: center
     min-height: 90px
     padding: 15px
-    border-bottom: 1px solid #eee
-
-    #{$block}__row:last-child &
-      border-bottom: none
 
     #{$block}_type_common &
       display: table-cell
       height: 90px
       text-align: left
       vertical-align: middle
+      border-bottom: 1px solid #eee
 
     #{$block}_page_holidays-report &
       align-items: flex-start
@@ -513,7 +517,6 @@ $block: ".boss-table"
     #{$block}_page_change-order-history &
       min-height: 55px
       padding: 10px 15px
-      border-bottom: none
 
     #{$block}_page_safe-checks-index &,
     #{$block}_page_venues-index &,
@@ -542,11 +545,6 @@ $block: ".boss-table"
     #{$block}_page_marketing-managers-index-card &
       padding: 10px
       min-height: 0
-      border-bottom: none
-
-    #{$block}_page_accessory-requests-card &,
-    #{$block}_page_weekly-reports &
-      border-bottom: none
 
     #{$block}_page_safe-checks-index &,
     #{$block}_page_venues-index &,
@@ -582,7 +580,6 @@ $block: ".boss-table"
         justify-content: center
         min-height: 0
         padding: 10px
-        border-bottom: none
 
       #{$block}_page_daily-reports &
         flex-direction: column
@@ -598,12 +595,12 @@ $block: ".boss-table"
       justify-content: center
       min-height: 0
       padding: 10px
-      border-bottom: none
 
       #{$block}_type_common &
         display: block
         height: auto
         text-align: center
+        border-bottom: none
 
       #{$block}_page_holidays-report &
         padding-top: 10px
