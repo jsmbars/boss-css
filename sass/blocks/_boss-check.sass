@@ -536,6 +536,9 @@ $block: ".boss-check"
     #{$block}_page_ops-diary-index &
       font-size: 16px
 
+    #{$block}_page_security-venues &
+      font-size: 24px
+
     &_role_date,
     &_role_date-calendar,
     &_role_time,
@@ -555,6 +558,10 @@ $block: ".boss-check"
         height: 18px
         margin-right: 10px
         margin-top: -3px
+
+        #{$block}_page_security-venues &
+          width: 22px
+          height: 22px
 
     &_role_alert
       color: map-get($boss-app-palette, alert)
@@ -1105,6 +1112,12 @@ $block: ".boss-check"
   &__button
     &:not(:last-of-type)
       margin-right: 20px
+
+    &_position_below
+      margin-top: 10px
+
+    &_position_above
+      margin-bottom: 10px
 
 
   // $Check block meta
