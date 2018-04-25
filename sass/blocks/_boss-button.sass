@@ -678,6 +678,22 @@ $block: ".boss-button"
     +button-common-hover-behavior($background-color: $background-color)
 
 
+  // $Common button MOD: cropper left
+  &_role_cropper-left
+    $background-color: $boss-light-gray
+    +button-common($background-color: $background-color)
+    +button-with-icon-left($icon-url: '../icons/icon-rotate-left-white.svg')
+    +button-common-hover-behavior($background-color: $background-color)
+
+
+  // $Common button MOD: cropper right
+  &_role_cropper-right
+    $background-color: $boss-light-gray
+    +button-common($background-color: $background-color)
+    +button-with-icon-left($icon-url: '../icons/icon-rotate-right-white.svg')
+    +button-common-hover-behavior($background-color: $background-color)
+
+
   // Bordered buttons
 
   &_primary-light
@@ -834,6 +850,13 @@ $block: ".boss-button"
     +button-with-icon-left($icon-url: '../icons/icon-user-dark-gray.svg')
     +button-bordered-hover-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-hover-url: '../icons/icon-user-white.svg')
     +button-bordered-active-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-active-url: '../icons/icon-user-white.svg')
+
+  // $Common button MOD: monochrome button override
+  &_role_override
+    $primary-color: map-get($boss-app-palette, alert)
+    +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
+    +button-bordered-hover-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color)
+    font-weight: 600
 
 
   &__action
