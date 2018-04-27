@@ -227,6 +227,18 @@ $block: ".boss-date-picker"
         background-color: #66ace2
         color: #fff
 
+    &_role_outside-month,
+    &_state_current#{&}_role_outside-month,
+    &_state_active#{&}_role_outside-month
+      background-color: transparent
+      border: none
+      cursor: default
+      color: #d8d8d8
+
+      &:hover
+        background-color: transparent
+        color: #d8d8d8
+
 
   @at-root
     // $Date picker field
