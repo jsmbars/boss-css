@@ -181,6 +181,28 @@ $block: ".date-picker"
         transform: rotate(-180deg)
 
 
+    & .react-datepicker__overlay
+      position: absolute
+      top: 65px
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 100
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      background-color: rgba(0, 0, 0, .6)
+
+    & .react-datepicker__overlay-text
+      +text-normalizer()
+      width: 100%
+      max-width: 200px
+      padding-bottom: 40px
+      font-size: 24px
+      text-align: center
+      color: #fff
+
     & .react-datepicker__month
       position: relative
       z-index: 1
@@ -197,6 +219,16 @@ $block: ".date-picker"
         display: block
         height: 100px
         box-shadow: inset 0 60px 60px -60px rgba(0, 0, 0, .15)
+
+      &_state_inactive
+        filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><filter id="blur"><feGaussianBlur stdDeviation="5" /></filter></svg>#blur')
+        -webkit-filter: blur(2px)
+        filter: blur(2px)
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='2')
+
+
+    & .react-datepicker__week
+      white-space: nowrap
 
 
     & .react-datepicker__month-select
@@ -219,6 +251,12 @@ $block: ".date-picker"
 
     & .react-datepicker__day-names
       padding-top: 10px
+
+      &_state_inactive
+        filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg"><filter id="blur"><feGaussianBlur stdDeviation="5" /></filter></svg>#blur')
+        -webkit-filter: blur(2px)
+        filter: blur(2px)
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='2')
 
 
     & .react-datepicker__day-name
