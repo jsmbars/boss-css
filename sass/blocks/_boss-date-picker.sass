@@ -109,6 +109,40 @@ $block: ".boss-date-picker"
     line-height: 1
     font-weight: 600
     text-align: center
+    white-space: nowrap
+
+    &_role_edit,
+    &_role_clear,
+    &_role_action
+      cursor: pointer
+      transition: opacity .3s
+
+      &:hover
+        opacity: .75
+
+    &_role_edit,
+    &_role_clear
+      &:after
+        content: ''
+        display: inline-block
+        width: 14px
+        height: 14px
+        margin-left: 8px
+        margin-top: -4px
+        background-repeat: no-repeat
+        background-size: contain
+        vertical-align: middle
+
+    &_role_edit
+      &:after
+        background-image: url(../icons/icon-pencil-dark-gray.svg)
+
+    &_role_clear
+      &:after
+        width: 12px
+        height: 12px
+        margin-top: -4px
+        background-image: url(../icons/icon-close-alert.svg)
 
 
   // $Date picker action
@@ -131,6 +165,7 @@ $block: ".boss-date-picker"
         width: 14px
         height: 16px
         margin-left: 8px
+        margin-top: -2px
         background-image: url(../icons/icon-calendar-dark-gray.svg)
         background-repeat: no-repeat
         background-size: contain
@@ -144,6 +179,7 @@ $block: ".boss-date-picker"
         width: 14px
         height: 16px
         margin-right: 4px
+        margin-top: -2px
         background-image: url(../icons/icon-arrow-left-dark-gray.svg)
         background-repeat: no-repeat
         background-size: contain
