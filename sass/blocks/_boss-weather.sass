@@ -19,6 +19,8 @@ $block: ".boss-weather"
   display: block
   width: 100%
 
+  &_adjust_precip
+
   // $Weather daily area
   &__daily
     display: flex
@@ -29,6 +31,9 @@ $block: ".boss-weather"
     padding-bottom: 20px
     margin-bottom: 20px
     border-bottom: 1px solid #eee
+
+    #{$block}_adjust_precip &
+      flex-wrap: wrap
 
     @media screen and (max-width: 1120px)
       flex-direction: column
@@ -50,12 +55,19 @@ $block: ".boss-weather"
     width: 240px
     padding-right: 40px
 
+    #{$block}_adjust_precip &
+      width: 320px
+      padding-right: 20px
+
     @media screen and (max-width: 1120px)
       flex-direction: row
       justify-content: center
       width: 100%
       margin-bottom: 20px
       padding-right: 0
+
+      #{$block}_adjust_precip &
+        width: 100%
 
     @media screen and (max-width: 640px)
       flex-direction: column
@@ -139,12 +151,18 @@ $block: ".boss-weather"
     line-height: 1
     font-weight: 600
 
+    #{$block}_adjust_precip &
+      font-size: 24px
+
     @media screen and (max-width: 1120px)
       font-size: 24px
 
     @media screen and (max-width: 640px)
       font-size: 20px
       text-align: center
+
+      #{$block}_adjust_precip &
+        font-size: 20px
 
 
   // $Weather summary text
@@ -154,11 +172,158 @@ $block: ".boss-weather"
     font-size: 14px
     line-height: 1.2
 
+    #{$block}_adjust_precip &
+      font-size: 16px
+
     @media screen and (max-width: 1120px)
       font-size: 16px
 
     @media screen and (max-width: 640px)
       font-size: 14px
+      text-align: center
+
+      #{$block}_adjust_precip &
+        font-size: 14px
+
+
+  // $Weather precipitation
+  &__precip
+    flex-grow: 1
+    flex-shrink: 1
+    width: calc(100% - 320px)
+
+    @media screen and (max-width: 1120px)
+      width: 100%
+
+  // $Weather precipitation graph
+  &__precip-graph
+    position: relative
+    width: 100%
+    padding-right: 70px
+
+    @media screen and (max-width: 640px)
+      padding-right: 60px
+
+
+  // $Weather precipitation intensity
+  &__precip-intensity
+    position: relative
+    width: 100%
+
+
+  // $Weather precipitation canvas wrap
+  &__precip-canvas
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 1
+    display: block
+
+    & canvas
+      width: 100%
+      height: 100%
+
+
+  // $Weather precipitation levels
+  &__precip-levels
+    width: 100%
+    height: 90px
+    border-right: 1px dashed #4c4c4c
+
+
+  // $Weather precipitation level
+  &__precip-level
+    position: relative
+    width: 100%
+    height: 30px
+
+    &:not(:last-child)
+      border-bottom: 1px dashed #4c4c4c
+
+
+  // $Weather precipitation label
+  &__precip-label
+    +text-normalizer()
+    position: absolute
+    left: calc(100% + 10px)
+    font-size: 14px
+    line-height: 30px
+    font-weight: 300
+
+    @media screen and (max-width: 640px)
+      font-size: 12px
+
+
+  // $Weather precipitation intervals
+  &__precip-intervals
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+
+
+  // $Weather precipitation interval
+  &__precip-interval
+    position: relative
+    display: block
+    width: calc(100% / 6)
+    padding-top: 10px
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      width: 1px
+      height: 10px
+      background-color: #808080
+
+
+  // $Weather precipitation data
+  &__precip-data
+    display: inline-block
+    text-align: center
+    transform: translateX(-50%)
+
+    #{$block}__precip-interval:nth-child(2n - 1) &
+      display: none
+
+
+  // $Weather precipitation time
+  &__precip-time
+    +text-normalizer()
+    display: block
+    margin-bottom: 10px
+    font-size: 14px
+    line-height: 1
+    font-weight: 300
+    color: #4c4c4c
+    text-align: center
+
+    @media screen and (max-width: 640px)
+      font-size: 12px
+
+
+  // $Weather precipitation note
+  &__precip-note
+    +text-normalizer()
+    max-width: 100%
+    padding-right: 70px
+    font-size: 16px
+    line-height: 1
+    font-weight: 300
+    text-align: right
+
+    @media screen and (max-width: 640px)
+      padding-right: 60px
+      font-size: 14px
+
+    @media screen and (max-width: 480px)
+      padding-right: 0
       text-align: center
 
 
@@ -168,8 +333,16 @@ $block: ".boss-weather"
     flex-shrink: 1
     width: calc(100% - 240px)
 
+    #{$block}_adjust_precip &
+      width: 100%
+      margin-top: 30px
+
     @media screen and (max-width: 1120px)
       width: 100%
+
+    @media screen and (max-width: 640px)
+      #{$block}_adjust_precip &
+        margin-top: 20px
 
 
   // $Weather timeline conditions
