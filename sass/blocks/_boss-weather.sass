@@ -195,25 +195,6 @@ $block: ".boss-weather"
     @media screen and (max-width: 1120px)
       width: 100%
 
-
-  // $Weather precipitation title
-  &__precip-title
-    +text-normalizer()
-    max-width: 100%
-    margin-bottom: 10px
-    padding-right: 70px
-    font-size: 20px
-    line-height: 1
-    font-weight: 300
-    text-align: right
-
-    @media screen and (max-width: 1120px)
-      padding-right: 0
-      text-align: center
-
-    @media screen and (max-width: 640px)
-      font-size: 18px
-
   // $Weather precipitation graph
   &__precip-graph
     position: relative
@@ -337,12 +318,13 @@ $block: ".boss-weather"
     font-weight: 300
     text-align: right
 
-    @media screen and (max-width: 1120px)
+    @media screen and (max-width: 640px)
+      padding-right: 60px
+      font-size: 14px
+
+    @media screen and (max-width: 480px)
       padding-right: 0
       text-align: center
-
-    @media screen and (max-width: 640px)
-      font-size: 14px
 
 
   // $Weather timeline
