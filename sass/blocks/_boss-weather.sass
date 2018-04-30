@@ -200,6 +200,7 @@ $block: ".boss-weather"
     position: relative
     width: 100%
     padding-right: 70px
+    margin-bottom: 10px
 
     @media screen and (max-width: 640px)
       padding-right: 60px
@@ -270,7 +271,10 @@ $block: ".boss-weather"
     position: relative
     display: block
     width: calc(100% / 6)
-    padding-top: 10px
+    padding-top: 5px
+
+    @media screen and (max-width: 480px)
+      padding-top: 8px
 
     &:before
       content: ''
@@ -279,8 +283,11 @@ $block: ".boss-weather"
       left: 0
       display: block
       width: 1px
-      height: 10px
+      height: 5px
       background-color: #808080
+
+    &:nth-child(2n-1):before
+      height: 10px
 
 
   // $Weather precipitation data
@@ -297,7 +304,6 @@ $block: ".boss-weather"
   &__precip-time
     +text-normalizer()
     display: block
-    margin-bottom: 10px
     font-size: 14px
     line-height: 1
     font-weight: 300
