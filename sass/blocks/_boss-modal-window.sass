@@ -377,15 +377,11 @@ $block: ".boss-modal-window"
 
     // $Modal window header MOD: error
     &_error
-      background-color: #dd6f70
+      background-color: map-get($boss-app-palette, alert)
 
     // $Modal window header MOD: warning
     &_warning
-      background-color: #f3a74d
-
-    // $Modal window header MOD: add note
-    &_add-note
-      background-color: #f3a84d
+      background-color: map-get($boss-app-palette, warning)
 
     // $Modal window header MOD: status success
     &_status_success
@@ -534,10 +530,6 @@ $block: ".boss-modal-window"
       background: #fff url('../icons/icon-success.svg') center 35px no-repeat
       background-size: 165px 165px
 
-    // $Modal window content MOD: role add note
-    &_rol_add-note
-      padding-top: 1.7em
-
 
   // $Modal window group
   &__group
@@ -636,56 +628,40 @@ $block: ".boss-modal-window"
     width: 100%
 
     &:not(:last-child)
-      // $Modal window message block CONTEXT: $Modal window MOD: role danger
-      // $Modal window message block CONTEXT: $Modal window MOD: role error
-      // $Modal window message block CONTEXT: $Modal window MOD: role warning
-      // $Modal window message block CONTEXT: $Modal window MOD: role action
-      // $Modal window message block CONTEXT: $Modal window MOD: role success
-      // $Modal window message block CONTEXT: $Modal window MOD: role note
-      #{$block}_role_danger &,
-      #{$block}_role_error &,
-      #{$block}_role_warning &,
-      #{$block}_role_action &,
-      #{$block}_role_success &,
-      #{$block}_role_note &
-        margin-bottom: 30px
-
-      // $Modal window message block CONTEXT: $Modal window MOD: role preview
-      #{$block}_role_preview &
-        margin-bottom: 20px
-
-    // $Modal window message block MOD: role error
-    &_role_error
-      margin-bottom: 3em
-
-    // $Modal window message block MOD: role add note
-    &_role_add-note
-      margin-bottom: 1.7em
+      margin-bottom: 20px
 
 
   &__message-group
-    margin-bottom: 20px
+
+    &:not(:last-child)
+      margin-bottom: 20px
 
 
   // $Modal window message text
   &__message-text
+    +text-normalizer()
     display: block
     text-align: center
     color: $boss-medium-gray
     font-size: 18px
 
-    // $Modal window message text CONTEXT: $Modal window MOD: role note
     #{$block}_role_note &
       text-align: left
-      margin-bottom: 10px
 
     #{$block}_role_danger &
-      color: #dd6f70
+      color: map-get($boss-app-palette, alert)
       font-size: 24px
 
-    &:last-of-type
+    #{$block}_role_ok &
+      color: map-get($boss-app-palette, secondary)
+      font-size: 24px
+
+    &:not(:last-child)
       #{$block}_role_note &
-        margin-bottom: 0
+        margin-bottom: 10px
+
+  &__message-text-marked
+    font-weight: 600
 
 
   // $Modal window message image
@@ -793,10 +769,6 @@ $block: ".boss-modal-window"
 
     &:last-of-type
       margin-right: 0
-
-
-  &__image-recognition
-    margin-bottom: 20px
 
 
   // $Modal window numpad
