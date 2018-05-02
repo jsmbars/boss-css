@@ -129,11 +129,17 @@ $block: ".boss-modal-window"
       margin-top: 0
 
   // $Modal window MOD: role danger
+  // $Modal window MOD: role error
   // $Modal window MOD: role warning
   // $Modal window MOD: role action
+  // $Modal window MOD: role success
+  // $Modal window MOD: role ok
   &_role_danger,
+  &_role_error,
   &_role_warning,
-  &_role_action
+  &_role_action,
+  &_role_success,
+  &_role_ok
     max-width: 400px
 
   &_role_rota
@@ -230,7 +236,9 @@ $block: ".boss-modal-window"
     border-top-right-radius: $border-radius
 
     // $Modal window header CONTEXT: $Modal window MOD: role danger
-    #{$block}_role_danger &
+    // $Modal window header CONTEXT: $Modal window MOD: role error
+    #{$block}_role_danger &,
+    #{$block}_role_error &
       background-color: map-get($boss-app-palette, alert)
 
     // $Modal window header CONTEXT: $Modal window MOD: role warning
@@ -240,6 +248,12 @@ $block: ".boss-modal-window"
     // $Modal window header CONTEXT: $Modal window MOD: role action
     #{$block}_role_action &
       background-color: map-get($boss-app-palette, primary)
+
+    // $Modal window header CONTEXT: $Modal window MOD: role success
+    // $Modal window header CONTEXT: $Modal window MOD: role ok
+    #{$block}_role_success &,
+    #{$block}_role_ok &
+      background-color: map-get($boss-app-palette, secondary)
 
     // $Modal window header CONTEXT: $Modal window MOD: role add new
     #{$block}_role_add-new &
@@ -444,7 +458,13 @@ $block: ".boss-modal-window"
     // $Modal window content CONTEXT: $Modal window MOD: role danger
     #{$block}_role_danger &
       padding-top: 230px
-      background: #fff url('../icons/icon-error-red.svg') center 35px no-repeat
+      background: #fff url('../icons/icon-error.svg') center 35px no-repeat
+      background-size: 165px 165px
+
+    // $Modal window content CONTEXT: $Modal window MOD: role ok
+    #{$block}_role_ok &
+      padding-top: 230px
+      background: #fff url('../icons/icon-success.svg') center 35px no-repeat
       background-size: 165px 165px
 
     #{$block}_role_edit &,
@@ -505,7 +525,13 @@ $block: ".boss-modal-window"
     // $Modal window content MOD: role error
     &_role_error
       padding-top: 230px
-      background: #fff url('../icons/icon-error-red.svg') center 35px no-repeat
+      background: #fff url('../icons/icon-error.svg') center 35px no-repeat
+      background-size: 165px 165px
+
+    // $Modal window content MOD: role success
+    &_role_success
+      padding-top: 230px
+      background: #fff url('../icons/icon-success.svg') center 35px no-repeat
       background-size: 165px 165px
 
     // $Modal window content MOD: role add note
@@ -609,20 +635,24 @@ $block: ".boss-modal-window"
     display: block
     width: 100%
 
-    // $Modal window message block CONTEXT: $Modal window MOD: role danger
-    // $Modal window message block CONTEXT: $Modal window MOD: role warning
-    #{$block}_role_danger &,
-    #{$block}_role_warning &,
-    #{$block}_role_action &
-      margin-bottom: 30px
+    &:not(:last-child)
+      // $Modal window message block CONTEXT: $Modal window MOD: role danger
+      // $Modal window message block CONTEXT: $Modal window MOD: role error
+      // $Modal window message block CONTEXT: $Modal window MOD: role warning
+      // $Modal window message block CONTEXT: $Modal window MOD: role action
+      // $Modal window message block CONTEXT: $Modal window MOD: role success
+      // $Modal window message block CONTEXT: $Modal window MOD: role note
+      #{$block}_role_danger &,
+      #{$block}_role_error &,
+      #{$block}_role_warning &,
+      #{$block}_role_action &,
+      #{$block}_role_success &,
+      #{$block}_role_note &
+        margin-bottom: 30px
 
-    // $Modal window message block CONTEXT: $Modal window MOD: role note
-    #{$block}_role_note &
-      margin-bottom: 30px
-
-    // $Modal window message block CONTEXT: $Modal window MOD: role preview
-    #{$block}_role_preview &
-      margin-bottom: 20px
+      // $Modal window message block CONTEXT: $Modal window MOD: role preview
+      #{$block}_role_preview &
+        margin-bottom: 20px
 
     // $Modal window message block MOD: role error
     &_role_error
@@ -763,6 +793,10 @@ $block: ".boss-modal-window"
 
     &:last-of-type
       margin-right: 0
+
+
+  &__image-recognition
+    margin-bottom: 20px
 
 
   // $Modal window numpad
