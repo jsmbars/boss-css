@@ -785,10 +785,10 @@ $block: ".boss-table"
         width: 15%
 
       #{$block}_page_ssr-pending &
-        width: 25%
+        width: 22%
 
       #{$block}_page_ssr-completed &
-        width: 25%
+        width: 22%
 
       #{$block}_page_ssr-admin-pending &
         width: 25%
@@ -1036,10 +1036,10 @@ $block: ".boss-table"
         width: 20%
 
       #{$block}_page_ssr-pending &
-        width: 60%
+        width: 40%
 
       #{$block}_page_ssr-completed &
-        width: 45%
+        width: 40%
 
       #{$block}_page_ssr-admin-pending &
         width: 45%
@@ -1255,13 +1255,12 @@ $block: ".boss-table"
         width: 20%
 
       #{$block}_page_ssr-pending &
-        width: 15%
-        min-width: 160px
-        padding-right: 10px
+        width: 14%
+        min-width: 140px
 
       #{$block}_page_ssr-completed &
-        width: 15%
-        min-width: 160px
+        width: 14%
+        min-width: 140px
 
       #{$block}_page_ssr-admin-pending &
         width: 30%
@@ -1454,10 +1453,14 @@ $block: ".boss-table"
         justify-content: center
         width: 20%
 
-      #{$block}_page_ssr-completed &
-        width: 15%
-        min-width: 160px
+      #{$block}_page_ssr-pending &
+        width: 24%
+        min-width: 240px
         padding-right: 10px
+
+      #{$block}_page_ssr-completed &
+        width: 12%
+        min-width: 120px
 
       #{$block}_page_ssr-admin-completed &
         width: 15%
@@ -1500,10 +1503,12 @@ $block: ".boss-table"
         #{$block}_page_holidays-report-details &,
         #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
+        #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-completed &
           width: 100%
 
+        #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-completed &
           min-width: 0
@@ -1614,10 +1619,9 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_ssr-completed &
-        width: 15%
-        min-width: 160px
-        padding-right: 25px
-        justify-content: center
+        width: 12%
+        min-width: 120px
+        padding-right: 10px
 
       #{$block}_page_ssr-admin-completed &
         width: 15%
@@ -2598,6 +2602,7 @@ $block: ".boss-table"
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &,
     #{$block}_page_holiday-requests &,
+    #{$block}_page_ssr-pending &,
     #{$block}_page_ssr-admin-pending &
       display: flex
       flex-direction: row
@@ -2657,6 +2662,7 @@ $block: ".boss-table"
       #{$block}_page_accessory-requests-card &
         width: 100%
 
+      #{$block}_page_ssr-pending &,
       #{$block}_page_ssr-admin-pending &
         flex-direction: column
         align-items: flex-start
@@ -2687,6 +2693,7 @@ $block: ".boss-table"
     #{$block}_page_smp-holiday-requests &:not(:last-of-type),
     #{$block}_page_message-board &:not(:last-of-type),
     #{$block}_page_holiday-requests &:not(:last-of-type),
+    #{$block}_page_ssr-pending &:not(:last-of-type),
     #{$block}_page_ssr-admin-pending &:not(:last-of-type)
       margin-right: 10px
 
@@ -2710,6 +2717,7 @@ $block: ".boss-table"
         margin-bottom: 0
         margin-right: 10px
 
+      #{$block}_page_ssr-pending &:not(:last-of-type),
       #{$block}_page_ssr-admin-pending &:not(:last-of-type)
         margin-right: 0
         margin-bottom: 10px
