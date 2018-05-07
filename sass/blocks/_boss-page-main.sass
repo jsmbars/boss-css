@@ -173,7 +173,8 @@ $block: ".boss-page-main"
     max-width: 1200px
     margin: 0 auto
 
-    #{$block}_adjust_finance-reports &
+    #{$block}_adjust_finance-reports &,
+    #{$block}_adjust_payroll-reports &
       max-width: 100%
 
 
@@ -724,6 +725,11 @@ $block: ".boss-page-main"
 
     &:not(:last-child)
       margin-bottom: 10px
+
+
+  // $Page main container note title marked
+  &__note-title-marked
+    font-weight: 600
 
 
   // $Page main container note text

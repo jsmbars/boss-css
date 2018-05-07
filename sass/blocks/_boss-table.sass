@@ -62,7 +62,8 @@ $block: ".boss-table"
   &_page_ssr-pending,
   &_page_ssr-completed,
   &_page_finance-reports,
-  &_page_finance-reports-no-net-wages
+  &_page_finance-reports-no-net-wages,
+  &_page_payroll-reports
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -96,6 +97,9 @@ $block: ".boss-table"
   &_page_finance-reports,
   &_page_finance-reports-no-net-wages
     min-width: 1600px
+
+  &_page_payroll-reports
+    min-width: 1360px
 
 
   // $Common table group
@@ -323,7 +327,8 @@ $block: ".boss-table"
     #{$block}_page_marketing-managers-index-card &,
     #{$block}_page_holiday-requests &,
     #{$block}_page_finance-reports &,
-    #{$block}_page_finance-reports-no-net-wages &
+    #{$block}_page_finance-reports-no-net-wages &,
+    #{$block}_page_payroll-reports &
       background-color: transparent
 
     #{$block}_page_marketing-index-card &,
@@ -395,7 +400,8 @@ $block: ".boss-table"
       #{$block}_page_marketing-managers-index-card &,
       #{$block}_page_ssr-assign &,
       #{$block}_page_finance-reports &,
-      #{$block}_page_finance-reports-no-net-wages &
+      #{$block}_page_finance-reports-no-net-wages &,
+      #{$block}_page_payroll-reports &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -527,6 +533,7 @@ $block: ".boss-table"
     #{$block}_page_daily-reports &,
     #{$block}_page_finance-reports &,
     #{$block}_page_finance-reports-no-net-wages &,
+    #{$block}_page_payroll-reports &,
     #{$block}_page_ssr-pending &,
     #{$block}_page_ssr-completed &,
     #{$block}_page_ssr-admin-pending &,
@@ -535,7 +542,8 @@ $block: ".boss-table"
 
     #{$block}_page_weekly-reports &,
     #{$block}_page_finance-reports &,
-    #{$block}_page_finance-reports-no-net-wages &
+    #{$block}_page_finance-reports-no-net-wages &,
+    #{$block}_page_payroll-reports &
       flex-direction: column
       min-height: 75px
       justify-content: center
@@ -557,7 +565,8 @@ $block: ".boss-table"
     #{$block}_page_weekly-reports &,
     #{$block}_page_daily-reports &,
     #{$block}_page_finance-reports &,
-    #{$block}_page_finance-reports-no-net-wages &
+    #{$block}_page_finance-reports-no-net-wages &,
+    #{$block}_page_payroll-reports &
       padding: 15px 5px
 
     #{$block}_page_smp-owed-hours &,
@@ -804,6 +813,11 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         align-items: flex-start
         width: 10%
+        padding-left: 15px
+
+      #{$block}_page_payroll-reports &
+        align-items: flex-start
+        width: 12%
         padding-left: 15px
 
       @media screen and (max-width: 1120px)
@@ -1058,6 +1072,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 5%
 
+      #{$block}_page_payroll-reports &
+        width: 9%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1275,6 +1292,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 5%
 
+      #{$block}_page_payroll-reports &
+        width: 6%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1471,6 +1491,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 5%
 
+      #{$block}_page_payroll-reports &
+        width: 6%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1633,6 +1656,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 5%
 
+      #{$block}_page_payroll-reports &
+        width: 6%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1740,6 +1766,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 5%
 
+      #{$block}_page_payroll-reports &
+        width: 6%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1822,6 +1851,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 5%
 
+      #{$block}_page_payroll-reports &
+        width: 6%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1885,6 +1917,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 5%
 
+      #{$block}_page_payroll-reports &
+        width: 6%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_venues-index &
@@ -1933,6 +1968,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 6%
 
+      #{$block}_page_payroll-reports &
+        width: 6%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_venues-index &
@@ -1956,6 +1994,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 6%
 
+      #{$block}_page_payroll-reports &
+        width: 9%
+
     // $Common table cell ninth column
     &:nth-child(11)
 
@@ -1963,12 +2004,18 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 6%
 
+      #{$block}_page_payroll-reports &
+        width: 7%
+
     // $Common table cell ninth column
     &:nth-child(12)
 
       #{$block}_page_finance-reports &,
       #{$block}_page_finance-reports-no-net-wages &
         width: 6%
+
+      #{$block}_page_payroll-reports &
+        width: 7%
 
     // $Common table cell ninth column
     &:nth-child(13)
@@ -1979,6 +2026,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-net-wages &
         width: 6%
 
+      #{$block}_page_payroll-reports &
+        width: 7%
+
     // $Common table cell ninth column
     &:nth-child(14)
 
@@ -1987,6 +2037,9 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports-no-net-wages &
         width: 6%
+
+      #{$block}_page_payroll-reports &
+        width: 7%
 
     // $Common table cell ninth column
     &:nth-child(15)
@@ -2025,7 +2078,8 @@ $block: ".boss-table"
       text-transform: uppercase
 
       #{$block}_page_finance-reports &,
-      #{$block}_page_finance-reports-no-net-wages &
+      #{$block}_page_finance-reports-no-net-wages &,
+      #{$block}_page_payroll-reports &
         align-items: stretch
 
       #{$block}_page_change-order-history &
@@ -2041,7 +2095,8 @@ $block: ".boss-table"
       #{$block}_page_ssr-completed &,
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_finance-reports &,
-      #{$block}_page_finance-reports-no-net-wages &
+      #{$block}_page_finance-reports-no-net-wages &,
+      #{$block}_page_payroll-reports &
         font-size: 14px
         text-transform: none
         font-weight: 600
@@ -2067,7 +2122,8 @@ $block: ".boss-table"
 
       @media screen and (max-width: 1920px)
         #{$block}_page_finance-reports &,
-        #{$block}_page_finance-reports-no-net-wages &
+        #{$block}_page_finance-reports-no-net-wages &,
+        #{$block}_page_payroll-reports &
           font-size: 13px
 
       @media screen and (max-width: 1120px)
@@ -2084,7 +2140,8 @@ $block: ".boss-table"
 
         #{$block}_page_weekly-reports &,
         #{$block}_page_finance-reports &,
-        #{$block}_page_finance-reports-no-net-wages &
+        #{$block}_page_finance-reports-no-net-wages &,
+        #{$block}_page_payroll-reports &
           text-align: left
 
       &:nth-child(2)
@@ -2384,7 +2441,8 @@ $block: ".boss-table"
         width: auto
 
       #{$block}_page_finance-reports &,
-      #{$block}_page_finance-reports-no-net-wages &
+      #{$block}_page_finance-reports-no-net-wages &,
+      #{$block}_page_payroll-reports &
         flex-grow: 0
         width: auto
 
@@ -2660,7 +2718,8 @@ $block: ".boss-table"
 
       #{$block}_page_holidays-report &,
       #{$block}_page_finance-reports &,
-      #{$block}_page_finance-reports-no-net-wages &
+      #{$block}_page_finance-reports-no-net-wages &,
+      #{$block}_page_payroll-reports &
         flex-grow: 0
         width: auto
 
@@ -2802,6 +2861,10 @@ $block: ".boss-table"
     #{$block}_page_weekly-reports #{$block}__cell_state_alert &
       color: #fff
       font-weight: 600
+
+    #{$block}_page_finance-reports &,
+    #{$block}_page_payroll-reports &
+      color: #1585cf
 
     &:hover,
     &:focus
