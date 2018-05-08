@@ -67,6 +67,43 @@ $block: ".boss-check"
   &_state_alert
     background-color: #feeeee
 
+  // $Check block MOD: state frozen
+  &_state_frozen
+    background-color: #daecff
+
+  // $Common table cell MOD: state frozen corner
+  &_state_frozen
+    position: relative
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 0
+      display: block
+      width: 50px
+      height: 50px
+      background-image: -ms-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
+      background-image: -moz-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
+      background-image: -o-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
+      background-image: -webkit-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
+      background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
+
+    &:after
+      content: ''
+      position: absolute
+      top: 5px
+      left: 5px
+      z-index: 1
+      display: block
+      width: 20px
+      height: 20px
+      background-repeat: no-repeat
+      background-position: center center
+      background-size: contain
+      background-image: url("../icons/icon-snowflake-white.svg")
+
 
   // $Check block header
   &__header
