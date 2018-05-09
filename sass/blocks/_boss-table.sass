@@ -2539,7 +2539,6 @@ $block: ".boss-table"
     &_state_alert
       color: #FFF
       font-weight: 600
-      font-size: 16px
 
     &_indicator_accessory
       vertical-align: middle
@@ -2886,6 +2885,11 @@ $block: ".boss-table"
     display: inline-block
 
 
+  // $Common table tooltip
+  &__tooltip
+    margin-left: 3px
+
+
   // $Common table link
   &__link
     +text-normalizer()
@@ -2894,26 +2898,43 @@ $block: ".boss-table"
     color: $boss-dark-gray
     vertical-align: middle
     text-decoration: none
+    transition: color .3s
 
     #{$block}_page_weekly-reports &
       text-align: center
-
-    #{$block}_page_weekly-reports #{$block}__cell_state_alert &
-      color: #fff
-      font-weight: 600
 
     #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &
       color: #1585cf
 
+    #{$block}_page_weekly-reports #{$block}__cell_state_alert &
+      color: #fff
+      font-weight: 600
+
     &:hover,
     &:focus
       outline: none
       text-decoration: none
-      color: $boss-dark-gray
+      color: $boss-medium-gray
 
       #{$block}_page_weekly-reports #{$block}__cell_state_alert &
+        color: #eee
+
+    &_state_alert
+      color: #fff
+      font-weight: 600
+
+      #{$block}_page_finance-reports &,
+      #{$block}_page_payroll-reports &
         color: #fff
+
+      &:hover,
+      &:focus
+        color: #eee
+
+        #{$block}_page_finance-reports &,
+        #{$block}_page_payroll-reports &
+          color: #eee
 
 
   //  $Common table sort link
