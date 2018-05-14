@@ -63,7 +63,8 @@ $block: ".boss-table"
   &_page_ssr-completed,
   &_page_finance-reports,
   &_page_finance-reports-no-net-wages,
-  &_page_payroll-reports
+  &_page_payroll-reports,
+  &_page_wages-index
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -87,7 +88,8 @@ $block: ".boss-table"
   &_page_smp-owed-hours,
   &_page_message-board,
   &_page_users-index,
-  &_page_holidays-report-details
+  &_page_holidays-report-details,
+  &_page_wages-index
     @media screen and (max-width: 960px)
       display: none
 
@@ -115,7 +117,7 @@ $block: ".boss-table"
       #{$block}_page_ssr-admin-completed &
         border-bottom: 1px solid #eee
 
-    &:nth-child(odd)
+    &:nth-child(even)
       #{$block}_page_maintenance-index &,
       #{$block}_page_maintenance-managers-index &,
       #{$block}_page_daily-reports &
@@ -386,7 +388,8 @@ $block: ".boss-table"
       #{$block}_page_ssr-pending &,
       #{$block}_page_ssr-completed &,
       #{$block}_page_ssr-admin-pending &,
-      #{$block}_page_ssr-admin-completed &
+      #{$block}_page_ssr-admin-completed &,
+      #{$block}_page_wages-index &
         padding-top: 15px
         padding-bottom: 15px
 
@@ -413,7 +416,7 @@ $block: ".boss-table"
     &:last-child
       border-bottom: none
 
-    &:nth-child(odd)
+    &:nth-child(even)
       #{$block}_page_change-order-report &,
       #{$block}_page_safe-checks-index &,
       #{$block}_page_checklist-review &,
@@ -422,14 +425,8 @@ $block: ".boss-table"
       #{$block}_page_voucher-usage &,
       #{$block}_page_invites-index &,
       #{$block}_page_users-index &,
-      #{$block}_page_ssr-pending &,
-      #{$block}_page_ssr-completed &,
-      #{$block}_page_ssr-admin-pending &,
-      #{$block}_page_ssr-admin-completed &
-        background-color: #fbfbfb
-
-    &:nth-child(even)
-      #{$block}_page_weekly-reports &
+      #{$block}_page_weekly-reports &,
+      #{$block}_page_wages-index &,
         background-color: #fbfbfb
 
     // $Common table first row
@@ -438,13 +435,6 @@ $block: ".boss-table"
 
       #{$block}_page_change-order-history &
         background-color: $boss-dark-gray
-
-      #{$block}_page_change-order-report &,
-      #{$block}_page_ssr-pending &,
-      #{$block}_page_ssr-completed &,
-      #{$block}_page_ssr-admin-pending &,
-      #{$block}_page_ssr-admin-completed &
-        background-color: #FFF
 
       #{$block}_page_smp-owed-hours &
         background-color: #fbfbfb
@@ -474,7 +464,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-pending > &,
         #{$block}_page_ssr-completed > &,
         #{$block}_page_ssr-admin-pending > &,
-        #{$block}_page_ssr-admin-completed > &
+        #{$block}_page_ssr-admin-completed > &,
+        #{$block}_page_wages-index &
           display: none
 
     &_role_header
@@ -577,7 +568,8 @@ $block: ".boss-table"
     #{$block}_page_ssr-pending &,
     #{$block}_page_ssr-completed &,
     #{$block}_page_ssr-admin-pending &,
-    #{$block}_page_ssr-admin-completed &
+    #{$block}_page_ssr-admin-completed &,
+    #{$block}_page_wages-index &
       justify-content: center
 
     #{$block}_page_weekly-reports &,
@@ -860,6 +852,9 @@ $block: ".boss-table"
         width: 12%
         padding-left: 15px
 
+      #{$block}_page_wages-index &
+        width: 30%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -904,7 +899,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-pending &,
-        #{$block}_page_ssr-admin-completed &
+        #{$block}_page_ssr-admin-completed &,
+        #{$block}_page_wages-index &
           width: 100%
           padding-left: 15px
 
@@ -920,7 +916,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-pending &,
-        #{$block}_page_ssr-admin-completed &
+        #{$block}_page_ssr-admin-completed &,
+        #{$block}_page_wages-index &
           padding-left: 10px
 
         #{$block}_page_staff-members-index &
@@ -1115,6 +1112,9 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 9%
 
+      #{$block}_page_wages-index &
+        width: 20%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1152,7 +1152,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-pending &,
-        #{$block}_page_ssr-admin-completed &
+        #{$block}_page_ssr-admin-completed &,
+        #{$block}_page_wages-index &
           width: 100%
 
         #{$block}_page_maintenance-index &
@@ -1335,6 +1336,9 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_wages-index &
+        width: 15%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1368,7 +1372,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-pending &,
-        #{$block}_page_ssr-admin-completed &
+        #{$block}_page_ssr-admin-completed &,
+        #{$block}_page_wages-index &
           width: 100%
 
         #{$block}_page_maintenance-index &,
@@ -1534,6 +1539,9 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_wages-index &
+        width: 15%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1568,7 +1576,8 @@ $block: ".boss-table"
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
-        #{$block}_page_ssr-admin-completed &
+        #{$block}_page_ssr-admin-completed &,
+        #{$block}_page_wages-index &
           width: 100%
 
         #{$block}_page_ssr-pending &,
@@ -1699,6 +1708,10 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_wages-index &
+        width: 15%
+        min-width: 160px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1725,7 +1738,8 @@ $block: ".boss-table"
         #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-completed &,
-        #{$block}_page_ssr-admin-completed &
+        #{$block}_page_ssr-admin-completed &,
+        #{$block}_page_wages-index &
           width: 100%
 
         #{$block}_page_ssr-completed &,
@@ -1742,7 +1756,8 @@ $block: ".boss-table"
         #{$block}_page_vouchers-index &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-completed &,
-        #{$block}_page_ssr-admin-completed &
+        #{$block}_page_ssr-admin-completed &,
+        #{$block}_page_wages-index &
           padding-right: 10px
 
         #{$block}_page_maintenance-index &,
@@ -2136,12 +2151,7 @@ $block: ".boss-table"
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_finance-reports &,
       #{$block}_page_finance-reports-no-net-wages &,
-      #{$block}_page_payroll-reports &
-        font-size: 14px
-        text-transform: none
-        font-weight: 600
-        text-align: center
-
+      #{$block}_page_payroll-reports &,
       #{$block}_page_smp-holidays &,
       #{$block}_page_smp-holiday-requests &,
       #{$block}_page_smp-owed-hours &,
@@ -2152,6 +2162,20 @@ $block: ".boss-table"
         font-size: 14px
         text-transform: none
         font-weight: 600
+
+      #{$block}_page_safe-checks-index &,
+      #{$block}_page_venues-index &,
+      #{$block}_page_weekly-reports &,
+      #{$block}_page_daily-reports &,
+      #{$block}_page_ssr-pending &,
+      #{$block}_page_ssr-admin-pending &,
+      #{$block}_page_ssr-completed &,
+      #{$block}_page_ssr-admin-completed &,
+      #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-no-net-wages &,
+      #{$block}_page_payroll-reports &,
+      #{$block}_page_wages-index &
+        text-align: center
 
       #{$block}_page_csv-upload &
         display: block
@@ -2450,7 +2474,8 @@ $block: ".boss-table"
     #{$block}_page_ssr-completed #{$block}__cell:nth-child(3) &,
     #{$block}_page_ssr-completed #{$block}__cell:nth-child(4) &,
     #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(3) &,
-    #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(4) &
+    #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(4) &,
+    #{$block}_page_wages-index &
       text-align: center
 
     #{$block}_page_holidays-report-details &
@@ -2517,7 +2542,8 @@ $block: ".boss-table"
       #{$block}_page_ssr-completed #{$block}__cell:nth-child(3) &,
       #{$block}_page_ssr-completed #{$block}__cell:nth-child(4) &,
       #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(3) &,
-      #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(4) &
+      #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(4) &,
+      #{$block}_page_wages-index &
         text-align: left
 
       #{$block}_page_accessory-requests-card &
@@ -2696,7 +2722,8 @@ $block: ".boss-table"
       text-align: right
 
     #{$block}_page_ssr-completed &,
-    #{$block}_page_ssr-admin-completed &
+    #{$block}_page_ssr-admin-completed &,
+    #{$block}_page_wages-index &
       text-align: center
 
     #{$block}_page_change-order-report &,
@@ -2752,7 +2779,8 @@ $block: ".boss-table"
       width: 50%
 
       #{$block}_page_ssr-completed &,
-      #{$block}_page_ssr-admin-completed &
+      #{$block}_page_ssr-admin-completed &,
+      #{$block}_page_wages-index &
         text-align: left
 
       #{$block}_page_holidays-report &,
