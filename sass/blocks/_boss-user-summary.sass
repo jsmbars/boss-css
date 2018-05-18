@@ -84,7 +84,6 @@ $block: ".boss-user-summary"
     justify-content: flex-start
     align-items: center
 
-
   // $User summary MOD: state dismissed
   &_state_dismissed
     opacity: 0.3
@@ -92,6 +91,13 @@ $block: ".boss-user-summary"
     &:hover
       opacity: 1
       border: 2px solid map-get($boss-app-palette, primary)
+
+  // $User summary MOD: state inactive
+  &_state_inactive
+    opacity: 0.3
+
+    &:hover
+      opacity: 1
 
 
   // $User summary side area
@@ -610,7 +616,8 @@ $block: ".boss-user-summary"
     &_role_email,
     &_role_phone,
     &_role_alert-action,
-    &_role_data
+    &_role_data,
+    &_role_details
       &:before
         content: ""
         display: inline-block
@@ -621,6 +628,11 @@ $block: ".boss-user-summary"
         background-repeat: no-repeat
         vertical-align: middle
 
+
+    // $User summary link MOD: role details
+    &_role_details
+      &:before
+        background-image: url(../icons/icon-zoom-dark-gray.svg)
 
     // $User summary link MOD: role data
     &_role_data
