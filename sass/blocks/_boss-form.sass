@@ -986,6 +986,33 @@ $block: ".boss-form"
     #{$block}__units_size_extra &
       width: calc(100% - 75px)
 
+    &_role_time,
+    &_role_date
+      position: relative
+      padding-right: 20px
+
+      &:before
+        content: ''
+        position: absolute
+        top: 50%
+        right: 20px
+        z-index: 10
+        display: block
+        width: 15px
+        height: 15px
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: center center
+        transform: translateY(-50%)
+
+    &_role_time
+      &:before
+        background-image: url(../icons/icon-clock-medium-gray.svg)
+
+    &_role_date
+      &:before
+        background-image: url(../icons/icon-calendar-medium-gray.svg)
+
     // $Common form value MOD: state alert
     &_state_alert
       background-color: #ff8587
@@ -1757,7 +1784,7 @@ $block: ".boss-form"
       display: block
       width: 10px
       height: 10px
-      background-image: url('../icons/checked-white.svg')
+      background-image: url('../icons/icon-checked-white.svg')
       background-repeat: no-repeat
       background-position: center center
       background-size: contain
@@ -1769,6 +1796,16 @@ $block: ".boss-form"
       #{$block}__checkbox-input:checked ~ &
         visibility: visible
 
+    &_type_checked
+      cursor: default
+
+      &:before
+        background-color: #f0f0f0
+        border-color: #d8d8d8
+
+      &:after
+        visibility: visible
+        background-image: url('../icons/icon-checked-medium-gray.svg')
 
 
   // $Common form pagination
