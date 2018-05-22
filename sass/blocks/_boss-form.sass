@@ -637,6 +637,10 @@ $block: ".boss-form"
         @media screen and (max-width: 640px)
           display: none
 
+    &_size_narrow
+      &:before
+        bottom: 13px
+
 
   // $Common form interval item
   &__interval-item
@@ -657,9 +661,15 @@ $block: ".boss-form"
     width: 40px
     height: 53px
 
+    #{$block}__interval_size_narrow &
+      height: 40px
+
     @media screen and (max-width: 640px)
       width: 25px
       height: 53px
+
+      #{$block}__interval_size_narrow &
+        height: 40px
 
     &:after
       content: ""
@@ -1234,6 +1244,9 @@ $block: ".boss-form"
       background-size: contain
       transform: translateY(-50%)
 
+    // $Common form select MOD: size narrow
+    &_size_narrow
+
     // $Common form select MOD: size small
     &_size_small
       width: 240px
@@ -1329,6 +1342,7 @@ $block: ".boss-form"
     & .has-value.Select--single > .Select-control .Select-value .Select-value-label,
     & .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label
       color: #4c4c4c
+      font-size: 14px
 
     & .Select-input
       vertical-align: middle
@@ -1342,6 +1356,7 @@ $block: ".boss-form"
 
     & .Select-option
       padding: 10px 10px 10px 20px
+      font-size: 14px
 
     & .Select--multi .Select-input
       margin-top: 5px
@@ -1552,6 +1567,26 @@ $block: ".boss-form"
 
       & .Select-staff-member-type
         display: inline-block
+
+    &_size_narrow
+
+      & .Select-control
+        height: 40px
+
+      & .Select-multi-value-wrapper
+        line-height: 38px
+
+      & .Select-placeholder,
+      & .Select--single > .Select-control .Select-value
+        line-height: 38px
+
+      & .Select-input
+
+        & input
+          line-height: 1
+          height: 30px
+          padding: 0
+
 
 
   // $Common form switcher
