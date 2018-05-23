@@ -492,8 +492,16 @@ $block: ".boss-table"
       &:nth-child(even)
         background-color: #daecff
 
+    // $Common table cell MOD: state edited
+    &_state_edited
+      &:nth-child(odd),
+      &:nth-child(even)
+        background-color: #ffedda
+
     // $Common table cell MOD: state frozen corner
-    &_state_frozen
+    // $Common table cell MOD: state edited corner
+    &_state_frozen,
+    &_state_edited
       position: relative
 
       &:before
@@ -505,11 +513,6 @@ $block: ".boss-table"
         display: block
         width: 50px
         height: 50px
-        background-image: -ms-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
-        background-image: -moz-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
-        background-image: -o-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
-        background-image: -webkit-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
-        background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
 
       &:after
         content: ''
@@ -523,7 +526,28 @@ $block: ".boss-table"
         background-repeat: no-repeat
         background-position: center center
         background-size: contain
+
+    &_state_frozen
+      &:before
+        background-image: -ms-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
+        background-image: -moz-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
+        background-image: -o-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
+        background-image: -webkit-linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
+        background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
+
+      &:after
         background-image: url("../icons/icon-snowflake-white.svg")
+
+    &_state_edited
+      &:before
+        background-image: -ms-linear-gradient(-45deg, transparent 0%, transparent 50%, #ffd4a7 50%, #ffd4a7 100%)
+        background-image: -moz-linear-gradient(-45deg, transparent 0%, transparent 50%, #ffd4a7 50%, #ffd4a7 100%)
+        background-image: -o-linear-gradient(-45deg, transparent 0%, transparent 50%, #ffd4a7 50%, #ffd4a7 100%)
+        background-image: -webkit-linear-gradient(-45deg, transparent 0%, transparent 50%, #ffd4a7 50%, #ffd4a7 100%)
+        background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #ffd4a7 50%, #ffd4a7 100%)
+
+      &:after
+        background-image: url("../icons/icon-pencil-white.svg")
 
 
     // $Common table cell MOD: role faded
@@ -2418,7 +2442,10 @@ $block: ".boss-table"
 
     // $Common table label MOD: state alert
     &_state_alert
-      color: #FFF
+      color: map-get($boss-app-palette, alert)
+
+      #{$block}__cell_state_alert &
+        color: #FFF
 
 
   &__info-group
@@ -2563,8 +2590,11 @@ $block: ".boss-table"
 
     // $Common table text MOD: state alert
     &_state_alert
-      color: #FFF
-      font-weight: 600
+      color: map-get($boss-app-palette, alert)
+
+      #{$block}__cell_state_alert &
+        color: #FFF
+        font-weight: 600
 
     &_indicator_accessory
       vertical-align: middle
@@ -2675,6 +2705,10 @@ $block: ".boss-table"
   &__text-meta
     color: $boss-light-gray
     font-size: 12px
+
+
+  &__text-alert
+    color: map-get($boss-app-palette, alert)
 
 
   &__text-marked
@@ -2931,11 +2965,12 @@ $block: ".boss-table"
     #{$block}_page_weekly-reports &
       text-align: center
 
+
     #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &
       color: #1585cf
 
-    #{$block}_page_weekly-reports #{$block}__cell_state_alert &
+    #{$block}__cell_state_alert &
       color: #fff
       font-weight: 600
 
@@ -2945,23 +2980,21 @@ $block: ".boss-table"
       text-decoration: none
       color: $boss-medium-gray
 
-      #{$block}_page_weekly-reports #{$block}__cell_state_alert &
+      #{$block}__cell_state_alert &
         color: #eee
 
     &_state_alert
-      color: #fff
-      font-weight: 600
+      color: map-get($boss-app-palette, alert)
 
-      #{$block}_page_finance-reports &,
-      #{$block}_page_payroll-reports &
+      #{$block}__cell_state_alert &
         color: #fff
+        font-weight: 600
 
       &:hover,
       &:focus
         color: #eee
 
-        #{$block}_page_finance-reports &,
-        #{$block}_page_payroll-reports &
+        #{$block}__cell_state_alert &
           color: #eee
 
 
