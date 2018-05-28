@@ -19,6 +19,14 @@ $block: ".boss-error"
   display: block
   width: 100%
 
+  &_role_stack
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    max-width: 960px
+    margin: 0 auto
+
   // $Error MOD: role modal
   &_role_modal
     max-width: 960px
@@ -71,6 +79,9 @@ $block: ".boss-error"
     width: 100%
     max-width: 100%
 
+    #{$block}_role_stack &
+      margin-bottom: 30px
+
 
   // $Error information
   &__info
@@ -99,6 +110,10 @@ $block: ".boss-error"
     line-height: 1
     color: #4c4c4c
     font-weight: 400
+
+    #{$block}_role_stack &
+      margin-bottom: 30px
+      text-align: center
 
     @media screen and (max-width: 960px)
       font-size: 36px
@@ -129,6 +144,10 @@ $block: ".boss-error"
     line-height: 1.2
     color: #4c4c4c
     font-weight: 300
+
+    #{$block}_role_stack &
+      margin-bottom: 20px
+      text-align: center
 
     @media screen and (max-width: 960px)
       font-size: 18px
@@ -174,5 +193,9 @@ $block: ".boss-error"
 
   // $Error action
   &__action
+
+
+  // $Error button
+  &__button
 
 
