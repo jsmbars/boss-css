@@ -480,26 +480,26 @@ $block: ".boss-table"
         #{$block}_page_change-order-report &
           padding-top: 0
 
-    // $Common table cell MOD: state alert
+    // $Common table row MOD: state alert
     &_state_alert
       &:nth-child(odd),
       &:nth-child(even)
         background-color: #feeeee
 
-    // $Common table cell MOD: state frozen
+    // $Common table row MOD: state frozen
     &_state_frozen
       &:nth-child(odd),
       &:nth-child(even)
         background-color: #daecff
 
-    // $Common table cell MOD: state edited
+    // $Common table row MOD: state edited
     &_state_edited
       &:nth-child(odd),
       &:nth-child(even)
         background-color: #ffedda
 
-    // $Common table cell MOD: state frozen corner
-    // $Common table cell MOD: state edited corner
+    // $Common table row MOD: state frozen corner
+    // $Common table row MOD: state edited corner
     &_state_frozen,
     &_state_edited
       position: relative
@@ -550,7 +550,7 @@ $block: ".boss-table"
         background-image: url("../icons/icon-pencil-white.svg")
 
 
-    // $Common table cell MOD: role faded
+    // $Common table row MOD: role faded
     &_faded
       opacity: 0.5
 
@@ -2600,7 +2600,8 @@ $block: ".boss-table"
         color: #FFF
         font-weight: 600
 
-    &_indicator_accessory
+    &_indicator_accessory,
+    &_indicator_clock
       vertical-align: middle
 
       &:after
@@ -2608,14 +2609,26 @@ $block: ".boss-table"
         display: inline-block
         width: 14px
         height: 14px
-        margin-left: 7px
-        margin-top: -3px
+        margin-left: 5px
+        margin-top: -8px
         background-size: contain
         vertical-align: middle
 
     &_indicator_accessory
       &:after
         background-image: url('../icons/icon-tshirt-dark-gray.svg')
+
+    &_indicator_clock#{&}_state_alert
+      &:after
+        background-image: url('../icons/icon-tshirt-white.svg')
+
+    &_indicator_clock
+      &:after
+        background-image: url('../icons/icon-clock-dark-gray.svg')
+
+    &_indicator_clock#{&}_state_alert
+      &:after
+        background-image: url('../icons/icon-clock-white.svg')
 
     &_role_date,
     &_role_venue
@@ -2954,6 +2967,8 @@ $block: ".boss-table"
   // $Common table tooltip
   &__tooltip
     margin-left: 3px
+
+
 
 
   // $Common table link
