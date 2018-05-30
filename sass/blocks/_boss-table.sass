@@ -616,6 +616,7 @@ $block: ".boss-table"
       padding: 10px
       min-height: 0
 
+    #{$block}_page_smp-owed-hours &,
     #{$block}_page_safe-checks-index &,
     #{$block}_page_venues-index &,
     #{$block}_page_weekly-reports &,
@@ -625,7 +626,6 @@ $block: ".boss-table"
     #{$block}_page_payroll-reports &
       padding: 15px 5px
 
-    #{$block}_page_smp-owed-hours &,
     #{$block}_page_message-board &,
     #{$block}_page_maintenance-index &,
     #{$block}_page_maintenance-managers-index &,
@@ -719,6 +719,7 @@ $block: ".boss-table"
         padding-right: 15px
 
     &:not(:last-child)
+      #{$block}_page_smp-owed-hours &,
       #{$block}_page_ssr-pending &,
       #{$block}_page_ssr-completed &,
       #{$block}_page_ssr-admin-pending &,
@@ -726,6 +727,7 @@ $block: ".boss-table"
         border-right: 1px solid #eee
 
       @media screen and (max-width: 960px)
+        #{$block}_page_smp-owed-hours &,
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-pending &,
@@ -787,7 +789,8 @@ $block: ".boss-table"
         padding-left: 30px
 
       #{$block}_page_smp-owed-hours &
-        width: 15%
+        width: 13%
+        padding-left: 20px
 
       #{$block}_page_message-board &
         width: 17%
@@ -1061,7 +1064,7 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_smp-owed-hours &
-        width: 13%
+        width: 12%
 
       #{$block}_page_message-board &
         width: 20%
@@ -1816,7 +1819,7 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_smp-owed-hours &
-        width: 25%
+        width: 18%
 
       #{$block}_page_maintenance-index &
         display: none
@@ -1905,9 +1908,8 @@ $block: ".boss-table"
         width: 12%
 
       #{$block}_page_smp-owed-hours &
-        flex-grow: 0
-        flex-shrink: 0
-        width: 135px
+        width: 12%
+        justify-content: center
 
       #{$block}_page_maintenance-managers-index &
         display: none
@@ -1964,12 +1966,23 @@ $block: ".boss-table"
         #{$block}_page_csv-upload &
           width: 100%
 
-        #{$block}_page_smp-owed-hours &
-          flex-grow: 1
-          flex-shrink: 1
-
         #{$block}_page_maintenance-managers-index &
           display: block
+
+      // Keep compatibility with an existing table layout
+      &:nth-last-child(1)
+        #{$block}_page_smp-owed-hours &
+          flex-grow: 0
+          flex-shrink: 0
+          width: 130px
+          padding-right: 20px
+
+        @media screen and (max-width: 960px)
+          #{$block}_page_smp-owed-hours &
+            width: 100%
+            flex-grow: 1
+            flex-shrink: 1
+            padding-right: 15px
 
     // $Common table cell eighth column
     &:nth-child(8)
@@ -1982,6 +1995,12 @@ $block: ".boss-table"
         flex-shrink: 0
         width: 170px
         padding-right: 10px
+
+      #{$block}_page_smp-owed-hours &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 130px
+        padding-right: 20px
 
       #{$block}_page_weekly-reports &
         width: 10%
@@ -2021,9 +2040,15 @@ $block: ".boss-table"
       @media screen and (max-width: 960px)
 
         #{$block}_page_change-order-report &,
+        #{$block}_page_smp-owed-hours &,
         #{$block}_page_csv-upload &
           width: 100%
 
+        #{$block}_page_smp-owed-hours &
+          flex-grow: 1
+          flex-shrink: 1
+
+        #{$block}_page_smp-owed-hours &,
         #{$block}_page_csv-upload &
           padding-right: 15px
 
@@ -2277,6 +2302,10 @@ $block: ".boss-table"
         #{$block}_page_holiday-requests &
           text-align: center
 
+      &:nth-child(7)
+        #{$block}_page_smp-owed-hours &
+          text-align: center
+
     // $Common table cell MOD: state alert
     &_state_alert
       background-color: #ff8587
@@ -2502,6 +2531,7 @@ $block: ".boss-table"
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(3) &,
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(4) &,
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(5) &,
+    #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(7) &,
     #{$block}_page_message-board #{$block}__cell:nth-child(4) &,
     #{$block}_page_message-board #{$block}__cell:nth-child(5) &,
     #{$block}_page_maintenance-index-card &,
@@ -2570,6 +2600,7 @@ $block: ".boss-table"
       #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(3) &,
       #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(4) &,
       #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(5) &,
+      #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(7) &,
       #{$block}_page_message-board #{$block}__cell:nth-child(4) &,
       #{$block}_page_message-board #{$block}__cell:nth-child(5) &,
       #{$block}_page_holidays-report-details #{$block}__cell:nth-child(4) &,
