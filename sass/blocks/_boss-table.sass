@@ -341,8 +341,13 @@ $block: ".boss-table"
     @media screen and (max-width: 1120px)
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
-      #{$block}_page_venues-index &
+      #{$block}_page_venues-index &,
+      #{$block}_page_csv-upload &
         display: block
+
+      #{$block}_page_safe-checks-index &,
+      #{$block}_page_invites-index &,
+      #{$block}_page_venues-index &
         padding-top: 20px
         padding-bottom: 20px
 
@@ -469,9 +474,12 @@ $block: ".boss-table"
           display: none
 
     &_role_header
-      @media screen and (max-width: 960px)
-        #{$block}_page_message-board &,
+      @media screen and (max-width: 1120px)
         #{$block}_page_csv-upload &
+          display: none
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_message-board &
           display: none
 
     // $Common table second row
@@ -647,7 +655,8 @@ $block: ".boss-table"
     @media screen and (max-width: 1120px)
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
-      #{$block}_page_venues-index &
+      #{$block}_page_venues-index &,
+      #{$block}_page_csv-upload &
         flex-direction: column
         justify-content: center
         min-height: 0
@@ -848,7 +857,7 @@ $block: ".boss-table"
         padding-left: 20px
 
       #{$block}_page_csv-upload &
-        width: 12.5%
+        width: 11.1%
         padding-left: 10px
         border-right: 1px solid #eee
 
@@ -897,9 +906,13 @@ $block: ".boss-table"
           width: 100%
           padding-left: 15px
 
-        #{$block}_page_venues-index &
+        #{$block}_page_venues-index &,
+        #{$block}_page_csv-upload &
           width: 100%
           padding-left: 10px
+
+        #{$block}_page_csv-upload &
+          border-right: none
 
         #{$block}_page_daily-reports &
           width: calc(100% - 50px)
@@ -924,7 +937,6 @@ $block: ".boss-table"
         #{$block}_page_users-index &,
         #{$block}_page_accessory-requests-card &,
         #{$block}_page_holidays-report-details &,
-        #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
@@ -1110,7 +1122,7 @@ $block: ".boss-table"
         padding-left: 20px
 
       #{$block}_page_csv-upload &
-        width: 12.5%
+        width: 11.1%
         border-right: 1px solid #eee
 
       #{$block}_page_holiday-requests &
@@ -1153,8 +1165,12 @@ $block: ".boss-table"
           border-right: none
 
         #{$block}_page_invites-index &,
-        #{$block}_page_venues-index &
+        #{$block}_page_venues-index &,
+        #{$block}_page_csv-upload &
           width: 100%
+
+        #{$block}_page_csv-upload &
+          border-right: none
 
         #{$block}_page_daily-reports &
           display: none
@@ -1177,7 +1193,6 @@ $block: ".boss-table"
         #{$block}_page_message-board &,
         #{$block}_page_users-index &,
         #{$block}_page_holidays-report-details &,
-        #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
@@ -1336,7 +1351,7 @@ $block: ".boss-table"
         width: 14%
 
       #{$block}_page_csv-upload &
-        width: 12.5%
+        width: 11.1%
         border-right: 1px solid #eee
 
       #{$block}_page_holiday-requests &
@@ -1373,8 +1388,12 @@ $block: ".boss-table"
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_csv-upload &
           width: 100%
+
+        #{$block}_page_csv-upload &
+          border-right: none
 
         #{$block}_page_daily-reports &
           display: none
@@ -1397,7 +1416,6 @@ $block: ".boss-table"
         #{$block}_page_message-board &,
         #{$block}_page_users-index &,
         #{$block}_page_holidays-report-details &,
-        #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
@@ -1541,7 +1559,7 @@ $block: ".boss-table"
         width: 14%
 
       #{$block}_page_csv-upload &
-        width: 12.5%
+        width: 11.1%
         border-right: 1px solid #eee
 
       #{$block}_page_holiday-requests &
@@ -1576,11 +1594,15 @@ $block: ".boss-table"
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_csv-upload &
           width: 100%
 
         #{$block}_page_message-board &
           width: 110px
+
+        #{$block}_page_csv-upload &
+          border-right: none
 
         #{$block}_page_daily-reports &
           display: none
@@ -1602,7 +1624,6 @@ $block: ".boss-table"
         #{$block}_page_message-board &,
         #{$block}_page_users-index &,
         #{$block}_page_holidays-report-details &,
-        #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
@@ -1712,7 +1733,7 @@ $block: ".boss-table"
         width: 14%
 
       #{$block}_page_csv-upload &
-        width: 12.5%
+        width: 11.1%
         border-right: 1px solid #eee
 
       #{$block}_page_holiday-requests &
@@ -1747,8 +1768,12 @@ $block: ".boss-table"
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_csv-upload &
           width: 100%
+
+        #{$block}_page_csv-upload &
+          border-right: none
 
         #{$block}_page_daily-reports &
           display: none
@@ -1767,7 +1792,6 @@ $block: ".boss-table"
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &,
         #{$block}_page_holidays-report-details &,
-        #{$block}_page_csv-upload &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-completed &,
@@ -1864,7 +1888,7 @@ $block: ".boss-table"
         width: 14%
 
       #{$block}_page_csv-upload &
-        width: 12.5%
+        width: 11.1%
         border-right: 1px solid #eee
 
       #{$block}_page_finance-reports &,
@@ -1878,8 +1902,12 @@ $block: ".boss-table"
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_csv-upload &
           width: 100%
+
+        #{$block}_page_csv-upload &
+          border-right: none
 
         #{$block}_page_venues-index &
           flex-grow: 1
@@ -1896,8 +1924,7 @@ $block: ".boss-table"
         #{$block}_page_change-order-report &,
         #{$block}_page_change-order-history &,
         #{$block}_page_smp-owed-hours &,
-        #{$block}_page_smp-holidays &,
-        #{$block}_page_csv-upload &
+        #{$block}_page_smp-holidays &
           width: 100%
 
         #{$block}_page_smp-holidays &
@@ -1980,7 +2007,7 @@ $block: ".boss-table"
         width: 11%
 
       #{$block}_page_csv-upload &
-        width: 12.5%
+        width: 11.1%
         border-right: 1px solid #eee
 
       #{$block}_page_finance-reports &,
@@ -1994,8 +2021,12 @@ $block: ".boss-table"
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_csv-upload &
           width: 100%
+
+        #{$block}_page_csv-upload &
+          border-right: none
 
         #{$block}_page_invites-index &
           flex-grow: 1
@@ -2010,8 +2041,7 @@ $block: ".boss-table"
         #{$block}_page_change-order-report &,
         #{$block}_page_change-order-history &,
         #{$block}_page_smp-holiday-requests &,
-        #{$block}_page_smp-owed-hours &,
-        #{$block}_page_csv-upload &
+        #{$block}_page_smp-owed-hours &
           width: 100%
 
         #{$block}_page_smp-holiday-requests &
@@ -2073,7 +2103,8 @@ $block: ".boss-table"
         width: 120px
 
       #{$block}_page_csv-upload &
-        width: 12.5%
+        width: 11.1%
+        border-right: 1px solid #eee
 
       #{$block}_page_finance-reports &,
       #{$block}_page_finance-reports-no-net-wages &
@@ -2084,10 +2115,17 @@ $block: ".boss-table"
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
+        #{$block}_page_venues-index &,
+        #{$block}_page_csv-upload &
+          width: 100%
+
+        #{$block}_page_csv-upload &
+          border-right: none
+
+        #{$block}_page_safe-checks-index &,
         #{$block}_page_venues-index &
           flex-grow: 1
           flex-shrink: 1
-          width: 100%
 
         #{$block}_page_daily-reports &
           display: block
@@ -2095,16 +2133,14 @@ $block: ".boss-table"
       @media screen and (max-width: 960px)
 
         #{$block}_page_change-order-report &,
-        #{$block}_page_smp-owed-hours &,
-        #{$block}_page_csv-upload &
+        #{$block}_page_smp-owed-hours &
           width: 100%
 
         #{$block}_page_smp-owed-hours &
           flex-grow: 1
           flex-shrink: 1
 
-        #{$block}_page_smp-owed-hours &,
-        #{$block}_page_csv-upload &
+        #{$block}_page_smp-owed-hours &
           padding-right: 15px
 
       @media screen and (max-width: 479px)
@@ -2130,6 +2166,10 @@ $block: ".boss-table"
         width: 110px
         padding-right: 10px
 
+      #{$block}_page_csv-upload &
+        width: 11.1%
+        padding-right: 10px
+
       #{$block}_page_finance-reports &
         width: 5%
 
@@ -2141,10 +2181,17 @@ $block: ".boss-table"
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
+        #{$block}_page_venues-index &,
+        #{$block}_page_csv-upload &
+          width: 100%
+
+        #{$block}_page_safe-checks-index &,
         #{$block}_page_venues-index &
           flex-grow: 1
           flex-shrink: 1
-          width: 100%
+
+        #{$block}_page_csv-upload &
+          padding-right: 10px
 
       @media screen and (max-width: 960px)
 
@@ -2304,7 +2351,8 @@ $block: ".boss-table"
           font-size: 13px
 
       @media screen and (max-width: 1120px)
-        #{$block}_page_safe-checks-index &
+        #{$block}_page_safe-checks-index &,
+        #{$block}_page_csv-upload &
           min-height: 0
 
       @media screen and (max-width: 960px)
@@ -2430,7 +2478,8 @@ $block: ".boss-table"
     @media screen and (max-width: 1120px)
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
-      #{$block}_page_venues-index &
+      #{$block}_page_venues-index &,
+      #{$block}_page_csv-upload &
         display: flex
         flex-direction: row
         justify-content: flex-start
@@ -2497,7 +2546,8 @@ $block: ".boss-table"
 
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
-      #{$block}_page_venues-index &
+      #{$block}_page_venues-index &,
+      #{$block}_page_csv-upload &
         flex-grow: 1
         flex-shrink: 0
         display: block
@@ -2532,9 +2582,6 @@ $block: ".boss-table"
       #{$block}_page_change-order-history &
         text-transform: none
         font-weight: 600
-
-
-    #{$block}_page_csv-upload &
 
     @media screen and (max-width: 640px)
       padding-right: 40px
@@ -2654,7 +2701,8 @@ $block: ".boss-table"
     @media screen and (max-width: 1120px)
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
-      #{$block}_page_venues-index &
+      #{$block}_page_venues-index &,
+      #{$block}_page_csv-upload &
         flex-grow: 1
         flex-shrink: 0
         width: 50%
