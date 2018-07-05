@@ -91,6 +91,10 @@ $block: ".boss-board"
     @media screen and (max-width: 400px)
       padding: 15px
 
+      #{$block}_role_profile-disciplinary &
+        flex-wrap: wrap
+        justify-content: center
+
     &:before
       content: ''
       position: absolute
@@ -173,6 +177,10 @@ $block: ".boss-board"
 
     @media screen and (max-width: 400px)
       font-size: 20px
+
+      #{$block}_role_profile-disciplinary &
+        text-align: center
+        margin-bottom: 15px
 
     // $Board title MOD: status failed
     &_status_failed
@@ -542,45 +550,6 @@ $block: ".boss-board"
         background-image: url(../icons/icon-arrow-down-dark-gray.svg)
         transform: translate(-50%, -50%)
 
-    // $Board switch MOD: type math signs
-    &_type_math
-      background-color: #ccc
-
-      @media screen and (max-width: 960px)
-        background-color: transparent
-
-      &:before
-        background-image: url(../icons/icon-plus-white.svg)
-        transform: translate(-50%, -50%)
-
-        @media screen and (max-width: 960px)
-          background-image: url(../icons/icon-arrow-down-dark-gray.svg)
-          transform: translate(-50%, -50%)
-
-      &:hover
-        background-color: #ddd
-
-        @media screen and (max-width: 960px)
-          background-color: transparent
-
-    // $Board switch MOD: type math signs CONTEXT: $Board switch MOD: state opened
-    &_type_math#{&}_state_opened
-      &:before
-        background-image: url(../icons/icon-minus-white.svg)
-
-        @media screen and (max-width: 960px)
-          background-image: url(../icons/icon-arrow-down-dark-gray.svg)
-          transform: translate(-50%, -50%) rotate(180deg)
-
-    // $Board switch MOD: type math signs CONTEXT: $Board switch MOD: state closed
-    &_type_math#{&}_state_closed
-      &:before
-        background-image: url(../icons/icon-plus-white.svg)
-
-        @media screen and (max-width: 960px)
-          background-image: url(../icons/icon-arrow-down-dark-gray.svg)
-          transform: translate(-50%, -50%)
-
 
   // $Board content area
   &__content
@@ -787,9 +756,29 @@ $block: ".boss-board"
       @media screen and (max-width: 480px)
         padding: 0
 
+    &_role_area
+      border: none
+      overflow: visible
+
     &_context_stack
       &:not(:last-child)
         margin-bottom: 30px
+
+  // $Board manager area header
+  &__manager-header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 15px 20px
+    border-bottom: 1px solid #eee
+
+    #{$block}__manager-group_role_area &
+      padding-top: 0
+
+    @media screen and (max-width: 960px)
+      padding: 0
 
 
   // $Board manager area filter
@@ -805,6 +794,71 @@ $block: ".boss-board"
       background-color: #FFF
       border-radius: 10px
       box-shadow: 0 5px 30px -5px rgba(0,0,0,.3)
+
+
+  // $Board manager title
+  &__manager-title
+    +text-normalizer()
+    display: inline-block
+    font-size: 20px
+    font-weight: 400
+    color: $boss-global-font-color
+
+
+  // $Board manager switch
+  &__manager-switch
+    position: relative
+    display: inline-block
+    margin-left: 15px
+    border-radius: 50%
+    width: 28px
+    height: 28px
+    vertical-align: middle
+    cursor: pointer
+    outline: none
+    transition: .4s
+
+    &:before
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      display: block
+      width: 20px
+      height: 15px
+      background-image: url(../icons/icon-arrow-down-dark-gray.svg)
+      transform: translate(-50%, -50%) rotate(180deg)
+      background-position: center center
+      background-repeat: no-repeat
+      background-size: contain
+      transform-origin: center center
+      transition: all .4s
+
+    // $Board manager switch MOD: state closed
+    &_state_closed
+      &:before
+        background-image: url(../icons/icon-arrow-down-dark-gray.svg)
+        transform: translate(-50%, -50%)
+
+
+  // $Board manager content
+  &__manager-content
+
+    &_state_closed
+      display: none
+
+
+  // $Board manager area cards
+  &__manager-cards
+    display: block
+    width: 100%
+    padding: 30px 20px
+
+    #{$block}__manager-group_role_area &
+      padding-bottom: 0
+
+    @media screen and (max-width: 960px)
+      padding: 30px 0
 
 
   // $Board manager area table
@@ -1136,8 +1190,9 @@ $block: ".boss-board"
   // $Board text placeholder
   &__text-placeholder
     +text-normalizer()
-    font-size: 18px
+    font-size: 16px
     line-height: 1
+    color: #808080
 
 
   // $Board tactions
