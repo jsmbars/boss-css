@@ -1630,14 +1630,7 @@ $block: ".boss-form"
     flex-direction: row
     justify-content: flex-start
     align-items: stretch
-
-    &:not(:first-child)
-      margin-left: -1px
-
-      @media screen and (max-width: 640px)
-        #{$block}__switcher_layout_vertical-s &
-          margin-left: 0
-          margin-top: -1px
+    margin-left: -1px
 
     @media screen and (max-width: 960px)
       #{$block}__switcher_role_week &
@@ -1646,6 +1639,22 @@ $block: ".boss-form"
     @media screen and (max-width: 640px)
       #{$block}__switcher_role_week &
         width: 49.8%
+
+      #{$block}__switcher_layout_vertical-s &
+        margin-left: 0
+        margin-top: -1px
+
+    &:first-child
+      margin-left: 0
+
+      @media screen and (max-width: 960px)
+        margin-left: -1px
+
+      @media screen and (max-width: 640px)
+        #{$block}__switcher_layout_vertical-s &
+          margin-left: 0
+          margin-top: 0
+
 
   // $Common form switcher label text
   &__switcher-label-text
