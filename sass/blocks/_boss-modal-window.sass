@@ -79,6 +79,7 @@ $block: ".boss-modal-window"
   &_role_task-edit,
   &_role_task-overview,
   &_role_venue-details,
+  &_role_disciplinary-note,
   &_role_edit,
   &_role_add
     width: 90%
@@ -199,6 +200,7 @@ $block: ".boss-modal-window"
     #{$block}_role_task-overview &,
     #{$block}_role_bounced-email &,
     #{$block}_role_venue-details &,
+    #{$block}_role_disciplinary-note &,
     #{$block}_role_shift-details &,
     #{$block}_role_csv-upload-payments &
       width: 16px
@@ -211,6 +213,7 @@ $block: ".boss-modal-window"
       #{$block}_role_edit &,
       #{$block}_role_add &,
       #{$block}_role_venue-details &
+      #{$block}_role_disciplinary-note &,
         right: 15px
 
     @media screen and (max-width: 479px)
@@ -273,6 +276,7 @@ $block: ".boss-modal-window"
     #{$block}_role_task-overview &,
     #{$block}_role_bounced-email &,
     #{$block}_role_venue-details &,
+    #{$block}_role_disciplinary-note &,
     #{$block}_role_shift-details &,
     #{$block}_role_csv-upload-payments &
       padding: 20px 50px 20px 30px
@@ -333,6 +337,7 @@ $block: ".boss-modal-window"
       #{$block}_role_edit &,
       #{$block}_role_add &,
       #{$block}_role_venue-details &
+      #{$block}_role_disciplinary-note &,
         padding-left: 15px
         padding-right: 35px
 
@@ -371,6 +376,7 @@ $block: ".boss-modal-window"
       #{$block}_role_task-overview &,
       #{$block}_role_bounced-email &,
       #{$block}_role_venue-details &,
+      #{$block}_role_disciplinary-note &,
       #{$block}_role_shift-details &,
       #{$block}_role_csv-upload-payments &
         font-size: 22px
@@ -645,7 +651,8 @@ $block: ".boss-modal-window"
     color: $boss-medium-gray
     font-size: 18px
 
-    #{$block}_role_note &
+    #{$block}_role_note &,
+    #{$block}_role_disciplinary-note &
       text-align: left
 
     #{$block}_role_danger &

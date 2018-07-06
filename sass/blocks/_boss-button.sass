@@ -443,7 +443,8 @@ $block: ".boss-button"
 
 
   // $Common button MOD: role view submissions
-  &_role_view-submissions
+  &_role_view-submissions,
+  &_role_view-notes
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-with-icon-left($icon-url: '../icons/icon-text-paper-white.svg')
@@ -453,6 +454,7 @@ $block: ".boss-button"
   // $Common button MOD: role view orders
   // $Common button MOD: role view assignments
   // $Common button MOD: role view alerts
+  // $Common button MOD: role view notes
   &_role_view-orders,
   &_role_view-assignments,
   &_role_view-alerts
@@ -822,6 +824,14 @@ $block: ".boss-button"
       line-height: 100%
       font-weight: 600
       vertical-align: baseline
+
+  // $Common button MOD: monochrome button disciplinary
+  &_role_disciplinary
+    $primary-color: #4c4c4c
+    +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
+    +button-with-icon-left($icon-url: '../icons/icon-danger-dark-gray.svg')
+    +button-bordered-hover-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-hover-url: '../icons/icon-danger-white.svg')
+    +button-bordered-active-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-active-url: '../icons/icon-danger-white.svg')
 
   // $Common button MOD: monochrome button enabled
   &_role_enabled-sb
