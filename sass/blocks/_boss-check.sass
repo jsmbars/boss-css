@@ -337,23 +337,17 @@ $block: ".boss-check"
     @media screen and (max-width: 960px)
       padding: 15px 10px
 
+    &:not(:last-child)
+      border-right: 1px solid #eee
+
     &_size_half
       width: 50%
 
-      &:not(:last-child)
-        border-right: 1px solid #eee
-
     &_size_third
-      width: 50%
-
-      &:not(:last-child)
-        border-right: 1px solid #eee
+      width: 33%
 
     &_size_fourth
       width: 25%
-
-      &:not(:last-child)
-        border-right: 1px solid #eee
 
     &_size_half#{&}_delimiter_light,
     &_size_third#{&}_delimiter_light,
@@ -455,7 +449,9 @@ $block: ".boss-check"
     &_role_message,
     &_role_accessory,
     &_role_alert-action,
-    &_role_date-alert
+    &_role_date-alert,
+    &_role_details,
+    &_role_edit
 
       &:before
         content: ""
@@ -517,6 +513,14 @@ $block: ".boss-check"
     &_role_accessory
       &:before
         background-image: url('../icons/icon-tshirt-dark-gray.svg')
+
+    &_role_details
+      &:before
+        background-image: url('../icons/icon-zoom-dark-gray.svg')
+
+    &_role_edit
+      &:before
+        background-image: url('../icons/icon-pencil-dark-gray.svg')
 
     &_role_alert-action
       cursor: pointer
@@ -597,7 +601,9 @@ $block: ".boss-check"
     &_role_message,
     &_role_accessory,
     &_role_alert-action,
-    &_role_date-alert
+    &_role_date-alert,
+    &_role_details,
+    &_role_edit
       &:before
         width: 18px
         height: 18px
@@ -638,11 +644,13 @@ $block: ".boss-check"
     &_role_message,
     &_role_accessory,
     &_role_alert-action,
-    &_role_date-alert
+    &_role_date-alert,
+    &_role_details,
+    &_role_edit
 
       &:before
-        width: 16px
-        height: 16px
+        width: 14px
+        height: 14px
         margin-right: 7px
         margin-top: -3px
 
@@ -715,6 +723,17 @@ $block: ".boss-check"
     &_role_edit-action
       cursor: pointer
 
+    &_role_link
+      color: map-get($boss-app-palette, primary)
+
+    &_role_edit#{&}_role_link
+      &:before
+        background-image: url('../icons/icon-pencil-primary.svg')
+
+    &_role_details#{&}_role_link
+      &:before
+        background-image: url('../icons/icon-zoom-primary.svg')
+
 
   // $Check block text line
   &__text-line
@@ -725,9 +744,11 @@ $block: ".boss-check"
   &__text-label
     color: #808080
 
+
   // $Check block text marked
   &__text-marked
     font-weight: 600
+
 
   // $Check block text action
   &__text-action
@@ -748,6 +769,15 @@ $block: ".boss-check"
 
     &_role_pending
       color: #808080
+
+
+  &__counter
+    +text-normalizer()
+    font-size: 24px
+    font-weight: 600
+
+    &_state_alert
+      color: #ed7f7e
 
 
   // $Check block link

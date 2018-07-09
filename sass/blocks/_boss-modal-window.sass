@@ -617,29 +617,16 @@ $block: ".boss-modal-window"
         padding-right: 15px
 
 
-  &__overview
-    #{$block}_role_task-overview &,
-    #{$block}_role_bounced-email &,
-    #{$block}_role_history &
-      padding: 0 30px 45px
-
-    #{$block}_role_csv-upload-payments &
-      padding: 0 30px 30px
+  &__overview,
+  &__timeline
+    padding: 0 30px 45px
 
     @media screen and (max-width: 960px)
-      #{$block}_role_task-overview &,
-      #{$block}_role_bounced-email &,
-      #{$block}_role_csv-upload-payments &,
-      #{$block}_role_history &
-        padding: 0 30px 30px
+      padding: 0 30px 30px
 
     @media screen and (max-width: 479px)
-      #{$block}_role_task-overview &,
-      #{$block}_role_bounced-email &,
-      #{$block}_role_csv-upload-payments &,
-      #{$block}_role_history &
-        padding-left: 15px
-        padding-right: 15px
+      padding-left: 15px
+      padding-right: 15px
 
 
   // $Modal window message block
