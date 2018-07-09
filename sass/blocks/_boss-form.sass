@@ -1941,14 +1941,42 @@ $block: ".boss-form"
       padding-left: 15px
 
 
+  // $Common form link
   &__link
     +text-normalizer()
+    position: relative
     display: inline-block
+    padding-left: 20px
     font-size: 14px
     transition: all .4s
+    color: map-get($boss-app-palette, primary)
+    text-decoration: underline
 
     &:hover
-      color: $boss-medium-gray
+      text-decoration: none
+      color: map-get($boss-app-palette, primary)
+
+    // $Common form link MOD: role history
+    &_role_history
+      &:after
+        content: ''
+        position: absolute
+        left: 0
+        top: 50%
+        display: block
+        width: 12px
+        height: 12px
+        margin-top: -6px
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
+        transition: all .4s
+
+    // $Common form  MOD: role history
+    &_role_history
+      &:after
+        background-image: url(../icons/icon-text-paper-primary.svg)
+
 
 
   // $Common form error message
