@@ -33,10 +33,10 @@ $block: ".boss-timeline"
   &__item
     position: relative
     width: 100%
-    margin-bottom: 40px
+    margin-bottom: 50px
 
     @media screen and (max-width: 480px)
-      margin-bottom: 30px
+      margin-bottom: 40px
 
     &:before
       content: ""
@@ -69,8 +69,25 @@ $block: ".boss-timeline"
 
     &:last-child
       margin-bottom: 0
+
       &:after
         display: none
+
+    // $Timeline item MOD: adjust count
+    &_adjust_count
+      margin-bottom: 50px
+
+      @media screen and (max-width: 480px)
+        margin-bottom: 30px
+
+      &:before
+        display: none
+
+      &:after
+        left: 20px
+
+        @media screen and (max-width: 480px)
+          left: 18px
 
     // $Timeline item MOD: role card
     &_role_card
@@ -95,6 +112,33 @@ $block: ".boss-timeline"
         background-image: url('../icons/icon-clock-alert.svg')
 
 
+  &__count
+    +text-normalizer()
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    display: block
+    width: 40px
+    height: 40px
+    font-size: 16px
+    line-height: 40px
+    font-weight: 600
+    text-align: center
+    color: #fff
+    background-color: map-get($boss-app-palette, primary)
+    border-radius: 50%
+
+    @media screen and (max-width: 480px)
+      width: 35px
+      height: 35px
+      font-size: 14px
+      line-height: 35px
+
+    &_state_alert
+      background-color: map-get($boss-app-palette, alert)
+
+
   // $Timeline inner container
   &__inner
     display: block
@@ -105,6 +149,16 @@ $block: ".boss-timeline"
     @media screen and (max-width: 480px)
       width: calc(100% - 35px)
       margin-left: 35px
+
+    // $Timeline inner container MOD: adjust count
+    &_adjust_count
+      width: calc(100% - 50px)
+      margin-left: 50px
+
+      @media screen and (max-width: 480px)
+        width: calc(100% - 45px)
+        margin-left: 45px
+
 
     // $Timeline inner container MOD: role card
     &_role_card
@@ -124,6 +178,12 @@ $block: ".boss-timeline"
     justify-content: space-between
     align-items: center
     width: 100%
+
+    &_adjust_count
+      padding-top: 5px
+
+      @media screen and (max-width: 480px)
+        padding-top: 3px
 
     // $Timeline header MOD: role card
     &_role_card
@@ -149,9 +209,12 @@ $block: ".boss-timeline"
   &__title
     +text-normalizer()
     max-width: 100%
+    padding-top: 2px
     font-size: 18px
+    line-height: 25px
 
     @media screen and (max-width: 480px)
+      padding-top: 3px
       font-size: 16px
 
 
@@ -198,6 +261,9 @@ $block: ".boss-timeline"
   &__text
     +text-normalizer()
     margin-bottom: 5px
+
+    #{$block}__header &
+      padding-top: 5px
 
     // $Timeline text MOD: role venue
     &_role_venue

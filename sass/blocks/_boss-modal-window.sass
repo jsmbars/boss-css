@@ -78,6 +78,7 @@ $block: ".boss-modal-window"
   &_role_task-create,
   &_role_task-edit,
   &_role_task-overview,
+  &_role_history,
   &_role_venue-details,
   &_role_disciplinary-note,
   &_role_edit,
@@ -89,7 +90,8 @@ $block: ".boss-modal-window"
   &_role_details,
   &_role_task-create,
   &_role_task-edit,
-  &_role_task-overview
+  &_role_task-overview,
+  &_role_history,
     margin-top: 100px
 
     @media screen and (max-width: 960px)
@@ -202,7 +204,8 @@ $block: ".boss-modal-window"
     #{$block}_role_venue-details &,
     #{$block}_role_disciplinary-note &,
     #{$block}_role_shift-details &,
-    #{$block}_role_csv-upload-payments &
+    #{$block}_role_csv-upload-payments &,
+    #{$block}_role_history &
       width: 16px
       height: 16px
       top: 30px
@@ -222,7 +225,8 @@ $block: ".boss-modal-window"
       #{$block}_role_task-overview &,
       #{$block}_role_bounced-email &,
       #{$block}_role_shift-details &,
-      #{$block}_role_csv-upload-payments &
+      #{$block}_role_csv-upload-payments &,
+      #{$block}_role_history &
         right: 15px
 
   // $Modal window header
@@ -278,7 +282,8 @@ $block: ".boss-modal-window"
     #{$block}_role_venue-details &,
     #{$block}_role_disciplinary-note &,
     #{$block}_role_shift-details &,
-    #{$block}_role_csv-upload-payments &
+    #{$block}_role_csv-upload-payments &,
+    #{$block}_role_history &
       padding: 20px 50px 20px 30px
       background-color: $boss-extra-light-gray
       text-transform: none
@@ -293,7 +298,8 @@ $block: ".boss-modal-window"
     #{$block}_role_task-overview &,
     #{$block}_role_bounced-email &,
     #{$block}_role_shift-details &,
-    #{$block}_role_csv-upload-payments &
+    #{$block}_role_csv-upload-payments &,
+    #{$block}_role_history &
       background-color: #fff
 
     // $Modal window header CONTEXT: $Modal window MOD: role details
@@ -346,7 +352,8 @@ $block: ".boss-modal-window"
       #{$block}_role_task-overview &,
       #{$block}_role_bounced-email &,
       #{$block}_role_shift-details &,
-      #{$block}_role_csv-upload-payments &
+      #{$block}_role_csv-upload-payments &,
+      #{$block}_role_history &
         padding-left: 30px
 
     @media screen and (max-width: 479px)
@@ -364,7 +371,8 @@ $block: ".boss-modal-window"
       #{$block}_role_task-overview &,
       #{$block}_role_bounced-email &,
       #{$block}_role_shift-details &,
-      #{$block}_role_csv-upload-payments &
+      #{$block}_role_csv-upload-payments &,
+      #{$block}_role_history &
         padding-left: 15px
         padding-right: 35px
 
@@ -378,7 +386,8 @@ $block: ".boss-modal-window"
       #{$block}_role_venue-details &,
       #{$block}_role_disciplinary-note &,
       #{$block}_role_shift-details &,
-      #{$block}_role_csv-upload-payments &
+      #{$block}_role_csv-upload-payments &,
+      #{$block}_role_history &
         font-size: 22px
 
     // $Modal window header MOD: error
@@ -483,7 +492,8 @@ $block: ".boss-modal-window"
     #{$block}_role_rota &,
     #{$block}_role_bounced-email &,
     #{$block}_role_venue-details &,
-    #{$block}_role_csv-upload-payments &
+    #{$block}_role_csv-upload-payments &,
+    #{$block}_role_history &
       padding: 0
 
     @media screen and (max-width: 960px)
@@ -512,7 +522,8 @@ $block: ".boss-modal-window"
       #{$block}_role_rota &,
       #{$block}_role_bounced-email &,
       #{$block}_role_venue-details &,
-      #{$block}_role_csv-upload-payments &
+      #{$block}_role_csv-upload-payments &,
+      #{$block}_role_history &
         padding: 0
 
       #{$block}_role_shift-details &
@@ -606,26 +617,16 @@ $block: ".boss-modal-window"
         padding-right: 15px
 
 
-  &__overview
-    #{$block}_role_task-overview &,
-    #{$block}_role_bounced-email &
-      padding: 0 30px 45px
-
-    #{$block}_role_csv-upload-payments &
-      padding: 0 30px 30px
+  &__overview,
+  &__timeline
+    padding: 0 30px 45px
 
     @media screen and (max-width: 960px)
-      #{$block}_role_task-overview &,
-      #{$block}_role_bounced-email &,
-      #{$block}_role_csv-upload-payments &
-        padding: 0 30px 30px
+      padding: 0 30px 30px
 
     @media screen and (max-width: 479px)
-      #{$block}_role_task-overview &,
-      #{$block}_role_bounced-email &,
-      #{$block}_role_csv-upload-payments &
-        padding-left: 15px
-        padding-right: 15px
+      padding-left: 15px
+      padding-right: 15px
 
 
   // $Modal window message block
@@ -712,9 +713,20 @@ $block: ".boss-modal-window"
     #{$block}_role_shift-details &
       justify-content: flex-start
 
+    #{$block}_role_history &
+      padding: 0 30px 45px
+
     @media screen and (max-width: 960px)
       #{$block}_role_note &
         justify-content: center
+
+      #{$block}_role_history &
+        padding: 0 30px 30px
+
+    @media screen and (max-width: 479px)
+      #{$block}_role_history &
+        padding-left: 15px
+        padding-right: 15px
 
 
   // $Modal window action
