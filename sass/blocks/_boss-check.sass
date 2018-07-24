@@ -191,6 +191,9 @@ $block: ".boss-check"
     display: block
     margin-top: 10px
 
+    &:not(:last-child)
+      @media screen and (max-width: 640px)
+        border-bottom: 1px solid #eee
 
   // $Check block header meta item
   &__header-meta-item
