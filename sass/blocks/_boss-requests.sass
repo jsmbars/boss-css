@@ -180,7 +180,6 @@ $block: ".boss-requests"
     display: inline-block
     vertical-align: middle
 
-
   // $Requests action
   &__action
     +text-normalizer()
@@ -202,7 +201,8 @@ $block: ".boss-requests"
     // $Requests action MOD: role cancel
     // $Requests action MOD: role request
     &_role_cancel,
-    &_role_request
+    &_role_request,
+    &_role_edit
       padding-left: 20px
 
       &:after
@@ -229,7 +229,8 @@ $block: ".boss-requests"
       &:focus
         color: map-get($boss-app-palette, alert)
 
-    &_role_request
+    &_role_request,
+    &_role_edit
       color: map-get($boss-app-palette, primary)
 
       &:after
@@ -326,6 +327,21 @@ $block: ".boss-requests"
     width: 100%
 
 
+  // $Requests details line
+  &__details-line
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+
+  // $Requests details value
+  &__details-value
+    display: inline-block
+    margin-right: 10px
+
+
   // $Requests details record
   &__details-record
     flex-grow: 0
@@ -353,5 +369,10 @@ $block: ".boss-requests"
   // $Requests details text-marked
   &__details-text-marked
     font-weight: 600
+
+
+  // $Requests details text-faded
+  &__details-text-faded
+    color: #808080
 
 
