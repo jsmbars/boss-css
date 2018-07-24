@@ -1860,6 +1860,26 @@ $block: ".boss-form"
         visibility: visible
         background-image: url('../icons/icon-checked-medium-gray.svg')
 
+    &_layout_reverse
+      padding-left: 0
+      padding-right: 30px
+
+      @media screen and (max-width: 640px)
+        padding-left: 0
+        padding-right: 25px
+
+      &:before
+        left: auto
+        right: 0
+
+      &:after
+        left: auto
+        right: 5px
+
+        @media screen and (max-width: 640px)
+          left: auto
+          right: 3px
+
 
   // $Common form pagination
   &__pagination
