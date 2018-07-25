@@ -407,6 +407,23 @@ $block: ".boss-check"
       border: none
 
 
+  &__cell-content
+    flex-grow: 0
+    flex-shrink: 1
+    display: block
+    width: auto
+    max-width: 100%
+    text-align: left
+
+
+  &__cell-group
+    display: block
+    width: auto
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
   // $Check block box
   &__box
     display: block
@@ -748,7 +765,7 @@ $block: ".boss-check"
 
   // $Check block text label
   &__text-label
-    color: #808080
+    font-weight: 300
 
 
   // $Check block text marked
@@ -759,7 +776,6 @@ $block: ".boss-check"
   // $Check block text action
   &__text-action
     cursor: pointer
-
 
   &__status
     +text-normalizer()

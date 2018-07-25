@@ -2726,7 +2726,6 @@ $block: ".boss-table"
     #{$block}_page_smp-holidays #{$block}__cell:nth-child(4) &,
     #{$block}_page_smp-holidays #{$block}__cell:nth-child(5) &,
     #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(2) &,
-    #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(5) &,
     #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(6) &,
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(3) &,
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(4) &,
@@ -2797,7 +2796,6 @@ $block: ".boss-table"
       #{$block}_page_smp-holidays #{$block}__cell:nth-child(4) &,
       #{$block}_page_smp-holidays #{$block}__cell:nth-child(5) &,
       #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(2) &,
-      #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(5) &,
       #{$block}_page_smp-holiday-requests #{$block}__cell:nth-child(6) &,
       #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(3) &,
       #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(4) &,
@@ -2830,6 +2828,12 @@ $block: ".boss-table"
       #{$block}_page_holidays-report &
         padding-left: 10px
         width: 50%
+
+    &_align_center
+      text-align: center
+
+      @media screen and (max-width: 960px)
+        text-align-last: left
 
     // $Common table text MOD: state alert
     &_state_alert
@@ -2980,11 +2984,15 @@ $block: ".boss-table"
     color: map-get($boss-app-palette, alert)
 
 
+  &__text-label
+    font-weight: 300
+
+
   &__text-marked
     font-weight: 600
 
 
-  &__text-value
+  &__text-content
     &:not(:last-child)
       margin-right: 15px
 
