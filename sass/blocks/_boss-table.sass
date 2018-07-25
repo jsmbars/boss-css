@@ -2901,7 +2901,11 @@ $block: ".boss-table"
     &_role_action
       cursor: pointer
 
-    &_role_alert-action
+    &_role_alert-action,
+    &_role_edit-action
+      cursor: pointer
+      text-decoration: underline
+
       &:before
         content: ""
         display: inline-block
@@ -2912,17 +2916,26 @@ $block: ".boss-table"
         background-repeat: no-repeat
         vertical-align: middle
 
+      &:hover
+        text-decoration: none
+
     &_role_alert-action
-      cursor: pointer
       color: map-get($boss-app-palette, alert)
-      text-decoration: underline
 
       &:before
         background-image: url(../icons/icon-danger-alert.svg)
 
       &:hover
         color: map-get($boss-app-palette, alert)
-        text-decoration: none
+
+    &_role_edit-action
+      color: map-get($boss-app-palette, primary)
+
+      &:before
+        background-image: url(../icons/icon-pencil-primary.svg)
+
+      &:hover
+        color: map-get($boss-app-palette, primary)
 
     &_adjust_wrap
       overflow-wrap: break-word
@@ -2969,6 +2982,15 @@ $block: ".boss-table"
 
   &__text-marked
     font-weight: 600
+
+
+  &__text-value
+    &:not(:last-child)
+      margin-right: 15px
+
+
+  &__note
+    margin-top: 15px
 
 
   &__box
@@ -3215,6 +3237,7 @@ $block: ".boss-table"
     vertical-align: middle
     text-decoration: none
     transition: color .3s
+    cursor: pointer
 
     #{$block}_page_weekly-reports &
       text-align: center
@@ -3252,6 +3275,33 @@ $block: ".boss-table"
 
         #{$block}__cell_state_alert &
           color: #eee
+
+    &_role_edit
+      text-decoration: underline
+      vertical-align: middle
+
+      &:before
+        content: ""
+        display: inline-block
+        width: 14px
+        height: 14px
+        margin-top: -2px
+        margin-right: 5px
+        background-size: contain
+        background-repeat: no-repeat
+        vertical-align: middle
+
+      &:hover
+        text-decoration: none
+
+    &_role_edit
+      color: map-get($boss-app-palette, primary)
+
+      &:before
+        background-image: url(../icons/icon-pencil-primary.svg)
+
+      &:hover
+        color: map-get($boss-app-palette, primary)
 
 
   //  $Common table sort link
