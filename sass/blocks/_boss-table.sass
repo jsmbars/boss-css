@@ -497,7 +497,8 @@ $block: ".boss-table"
           padding-top: 0
 
     // $Common table row MOD: state alert
-    &_state_alert
+    &_state_alert,
+    &_state_pre-calculated
       &:nth-child(odd),
       &:nth-child(even)
         background-color: #feeeee
@@ -517,7 +518,8 @@ $block: ".boss-table"
     // $Common table row MOD: state frozen corner
     // $Common table row MOD: state edited corner
     &_state_frozen,
-    &_state_edited
+    &_state_edited,
+    &_state_pre-calculated
       position: relative
 
       &:before
@@ -527,18 +529,18 @@ $block: ".boss-table"
         left: 0
         z-index: 0
         display: block
-        width: 50px
-        height: 50px
+        width: 45px
+        height: 45px
 
       &:after
         content: ''
         position: absolute
-        top: 5px
-        left: 5px
+        top: 4px
+        left: 4px
         z-index: 1
         display: block
-        width: 20px
-        height: 20px
+        width: 18px
+        height: 18px
         background-repeat: no-repeat
         background-position: center center
         background-size: contain
@@ -564,6 +566,17 @@ $block: ".boss-table"
 
       &:after
         background-image: url("../icons/icon-pencil-white.svg")
+
+    &_state_pre-calculated
+      &:before
+        background-image: -ms-linear-gradient(-45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
+        background-image: -moz-linear-gradient(-45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
+        background-image: -o-linear-gradient(-45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
+        background-image: -webkit-linear-gradient(-45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
+        background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
+
+      &:after
+        background-image: url("../icons/icon-calculator-white.svg")
 
 
     // $Common table row MOD: role faded
@@ -896,12 +909,12 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-no-sage-id &,
         align-items: flex-start
         width: 10%
-        padding-left: 15px
+        padding-left: 25px
 
       #{$block}_page_payroll-reports &
         align-items: flex-start
         width: 10%
-        padding-left: 15px
+        padding-left: 25px
 
       #{$block}_page_wages-index &
         width: 30%
@@ -2489,18 +2502,18 @@ $block: ".boss-table"
         left: 0
         z-index: 0
         display: block
-        width: 50px
-        height: 50px
+        width: 45px
+        height: 45px
 
       &:after
         content: ''
         position: absolute
-        top: 5px
-        left: 5px
+        top: 4px
+        left: 4px
         z-index: 1
         display: block
-        width: 20px
-        height: 20px
+        width: 18px
+        height: 18px
         background-repeat: no-repeat
         background-position: center center
         background-size: contain
