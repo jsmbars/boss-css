@@ -2718,6 +2718,10 @@ $block: ".boss-table"
     &:not(:last-child)
       margin-bottom: 10px
 
+    #{$block}__cell_state_alert &
+      color: #fff
+      font-weight: 600
+
     #{$block}_page_holidays-report &
       color: $boss-medium-gray
 
@@ -2857,7 +2861,8 @@ $block: ".boss-table"
         font-weight: 600
 
     &_indicator_accessory,
-    &_indicator_clock
+    &_indicator_clock,
+    &_indicator_disabled
       vertical-align: middle
 
       &:after
@@ -2874,7 +2879,10 @@ $block: ".boss-table"
       &:after
         background-image: url('../icons/icon-tshirt-dark-gray.svg')
 
-    &_indicator_clock#{&}_state_alert
+        #{$block}__cell_state_alert &
+          background-image: url('../icons/icon-tshirt-white.svg')
+
+    &_indicator_accessory#{&}_state_alert
       &:after
         background-image: url('../icons/icon-tshirt-white.svg')
 
@@ -2882,9 +2890,23 @@ $block: ".boss-table"
       &:after
         background-image: url('../icons/icon-clock-dark-gray.svg')
 
+        #{$block}__cell_state_alert &
+          background-image: url('../icons/icon-clock-white.svg')
+
     &_indicator_clock#{&}_state_alert
       &:after
         background-image: url('../icons/icon-clock-white.svg')
+
+    &_indicator_disabled
+      &:after
+        background-image: url('../icons/icon-block-dark-gray.svg')
+
+        #{$block}__cell_state_alert &
+          background-image: url('../icons/icon-block-white.svg')
+
+    &_indicator_disabled#{&}_state_alert
+      &:after
+        background-image: url('../icons/icon-block-white.svg')
 
     &_role_date,
     &_role_venue
@@ -2992,9 +3014,21 @@ $block: ".boss-table"
     color: $boss-light-gray
     font-size: 12px
 
+    #{$block}__cell_state_alert &
+      color: #fff
+
+    &_state_alert
+      color: map-get($boss-app-palette, alert)
+
+      #{$block}__cell_state_alert &
+        color: #fff
+
 
   &__text-alert
     color: map-get($boss-app-palette, alert)
+
+    #{$block}__cell_state_alert &
+      color: #fff
 
 
   &__text-label
@@ -3286,13 +3320,19 @@ $block: ".boss-table"
     &_state_alert
       color: map-get($boss-app-palette, alert)
 
+      #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-no-net-wages &,
+      #{$block}_page_finance-reports-no-sage-id &,
+      #{$block}_page_payroll-reports &
+        color: map-get($boss-app-palette, alert)
+
       #{$block}__cell_state_alert &
         color: #fff
         font-weight: 600
 
       &:hover,
       &:focus
-        color: #eee
+        color: $boss-medium-gray
 
         #{$block}__cell_state_alert &
           color: #eee
