@@ -3014,6 +3014,9 @@ $block: ".boss-table"
     color: $boss-light-gray
     font-size: 12px
 
+    #{$block}__cell_state_alert &
+      color: #fff
+
 
   &__text-alert
     color: map-get($boss-app-palette, alert)
@@ -3308,13 +3311,19 @@ $block: ".boss-table"
     &_state_alert
       color: map-get($boss-app-palette, alert)
 
+      #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-no-net-wages &,
+      #{$block}_page_finance-reports-no-sage-id &,
+      #{$block}_page_payroll-reports &
+        color: map-get($boss-app-palette, alert)
+
       #{$block}__cell_state_alert &
         color: #fff
         font-weight: 600
 
       &:hover,
       &:focus
-        color: #eee
+        color: $boss-medium-gray
 
         #{$block}__cell_state_alert &
           color: #eee
