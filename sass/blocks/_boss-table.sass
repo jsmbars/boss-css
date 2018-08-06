@@ -3017,9 +3017,18 @@ $block: ".boss-table"
     #{$block}__cell_state_alert &
       color: #fff
 
+    &_state_alert
+      color: map-get($boss-app-palette, alert)
+
+      #{$block}__cell_state_alert &
+        color: #fff
+
 
   &__text-alert
     color: map-get($boss-app-palette, alert)
+
+    #{$block}__cell_state_alert &
+      color: #fff
 
 
   &__text-label
