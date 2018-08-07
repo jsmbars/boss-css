@@ -2529,6 +2529,39 @@ $block: ".boss-table"
       &:after
         background-image: url("../icons/icon-clock-white.svg")
 
+    &_indicator_user-disabled
+      position: relative
+
+      &:before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        z-index: 0
+        display: block
+        width: 55px
+        height: 55px
+        background-image: -ms-linear-gradient(45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
+        background-image: -moz-linear-gradient(45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
+        background-image: -o-linear-gradient(45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
+        background-image: -webkit-linear-gradient(45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
+        background-image: linear-gradient(45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
+
+      &:after
+        content: 'Disabled'
+        position: absolute
+        top: 37px
+        right: 1px
+        z-index: 1
+        display: block
+        font-size: 10px
+        line-height: 1
+        font-weight: 400
+        letter-spacing: 1px
+        color: #fff
+        transform-origin: 100% 0
+        transform: rotate(45deg)
+
 
   // $Common table info
   &__info
