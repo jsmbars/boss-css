@@ -144,9 +144,13 @@ $block: ".boss-button"
     @media screen and (max-width: 400px)
       padding: 6px 10px
 
-  // $Common button MOD: type extral small
+  // $Common button MOD: type extra small
   &_type_extra-small
     padding: 6px 10px
+
+  // $Common button MOD: type ultra small
+  &_type_ultra-small
+    padding: 4px 10px
 
   // $Common button MOD: type label
   &_type_label
@@ -228,6 +232,32 @@ $block: ".boss-button"
     +button-common($background-color: $background-color)
     +button-common-hover-behavior($background-color: $background-color)
 
+
+  &_color_accent-green
+    $background-color: #3adb76
+    +button-common($background-color: $background-color)
+    +button-common-hover-behavior($background-color: $background-color)
+
+  &_color_accent-blue
+    $background-color: #84bef0
+    +button-common($background-color: $background-color)
+    +button-common-hover-behavior($background-color: $background-color)
+
+  &_color_accent-red
+    $background-color: #ff8587
+    +button-common($background-color: $background-color)
+    +button-common-hover-behavior($background-color: $background-color)
+
+  &_color_accent-amber
+    $background-color: #f4a84f
+    +button-common($background-color: $background-color)
+    +button-common-hover-behavior($background-color: $background-color)
+
+  &_color_accent-purple
+    $background-color: #8c7ae6
+    +button-common($background-color: $background-color)
+    +button-common-hover-behavior($background-color: $background-color)
+
   // $Common button MOD: role primary
   // $Common button MOD: role submit
   &_role_primary,
@@ -252,7 +282,6 @@ $block: ".boss-button"
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover-behavior($background-color: $background-color)
-
 
   // $Common button MOD: role alert
   // $Common button MOD: role disabled
