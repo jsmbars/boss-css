@@ -517,6 +517,14 @@ $block: ".boss-button"
     +button-common-hover-behavior($background-color: $background-color)
 
 
+  // $Common button MOD: role view details alternative
+  &_role_view-details-alt
+    $background-color: map-get($boss-app-palette, secondary)
+    +button-common($background-color: $background-color)
+    +button-with-icon-left($icon-url: '../icons/icon-zoom-white.svg', $background-size: 12px)
+    +button-common-hover-behavior($background-color: $background-color)
+
+
   // $Common button MOD: update
   &_role_update
     $background-color: map-get($boss-app-palette, secondary)
@@ -769,6 +777,13 @@ $block: ".boss-button"
   &_role_view-details-light,
   &_role_view-timeline-light
     $primary-color: map-get($boss-app-palette, primary)
+    +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
+    +button-with-icon-left($icon-url: '../icons/icon-zoom-primary.svg', $background-size: 12px)
+    +button-bordered-hover-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-hover-url: '../icons/icon-zoom-white.svg')
+    +button-bordered-active-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-active-url: '../icons/icon-zoom-white.svg')
+
+  &_role_view-details-alt-light
+    $primary-color: map-get($boss-app-palette, secondary)
     +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
     +button-with-icon-left($icon-url: '../icons/icon-zoom-primary.svg', $background-size: 12px)
     +button-bordered-hover-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-hover-url: '../icons/icon-zoom-white.svg')

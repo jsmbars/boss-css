@@ -80,7 +80,7 @@ $block: ".boss-modal-window"
   &_role_task-overview,
   &_role_history,
   &_role_venue-details,
-  &_role_disciplinary-note,
+  &_role_disciplinary-details,
   &_role_edit,
   &_role_add
     width: 90%
@@ -202,7 +202,7 @@ $block: ".boss-modal-window"
     #{$block}_role_task-overview &,
     #{$block}_role_bounced-email &,
     #{$block}_role_venue-details &,
-    #{$block}_role_disciplinary-note &,
+    #{$block}_role_disciplinary-details &,
     #{$block}_role_shift-details &,
     #{$block}_role_csv-upload-payments &,
     #{$block}_role_history &
@@ -215,11 +215,8 @@ $block: ".boss-modal-window"
     @media screen and (max-width: 960px)
       #{$block}_role_edit &,
       #{$block}_role_add &,
-      #{$block}_role_venue-details &
-      #{$block}_role_disciplinary-note &,
-        right: 15px
-
-    @media screen and (max-width: 479px)
+      #{$block}_role_venue-details &,
+      #{$block}_role_disciplinary-details &,
       #{$block}_role_task-create &,
       #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
@@ -263,7 +260,9 @@ $block: ".boss-modal-window"
       background-color: map-get($boss-app-palette, secondary)
 
     // $Modal window header CONTEXT: $Modal window MOD: role add new
-    #{$block}_role_add-new &
+    // $Modal window header CONTEXT: $Modal window MOD: role details
+    #{$block}_role_add-new &,
+    #{$block}_role_details &
       background-color: map-get($boss-app-palette, primary)
       text-transform: none
       font-size: 24px
@@ -280,7 +279,7 @@ $block: ".boss-modal-window"
     #{$block}_role_task-overview &,
     #{$block}_role_bounced-email &,
     #{$block}_role_venue-details &,
-    #{$block}_role_disciplinary-note &,
+    #{$block}_role_disciplinary-details &,
     #{$block}_role_shift-details &,
     #{$block}_role_csv-upload-payments &,
     #{$block}_role_history &
@@ -292,22 +291,6 @@ $block: ".boss-modal-window"
       color: #4c4c4c
       text-align: left
 
-      @media screen and (max-width: 400px)
-        font-size: 22px
-
-    #{$block}_role_task-overview &,
-    #{$block}_role_bounced-email &,
-    #{$block}_role_shift-details &,
-    #{$block}_role_csv-upload-payments &,
-    #{$block}_role_history &
-      background-color: #fff
-
-    // $Modal window header CONTEXT: $Modal window MOD: role details
-    #{$block}_role_details &
-      background-color: map-get($boss-app-palette, primary)
-      text-transform: none
-      font-size: 24px
-
     #{$block}_role_login &,
     #{$block}_role_reset &,
     #{$block}_role_change &,
@@ -318,7 +301,7 @@ $block: ".boss-modal-window"
       background-position: center 15px
       background-repeat: no-repeat
       background-size: 170px 170px
-      padding: 200px 25px 25px
+      padding: 200px 30px 20px
 
     #{$block}_role_login &
       background-image: url('../images/illustration-lock-primary.svg')
@@ -342,21 +325,18 @@ $block: ".boss-modal-window"
     @media screen and (max-width: 960px)
       #{$block}_role_edit &,
       #{$block}_role_add &,
-      #{$block}_role_venue-details &
-      #{$block}_role_disciplinary-note &,
-        padding-left: 15px
-        padding-right: 35px
-
       #{$block}_role_task-create &,
       #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
       #{$block}_role_bounced-email &,
+      #{$block}_role_venue-details &,
+      #{$block}_role_disciplinary-details &,
       #{$block}_role_shift-details &,
       #{$block}_role_csv-upload-payments &,
       #{$block}_role_history &
-        padding-left: 30px
+        padding-left: 15px
+        padding-right: 35px
 
-    @media screen and (max-width: 479px)
       #{$block}_role_login &,
       #{$block}_role_reset &,
       #{$block}_role_change &,
@@ -364,17 +344,7 @@ $block: ".boss-modal-window"
       #{$block}_role_set-confirmation &,
       #{$block}_role_accept-invite &
         background-size: 150px
-        padding: 180px 15px 25px
-
-      #{$block}_role_task-create &,
-      #{$block}_role_task-edit &,
-      #{$block}_role_task-overview &,
-      #{$block}_role_bounced-email &,
-      #{$block}_role_shift-details &,
-      #{$block}_role_csv-upload-payments &,
-      #{$block}_role_history &
-        padding-left: 15px
-        padding-right: 35px
+        padding: 180px 15px 20px
 
     @media screen and (max-width: 400px)
       #{$block}_role_edit &,
@@ -384,7 +354,7 @@ $block: ".boss-modal-window"
       #{$block}_role_task-overview &,
       #{$block}_role_bounced-email &,
       #{$block}_role_venue-details &,
-      #{$block}_role_disciplinary-note &,
+      #{$block}_role_disciplinary-details &,
       #{$block}_role_shift-details &,
       #{$block}_role_csv-upload-payments &,
       #{$block}_role_history &
@@ -462,10 +432,6 @@ $block: ".boss-modal-window"
       padding: 30px
       border-radius: $border-radius !important
 
-    // $Modal window content CONTEXT: $Modal window MOD: role details
-    #{$block}_role_details &
-      padding: 0
-
     // $Modal window content CONTEXT: $Modal window MOD: role danger
     #{$block}_role_danger &
       padding-top: 230px
@@ -492,13 +458,11 @@ $block: ".boss-modal-window"
     #{$block}_role_rota &,
     #{$block}_role_bounced-email &,
     #{$block}_role_venue-details &,
+    #{$block}_role_disciplinary-details &,
     #{$block}_role_csv-upload-payments &,
-    #{$block}_role_history &
+    #{$block}_role_history &,
+    #{$block}_role_details &
       padding: 0
-
-    @media screen and (max-width: 960px)
-      #{$block}_role_shift-details &
-        padding-top: 0
 
     #{$block}_role_rota &
       border-top-right-radius: $border-radius !important
@@ -522,6 +486,7 @@ $block: ".boss-modal-window"
       #{$block}_role_rota &,
       #{$block}_role_bounced-email &,
       #{$block}_role_venue-details &,
+      #{$block}_role_disciplinary-details &,
       #{$block}_role_csv-upload-payments &,
       #{$block}_role_history &
         padding: 0
@@ -550,14 +515,15 @@ $block: ".boss-modal-window"
 
   // $Modal window group
   &__group
-    padding: 25px
+    padding: 20px
     border-bottom: 1px solid $boss-very-light-gray
 
     &:last-child
       border-bottom: none
 
     @media screen and (max-width: 960px)
-      padding: 20px
+      padding-left: 15px
+      padding-right: 15px
 
 
   // $Modal window group label
@@ -577,54 +543,26 @@ $block: ".boss-modal-window"
     display: flex
     flex-direction: column
     align-items: center
+    padding: 20px 30px 30px
 
-    #{$block}_role_edit &,
-    #{$block}_role_add &
-      padding: 20px 30px 30px 30px
-
-    #{$block}_role_task-create &,
-    #{$block}_role_task-edit &
-      padding: 20px 30px 45px
-
-    #{$block}_role_login &,
-    #{$block}_role_reset &,
-    #{$block}_role_change &,
-    #{$block}_role_set &,
-    #{$block}_role_set-confirmation &,
-    #{$block}_role_accept-invite &
-      padding: 25px
+    #{$block}_role_action &
+      padding: 0
 
     @media screen and (max-width: 960px)
-      #{$block}_role_edit &,
-      #{$block}_role_add &
-        padding-right: 15px
-        padding-left: 15px
+      padding-right: 15px
+      padding-left: 15px
 
-      #{$block}_role_task-create &,
-      #{$block}_role_task-edit &
-        padding: 20px 30px 30px
-
-    @media screen and (max-width: 479px)
-      #{$block}_role_task-create &,
-      #{$block}_role_task-edit &,
-      #{$block}_role_login &,
-      #{$block}_role_reset &,
-      #{$block}_role_change &,
-      #{$block}_role_set &,
-      #{$block}_role_set-confirmation &,
-      #{$block}_role_accept-invite &
-        padding-left: 15px
-        padding-right: 15px
+      #{$block}_role_action &
+        padding: 0
 
 
+  // $Modal window overview
+  // $Modal window timeline
   &__overview,
   &__timeline
-    padding: 0 30px 45px
+    padding: 20px 30px 30px
 
     @media screen and (max-width: 960px)
-      padding: 0 30px 30px
-
-    @media screen and (max-width: 479px)
       padding-left: 15px
       padding-right: 15px
 
@@ -643,6 +581,20 @@ $block: ".boss-modal-window"
     &:not(:last-child)
       margin-bottom: 20px
 
+      #{$block}_role_disciplinary-details &
+        padding-bottom: 20px
+        border-bottom: 1px solid #d8d8d8
+
+
+  // $Modal window message title
+  &__message-title
+    +text-normalizer()
+    display: block
+    margin-bottom: 5px
+    text-align: center
+    color: $boss-dark-gray
+    font-size: 22px
+
 
   // $Modal window message text
   &__message-text
@@ -652,8 +604,7 @@ $block: ".boss-modal-window"
     color: $boss-medium-gray
     font-size: 18px
 
-    #{$block}_role_note &,
-    #{$block}_role_disciplinary-note &
+    #{$block}_role_note &
       text-align: left
 
     #{$block}_role_danger &
