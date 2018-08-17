@@ -31,9 +31,12 @@ $block: ".boss-image-recognition"
     width: 100%
     max-width: 360px
     margin: 0 auto
-    height: 0
-    padding-top: 100%
     overflow: hidden
+
+    &:after
+      content: ''
+      display: block
+      padding-top: 100%
 
     &:not(:last-child)
       margin-bottom: 20px
@@ -64,6 +67,7 @@ $block: ".boss-image-recognition"
         background-image: url('../icons/face-detection-person-outline.svg')
         background-size: contain
         background-position: center bottom
+        background-repeat: no-repeat
 
     // $Image recognition detection area overlay mOD: type face mask
     &_type_face-mask
