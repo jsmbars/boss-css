@@ -738,7 +738,6 @@ $block: ".boss-board"
     z-index: 5
     border: 2px solid #e6e6e6
     border-radius: 10px
-    overflow: hidden
 
     @media screen and (max-width: 960px)
       padding: 15px
@@ -751,14 +750,12 @@ $block: ".boss-board"
       @media screen and (max-width: 960px)
         padding: 0
         border: none
-        overflow: visible
 
       @media screen and (max-width: 480px)
         padding: 0
 
     &_role_area
       border: none
-      overflow: visible
 
     &_context_stack
       &:not(:last-child)
@@ -787,6 +784,8 @@ $block: ".boss-board"
     width: 100%
     padding: 20px
     background-color: #f9f9f9
+    border-top-left-radius: 10px
+    border-top-right-radius: 10px
 
     @media screen and (max-width: 960px)
       padding: 30px
@@ -794,6 +793,9 @@ $block: ".boss-board"
       background-color: #FFF
       border-radius: 10px
       box-shadow: 0 5px 30px -5px rgba(0,0,0,.3)
+
+    &:only-child
+      border-radius: 10px
 
 
   // $Board manager title

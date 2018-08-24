@@ -22,6 +22,9 @@ $block: ".date-picker"
       display: block
       width: 100%
 
+      &_size_min
+        min-width: 130px
+
       &_type_icon
         position: relative
 
@@ -38,6 +41,15 @@ $block: ".date-picker"
           background: url(../icons/icon-calendar-medium-gray.svg) no-repeat 0 0
           background-size: contain
 
+      &_type_inline
+        margin-top: -2px
+
+        & input,
+        & .date-picker-input-field
+          height: 25px
+          line-height: 25px
+          padding: 0 10px
+
       &_state_error input,
       &_state_error .date-picker-input-field
         outline: 1px solid map-get($boss-app-palette, alert-border) !important
@@ -49,13 +61,12 @@ $block: ".date-picker"
         +text-normalizer()
         display: block
         width: 100%
-        height: auto
-        min-height: 50px
-        line-height: 1
+        height: 50px
+        line-height: 50px
         box-sizing: border-box
         background-color: #FFF
         border: 1px solid $boss-very-light-gray
-        padding: 15px 20px
+        padding: 0 20px
         border-radius: 2px
         box-shadow: none
 
@@ -92,17 +103,24 @@ $block: ".date-picker"
           opacity:  1 !important
 
 
+    .date-picker-input_type_inline.date-picker-input_type_icon
+      &:before
+        right: 10px
+        width: 14px
+        height: 14px
+        margin-top: -6px
+
+
     .date-picker-input-field
       +text-normalizer()
       display: block
       width: 100%
-      height: auto
-      min-height: 50px
+      height: 50px
       box-sizing: border-box
       background-color: #FFF
-      line-height: 1
+      line-height: 50px
       border: 1px solid $boss-very-light-gray
-      padding: 15px 20px
+      padding: 0 20px
       border-radius: 2px
       cursor: text
 

@@ -63,6 +63,10 @@ $block: ".boss-overview"
       font-weight: bold
       background-color: #FFF
 
+    #{$block}_page_smp-disciplinary-details &
+      margin-bottom: 20px
+      font-size: 24px
+      text-align: center
 
 
   // $Overview dropdown
@@ -312,6 +316,21 @@ $block: ".boss-overview"
         background-color: map-get($boss-app-palette, secondary)
 
 
+  // $Overview subtitle
+  &__subtitle
+    +text-normalizer()
+    font-size: 16px
+    max-width: 100%
+
+    #{$block}_page_smp-disciplinary-details &
+      text-align: center
+      margin-bottom: 20px
+
+
+  &__subtitle-marked
+    font-weight: 600
+
+
   // $Overview text
   &__text
     +text-normalizer()
@@ -334,6 +353,28 @@ $block: ".boss-overview"
 
       @media screen and (max-width:640px)
         text-align: left
+
+
+  &__text-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+
+  &__text-marked
+    font-weight: 600
+
+
+  &__text-large
+    font-size: 16px
+
+
+  &__text-wrap
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
 
 
   // $Overview link
