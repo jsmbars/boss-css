@@ -54,19 +54,19 @@ $block: ".boss-indicator"
     vertical-align: middle
 
     // $Indicator marker CONTEXT: $Indicator MOD: status success
-    #{$block}_status_success &
+    // $Indicator marker CONTEXT: $Indicator MOD: status collected
+    #{$block}_status_success &,
+    #{$block}_status_collected &
       background-color: map-get($boss-app-palette, secondary)
 
     // $Indicator marker CONTEXT: $Indicator MOD: status error
     #{$block}_status_error &
       background-color: map-get($boss-app-palette, alert)
 
-    // $Indicator marker CONTEXT: $Indicator MOD: status collected
-    #{$block}_status_collected &
-      background-color: map-get($boss-app-palette, secondary)
-
     // $Indicator marker CONTEXT: $Indicator MOD: status uncollected
-    #{$block}_status_uncollected &
+    // $Indicator marker CONTEXT: $Indicator MOD: status pending
+    #{$block}_status_uncollected &,
+    #{$block}_status_pending &
       background-color: map-get($boss-app-palette, pending)
 
     // $Indicator marker MOD: icon check
@@ -89,12 +89,20 @@ $block: ".boss-indicator"
     font-weight: 600
     vertical-align: middle
 
-    // $Indicator marker CONTEXT: $Indicator MOD: status collected
+    // $Indicator label CONTEXT: $Indicator MOD: status success
+    // $Indicator label CONTEXT: $Indicator MOD: status collected
+    #{$block}_status_success &,
     #{$block}_status_collected &
       color: map-get($boss-app-palette, secondary)
 
-    // $Indicator marker CONTEXT: $Indicator MOD: status uncollected
-    #{$block}_status_uncollected &
+    // $Indicator label CONTEXT: $Indicator MOD: status error
+    #{$block}_status_error &
+      color: map-get($boss-app-palette, alert)
+
+    // $Indicator label CONTEXT: $Indicator MOD: status uncollected
+    // $Indicator label CONTEXT: $Indicator MOD: status pending
+    #{$block}_status_uncollected &,
+    #{$block}_status_pending &
       color: map-get($boss-app-palette, pending)
 
     // $Indicator MOD: position before

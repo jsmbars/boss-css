@@ -33,10 +33,10 @@ $block: ".boss-timeline"
   &__item
     position: relative
     width: 100%
-    margin-bottom: 50px
+    margin-bottom: 40px
 
     @media screen and (max-width: 480px)
-      margin-bottom: 40px
+      margin-bottom: 30px
 
     &:before
       content: ""
@@ -59,7 +59,7 @@ $block: ".boss-timeline"
       content: ""
       position: absolute
       top: 20px
-      bottom: -50px
+      bottom: -40px
       left: 15px
       z-index: 0
       display: block
@@ -205,6 +205,24 @@ $block: ".boss-timeline"
         padding: 10px
 
 
+  // $Timeline group
+  &__group
+
+    // $Timeline group MOD: role card
+    &_role_card
+      padding: 10px 20px
+
+      &:not(:last-child)
+        border-bottom: 1px solid #eee
+
+      @media screen and (max-width: 480px)
+        padding: 10px
+
+    &_marked
+      background-color: #fbfbfb
+
+
+
   // $Timeline title
   &__title
     +text-normalizer()
@@ -256,6 +274,32 @@ $block: ".boss-timeline"
       margin-bottom: 20px
       border-bottom: 1px solid #eee
 
+  // $Timeline info list
+  &__info-list
+    display: block
+    width: 100%
+    list-style: none
+    margin: 0
+    padding: 0
+
+
+  // $Timeline info item
+  &__info-item
+    position: relative
+    display: block
+    width: 100%
+    padding-left: 15px
+
+    &:before
+      content: "-"
+      position: absolute
+      left: 0
+      top: 0
+      display: inline-block
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
 
   // $Timeline text
   &__text
@@ -292,6 +336,14 @@ $block: ".boss-timeline"
   // $Timeline text faded
   &__text-faded
    color: #808080
+
+
+  // $Timeline text wrap
+  &__text-wrap
+    overflow-wrap: break-word
+    word-wrap: break-word
+    word-break: break-word
+    hyphens: auto
 
 
   // $Timeline link

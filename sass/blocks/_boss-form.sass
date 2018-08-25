@@ -334,6 +334,7 @@ $block: ".boss-form"
     &_layout_third,
     &_layout_quarter,
     &_layout_fifth,
+    &_layout_sixth,
     &_layout_max,
     &_layout_min,
     &_layout_min-half,
@@ -371,11 +372,25 @@ $block: ".boss-form"
       @media screen and (max-width: 960px)
         width: 100%
 
+        #{$block}__row_layout_wrap-xs &
+          width: 50%
+
+      @media screen and (max-width: 479px)
+        #{$block}__row_layout_wrap-xs &
+          width: 100%
+
     &_layout_third
       width: 33%
 
       @media screen and (max-width: 960px)
         width: 100%
+
+        #{$block}__row_layout_wrap-xs &
+          width: 33%
+
+      @media screen and (max-width: 479px)
+        #{$block}__row_layout_wrap-xs &
+          width: 100%
 
     &_layout_quarter
       width: 25%
@@ -383,11 +398,38 @@ $block: ".boss-form"
       @media screen and (max-width: 960px)
         width: 100%
 
+        #{$block}__row_layout_wrap-xs &
+          width: 25%
+
+      @media screen and (max-width: 479px)
+        #{$block}__row_layout_wrap-xs &
+          width: 100%
+
     &_layout_fifth
       width: 20%
 
       @media screen and (max-width: 960px)
         width: 100%
+
+        #{$block}__row_layout_wrap-xs &
+          width: 20%
+
+      @media screen and (max-width: 479px)
+        #{$block}__row_layout_wrap-xs &
+          width: 100%
+
+    &_layout_sixth
+      width: 16.6%
+
+      @media screen and (max-width: 960px)
+        width: 100%
+
+        #{$block}__row_layout_wrap-xs &
+          width: 16.6%
+
+      @media screen and (max-width: 479px)
+        #{$block}__row_layout_wrap-xs &
+          width: 100%
 
     &_layout_max
       flex-grow: 1
@@ -396,6 +438,13 @@ $block: ".boss-form"
 
       @media screen and (max-width: 960px)
         width: 100%
+
+        #{$block}__row_layout_wrap-xs &
+          width: auto
+
+      @media screen and (max-width: 479px)
+        #{$block}__row_layout_wrap-xs &
+          width: 100%
 
     &_layout_min
       flex-grow: 0
@@ -406,6 +455,17 @@ $block: ".boss-form"
         flex-grow: 1
         flex-shrink: 1
         width: 100%
+
+        #{$block}__row_layout_wrap-xs &
+          flex-grow: 0
+          flex-shrink: 1
+          width: auto
+
+      @media screen and (max-width: 479px)
+        #{$block}__row_layout_wrap-xs &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
 
     &_layout_min-half
       flex-grow: 0
@@ -496,6 +556,13 @@ $block: ".boss-form"
 
       @media screen and (max-width: 960px)
         padding-top: 0
+
+        #{$block}__row_layout_wrap-xs &
+          padding-top: 26px
+
+      @media screen and (max-width: 479px)
+        #{$block}__row_layout_wrap-xs &
+          padding-top: 0
 
     // $Common form field MOD: justify center
     &_justify_center
@@ -1513,6 +1580,10 @@ $block: ".boss-form"
       & .Select-menu-outer
         border-color: map-get($boss-app-palette, alert)
 
+      & .Select-placeholder
+        color: map-get($boss-app-palette, alert)
+
+
     &_state_inactive
       position: relative
 
@@ -2041,7 +2112,6 @@ $block: ".boss-form"
     +text-normalizer()
     position: relative
     display: inline-block
-    padding-left: 20px
     font-size: 14px
     transition: all .4s
     color: map-get($boss-app-palette, primary)
@@ -2053,6 +2123,8 @@ $block: ".boss-form"
 
     // $Common form link MOD: role history
     &_role_history
+      padding-left: 20px
+
       &:after
         content: ''
         position: absolute
