@@ -105,6 +105,10 @@ $block: ".date-control"
       padding-right: 15px
       padding-left: 15px
 
+  & .SingleDatePickerInput
+    & .DateInput
+      width: 100%
+
 
   // $Date range picker MOD: type interval
   // $Date range picker MOD: type interval fluid
@@ -355,7 +359,7 @@ $block: ".date-control"
       margin-top: 0
       margin-bottom: 0
       padding-top: 18px
-      padding-bottom: 40px
+      padding-bottom: 60px
 
       & strong
         display: inline-block
@@ -372,7 +376,8 @@ $block: ".date-control"
         &:last-child
           margin-left: -1px
 
-      & select
+      & select,
+      & .CalendarMonth_select-control
         border-radius: 3px
         border-color: #e4e7e7
         font-family: $boss-global-font-family
@@ -386,9 +391,14 @@ $block: ".date-control"
         font-family: $boss-global-font-family
         color: $boss-global-font-color
 
+      & .CalendarMonth_select-control_month
+
+      & .CalendarMonth_select-control_year
+
 
     ul.DayPicker_weekHeader_ul
       white-space: nowrap
+      padding-top: 10px
 
 
     li.DayPicker_weekHeader_li
@@ -460,3 +470,30 @@ $block: ".date-control"
 
       &_role_apply
         background-color: map-get($boss-app-palette, primary)
+
+
+    .DayPicker_overlay
+      position: absolute
+      top: 65px
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 100
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      background-color: rgba(0, 0, 0, .8)
+
+      &_hidden
+        display: none
+
+
+    .DayPicker_overlay-text
+      +text-normalizer()
+      width: 100%
+      max-width: 200px
+      padding-bottom: 40px
+      font-size: 24px
+      text-align: center
+      color: #fff
