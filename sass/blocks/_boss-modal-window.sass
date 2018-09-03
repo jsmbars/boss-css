@@ -104,7 +104,8 @@ $block: ".boss-modal-window"
   &_role_wtl-card-history,
   &_role_set-confirmation,
   &_role_wtl-ev-success,
-  &_role_wtl-ev-error
+  &_role_wtl-ev-error,
+  &_role_wtl-ev-almost-done
     width: 90%
     max-width: 640px
 
@@ -140,7 +141,8 @@ $block: ".boss-modal-window"
   &_role_set-confirmation,
   &_role_wtl-card-history,
   &_role_wtl-ev-success,
-  &_role_wtl-ev-error
+  &_role_wtl-ev-error,
+  &_role_wtl-ev-almost-done
     margin-top: 100px
 
     @media screen and (max-width: 960px)
@@ -291,7 +293,8 @@ $block: ".boss-modal-window"
     #{$block}_role_shift-details &,
     #{$block}_role_csv-upload-payments &,
     #{$block}_role_history &,
-    #{$block}_role_wtl-card-history &
+    #{$block}_role_wtl-card-history &,
+    #{$block}_role_wtl-ev-almost-done &
       padding: 20px 50px 20px 30px
       background-color: $boss-extra-light-gray
       text-transform: none
@@ -416,12 +419,16 @@ $block: ".boss-modal-window"
     #{$block}_role_set-confirmation &,
     #{$block}_role_wtl-ev-success &,
     #{$block}_role_wtl-ev-error &,
+    #{$block}_role_wtl-ev-almost-done &,
     #{$block}_role_accept-invite &
       text-align: center
 
     #{$block}_role_login &,
     #{$block}_role_accept-invite &
       margin-bottom: 10px
+
+    #{$block}_role_wtl-ev-almost-done &
+      font-size: 36px
 
 
   &__marked
