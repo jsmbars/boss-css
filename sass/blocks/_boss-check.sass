@@ -328,12 +328,21 @@ $block: ".boss-check"
       &:nth-child(even)
         background-color: #FFF
 
+        #{$block}_state_alert &
+          background-color: transparent
+
       &:nth-child(odd)
         background-color: #fbfbfb
+
+        #{$block}_state_alert &
+          background-color: transparent
 
     // $Check block row MOD: marked
     &_marked
       background-color: #fbfbfb
+
+      #{$block}_state_alert &
+        background-color: transparent
 
 
   // $Check block cell
@@ -1022,6 +1031,9 @@ $block: ".boss-check"
     #{$block}_page_maintenance-index &,
     #{$block}_page_marketing-index &
       background-color: #fbfbfb
+
+      #{$block}_state_alert &
+        background-color: transparent
 
     // $Check block dropdown CONTEXT: $Check block MOD: page message board
     #{$block}_page_message-board &

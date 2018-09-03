@@ -442,7 +442,7 @@ $block: ".boss-table"
       #{$block}_page_users-index &,
       #{$block}_page_wtl-clients-index &,
       #{$block}_page_weekly-reports &,
-      #{$block}_page_wages-index &,
+      #{$block}_page_wages-index &
         background-color: #fbfbfb
 
     // $Common table first row
@@ -506,6 +506,20 @@ $block: ".boss-table"
       &:nth-child(odd),
       &:nth-child(even)
         background-color: #feeeee
+
+      &:nth-child(even)
+        #{$block}_page_change-order-report &,
+        #{$block}_page_safe-checks-index &,
+        #{$block}_page_checklist-review &,
+        #{$block}_page_vhci &,
+        #{$block}_page_vouchers-index &,
+        #{$block}_page_voucher-usage &,
+        #{$block}_page_invites-index &,
+        #{$block}_page_users-index &,
+        #{$block}_page_wtl-clients-index &,
+        #{$block}_page_weekly-reports &,
+        #{$block}_page_wages-index &
+          background-color: #feeeee
 
     // $Common table row MOD: state frozen
     &_state_frozen
