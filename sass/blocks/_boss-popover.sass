@@ -143,6 +143,19 @@ $block: ".boss-popover"
       margin-top: 20px
       width: 100%
 
+  // $Popover MOD: context dashboard week picker
+  &_context_dashboard-week-picker
+    left: 0
+    top: calc(100% + 20px)
+    width: 318px
+
+    @media screen and (max-width: 960px)
+      position: relative
+      left: auto
+      top: auto
+      margin-top: 20px
+      width: 100%
+
   // $Popover MOD: context rotas daily
   &_context_rotas-daily
     left: auto
@@ -204,6 +217,10 @@ $block: ".boss-popover"
     // $Popover inner container CONTEXT: $Popover MOD: dashboard calendar reverse
     #{$block}_context_dashboard-calendar-rev &
       padding: 0 0 30px
+
+    // $Popover inner container CONTEXT: $Popover MOD: dashboard week picker
+    #{$block}_context_dashboard-week-picker &
+      padding: 0
 
 
   // $Popover close button
