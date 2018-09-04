@@ -2,7 +2,7 @@
 @import '../helpers/mixins'
 
 ////////////////////////////////////////
-// $Date range picker
+// $Date control
 ////////////////////////////////////////
 
 //////////////////////////////////////// Block variables
@@ -12,17 +12,19 @@
 
 
 //////////////////////////////////////// Block styles
-$block: ".date-range-picker"
+$block: ".date-control"
 
 #{$block}
   display: block
   width: 100%
 
-  & .DateRangePicker
+  & .DateRangePicker,
+  & .SingleDatePicker
     display: block
     width: 100%
 
-  & .DateRangePickerInput
+  & .DateRangePickerInput,
+  & .SingleDatePickerInput
     position: relative
     display: flex
     flex-direction: row
@@ -33,7 +35,11 @@ $block: ".date-range-picker"
     @media screen and (max-width: 400px)
       white-space: nowrap
 
-  & .DateRangePickerInput__arrow
+  & .DateRangePickerInput__showClearDates,
+  & .SingleDatePickerInput__showClearDate
+    padding-right: 0
+
+  & .DateRangePickerInput_arrow
     & svg
       display: none
 
@@ -45,22 +51,23 @@ $block: ".date-range-picker"
       @media screen and (max-width: 480px)
         content: "\2013"
 
-  & .DateRangePickerInput__clear-dates
+  & .DateRangePickerInput_clearDates,
+  & .SingleDatePickerInput_clearDate
+    position: relative
+    right: auto
+    transform: none
     margin: 0
     margin-left: auto
 
-  & .DateRangePickerInput__close-icon
-    & svg
-      width: 12px
-      height: 12px
+  & .DateRangePickerInput_clearDates_svg,
+  & .SingleDatePickerInput_clearDate_svg
+    width: 12px
+    height: 12px
 
-  & .DateRangePickerInput__clear-dates--hide
-    visibility: visible
-    opacity: 0.5
-    pointer-events: none
-
-  & .DateRangePickerInput__clear-dates:focus,
-  & .DateRangePickerInput__clear-dates--hover
+  & .DateRangePickerInput_clearDates:hover,
+  & .DateRangePickerInput_clearDates:focus,
+  & .SingleDatePickerInput_clearDate:hover,
+  & .SingleDatePickerInput_clearDate:focus
     background: none
     border-radius: 0
 
@@ -78,7 +85,7 @@ $block: ".date-range-picker"
       padding-right: 15px
       padding-left: 15px
 
-  & .DateInput__input
+  & .DateInput_input
     position: absolute
     top: 0
     left: 0
@@ -98,16 +105,9 @@ $block: ".date-range-picker"
       padding-right: 15px
       padding-left: 15px
 
-  & .DateInput__display-text
-    padding: 0
-    font-family: $boss-global-font-family
-    font-size: 14px
-    font-weight: 400
-
-  & .DateInput__display-text--focused
-    background: transparent
-    border-color: transparent
-    color: #0060a6
+  & .SingleDatePickerInput
+    & .DateInput
+      width: 100%
 
 
   // $Date range picker MOD: type interval
@@ -118,7 +118,7 @@ $block: ".date-range-picker"
       border: none
       background-color: transparent
 
-    & .DateRangePickerInput__clear-dates
+    & .DateRangePickerInput_clearDates
       margin: 0
       padding-right: 0
 
@@ -138,15 +138,12 @@ $block: ".date-range-picker"
           line-height: 1
           color: #808080
 
-    & .DateRangePickerInput__close-icon
+    & .DateRangePickerInput_clearDates_svg
       @media screen and (max-width: 480px)
         display: inline-block
-
-      & svg
-        @media screen and (max-width: 480px)
-          width: 10px
-          height: 10px
-          vertical-align: baseline
+        width: 10px
+        height: 10px
+        vertical-align: baseline
 
     & .DateInput
       flex-grow: 1
@@ -184,7 +181,7 @@ $block: ".date-range-picker"
         flex-direction: column
         align-items: flex-start
 
-    & .DateRangePickerInput__arrow
+    & .DateRangePickerInput_arrow
       @media screen and (max-width: 480px)
         display: none
 
@@ -215,7 +212,7 @@ $block: ".date-range-picker"
   &_type_icon
 
     & .DateInput,
-    & .DateInput__input
+    & .DateInput_input
       padding-left: 45px
 
       @media screen and (max-width: 480px)
@@ -260,18 +257,14 @@ $block: ".date-range-picker"
         @media screen and (max-width: 400px)
           display: none
 
-    & .DateInput__input
+    & .DateInput_input
       @media screen and (max-width: 400px)
         padding-left: 15px
-
-    & .DateInput__input,
-    & .DateInput__display-text
-      @media screen and (max-width: 400px)
         letter-spacing: -1px
 
   // $Date range picker MOD: adjust control
   &_adjust_control
-    & .DateRangePickerInput__clear-dates
+    & .DateRangePickerInput_clearDates
       @media screen and (max-width: 350px)
         display: none
 
@@ -285,7 +278,7 @@ $block: ".date-range-picker"
         width: 80px
 
     & .DateInput,
-    & .DateInput__input
+    & .DateInput_input
       @media screen and (max-width: 480px)
         padding-left: 10px
         padding-right: 10px
@@ -294,8 +287,7 @@ $block: ".date-range-picker"
         padding-right: 5px
         padding-left: 5px
 
-    & .DateInput__input
-    & .DateInput__display-text
+    & .DateInput_input
       @media screen and (max-width: 400px)
         letter-spacing: -1px
 
@@ -306,20 +298,19 @@ $block: ".date-range-picker"
         min-width: 120px
 
     & .DateInput,
-    & .DateInput__input
+    & .DateInput_input
       @media screen and (min-width: 961px) and (max-width: 1280px)
         padding-left: 10px
         padding-right: 10px
 
-    & .DateInput__input
-    & .DateInput__display-text
+    & .DateInput_input
       @media screen and (min-width: 961px) and (max-width: 1120px)
         letter-spacing: -1px
 
   // $Date range picker MOD: adjust third with icon
   &_adjust_third#{&}_type_icon
     & .DateInput,
-    & .DateInput__input
+    & .DateInput_input
       @media screen and (min-width: 961px) and (max-width: 1280px)
         padding-left: 30px
 
@@ -342,7 +333,8 @@ $block: ".date-range-picker"
 
   // Date range picker direct overrides
   @at-root
-    .DateRangePicker__picker
+    div.DateRangePicker_picker,
+    div.SingleDatePicker_picker
       z-index: 11000
 
       // Foundation override
@@ -356,43 +348,84 @@ $block: ".date-range-picker"
         background-color: transparent
 
 
-    .DateRangePicker__picker--portal
+    div.DateRangePicker_picker__portal,
+    div.SingleDatePicker_picker__portal
       background-color: rgba(0, 0, 0, .75)
 
-    .CalendarMonth--horizontal .CalendarMonth__caption, .CalendarMonth--vertical .CalendarMonth__caption,
-    .CalendarMonth__caption
+
+    div.CalendarMonth_caption
       font-family: $boss-global-font-family
       color: $boss-global-font-color
       margin-top: 0
       margin-bottom: 0
       padding-top: 18px
-      padding-bottom: 40px
+      padding-bottom: 60px
 
       & strong
         display: inline-block
         min-height: 34px
 
+      & .CalendarMonth_selects
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: flex-start
 
-    .DayPicker__week-header ul
+      & .CalendarMonth_select
+
+        &:last-child
+          margin-left: -1px
+
+      & select,
+      & .CalendarMonth_select-control
+        border-radius: 3px
+        border-color: #e4e7e7
+        font-family: $boss-global-font-family
+        color: $boss-global-font-color
+        margin: 0
+
+        &:focus
+          border-color: #c4c4c4
+
+      & option
+        font-family: $boss-global-font-family
+        color: $boss-global-font-color
+
+      & .CalendarMonth_select-control_month
+
+      & .CalendarMonth_select-control_year
+
+
+    ul.DayPicker_weekHeader_ul
       white-space: nowrap
+      padding-top: 10px
 
 
-    .DayPicker__week-header li
+    li.DayPicker_weekHeader_li
       font-family: $boss-global-font-family
       color: $boss-global-font-color
 
 
-    .CalendarDay
+    li.DayPicker_weekHeader_li:not(:first-child)
+      margin-left: -4px
+
+    table.CalendarMonth_table
+      margin-bottom: 0
+
+    td.CalendarDay
       font-family: $boss-global-font-family
       font-size: 14px
 
+      &:empty
+        height: 0 !important
 
-    .CalendarDay--highlighted-calendar
-      &:active
-        background: #0060a6
+      &:hover
+        background: #b2d7f1
+        border-color: #80bce8
+        color: #0060a6
 
 
-    .CalendarDay--selected-span
+    td.CalendarDay__selected_span
       background: #66ace2
       border-color: #3394da
 
@@ -405,46 +438,62 @@ $block: ".date-range-picker"
         border-right: #006fc0
 
 
-    .CalendarDay--hovered-span,
-    .CalendarDay--after-hovered-start
-      background: #b2d7f1
-      border-color: #80bce8
-      color: #0060a6
-
-      &:active
-        background: #80bce8
-
-
-    .CalendarDay--selected-start,
-    .CalendarDay--selected-end,
-    .CalendarDay--selected
+    td.CalendarDay__selected,
+    td.CalendarDay__selected_start,
+    td.CalendarDay__selected_end
       background: #006fc0
       border-color: #006fc0
 
-      &:active
+      &:hover
         background: #006fc0
+        border-color: #006fc0
+        color: #fff
+
+    .DayPicker_actions
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+      width: 100%
+      padding: 20px 22px
+
+    .DayPicker_action
+      +text-normalizer()
+      display: inline-block
+      padding: 5px 10px
+      color: #fff
+      border-radius: 4px
+      background-color: #aaa
+
+      &_role_cancel
+        background-color: map-get($boss-app-palette, alert)
+
+      &_role_apply
+        background-color: map-get($boss-app-palette, primary)
 
 
-    .DayPickerKeyboardShortcuts__title
-      font-family: $boss-global-font-family
-      color: $boss-global-font-color
-      line-height: 1
-      margin-bottom: 5px
+    .DayPicker_overlay
+      position: absolute
+      top: 65px
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 100
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      background-color: rgba(0, 0, 0, .8)
+
+      &_hidden
+        display: none
 
 
-    .DayPickerKeyboardShortcuts__show--bottom-right
-      border-right-color: #006fc0
-
-
-    .DayPickerKeyboardShortcuts__show--top-right
-      border-right-color: #006fc0
-
-
-    .DayPickerKeyboardShortcuts__show--top-left
-      border-left-color: #006fc0
-
-
-    .KeyboardShortcutRow__action
-      font-family: $boss-global-font-family
-      color: $boss-global-font-color
-      font-weight: 300
+    .DayPicker_overlay-text
+      +text-normalizer()
+      width: 100%
+      max-width: 200px
+      padding-bottom: 40px
+      font-size: 24px
+      text-align: center
+      color: #fff
