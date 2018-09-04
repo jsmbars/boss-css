@@ -421,33 +421,53 @@ $block: ".date-control"
 
       &:hover
         background: #b2d7f1
-        border-color: #80bce8
+        border: 1px solid #80bce8
+        color: #0060a6
+
+
+    td.CalendarDay__hovered_offset
+      background: #b2d7f1
+      border: 1px solid #80bce8
+      color: #0060a6
+
+      &:hover
+        background: #b2d7f1
+        border: 1px solid #80bce8
         color: #0060a6
 
 
     td.CalendarDay__selected_span
       background: #66ace2
-      border-color: #3394da
+      border: 1px solid #3394da
+      color: #fff
 
-      &.CalendarDay--hovered,
-      &:active
-        background: #3394da
-        border-color: #006fc0
-
-      &.CalendarDay--last-in-range
-        border-right: #006fc0
+      &:hover
+        background: #66ace2
+        border: 1px solid #3394da
+        color: #fff
 
 
     td.CalendarDay__selected,
     td.CalendarDay__selected_start,
     td.CalendarDay__selected_end
       background: #006fc0
-      border-color: #006fc0
+      border: 1px solid #006fc0
+      color: #fff
 
       &:hover
         background: #006fc0
-        border-color: #006fc0
+        border: 1px solid #006fc0
         color: #fff
+
+
+    .DateRangePicker_picker,
+    .SingleDatePicker_picker
+      td.CalendarDay__selected_span
+        &:hover
+          background: #b2d7f1
+          border: 1px solid #80bce8
+          color: #0060a6
+
 
     .DayPicker_actions
       display: flex
