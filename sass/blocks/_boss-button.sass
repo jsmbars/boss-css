@@ -194,6 +194,16 @@ $block: ".boss-button"
     @media screen and (max-width: 400px)
       padding: 8px
 
+  &_type_panel
+    display: block
+    width: 100%
+    min-height: 75px
+    padding: 25px 20px
+    box-shadow: 0 5px 30px -5px rgba(0,0,0,.3)
+    font-size: 20px
+    line-height: 1
+    white-space: normal
+
 
   // $Common button MOD: state disabled
   &_state_disabled[disabled],
@@ -961,5 +971,14 @@ $block: ".boss-button"
 
     &_role_close
       &:before
-        background-image: url('../icons/icon-close-white.svg');
+        background-image: url('../icons/icon-close-white.svg')
+
+
+  &__number
+    font-size: 18px
+    line-height: 1
+    font-weight: 600
+
+    &_adjust_panel
+      font-size: 24px
 
