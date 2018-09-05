@@ -60,7 +60,8 @@ $block: ".boss-indicator"
       background-color: map-get($boss-app-palette, secondary)
 
     // $Indicator marker CONTEXT: $Indicator MOD: status error
-    #{$block}_status_error &
+    #{$block}_status_error &,
+    #{$block}_status_sent-back &
       background-color: map-get($boss-app-palette, alert)
 
     // $Indicator marker CONTEXT: $Indicator MOD: status uncollected
@@ -79,6 +80,11 @@ $block: ".boss-indicator"
       background-size: 18px 18px
       background-image: url('../icons/icon-hour-glass-white.svg')
 
+    // $Indicator marker MOD: icon reload
+    &_icon_reload
+      background-size: 18px 18px
+      background-image: url('../icons/icon-reload-white.svg')
+
 
   // $Indicator MOD: marker label
   &__label
@@ -96,7 +102,8 @@ $block: ".boss-indicator"
       color: map-get($boss-app-palette, secondary)
 
     // $Indicator label CONTEXT: $Indicator MOD: status error
-    #{$block}_status_error &
+    #{$block}_status_error &,
+    #{$block}_status_sent-back &
       color: map-get($boss-app-palette, alert)
 
     // $Indicator label CONTEXT: $Indicator MOD: status uncollected
