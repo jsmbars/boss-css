@@ -2936,7 +2936,9 @@ $block: ".boss-table"
 
     &_indicator_accessory,
     &_indicator_clock,
-    &_indicator_disabled
+    &_indicator_disabled,
+    &_indicator_checkbox-checked,
+    &_indicator_checkbox-unchecked
       vertical-align: middle
 
       &:after
@@ -2947,6 +2949,8 @@ $block: ".boss-table"
         margin-left: 5px
         margin-top: -8px
         background-size: contain
+        background-position: center center
+        background-repeat: no-repeat
         vertical-align: middle
 
     &_indicator_accessory
@@ -2981,6 +2985,41 @@ $block: ".boss-table"
     &_indicator_disabled#{&}_state_alert
       &:after
         background-image: url('../icons/icon-block-white.svg')
+
+    &_indicator_checkbox-checked
+      &:after
+        width: 18px
+        height: 18px
+        margin-top: -2px
+        border: 1px solid #aaa
+        border-radius: 4px
+        background-image: url('../icons/icon-checked-medium-gray.svg')
+        background-size: 14px 14px
+
+        #{$block}__cell_state_alert &
+          border-color: #fff
+          background-image: url('../icons/icon-checked-white.svg')
+
+    &_indicator_checkbox-checked#{&}_state_alert
+      &:after
+        border-color: #fff
+        background-image: url('../icons/icon-checked-white.svg')
+
+    &_indicator_checkbox-unchecked
+      &:after
+        width: 18px
+        height: 18px
+        margin-top: -2px
+        border: 1px solid #aaa
+        border-radius: 4px
+        background-size: 14px 14px
+
+        #{$block}__cell_state_alert &
+          border-color: #fff
+
+    &_indicator_checkbox-unchecked#{&}_state_alert
+      &:after
+        border-color: #fff
 
     &_role_date,
     &_role_venue

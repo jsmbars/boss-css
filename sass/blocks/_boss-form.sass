@@ -31,6 +31,10 @@ $block: ".boss-form"
   &_context_stack
     margin-bottom: 30px
 
+  &_page_hrc
+
+  &_page_arr
+
 
   // $Common form group
   &__group
@@ -346,12 +350,22 @@ $block: ".boss-form"
       margin-right: 30px
       margin-bottom: 0
 
+      #{$block}_page_arr &
+        margin-right: 60px
+
       @media screen and (max-width: 1280px)
         margin-right: 20px
+
+        #{$block}_page_arr &
+          margin-right: 60px
 
       @media screen and (max-width: 960px)
         margin-right: 0
         margin-bottom: 20px
+
+        #{$block}_page_arr &
+          margin-right: 0
+          margin-bottom: 40px
 
         #{$block}__row_layout_wrap-xs &
           margin-bottom: 0
