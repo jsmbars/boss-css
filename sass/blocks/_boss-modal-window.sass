@@ -62,7 +62,8 @@ $block: ".boss-modal-window"
   &_role_note,
   &_role_preview,
   &_role_details,
-  &_role_add-new
+  &_role_add-new,
+  &_role_confirm
     max-width: 800px
 
   &_role_csv-upload-payments
@@ -252,7 +253,8 @@ $block: ".boss-modal-window"
     // $Modal window header CONTEXT: $Modal window MOD: role danger
     // $Modal window header CONTEXT: $Modal window MOD: role error
     #{$block}_role_danger &,
-    #{$block}_role_error &
+    #{$block}_role_error &,
+    #{$block}_role_confirm &
       background-color: map-get($boss-app-palette, alert)
 
     // $Modal window header CONTEXT: $Modal window MOD: role warning
@@ -601,7 +603,7 @@ $block: ".boss-modal-window"
     width: 100%
 
     &:not(:last-child)
-      margin-bottom: 20px
+      margin-bottom: 30px
 
 
   &__message-group
@@ -635,7 +637,8 @@ $block: ".boss-modal-window"
     #{$block}_role_note &
       text-align: left
 
-    #{$block}_role_danger &
+    #{$block}_role_danger &,
+    #{$block}_role_confirm &
       color: map-get($boss-app-palette, alert)
       font-size: 24px
 
