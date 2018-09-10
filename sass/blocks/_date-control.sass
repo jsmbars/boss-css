@@ -86,15 +86,13 @@ $block: ".date-control"
       padding-left: 15px
 
   & .DateInput_input
+    +text-normalizer()
     position: absolute
     top: 0
     left: 0
     border: 0
     height: 100%
     width: 100%
-    font-family: $boss-global-font-family
-    font-size: 14px
-    font-weight: 400
     margin: 0
     padding: 5px 20px
     background-color: transparent
@@ -397,17 +395,19 @@ $block: ".date-control"
 
 
     ul.DayPicker_weekHeader_ul
+      display: flex
+      flex-direction: row
+      justify-content: flex-start
+      align-items: flex-start
       white-space: nowrap
       padding-top: 10px
 
 
     li.DayPicker_weekHeader_li
-      font-family: $boss-global-font-family
-      color: $boss-global-font-color
+      +text-normalizer
+      display: block
+      text-align: center
 
-
-    li.DayPicker_weekHeader_li:not(:first-child)
-      margin-left: -4px
 
     table.CalendarMonth_table
       margin-bottom: 0
