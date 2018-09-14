@@ -20,6 +20,20 @@ $block: ".boss-forecast"
   width: 100%
 
 
+  // $Forecast group
+  &__group
+    display: block
+    width: 100%
+
+    // $Forecast row MOD: role header
+    &_role_header
+      border-bottom: 2px solid #000
+
+    // $Forecast row MOD: role footer
+    &_role_footer
+      border-top: 2px solid #000
+
+
   // $Forecast row
   &__row
     +text-normalizer()
@@ -32,8 +46,18 @@ $block: ".boss-forecast"
     height: 70px
     border-bottom: 1px solid #eee
 
+    #{$block}__group_role_header &,
+    #{$block}__group_role_footer &
+      font-size: 16px
+      font-weight: bold
+      background-color: #FFF
+
     &:nth-child(even)
       background-color: #f8f8f8
+
+      #{$block}__group_role_header &,
+      #{$block}__group_role_footer &
+        background-color: #FFF
 
     &_role_header,
     &_role_footer
