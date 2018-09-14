@@ -1,7 +1,9 @@
 @import '../../helpers/settings'
 @import '../../helpers/mixins'
 
-.boss-info-table
+$block: ".boss-info-table"
+
+#{$block}
   +normalize-block()
 
   display: table
@@ -43,11 +45,38 @@
   &__tr
     display: table-row
 
+    &_state_on-holiday
+      background-color: #f0f0f0
+
 
   &__td
     display: table-cell
     padding: 1.6em 0 1.6em 1em
     border-bottom: 1px solid $boss-extra-light-gray
+
+    #{$block}__tr_state_on-holiday &
+      &:first-child
+        position: relative
+
+        &:after
+          +text-normalizer()
+          content: 'On Holiday'
+          position: absolute
+          top: 10px
+          left: 100px
+          z-index: 2
+          display: block
+          padding-left: 24px
+          font-size: 16px
+          line-height: 1
+          font-weight: 600
+          color: map-get($boss-app-palette, alert)
+          white-space: nowrap
+          background-image: url('../icons/icon-airplane-alert.svg')
+          background-repeat: no-repeat
+          background-size: 14px 14px
+          background-position: left center
+          opacity: 1
 
 
   &__rotaed-text
@@ -57,6 +86,9 @@
     color: $boss-medium-gray
     background: url('../icons/icon-clock-medium-gray.svg') left 45% no-repeat
     background-size: 0.8em
+
+    #{$block}__tr_state_on-holiday &
+      opacity: .4
 
 
   &__notes
@@ -68,6 +100,9 @@
     text-overflow: ellipsis
     white-space: nowrap
 
+    #{$block}__tr_state_on-holiday &
+      opacity: .4
+
 
   &__user-status
     position: relative
@@ -76,6 +111,9 @@
     line-height: 0.9em
     color: $boss-medium-gray
     cursor: pointer
+
+    #{$block}__tr_state_on-holiday &
+      opacity: .4
 
     &:before
       content: ''
@@ -107,6 +145,9 @@
     font-size: 0.7em
     cursor: pointer
 
+    #{$block}__tr_state_on-holiday &
+      opacity: .4
+
 
   &__user-avatar-container
     display: inline-block
@@ -114,6 +155,9 @@
     position: relative
     height: 66px
     margin-right: 1em
+
+    #{$block}__tr_state_on-holiday &
+      opacity: .4
 
     &:before
       content: ''
@@ -180,6 +224,9 @@
     display: inline-block
     padding-top: 0.4em
 
+    #{$block}__tr_state_on-holiday &
+      opacity: .4
+
     &_adjust
       &_settings-sign
         margin-left: 0.3em
@@ -187,6 +234,7 @@
 
   &__user-name
     color: $boss-medium-gray
+    margin-bottom: 3px
 
 
   &__nothing-found-message
