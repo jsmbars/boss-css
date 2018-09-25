@@ -59,12 +59,22 @@ $block: ".boss-form"
       margin-right: 30px
       margin-bottom: 0
 
+      #{$block}_page_arr &
+        margin-right: 40px
+
       @media screen and (max-width: 1280px)
         margin-right: 20px
+
+        #{$block}_page_arr &
+          margin-right: 40px
 
       @media screen and (max-width: 960px)
         margin-right: 0
         margin-bottom: 20px
+
+        #{$block}_page_arr &
+          margin-right: 0
+          margin-bottom: 40px
 
       &:last-of-type
         margin-right: 0
@@ -351,13 +361,13 @@ $block: ".boss-form"
       margin-bottom: 0
 
       #{$block}_page_arr &
-        margin-right: 60px
+        margin-right: 40px
 
       @media screen and (max-width: 1280px)
         margin-right: 20px
 
         #{$block}_page_arr &
-          margin-right: 60px
+          margin-right: 40px
 
       @media screen and (max-width: 960px)
         margin-right: 0
