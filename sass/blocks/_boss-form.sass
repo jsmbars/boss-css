@@ -1114,13 +1114,10 @@ $block: ".boss-form"
     display: block
     width: 100%
     height: 50px
-    color: $boss-medium-gray
     line-height: 50px
     font-weight: 600
-    border: 1px solid $boss-very-light-gray
     padding: 0 20px
     border-radius: 2px
-    background-color: $boss-extra-light-gray
 
     #{$block}__units &
       position: relative
@@ -1192,9 +1189,7 @@ $block: ".boss-form"
 
     // $Common form value MOD: state alert
     &_state_alert
-      background-color: #ff8587
-      border-color: darken(#ff8587, 10%)
-      color: #fff
+      color: map-get($boss-app-palette, alert)
 
 
   // $Common form input
