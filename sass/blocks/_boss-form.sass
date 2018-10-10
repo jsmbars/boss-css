@@ -2072,7 +2072,17 @@ $block: ".boss-form"
       #{$block}__checkbox-input:checked ~ &
         visibility: visible
 
+    &_state_checked,
     &_type_checked
+
+      &:before
+        background-color: map-get($boss-app-palette, primary)
+        border-color: map-get($boss-app-palette, primary)
+
+      &:after
+        visibility: visible
+
+    &_type_checked-inactive
       cursor: default
 
       &:before
