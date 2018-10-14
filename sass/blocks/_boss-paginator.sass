@@ -42,6 +42,74 @@ $block: ".boss-paginator"
       box-shadow: 0 2px 12px -2px rgba(0,0,0,.3)
 
 
+  // $Paginator group
+  &__group
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    text-align: center
+
+    // $Paginator group CONTEXT: $Paginator MOD: size full
+    #{$block}_size_full &
+      flex-grow: 1
+      flex-shrink: 1
+
+    &:not(:last-child)
+      margin-right: 12px
+
+      @media screen and (max-width: 960px)
+        margin-right: 10px
+
+      @media screen and (max-width: 640px)
+        #{$block}_size_full &
+          margin-right: 8px
+
+      @media screen and (max-width: 400px)
+        margin-right: 0
+
+        #{$block}_size_full &
+          margin-right: 0
+
+
+  // $Paginator meta
+  &__meta
+    +text-normalizer()
+    display: block
+    color: #1585cf
+    line-height: 1.2
+    text-align: center
+
+    #{$block}__group &
+      padding-top: 5px
+
+    &:hover
+      color: #1585cf
+      text-decoration: underline
+
+
+  // $Paginator meta primary
+  &__meta-primary
+    font-weight: 600
+    font-size: 16px
+
+    @media screen and (max-width: 640px)
+      font-size: 14px
+
+
+  // $Paginator meta details
+  &__meta-details
+    display: none
+    font-weight: 400
+
+    @media screen and (max-width: 640px)
+      font-size: 12px
+
+    // $Paginator meta details CONTEXT: $Paginator meta MOD: state active
+    #{$block}__action_state_active + #{$block}__meta &,
+    #{$block}__meta_state_active &
+      display: inline
+
+
   // $Paginator action
   &__action
     +text-normalizer()
@@ -49,7 +117,6 @@ $block: ".boss-paginator"
     flex-grow: 0
     flex-shrink: 0
     display: block
-    margin-right: 12px
     padding: 15px
     text-align: center
     white-space: nowrap
@@ -63,9 +130,11 @@ $block: ".boss-paginator"
     #{$block}_size_full &
       flex-grow: 1
 
+    #{$block}__group &
+      margin-bottom: 10px
+
     @media screen and (max-width: 960px)
       display: none
-      margin-right: 10px
       padding: 12px
 
       #{$block}_size_full &
@@ -73,25 +142,49 @@ $block: ".boss-paginator"
 
     @media screen and (max-width: 640px)
       #{$block}_size_full &
-        margin-right: 8px
         padding: 12px 8px
 
     @media screen and (max-width: 400px)
       flex-grow: 1
-      margin-right: 0
-      border-right: 1px solid $boss-very-light-gray
+      flex-shrink: 1
 
       #{$block}_context_board &
         box-shadow: none
 
-      #{$block}_size_full &
+      #{$block}__group:not(:last-child) &
+        border-right: 1px solid $boss-very-light-gray
+
+    &:not(:last-child)
+      margin-right: 12px
+
+      #{$block}__group &
         margin-right: 0
 
-    &:last-of-type
-      margin-right: 0
+      @media screen and (max-width: 960px)
+        margin-right: 10px
+
+        #{$block}__group &
+          margin-right: 0
+
+      @media screen and (max-width: 640px)
+        #{$block}_size_full &
+          margin-right: 8px
+
+        #{$block}_size_full #{$block}__group &
+          margin-right: 0
 
       @media screen and (max-width: 400px)
-        border-right: none
+        margin-right: 0
+        border-right: 1px solid $boss-very-light-gray
+
+        #{$block}_size_full &
+          margin-right: 0
+
+        #{$block}__group &
+          border-right: none
+
+        #{$block}__group:not(:last-child) &
+          border-right: 1px solid $boss-very-light-gray
 
     &:after
       content: ""
