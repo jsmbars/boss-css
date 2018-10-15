@@ -77,6 +77,10 @@ $block: ".boss-paginator"
     width: 100%
     padding: 0 5px
 
+    @media screen and (max-width: 400px)
+      padding-left: 3px
+      padding-right: 3px
+
 
   // $Paginator meta link
   &__meta-link
@@ -98,7 +102,7 @@ $block: ".boss-paginator"
     // $Paginator meta link MOD: role button light
     &_role_button-light
       border: 2px solid #1585cf
-      padding: 5px
+      padding: 5px 2px
       border-radius: 4px
 
       &:hover
