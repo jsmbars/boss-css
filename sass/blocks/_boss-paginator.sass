@@ -73,11 +73,20 @@ $block: ".boss-paginator"
 
   // $Paginator meta
   &__meta
+    display: block
+    width: 100%
+    padding: 0 5px
+
+
+  // $Paginator meta link
+  &__meta-link
     +text-normalizer()
     display: block
     color: #1585cf
     line-height: 1.2
     text-align: center
+    text-decoration: none
+    transition: all .3s
 
     #{$block}__group &
       padding-top: 5px
@@ -86,25 +95,30 @@ $block: ".boss-paginator"
       color: #1585cf
       text-decoration: underline
 
+    // $Paginator meta link MOD: role button light
+    &_role_button-light
+      border: 2px solid #1585cf
+      padding: 5px
+      border-radius: 4px
 
-  // $Paginator meta primary
-  &__meta-primary
-    font-weight: 600
-    font-size: 16px
-
-    @media screen and (max-width: 640px)
-      font-size: 14px
+      &:hover
+        color: #fff
+        background-color: #1585cf
+        text-decoration: none
 
 
-  // $Paginator meta details
-  &__meta-details
+  // $Paginator meta link details
+  &__meta-link-details
     display: none
     font-weight: 400
 
     @media screen and (max-width: 640px)
       font-size: 12px
 
-    // $Paginator meta details CONTEXT: $Paginator meta MOD: state active
+    & b
+      font-weight: 600
+
+    // $Paginator meta link details CONTEXT: $Paginator meta link MOD: state active
     #{$block}__action_state_active + #{$block}__meta &,
     #{$block}__meta_state_active &
       display: inline
