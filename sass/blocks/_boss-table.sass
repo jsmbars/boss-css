@@ -507,6 +507,15 @@ $block: ".boss-table"
         #{$block}_page_change-order-report &
           padding-top: 0
 
+    // $Common table row MOD: state success
+    &_state_success
+      &:nth-child(odd),
+      &:nth-child(even)
+        background-color: #dbfddb
+
+        #{$block}_page_safe-checks-index &
+          background-color: #dbfddb
+
     // $Common table row MOD: state alert
     &_state_alert,
     &_state_pre-calculated
@@ -2536,6 +2545,12 @@ $block: ".boss-table"
       #{$block}_page_csv-upload &
         cursor: pointer
 
+    // $Common table cell MOD: state success
+    &_state_success
+      background-color: #67db72
+      color: #fff
+      font-weight: 600
+
     &_indicator_clock-warning
       position: relative
 
@@ -2776,6 +2791,13 @@ $block: ".boss-table"
       #{$block}__cell_state_alert &
         color: #FFF
 
+    // $Common table label MOD: state success
+    &_state_success
+      color: map-get($boss-app-palette, secondary)
+
+      #{$block}__cell_state_success &
+        color: #FFF
+
 
   &__info-group
     width: 100%
@@ -2795,7 +2817,8 @@ $block: ".boss-table"
     &:not(:last-child)
       margin-bottom: 10px
 
-    #{$block}__cell_state_alert &
+    #{$block}__cell_state_alert &,
+    #{$block}__cell_state_success &
       color: #fff
       font-weight: 600
 
@@ -2937,7 +2960,8 @@ $block: ".boss-table"
     &_state_alert
       color: map-get($boss-app-palette, alert)
 
-      #{$block}__cell_state_alert &
+      #{$block}__cell_state_alert &,
+      #{$block}__cell_state_success &
         color: #FFF
         font-weight: 600
 
@@ -2964,7 +2988,8 @@ $block: ".boss-table"
       &:after
         background-image: url('../icons/icon-tshirt-dark-gray.svg')
 
-        #{$block}__cell_state_alert &
+        #{$block}__cell_state_alert &,
+        #{$block}__cell_state_success &
           background-image: url('../icons/icon-tshirt-white.svg')
 
     &_indicator_accessory#{&}_state_alert
@@ -2975,7 +3000,8 @@ $block: ".boss-table"
       &:after
         background-image: url('../icons/icon-clock-dark-gray.svg')
 
-        #{$block}__cell_state_alert &
+        #{$block}__cell_state_alert &,
+        #{$block}__cell_state_success &
           background-image: url('../icons/icon-clock-white.svg')
 
     &_indicator_clock#{&}_state_alert
@@ -2986,7 +3012,8 @@ $block: ".boss-table"
       &:after
         background-image: url('../icons/icon-block-dark-gray.svg')
 
-        #{$block}__cell_state_alert &
+        #{$block}__cell_state_alert &,
+        #{$block}__cell_state_success &
           background-image: url('../icons/icon-block-white.svg')
 
     &_indicator_disabled#{&}_state_alert
@@ -3003,7 +3030,8 @@ $block: ".boss-table"
         background-image: url('../icons/icon-checked-medium-gray.svg')
         background-size: 14px 14px
 
-        #{$block}__cell_state_alert &
+        #{$block}__cell_state_alert &,
+        #{$block}__cell_state_success &
           border-color: #fff
           background-image: url('../icons/icon-checked-white.svg')
 
@@ -3021,7 +3049,8 @@ $block: ".boss-table"
         border-radius: 4px
         background-size: 14px 14px
 
-        #{$block}__cell_state_alert &
+        #{$block}__cell_state_alert &,
+        #{$block}__cell_state_success &
           border-color: #fff
 
     &_indicator_checkbox-unchecked#{&}_state_alert
@@ -3134,7 +3163,8 @@ $block: ".boss-table"
     color: $boss-light-gray
     font-size: 12px
 
-    #{$block}__cell_state_alert &
+    #{$block}__cell_state_alert &,
+    #{$block}__cell_state_success &
       color: #fff
 
     &_state_alert
@@ -3143,11 +3173,24 @@ $block: ".boss-table"
       #{$block}__cell_state_alert &
         color: #fff
 
+    &_state_success
+      color: map-get($boss-app-palette, secondary)
+
+      #{$block}__cell_state_success &
+        color: #fff
+
 
   &__text-alert
     color: map-get($boss-app-palette, alert)
 
     #{$block}__cell_state_alert &
+      color: #fff
+
+
+  &__text-success
+    color: map-get($boss-app-palette, secondary)
+
+    #{$block}__cell_state_success &
       color: #fff
 
 
@@ -3403,8 +3446,6 @@ $block: ".boss-table"
     margin-left: 3px
 
 
-
-
   // $Common table link
   &__link
     +text-normalizer()
@@ -3427,7 +3468,8 @@ $block: ".boss-table"
     #{$block}_page_wtl-clients-index &
       color: #1585cf
 
-    #{$block}__cell_state_alert &
+    #{$block}__cell_state_alert &,
+    #{$block}__cell_state_success &
       color: #fff
       font-weight: 600
 
@@ -3437,7 +3479,8 @@ $block: ".boss-table"
       text-decoration: none
       color: $boss-medium-gray
 
-      #{$block}__cell_state_alert &
+      #{$block}__cell_state_alert &,
+      #{$block}__cell_state_success &
         color: #eee
 
     &_state_alert
@@ -3449,7 +3492,8 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         color: map-get($boss-app-palette, alert)
 
-      #{$block}__cell_state_alert &
+      #{$block}__cell_state_alert &,
+      #{$block}__cell_state_success &
         color: #fff
         font-weight: 600
 
@@ -3457,7 +3501,8 @@ $block: ".boss-table"
       &:focus
         color: $boss-medium-gray
 
-        #{$block}__cell_state_alert &
+        #{$block}__cell_state_alert &,
+        #{$block}__cell_state_success &
           color: #eee
 
     &_role_edit
