@@ -55,11 +55,49 @@ $block: ".boss-users"
     width: 100%
 
 
+  // $Vetting block group
+  &__group
+    display: block
+    width: 100%
+
+
+  // $Vetting block group header
+  &__group-header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 0 20px 15px
+    border-bottom: 1px solid #eee
+
+
+  // $Vetting block group title
+  &__group-title
+    +text-normalizer()
+    display: inline-block
+    font-size: 16px
+    font-weight: 600
+    color: $boss-global-font-color
+
+
+  // $Vetting block group content
+  &__group-content
+    width: 100%
+    padding: 15px
+
+    @media screen and (max-width: 640px)
+      padding-bottom: 30px
+
+
   // $Vetting block flow area
   &__flow
     display: block
     width: 100%
     padding-top: 30px
+
+    #{$block}__group &:only-child
+      padding-top: 15px
 
     @media screen and (max-width: 640px)
       display: flex
