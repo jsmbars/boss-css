@@ -20,13 +20,13 @@ $block: ".boss-users"
   width: 100%
 
 
-  // $Vetting block stats area
+  // $users block stats area
   &__stats
     display: block
     width: 100%
 
 
-  // $Vetting block stats area group
+  // $users block stats area group
   &__stats-group
     display: flex
     flex-direction: row
@@ -43,25 +43,28 @@ $block: ".boss-users"
         margin-bottom: 30px
 
 
-  // $Vetting block filter area
+  // $users block filter area
   &__filter
     display: block
     width: 100%
 
 
-  // $Vetting block message area
+  // $users block message area
   &__message
     display: block
     width: 100%
 
 
-  // $Vetting block group
+  // $users block group
   &__group
     display: block
     width: 100%
 
+    &:not(:last-child)
+      margin-bottom: 30px
 
-  // $Vetting block group header
+
+  // $users block group header
   &__group-header
     display: flex
     flex-direction: row
@@ -72,7 +75,7 @@ $block: ".boss-users"
     border-bottom: 1px solid #eee
 
 
-  // $Vetting block group title
+  // $users block group title
   &__group-title
     +text-normalizer()
     display: inline-block
@@ -81,16 +84,13 @@ $block: ".boss-users"
     color: $boss-global-font-color
 
 
-  // $Vetting block group content
+  // $users block group content
   &__group-content
     width: 100%
     padding: 15px
 
-    @media screen and (max-width: 640px)
-      padding-bottom: 30px
 
-
-  // $Vetting block flow area
+  // $users block flow area
   &__flow
     display: block
     width: 100%
@@ -106,7 +106,7 @@ $block: ".boss-users"
       align-items: center
 
 
-  // $Vetting block flow area list
+  // $users block flow area list
   &__flow-list
     display: flex
     flex-direction: row
@@ -124,7 +124,7 @@ $block: ".boss-users"
       max-width: 100%
 
 
-  // $Vetting block flow area item
+  // $users block flow area item
   &__flow-item
     flex-grow: 0
     flex-shrink: 1
@@ -195,7 +195,7 @@ $block: ".boss-users"
           padding-bottom: 0
 
 
-  // $Vetting block person
+  // $users block person
   &__person
     flex-grow: 0
     flex-shrink: 1
@@ -211,7 +211,7 @@ $block: ".boss-users"
       padding-right: 0
 
 
-  // $Vetting block text placeholder
+  // $users block text placeholder
   &__text-placeholder
     +text-normalizer()
     font-size: 18px
