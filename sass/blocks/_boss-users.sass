@@ -89,15 +89,19 @@ $block: ".boss-users"
     width: 100%
     padding: 15px
 
+    &_adjust_flow
+      padding-bottom: 0
+      padding-top: 0
+
+      @media screen and (max-width: 640px)
+        padding-bottom: 30px
+
 
   // $users block flow area
   &__flow
     display: block
     width: 100%
     padding-top: 30px
-
-    #{$block}__group &:only-child
-      padding-top: 15px
 
     @media screen and (max-width: 640px)
       display: flex
