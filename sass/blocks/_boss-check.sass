@@ -67,6 +67,10 @@ $block: ".boss-check"
   &_state_alert
     background-color: #feeeee
 
+  // $Check block MOD: state success
+  &_state_success
+    background-color: #dbfddb
+
   // $Check block MOD: state frozen
   &_state_frozen
     background-color: #daecff
@@ -328,20 +332,23 @@ $block: ".boss-check"
       &:nth-child(even)
         background-color: #FFF
 
-        #{$block}_state_alert &
+        #{$block}_state_alert &,
+        #{$block}_state_success &
           background-color: transparent
 
       &:nth-child(odd)
         background-color: #fbfbfb
 
-        #{$block}_state_alert &
+        #{$block}_state_alert &,
+        #{$block}_state_success &
           background-color: transparent
 
     // $Check block row MOD: marked
     &_marked
       background-color: #fbfbfb
 
-      #{$block}_state_alert &
+      #{$block}_state_alert &,
+      #{$block}_state_success &
         background-color: transparent
 
 
@@ -416,7 +423,9 @@ $block: ".boss-check"
     &_status_fail
       background-color: #ff8587
 
+    // $Check block cell MOD: state success
     // $Check block cell MOD: status pass
+    &_state_success,
     &_status_pass
       background-color: #67db72
 
@@ -751,7 +760,9 @@ $block: ".boss-check"
       color: #808080
 
     // $Check block text MOD: state alert
-    &_state_alert
+    // $Check block text MOD: state success
+    &_state_alert,
+    &_state_success
       color: #FFF
 
     // $Check block text MOD: status fail
@@ -814,10 +825,10 @@ $block: ".boss-check"
     text-align: center
 
     &_role_success
-      color: #86dd75
+      color: map-get($boss-app-palette, secondary)
 
     &_role_alert
-      color: #ed7f7e
+      color: map-get($boss-app-palette, alert)
 
     &_role_pending
       color: #808080
@@ -829,8 +840,11 @@ $block: ".boss-check"
     font-size: 24px
     font-weight: 600
 
+    &_state_success
+      color: map-get($boss-app-palette, secondary)
+
     &_state_alert
-      color: #ed7f7e
+      color: map-get($boss-app-palette, alert)
 
 
   // $Check block link
@@ -1037,7 +1051,8 @@ $block: ".boss-check"
     #{$block}_page_marketing-index &
       background-color: #fbfbfb
 
-      #{$block}_state_alert &
+      #{$block}_state_alert &,
+      #{$block}_state_success &
         background-color: transparent
 
     // $Check block dropdown CONTEXT: $Check block MOD: page message board
