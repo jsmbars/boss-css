@@ -147,8 +147,10 @@ $block: ".boss-paginator"
     // $Paginator action CONTEXT: $Paginator MOD: size full
     #{$block}_size_full &
       flex-grow: 1
+      flex-shrink: 1
 
     #{$block}__group &
+      width: 100%
       margin-bottom: 10px
 
     @media screen and (max-width: 960px)
