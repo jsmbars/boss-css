@@ -658,7 +658,7 @@ $block: ".boss-board"
   &__info
     flex-grow: 1
     flex-shrink: 1
-    width: calc(100% - 320px)
+    width: 60%
     padding: 0 30px 0 45px
 
     @media screen and (max-width: 1120px)
@@ -909,22 +909,12 @@ $block: ".boss-board"
   &__calendar
     flex-grow: 0
     flex-shrink: 0
-    width: 320px
+    width: 40%
     border-right: 1px solid $boss-very-light-gray
 
     @media screen and (max-width: 1120px)
       width: 100%
       border-right: none
-
-    & .DayPicker
-      position: relative
-      border: none
-      box-shadow: none
-      margin: 0 auto
-
-      @media screen and (max-width: 400px)
-        left: 50%
-        margin-left: -160px
 
 
   // $Board calendar inner
@@ -932,10 +922,46 @@ $block: ".boss-board"
     display: block
     width: 100%
     border-bottom: 1px solid $boss-very-light-gray
+    overflow: hidden
 
-    @media screen and (max-width: 400px)
-      overflow: hidden
+    & .DayPicker
+      position: relative
+      width: 100% !important
+      border: none
+      box-shadow: none
+      margin: 0 auto
 
+      @media screen and (max-width: 340px)
+        width: 320px !important
+        left: 50%
+        margin-left: -160px
+
+      & > div > div
+        width: 100% !important
+
+    & .DayPicker_weekHeader
+      left: 0
+      right: 0
+
+    & .DayPicker_weekHeader_ul
+      display: flex
+      flex-direction:
+      justify-content: flex-start
+      align-items: flex-start
+      width: 100%
+
+    & .DayPicker_weekHeader_li
+      flex-grow: 1
+      flex-shrink: 1
+      width: 14% !important
+
+    & .DayPicker_transitionContainer,
+    & .CalendarMonthGrid__horizontal,
+    & .CalendarMonthGrid_month__horizontal
+      width: 100% !important
+
+    & .CalendarMonthGrid__horizontal
+      left: 0 !important
 
   // $Board calendar note
   &__calendar-note
