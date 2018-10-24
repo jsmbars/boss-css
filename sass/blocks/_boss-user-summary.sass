@@ -555,6 +555,19 @@ $block: ".boss-user-summary"
       font-weight: 600
 
 
+  &__marked
+    font-weight: 600
+
+    &_role_primary
+      color: map-get($boss-app-palette, primary)
+
+    &_role_secondary
+      color: map-get($boss-app-palette, secondary)
+
+    &_role_alert
+      color: map-get($boss-app-palette, alert)
+
+
   // $User summary label
   &__label
     display: inline-block
