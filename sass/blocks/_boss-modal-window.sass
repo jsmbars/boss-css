@@ -416,7 +416,6 @@ $block: ".boss-modal-window"
   &__title
     +text-normalizer()
     font-size: 24px
-    line-height: 1
 
     #{$block}_role_login &,
     #{$block}_role_reset &,
@@ -436,6 +435,9 @@ $block: ".boss-modal-window"
     #{$block}_role_wtl-ev-almost-done &
       font-size: 36px
 
+    &:not(:last-child)
+      margin-bottom: 10px
+
 
   &__marked
     font-weight: 600
@@ -444,10 +446,16 @@ $block: ".boss-modal-window"
   &__subtitle
     +text-normalizer()
     font-size: 18px
+    color: #808080
 
     #{$block}_role_login &,
-    #{$block}_role_accept-invite &
+    #{$block}_role_accept-invite &,
+    #{$block}_role_set &
       text-align: center
+
+
+  &__subtitle-line
+    display: block
 
 
   // $Modal window content

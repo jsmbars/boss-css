@@ -700,6 +700,14 @@ $block: ".boss-button"
     +button-common-hover-behavior($background-color: $background-color)
 
 
+  // $Common button MOD: role force password change
+  &_role_force-password-change
+    $background-color: map-get($boss-app-palette, alert)
+    +button-common($background-color: $background-color)
+    +button-with-icon-left($icon-url: '../icons/icon-reload-white.svg', $background-size: 13px)
+    +button-common-hover-behavior($background-color: $background-color)
+
+
   // $Common button MOD: role success
   // $Common button MOD: role restore
   // $Common button MOD: role action-confirm
