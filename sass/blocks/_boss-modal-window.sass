@@ -693,6 +693,9 @@ $block: ".boss-modal-window"
   &__message-line
     display: block
 
+    &:not(:last-child)
+      margin-bottom: 10px
+
 
   &__chart
     margin-bottom: 20px
@@ -721,10 +724,6 @@ $block: ".boss-modal-window"
     align-items: flex-start
     width: 100%
 
-    // $Modal window actions CONTEXT: $Modal window MOD: role note
-    #{$block}_role_note &
-      justify-content: flex-end
-
     #{$block}_role_shift-details &
       justify-content: flex-start
 
@@ -732,8 +731,6 @@ $block: ".boss-modal-window"
       padding: 0 30px 45px
 
     @media screen and (max-width: 960px)
-      #{$block}_role_note &
-        justify-content: center
 
       #{$block}_role_history &
         padding: 0 30px 30px
@@ -799,10 +796,9 @@ $block: ".boss-modal-window"
 
   // $Modal window button
   &__button
-    margin-right: 10px
 
-    &:last-of-type
-      margin-right: 0
+    &:not(:last-of-type)
+      margin-right: 15px
 
 
   // $Modal window numpad

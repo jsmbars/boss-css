@@ -121,17 +121,17 @@ $block: ".boss-notes"
       width: 7px
       height: 7px
       border-radius: 50%
-      background-color: map-get($boss-app-palette, primary)
+      background-color: #808080
 
     // $Notes block item MOD: role not working
     &_role_not-working
       &:before
-        background-color: map-get($boss-app-palette, secondary)
+        background-color: map-get($boss-app-palette, inactive)
 
     // $Notes block item MOD: working
     &_role_working
       &:before
-        background-color: map-get($boss-app-palette, primary)
+        background-color: map-get($boss-app-palette, secondary)
 
     // $Notes block item MOD: state hidden
     &_state_hidden
@@ -161,8 +161,21 @@ $block: ".boss-notes"
   &__text
     +text-normalizer()
     font-size: 14px
-    cursor: pointer
 
+    &:not(:last-child)
+      margin-bottom: 5px
+
+
+  &__text-faded
+    color: #808080
+
+
+  &__text-bold
+    font-weight: 600
+
+
+  &__text-light
+    font-weight: 300
 
   // $Notes block button
   &__button
