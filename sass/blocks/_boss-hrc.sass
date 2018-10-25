@@ -241,7 +241,7 @@ $block: ".boss-hrc"
       padding-right: 15px
 
 
-  // $HRC form
+  // $HRC form info
   &__info
     display: flex
     flex-direction: row
@@ -296,6 +296,20 @@ $block: ".boss-hrc"
     &:empty,
     &_state_empty
       margin-bottom: 0
+
+
+  // $HRC form reasons
+  &__reasons
+    position: relative
+    z-index: 10
+    display: block
+    width: 100%
+    overflow: hidden
+    margin-bottom: 40px
+    padding: 20px
+    border: 2px solid map-get($boss-app-palette, alert)
+    border-radius: 10px
+    box-shadow: 0 5px 30px -5px rgba(0,0,0,.3)
 
 
   // $HRC form time shifts
