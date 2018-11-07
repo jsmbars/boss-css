@@ -400,7 +400,8 @@ $block: ".boss-overview"
       text-decoration: none
 
     &_role_edit,
-    &_role_save
+    &_role_save,
+    &_role_details
       padding-left: 20px
 
       &:after
@@ -425,8 +426,15 @@ $block: ".boss-overview"
       &:after
         background-image: url(../icons/icon-checked-primary.svg)
 
+    &_role_details
+      &:after
+        background-image: url(../icons/icon-zoom-primary.svg)
+
     &_position_after
       margin-left: 20px
+
+    &_type_inline
+      font-size: 14px
 
     &_type_fluid
       @media screen and (max-width: 960px)
