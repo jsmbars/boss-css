@@ -1539,11 +1539,17 @@ $block: ".boss-form"
       &_status_accepted
         background-color: map-get($boss-app-palette, secondary)
 
+      &_status_waiting
+        background-color: map-get($boss-app-palette, warning)
+
       &_status_rejected
         background-color: map-get($boss-app-palette, alert)
 
-      &_status_waiting
+      &_level_amber
         background-color: map-get($boss-app-palette, warning)
+
+      &_level_red
+        background-color: map-get($boss-app-palette, alert)
 
 
     & .Select-control
