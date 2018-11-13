@@ -1051,15 +1051,19 @@ $block: ".boss-check"
     #{$block}_page_marketing-index &
       background-color: #fbfbfb
 
-      #{$block}_state_alert &,
-      #{$block}_state_success &
-        background-color: transparent
+    #{$block}_state_alert &,
+    #{$block}_state_success &
+      background-color: transparent
 
     // $Check block dropdown CONTEXT: $Check block MOD: page message board
     #{$block}_page_message-board &
       padding: 15px 10px
       background-color: #fbfbfb
       border-bottom: 1px solid #eee
+
+    #{$block}_state_alert#{$block}_page_message-board &,
+    #{$block}_state_success#{$block}_page_message-board &
+      background-color: transparent
 
     // $Check block dropdown MOD: state closed
     &_state_closed
