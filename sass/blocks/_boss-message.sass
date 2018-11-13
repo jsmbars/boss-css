@@ -55,9 +55,22 @@ $block: ".boss-message"
   &_type_accent
     border: 3px solid map-get($boss-app-palette, primary)
 
+  // $Message MOD: type warning
+  &_type_warning
+    border: 3px solid map-get($boss-app-palette, warning)
+
   // $Message MOD: type alert
   &_type_alert
     border: 3px solid map-get($boss-app-palette, alert)
+
+  &_type_accent#{&}_level_amber
+    border-color: map-get($boss-app-palette, warning)
+    background-color: #ffedda
+
+  &_type_accent#{&}_level_red
+    border-color: map-get($boss-app-palette, alert)
+    background-color: #feeeee
+
 
   // $Message MOD: role dashboard type accent
   &_role_dashboard#{&}_role_preview
@@ -175,6 +188,12 @@ $block: ".boss-message"
     #{$block}_type_accent &
       background-color: map-get($boss-app-palette, primary)
 
+    #{$block}_type_accent#{$block}_level_amber &
+      background-color: map-get($boss-app-palette, warning)
+
+    #{$block}_type_accent#{$block}_level_red &
+      background-color: map-get($boss-app-palette, alert)
+
     @media screen and (max-width: 480px)
       width: 110px
       height: 30px
@@ -219,6 +238,20 @@ $block: ".boss-message"
     // $Message title MOD: accent
     &_accent
       color: map-get($boss-app-palette, primary)
+
+      #{$block}_level_amber &
+        color: map-get($boss-app-palette, warning)
+
+      #{$block}_level_red &
+        color: map-get($boss-app-palette, alert)
+
+    // $Message title MOD: accent amber
+    &_accent-amber
+      color: map-get($boss-app-palette, warning)
+
+    // $Message title MOD: accent red
+    &_accent-red
+      color: map-get($boss-app-palette, alert)
 
 
   // $Message subtitle
