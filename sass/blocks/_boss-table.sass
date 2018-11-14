@@ -3023,7 +3023,7 @@ $block: ".boss-table"
         text-align: left
 
       #{$block}_page_message-board #{$block}__cell:nth-child(4):nth-last-child(3) &
-        text-align-last: left
+        text-align: left
 
       #{$block}_page_accessory-requests-card &
         width: 100%
@@ -3044,7 +3044,7 @@ $block: ".boss-table"
       text-align: center
 
       @media screen and (max-width: 960px)
-        text-align-last: left
+        text-align: left
 
     // $Common table text MOD: state alert
     &_state_alert
@@ -3373,6 +3373,9 @@ $block: ".boss-table"
       flex-direction: row
       justify-content: center
       align-items: center
+
+    #{$block}_page_message-board #{$block}__cell:nth-child(1) &
+      justify-content: flex-start
 
     #{$block}_page_venues-index &
       text-align: center

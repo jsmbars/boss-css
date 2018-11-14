@@ -65,18 +65,13 @@ $block: ".boss-indicator"
     #{$block}_status_collected &
       background-color: map-get($boss-app-palette, secondary)
 
-    // $Indicator marker CONTEXT: $Indicator MOD: level amber
-    #{$block}_level_amber &
-      background-color: map-get($boss-app-palette, warning)
-
     // $Indicator marker CONTEXT: $Indicator MOD: role info alert
     // $Indicator marker CONTEXT: $Indicator MOD: status error
     // $Indicator marker CONTEXT: $Indicator MOD: status sent-back
     // $Indicator marker CONTEXT: $Indicator MOD: level red
     #{$block}_role_info-alert &,
     #{$block}_status_error &,
-    #{$block}_status_sent-back &,
-    #{$block}_level_red &
+    #{$block}_status_sent-back &
       background-color: map-get($boss-app-palette, alert)
 
     // $Indicator marker CONTEXT: $Indicator MOD: role info
@@ -124,17 +119,12 @@ $block: ".boss-indicator"
     #{$block}_status_collected &
       color: map-get($boss-app-palette, secondary)
 
-    // $Indicator label CONTEXT: $Indicator MOD: level amber
-    #{$block}_level_amber &
-      color: map-get($boss-app-palette, warning)
-
     // $Indicator label CONTEXT: $Indicator MOD: role info alert
     // $Indicator label CONTEXT: $Indicator MOD: status error
     // $Indicator label CONTEXT: $Indicator MOD: status sent-back
     #{$block}_role_info-alert &,
     #{$block}_status_error &,
-    #{$block}_status_sent-back &,
-    #{$block}_level_red &
+    #{$block}_status_sent-back &
       color: map-get($boss-app-palette, alert)
 
     // $Indicator label CONTEXT: $Indicator MOD: role info
