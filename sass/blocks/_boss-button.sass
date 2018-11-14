@@ -15,12 +15,9 @@
 
 
 =button-common-hover-behavior($background-color, $amount: 3%)
-  &:hover,
-  &:focus
-    color: #FFF
-
   &:not(.boss-button_type_no-behavior):hover,
   &:not(.boss-button_type_no-behavior):focus
+    color: #FFF
     background-color: lighten($background-color, $amount)
 
 =button-bordered($color: '#4c4c4c', $border-color: '#4c4c4c', $background-color: '#fff')
@@ -28,6 +25,7 @@
   background-color: $background-color
   color: $color
 
+  &:not(.boss-button_type_no-behavior):hover,
   &:not(.boss-button_type_no-behavior):focus
     color: $color
     background-color: $background-color
