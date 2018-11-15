@@ -109,6 +109,23 @@ $block: ".boss-users"
       justify-content: flex-start
       align-items: center
 
+    &_type_no-space
+      padding-top: 0
+
+  // $users block flow title
+  &__flow-title
+    +text-normalizer()
+    display: block
+    margin-bottom: 20px
+    font-size: 20px
+    font-weight: 600
+    color: $boss-global-font-color
+
+    @media screen and (max-width: 640px)
+      text-align: center
+
+    &_role_alert
+      color: map-get($boss-app-palette, alert)
 
   // $users block flow area list
   &__flow-list
