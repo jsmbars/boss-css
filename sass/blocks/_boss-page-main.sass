@@ -415,6 +415,10 @@ $block: ".boss-page-main"
       @media screen and (max-width: 480px)
         padding: 20px 10px
 
+    &_state_alert
+      background-color: #feeeee
+      border: 2px solid map-get($boss-app-palette, alert)
+
     &_context_stack
       &:not(:last-child)
         margin-bottom: 30px
@@ -563,6 +567,9 @@ $block: ".boss-page-main"
   // $Page main container controls
   &__controls
     margin-bottom: 20px
+
+    @media screen and (max-width: 640px)
+      margin-bottom: 30px
 
     // $Page main container controls MOD: layout row
     &_layout_row

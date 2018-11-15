@@ -99,6 +99,28 @@ $block: ".boss-user-summary"
     &:hover
       opacity: 1
 
+  &_type_outline,
+  &_type_outline-primary,
+  &_type_outline-secondary,
+  &_type_outline-warning,
+  &_type_outline-alert
+    padding: 10px
+    border: 2px solid transparent
+    border-radius: 4px
+
+  &_type_outline-primary
+    border-color: map-get($boss-app-palette, primary)
+
+  &_type_outline-secondary
+    border-color: map-get($boss-app-palette, secondary)
+
+  &_type_outline-warning
+    border-color: map-get($boss-app-palette, warning)
+
+  &_type_outline-alert
+    border-color: map-get($boss-app-palette, alert)
+
+
 
   // $User summary side area
   &__side
