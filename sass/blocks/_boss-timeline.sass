@@ -111,6 +111,11 @@ $block: ".boss-timeline"
       &:before
         background-image: url('../icons/icon-clock-alert.svg')
 
+    // $Timeline item MOD: role initial
+    &_role_initial
+      &:before
+        background-image: url('../icons/icon-clock-primary.svg')
+
 
   &__count
     +text-normalizer()
@@ -170,6 +175,9 @@ $block: ".boss-timeline"
     &_state_alert
       background-color: #feeeee
 
+    &_role_initial
+      background-color: #daecff
+
 
   // $Timeline header
   &__header
@@ -220,7 +228,6 @@ $block: ".boss-timeline"
 
     &_marked
       background-color: #fbfbfb
-
 
 
   // $Timeline title
@@ -450,5 +457,41 @@ $block: ".boss-timeline"
     &_state_closed
       &:after
         transform: rotate(0)
+
+
+  // $Timeline previews
+  &__previews
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-start
+    flex-wrap: wrap
+    width: 100%
+
+
+  &__preview
+    flex-grow: 0
+    flex-shrink: 0
+    text-align: center
+
+    &:not(:last-child)
+      margin-right: 20px
+
+    &_role_action
+      cursor: pointer
+
+
+  &__preview-meta
+    +text-normalizer()
+    display: block
+    margin-bottom: 5px
+    color: #808080
+    text-align: center
+
+
+  &__preview-content
+    display: inline-block
+
+
 
 
