@@ -1835,6 +1835,14 @@ $block: ".boss-form"
     align-items: stretch
     width: 100%
 
+    &_role_dashboard
+      @media screen and (max-width: 1280px)
+        flex-wrap: wrap
+        justify-content: flex-end
+
+      @media screen and (max-width: 960px)
+        justify-content: center
+
     &_role_week
       @media screen and (max-width: 960px)
         flex-wrap: wrap
@@ -1870,6 +1878,12 @@ $block: ".boss-form"
     align-items: stretch
     margin-left: -1px
 
+    @media screen and (max-width: 1280px)
+      #{$block}__switcher_role_dashboard &
+        flex-grow: 0
+        flex-shrink: 0
+        margin-top: -1px
+
     @media screen and (max-width: 960px)
       #{$block}__switcher_role_week &
         width: 24.9%
@@ -1882,16 +1896,10 @@ $block: ".boss-form"
         margin-left: 0
         margin-top: -1px
 
-    &:first-child
-      margin-left: 0
-
-      @media screen and (max-width: 960px)
-        margin-left: -1px
-
-      @media screen and (max-width: 640px)
-        #{$block}__switcher_layout_vertical-s &
-          margin-left: 0
-          margin-top: 0
+    @media screen and (max-width: 400px)
+      #{$block}__switcher_role_dashboard &
+        flex-shrink: 1
+        width: 50%
 
 
   // $Common form switcher label text
@@ -1909,6 +1917,19 @@ $block: ".boss-form"
     cursor: pointer
     background-color: #FFF
     transition: all .4s
+
+    @media screen and (max-width: 1280px)
+      #{$block}__switcher_role_dashboard &
+        padding: 8px 10px
+
+    @media screen and (max-width: 960px)
+      #{$block}__switcher_role_dashboard &
+        padding: 13px 15px
+
+    @media screen and (max-width: 400px)
+      #{$block}__switcher_role_dashboard &
+        padding-left: 5px
+        padding-right: 5px
 
     // $Common form switcher label CONTEXT: $Common form switcher radio STATE: checked
     #{$block}__switcher-radio:checked ~ &,
