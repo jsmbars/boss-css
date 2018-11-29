@@ -76,7 +76,8 @@ $block: ".boss-page-dashboard"
       justify-content: flex-end
 
     @media screen and (max-width: 1280px)
-      #{$block}_page_finance-reports &:nth-of-type(2)
+      #{$block}_page_finance-reports &:nth-of-type(2),
+      #{$block}_page_payroll-reports &:nth-of-type(2)
         align-items: flex-start
 
     @media screen and (max-width: 1120px)
@@ -100,7 +101,8 @@ $block: ".boss-page-dashboard"
       #{$block}_page_vouchers-index &:nth-of-type(2)
         justify-content: flex-start
 
-      #{$block}_page_finance-reports &:nth-of-type(2)
+      #{$block}_page_finance-reports &:nth-of-type(2),
+      #{$block}_page_payroll-reports &:nth-of-type(2)
         align-items: center
 
     @media screen and (max-width: 640px)
@@ -196,7 +198,8 @@ $block: ".boss-page-dashboard"
     justify-content: flex-start
     margin-bottom: 25px
 
-    #{$block}_page_finance-reports &
+    #{$block}_page_finance-reports &,
+    #{$block}_page_payroll-reports &
       flex-shrink: 1
 
     @media screen and (max-width: 960px)
@@ -292,7 +295,8 @@ $block: ".boss-page-dashboard"
       #{$block}_page_user-profile-disabled &,
       #{$block}_page_holidays-report &,
       #{$block}_page_daily-reports &,
-      #{$block}_page_finance-reports &
+      #{$block}_page_finance-reports &,
+      #{$block}_page_payroll-reports &
         flex-direction: column
 
     &:empty
@@ -337,7 +341,8 @@ $block: ".boss-page-dashboard"
       #{$block}_page_rotas-weekly &,
       #{$block}_page_incident-report-full &,
       #{$block}_page_venues &,
-      #{$block}_page_finance-reports &
+      #{$block}_page_finance-reports &,
+      #{$block}_page_payroll-reports &
         margin-right: 15px
 
       @media screen and (max-width: 1120px)
@@ -371,7 +376,8 @@ $block: ".boss-page-dashboard"
         #{$block}_page_user-profile-disabled &,
         #{$block}_page_holidays-report &,
         #{$block}_page_daily-reports &,
-        #{$block}_page_finance-reports &
+        #{$block}_page_finance-reports &,
+        #{$block}_page_payroll-reports &
           margin-right: 0
           margin-bottom: 15px
 
@@ -394,12 +400,14 @@ $block: ".boss-page-dashboard"
     max-width: 100%
     margin-bottom: 25px
 
-    #{$block}_page_finance-reports &
+    #{$block}_page_finance-reports &,
+    #{$block}_page_payroll-reports &
       flex-shrink: 0
       margin-right: 20px
 
     @media screen and (max-width: 1280px)
-      #{$block}_page_finance-reports &
+      #{$block}_page_finance-reports &,
+      #{$block}_page_payroll-reports &
         flex-shrink: 0
         margin-top: 8px
 
@@ -411,7 +419,8 @@ $block: ".boss-page-dashboard"
         display: block
         width: 100%
 
-      #{$block}_page_finance-reports &
+      #{$block}_page_finance-reports &,
+      #{$block}_page_payroll-reports &
         margin-right: 0
         margin-top: 0
 
