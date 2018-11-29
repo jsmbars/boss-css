@@ -299,6 +299,11 @@ $block: ".boss-page-dashboard"
       #{$block}_page_payroll-reports &
         flex-direction: column
 
+    @media screen and (max-width: 480px)
+      #{$block}_page_finance-reports &,
+      #{$block}_page_payroll-reports &
+        align-items: stretch
+
     &:empty
       margin-bottom: 0
 
