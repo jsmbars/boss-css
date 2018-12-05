@@ -65,6 +65,14 @@ $block: ".boss-board"
   &_state_hidden
     display: none
 
+  &_role_venue-alert-levels-red
+    background-color: #feeeee
+    border: 2px solid #ed7f7e
+
+  &_role_venue-alert-levels-amber
+    background-color: #ffedda
+    border: 2px solid #f4a84f
+
 
   // $Board header area
   &__header
@@ -84,7 +92,9 @@ $block: ".boss-board"
     @media screen and (max-width: 640px)
       #{$block}_state_edit &,
       #{$block}_role_checklist &,
-      #{$block}_role_finance-report &
+      #{$block}_role_finance-report &,
+      #{$block}_role_venue-alert-levels-red &,
+      #{$block}_role_venue-alert-levels-amber &
         flex-wrap: wrap
         overflow: hidden
 
@@ -160,6 +170,14 @@ $block: ".boss-board"
     font-weight: 400
     color: $boss-global-font-color
 
+    #{$block}_role_venue-alert-levels-amber &
+      font-weight: 600
+      color: map-get($boss-app-palette, warning)
+
+    #{$block}_role_venue-alert-levels-red &
+      font-weight: 600
+      color: map-get($boss-app-palette, alert)
+
     @media screen and (max-width: 960px)
       width: calc(100% - 50px)
 
@@ -172,7 +190,9 @@ $block: ".boss-board"
         margin-bottom: 15px
 
       #{$block}_role_checklist &,
-      #{$block}_role_finance-report &
+      #{$block}_role_finance-report &,
+      #{$block}_role_venue-alert-levels-red &,
+      #{$block}_role_venue-alert-levels-amber &
         width: calc(100% - 50px)
 
     @media screen and (max-width: 400px)
@@ -440,7 +460,9 @@ $block: ".boss-board"
 
       @media screen and (max-width: 640px)
         #{$block}_role_checklist &,
-        #{$block}_role_finance-report &
+        #{$block}_role_finance-report &,
+        #{$block}_role_venue-alert-levels-red &,
+        #{$block}_role_venue-alert-levels-amber &
           order: -99
           width: 100%
           margin-bottom: 15px
