@@ -62,68 +62,20 @@ $block: ".boss-requests"
 
   // $Requests meta
   &__meta
-    position: relative
     display: flex
     flex-direction: row
     justify-content: flex-start
-    align-items: flex-start
+    align-items: center
     width: 100%
-    padding-left: 170px
 
     @media screen and (max-width: 640px)
-      flex-direction: column ""
-      padding-left: 0
-
-
-  // $Requests meta info
-  &__meta-info
-    position: absolute
-    top: 0
-    left: 0
-    flex-grow: 0
-    flex-shrink: 0
-    width: 170px
-    margin-top: 5px
-    margin-bottom: 5px
-    padding-right: 10px
-
-    @media screen and (max-width: 640px)
-      position: relative
-      top: auto
-      left: auto
-      order: 2
-      width: auto
-      padding-left: 40px
-      padding-right: 0
-
-
-  // $Requests meta text
-  &__meta-text
-    +text-normalizer()
-    flex-grow: 0
-    text-align: right
-
-    @media screen and (max-width: 640px)
-      text-align: left
-
-    &:not(:last-child)
-      margin-bottom: 5px
-
-  // $Requests meta text MOD: type light
-  &__meta-text-light
-    font-weight: 300
-
-  // $Requests meta text MOD: type bold
-  &__meta-text-bold
-    font-weight: 600
+      flex-direction: column
+      align-items: flex-start
 
 
   // $Requests date
   &__date
     +text-normalizer()
-    position: absolute
-    top: 0
-    left: 0
     flex-grow: 0
     flex-shrink: 0
     width: 170px
@@ -132,13 +84,9 @@ $block: ".boss-requests"
     text-align: right
 
     @media screen and (max-width: 640px)
-      position: relative
-      top: auto
-      left: auto
       order: 2
       width: auto
       padding-left: 40px
-      padding-right: 0
       text-align: left
 
 
