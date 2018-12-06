@@ -188,6 +188,31 @@ $block: ".boss-page-dashboard"
     vertical-align: middle
 
 
+  // $Page dashboard status
+  &__status
+    +text-normalizer()
+
+    flex-grow: 0
+    display: block
+    margin-bottom: 20px
+    padding: 15px 30px
+    font-size: 20px
+    line-height: 1.2
+    font-weight: 600
+    color: #fff
+    text-align: center
+    background-color: #808080
+    border-radius: 10px
+
+    // $Page dashboard status MOD: level amber
+    &_level_amber
+      background-color: map-get($boss-app-palette, warning)
+
+    // $Page dashboard status MOD: level red
+    &_level_red
+      background-color: map-get($boss-app-palette, alert)
+
+
   // $Page dashboard controls group
   &__controls-group
     flex-shrink: 0

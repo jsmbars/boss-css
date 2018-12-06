@@ -71,8 +71,14 @@ $block: ".boss-indicator"
     // $Indicator marker CONTEXT: $Indicator MOD: level red
     #{$block}_role_info-alert &,
     #{$block}_status_error &,
-    #{$block}_status_sent-back &
+    #{$block}_status_sent-back &,
+    #{$block}_level_red &
       background-color: map-get($boss-app-palette, alert)
+
+
+    // $Indicator marker CONTEXT: $Indicator MOD: level amber
+    #{$block}_level_amber &
+      background-color: map-get($boss-app-palette, warning)
 
     // $Indicator marker CONTEXT: $Indicator MOD: role info
     // $Indicator marker CONTEXT: $Indicator MOD: status uncollected
@@ -124,8 +130,12 @@ $block: ".boss-indicator"
     // $Indicator label CONTEXT: $Indicator MOD: status sent-back
     #{$block}_role_info-alert &,
     #{$block}_status_error &,
-    #{$block}_status_sent-back &
+    #{$block}_status_sent-back &,
+    #{$block}_level_red &
       color: map-get($boss-app-palette, alert)
+
+    #{$block}_level_amber &
+      color: map-get($boss-app-palette, warning)
 
     // $Indicator label CONTEXT: $Indicator MOD: role info
     // $Indicator label CONTEXT: $Indicator MOD: status uncollected

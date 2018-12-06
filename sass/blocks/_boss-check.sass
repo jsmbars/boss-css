@@ -71,6 +71,10 @@ $block: ".boss-check"
   &_state_success
     background-color: #dbfddb
 
+  // $Check block MOD: state inactive
+  &_state_inactive
+    background-color: #f0f0f0
+
   // $Check block MOD: state frozen
   &_state_frozen
     background-color: #daecff
@@ -124,7 +128,8 @@ $block: ".boss-check"
     #{$block}_page_marketing-index &,
     #{$block}_page_ops-diary-index &,
     #{$block}_page_ssr-requests &,
-    #{$block}_page_profile-disciplinary &
+    #{$block}_page_profile-disciplinary &,
+    #{$block}_page_venue-alert-levels &
       min-height: 0
       padding: 15px 15px 10px
 
@@ -142,6 +147,7 @@ $block: ".boss-check"
       #{$block}_page_ops-diary-index &,
       #{$block}_page_ssr-requests &,
       #{$block}_page_profile-disciplinary &,
+      #{$block}_page_venue-alert-levels &,
       #{$block}_page_wtl-cards-index &
         flex-wrap: wrap
 
@@ -188,6 +194,7 @@ $block: ".boss-check"
 
       #{$block}_page_ssr-requests &,
       #{$block}_page_profile-disciplinary &,
+      #{$block}_page_venue-alert-levels &,
       #{$block}_page_wtl-cards-index &
         margin-top: 0
         margin-bottom: 10px
@@ -265,6 +272,7 @@ $block: ".boss-check"
 
     #{$block}_page_ssr-requests &,
     #{$block}_page_profile-disciplinary &,
+    #{$block}_page_venue-alert-levels &,
     #{$block}_page_wtl-cards-index &
       display: flex
       flex-direction: row
@@ -273,13 +281,15 @@ $block: ".boss-check"
 
     @media screen and (max-width: 960px)
       #{$block}_page_ssr-requests &,
-      #{$block}_page_profile-disciplinary &
+      #{$block}_page_profile-disciplinary &,
+      #{$block}_page_venue-alert-levels &
         flex-direction: column
         align-items: stretch
 
     @media screen and (max-width: 640px)
       #{$block}_page_ssr-requests &,
       #{$block}_page_profile-disciplinary &,
+      #{$block}_page_venue-alert-levels &,
       #{$block}_page_wtl-cards-index &
         flex-grow: 1
         flex-shrink: 1
@@ -295,18 +305,21 @@ $block: ".boss-check"
     &:not(:first-child)
       #{$block}_page_ssr-requests &,
       #{$block}_page_profile-disciplinary &,
+      #{$block}_page_venue-alert-levels &,
       #{$block}_page_wtl-cards-index &
         margin-left: 15px
 
       @media screen and (max-width: 960px)
         #{$block}_page_ssr-requests &,
-        #{$block}_page_profile-disciplinary &
+        #{$block}_page_profile-disciplinary &,
+        #{$block}_page_venue-alert-levels &
           margin-left: 0
           margin-top: 10px
 
       @media screen and (max-width: 640px)
         #{$block}_page_ssr-requests &,
-        #{$block}_page_profile-disciplinary &
+        #{$block}_page_profile-disciplinary &,
+        #{$block}_page_venue-alert-levels &
           margin-left: 15px
           margin-top: 0
 
@@ -462,7 +475,8 @@ $block: ".boss-check"
     text-align: center
 
     #{$block}_page_marketing-index &,
-    #{$block}_page_ops-diary-index &
+    #{$block}_page_ops-diary-index &,
+    #{$block}_page_venue-alert-levels &
       text-align: left
 
     &:not(:last-child)
@@ -805,7 +819,9 @@ $block: ".boss-check"
 
 
   // $Check block text label
-  &__text-label
+  // $Check block text light
+  &__text-label,
+  &__text-light
     font-weight: 300
 
 
