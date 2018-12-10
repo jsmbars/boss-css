@@ -492,6 +492,28 @@ $block: ".boss-table"
         #{$block}_page_wages-index &
           display: none
 
+      @media screen and (min-width: 1120px)
+        #{$block}_page_safe-checks-index &
+          position: sticky
+          top: 0
+          z-index: 50
+          background-color: #fff
+          border-color: #d6d6d6
+
+      // Set default position in Edge
+      @supports (-ms-ime-align: auto)
+        #{$block}_page_safe-checks-index &
+          position: static
+          z-index: auto
+          top: auto
+
+      // Set default position in IE11
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+        #{$block}_page_safe-checks-index &
+          position: static
+          z-index: auto
+          top: auto
+
     &_role_header
       @media screen and (max-width: 1120px)
         #{$block}_page_csv-upload &
