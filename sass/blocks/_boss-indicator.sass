@@ -122,7 +122,8 @@ $block: ".boss-indicator"
     // $Indicator label CONTEXT: $Indicator MOD: status collected
     #{$block}_role_info-secondary &,
     #{$block}_status_success &,
-    #{$block}_status_collected &
+    #{$block}_status_collected &,
+    #{$block}_status_active &
       color: map-get($boss-app-palette, secondary)
 
     // $Indicator label CONTEXT: $Indicator MOD: role info alert
@@ -131,6 +132,7 @@ $block: ".boss-indicator"
     #{$block}_role_info-alert &,
     #{$block}_status_error &,
     #{$block}_status_sent-back &,
+    #{$block}_status_disabled &,
     #{$block}_level_red &
       color: map-get($boss-app-palette, alert)
 

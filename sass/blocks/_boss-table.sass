@@ -73,7 +73,8 @@ $block: ".boss-table"
   &_page_finance-reports-no-net-wages,
   &_page_finance-reports-no-sage-id,
   &_page_payroll-reports,
-  &_page_wages-index
+  &_page_wages-index,
+  &_page_id-scanner-keys
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -99,7 +100,8 @@ $block: ".boss-table"
   &_page_users-index,
   &_page_wtl-clients-index,
   &_page_holidays-report-details,
-  &_page_wages-index
+  &_page_wages-index,
+  &_page_id-scanner-keys
     @media screen and (max-width: 960px)
       display: none
 
@@ -449,7 +451,8 @@ $block: ".boss-table"
       #{$block}_page_users-index &,
       #{$block}_page_wtl-clients-index &,
       #{$block}_page_weekly-reports &,
-      #{$block}_page_wages-index &
+      #{$block}_page_wages-index &,
+      #{$block}_page_id-scanner-keys &
         background-color: #fbfbfb
 
     // $Common table first row
@@ -489,7 +492,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-completed > &,
         #{$block}_page_ssr-admin-pending > &,
         #{$block}_page_ssr-admin-completed > &,
-        #{$block}_page_wages-index &
+        #{$block}_page_wages-index &,
+        #{$block}_page_id-scanner-keys &
           display: none
 
       @media screen and (min-width: 1120px)
@@ -556,7 +560,8 @@ $block: ".boss-table"
         #{$block}_page_users-index &,
         #{$block}_page_wtl-clients-index &,
         #{$block}_page_weekly-reports &,
-        #{$block}_page_wages-index &
+        #{$block}_page_wages-index &,
+        #{$block}_page_id-scanner-keys &
           background-color: #feeeee
 
     // $Common table row MOD: state frozen
@@ -983,6 +988,9 @@ $block: ".boss-table"
       #{$block}_page_wtl-clients-index &
         width: 20%
 
+      #{$block}_page_id-scanner-keys &
+        width: 25%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1032,7 +1040,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-pending &,
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
-        #{$block}_page_wtl-clients-index &
+        #{$block}_page_wtl-clients-index &,
+        #{$block}_page_id-scanner-keys &
           width: 100%
           padding-left: 10px
 
@@ -1260,6 +1269,10 @@ $block: ".boss-table"
         width: 40%
         justify-content: center
 
+      #{$block}_page_id-scanner-keys &
+        width: 30%
+        justify-content: center
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1302,7 +1315,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-pending &,
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
-        #{$block}_page_wtl-clients-index &
+        #{$block}_page_wtl-clients-index &,
+        #{$block}_page_id-scanner-keys &
           width: 100%
 
         #{$block}_page_message-board &
@@ -1499,6 +1513,10 @@ $block: ".boss-table"
         width: 20%
         justify-content: center
 
+      #{$block}_page_id-scanner-keys &
+        width: 25%
+        justify-content: center
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1537,7 +1555,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-pending &,
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
-        #{$block}_page_wtl-clients-index &
+        #{$block}_page_wtl-clients-index &,
+        #{$block}_page_id-scanner-keys &
           width: 100%
 
         #{$block}_page_message-board &
@@ -1720,6 +1739,10 @@ $block: ".boss-table"
         width: 20%
         justify-content: center
 
+      #{$block}_page_id-scanner-keys &
+        width: 20%
+        justify-content: center
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1762,7 +1785,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
-        #{$block}_page_wtl-clients-index &
+        #{$block}_page_wtl-clients-index &,
+        #{$block}_page_id-scanner-keys &
           width: 100%
 
         #{$block}_page_message-board &
@@ -1777,7 +1801,8 @@ $block: ".boss-table"
         #{$block}_page_vhci &,
         #{$block}_page_users-index &,
         #{$block}_page_ssr-admin-completed &,
-        #{$block}_page_wtl-clients-index &
+        #{$block}_page_wtl-clients-index &,
+        #{$block}_page_id-scanner-keys &
           padding-right: 10px
 
         #{$block}_page_fruit-order-history &
@@ -2964,7 +2989,9 @@ $block: ".boss-table"
     #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(4) &,
     #{$block}_page_wages-index &,
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(2) &,
-    #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(3) &
+    #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(3) &,
+    #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(2) &,
+    #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(3) &
       text-align: center
 
     #{$block}_page_message-board #{$block}__cell:nth-child(4):nth-last-child(3) &
@@ -3037,7 +3064,9 @@ $block: ".boss-table"
       #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(4) &,
       #{$block}_page_wages-index &,
       #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(2) &,
-      #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(3) &
+      #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(3) &,
+      #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(2) &,
+      #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(3) &
         text-align: left
 
       #{$block}_page_message-board #{$block}__cell:nth-child(4):nth-last-child(3) &
@@ -3240,7 +3269,9 @@ $block: ".boss-table"
       hyphens: auto
 
     &_role_success-status,
+    &_role_active-status,
     &_role_alert-status,
+    &_role_disabled-status,
     &_role_pending-status,
     &_role_status
       text-transform: uppercase
@@ -3250,10 +3281,12 @@ $block: ".boss-table"
     &_role_status
       color: map-get($boss-app-palette, primary)
 
-    &_role_success-status
+    &_role_success-status,
+    &_role_active-status
       color: map-get($boss-app-palette, secondary)
 
-    &_role_alert-status
+    &_role_alert-status,
+    &_role_disabled-status
       color: map-get($boss-app-palette, alert)
 
     &_role_pending-status
@@ -3362,7 +3395,8 @@ $block: ".boss-table"
     #{$block}_page_ssr-completed &,
     #{$block}_page_ssr-admin-completed &,
     #{$block}_page_wages-index &,
-    #{$block}_page_wtl-clients-index &
+    #{$block}_page_wtl-clients-index &,
+    #{$block}_page_id-scanner-keys &
       text-align: center
 
     #{$block}_page_change-order-report &,
@@ -3418,7 +3452,8 @@ $block: ".boss-table"
       #{$block}_page_ssr-completed &,
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_wages-index &,
-      #{$block}_page_wtl-clients-index &
+      #{$block}_page_wtl-clients-index &,
+      #{$block}_page_id-scanner-keys &
         text-align: left
 
       #{$block}_page_holidays-report &,
