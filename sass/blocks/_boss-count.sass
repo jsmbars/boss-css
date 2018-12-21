@@ -124,9 +124,57 @@ $block: ".boss-count"
     @media screen and (max-width: 960px)
       width: 100%
 
-  // $Count MOD: type badge state alert
-  &_type_badge#{&}_state_alert
+  // $Count MOD: state alert
+  &_state_alert
     background-color: #ff8587
+
+  // $Count MOD: color accent red
+  &_color_accent-red
+    background-color: map-get($boss-accent-palette, red)
+
+  // $Count MOD: color accent orange
+  &_color_accent-orange
+    background-color: map-get($boss-accent-palette, orange)
+
+  // $Count MOD: color accent yellow
+  &_color_accent-yellow
+    background-color: map-get($boss-accent-palette, yellow)
+
+  // $Count MOD: color accent green
+  &_color_accent-green
+    background-color: map-get($boss-accent-palette, green)
+
+  // $Count MOD: color accent turquoise
+  &_color_accent-turquoise
+    background-color: map-get($boss-accent-palette, turquoise)
+
+  // $Count MOD: color accent navy blue
+  &_color_accent-navy-blue
+    background-color: map-get($boss-accent-palette, navy-blue)
+
+  // $Count MOD: color accent light blue
+  &_color_accent-blue
+    background-color: map-get($boss-accent-palette, blue)
+
+  // $Count MOD: color accent purple
+  &_color_accent-purple
+    background-color: map-get($boss-accent-palette, purple)
+
+  // $Count MOD: color accent lilac
+  &_color_accent-lilac
+    background-color: map-get($boss-accent-palette, lilac)
+
+  // $Count MOD: color accent pink
+  &_color_accent-pink
+    background-color: map-get($boss-accent-palette, pink)
+
+  // $Count MOD: color accent gray
+  &_color_accent-gray
+    background-color: map-get($boss-accent-palette, gray)
+
+  // $Count MOD: color accent dark
+  &_color_accent-dark
+    background-color: map-get($boss-accent-palette, dark)
 
 
   // $Count group
@@ -142,6 +190,228 @@ $block: ".boss-count"
       align-items: center
 
 
+  // $Count icon
+  &__icon
+    flex-grow: 0
+    flex-shrink: 0
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: contain
+
+    // $Count icon CONTEXT: $Count MOD: type badge
+    #{$block}_type_badge &
+      width: 60px
+      height: 60px
+
+    @media screen and(max-width: 480px)
+      #{$block}_type_badge &
+        width: 50px
+        height: 50px
+
+    &_at
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-at-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-at-white.svg')
+
+    &_umbrella
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-umbrella-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-umbrella-white.svg')
+
+    &_pin
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-map-pin-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-map-pin-white.svg')
+
+    &_camera
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-camera-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-camera-white.svg')
+
+    &_calculator
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-calculator-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-calculator-white.svg')
+
+    &_badge
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-badge-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-badge-white.svg')
+
+    &_envelope
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-envelope-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-envelope-white.svg')
+
+    &_gbp
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-gbp-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-gbp-white.svg')
+
+    &_alert
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-alert-triangle-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-alert-triangle-white.svg')
+
+    &_clock
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-clock-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-clock-white.svg')
+
+    &_qrcode
+      #{$block}_type_badge &
+        background-image: url('../icons/icon-qrcode-medium-gray.svg')
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        background-image: url('../icons/icon-qrcode-white.svg')
+
+
+  // $Count info
+  &__info
+    flex-grow: 1
+    flex-shrink: 1
+
+    // $Count info CONTEXT: $Count MOD: type badge icon before
+    #{$block}_type_badge#{$block}_adjust_icon-before &
+      padding-left: 20px
+      text-align: right
+
+    @media screen and(max-width: 480px)
+      #{$block}_type_badge#{$block}_adjust_icon-before &
+        padding-left: 10px
+
+
+  // $Count action
   &__action
     position: absolute
     top: 0
@@ -176,8 +446,6 @@ $block: ".boss-count"
           background-image: url('../icons/icon-close-white.svg')
 
 
-
-
   // $Count number
   &__number
     +text-normalizer()
@@ -206,16 +474,48 @@ $block: ".boss-count"
       border-radius: 0
       color: #808080
 
-    // $Count group CONTEXT: $Count MOD: type badge state alert
-    #{$block}_type_badge#{$block}_state_alert &
+    // $Count number CONTEXT: $Count MOD: type badge icon before
+    #{$block}_type_badge#{$block}_adjust_icon-before &
+      font-size: 40px
+      margin-right: 0
+      text-align: right
+
+    // $Count number CONTEXT: $Count MOD: state alert
+    // $Count number CONTEXT: $Count MOD: color accent red
+    // $Count number CONTEXT: $Count MOD: color accent orange
+    // $Count number CONTEXT: $Count MOD: color accent green
+    // $Count number CONTEXT: $Count MOD: color accent turquoise
+    // $Count number CONTEXT: $Count MOD: color accent navy blue
+    // $Count number CONTEXT: $Count MOD: color accent blue
+    // $Count number CONTEXT: $Count MOD: color accent purple
+    // $Count number CONTEXT: $Count MOD: color accent pink
+    // $Count number CONTEXT: $Count MOD: color accent gray
+    #{$block}_state_alert &,
+    #{$block}_color_accent-red &,
+    #{$block}_color_accent-orange &,
+    #{$block}_color_accent-green &,
+    #{$block}_color_accent-turquoise &,
+    #{$block}_color_accent-navy-blue &,
+    #{$block}_color_accent-blue &,
+    #{$block}_color_accent-purple &,
+    #{$block}_color_accent-lilac &,
+    #{$block}_color_accent-pink &,
+    #{$block}_color_accent-gray &
       color: #FFF
+      text-shadow: 0 0 6px rgba(0,0,0,.2)
 
     @media screen and(max-width: 960px)
       #{$block}_type_badge &
         font-size: 45px
 
+      #{$block}_type_badge#{$block}_adjust_icon-before &
+        font-size: 40px
+
     @media screen and(max-width: 480px)
       #{$block}_type_badge &
+        font-size: 40px
+
+      #{$block}_type_badge#{$block}_adjust_icon-before &
         font-size: 40px
 
     // $Count number MOD: position last
@@ -245,9 +545,34 @@ $block: ".boss-count"
       font-size: 20px
       color: #808080
 
-    // $Count label CONTEXT: $Count MOD: type badge state alert
-    #{$block}_type_badge#{$block}_state_alert &
+    // $Count label CONTEXT: $Count MOD: type badge icon before
+    #{$block}_type_badge#{$block}_adjust_icon-before &
+      text-align: right
+
+    // $Count label CONTEXT: $Count MOD: state alert
+    // $Count label CONTEXT: $Count MOD: color accent red
+    // $Count label CONTEXT: $Count MOD: color accent orange
+    // $Count label CONTEXT: $Count MOD: color accent green
+    // $Count label CONTEXT: $Count MOD: color accent turquoise
+    // $Count label CONTEXT: $Count MOD: color accent navy blue
+    // $Count label CONTEXT: $Count MOD: color accent navy blue
+    // $Count label CONTEXT: $Count MOD: color accent blue
+    // $Count label CONTEXT: $Count MOD: color accent purple
+    // $Count label CONTEXT: $Count MOD: color accent pink
+    // $Count label CONTEXT: $Count MOD: color accent gray
+    #{$block}_state_alert &,
+    #{$block}_color_accent-red &,
+    #{$block}_color_accent-orange &,
+    #{$block}_color_accent-green &,
+    #{$block}_color_accent-turquoise &,
+    #{$block}_color_accent-navy-blue &,
+    #{$block}_color_accent-blue &,
+    #{$block}_color_accent-purple &,
+    #{$block}_color_accent-lilac &,
+    #{$block}_color_accent-pink &,
+    #{$block}_color_accent-gray &
       color: #FFF
+      text-shadow: 0 0 6px rgba(0,0,0,.2)
 
     @media screen and(max-width: 960px)
       #{$block}_type_badge &
