@@ -584,6 +584,13 @@ $block: ".boss-button"
     +button-with-icon-left($icon-url: '../icons/icon-download-white.svg')
     +button-common-hover-behavior($background-color: $background-color)
 
+
+  &_role_print
+    $background-color: map-get($boss-app-palette, primary)
+    +button-common($background-color: $background-color)
+    +button-with-icon-left($icon-url: '../icons/icon-print-white.svg')
+    +button-common-hover-behavior($background-color: $background-color)
+
   // $Common button MOD: role enable
   &_role_enable
     $background-color: map-get($boss-app-palette, primary)
