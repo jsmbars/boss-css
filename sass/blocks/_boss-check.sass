@@ -155,6 +155,10 @@ $block: ".boss-check"
       #{$block}_page_ops-diary-index &
         align-items: flex-start
 
+    @media screen and (max-width: 480px)
+      #{$block}_page_clocking-app-page-index &
+        flex-wrap: wrap
+
 
   // $Check block header information
   &__header-info
@@ -181,6 +185,10 @@ $block: ".boss-check"
 
       #{$block}_page_wtl-cards-index &
         justify-content: center
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_clocking-app-page-index &
+        width: calc(100% - 50px)
 
 
   // $Check block header group
@@ -299,6 +307,18 @@ $block: ".boss-check"
         align-items: center
         width: 100%
 
+    @media screen and (max-width: 480px)
+      #{$block}_page_clocking-app-page-index &
+        order: 99
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        margin-top: 10px
+        padding-top: 15px
+        text-align: center
+        border-top: 1px solid #eee
+
+
 
   // $Check block header action
   &__header-action
@@ -384,6 +404,16 @@ $block: ".boss-check"
 
     &_size_half
       width: 50%
+
+      &:first-child
+        @media screen and (max-width: 480px)
+          #{$block}_page_clocking-app-page-index &
+            padding-right: 5px
+
+      &:last-child
+        @media screen and (max-width: 480px)
+          #{$block}_page_clocking-app-page-index &
+            padding-left: 5px
 
     &_size_third
       width: 33%
@@ -647,6 +677,9 @@ $block: ".boss-check"
     #{$block}_page_ops-diary-index &
       font-size: 16px
 
+    #{$block}_page_clocking-app-page-index &
+      font-size: 20px
+
     #{$block}_page_security-venues &
       font-size: 24px
 
@@ -741,7 +774,6 @@ $block: ".boss-check"
         #{$block}_page_vhci &
           background-image: url('../icons/icon-clock-dark-gray.svg')
 
-
     &_role_voucher
       &:before
         width: 18px
@@ -760,6 +792,7 @@ $block: ".boss-check"
     // $Check block text MOD: role main
     &_role_main
       font-size: 16px
+      line-height: 1.2
       font-weight: 600
       color: #4c4c4c
 
@@ -1065,7 +1098,8 @@ $block: ".boss-check"
   &__dropdown
 
     #{$block}_page_maintenance-index &,
-    #{$block}_page_marketing-index &
+    #{$block}_page_marketing-index &,
+    #{$block}_page_clocking-app-page-index &
       background-color: #fbfbfb
 
     #{$block}_state_alert &,
@@ -1218,7 +1252,7 @@ $block: ".boss-check"
         flex-direction: column
         align-items: center
 
-    @media screen and (max-width: 479px)
+    @media screen and (max-width: 480px)
       #{$block}_page_invites-index &
         justify-content: flex-start
 
@@ -1253,7 +1287,7 @@ $block: ".boss-check"
           text-align: center
           padding-bottom: 0
 
-      @media screen and (max-width: 479px)
+      @media screen and (max-width: 480px)
         #{$block}_page_invites-index &
           flex-grow: 0
           flex-shrink: 0
@@ -1268,7 +1302,7 @@ $block: ".boss-check"
           align-items: center
           text-align: center
 
-      @media screen and (max-width: 479px)
+      @media screen and (max-width: 480px)
         #{$block}_page_invites-index &
           width: calc(100% - 100px)
 
@@ -1286,6 +1320,17 @@ $block: ".boss-check"
 
   // $Check block buttons
   &__buttons
+    #{$block}_page_clocking-app-page-index &
+      display: flex
+      flex-direction: row
+      justify-content: center
+      align-items: center
+      margin-top: 15px
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_clocking-app-page-index &
+        flex-direction: column
+        align-items: stretch
 
 
   // $Check block button
@@ -1293,11 +1338,42 @@ $block: ".boss-check"
     &:not(:last-of-type)
       margin-right: 20px
 
+      @media screen and (max-width: 480px)
+        #{$block}_page_clocking-app-page-index &
+          margin-right: 0
+          margin-bottom: 15px
+
     &_position_below
       margin-top: 10px
 
     &_position_above
       margin-bottom: 10px
+
+    &_position_first
+      margin-top: 0
+      margin-bottom: 10px
+      margin-right: 10px
+
+    &_position_last
+      margin-top: 10px
+      margin-bottom: 0
+      margin-left: 10px
+
+
+  // $Check block button inline
+  &__button-inline
+    margin-top: 5px
+    margin-bottom: 5px
+
+    &_position_first
+      margin-top: 0
+      margin-bottom: 10px
+      margin-right: 10px
+
+    &_position_last
+      margin-top: 10px
+      margin-bottom: 0
+      margin-left: 10px
 
 
   // $Check block meta
