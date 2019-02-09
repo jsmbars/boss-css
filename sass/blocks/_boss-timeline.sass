@@ -187,6 +187,10 @@ $block: ".boss-timeline"
     align-items: center
     width: 100%
 
+    @media screen and (max-width: 640px)
+      #{$block}_role_venue-history &
+        flex-wrap: wrap
+
     &_adjust_count
       padding-top: 5px
 
@@ -238,6 +242,10 @@ $block: ".boss-timeline"
     font-size: 18px
     line-height: 25px
 
+    @media screen and (max-width: 640px)
+      #{$block}_role_venue-history &
+        width: 100%
+
     @media screen and (max-width: 480px)
       padding-top: 3px
       font-size: 16px
@@ -255,6 +263,15 @@ $block: ".boss-timeline"
   // $Timeline title light
   &__title-light
     font-weight: 300
+
+
+  // $Timeline indicator
+  &__indicator
+
+    @media screen and (max-width: 640px)
+      #{$block}_role_venue-history &
+        width: 100%
+        margin-top: 5px
 
 
   // $Timeline records
