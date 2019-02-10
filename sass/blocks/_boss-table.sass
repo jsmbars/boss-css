@@ -78,6 +78,7 @@ $block: ".boss-table"
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
+  &_page_clocking-app-page-api-keys-card,
   &_page_accessory-requests-card,
   &_page_marketing-index-card,
   &_page_marketing-managers-index-card,
@@ -241,7 +242,7 @@ $block: ".boss-table"
       width: calc(100% - 120px)
       padding-left: 20px
 
-    @media screen and (max-width: 479px)
+    @media screen and (max-width: 480px)
       #{$block}_page_maintenance-index &,
       #{$block}_page_maintenance-managers-index &
         width: 120px
@@ -270,7 +271,7 @@ $block: ".boss-table"
       width: 100px
       padding-right: 20px
 
-    @media screen and (max-width: 479px)
+    @media screen and (max-width: 480px)
       #{$block}_page_maintenance-index &,
       #{$block}_page_maintenance-managers-index &
         width: calc(100% - 100px)
@@ -332,6 +333,7 @@ $block: ".boss-table"
 
     #{$block}_page_change-order-history &,
     #{$block}_page_maintenance-index-card &,
+    #{$block}_page_clocking-app-page-api-keys-card &,
     #{$block}_page_maintenance-managers-index-card &,
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &
@@ -340,6 +342,7 @@ $block: ".boss-table"
     #{$block}_page_maintenance-index &,
     #{$block}_page_maintenance-managers-index &,
     #{$block}_page_maintenance-index-card &,
+    #{$block}_page_clocking-app-page-api-keys-card &,
     #{$block}_page_accessory-requests-card &,
     #{$block}_page_daily-reports &,
     #{$block}_page_marketing-index-card &,
@@ -419,6 +422,7 @@ $block: ".boss-table"
       #{$block}_page_maintenance-index &,
       #{$block}_page_maintenance-managers-index &,
       #{$block}_page_maintenance-index-card &,
+      #{$block}_page_clocking-app-page-api-keys-card &,
       #{$block}_page_accessory-requests-card &,
       #{$block}_page_weekly-reports &,
       #{$block}_page_daily-reports &,
@@ -435,6 +439,10 @@ $block: ".boss-table"
       #{$block}_page_accessory-requests-card &,
       #{$block}_page_marketing-index-card &,
       #{$block}_page_marketing-managers-index-card &
+        flex-wrap: wrap
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_clocking-app-page-api-keys-card &
         flex-wrap: wrap
 
     &:last-child
@@ -673,6 +681,9 @@ $block: ".boss-table"
       min-height: 55px
       padding: 10px 15px
 
+    #{$block}_page_clocking-app-page-api-keys-card &
+      align-items: flex-start
+
     #{$block}_page_safe-checks-index &,
     #{$block}_page_venues-index &,
     #{$block}_page_daily-reports &,
@@ -723,6 +734,7 @@ $block: ".boss-table"
     #{$block}_page_maintenance-index &,
     #{$block}_page_maintenance-managers-index &,
     #{$block}_page_maintenance-index-card &,
+    #{$block}_page_clocking-app-page-api-keys-card &,
     #{$block}_page_invites-index &,
     #{$block}_page_accessory-requests-card &,
     #{$block}_page_csv-upload &,
@@ -799,6 +811,14 @@ $block: ".boss-table"
 
       #{$block}_page_ssr-assign &
         padding: 10px 0
+
+      #{$block}_page_clocking-app-page-api-keys-card &
+        align-items: center
+        justify-content: flex-start
+
+    @media screen and (max-width: 400px)
+      #{$block}_page_clocking-app-page-api-keys-card &
+        padding: 10px
 
     &:first-child
       padding-left: 25px
@@ -991,6 +1011,10 @@ $block: ".boss-table"
       #{$block}_page_id-scanner-keys &
         width: 30%
 
+      #{$block}_page_clocking-app-page-api-keys-card &
+        width: 33.3%
+        padding-left: 30px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1095,8 +1119,16 @@ $block: ".boss-table"
           width: calc(100% - 120px)
           padding-left: 10px
 
+        #{$block}_page_clocking-app-page-api-keys-card &
+          padding-left: 20px
 
-      @media screen and (max-width: 479px)
+      @media screen and (max-width: 640px)
+        #{$block}_page_clocking-app-page-api-keys-card &
+          width: 49.5%
+          border-bottom: 1px solid #eee
+          border-right: 1px solid #eee
+
+      @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index &,
         #{$block}_page_maintenance-managers-index &
           width: 100px
@@ -1115,8 +1147,15 @@ $block: ".boss-table"
         #{$block}_page_ssr-assign &
           padding-left: 0
 
+      @media screen and (max-width: 400px)
+        #{$block}_page_clocking-app-page-api-keys-card &
+          width: 100%
+          padding-left: 20px
+          padding-right: 20px
+
       &:after
         #{$block}_page_maintenance-index-card &,
+        #{$block}_page_clocking-app-page-api-keys-card &,
         #{$block}_page_accessory-requests-card &,
         #{$block}_page_marketing-managers-index-card &
           content: ""
@@ -1133,6 +1172,10 @@ $block: ".boss-table"
           #{$block}_page_maintenance-index-card &,
           #{$block}_page_accessory-requests-card &,
           #{$block}_page_marketing-managers-index-card &
+            display: none
+
+        @media screen and (max-width: 640px)
+          #{$block}_page_clocking-app-page-api-keys-card &
             display: none
 
 
@@ -1273,6 +1316,9 @@ $block: ".boss-table"
         width: 25%
         justify-content: center
 
+      #{$block}_page_clocking-app-page-api-keys-card &
+        width: 33.3%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1359,14 +1405,26 @@ $block: ".boss-table"
           padding-right: 20px
           padding-left: 20px
 
-      @media screen and (max-width: 479px)
+        #{$block}_page_clocking-app-page-api-keys-card &
+          width: 49.5%
+          padding-right: 20px
+          border-bottom: 1px solid #eee
+
+      @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index-card &
+          width: 100%
+          padding-left: 20px
+          padding-right: 20px
+
+      @media screen and (max-width: 400px)
+        #{$block}_page_clocking-app-page-api-keys-card &
           width: 100%
           padding-left: 20px
           padding-right: 20px
 
       &:after
         #{$block}_page_maintenance-index-card &,
+        #{$block}_page_clocking-app-page-api-keys-card &,
         #{$block}_page_accessory-requests-card &
           content: ""
           position: absolute
@@ -1383,7 +1441,8 @@ $block: ".boss-table"
             display: none
 
         @media screen and (max-width: 640px)
-          #{$block}_page_accessory-requests-card &
+          #{$block}_page_accessory-requests-card &,
+          #{$block}_page_clocking-app-page-api-keys-card &
             display: none
 
 
@@ -1517,6 +1576,10 @@ $block: ".boss-table"
         width: 25%
         justify-content: center
 
+      #{$block}_page_clocking-app-page-api-keys-card &
+        width: 33.3%
+        padding-right: 30px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1590,11 +1653,24 @@ $block: ".boss-table"
         #{$block}_page_accessory-requests-card &
           width: 29.5%
 
+        #{$block}_page_clocking-app-page-api-keys-card &
+          padding-right: 20px
+
       @media screen and (max-width: 640px)
         #{$block}_page_accessory-requests-card &
           width: 100%
           padding-right: 20px
           padding-left: 20px
+
+        #{$block}_page_clocking-app-page-api-keys-card &
+          width: 100%
+          padding-left: 20px
+          padding-right: 20px
+          border-right: none
+
+      @media screen and (max-width: 400px)
+        #{$block}_page_clocking-app-page-api-keys-card &
+          width: 100%
 
       &:after
         #{$block}_page_accessory-requests-card &
@@ -2142,7 +2218,7 @@ $block: ".boss-table"
         #{$block}_page_maintenance-managers-index &
           display: none
 
-      @media screen and (max-width: 479px)
+      @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index &
           width: 40px
           padding-right: 10px
@@ -2346,7 +2422,7 @@ $block: ".boss-table"
         #{$block}_page_smp-owed-hours &
           padding-right: 15px
 
-      @media screen and (max-width: 479px)
+      @media screen and (max-width: 480px)
         #{$block}_page_daily-reports &
           width: 40px
 
@@ -2786,6 +2862,9 @@ $block: ".boss-table"
         flex-direction: column
         justify-content: center
 
+      #{$block}_page_clocking-app-page-api-keys-card &
+        display: block
+
       #{$block}_page_holidays-report &
         justify-content: center
         align-items: flex-start
@@ -2974,6 +3053,7 @@ $block: ".boss-table"
     #{$block}_page_message-board #{$block}__cell:nth-child(5) &,
     #{$block}_page_message-board #{$block}__cell:nth-child(6) &,
     #{$block}_page_maintenance-index-card &,
+    #{$block}_page_clocking-app-page-api-keys-card &,
     #{$block}_page_accessory-requests-card &,
     #{$block}_page_holidays-report-details #{$block}__cell:nth-child(4) &,
     #{$block}_page_holidays-report-details #{$block}__cell:nth-child(5) &,
@@ -3076,7 +3156,8 @@ $block: ".boss-table"
       #{$block}_page_message-board #{$block}__cell:nth-child(4):nth-last-child(3) &
         text-align: left
 
-      #{$block}_page_accessory-requests-card &
+      #{$block}_page_accessory-requests-card &,
+      #{$block}_page_clocking-app-page-api-keys-card &
         width: 100%
 
     @media screen and (max-width: 640px)
@@ -3302,6 +3383,25 @@ $block: ".boss-table"
   &__text-line,
   &__text-meta
     display: block
+
+
+  &__text-main
+    font-size: 16px
+    line-height: 1.2
+    font-weight: 600
+    color: #4c4c4c
+
+
+  &__text-counter
+    font-size: 24px
+    line-height: 1
+    font-weight: 600
+
+    &_state_success
+      color: map-get($boss-app-palette, secondary)
+
+    &_state_alert
+      color: map-get($boss-app-palette, alert)
 
 
   &__text-meta
@@ -3593,7 +3693,9 @@ $block: ".boss-table"
 
   // $Common table tooltip
   &__tooltip
+    display: inline-block
     margin-left: 3px
+    vertical-align: middle
 
 
   // $Common table link
