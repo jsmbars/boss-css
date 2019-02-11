@@ -61,6 +61,9 @@ $block: ".boss-board"
   // $Board MOD: state edit
   &_state_edit
 
+  // $Board MOD: state alert
+  &_state_alert
+
   // $Board MOD: state hidden
   &_state_hidden
     display: none
@@ -116,11 +119,13 @@ $block: ".boss-board"
       background-color: map-get($boss-app-palette, inactive)
 
     // $Board header MOD: status fail
+    // $Board header MOD: state alert
     // $Board title MOD: role general tasks
     // $Board title MOD: role artwork tasks
     // $Board title MOD: role music tasks
     // $Board title MOD: role sports tasks
     &_status_failed,
+    &_state_alert,
     &_role_tasks-general,
     &_role_tasks-artwork,
     &_role_tasks-music,
@@ -128,7 +133,8 @@ $block: ".boss-board"
       &:before
         height: 5px
 
-    &_status_failed
+    &_status_failed,
+    &_state_alert
       &:before
         background-color: map-get($boss-app-palette, alert)
 
@@ -203,7 +209,9 @@ $block: ".boss-board"
         margin-bottom: 15px
 
     // $Board title MOD: status failed
-    &_status_failed
+    // $Board title MOD: state alert
+    &_status_failed,
+    &_state_alert
       color: map-get($boss-app-palette, alert)
 
     // $Board title MOD: role general tasks

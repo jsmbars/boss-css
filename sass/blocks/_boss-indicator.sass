@@ -62,7 +62,8 @@ $block: ".boss-indicator"
     // $Indicator marker CONTEXT: $Indicator MOD: status collected
     #{$block}_role_info-secondary &,
     #{$block}_status_success &,
-    #{$block}_status_collected &
+    #{$block}_status_collected &,
+    #{$block}_status_logged-in &
       background-color: map-get($boss-app-palette, secondary)
 
     // $Indicator marker CONTEXT: $Indicator MOD: role info alert
@@ -72,6 +73,7 @@ $block: ".boss-indicator"
     #{$block}_role_info-alert &,
     #{$block}_status_error &,
     #{$block}_status_sent-back &,
+    #{$block}_status_revoked &,
     #{$block}_level_red &
       background-color: map-get($boss-app-palette, alert)
 
@@ -85,7 +87,8 @@ $block: ".boss-indicator"
     // $Indicator marker CONTEXT: $Indicator MOD: status pending
     #{$block}_role_info &,
     #{$block}_status_uncollected &,
-    #{$block}_status_pending &
+    #{$block}_status_pending &,
+    #{$block}_status_logged-out &
       background-color: map-get($boss-app-palette, pending)
 
     // $Indicator marker MOD: icon check
@@ -113,6 +116,14 @@ $block: ".boss-indicator"
     font-weight: 600
     vertical-align: middle
 
+    #{$block}_align_right-left-s &
+      text-align: right
+
+    @media screen and (max-width: 640px)
+      #{$block}_align_right-left-s &
+        text-align: left
+
+
     // $Indicator label CONTEXT: $Indicator MOD: role info primary
     #{$block}_role_info-primary &
       color: map-get($boss-app-palette, primary)
@@ -123,7 +134,8 @@ $block: ".boss-indicator"
     #{$block}_role_info-secondary &,
     #{$block}_status_success &,
     #{$block}_status_collected &,
-    #{$block}_status_active &
+    #{$block}_status_active &,
+    #{$block}_status_logged-in &
       color: map-get($boss-app-palette, secondary)
 
     // $Indicator label CONTEXT: $Indicator MOD: role info alert
@@ -133,6 +145,7 @@ $block: ".boss-indicator"
     #{$block}_status_error &,
     #{$block}_status_sent-back &,
     #{$block}_status_disabled &,
+    #{$block}_status_revoked &,
     #{$block}_level_red &
       color: map-get($boss-app-palette, alert)
 
@@ -144,7 +157,8 @@ $block: ".boss-indicator"
     // $Indicator label CONTEXT: $Indicator MOD: status pending
     #{$block}_role_info &,
     #{$block}_status_uncollected &,
-    #{$block}_status_pending &
+    #{$block}_status_pending &,
+    #{$block}_status_logged-out &
       color: map-get($boss-app-palette, pending)
 
     // $Indicator MOD: position before

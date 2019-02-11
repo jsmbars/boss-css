@@ -516,7 +516,8 @@ $block: ".boss-button"
   // $Common button MOD: role view notes
   &_role_view-orders,
   &_role_view-assignments,
-  &_role_view-alerts
+  &_role_view-alerts,
+  &_role_view-history-alt
     $background-color: map-get($boss-app-palette, primary)
     +button-common($background-color: $background-color)
     +button-with-icon-left($icon-url: '../icons/icon-text-paper-white.svg')
@@ -835,7 +836,7 @@ $block: ".boss-button"
   &_role_view-details-alt-light
     $primary-color: map-get($boss-app-palette, secondary)
     +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
-    +button-with-icon-left($icon-url: '../icons/icon-zoom-primary.svg', $background-size: 12px)
+    +button-with-icon-left($icon-url: '../icons/icon-zoom-secondary.svg', $background-size: 12px)
     +button-bordered-hover-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-hover-url: '../icons/icon-zoom-white.svg')
     +button-bordered-active-behavior($color: #fff, $border-color: $primary-color, $background-color: $primary-color, $icon-active-url: '../icons/icon-zoom-white.svg')
 
