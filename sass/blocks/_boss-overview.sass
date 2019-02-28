@@ -541,7 +541,7 @@ $block: ".boss-overview"
       height: 105px
 
     &:hover
-      opacity: 0.75
+      opacity: .75
 
     &:nth-child(2n)
       @media screen and (max-width: 479px)
@@ -605,6 +605,57 @@ $block: ".boss-overview"
   &__gallery-image
     display: block
     width: 100%
+
+
+  // $Overview previews
+  &__previews
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-start
+    flex-wrap: wrap
+    width: 100%
+
+
+  // $Overview preview
+  &__preview
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    text-align: center
+    margin-bottom: 10px
+
+    &:not(:last-child)
+      margin-right: 20px
+
+    &_role_action
+      cursor: pointer
+      transition: .4s
+
+      &:hover
+        opacity: .75
+
+
+  // $Overview preview meta
+  &__preview-meta
+    +text-normalizer()
+    display: block
+    margin-bottom: 5px
+    color: #808080
+    text-align: center
+
+
+  // $Overview preview image
+  &__preview-image
+    display: inline-block
+    width: 80px
+    max-width: 100%
+
+    &_size_large
+      width: 120px
+
+    &_size_small
+      width: 40px
 
 
   &__notes
