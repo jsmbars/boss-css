@@ -61,6 +61,7 @@ $block: ".boss-modal-window"
   // $Modal window MOD: role add new
   &_role_note,
   &_role_preview,
+  &_role_image-preview,
   &_role_details,
   &_role_add-new,
   &_role_confirm
@@ -129,6 +130,7 @@ $block: ".boss-modal-window"
     max-width: 320px
 
   &_role_preview,
+  &_role_image-preview,
   &_role_details,
   &_role_task-create,
   &_role_task-edit,
@@ -207,6 +209,7 @@ $block: ".boss-modal-window"
     // $Modal window close inner CONTEXT: $Modal window MOD: role task overview
     #{$block}_role_edit &,
     #{$block}_role_add &,
+    #{$block}_role_image-preview &,
     #{$block}_role_task-create &,
     #{$block}_role_task-edit &,
     #{$block}_role_task-overview &,
@@ -291,6 +294,7 @@ $block: ".boss-modal-window"
     // $Modal window header CONTEXT: $Modal window MOD: role task overview
     #{$block}_role_edit &,
     #{$block}_role_add &,
+    #{$block}_role_image-preview &,
     #{$block}_role_task-create &,
     #{$block}_role_task-edit &,
     #{$block}_role_task-overview &,
@@ -350,6 +354,7 @@ $block: ".boss-modal-window"
     @media screen and (max-width: 960px)
       #{$block}_role_edit &,
       #{$block}_role_add &,
+      #{$block}_role_image-preview &,
       #{$block}_role_task-create &,
       #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,

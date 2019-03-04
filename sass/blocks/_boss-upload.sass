@@ -108,6 +108,10 @@ $block: ".boss-upload"
     &:hover
       opacity: 0.75
 
+    // $Upload control preview area MOD: adjust form
+    &_adjust_form
+      width: 100%
+
     // $Upload control preview area MOD: adjust flow
     &_adjust_flow
       margin-right: 30px
@@ -247,6 +251,15 @@ $block: ".boss-upload"
     &:hover
       opacity: 0.75
 
+    // $Upload control field MOD: adjust form
+    &_adjust_form
+      width: 100%
+      background-color: $boss-extra-light-gray
+      border: 1px solid $boss-very-light-gray
+
+      #{$block}_state_error &
+        border-color: map-get($boss-app-palette, alert-border)
+
     // $Upload control field MOD: adjust flow
     &_adjust_flow
       margin-right: 30px
@@ -271,10 +284,48 @@ $block: ".boss-upload"
         @media screen and (max-width: 400px)
           margin-right: 0
 
+      &:last-child
+        margin-right: 0
+
+        @media screen and (max-width: 960px)
+          margin-right: 0
+
+        @media screen and (max-width: 479px)
+          margin-right: 0
+
+        @media screen and (max-width: 400px)
+          margin-right: 0
+
+
+  // $Upload control form field
+  &__form-field
+    position: relative
+    display: inline-block
+    width: 100%
+    height: 150px
+    vertical-align: top
+    background-color: $boss-ultra-light-gray
+    overflow: hidden
+    transition: opacity .4s
+
+    @media screen and (max-width: 960px)
+      height: 135px
+
+    @media screen and (max-width: 479px)
+      height: 120px
+
+    @media screen and (max-width: 400px)
+      height: 105px
+
+    &:hover
+      background-color: map-get($boss-app-palette, primary)
+
 
   // $Upload control field input
+  // $Upload control form field input
   // $Upload control area input
   &__field-input,
+  &__form-field-input,
   &__area-input
     position: absolute
     top: 0
@@ -317,4 +368,12 @@ $block: ".boss-upload"
         width: 30px
         height: 30px
         margin-bottom: 10px
+
+    // $Upload control field label MOD: adjust form
+    &_adjust_form
+      color: #808080
+
+      &:before
+        background-image: url(../icons/icon-plus-light-gray.svg)
+
 

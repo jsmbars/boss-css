@@ -372,7 +372,8 @@ $block: ".boss-check"
       background-color: #fbfbfb
 
       #{$block}_state_alert &,
-      #{$block}_state_success &
+      #{$block}_state_success &,
+      #{$block}_state_frozen &
         background-color: transparent
 
   // $Check block row
@@ -394,14 +395,16 @@ $block: ".boss-check"
         background-color: #FFF
 
         #{$block}_state_alert &,
-        #{$block}_state_success &
+        #{$block}_state_success &,
+        #{$block}_state_frozen &
           background-color: transparent
 
       &:nth-child(odd)
         background-color: #fbfbfb
 
         #{$block}_state_alert &,
-        #{$block}_state_success &
+        #{$block}_state_success &,
+        #{$block}_state_frozen &
           background-color: transparent
 
     // $Check block row MOD: marked
@@ -409,7 +412,8 @@ $block: ".boss-check"
       background-color: #fbfbfb
 
       #{$block}_state_alert &,
-      #{$block}_state_success &
+      #{$block}_state_success &,
+      #{$block}_state_frozen &
         background-color: transparent
 
 
