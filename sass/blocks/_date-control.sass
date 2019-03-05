@@ -335,8 +335,10 @@ $block: ".date-control"
     div.SingleDatePicker_picker
       z-index: 11000
 
+    div.DayPicker
       // Foundation override
-      tbody tr:nth-child(2n)
+      tbody tr:nth-child(2n),
+      tbody tr:nth-child(even)
         background-color: transparent
 
       thead,
