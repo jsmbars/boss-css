@@ -39,6 +39,12 @@ $block: ".boss-check"
     &:not(:last-child)
       margin-bottom: 30px
 
+  // $Check block MOD: page handover & planner event
+  // $Check block MOD: page handover & planner reminder
+  &_page_handover-planner-event,
+  &_page_handover-planner-reminder
+    padding-left: 20px
+
   // $Check block MOD: page safe check index
   &_page_safe-checks-index,
   &_page_invites-index,
@@ -75,6 +81,13 @@ $block: ".boss-check"
   // $Check block MOD: state inactive
   &_state_inactive
     background-color: #f0f0f0
+
+  &_state_inactive-faded
+    opacity: 0.6
+    transition: all .3s
+
+    &:hover
+      opacity: 1
 
   // $Check block MOD: state frozen
   &_state_frozen
@@ -114,6 +127,47 @@ $block: ".boss-check"
       background-image: url("../icons/icon-snowflake-white.svg")
 
 
+  // $Panel handle
+  &__handle
+    position: absolute
+    top: 0
+    bottom: 0
+    z-index: 5
+    display: block
+    width: 20px
+    cursor: move
+
+    &:before
+      content: ''
+      position: absolute
+      top: 10px
+      bottom: 10px
+      left: 8px
+      display: block
+      border-left: 2px dotted #eee
+
+    &:after
+      content: ''
+      position: absolute
+      top: 10px
+      bottom: 10px
+      left: 12px
+      display: block
+      border-left: 2px dotted #eee
+
+    &_position_left
+      left: 0
+
+    &_position_right
+      right: 0
+
+    &_role_event
+      background-color: map-get($boss-app-palette, secondary)
+
+    &_role_reminder
+      background-color: map-get($boss-app-palette, primary)
+
+
   // $Check block header
   &__header
     position: relative
@@ -130,7 +184,9 @@ $block: ".boss-check"
     #{$block}_page_ops-diary-index &,
     #{$block}_page_ssr-requests &,
     #{$block}_page_profile-disciplinary &,
-    #{$block}_page_venue-alert-levels &
+    #{$block}_page_venue-alert-levels &,
+    #{$block}_page_handover-planner-event &,
+    #{$block}_page_handover-planner-reminder &
       min-height: 0
       padding: 15px 15px 10px
 
@@ -149,7 +205,8 @@ $block: ".boss-check"
       #{$block}_page_ssr-requests &,
       #{$block}_page_profile-disciplinary &,
       #{$block}_page_venue-alert-levels &,
-      #{$block}_page_wtl-cards-index &
+      #{$block}_page_wtl-cards-index &,
+      #{$block}_page_handover-planner-reminder &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
@@ -181,7 +238,9 @@ $block: ".boss-check"
       #{$block}_page_ops-diary-index &
         width: calc(100% - 50px)
 
-      #{$block}_page_marketing-index &
+      #{$block}_page_marketing-index &,
+      #{$block}_page_handover-planner-event &,
+      #{$block}_page_handover-planner-reminder &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
@@ -189,6 +248,13 @@ $block: ".boss-check"
 
       #{$block}_page_wtl-cards-index &
         justify-content: center
+
+      #{$block}_page_handover-planner-reminder &
+        order: -99
+        width: 100%
+        margin-bottom: 15px
+        padding-bottom: 15px
+        border-bottom: 1px solid #eee
 
     @media screen and (max-width: 480px)
       #{$block}_page_clocking-app-page-index &
@@ -220,6 +286,10 @@ $block: ".boss-check"
         text-align: center
         border-bottom: 1px solid #eee
 
+      #{$block}_page_handover-planner-event &,
+      #{$block}_page_handover-planner-reminder &
+        width: calc(100% - 60px)
+
 
   // $Check block header meta
   &__header-meta
@@ -245,6 +315,26 @@ $block: ".boss-check"
 
       @media screen and (max-width: 640px)
         margin-right: 0
+
+
+  // $Check block header checkbox
+  &__header-checkbox
+    flex-grow: 0
+    flex-shrink: 0
+
+    #{$block}_page_handover-planner-event &,
+    #{$block}_page_handover-planner-reminder &
+      margin-right: 20px
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_handover-planner-event &,
+      #{$block}_page_handover-planner-reminder &
+        order: 99
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        margin-right: 0
+        margin-bottom: 10px
 
 
   // $Check block header status
@@ -292,11 +382,17 @@ $block: ".boss-check"
     #{$block}_page_ssr-requests &,
     #{$block}_page_profile-disciplinary &,
     #{$block}_page_venue-alert-levels &,
-    #{$block}_page_wtl-cards-index &
+    #{$block}_page_wtl-cards-index &,
+    #{$block}_page_handover-planner-event &,
+    #{$block}_page_handover-planner-reminder &
       display: flex
       flex-direction: row
       justify-content: flex-start
       align-items: center
+
+    #{$block}_page_handover-planner-event &,
+    #{$block}_page_handover-planner-reminder &
+      padding-left: 20px
 
     @media screen and (max-width: 960px)
       #{$block}_page_ssr-requests &,
@@ -316,6 +412,12 @@ $block: ".boss-check"
         justify-content: center
         align-items: center
         width: 100%
+
+      #{$block}_page_handover-planner-event &,
+      #{$block}_page_handover-planner-reminder &
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
 
     @media screen and (max-width: 480px)
       #{$block}_page_clocking-app-page-index &
@@ -367,6 +469,9 @@ $block: ".boss-check"
   // $Check block group
   &__group
 
+    &:not(:last-child)
+      border-bottom: 1px solid #eee
+
     // $Check block row MOD: marked
     &_marked
       background-color: #fbfbfb
@@ -375,6 +480,17 @@ $block: ".boss-check"
       #{$block}_state_success &,
       #{$block}_state_frozen &
         background-color: transparent
+
+
+  // $Check block group content
+  &__group-content
+    display: block
+    width: 100%
+    padding: 15px
+
+    @media screen and (max-width: 960px)
+      padding: 15px 10px
+
 
   // $Check block row
   &__row
@@ -538,7 +654,9 @@ $block: ".boss-check"
 
     #{$block}_page_marketing-index &,
     #{$block}_page_ops-diary-index &,
-    #{$block}_page_venue-alert-levels &
+    #{$block}_page_venue-alert-levels &,
+    #{$block}_page_handover-planner-event &,
+    #{$block}_page_handover-planner-reminder &
       text-align: left
 
     &:not(:last-child)
@@ -698,6 +816,9 @@ $block: ".boss-check"
       word-break: break-word
       hyphens: auto
 
+    &_adjust_crossed-out
+      text-decoration: line-through
+
 
   // $Check block title
   &__title
@@ -721,6 +842,11 @@ $block: ".boss-check"
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
         text-align: center
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_handover-planner-event &,
+      #{$block}_page_handover-planner-reminder &
+        font-size: 16px
 
     &_role_date,
     &_role_date-calendar,
@@ -1171,7 +1297,8 @@ $block: ".boss-check"
 
   // $Check block dropdown link
   &__dropdown-link,
-  &__tooltip-link
+  &__tooltip-link,
+  &__action-link
     +text-normalizer()
     color: $boss-dark-gray
     vertical-align: middle
@@ -1203,12 +1330,12 @@ $block: ".boss-check"
       font-size: 0
       line-height: 0
       color: transparent
-      opacity: .8
       transition: .4s
 
       &:after
         width: 30px
         height: 30px
+        margin-left: 0
         background-size: 15px 15px
 
       &:hover
@@ -1219,6 +1346,14 @@ $block: ".boss-check"
         background-size: 20px 20px
         background-image: url('../icons/icon-gear-dark-gray.svg')
 
+    &_role_edit
+      &:after
+        background-image: url('../icons/icon-pencil-warning.svg')
+
+    &_role_remove
+      &:after
+        background-image: url('../icons/icon-close-alert.svg')
+
     // $Check block dropdown link MOD: state inactive
     &_state_inactive
       cursor: default
@@ -1227,11 +1362,34 @@ $block: ".boss-check"
 
 
   &__tooltip-link
+    margin-left: 10px
+
     @media screen and (max-width: 640px)
       #{$block}_page_ops-diary-index &
         margin-top: 20px
 
+
+  &__action-link
+    &:not(:last-child)
+      #{$block}_page_handover-planner-event &,
+      #{$block}_page_handover-planner-reminder &
+        margin-right: 10px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_handover-planner-event &,
+        #{$block}_page_handover-planner-reminder &
+          margin-right: 0
+          margin-bottom: 15px
+
+
   &__dropdown-link
+    margin-left: 10px
+    opacity: .8
+
+    #{$block}_page_handover-planner-event &,
+    #{$block}_page_handover-planner-reminder &
+      margin-left: 0
+
     &:after
       transform: rotate(180deg)
 
@@ -1426,33 +1584,131 @@ $block: ".boss-check"
 
   // $Check block meta
   &__meta
+    display: block
+
+    @media screen and (max-width: 640px)
+      display: block
+      width: 100%
+
+
+  // $Check block header meta item
+  &__meta-item
+    display: inline-block
+    margin-bottom: 5px
+
+    @media screen and (max-width: 640px)
+      display: block
+      width: 100%
+
+    &:not(:last-child)
+      margin-right: 20px
+
+      @media screen and (max-width: 640px)
+        margin-right: 0
+
+
+  // $Check checkbox label
+  &__checkbox-label
     +text-normalizer()
-    font-size: 12px
-    text-align: center
-    color: $boss-light-gray
+    display: inline-block
+    max-width: 100%
+    cursor: pointer
+
+  // $Check checkbox input
+  &__checkbox-input
+    display: none
 
 
-  // $Check block meta text
-  &__meta-text
-    display: block
-    font-weight: 600
+  // $Check checkbox label text
+  &__checkbox-label-text
+    position: relative
+    display: inline-block
+    min-height: 30px
+    padding-top: 5px
+    padding-left: 40px
 
+    &:before
+      content: ""
+      box-sizing: border-box
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      width: 30px
+      height: 30px
+      background-color: #FFF
+      border: 1px solid map-get($boss-app-palette, inactive)
+      border-radius: 3px
 
-  // $Check block meta label
-  &__meta-label
-    display: block
+      #{$block}__checkbox-input:checked ~ &
+        background-color: map-get($boss-app-palette, primary)
+        border-color: map-get($boss-app-palette, primary)
 
-    // $Check block meta label MOD: role time
-    &_role_time
+    &:after
+      content: ""
+      box-sizing: border-box
+      position: absolute
+      top: 5px
+      left: 5px
+      display: block
+      width: 20px
+      height: 20px
+      background-image: url('../icons/icon-checked-white.svg')
+      background-repeat: no-repeat
+      background-position: center center
+      background-size: contain
+      visibility: hidden
+
+      #{$block}__checkbox-input:checked ~ &
+        visibility: visible
+
+    &:empty
+      padding-left: 30px
+
+    // $Common form checkbox input label text MOD: visible label text on s screens
+    &_visible-s
+      padding-left: 40px
+
+      @media screen and (min-width: 641px)
+        width: 30px
+        height: 30px
+        padding-left: 30px
+        overflow: hidden
+        color: transparent
+        white-space: nowrap
+
+    &_type_checked
+
       &:before
-        content: ""
-        display: inline-block
-        width: 12px
-        height: 12px
-        margin-right: 5px
-        margin-top: -2px
-        background-image: url('../icons/icon-clock-medium-gray.svg')
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
-        vertical-align: middle
+        background-color: map-get($boss-app-palette, primary)
+        border-color: map-get($boss-app-palette, primary)
+
+      &:after
+        visibility: visible
+
+    &_type_checked-inactive
+      cursor: default
+
+      &:before
+        background-color: #f0f0f0
+        border-color: #d8d8d8
+
+      &:after
+        visibility: visible
+        background-image: url('../icons/icon-checked-medium-gray.svg')
+
+    &_layout_reverse
+      padding-left: 0
+      padding-right: 40px
+
+      &:before
+        left: auto
+        right: 0
+
+      &:after
+        left: auto
+        right: 5px
+
+      &:empty
+        padding-left: 0
+        padding-right: 30px
