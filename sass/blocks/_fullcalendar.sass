@@ -76,6 +76,10 @@ $block: ".fullcalendar"
     &_type_reminder
       background-color: map-get($boss-app-palette, primary)
 
+    // $Full Calendar keys item MOD: type task
+    &_type_task
+      background-color: $boss-light-gray
+
 
   // $Full Calendar keys text
   &__keys-text
@@ -174,6 +178,13 @@ $block: ".fullcalendar"
 
   & .fc-event-type-reminder:hover
     color: map-get($boss-app-palette, primary)
+
+  & .fc-event-type-task
+    border: 2px solid $boss-light-gray
+    background-color: $boss-light-gray
+
+  & .fc-event-type-task:hover
+    color: $boss-light-gray
 
   & .fc-day-grid-event
     margin: 0 4px 8px

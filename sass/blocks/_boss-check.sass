@@ -41,8 +41,10 @@ $block: ".boss-check"
 
   // $Check block MOD: page handover & planner event
   // $Check block MOD: page handover & planner reminder
+  // $Check block MOD: page handover & planner task
   &_page_handover-planner-event,
-  &_page_handover-planner-reminder
+  &_page_handover-planner-reminder,
+  &_page_handover-planner-task
     padding-left: 20px
 
   // $Check block MOD: page safe check index
@@ -167,6 +169,9 @@ $block: ".boss-check"
     &_role_reminder
       background-color: map-get($boss-app-palette, primary)
 
+    &_role_task
+      background-color: $boss-light-gray
+
 
   // $Check block header
   &__header
@@ -186,7 +191,8 @@ $block: ".boss-check"
     #{$block}_page_profile-disciplinary &,
     #{$block}_page_venue-alert-levels &,
     #{$block}_page_handover-planner-event &,
-    #{$block}_page_handover-planner-reminder &
+    #{$block}_page_handover-planner-reminder &,
+    #{$block}_page_handover-planner-task &
       min-height: 0
       padding: 15px 15px 10px
 
@@ -206,7 +212,8 @@ $block: ".boss-check"
       #{$block}_page_profile-disciplinary &,
       #{$block}_page_venue-alert-levels &,
       #{$block}_page_wtl-cards-index &,
-      #{$block}_page_handover-planner-reminder &
+      #{$block}_page_handover-planner-reminder &,
+      #{$block}_page_handover-planner-task &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
@@ -240,7 +247,8 @@ $block: ".boss-check"
 
       #{$block}_page_marketing-index &,
       #{$block}_page_handover-planner-event &,
-      #{$block}_page_handover-planner-reminder &
+      #{$block}_page_handover-planner-reminder &,
+      #{$block}_page_handover-planner-task &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
@@ -265,6 +273,15 @@ $block: ".boss-check"
         width: 100%
         justify-content: center
 
+    &:not(:only-child)
+      @media screen and (max-width: 640px)
+        #{$block}_page_handover-planner-task &
+          order: -99
+          width: 100%
+          margin-bottom: 15px
+          padding-bottom: 15px
+          border-bottom: 1px solid #eee
+
 
   // $Check block header group
   &__header-group
@@ -287,8 +304,10 @@ $block: ".boss-check"
         border-bottom: 1px solid #eee
 
       #{$block}_page_handover-planner-event &,
-      #{$block}_page_handover-planner-reminder &
+      #{$block}_page_handover-planner-reminder &,
+      #{$block}_page_handover-planner-task &
         width: calc(100% - 60px)
+        margin-top: 0
 
 
   // $Check block header meta
@@ -317,18 +336,26 @@ $block: ".boss-check"
         margin-right: 0
 
 
+  // $Check block header field
+  &__header-field
+    #{$block}_page_handover-planner-task &
+      width: 100%
+
+
   // $Check block header checkbox
   &__header-checkbox
     flex-grow: 0
     flex-shrink: 0
 
     #{$block}_page_handover-planner-event &,
-    #{$block}_page_handover-planner-reminder &
+    #{$block}_page_handover-planner-reminder &,
+    #{$block}_page_handover-planner-task &
       margin-right: 20px
 
     @media screen and (max-width: 640px)
       #{$block}_page_handover-planner-event &,
-      #{$block}_page_handover-planner-reminder &
+      #{$block}_page_handover-planner-reminder &,
+      #{$block}_page_handover-planner-task &
         order: 99
         flex-grow: 1
         flex-shrink: 1
@@ -384,14 +411,16 @@ $block: ".boss-check"
     #{$block}_page_venue-alert-levels &,
     #{$block}_page_wtl-cards-index &,
     #{$block}_page_handover-planner-event &,
-    #{$block}_page_handover-planner-reminder &
+    #{$block}_page_handover-planner-reminder &,
+    #{$block}_page_handover-planner-task &
       display: flex
       flex-direction: row
       justify-content: flex-start
       align-items: center
 
     #{$block}_page_handover-planner-event &,
-    #{$block}_page_handover-planner-reminder &
+    #{$block}_page_handover-planner-reminder &,
+    #{$block}_page_handover-planner-task &
       padding-left: 20px
 
     @media screen and (max-width: 960px)
@@ -414,7 +443,8 @@ $block: ".boss-check"
         width: 100%
 
       #{$block}_page_handover-planner-event &,
-      #{$block}_page_handover-planner-reminder &
+      #{$block}_page_handover-planner-reminder &,
+      #{$block}_page_handover-planner-task &
         flex-direction: column
         align-items: flex-start
         justify-content: center
@@ -656,7 +686,8 @@ $block: ".boss-check"
     #{$block}_page_ops-diary-index &,
     #{$block}_page_venue-alert-levels &,
     #{$block}_page_handover-planner-event &,
-    #{$block}_page_handover-planner-reminder &
+    #{$block}_page_handover-planner-reminder &,
+    #{$block}_page_handover-planner-task &
       text-align: left
 
     &:not(:last-child)
@@ -842,11 +873,6 @@ $block: ".boss-check"
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
         text-align: center
-
-    @media screen and (max-width: 640px)
-      #{$block}_page_handover-planner-event &,
-      #{$block}_page_handover-planner-reminder &
-        font-size: 16px
 
     &_role_date,
     &_role_date-calendar,
@@ -1354,6 +1380,11 @@ $block: ".boss-check"
       &:after
         background-image: url('../icons/icon-close-alert.svg')
 
+    &_role_confirm
+      &:after
+        background-size: 24px 24px
+        background-image: url('../icons/icon-confirm-secondary.svg')
+
     // $Check block dropdown link MOD: state inactive
     &_state_inactive
       cursor: default
@@ -1372,12 +1403,14 @@ $block: ".boss-check"
   &__action-link
     &:not(:last-child)
       #{$block}_page_handover-planner-event &,
-      #{$block}_page_handover-planner-reminder &
+      #{$block}_page_handover-planner-reminder &,
+      #{$block}_page_handover-planner-task &
         margin-right: 10px
 
       @media screen and (max-width: 640px)
         #{$block}_page_handover-planner-event &,
-        #{$block}_page_handover-planner-reminder &
+        #{$block}_page_handover-planner-reminder &,
+        #{$block}_page_handover-planner-task &
           margin-right: 0
           margin-bottom: 15px
 
@@ -1387,7 +1420,8 @@ $block: ".boss-check"
     opacity: .8
 
     #{$block}_page_handover-planner-event &,
-    #{$block}_page_handover-planner-reminder &
+    #{$block}_page_handover-planner-reminder &,
+    #{$block}_page_handover-planner-task &
       margin-left: 0
 
     &:after
