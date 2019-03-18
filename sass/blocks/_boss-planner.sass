@@ -1,0 +1,683 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Planner
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-planner"
+
+#{$block}
+  width: 100%
+
+  // Planner MOD: type month view
+  &_type_month
+
+  // Planner MOD: type month view page handover & planner
+  &_type_month#{&}_page_handover-planner
+    min-width: 960px
+
+  // Planner MOD: type week view
+  &_type_week
+
+  // Planner MOD: layout_responsive
+  &_layout_responsive
+
+
+  // Planner keys
+  &__keys
+    display: flex
+    flex-direction: row
+    align-items: flex-start
+    justify-content: flex-start
+    width: 100%
+    margin-bottom: 20px
+    padding-bottom: 5px
+    border-bottom: 1px solid #eee
+
+
+  // Planner keys label
+  &__keys-label
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    margin-right: 20px
+    white-space: nowrap
+    line-height: 30px
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        margin-right: 15px
+
+    @media screen and (max-width: 480px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        margin-right: 10px
+
+
+  // Planner keys list
+  &__keys-list
+    flex-grow: 1
+    flex-shrink: 1
+    display: flex
+    flex-direction: row
+    align-items: flex-start
+    justify-content: flex-start
+    flex-wrap: wrap
+    margin: 0
+    padding: 0
+    list-style: none
+
+
+  // Planner keys item
+  &__keys-item
+    flex-grow: 0
+    flex-shrink: 1
+    padding: 5px 10px
+    margin-bottom: 10px
+    border-radius: 4px
+
+    &:not(:last-child)
+      margin-right: 10px
+
+    // Planner keys item MOD: role event
+    &_role_event
+      background-color: map-get($boss-app-palette, secondary)
+
+    // Planner keys item MOD: role reminder
+    &_role_reminder
+      background-color: map-get($boss-app-palette, primary)
+
+    // Planner keys item MOD: role task
+    &_role_task
+      background-color: $boss-light-gray
+
+
+  // Planner keys text
+  &__keys-text
+    +text-normalizer()
+    color: #fff
+
+
+  // $Planner toolbar
+  &__toolbar
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    margin-bottom: 20px
+
+    @media screen and (max-width: 640px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        flex-wrap: wrap
+
+
+  // $Planner date
+  &__date
+    +text-normalizer()
+    font-size: 20px
+    line-height: 1
+
+    @media screen and (max-width: 640px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        width: 100%
+        margin-bottom: 20px
+        text-align: center
+
+
+  // $Planner switches
+  &__switches
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+
+    // $Planner switches MOD: role views
+    &_role_views
+
+    // $Planner switches MOD: role navigation
+    &_role_navigation
+
+
+  // $Planner switch
+  &__switch
+    +text-normalizer()
+    display: inline-block
+    height: 30px
+    padding: 2px 10px
+    font-size: 14px
+    line-height: 1
+    font-weight: 300
+    color: #4c4c4c
+    background-color: #eee
+    box-shadow: none
+    text-shadow: none
+    border-radius: 4px
+    border: 1px solid #d3d3d3
+    transition: all .4s
+
+    @media screen and (max-width: 400px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        padding-left: 4px
+        padding-right: 4px
+
+    &:hover
+      color: #fff
+      background-color: map-get($boss-app-palette, primary)
+
+    &:not(:last-child)
+      margin-right: 15px
+
+      @media screen and (max-width: 400px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          margin-right: 8px
+
+    // $Planner switch MOD: role view
+    &_role_view
+
+    // $Planner switch MOD: role previous
+    // $Planner switch MOD: role next
+    &_role_prev,
+    &_role_next
+      font-size: 0
+      color: transparent
+      line-height: 0
+      text-align: center
+      /* don't allow browser text-selection */
+      -webkit-touch-callout: none
+      -webkit-user-select: none
+      -khtml-user-select: none
+      -moz-user-select: none
+      -ms-user-select: none
+      user-select: none
+      overflow: hidden
+
+      &:not(:last-child)
+        margin-right: 0
+
+        @media screen and (max-width: 400px)
+          #{$block}_type_week#{$block}_layout_responsive &
+            margin-right: 0
+
+      &:before
+        content: ''
+        display: inline-block
+        font-family: "Courier New", Courier, monospace
+        font-size: 30px
+        line-height: 20px
+        color: #4c4c4c
+        vertical-align: middle
+
+      &:hover:before
+        color: #fff
+
+    &_role_prev
+      padding-left: 15px
+      border-top-right-radius: 0
+      border-bottom-right-radius: 0
+
+      @media screen and (max-width: 400px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          padding-left: 10px
+
+      &:before
+        content: "\2039"
+
+    &_role_next
+      margin-left: -1px
+      padding-right: 15px
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+
+      @media screen and (max-width: 400px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          padding-right: 10px
+
+      &:before
+        content: "\203A"
+
+    // $Planner switch MOD: state active
+    &_state_active
+      color: #fff
+      background-color: map-get($boss-app-palette, primary)
+      border-color: map-get($boss-app-palette, primary)
+      background-image: none
+      cursor: default
+      pointer-events: none
+
+      &:hover
+        opacity: 1
+
+    // $Planner switch MOD: state inactive
+    &_state_inactive
+      color: #4c4c4c
+      background-color: #fff
+      border-color: #d3d3d3
+      background-image: none
+      cursor: default
+      pointer-events: none
+
+      &:hover
+        opacity: 1
+
+
+  // $Planner calendar
+  &__calendar
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+    border: 1px solid #d8d8d8
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        flex-direction: row
+        align-items: stretch
+
+
+  // $Planner calendar labels
+  &__calendar-labels
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: stretch
+    width: 100%
+    border-bottom: 1px solid #d3d3d3
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        display: none
+
+
+  // $Planner calendar label
+  &__calendar-label
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 14.25%
+    padding: 15px 5px
+
+    &:not(:last-child)
+      border-right: 1px solid #d3d3d3
+
+
+  // $Planner calendar label text
+  &__calendar-label-text
+    +text-normalizer()
+    line-height: 1
+    text-align: center
+
+
+  // $Planner calendar content
+  &__calendar-content
+    display: block
+    width: 100%
+
+
+  // $Planner week
+  &__week
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: stretch
+    width: 100%
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        flex-direction: column
+        align-items: flex-start
+
+    &:not(:last-child)
+      border-bottom: 1px solid #d3d3d3
+
+      @media screen and (max-width: 960px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          border-bottom: none
+
+
+  // $Planner day
+  &__day
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 14.25%
+    min-height: 55px
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: stretch
+        width: 100%
+        min-height: 0
+
+    @media screen and (max-width: 400px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        display: block
+
+    &:not(:last-child)
+      border-right: 1px solid #d3d3d3
+
+      @media screen and (max-width: 960px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          border-right: none
+          border-bottom: 1px solid #d3d3d3
+
+    // $Planner day MOD: type other month
+    &_type_other-month
+
+    // $Planner day MOD: type todat
+    &_type_today
+      background-color: #fff8ec
+
+
+  // $Planner day header
+  &__day-header
+    display: block
+    width: 100%
+    padding: 10px 5px 5px
+
+    #{$block}_type_week#{$block}_layout_responsive &
+      display: none
+
+    #{$block}__day_type_other-month &
+      opacity: 0.4
+
+    @media screen and (max-width: 960px)
+
+      #{$block}_type_week#{$block}_layout_responsive &
+        flex-grow: 0
+        flex-shrink: 0
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
+        width: 100px
+        padding: 15px 0 15px 10px
+        border-right: 1px solid #d3d3d3
+
+    @media screen and (max-width: 400px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        flex-grow: 1
+        flex-shrink: 1
+        display: block
+        width: 100%
+        padding: 15px 10px 0
+        border-right: none
+
+
+  // $Planner day date
+  &__day-date
+    +text-normalizer()
+    text-align: right
+    font-weight: 600
+    line-height: 1
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        text-align: left
+        white-space: nowrap
+
+    @media screen and (max-width: 400px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        text-align: center
+
+
+  // $Planner day content
+  &__day-content
+    display: block
+    width: 100%
+    padding: 10px 5px
+
+    #{$block}__day_type_other-month &
+      opacity: 0.4
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: flex-start
+        flex-wrap: wrap
+        width: calc(100% - 100px)
+        padding: 15px 10px 5px 0
+
+    @media screen and (max-width: 640px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        display: block
+        padding: 15px 10px
+
+    @media screen and (max-width: 400px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        width: 100%
+
+
+  // $Planner group
+  &__group
+    position: relative
+    z-index: 5
+    display: block
+    width: 100%
+    border: 2px solid #ddd
+    border-radius: 4px
+    overflow: hidden
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        width: calc(33.3% - 10px)
+        margin-bottom: 10px
+        margin-left: 10px
+
+    @media screen and (max-width: 640px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        width: 100%
+        margin-bottom: 0
+        margin-left: 0
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+      @media screen and (max-width: 960px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          margin-bottom: 10px
+
+      @media screen and (max-width: 640px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          margin-bottom: 10px
+
+    // $Planner group MOD: role events
+    &_role_events
+      border-color: map-get($boss-app-palette, secondary)
+
+    // $Planner group MOD: role reminders
+    &_role_reminders
+      border-color: map-get($boss-app-palette, primary)
+
+    // $Planner group MOD: role tasks
+    &_role_tasks
+      border-color: $boss-light-gray
+
+
+  // $Planner group label
+  // $Planner group switch
+  &__group-label,
+  &__group-switch
+    +text-normalizer()
+    display: block
+    width: 100%
+    padding: 6px 4px
+    line-height: 1
+    font-weight: 300
+    white-space: nowrap
+    background-color: #ddd
+    overflow: hidden
+    cursor: default
+    transition: .4s
+
+    #{$block}__group_role_events &,
+    #{$block}__group_role_reminders &,
+    #{$block}__group_role_tasks &
+      color: #fff
+
+    #{$block}__group_role_events &
+      border-color: map-get($boss-app-palette, secondary)
+      background-color: map-get($boss-app-palette, secondary)
+
+    #{$block}__group_role_reminders &
+      border-color: map-get($boss-app-palette, primary)
+      background-color: map-get($boss-app-palette, primary)
+
+    #{$block}__group_role_tasks &
+      border-color: $boss-light-gray
+      background-color: $boss-light-gray
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        padding-right: 10px
+        padding-left: 10px
+
+
+  // $Planner group switch
+  &__group-switch
+    cursor: pointer
+
+    &:hover
+      opacity: 0.8
+
+
+  // $Planner group records
+  &__group-records
+    display: block
+    width: 100%
+    margin: 0
+    list-style: none
+    padding: 5px 4px 10px
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        padding-left: 10px
+        padding-right: 10px
+
+    &_state_hidden
+      display: none
+
+
+  // $Planner group record
+  &__group-record
+    +text-normalizer()
+    position: relative
+    padding-left: 12px
+    font-size: 12px
+
+    &:before
+      content: "-"
+      position: absolute
+      left: 0
+      top: 0
+      display: inline-block
+
+    &:not(:last-child)
+      margin-bottom: 8px
+
+
+  // $Planner group link
+  &__group-link
+    font-size: inherit
+    line-height: inherit
+    color: inherit
+    text-decoration: underline
+
+    &:hover
+      color: inherit
+      text-decoration: none
+
+
+  // $Planner record
+  &__record
+    +text-normalizer()
+    display: block
+    width: 100%
+    max-width: 100%
+    height: 30px
+    padding: 5px 4px
+    line-height: 1
+    font-weight: 300
+    white-space: nowrap
+    border: 2px solid #ddd
+    border-radius: 4px
+    background-color: #ddd
+    overflow: hidden
+    cursor: default
+
+    @media screen and (max-width: 960px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        width: calc(33.3% - 10px)
+        margin-bottom: 10px
+        margin-left: 10px
+        padding-left: 10px
+        padding-right: 10px
+
+    @media screen and (max-width: 640px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        width: 100%
+        margin-bottom: 0
+        margin-left: 0
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+      @media screen and (max-width: 960px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          margin-bottom: 10px
+
+      @media screen and (max-width: 640px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          margin-bottom: 10px
+
+    &_role_action
+      cursor: pointer
+
+      &:hover
+        font-weight: 400
+        background-color: transparent
+
+    // $Planner record MOD: role event
+    &_role_event
+      color: #fff
+      border-color: map-get($boss-app-palette, secondary)
+      background-color: map-get($boss-app-palette, secondary)
+
+    &_role_event#{&}_role_action
+      &:hover
+        color: map-get($boss-app-palette, secondary)
+
+    // $Planner record MOD: role reminder
+    &_role_reminder
+      color: #fff
+      border-color: map-get($boss-app-palette, primary)
+      background-color: map-get($boss-app-palette, primary)
+
+    &_role_reminder#{&}_role_action
+      &:hover
+        color: map-get($boss-app-palette, primary)
+
+    // $Planner record MOD: role task
+    &_role_task
+      color: #fff
+      border-color: $boss-light-gray
+      background-color: $boss-light-gray
+
+    &_role_task#{&}_role_action
+      &:hover
+        color: $boss-light-gray
