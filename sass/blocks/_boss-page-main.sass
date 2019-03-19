@@ -283,57 +283,30 @@ $block: ".boss-page-main"
 
   // $Page main container group
   &__group
-    padding: 30px 45px 30px
-
-    @media screen and (max-width: 1280px)
-      padding: 30px 20px 20px
-
-      #{$block}_page_safe-checks &
-        padding: 25px 25px 30px
-
-    @media screen and (max-width: 1120px)
-      #{$block}_page_safe-checks &
-        padding: 0
-        margin-bottom: 0
-        background-color: transparent
+    padding: 25px
+    background-color: #FFF
 
     @media screen and (max-width: 960px)
       padding: 20px 15px
 
-      #{$block}_page_safe-checks &
-        padding: 0
-
-    @media screen and (max-width: 480px)
-      padding: 20px 10px
-
-      #{$block}_page_safe-checks &
-        padding: 0
-
     // $Page main container group MOD: space extra
     &_space_extra
-      padding-bottom: 60px
-
-      @media screen and (max-width: 1280px)
-        padding-bottom: 50px
+      padding-bottom: 50px
 
       @media screen and (max-width: 960px)
         padding-bottom: 40px
 
-    // $Page main container group MOD: adjust redeem vouchers form
-    &_adjust_rv-form
-      padding: 30px
-      background-color: #FFF
-
-      @media screen and (max-width: 1280px)
-        padding: 20px
-
-      @media screen and (max-width: 480px)
-        padding: 0 0 20px
-
     // $Page main container group MOD: adjust safe checks form
+    // $Page main container group MOD: adjust redeem vouchers form
     // $Page main container group MOD: adjust incident reports form
     // $Page main container group MOD: adjust incident reports full
+    // $Page main container group MOD: adjust machines form
+    // $Page main container group MOD: adjust machine refloats form
+    // $Page main container group MOD: adjust csv upload form
+    // $Page main container group MOD: adjust security shift request form
+    // $Page main container group MOD: adjust wtl edit client profile form
     &_adjust_sc-form,
+    &_adjust_rv-form,
     &_adjust_ir-form,
     &_adjust_ir-full,
     &_adjust_m-form,
@@ -341,39 +314,32 @@ $block: ".boss-page-main"
     &_adjust_csv-upload,
     &_adjust_ssr-requests,
     &_adjust_wtl-eсp-form
-      padding: 25px 25px 35px
-      background-color: #FFF
+      padding-bottom: 35px
 
-      @media screen and (max-width: 1280px)
-        padding: 25px 25px 35px
-
-      @media screen and (max-width: 960px)
-        padding: 20px 15px
-
+    &_adjust_rv-form
       @media screen and (max-width: 480px)
-        padding: 20px 15px
+        padding: 0 0 25px
+
+    // $Page main container group MOD: adjust staff vetting
+    // $Page main container group MOD: adjust users
+    &_adjust_staff-vetting,
+    &_adjust_users,
+    &_adjust_hp-calendar,
+    &_adjust_hp-cards
 
     // $Page main container group MOD: adjust safe checks table
-    &_adjust_sc-table
-      padding: 25px 25px 30px
-      margin-bottom: 40px
-      background-color: #FFF
-
-      @media screen and (max-width: 1280px)
-        padding: 25px 25px 30px
-
-      @media screen and (max-width: 1120px)
-        padding: 0
-        background-color: transparent
-
-      @media screen and (max-width: 960px)
-        padding: 0
-
-      @media screen and (max-width: 480px)
-        padding: 0
-
     // $Page main container group MOD: adjust checklist table
     // $Page main container group MOD: adjust venue health checks index table
+    // $Page main container group MOD: adjust vouchers index table
+    // $Page main container group MOD: adjust vouchers usage table
+    // $Page main container group MOD: adjust maintenance table
+    // $Page main container group MOD: adjust invites table
+    // $Page main container group MOD: adjust users table
+    // $Page main container group MOD: adjust wtl clients table
+    // $Page main container group MOD: adjust venues table
+    // $Page main container group MOD: adjust wages table
+    // $Page main container group MOD: adjust id-scanner-keys table
+    &_adjust_sc-table,
     &_adjust_checklist-table,
     &_adjust_vhci-table,
     &_adjust_vouchers-index-table,
@@ -385,16 +351,10 @@ $block: ".boss-page-main"
     &_adjust_venues-table,
     &_adjust_wages-table,
     &_adjust_id-scanner-keys-table
-      padding: 25px
       margin-bottom: 30px
-      background-color: #FFF
-
-      @media screen and (max-width: 1280px)
-        padding: 25px
 
       @media screen and (max-width: 1120px)
         padding: 0
-        margin-bottom: 0
         background-color: transparent
 
       @media screen and (max-width: 960px)
@@ -403,18 +363,8 @@ $block: ".boss-page-main"
       @media screen and (max-width: 480px)
         padding: 0
 
-    // $Page main container group MOD: adjust staff vetting
-    // $Page main container group MOD: adjust users
-    &_adjust_staff-vetting,
-    &_adjust_users
-      padding: 30px
-      background-color: #FFF
-
-      @media screen and (max-width: 960px)
-        padding: 20px
-
-      @media screen and (max-width: 480px)
-        padding: 20px 10px
+    &_adjust_sc-table
+      margin-bottom: 40px
 
     &_highlight_alert
       background-color: #feeeee
@@ -425,12 +375,34 @@ $block: ".boss-page-main"
         margin-bottom: 30px
 
 
-  // $Page main container scroll area
-  &__scroll
+  // $Page main container sub group
+  &__sub-group
     display: block
     width: 100%
-    padding: 20px
-    background-color: #FFF
+
+    &:not(:last-child)
+      margin-bottom: 30px
+      padding-bottom: 30px
+      border-bottom: 1px solid #eee
+
+
+  // $Page main container scroll area
+  &__scroll
+    position: relative
+    display: block
+    width: 100%
+    padding-bottom: 20px
+    overflow: hidden
+    text-align: center
+
+    #{$block}__inner > &
+      padding: 20px
+      background-color: #FFF
+
+    // $Page main container scroll area inner container MOD: type native
+    &_type_native
+      overflow-x: auto
+      padding-bottom: 0
 
 
   // $Page main container scroll area inner container
@@ -528,6 +500,13 @@ $block: ".boss-page-main"
 
   // $Page main container filter
   &__filter
+    display: block
+    width: 100%
+    margin-bottom: 30px
+
+
+  // $Page main container form
+  &__form
     display: block
     width: 100%
     margin-bottom: 30px

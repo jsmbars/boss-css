@@ -203,6 +203,20 @@ $block: ".boss-button"
     white-space: nowrap
     vertical-align: middle
 
+  &_type_icon-fluid
+    @media screen and (max-width: 960px)
+      font-size: 0 !important
+      line-height: 0 !important
+      color: transparent !important
+
+      &:before
+        @media screen and (max-width: 960px)
+          margin-right: 0 !important
+
+      &:after
+        @media screen and (max-width: 960px)
+          margin-left: 0 !important
+
   // $Common button MOD: state disabled
   &_state_disabled[disabled],
   &_state_disabled,

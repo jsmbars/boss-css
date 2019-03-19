@@ -263,6 +263,11 @@ $block: ".boss-form"
       @media screen and (max-width: 960px)
         flex-direction: row
 
+    // $Common form row MOD: layout nowrap
+    &_layout_nowrap#{&}_align_center
+      @media screen and (max-width: 960px)
+        align-items: center
+
     // $Common form row MOD: layout flow fluid
     &_layout_flow-fluid
       flex-direction: row
@@ -1338,6 +1343,11 @@ $block: ".boss-form"
       box-shadow: 0 0 5px 0 $boss-very-light-gray
       border-color: $boss-very-light-gray
 
+    &_size_small
+      min-height: 50px
+      padding-top: 13px
+      padding-bottom: 13px
+
     &_size_large
       min-height: 150px
 
@@ -1887,10 +1897,12 @@ $block: ".boss-form"
     @media screen and (max-width: 960px)
       #{$block}__switcher_role_week &
         width: 24.9%
+        margin-top: -1px
 
     @media screen and (max-width: 640px)
       #{$block}__switcher_role_week &
         width: 49.8%
+        margin-top: -1px
 
       #{$block}__switcher_layout_vertical-s &
         margin-left: 0
@@ -1950,10 +1962,6 @@ $block: ".boss-form"
     #{$block}__switcher_role_week &
       padding-left: 5px
       padding-right: 5px
-
-    @media screen and (max-width: 960px)
-      #{$block}__switcher_role_week &
-        border-bottom: none
 
     @media screen and (min-width: 641px) and (max-width: 960px)
       #{$block}__switcher-label:nth-of-type(4n + 1) &
