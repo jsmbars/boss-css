@@ -98,11 +98,6 @@ $block: ".boss-modal-window"
     width: 90%
     max-width: 800px
 
-  &_role_bounced-email,
-  &_role_offences
-    width: 90%
-    max-width: 450px
-
   &_role_shift-details,
   &_role_wtl-card-history,
   &_role_set-confirmation,
@@ -111,6 +106,12 @@ $block: ".boss-modal-window"
   &_role_wtl-ev-almost-done
     width: 90%
     max-width: 640px
+
+  &_role_bounced-email,
+  &_role_offences,
+  &_role_action-details
+    width: 90%
+    max-width: 480px
 
   // $Modal window MOD: role danger
   // $Modal window MOD: role error
@@ -221,7 +222,8 @@ $block: ".boss-modal-window"
     #{$block}_role_shift-details &,
     #{$block}_role_csv-upload-payments &,
     #{$block}_role_history &,
-    #{$block}_role_wtl-card-history &
+    #{$block}_role_wtl-card-history &,
+    #{$block}_role_action-details &
       width: 16px
       height: 16px
       top: 30px
@@ -242,7 +244,8 @@ $block: ".boss-modal-window"
       #{$block}_role_shift-details &,
       #{$block}_role_csv-upload-payments &,
       #{$block}_role_history &,
-      #{$block}_role_wtl-card-history &
+      #{$block}_role_wtl-card-history &,
+      #{$block}_role_action-details &
         right: 15px
 
   // $Modal window header
@@ -307,7 +310,8 @@ $block: ".boss-modal-window"
     #{$block}_role_csv-upload-payments &,
     #{$block}_role_history &,
     #{$block}_role_wtl-card-history &,
-    #{$block}_role_wtl-ev-almost-done &
+    #{$block}_role_wtl-ev-almost-done &,
+    #{$block}_role_action-details &
       padding: 20px 50px 20px 30px
       background-color: $boss-extra-light-gray
       text-transform: none
@@ -366,7 +370,8 @@ $block: ".boss-modal-window"
       #{$block}_role_shift-details &,
       #{$block}_role_csv-upload-payments &,
       #{$block}_role_history &,
-      #{$block}_role_wtl-card-history &
+      #{$block}_role_wtl-card-history &,
+      #{$block}_role_action-details &
         padding-left: 15px
         padding-right: 35px
 
@@ -395,7 +400,8 @@ $block: ".boss-modal-window"
       #{$block}_role_shift-details &,
       #{$block}_role_csv-upload-payments &,
       #{$block}_role_history &,
-      #{$block}_role_wtl-card-history &
+      #{$block}_role_wtl-card-history &,
+      #{$block}_role_action-details &
         font-size: 22px
 
     // $Modal window header MOD: error
@@ -525,7 +531,8 @@ $block: ".boss-modal-window"
     #{$block}_role_csv-upload-payments &,
     #{$block}_role_history &,
     #{$block}_role_details &,
-    #{$block}_role_wtl-card-history &
+    #{$block}_role_wtl-card-history &,
+    #{$block}_role_action-details &
       padding: 0
 
     #{$block}_role_rota &
@@ -555,7 +562,8 @@ $block: ".boss-modal-window"
       #{$block}_role_disciplinary-details &,
       #{$block}_role_csv-upload-payments &,
       #{$block}_role_history &,
-      #{$block}_role_wtl-card-history &
+      #{$block}_role_wtl-card-history &,
+      #{$block}_role_action-details &
         padding: 0
 
       #{$block}_role_shift-details &
@@ -954,5 +962,3 @@ $block: ".boss-modal-window"
     .ReactModal__Body--open.iosBugFixModalInput
       position: fixed
       overflow: visible
-
-
