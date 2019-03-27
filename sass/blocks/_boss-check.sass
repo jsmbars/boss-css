@@ -115,18 +115,17 @@ $block: ".boss-check"
       background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
 
     &:after
-      content: ''
+      content: '\e946'
       position: absolute
       top: 5px
       left: 5px
       z-index: 1
       display: block
-      width: 20px
-      height: 20px
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
-      background-image: url("../icons/icon-snowflake-white.svg")
+      font-family: icons
+      font-size: 20px
+      line-height: 20px
+      font-weight: 400
+      color: #fff
 
 
   // $Panel handle
@@ -196,6 +195,11 @@ $block: ".boss-check"
       min-height: 0
       padding: 15px 15px 10px
 
+    #{$block}_page_contacts &,
+    #{$block}_page_contacts-admin &
+      min-height: 0
+      padding: 10px 15px
+
     @media screen and (max-width: 960px)
       min-height: 60px
       padding: 20px
@@ -213,15 +217,23 @@ $block: ".boss-check"
       #{$block}_page_venue-alert-levels &,
       #{$block}_page_wtl-cards-index &,
       #{$block}_page_handover-planner-reminder &,
-      #{$block}_page_handover-planner-task &
+      #{$block}_page_handover-planner-task &,
+      #{$block}_page_contacts &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
         align-items: flex-start
 
+      #{$block}_page_contacts &
+        padding-bottom: 15px
+
     @media screen and (max-width: 480px)
-      #{$block}_page_clocking-app-page-index &
+      #{$block}_page_clocking-app-page-index &,
+      #{$block}_page_contacts-admin &
         flex-wrap: wrap
+
+      #{$block}_page_contacts-admin &
+        padding-bottom: 15px
 
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
@@ -239,6 +251,10 @@ $block: ".boss-check"
 
     #{$block}_page_marketing-index &
       width: calc(100% - 50px)
+
+    #{$block}_page_contacts &,
+    #{$block}_page_contacts-admin &
+      flex-wrap: wrap
 
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &,
@@ -264,9 +280,21 @@ $block: ".boss-check"
         padding-bottom: 15px
         border-bottom: 1px solid #eee
 
+      #{$block}_page_contacts &
+        width: 100%
+        padding-bottom: 10px
+        margin-bottom: 15px
+        border-bottom: 1px solid #eee
+
     @media screen and (max-width: 480px)
       #{$block}_page_clocking-app-page-index &
         width: calc(100% - 50px)
+
+      #{$block}_page_contacts-admin &
+        width: 100%
+        padding-bottom: 10px
+        margin-bottom: 15px
+        border-bottom: 1px solid #eee
 
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
@@ -289,6 +317,13 @@ $block: ".boss-check"
     flex-shrink: 1
     display: block
 
+    #{$block}_page_contacts-admin &
+      width: calc(100% - 230px)
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_contacts-admin &
+        width: calc(100% - 130px)
+
     @media screen and (max-width: 640px)
       width: 100%
       margin-top: 10px
@@ -309,11 +344,18 @@ $block: ".boss-check"
         width: calc(100% - 60px)
         margin-top: 0
 
+      #{$block}_page_contacts-admin &
+        margin-top: 0
+
 
   // $Check block header meta
   &__header-meta
     display: block
     margin-top: 10px
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_contacts-admin &
+        text-align: center
 
     &:not(:last-child)
       @media screen and (max-width: 640px)
@@ -401,6 +443,80 @@ $block: ".boss-check"
           border-bottom: 1px solid #ccc
 
 
+  // $Check block header tags
+  &__header-tags
+    display: block
+
+    #{$block}_page_contacts-admin &
+      flex-grow: 1
+      flex-shrink: 1
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_contacts &
+        width: 100%
+        margin-top: 5px
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_contacts-admin &
+        width: 100%
+        margin-top: 5px
+
+      #{$block}_page_contacts &
+        text-align: center
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_contacts-admin &
+        text-align: center
+
+
+  // $Check block header tag
+  &__header-tag
+    display: inline-block
+    margin-top: 5px
+    margin-bottom: 5px
+
+    &:not(:last-child)
+      margin-right: 10px
+
+
+  // $Check block header links
+  &__header-links
+    flex-grow: 0
+    flex-shrink: 0
+
+    #{$block}_page_contacts &
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-end
+      padding-left: 20px
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_contacts &
+        flex-grow: 1
+        flex-shrink: 1
+        align-items: center
+        width: 100%
+        padding-left: 0
+
+
+  // $Check block header link
+  &__header-link
+    display: inline-block
+
+    #{$block}_page_contacts &
+      text-align: right
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_contacts &
+        max-width: 100%
+        text-align: center
+
+    &:not(:last-child)
+      #{$block}_page_contacts &
+        margin-bottom: 10px
+
+
   // $Check block header actions
   &__header-actions
     flex-grow: 0
@@ -412,7 +528,9 @@ $block: ".boss-check"
     #{$block}_page_wtl-cards-index &,
     #{$block}_page_handover-planner-event &,
     #{$block}_page_handover-planner-reminder &,
-    #{$block}_page_handover-planner-task &
+    #{$block}_page_handover-planner-task &,
+    #{$block}_page_contacts &,
+    #{$block}_page_contacts-admin &
       display: flex
       flex-direction: row
       justify-content: flex-start
@@ -420,13 +538,19 @@ $block: ".boss-check"
 
     #{$block}_page_handover-planner-event &,
     #{$block}_page_handover-planner-reminder &,
-    #{$block}_page_handover-planner-task &
+    #{$block}_page_handover-planner-task &,
+    #{$block}_page_contacts-admin &
       padding-left: 20px
+
+    #{$block}_page_clocking-app-page-index &
+      padding-left: 10px
+      padding-right: 10px
 
     @media screen and (max-width: 960px)
       #{$block}_page_ssr-requests &,
       #{$block}_page_profile-disciplinary &,
-      #{$block}_page_venue-alert-levels &
+      #{$block}_page_venue-alert-levels &,
+      #{$block}_page_contacts-admin &
         flex-direction: column
         align-items: stretch
 
@@ -456,8 +580,21 @@ $block: ".boss-check"
         flex-shrink: 1
         width: 100%
         margin-top: 10px
+        padding-left: 0
+        padding-right: 0
         padding-top: 15px
         text-align: center
+        border-top: 1px solid #eee
+
+      #{$block}_page_contacts-admin &
+        flex-grow: 1
+        flex-shrink: 1
+        flex-direction: row
+        align-items: center
+        width: 100%
+        margin-top: 10px
+        padding-top: 15px
+        padding-left: 0
         border-top: 1px solid #eee
 
     @media screen and (max-width: 400px)
@@ -470,21 +607,27 @@ $block: ".boss-check"
         text-align: center
 
 
-
   // $Check block header action
   &__header-action
+    @media screen and (max-width: 480px)
+      #{$block}_page_contacts-admin &
+        flex-grow: 1
+        flex-shrink: 1
 
     &:not(:first-child)
       #{$block}_page_ssr-requests &,
       #{$block}_page_profile-disciplinary &,
       #{$block}_page_venue-alert-levels &,
-      #{$block}_page_wtl-cards-index &
+      #{$block}_page_wtl-cards-index &,
+      #{$block}_page_contacts &,
+      #{$block}_page_contacts-admin &
         margin-left: 15px
 
       @media screen and (max-width: 960px)
         #{$block}_page_ssr-requests &,
         #{$block}_page_profile-disciplinary &,
-        #{$block}_page_venue-alert-levels &
+        #{$block}_page_venue-alert-levels &,
+        #{$block}_page_contacts-admin &
           margin-left: 0
           margin-top: 10px
 
@@ -492,6 +635,11 @@ $block: ".boss-check"
         #{$block}_page_ssr-requests &,
         #{$block}_page_profile-disciplinary &,
         #{$block}_page_venue-alert-levels &
+          margin-left: 15px
+          margin-top: 0
+
+      @media screen and (max-width: 480px)
+        #{$block}_page_contacts-admin &
           margin-left: 15px
           margin-top: 0
 
@@ -723,76 +871,88 @@ $block: ".boss-check"
     &_role_alert-action,
     &_role_date-alert,
     &_role_details,
-    &_role_edit
+    &_role_edit,
+    &_role_email,
+    &_role_phone
 
       &:before
         content: ""
         display: inline-block
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
-        vertical-align: middle
+        font-family: icons
+        font-size: inherit
+        line-height: inherit
+        color: inherit
+        font-weight: 400
+        vertical-align: baseline
 
     &_role_date
       &:before
-        background-image: url('../icons/icon-calendar-dark-gray.svg')
+        content: '\e900'
 
     &_role_date-alert
       color: map-get($boss-app-palette, alert)
       &:before
-        background-image: url('../icons/icon-calendar-alert.svg')
+        content: '\e900'
 
     &_role_time
       &:before
-        background-image: url('../icons/icon-clock-dark-gray.svg')
+        content: '\e961'
 
     &_role_date-calendar
       &:before
-        background-image: url('../icons/icon-calendar-dark-gray.svg')
+        content: '\e900'
 
     &_role_user
       &:before
-        background-image: url('../icons/icon-user-dark-gray.svg')
+        content: '\e904'
 
     &_role_venue
       &:before
-        background-image: url('../icons/icon-storefront-dark-gray.svg')
+        content: '\e901'
 
     &_role_voucher
       &:before
-        background-image: url('../icons/icon-ticket-dark-gray.svg')
+        content: '\e94e'
 
     &_role_location
       &:before
-        background-image: url('../icons/icon-location-pin-dark-gray.svg')
+        content: '\e958'
 
     &_role_note
       &:before
-        background-image: url('../icons/icon-envelope-dark-gray.svg')
+        content: '\e91f'
 
     &_role_payment
       &:before
-        background-image: url('../icons/icon-wallet-dark-gray.svg')
+        content: '\e939'
 
     &_role_arcade
       &:before
-        background-image: url('../icons/icon-arcade-dark-gray.svg')
+        content: '\e968'
 
     &_role_message
       &:before
-        background-image: url('../icons/icon-text-paper-dark-gray.svg')
+        content: '\e927'
 
     &_role_accessory
       &:before
-        background-image: url('../icons/icon-tshirt-dark-gray.svg')
+        content: '\e93a'
 
     &_role_details
       &:before
-        background-image: url('../icons/icon-zoom-dark-gray.svg')
+        content: '\e921'
 
     &_role_edit
       &:before
-        background-image: url('../icons/icon-pencil-dark-gray.svg')
+        content: '\e96b'
+
+    &_role_email
+      &:before
+        content: '\e91f'
+
+    &_role_phone
+      &:before
+        content: '\e952'
 
     &_role_alert-action
       cursor: pointer
@@ -800,7 +960,7 @@ $block: ".boss-check"
       text-decoration: underline
 
       &:before
-        background-image: url('../icons/icon-danger-alert.svg')
+        content: '\e911'
 
       &:hover
         color: map-get($boss-app-palette, alert)
@@ -817,29 +977,29 @@ $block: ".boss-check"
         content: ""
         position: absolute
         display: inline-block
-        width: 25px
-        height: 14px
-        margin-top: 7px
-        background-repeat: no-repeat
-        background-position: 10px center
-        background-size: 15px 14px
-        vertical-align: middle
+        margin-left: 10px
+        font-family: icons
+        font-size: 14px
+        line-height: inherit
+        color: inherit
+        font-weight: 400
+        vertical-align: baseline
 
     &_indicator_att,
     &_indicator_notes
       &:after
-        background-image: url('../icons/icon-envelope-dark-gray.svg')
+        content: '\e91f'
 
     &_indicator_images
       &:after
-        background-image: url('../icons/icon-camera-dark-gray.svg')
+        content: '\e935'
 
     &_indicator_notes-images
       padding-right: 50px
+
       &:after
         width: 50px
-        background-image: url('../icons/icon-envelope-dark-gray.svg'), url('../icons/icon-camera-dark-gray.svg')
-        background-position: 10px center, 35px center
+        content: '\e91f\00a0\00a0\e935'
 
     &_adjust_wrap
       overflow-wrap: break-word
@@ -856,12 +1016,20 @@ $block: ".boss-check"
     font-size: 18px
     font-weight: 600
 
+    #{$block}_page_contacts &,
+    #{$block}_page_contacts-admin &
+      flex-grow: 0
+      flex-shrink: 0
+      margin-right: 20px
+
     #{$block}_page_marketing-index &,
     #{$block}_page_ops-diary-index &
       font-size: 16px
 
     #{$block}_page_clocking-app-page-index &,
-    #{$block}_page_clocking-app-page-api-keys &
+    #{$block}_page_clocking-app-page-api-keys &,
+    #{$block}_page_contacts &,
+    #{$block}_page_contacts-admin &
       font-size: 20px
 
     #{$block}_page_security-venues &
@@ -869,6 +1037,27 @@ $block: ".boss-check"
 
     #{$block}_page_wtl-cards-index &
       text-align: center
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_contacts &
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        margin-right: 0
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_contacts &
+        text-align: center
+
+      #{$block}_page_contacts-admin &
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        margin-right: 0
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_contacts-admin &
+        text-align: center
 
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
@@ -889,16 +1078,16 @@ $block: ".boss-check"
     &_role_alert-action,
     &_role_date-alert,
     &_role_details,
-    &_role_edit
+    &_role_edit,
+    &_role_email,
+    &_role_phone
+
       &:before
-        width: 18px
-        height: 18px
+        font-size: 18px
         margin-right: 10px
-        margin-top: -3px
 
         #{$block}_page_security-venues &
-          width: 22px
-          height: 22px
+          font-size: 22px
 
     &_role_alert
       color: map-get($boss-app-palette, alert)
@@ -944,13 +1133,13 @@ $block: ".boss-check"
     &_role_alert-action,
     &_role_date-alert,
     &_role_details,
-    &_role_edit
+    &_role_edit,
+    &_role_email,
+    &_role_phone
 
       &:before
-        width: 14px
-        height: 14px
+        font-size: 14px
         margin-right: 7px
-        margin-top: -3px
 
     &_role_date
       #{$block}_page_safe-checks-index &,
@@ -965,17 +1154,15 @@ $block: ".boss-check"
         #{$block}_page_safe-checks-index &,
         #{$block}_page_checklist-review &,
         #{$block}_page_vhci &
-          background-image: url('../icons/icon-clock-dark-gray.svg')
+          content: '\e961'
 
     &_role_voucher
       &:before
-        width: 18px
-        height: 18px
+        font-size: 18px
 
     &_role_location
       &:before
-        width: 16px
-        height: 16px
+        font-size: 16px
 
     // $Check block text MOD: marked
     &_marked
@@ -1025,19 +1212,10 @@ $block: ".boss-check"
 
     &_role_link
       cursor: pointer
-      color: map-get($boss-app-palette, primary)
+      color: #1585cf
 
-    &_role_edit#{&}_role_link
-      &:before
-        background-image: url('../icons/icon-pencil-primary.svg')
-
-    &_role_details#{&}_role_link
-      &:before
-        background-image: url('../icons/icon-zoom-primary.svg')
-
-    &_role_note#{&}_role_link
-      &:before
-        background-image: url('../icons/icon-envelope-primary.svg')
+      &:hover
+        color: $boss-medium-gray
 
 
   // $Check block text line
@@ -1103,6 +1281,7 @@ $block: ".boss-check"
     color: inherit
     text-decoration: none
 
+    #{$block}_page_venues-index &,
     #{$block}_page_wtl-clients-index &,
     #{$block}_page_wtl-clients-profile &
       color: #1585cf
@@ -1112,6 +1291,7 @@ $block: ".boss-check"
       color: inherit
       text-decoration: none
 
+      #{$block}_page_venues-index &,
       #{$block}_page_wtl-clients-index &,
       #{$block}_page_wtl-clients-profile &
         color: $boss-medium-gray
@@ -1210,18 +1390,21 @@ $block: ".boss-check"
     &:before
       content: ""
       display: inline-block
+      font-family: icons
+      font-size: 18px
+      line-height: 35px
+      font-weight: 400
+      color: #fff
+      text-align: center
       width: 35px
       height: 35px
       border-radius: 50%
       background-color: map-get($boss-app-palette, primary)
-      background-position:  center center
-      background-repeat: no-repeat
       vertical-align: middle
 
       @media screen and (max-width: 400px)
         width: 30px
         height: 30px
-        font-size: 18px
         line-height: 30px
 
     // $Check marker MOD: position before
@@ -1243,27 +1426,25 @@ $block: ".boss-check"
       color: map-get($boss-app-palette, secondary)
 
       &:before
+        content: '\e969'
         background-color: map-get($boss-app-palette, secondary)
-        background-size: 16px 16px
-        background-image: url('../icons/icon-checked-white.svg')
 
     // $Check marker MOD: status pending
     &_status_pending
       color: map-get($boss-app-palette, pending)
 
       &:before
+        content: '\e922'
         background-color: map-get($boss-app-palette, pending)
-        background-size: 18px 18px
-        background-image: url('../icons/icon-hour-glass-white.svg')
 
     // $Check marker MOD: status deleted
     &_status_deleted
       color: map-get($boss-app-palette, alert)
 
       &:before
+        content: '\e94d'
+        font-size: 16px
         background-color: map-get($boss-app-palette, alert)
-        background-size: 16px 16px
-        background-image: url('../icons/icon-trash-white.svg')
 
     // $Check marker MOD: role edit action
     &_role_edit-action
@@ -1342,14 +1523,13 @@ $block: ".boss-check"
     &:after
       content: ""
       display: inline-block
-      width: 10px
-      height: 10px
+      font-family: icons
+      font-size: 14px
+      line-height: 1
+      font-weight: 400
+      color: #4c4c4c
+      text-align: center
       margin-left: 10px
-      margin-top: -3px
-      background-image: url('../icons/icon-arrow-down-dark-gray.svg')
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
       vertical-align: middle
 
     &_type_icon
@@ -1357,33 +1537,20 @@ $block: ".boss-check"
       line-height: 0
       color: transparent
       transition: .4s
+      opacity: 1
 
       &:after
         width: 30px
         height: 30px
+        font-size: 20px
+        line-height: 30px
+        color: #4c4c4c
+        text-align: center
         margin-left: 0
-        background-size: 15px 15px
+        vertical-align: middle
 
       &:hover
-        opacity: 1
-
-    &_role_settings
-      &:after
-        background-size: 20px 20px
-        background-image: url('../icons/icon-gear-dark-gray.svg')
-
-    &_role_edit
-      &:after
-        background-image: url('../icons/icon-pencil-warning.svg')
-
-    &_role_remove
-      &:after
-        background-image: url('../icons/icon-close-alert.svg')
-
-    &_role_confirm
-      &:after
-        background-size: 24px 24px
-        background-image: url('../icons/icon-confirm-secondary.svg')
+        opacity: .8
 
     // $Check block dropdown link MOD: state inactive
     &_state_inactive
@@ -1399,25 +1566,45 @@ $block: ".boss-check"
       #{$block}_page_ops-diary-index &
         margin-top: 20px
 
+    &_role_settings
+      &:after
+        content: '\e913'
+
 
   &__action-link
-    &:not(:last-child)
+    #{$block}_page_handover-planner-event &,
+    #{$block}_page_handover-planner-reminder &,
+    #{$block}_page_handover-planner-task &
+      margin-right: 10px
+
+    @media screen and (max-width: 640px)
       #{$block}_page_handover-planner-event &,
       #{$block}_page_handover-planner-reminder &,
       #{$block}_page_handover-planner-task &
-        margin-right: 10px
+        margin-right: 0
+        margin-bottom: 15px
 
-      @media screen and (max-width: 640px)
-        #{$block}_page_handover-planner-event &,
-        #{$block}_page_handover-planner-reminder &,
-        #{$block}_page_handover-planner-task &
-          margin-right: 0
-          margin-bottom: 15px
+    &_role_edit
+      &:after
+        content: '\e96b'
+        font-size: 18px
+        color: map-get($boss-app-palette, warning)
+
+    &_role_remove
+      &:after
+        content: '\e93b'
+        font-size: 24px
+        color: map-get($boss-app-palette, alert)
+
+    &_role_confirm
+      &:after
+        content: '\e914'
+        font-size: 24px
+        color: map-get($boss-app-palette, secondary)
 
 
   &__dropdown-link
     margin-left: 10px
-    opacity: .8
 
     #{$block}_page_handover-planner-event &,
     #{$block}_page_handover-planner-reminder &,
@@ -1425,12 +1612,22 @@ $block: ".boss-check"
       margin-left: 0
 
     &:after
-      transform: rotate(180deg)
+      content: '\e91a'
+      font-size: 18px
+
+    &_type_icon
+      opacity: .8
+
+      &:after
+        font-size: 30px
+
+      &:hover
+        opacity: 1
 
     // $Check block dropdown link MOD: state closed
     &_state_closed
       &:after
-        transform: rotate(0)
+        content: '\e919'
 
 
   // $Check block table
@@ -1679,18 +1876,20 @@ $block: ".boss-check"
         border-color: map-get($boss-app-palette, primary)
 
     &:after
-      content: ""
+      content: '\e914'
       box-sizing: border-box
       position: absolute
-      top: 5px
-      left: 5px
+      top: 0
+      left: 0
       display: block
-      width: 20px
-      height: 20px
-      background-image: url('../icons/icon-checked-white.svg')
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
+      width: 30px
+      height: 30px
+      font-family: icons
+      font-size: 20px
+      line-height: 30px
+      font-weight: 400
+      color: #fff
+      text-align: center
       visibility: hidden
 
       #{$block}__checkbox-input:checked ~ &
@@ -1728,8 +1927,8 @@ $block: ".boss-check"
         border-color: #d8d8d8
 
       &:after
+        color: #808080
         visibility: visible
-        background-image: url('../icons/icon-checked-medium-gray.svg')
 
     &_layout_reverse
       padding-left: 0
