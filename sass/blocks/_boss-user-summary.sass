@@ -666,11 +666,12 @@ $block: ".boss-user-summary"
     display: block
     width: 100%
     max-width: 100%
-    margin-bottom: 15px
+
+    &:not(:last-child)
+      margin-bottom: 10px
 
     @media screen and (max-width: 960px)
       text-align: center
-      margin-bottom: 20px
 
 
   // $User summary link
@@ -683,6 +684,9 @@ $block: ".boss-user-summary"
     text-decoration: none
     cursor: pointer
 
+    #{$block}__contacts &
+      margin-bottom: 10px
+
     &:hover
       opacity: .7
       color: $boss-global-font-color
@@ -691,7 +695,12 @@ $block: ".boss-user-summary"
       color: $boss-global-font-color
 
     &:not(:last-child)
-      margin-right: 25px
+      #{$block}__contacts &
+        margin-right: 25px
+
+      @media screen and (max-width: 960px)
+        #{$block}__contacts &
+          text-align: center
 
     &_role_email,
     &_role_phone,
@@ -740,6 +749,12 @@ $block: ".boss-user-summary"
       &:hover
         color: map-get($boss-app-palette, alert)
         text-decoration: none
+
+    &_adjust_wrap
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
 
 
   // $User summary meta information
@@ -857,10 +872,6 @@ $block: ".boss-user-summary"
         line-height: 14px
         color: #4c4c4c
         font-weight: 400
-        vertical-align: middle
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
         vertical-align: middle
 
     &_role_date
