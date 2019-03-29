@@ -121,7 +121,6 @@ $block: ".boss-user-summary"
     border-color: map-get($boss-app-palette, alert)
 
 
-
   // $User summary side area
   &__side
     flex-grow: 0
@@ -136,6 +135,10 @@ $block: ".boss-user-summary"
     display: block
     width: 115px
     height: 115px
+    border-radius: 50%
+    line-height: 115px
+    vertical-align: middle
+    text-align: center
 
     // $User summary avatar CONTEXT: $User summary MOD: role review
     #{$block}_role_review &
@@ -148,6 +151,7 @@ $block: ".boss-user-summary"
     #{$block}_role_report &
       width: 100px
       height: 100px
+      line-height: 100px
 
     // $User summary avatar CONTEXT: $User summary MOD: role rotas daily
     // $User summary avatar CONTEXT: $User summary MOD: role rotas daily tooltip
@@ -161,12 +165,17 @@ $block: ".boss-user-summary"
     #{$block}_role_ssr-assign &
       width: 70px
       height: 70px
+      line-height: 70px
 
     // $User summary avatar CONTEXT: $User summary MOD: role hours overview
     #{$block}_role_hours-overview &
     #{$block}_role_user-profile &
       width: 80px
       height: 80px
+      line-height: 80px
+
+    &_type_scannable
+      box-shadow: 0 0 0 6px map-get($boss-app-palette, primary)
 
     @media screen and (max-width: 960px)
       margin-bottom: 20px
@@ -187,12 +196,14 @@ $block: ".boss-user-summary"
       #{$block}_role_rotas-daily &
         width: 40px
         height: 40px
+        line-height: 40px
 
       #{$block}_role_table-short &,
       #{$block}_role_card-short &,
       #{$block}_role_ssr-assign &
         width: 50px
         height: 50px
+        line-height: 50px
 
 
   // $User summary avatar inner
@@ -231,19 +242,20 @@ $block: ".boss-user-summary"
     transition: all .4s
 
     &:before
-      content: ''
+      content: '\e96b'
       position: absolute
-      left: 50%
-      top: 50%
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
       display: block
-      width: 14px
-      height: 14px
-      margin-top: -7px
-      margin-left: -7px
-      background-image: url(../icons/icon-pencil-white.svg)
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
+      font-family: icons
+      font-size: 14px
+      line-height: 28px
+      color: #fff
+      font-weight: 400
+      text-align: center
+      vertical-align: middle
 
     &:hover
       background-color: map-get($boss-app-palette, secondary)
@@ -252,12 +264,12 @@ $block: ".boss-user-summary"
     // $User summary avatar icon MOD: role edit
     &_role_edit
       &:before
-        background: url(../icons/icon-pencil-white.svg)
+        content: '\e96b'
 
     // $User summary avatar icon MOD: role info
     &_role_info
       &:before
-        background: url(../icons/icon-lens-white.svg)
+        content: '\e921'
 
     // $User summary avatar icon MOD: role retake
     &_role_retake
@@ -266,7 +278,7 @@ $block: ".boss-user-summary"
       background-color: map-get($boss-app-palette, alert)
 
       &:before
-        background: url(../icons/icon-close-white.svg)
+        content: '\e96a'
 
       &:hover
         background-color: map-get($boss-app-palette, alert)
@@ -630,17 +642,23 @@ $block: ".boss-user-summary"
   // $User summary icon
   &__icon
     display: inline-block
-    width: 15px
-    height: 15px
     margin-left: 10px
     vertical-align: middle
     cursor: pointer
-    background-repeat: no-repeat
-    background-position: center center
+
+    &:before
+      content: ''
+      display: inline-block
+      font-family: icons
+      font-size: 14px
+      line-height: 1
+      color: #4c4c4c
+      font-weight: 400
 
     &_role_remove
-      background-size: 12px 12px
-      background-image: url("../icons/icon-close-alert.svg")
+      &:before
+        content: '\e96a'
+        color: map-get($boss-app-palette, alert)
 
 
   // $User summary contacts
@@ -648,11 +666,12 @@ $block: ".boss-user-summary"
     display: block
     width: 100%
     max-width: 100%
-    margin-bottom: 15px
+
+    &:not(:last-child)
+      margin-bottom: 10px
 
     @media screen and (max-width: 960px)
       text-align: center
-      margin-bottom: 20px
 
 
   // $User summary link
@@ -665,6 +684,9 @@ $block: ".boss-user-summary"
     text-decoration: none
     cursor: pointer
 
+    #{$block}__contacts &
+      margin-bottom: 10px
+
     &:hover
       opacity: .7
       color: $boss-global-font-color
@@ -673,7 +695,12 @@ $block: ".boss-user-summary"
       color: $boss-global-font-color
 
     &:not(:last-child)
-      margin-right: 25px
+      #{$block}__contacts &
+        margin-right: 25px
+
+      @media screen and (max-width: 960px)
+        #{$block}__contacts &
+          text-align: center
 
     &_role_email,
     &_role_phone,
@@ -683,33 +710,33 @@ $block: ".boss-user-summary"
       &:before
         content: ""
         display: inline-block
-        width: 16px
-        height: 16px
         margin-right: 10px
-        background-size: contain
-        background-repeat: no-repeat
+        font-family: icons
+        font-size: 16px
+        line-height: 16px
+        color: inherit
+        font-weight: 400
         vertical-align: middle
-
-
-    // $User summary link MOD: role details
-    &_role_details
-      &:before
-        background-image: url(../icons/icon-zoom-dark-gray.svg)
-
-    // $User summary link MOD: role data
-    &_role_data
-      &:before
-        background-image: url(../icons/icon-text-paper-dark-gray.svg)
 
     // $User summary link MOD: role email
     &_role_email
       &:before
-        background-image: url(../icons/icon-envelope-dark-gray.svg)
+        content: '\e91f'
 
     // $User summary link MOD: role phone
     &_role_phone
       &:before
-        background-image: url(../icons/icon-phone-dark-gray.svg)
+        content: '\e952'
+
+    // $User summary link MOD: role details
+    &_role_details
+      &:before
+        content: '\e921'
+
+    // $User summary link MOD: role data
+    &_role_data
+      &:before
+        content: '\e927'
 
     // $User summary link MOD: role alert action
     &_role_alert-action
@@ -717,11 +744,17 @@ $block: ".boss-user-summary"
       text-decoration: underline
 
       &:before
-        background-image: url(../icons/icon-danger-alert.svg)
+        content: '\e911'
 
       &:hover
         color: map-get($boss-app-palette, alert)
         text-decoration: none
+
+    &_adjust_wrap
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
 
 
   // $User summary meta information
@@ -834,30 +867,32 @@ $block: ".boss-user-summary"
         height: 14px
         margin-right: 5px
         margin-top: -3px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        font-family: icons
+        font-size: 14px
+        line-height: 14px
+        color: #4c4c4c
+        font-weight: 400
         vertical-align: middle
 
     &_role_date
       &:before
-        background-image: url('../icons/icon-calendar-dark-gray.svg')
-
-    &_role_user
-      &:before
-        background-image: url('../icons/icon-user-dark-gray.svg')
-
-    &_role_reason
-      &:before
-        background-image: url('../icons/icon-block-dark-gray.svg')
-
-    &_role_venue
-      &:before
-        background-image: url('../icons/icon-storefront-dark-gray.svg')
+        content: '\e900'
 
     &_role_time
       &:before
-        background-image: url('../icons/icon-clock-dark-gray.svg')
+        content: '\e961'
+
+    &_role_user
+      &:before
+        content: '\e904'
+
+    &_role_reason
+      &:before
+        content: '\e928'
+
+    &_role_venue
+      &:before
+        content: '\e901'
 
 
   // $User summary review line

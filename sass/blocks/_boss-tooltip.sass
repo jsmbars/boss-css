@@ -21,6 +21,8 @@ $block: ".boss-tooltip"
   line-height: 14px
   vertical-align: top
 
+  &_position_bottom
+
   &_position_right-bottom
 
   &_role_alert
@@ -77,7 +79,18 @@ $block: ".boss-tooltip"
     #{$block}:hover &
       display: block
 
+    #{$block}_position_bottom &
+      top: calc(100% + 5px)
+      left: 50%
+      margin-left: -100px
+
     @media screen and (max-width: 960px)
+      #{$block}_position_bottom &
+        top: calc(100% + 5px)
+        left: 50%
+        width: 150px
+        margin-left: -75px
+
       #{$block}_position_right-bottom &
         width: 150px
 
@@ -100,6 +113,18 @@ $block: ".boss-tooltip"
 
       #{$block}_role_alert &
         border-right: 6px solid map-get($boss-app-palette, alert)
+
+      #{$block}_position_bottom &
+        top: auto
+        bottom: 100%
+        right: 50%
+        margin-right: -6px
+        border-bottom: 6px solid map-get($boss-app-palette, primary)
+        border-right: 6px solid transparent
+        border-left: 6px solid transparent
+
+      #{$block}_position_bottom#{$block}_role_alert &
+        border-bottom: 6px solid map-get($boss-app-palette, alert)
 
       @media screen and (max-width: 640px)
         #{$block}_position_right-bottom &
@@ -124,6 +149,15 @@ $block: ".boss-tooltip"
       border-right: 5px solid $boss-extra-light-gray
       border-top: 5px solid transparent
       border-bottom: 5px solid transparent
+
+      #{$block}_position_bottom &
+        top: auto
+        bottom: 100%
+        right: 50%
+        margin-right: -5px
+        border-bottom: 5px solid $boss-extra-light-gray
+        border-right: 5px solid transparent
+        border-left: 5px solid transparent
 
       @media screen and (max-width: 640px)
         #{$block}_position_right-bottom &
