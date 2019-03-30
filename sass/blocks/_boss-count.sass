@@ -136,6 +136,9 @@ $block: ".boss-count"
   &_color_accent-orange
     background-color: map-get($boss-accent-palette, orange)
 
+  &_color_accent-orchid-orange
+    background-color: map-get($boss-accent-palette, orchid-orange)
+
   // $Count MOD: color accent yellow
   &_color_accent-yellow
     background-color: map-get($boss-accent-palette, yellow)
@@ -194,206 +197,112 @@ $block: ".boss-count"
   &__icon
     flex-grow: 0
     flex-shrink: 0
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: contain
+    text-align: center
 
     // $Count icon CONTEXT: $Count MOD: type badge
     #{$block}_type_badge &
       width: 60px
-      height: 60px
 
     @media screen and(max-width: 480px)
       #{$block}_type_badge &
         width: 50px
-        height: 50px
+
+    &:before
+      content: ''
+      display: inline-block
+      font-family: icons
+      font-weight: 400
+
+      #{$block}_type_badge &
+        font-size: 60px
+        line-height: 60px
+        color: #808080
+
+      @media screen and(max-width: 480px)
+        #{$block}_type_badge &
+          font-size: 50px
+          line-height: 50px
+
+      #{$block}_state_alert &,
+      #{$block}_color_accent-red &,
+      #{$block}_color_accent-orange &,
+      #{$block}_color_accent-orchid-orange &,
+      #{$block}_color_accent-green &,
+      #{$block}_color_accent-turquoise &,
+      #{$block}_color_accent-navy-blue &,
+      #{$block}_color_accent-blue &,
+      #{$block}_color_accent-purple &,
+      #{$block}_color_accent-lilac &,
+      #{$block}_color_accent-pink &,
+      #{$block}_color_accent-gray &
+        color: #fff
 
     &_at
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-at-medium-gray.svg')
-
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-at-white.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e94a'
 
     &_umbrella
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-umbrella-medium-gray.svg')
-
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-umbrella-white.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e945'
 
     &_pin
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-map-pin-medium-gray.svg')
-
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-map-pin-white.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e958'
 
     &_camera
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-camera-medium-gray.svg')
-
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-camera-white.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e935'
 
     &_calculator
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-calculator-medium-gray.svg')
-
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-calculator-white.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e963'
 
     &_badge
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-badge-medium-gray.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e949'
+          font-size: 55px
+          line-height: 55px
 
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-badge-white.svg')
+        @media screen and(max-width: 480px)
+          #{$block}_type_badge &
+            font-size: 45px
+            line-height: 45px
 
     &_envelope
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-envelope-medium-gray.svg')
-
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-envelope-white.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e91f'
 
     &_gbp
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-gbp-medium-gray.svg')
-
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-gbp-white.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e910'
 
     &_alert
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-alert-triangle-medium-gray.svg')
-
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-alert-triangle-white.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e90b'
 
     &_clock
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-clock-medium-gray.svg')
-
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-clock-white.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e961'
 
     &_qrcode
-      #{$block}_type_badge &
-        background-image: url('../icons/icon-qrcode-medium-gray.svg')
+      &:before
+        #{$block}_type_badge &
+          content: '\e947'
 
-      #{$block}_state_alert &,
-      #{$block}_color_accent-red &,
-      #{$block}_color_accent-orange &,
-      #{$block}_color_accent-green &,
-      #{$block}_color_accent-turquoise &,
-      #{$block}_color_accent-navy-blue &,
-      #{$block}_color_accent-blue &,
-      #{$block}_color_accent-purple &,
-      #{$block}_color_accent-lilac &,
-      #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
-        background-image: url('../icons/icon-qrcode-white.svg')
+    &_scan
+      &:before
+        #{$block}_type_badge &
+          content: '\e96c'
 
 
   // $Count info
@@ -424,26 +333,29 @@ $block: ".boss-count"
     width: 40px
     border-left: 2px solid #c4c4c4
     cursor: pointer
+    transition: all .4s
 
     #{$block}_type_solid &,
     #{$block}_type_color &
       background-color: rgba(0,0,0,.3)
       border: none
 
+    &:hover
+      background-color: rgba(0,0,0,.6)
+
     &_role_remove
       &:before
-        content: ''
+        content: '\e96a'
         display: inline-block
-        width: 12px
-        height: 12px
-        background-image: url('../icons/icon-close-light-gray.svg')
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        font-family: icons
+        font-weight: 400
+        font-size: 12px
+        line-height: 12px
+        color: #aaa
 
         #{$block}_type_solid &,
         #{$block}_type_color &
-          background-image: url('../icons/icon-close-white.svg')
+          color: #fff
 
 
   // $Count number
@@ -493,6 +405,7 @@ $block: ".boss-count"
     #{$block}_state_alert &,
     #{$block}_color_accent-red &,
     #{$block}_color_accent-orange &,
+    #{$block}_color_accent-orchid-orange &,
     #{$block}_color_accent-green &,
     #{$block}_color_accent-turquoise &,
     #{$block}_color_accent-navy-blue &,
@@ -563,6 +476,7 @@ $block: ".boss-count"
     #{$block}_state_alert &,
     #{$block}_color_accent-red &,
     #{$block}_color_accent-orange &,
+    #{$block}_color_accent-orchid-orange &,
     #{$block}_color_accent-green &,
     #{$block}_color_accent-turquoise &,
     #{$block}_color_accent-navy-blue &,
@@ -589,29 +503,30 @@ $block: ".boss-count"
       &:before
         content: ""
         display: inline-block
-        width: 16px
-        height: 16px
         margin-right: 10px
-        background-size: contain
-        vertical-align: middle
+        font-family: icons
+        font-size: 16px
+        line-height: 16px
+        font-weight: 400
+        color: #4c4c4c
 
     &_role_date
       &:before
-        background-image: url(../icons/icon-calendar-dark-gray.svg)
+        content: '\e900'
 
     &_role_time
       &:before
-        background-image: url(../icons/icon-clock-dark-gray.svg)
+        content: '\e961'
 
     &_role_arcade
       &:before
-        width: 18px
-        height: 18px
-        background-image: url(../icons/icon-arcade-dark-gray.svg)
+        content: '\e968'
+        font-size: 18px
+        line-height: 18px
 
     &_role_user
       &:before
-        background-image: url(../icons/icon-user-dark-gray.svg)
+        content: '\e904'
 
     &_size_medium
       font-size: 16px

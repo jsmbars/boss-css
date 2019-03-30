@@ -592,64 +592,48 @@ $block: ".boss-page-main"
     &:before
       content: ""
       display: none
-      width: 16px
-      height: 16px
       margin-right: 15px
-      line-height: 100%
-      vertical-align: middle
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
+      font-family: icons
+      font-size: 16px
+      line-height: 16px
+      font-weight: 400
+      color: inherit
 
     &:hover,
     &:focus
       outline: none
-      color: #FFF
+      color: #fff
       background-color: map-get($boss-app-palette, primary)
+
+    &:hover:before,
+    &_state_active:before
+      color: #fff
 
     // $Page main container control MOD: role view history
     &_role_view-history
       color: map-get($boss-app-palette, primary)
 
       &:before
+        content: '\e927'
         display: inline-block
-        background-image: url('../icons/icon-text-paper-primary.svg')
-
-      &:hover:before
-        background-image: url('../icons/icon-text-paper-white.svg')
-
-    &_role_view-history#{&}_state_active:before
-      background-image: url('../icons/icon-text-paper-white.svg')
 
     // $Page main container control MOD: role venue
     &_role_venue
       &:before
+        content: '\e901'
         display: inline-block
-        background-image: url('../icons/icon-storefront-medium-gray.svg')
-
-    &_role_venue:hover:before,
-    &_role_venue#{&}_state_active:before
-      background-image: url('../icons/icon-storefront-white.svg')
 
     // $Page main container control MOD: role staff-type
     &_role_staff-type
       &:before
+        content: '\e904'
         display: inline-block
-        background-image: url('../icons/icon-user-medium-gray.svg')
-
-    &_role_staff-type:hover:before,
-    &_role_staff-type#{&}_state_active:before
-      background-image: url('../icons/icon-user-white.svg')
 
     // $Page main container control MOD: role trends
     &_role_trends
       &:before
+        content: '\e99b'
         display: inline-block
-        background-image: url('../icons/icon-chart-medium-gray.svg')
-
-    &_role_trends:hover:before,
-    &_role_trends#{&}_state_active:before
-      background-image: url('../icons/icon-chart-white.svg')
 
     // $Page main container control MOD: state active
     &_state_active
