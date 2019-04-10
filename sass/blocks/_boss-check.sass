@@ -200,6 +200,10 @@ $block: ".boss-check"
       min-height: 0
       padding: 10px 15px
 
+    #{$block}_page_sv-missattributed-logins &
+      min-height: 0
+      padding: 15px
+
     @media screen and (max-width: 960px)
       min-height: 60px
       padding: 20px
@@ -218,7 +222,8 @@ $block: ".boss-check"
       #{$block}_page_wtl-cards-index &,
       #{$block}_page_handover-planner-reminder &,
       #{$block}_page_handover-planner-task &,
-      #{$block}_page_contacts &
+      #{$block}_page_contacts &,
+      #{$block}_page_sv-missattributed-logins &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
@@ -258,7 +263,8 @@ $block: ".boss-check"
 
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &,
-      #{$block}_page_ops-diary-index &
+      #{$block}_page_ops-diary-index &,
+      #{$block}_page_sv-missattributed-logins &
         width: calc(100% - 50px)
 
       #{$block}_page_marketing-index &,
@@ -319,6 +325,9 @@ $block: ".boss-check"
 
     #{$block}_page_contacts-admin &
       width: calc(100% - 230px)
+
+    #{$block}_page_sv-missattributed-logins &
+      margin-top: 0
 
     @media screen and (max-width: 960px)
       #{$block}_page_contacts-admin &
@@ -542,9 +551,13 @@ $block: ".boss-check"
     #{$block}_page_contacts-admin &
       padding-left: 20px
 
-    #{$block}_page_clocking-app-page-index &
+    #{$block}_page_clocking-app-page-index &,
+    #{$block}_page_sv-missattributed-logins &
       padding-left: 10px
       padding-right: 10px
+
+    #{$block}_page_sv-missattributed-logins &
+      text-align: center
 
     @media screen and (max-width: 960px)
       #{$block}_page_ssr-requests &,
@@ -565,6 +578,17 @@ $block: ".boss-check"
         justify-content: center
         align-items: center
         width: 100%
+
+      #{$block}_page_sv-missattributed-logins &
+        order: -99
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+
+        &:not(:empty)
+          margin-bottom: 15px
+          padding: 0 0 15px
+          border-bottom: 1px solid #ccc
 
       #{$block}_page_handover-planner-event &,
       #{$block}_page_handover-planner-reminder &,
@@ -835,7 +859,8 @@ $block: ".boss-check"
     #{$block}_page_venue-alert-levels &,
     #{$block}_page_handover-planner-event &,
     #{$block}_page_handover-planner-reminder &,
-    #{$block}_page_handover-planner-task &
+    #{$block}_page_handover-planner-task &,
+    #{$block}_page_sv-missattributed-logins &
       text-align: left
 
     &:not(:last-child)

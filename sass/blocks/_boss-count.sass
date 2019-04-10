@@ -171,6 +171,10 @@ $block: ".boss-count"
   &_color_accent-pink
     background-color: map-get($boss-accent-palette, pink)
 
+  // $Count MOD: color accent geranium
+  &_color_accent-geranium
+    background-color: map-get($boss-accent-palette, geranium)
+
   // $Count MOD: color accent gray
   &_color_accent-gray
     background-color: map-get($boss-accent-palette, gray)
@@ -178,6 +182,10 @@ $block: ".boss-count"
   // $Count MOD: color accent dark
   &_color_accent-dark
     background-color: map-get($boss-accent-palette, dark)
+
+  // $Count MOD: color accent light
+  &_color_accent-light
+    background-color: map-get($boss-accent-palette, light)
 
 
   // $Count group
@@ -234,7 +242,9 @@ $block: ".boss-count"
       #{$block}_color_accent-purple &,
       #{$block}_color_accent-lilac &,
       #{$block}_color_accent-pink &,
-      #{$block}_color_accent-gray &
+      #{$block}_color_accent-geranium &,
+      #{$block}_color_accent-gray &,
+      #{$block}_color_accent-dark &
         color: #fff
 
     &_at
@@ -303,6 +313,11 @@ $block: ".boss-count"
       &:before
         #{$block}_type_badge &
           content: '\e96c'
+
+    &_scan-alert
+      &:before
+        #{$block}_type_badge &
+          content: '\e96d'
 
 
   // $Count info
@@ -413,7 +428,9 @@ $block: ".boss-count"
     #{$block}_color_accent-purple &,
     #{$block}_color_accent-lilac &,
     #{$block}_color_accent-pink &,
-    #{$block}_color_accent-gray &
+    #{$block}_color_accent-geranium &,
+    #{$block}_color_accent-gray &,
+    #{$block}_color_accent-dark &
       color: #FFF
       text-shadow: 0 0 6px rgba(0,0,0,.2)
 
@@ -484,7 +501,9 @@ $block: ".boss-count"
     #{$block}_color_accent-purple &,
     #{$block}_color_accent-lilac &,
     #{$block}_color_accent-pink &,
-    #{$block}_color_accent-gray &
+    #{$block}_color_accent-geranium &,
+    #{$block}_color_accent-gray &,
+    #{$block}_color_accent-dark &
       color: #FFF
       text-shadow: 0 0 6px rgba(0,0,0,.2)
 
