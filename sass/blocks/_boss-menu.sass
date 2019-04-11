@@ -30,23 +30,23 @@ $block: ".boss-menu"
     line-height: 1
 
     &:before
-      content: ""
+      content: ''
       position: absolute
       left: 25px
       top: 50%
       display: block
-      width: 16px
-      height: 16px
       margin-top: -8px
-      background-repeat: no-repeat
-      background-size: contain
-      background-position: center center
+      font-family: icons
+      font-size: 16px
+      line-height: 16px
+      font-weight: 400
+      color: #4c4c4c
 
     // $Menu label MOD: role user
     &_role_user
       padding-left: 50px
       &:before
-        background-image: url(../icons/icon-user-dark-gray.svg)
+        content: '\e904'
 
 
   // $Menu link
@@ -62,32 +62,32 @@ $block: ".boss-menu"
     transition: all .4s
 
     &:before
-      content: ""
+      content: ''
       position: absolute
       left: 25px
       top: 50%
       display: block
-      width: 16px
-      height: 16px
       margin-top: -8px
-      background-repeat: no-repeat
-      background-size: contain
-      background-position: center center
-      opacity: .6
+      font-family: icons
+      font-size: 16px
+      line-height: 16px
+      font-weight: 400
+      color: #808080
       transition: all .4s
 
     &:hover,
-    &_state_selected
+    &_state_selected,
+    &:focus
       background-color: #f0f0f0
       color: #4c4c4c
 
       &:before
-        opacity: 1
+        color: #4c4c4c
 
     // $Menu link MOD: role logout
     &_role_logout
       padding-left: 50px
 
       &:before
-        background-image: url(../icons/icon-power-dark-gray.svg)
+        content: '\e907'
 
