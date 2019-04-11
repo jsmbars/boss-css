@@ -1,0 +1,254 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Comparison
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-comparison"
+
+#{$block}
+  +box-model-normalizer()
+  display: block
+  width: 100%
+
+  // $Comparison MOD: page staff vetting missattributed login
+  &_page_sv-missattributed-logins
+
+    @media screen and (max-width: 640px)
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+
+
+  // $Comparison content
+  &__content
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 100%
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_sv-missattributed-logins &
+        flex-wrap: wrap
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_sv-missattributed-logins &
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+        flex-wrap: nowrap
+        width: auto
+        max-width: 100%
+
+
+  // $Comparison group
+  &__group
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: auto
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_sv-missattributed-logins &
+        width: 100%
+        padding-bottom: 20px
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_sv-missattributed-logins &
+        flex-direction: column
+        width: auto
+        padding-bottom: 0
+
+
+  // $Comparison item
+  &__item
+    flex-grow: 1
+    flex-shrink: 1
+
+    // $Comparison item MOD: position start
+    &_position_start
+      #{$block}_page_sv-missattributed-logins &
+        width: calc(50% - 180px)
+
+      @media screen and (max-width: 1120px)
+        #{$block}_page_sv-missattributed-logins &
+          width: calc(50% - 150px)
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_sv-missattributed-logins &
+          order: 1
+          width: 50%
+          padding-right: 60px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_sv-missattributed-logins &
+          order: 0
+          width: auto
+          max-width: 100%
+          padding-right: 0
+
+    // $Comparison item MOD: position middle
+    &_position_middle
+      flex-grow: 0
+      flex-shrink: 0
+      #{$block}_page_sv-missattributed-logins &
+        width: 100px
+
+      @media screen and (max-width: 1120px)
+        #{$block}_page_sv-missattributed-logins &
+          width: 80px
+
+    // $Comparison item MOD: position end
+    &_position_end
+      #{$block}_page_sv-missattributed-logins &
+        width: calc(50% - 180px)
+
+      @media screen and (max-width: 1120px)
+        #{$block}_page_sv-missattributed-logins &
+          width: calc(50% - 150px)
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_sv-missattributed-logins &
+          order: 2
+          width: 50%
+          padding-left: 60px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_sv-missattributed-logins &
+          width: auto
+          max-width: 100%
+          padding-left: 0
+
+
+  // $Comparison delimiter
+  &__delimiter
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    align-items: center
+
+    #{$block}_page_sv-missattributed-logins &
+      width: 130px
+
+    @media screen and (max-width: 1120px)
+      #{$block}_page_sv-missattributed-logins &
+        width: 110px
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_sv-missattributed-logins &
+        width: 100px
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_sv-missattributed-logins &
+        width: 80px
+
+    &:before,
+    &:after
+      font-family: icons
+      font-size: 32px
+      line-height: 1
+      color: inherit
+      font-weight: 400
+      vertical-align: baseline
+      color: map-get($boss-app-palette, primary)
+
+      @media screen and (max-width: 1120px)
+        #{$block}_page_sv-missattributed-logins &
+          font-size: 24px
+
+    // $Comparison delimiter MOD: position start
+    &_position_start
+      justify-content: flex-start
+      padding-left: 5px
+      text-align: left
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_sv-missattributed-logins &
+          flex-direction: column-reverse
+          align-items: center
+          padding-left: 0
+          padding-right: 20px
+          text-align: center
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_sv-missattributed-logins &
+          flex-direction: column
+          padding-right: 0
+          padding-top: 5px
+          padding-bottom: 15px
+
+      &:before
+        padding-right: 5px
+        content: '\e953'
+
+        @media screen and (max-width: 960px)
+          #{$block}_page_sv-missattributed-logins &
+            transform: rotate(-90deg)
+
+        @media screen and (max-width: 640px)
+          #{$block}_page_sv-missattributed-logins &
+            padding-right: 0
+            padding-bottom: 5px
+            transform: rotate(90deg)
+
+    // $Comparison delimiter MOD: position end
+    &_position_end
+      justify-content: flex-end
+      padding-right: 5px
+      text-align: right
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_sv-missattributed-logins &
+          flex-direction: column
+          align-items: center
+          padding-right: 0
+          padding-left: 20px
+          text-align: center
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_sv-missattributed-logins &
+          padding-left: 0
+          padding-top: 15px
+          padding-bottom: 5px
+          text-align: center
+
+      &:after
+        padding-left: 5px
+        content: '\e954'
+
+        @media screen and (max-width: 960px)
+          #{$block}_page_sv-missattributed-logins &
+            transform: rotate(90deg)
+
+        @media screen and (max-width: 640px)
+          #{$block}_page_sv-missattributed-logins &
+            padding-left: 0
+            padding-top: 5px
+
+
+  // $Comparison delimiter text
+  &__delimiter-text
+    max-width: 100%
+    font-size: 16px
+    line-height: 1
+    font-weight: 600
+    color: map-get($boss-app-palette, primary)
+
+    @media screen and (max-width: 1120px)
+      #{$block}_page_sv-missattributed-logins &
+        font-size: 14px
