@@ -20,6 +20,15 @@ $block: ".boss-alias"
   display: block
   width: 100%
 
+  &_state_inactive
+    opacity: .3
+    pointer-events: none
+    cursor: default
+
+  &_state_loading
+    pointer-events: none
+    cursor: default
+
 
   // $Alias link
   &__link
@@ -32,6 +41,14 @@ $block: ".boss-alias"
     &:focus
       outline: none
       text-decoration: none
+
+
+  // $Alias spinner
+  &__spinner
+    display: block
+    width: 40px
+    height: 40px
+    margin: 0 auto 10px
 
 
   // $Alias icon
