@@ -230,21 +230,22 @@ $block: ".boss-page-header"
       display: none
 
     &:before
-      content: ""
+      content: '\e919'
       position: absolute
       top: 50%
       left: 0
       display: block
-      width: 15px
-      height: 12px
-      margin-top: -5px
-      background-image: url(../icons/icon-arrow-down-dark-gray.svg)
-      background-position: center center
-      background-repeat: no-repeat
-      background-size: contain
+      margin-top: -6px
+      font-family: icons
+      font-size: 22px
+      line-height: 12px
+      font-weight: 400
+      color: #4c4c4c
+      vertical-align: middle
 
       #{$block}__control_state_active &
-        transform: rotate(180deg)
+        content: '\e91a'
+        margin-top: -7px
 
 
   // $Page header action
@@ -264,23 +265,28 @@ $block: ".boss-page-header"
     border-radius: 50%
     transition: background-color .4s
 
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      font-family: icons
+      font-size: 20px
+      line-height: 40px
+      font-weight: 400
+      color: #4c4c4c
+      text-align: center
+      vertical-align: middle
+
+
     &:hover,
     &_state_active
       background-color: #f0f0f0
 
     &_state_active
       &:after
-        content: ""
-        position: absolute
-        bottom: -12px
-        left: 50%
-        z-index: 10001
-        margin-left: -11px
-        border-bottom: 11px solid #eee
-        border-right: 11px solid transparent
-        border-left: 11px solid transparent
-
-      &:before
         content: ""
         position: absolute
         bottom: -13px
@@ -296,8 +302,7 @@ $block: ".boss-page-header"
       background-color: transparent
 
     &_type_single#{&}_state_active
-      &:after,
-      &:before
+      &:after
         display: none
 
     // $Page header MOD: role search
@@ -305,13 +310,18 @@ $block: ".boss-page-header"
       flex-grow: 0
       flex-shrink: 0
       border-color: transparent
-      background-image: url(../icons/icon-magnifier-dark-gray.svg)
-      background-size: 25px 25px
 
       @media screen and (max-width: 480px)
         border-color: #4c4c4c
-        background-image: url(../icons/icon-lens-dark-gray.svg)
-        background-size: 16px 20px
+
+      &:before
+        content: '\e908'
+        font-size: 25px
+
+        @media screen and (max-width: 480px)
+          content: '\e957'
+          font-size: 16px
+          line-height: 38px
 
       &:hover
         background-color: transparent
@@ -330,8 +340,11 @@ $block: ".boss-page-header"
       flex-grow: 0
       flex-shrink: 0
       margin-left: 30px
-      background-image: url(../icons/icon-user-dark-gray.svg)
-      background-size: 16px 20px
+
+      &:before
+        content: '\e904'
+        font-size: 16px
+        line-height: 38px
 
       @media screen and (max-width: 640px)
         margin-left: 20px
@@ -460,13 +473,17 @@ $block: ".boss-page-header"
   // $Page header dropdown filter
   &__dropdown-filter
     flex-grow: 1
-    padding: 0 30px
+    padding: 0 20px
 
     @media screen and (max-width: 640px)
       order: 99
       width: 100%
       margin-top: 20px
       padding: 0
+
+    &:empty
+      @media screen and (max-width: 640px)
+        margin-top: 0
 
 
   // $Page header dropdown label
@@ -475,23 +492,9 @@ $block: ".boss-page-header"
     position: relative
     flex-grow: 0
     display: inline-block
-    padding-left: 30px
     font-size: 20px
     font-weight: 300
     white-space: nowrap
-
-    &:before
-      content: ""
-      position: absolute
-      top: 50%
-      left: 0
-      display: block
-      width: 20px
-      height: 20px
-      margin-top: -10px
-      background-position: center center
-      background-repeat: no-repeat
-      background-size: contain
 
     // $Page header dropdown label MOD: role action
     &_role_action
@@ -502,19 +505,31 @@ $block: ".boss-page-header"
         outline: none
         color: #4c4c4c
 
+    &_role_close,
+    &_role_search
+      &:before
+        content: ''
+        display: inline-block
+        margin-right: 10px
+        font-family: icons
+        font-size: 20px
+        line-height: 1
+        font-weight: 400
+        color: #4c4c4c
+        vertical-align: baseline
+
     // $Page header dropdown label MOD: role close
     &_role_close
       &:before
-        background-image: url(../icons/icon-menu-close-dark-gray.svg)
+        content: '\e91e'
 
     // $Page header dropdown label MOD: role search
     &_role_search
       &:before
-        background-image: url(../icons/icon-magnifier-dark-gray.svg)
+        content: '\e908'
 
     // $Page header dropdown label MOD: type icon only
     &_type_icon
-      padding-left: 20px
       font-size: 0
       line-height: 0
       color: transparent
