@@ -95,15 +95,15 @@ $block: ".boss-details"
       color: map-get($boss-app-palette, alert)
 
       &:before
-        content: ""
+        content: '\e911'
         display: inline-block
-        width: 16px
-        height: 16px
         margin-right: 10px
-        background-size: contain
-        background-repeat: no-repeat
+        font-family: icons
+        font-size: 16px
+        line-height: 1
+        font-weight: 400
+        color: inherit
         vertical-align: middle
-        background-image: url(../icons/icon-danger-alert.svg)
 
 
   // $Details list
@@ -132,21 +132,20 @@ $block: ".boss-details"
     flex-grow: 1
     flex-shrink: 0
     display: block
-    width: 260px
+    width: 250px
     margin: 0
-    padding-right: 30px
+    padding-right: 20px
     font-weight: bold
 
     @media screen and (max-width: 1280px)
-      width: 180px
+      width: 200px
 
     @media screen and (max-width: 960px)
-      width: 160px
-      padding-right: 20px
+      width: 150px
 
     @media screen and (max-width: 640px)
-      width: 140px
-      padding-right: 10px
+      width: 125px
+      padding-right: 15px
 
     @media screen and (max-width: 480px)
       width: 100px
@@ -180,25 +179,23 @@ $block: ".boss-details"
     flex-grow: 1
     flex-shrink: 0
     display: block
-    padding-right: 30px
+    padding-right: 20px
     width: 40%
     margin: 0
-
-    @media screen and (max-width: 960px)
-      padding-right: 20px
 
     @media screen and (max-width: 480px)
       padding-right: 0
 
     &_role_alert-action
       &:before
-        content: ""
+        content: ''
         display: inline-block
-        width: 16px
-        height: 16px
         margin-right: 10px
-        background-size: contain
-        background-repeat: no-repeat
+        font-family: icons
+        font-size: 16px
+        line-height: 1
+        font-weight: 400
+        color: inherit
         vertical-align: middle
 
     &_role_alert-action
@@ -207,7 +204,7 @@ $block: ".boss-details"
       text-decoration: underline
 
       &:before
-        background-image: url(../icons/icon-danger-alert.svg)
+        content: '\e911'
 
       &:hover
         color: map-get($boss-app-palette, alert)
@@ -248,15 +245,15 @@ $block: ".boss-details"
       color: map-get($boss-app-palette, alert)
 
       &:before
-        content: ""
+        content: '\e911'
         display: inline-block
-        width: 16px
-        height: 16px
         margin-right: 10px
-        background-size: contain
-        background-repeat: no-repeat
+        font-family: icons
+        font-size: 16px
+        line-height: 1
+        font-weight: 400
+        color: inherit
         vertical-align: middle
-        background-image: url(../icons/icon-danger-alert.svg)
 
       &:hover
         color: darken(map-get($boss-app-palette, alert), 10%)

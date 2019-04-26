@@ -171,20 +171,27 @@ $block: ".boss-modal-window"
     display: block
     width: 40px
     height: 40px
-    background-image: url("../icons/icon-modal-close-white.svg")
-    background-repeat: no-repeat
-    background-position: center center
-    background-size: contain
+    background-color: #fff
     cursor: pointer
     outline: none
+    border-radius: 50%
     transform: translate(50%, -50%)
 
-    &_accent
-      background-image: url("../icons/icon-modal-close-red.svg")
+    &:before
+      content: '\e909'
+      display: block
+      font-family: icons
+      font-size: 30px
+      line-height: 40px
+      font-weight: 400
+      text-align: center
+      vertical-align: middle
+      color: #e86a6b
 
     &_primary
-      background-image: url("../icons/icon-modal-close-primary.svg")
-
+      background-color: map-get($boss-app-palette, primary)
+      &:before
+        color: #fff
 
 
   // $Modal window close inner
@@ -194,14 +201,8 @@ $block: ".boss-modal-window"
     right: 12px
     z-index: 10002
     display: block
-    width: 12px
-    height: 12px
     cursor: pointer
     outline: none
-    background-image: url(../icons/icon-close-light-gray.svg)
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: contain
 
     // $Modal window close inner CONTEXT: $Modal window MOD: role edit
     // $Modal window close inner CONTEXT: $Modal window MOD: role add
@@ -224,11 +225,38 @@ $block: ".boss-modal-window"
     #{$block}_role_history &,
     #{$block}_role_wtl-card-history &,
     #{$block}_role_action-details &
-      width: 16px
-      height: 16px
       top: 30px
       right: 30px
-      background-image: url(../icons/icon-close-medium-gray.svg)
+
+    &:before
+      content: '\e96a'
+      display: block
+      font-family: icons
+      font-size: 12px
+      line-height: 1
+      font-weight: 400
+      text-align: center
+      vertical-align: middle
+      color: #aaa
+
+      #{$block}_role_edit &,
+      #{$block}_role_add &,
+      #{$block}_role_image-preview &,
+      #{$block}_role_task-create &,
+      #{$block}_role_task-edit &,
+      #{$block}_role_task-overview &,
+      #{$block}_role_bounced-email &,
+      #{$block}_role_offences &,
+      #{$block}_role_reviews &,
+      #{$block}_role_venue-details &,
+      #{$block}_role_disciplinary-details &,
+      #{$block}_role_shift-details &,
+      #{$block}_role_csv-upload-payments &,
+      #{$block}_role_history &,
+      #{$block}_role_wtl-card-history &,
+      #{$block}_role_action-details &
+        font-size: 16px
+        color: #808080
 
     @media screen and (max-width: 960px)
       #{$block}_role_edit &,
@@ -828,22 +856,24 @@ $block: ".boss-modal-window"
         width: 14px
         height: 14px
         margin-top: -7px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        font-family: icons
+        font-size: 14px
+        line-height: 1
+        font-weight: 400
+        color: inherit
         transition: all .4s
 
     &_role_edit
       &:after
-        background-image: url(../icons/icon-pencil-primary.svg)
+        content: '\e96b'
 
     &_role_save
       &:after
-        background-image: url(../icons/icon-checked-primary.svg)
+        content: '\e969'
 
     &_role_details
       &:after
-        background-image: url(../icons/icon-zoom-primary.svg)
+        content: '\e921'
 
     &_position_after
       margin-left: 20px
