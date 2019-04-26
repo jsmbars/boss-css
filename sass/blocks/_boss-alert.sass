@@ -24,17 +24,17 @@ $block: ".boss-alert"
   border-radius: $boss-global-border-radius
 
   &:before
-    content: ""
+    content: '\e911'
     position: absolute
     top: 14px
     left: 20px
     display: block
-    width: 14px
-    height: 14px
-    background-image: url(../icons/danger-white.svg)
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: contain
+    font-family: icons
+    font-size: 14px
+    line-height: 1
+    font-weight: 400
+    color: #fff
+    text-align: center
 
   &_status_success
     background-color: map-get($boss-app-palette, secondary)
@@ -54,26 +54,27 @@ $block: ".boss-alert"
     border-radius: 0
 
     &:before
+      content: '\e969'
       top: 10px
       width: 30px
       height: 30px
+      font-size: 12px
+      line-height: 30px
       background-color: rgba(0,0,0,.35)
-      background-image: url(../icons/checked-white.svg)
-      background-size: 12px 12px
       border-radius: 50%
 
   &_role_page-note#{&}_status_success
     &:before
-      background-image: url(../icons/checked-white.svg)
+      content: '\e969'
 
   &_role_page-note#{&}_status_warning
     &:before
-      background-image: url(../icons/icon-lock-white.svg)
+      content: '\e930'
 
   &_role_page-note#{&}_status_alert,
   &_role_page-note#{&}_status_danger
     &:before
-      background-image: url(../icons/danger-white.svg)
+      content: '\e911'
 
   // $Alert MOD: role position fixed
   &_position_fixed
@@ -94,29 +95,26 @@ $block: ".boss-alert"
   // $Alert MOD: role time
   &_role_time
     &:before
-      background-image: url(../icons/icon-clock-white.svg)
-
-  // $Alert MOD: role alert
-  &_role_alert
-    &:before
-      background-image: url(../icons/danger-white.svg)
+      content: '\e961'
 
   // $Alert MOD: role lock
   &_role_lock
     &:before
-      background-image: url(../icons/icon-lock-white.svg)
+      content: '\e930'
+
+  // $Alert MOD: role alert
+  // $Alert MOD: role danger
+  &_role_alert,
+  &_role_danger
+    &:before
+      content: '\e911'
 
   // $Alert MOD: role confirm
   // $Alert MOD: role review
   &_role_confirm,
   &_role_review
     &:before
-      background-image: url(../icons/checked-white.svg)
-
-  // $Alert MOD: role danger
-  &_role_danger
-    &:before
-      background-image: url(../icons/danger-white.svg)
+      content: '\e969'
 
   // $Alert MOD: role information
   &_role_info
@@ -126,19 +124,20 @@ $block: ".boss-alert"
       padding: 10px 15px 10px 20px
 
     &:before
+      content: '\e92f'
       top: 12px
       width: 25px
       height: 25px
-      background-color: #b35456
-      background-image: url(../icons/icon-info-white.svg)
-      background-size: 12px 12px
+      line-height: 25px
+      background-color: rgba(0,0,0,.35)
       border-radius: 50%
 
       @media screen and (max-width: 400px)
         left: 15px
         width: 20px
         height: 20px
-        background-size: 10px 10px
+        font-size: 12px
+        line-height: 20px
 
   &_role_area
     border-radius: 0
@@ -233,11 +232,21 @@ $block: ".boss-alert"
     right: 20px
     display: block
     margin-top: -15px
-    background-image: url(../icons/icon-close-black-small.svg)
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: 10px 10px
-    opacity: 0.4
+
+    &:before
+      content: '\e96a'
+      display: block
+      font-family: icons
+      font-size: 10px
+      line-height: 30px
+      font-weight: 400
+      color: rgba(0,0,0,.4)
+      text-align: center
+      transition: all .4s
+
+    &:hover
+      &:before
+        color: rgba(0,0,0,.8)
 
     // $Alert close button CONTEXT: $Alert MOD: role page notification
     #{$block}_role_page-note &

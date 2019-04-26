@@ -1026,28 +1026,27 @@ $block: ".boss-form"
         flex-grow: 0
         flex-shrink: 0
         display: inline-block
-        width: 15px
-        height: 15px
         margin-right: 10px
-        line-height: 100%
+        font-family: icons
+        font-size: 15px
+        line-height: 1
+        font-weight: 400
+        color: #4c4c4c
         vertical-align: middle
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
 
     &_type_icon-venue
       &:before
-        background-image: url('../icons/icon-storefront-dark-gray.svg')
+        content: '\e901'
 
     &_type_icon-filter
 
       &:before
-        background-image: url('../icons/icon-filter-dark-gray.svg')
+        content: '\e923'
 
     &_type_icon-date
 
       &:before
-        background-image: url('../icons/icon-calendar-dark-gray.svg')
+        content: '\e900'
 
     // $Common form label MOD: type icon-single
     &_type_icon-single
@@ -1187,20 +1186,20 @@ $block: ".boss-form"
         right: 20px
         z-index: 10
         display: block
-        width: 15px
-        height: 15px
-        background-repeat: no-repeat
-        background-size: contain
-        background-position: center center
+        font-family: icons
+        font-size: 15px
+        line-height: 1
+        font-weight: 400
+        color: #808080
         transform: translateY(-50%)
 
     &_role_time
       &:before
-        background-image: url(../icons/icon-clock-medium-gray.svg)
+        content: '\e961'
 
     &_role_date
       &:before
-        background-image: url(../icons/icon-calendar-medium-gray.svg)
+        content: '\e900'
 
     // $Common form value MOD: state alert
     &_state_alert
@@ -1226,6 +1225,10 @@ $block: ".boss-form"
 
     #{$block}__search &
       border: none
+      padding-left: 45px
+
+    #{$block}__search_type_light &
+      padding-left: 30px
 
     #{$block}__units &
       position: relative
@@ -1248,6 +1251,9 @@ $block: ".boss-form"
       outline: none
       box-shadow: 0 0 5px 0 $boss-very-light-gray
       border-color: $boss-very-light-gray
+
+      #{$block}__search_type_light &
+        box-shadow: 0 5px 5px -5px $boss-very-light-gray
 
     &[type=text]::-ms-clear
       display: none
@@ -1393,27 +1399,26 @@ $block: ".boss-form"
     position: relative
     display: block
     width: 100%
-    padding-left: 25px
     border: 1px solid $boss-very-light-gray
     border-radius: 2px
     background-color: #FFF
 
     &:before
-      content: ""
+      content: '\e908'
       position: absolute
       top: 50%
       left: 20px
       margin-top: -5px
       display: block
-      width: 12px
-      height: 12px
-      background-size: contain
+      font-family: icons
+      font-size: 12px
+      line-height: 1
+      font-weight: 400
+      color: #aaa
       vertical-align: middle
-      background-image: url(../icons/icon-lens-gray.svg)
 
     &_type_light
       border: none
-      padding-left: 10px
 
       &:before
         left: 0
@@ -2097,18 +2102,18 @@ $block: ".boss-form"
         border-color: map-get($boss-app-palette, primary)
 
     &:after
-      content: ""
+      content: '\e969'
       box-sizing: border-box
       position: absolute
       top: 5px
       left: 5px
       display: block
-      width: 10px
-      height: 10px
-      background-image: url('../icons/icon-checked-white.svg')
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
+      font-family: icons
+      font-size: 10px
+      line-height: 1
+      font-weight: 400
+      color: #fff
+      text-align: center
       visibility: hidden
 
       @media screen and (max-width: 640px)
@@ -2136,7 +2141,7 @@ $block: ".boss-form"
 
       &:after
         visibility: visible
-        background-image: url('../icons/icon-checked-medium-gray.svg')
+        color: #808080
 
     &_layout_reverse
       padding-left: 0
@@ -2195,31 +2200,31 @@ $block: ".boss-form"
     transition: .4s
 
     &:before
-      content: ""
+      content: '\e953'
       position: absolute
       top: 50%
       left: 50%
       display: block
       width: 20px
       height: 20px
-      background-image: url(../icons/icon-arrow-left-light-gray.svg)
+      font-family: icons
+      font-size: 20px
+      line-height: 1
+      font-weight: 400
+      color: #aaa
+      text-align: center
       transform: translate(-50%, -50%)
-      background-position: center center
-      background-repeat: no-repeat
-      background-size: contain
-      transform-origin: center center
       transition: all .4s
 
     // $Common form pagination control MOD: prev
     &_prev
       &:before
-        background-image: url(../icons/icon-arrow-left-light-gray.svg)
+        content: '\e953'
 
     // $Common form pagination control MOD: next
     &_next
       &:before
-        background-image: url(../icons/icon-arrow-left-light-gray.svg)
-        transform: translate(-50%, -50%) rotate(-180deg)
+        content: '\e954'
 
 
   // $Common form pagination label
@@ -2299,35 +2304,35 @@ $block: ".boss-form"
     display: inline-block
     font-size: 14px
     transition: all .4s
-    color: map-get($boss-app-palette, primary)
+    color: #1585cf
     text-decoration: none
 
     &:hover
       text-decoration: none
-      color: map-get($boss-app-palette, primary)
+      color: $boss-medium-gray
 
     // $Common form link MOD: role history
     &_role_history
       padding-left: 20px
 
-      &:after
+      &:before
         content: ''
         position: absolute
         left: 0
         top: 50%
         display: block
-        width: 12px
-        height: 12px
         margin-top: -6px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        font-family: icons
+        font-size: 12px
+        line-height: 1
+        color: inherit
+        font-weight: 400
         transition: all .4s
 
     // $Common form  MOD: role history
     &_role_history
-      &:after
-        background-image: url(../icons/icon-text-paper-primary.svg)
+      &:before
+        content: '\e927'
 
 
 
@@ -2341,18 +2346,17 @@ $block: ".boss-form"
     border-radius: $boss-global-border-radius
 
     &:before
-      content: ""
+      content: '\e911'
       position: absolute
       top: 50%
       left: 20px
       display: block
-      width: 18px
-      height: 18px
-      margin-top: -9px
-      background-image: url(../icons/danger-white.svg)
-      background-position: center center
-      background-repeat: no-repeat
-      background-size: contain
+      margin-top: -8px
+      font-family: icons
+      font-size: 16px
+      line-height: 1
+      font-weight: 400
+      color: #fff
 
     &_no-space,
     &_type_no-space

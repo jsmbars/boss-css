@@ -50,7 +50,7 @@ $block: ".boss-add-avatar"
       position: relative
 
       &:before
-        content: ''
+        content: '\e96a'
         position: absolute
         top: 0
         right: 0
@@ -58,14 +58,18 @@ $block: ".boss-add-avatar"
         left: 0
         z-index: 10
         display: block
+        font-family: icons
+        font-size: 120px
+        line-height: 240px
+        font-weight: 400
+        text-align: center
+        vertical-align: middle
+        color: map-get($boss-app-palette, alert)
         background-color: rgba(255, 255, 255, .6)
-        background-image: url('../icons/icon-close-alert.svg')
-        background-repeat: no-repeat
-        background-size: 120px 120px
-        background-position: center center
 
         @media screen and (max-width: 480px)
-          background-size: 100px 100px
+          font-size: 100px
+          line-height: 200px
 
 
   // $Add avatar preview action
@@ -76,15 +80,22 @@ $block: ".boss-add-avatar"
     width: 40px
     height: 40px
     background-color: map-get($boss-app-palette, primary)
-    background-repeat: no-repeat
-    background-position: center center
-    background-size: 18px 18px
     border: 2px solid #fff
     border-radius: 50%
     font-size: 0
     color: transparent
     opacity: 1
     transition: all .4s
+
+    &:before
+      content: ''
+      display: block
+      font-family: icons
+      font-size: 18px
+      line-height: 36px
+      text-align: center
+      vertical-align: middle
+      color: #fff
 
     &:hover
       opacity: 0.8
@@ -93,12 +104,13 @@ $block: ".boss-add-avatar"
     &_role_clear
       top: 15px
       right: 15px
-      background-image: url(../icons/icon-close-white.svg)
+
+      &:before
+        content: '\e96a'
 
       @media screen and (max-width: 480px)
         top: 10px
         right: 10px
-
 
 
   // $Add avatar preview image
