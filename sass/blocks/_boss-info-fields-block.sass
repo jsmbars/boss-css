@@ -17,6 +17,9 @@ $block: ".boss-info-fields-block"
 #{$block}
   +normalize-block()
 
+  &:not(:last-child)
+    margin-bottom: 10px
+
 
   // $Info fields block list item
   &__list-item
@@ -29,7 +32,8 @@ $block: ".boss-info-fields-block"
   // $Info fields block field name
   &__field-name
     display: inline-block
-    width: 120px
+    width: 150px
+    padding-right: 30px
     font-weight: 600
 
     // $Info fields block field name MOD: type

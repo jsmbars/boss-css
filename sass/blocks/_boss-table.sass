@@ -295,17 +295,24 @@ $block: ".boss-table"
     color: transparent
     outline: none
     background-color: $boss-light-gray
-    background-image: url(../icons/icon-arrow-down-white.svg)
-    background-repeat: no-repeat
-    background-position: center center
-    background-size: 9px 9px
     border-radius: 50%
-    transform: rotate(180deg)
-    transition: all .4s
     cursor: pointer
 
+    &:before
+      content: '\e91a'
+      display: block
+      font-family: icons
+      font-size: 15px
+      line-height: 18px
+      font-weight: 400
+      color: #fff
+      text-align: center
+      vertical-align: middle
+
     &_state_closed
-      transform: rotate(0)
+      &:before
+        content: '\e919'
+        line-height: 20px
 
     &:hover
       opacity: .8
@@ -608,11 +615,11 @@ $block: ".boss-table"
         left: 4px
         z-index: 1
         display: block
-        width: 18px
-        height: 18px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        font-family: icons
+        font-size: 18px
+        line-height: 18px
+        font-weight: 400
+        color: #fff
 
     &_state_frozen
       &:before
@@ -623,7 +630,7 @@ $block: ".boss-table"
         background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #a7d2ff 50%, #a7d2ff 100%)
 
       &:after
-        background-image: url("../icons/icon-snowflake-white.svg")
+        content: '\e946'
 
     &_state_edited
       &:before
@@ -634,7 +641,7 @@ $block: ".boss-table"
         background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #ffd4a7 50%, #ffd4a7 100%)
 
       &:after
-        background-image: url("../icons/icon-pencil-white.svg")
+        content: '\e96b'
 
     &_state_pre-calculated
       &:before
@@ -645,7 +652,7 @@ $block: ".boss-table"
         background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
 
       &:after
-        background-image: url("../icons/icon-calculator-white.svg")
+        content: '\e963'
 
 
     // $Common table row MOD: role faded
@@ -2838,11 +2845,11 @@ $block: ".boss-table"
         left: 4px
         z-index: 1
         display: block
-        width: 18px
-        height: 18px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        font-family: icons
+        font-size: 18px
+        line-height: 18px
+        font-weight: 400
+        color: #fff
 
     &_indicator_clock-warning
       &:before
@@ -2853,7 +2860,7 @@ $block: ".boss-table"
         background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #f4a84f 50%, #f4a84f 100%)
 
       &:after
-        background-image: url("../icons/icon-clock-white.svg")
+        content: '\e961'
 
     &_indicator_user-disabled
       position: relative
@@ -3261,70 +3268,52 @@ $block: ".boss-table"
       &:after
         content: ""
         display: inline-block
-        width: 14px
-        height: 14px
         margin-left: 5px
         margin-top: -8px
-        background-size: contain
-        background-position: center center
-        background-repeat: no-repeat
-        vertical-align: middle
+        font-family: icons
+        font-size: 14px
+        line-height: 14px
+        font-weight: 400
+        color: inherit
 
     &_indicator_accessory
       &:after
-        background-image: url('../icons/icon-tshirt-dark-gray.svg')
-
-        #{$block}__cell_state_alert &,
-        #{$block}__cell_state_success &
-          background-image: url('../icons/icon-tshirt-white.svg')
-
-    &_indicator_accessory#{&}_state_alert
-      &:after
-        background-image: url('../icons/icon-tshirt-white.svg')
+        content: '\e93a'
 
     &_indicator_clock
       &:after
-        background-image: url('../icons/icon-clock-dark-gray.svg')
-
-        #{$block}__cell_state_alert &,
-        #{$block}__cell_state_success &
-          background-image: url('../icons/icon-clock-white.svg')
-
-    &_indicator_clock#{&}_state_alert
-      &:after
-        background-image: url('../icons/icon-clock-white.svg')
+        content: '\e961'
 
     &_indicator_disabled
       &:after
-        background-image: url('../icons/icon-block-dark-gray.svg')
-
-        #{$block}__cell_state_alert &,
-        #{$block}__cell_state_success &
-          background-image: url('../icons/icon-block-white.svg')
-
-    &_indicator_disabled#{&}_state_alert
-      &:after
-        background-image: url('../icons/icon-block-white.svg')
+        content: '\e928'
 
     &_indicator_checkbox-checked
       &:after
+        content: '\e969'
         width: 18px
         height: 18px
         margin-top: -2px
+        font-size: 12px
+        line-height: 16px
+        color: #808080
         border: 1px solid #aaa
         border-radius: 4px
-        background-image: url('../icons/icon-checked-medium-gray.svg')
-        background-size: 14px 14px
 
         #{$block}__cell_state_alert &,
         #{$block}__cell_state_success &
           border-color: #fff
-          background-image: url('../icons/icon-checked-white.svg')
+          color: #fff
 
     &_indicator_checkbox-checked#{&}_state_alert
       &:after
-        border-color: #fff
-        background-image: url('../icons/icon-checked-white.svg')
+        border-color: map-get($boss-app-palette, alert)
+        color: map-get($boss-app-palette, alert)
+
+        #{$block}__cell_state_alert &,
+        #{$block}__cell_state_success &
+          border-color: #fff
+          color: #fff
 
     &_indicator_checkbox-unchecked
       &:after
@@ -3341,7 +3330,11 @@ $block: ".boss-table"
 
     &_indicator_checkbox-unchecked#{&}_state_alert
       &:after
-        border-color: #fff
+        border-color: map-get($boss-app-palette, alert)
+
+        #{$block}__cell_state_alert &,
+        #{$block}__cell_state_success &
+          border-color: #fff
 
     &_role_date,
     &_role_venue
@@ -3350,27 +3343,23 @@ $block: ".boss-table"
       &:before
         content: ""
         display: inline-block
-        width: 14px
-        height: 14px
         margin-right: 7px
-        margin-top: -3px
-        background-size: contain
-        vertical-align: middle
+        font-family: icons
+        font-size: 14px
+        line-height: 14px
+        font-weight: 400
+        color: inherit
 
     &_role_date
       &:before
-        background-image: url(../icons/icon-calendar-dark-gray.svg)
+        content: '\e900'
 
       &>span
         white-space: nowrap
 
-    &_role_date#{&}_type_faded
-      &:before
-        background-image: url(../icons/icon-calendar-medium-gray.svg)
-
     &_role_venue
       &:before
-        background-image: url(../icons/icon-storefront-dark-gray.svg)
+        content: '\e901'
 
     &_role_action
       cursor: pointer
@@ -3383,11 +3372,12 @@ $block: ".boss-table"
       &:before
         content: ""
         display: inline-block
-        width: 16px
-        height: 16px
         margin-right: 10px
-        background-size: contain
-        background-repeat: no-repeat
+        font-family: icons
+        font-size: 16px
+        line-height: 16px
+        font-weight: 400
+        color: inherit
         vertical-align: middle
 
       &:hover
@@ -3397,7 +3387,7 @@ $block: ".boss-table"
       color: map-get($boss-app-palette, alert)
 
       &:before
-        background-image: url(../icons/icon-danger-alert.svg)
+        content: '\e911'
 
       &:hover
         color: map-get($boss-app-palette, alert)
@@ -3406,7 +3396,7 @@ $block: ".boss-table"
       color: map-get($boss-app-palette, primary)
 
       &:before
-        background-image: url(../icons/icon-pencil-primary.svg)
+        content: '\e96b'
 
       &:hover
         color: map-get($boss-app-palette, primary)
@@ -3829,12 +3819,12 @@ $block: ".boss-table"
       &:before
         content: ""
         display: inline-block
-        width: 14px
-        height: 14px
-        margin-top: -2px
         margin-right: 5px
-        background-size: contain
-        background-repeat: no-repeat
+        font-family: icons
+        font-size: 14px
+        line-height: 14px
+        font-weight: 400
+        color: inherit
         vertical-align: middle
 
       &:hover
@@ -3844,7 +3834,7 @@ $block: ".boss-table"
       color: map-get($boss-app-palette, primary)
 
       &:before
-        background-image: url(../icons/icon-pencil-primary.svg)
+        content: '\e96b'
 
       &:hover
         color: map-get($boss-app-palette, primary)
@@ -3865,18 +3855,17 @@ $block: ".boss-table"
     outline: none
 
     &:before
-      content: ""
+      content: '\e92e'
       position: absolute
       right: 10px
       top: 50%
       display: block
-      width: 15px
-      height: 20px
-      margin-top: -11px
-      background-image: url(../icons/sort.svg)
-      background-repeat: no-repeat
-      background-size: contain
-      background-position: center center
+      margin-top: -10px
+      font-family: icons
+      font-size: 15px
+      line-height: 20px
+      font-weight: 400
+      color: #4c4c4c
       opacity: .2
       transition: opacity .4s
 

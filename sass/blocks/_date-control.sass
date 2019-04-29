@@ -107,6 +107,26 @@ $block: ".date-control"
     & .DateInput
       width: 100%
 
+  &_type_inline
+    & .DateInput
+      min-height: 25px
+      padding: 0 10px
+
+      @media screen and (max-width: 480px)
+        padding-right: 10px
+        padding-left: 10px
+
+    & .DateInput_input
+      padding: 0 10px
+
+      @media screen and (max-width: 480px)
+        padding-right: 10px
+        padding-left: 10px
+
+    & .SingleDatePickerInput_clearDate
+      padding: 5px 10px
+
+
 
   // $Date range picker MOD: type interval
   // $Date range picker MOD: type interval fluid
@@ -235,6 +255,21 @@ $block: ".date-control"
 
         @media screen and (max-width: 480px)
           left: 15px
+
+  &_type_icon#{&}_type_inline
+    & .DateInput
+      &:after
+        left: 10px
+
+        @media screen and (max-width: 480px)
+          left: 10px
+
+    & .DateInput,
+    & .DateInput_input
+      padding-left: 35px
+
+      @media screen and (max-width: 480px)
+        padding-left: 30px
 
   &_type_icon#{&}_type_interval-fluid
     & .DateInput

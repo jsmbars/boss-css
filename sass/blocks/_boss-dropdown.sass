@@ -57,23 +57,19 @@ $block: ".boss-dropdown"
 
     position: relative
     display: inline-block
-    padding-right: 13px
     cursor: pointer
+    white-space: nowrap
 
     &:after
-      content: ''
-      position: absolute
-      right: 0
-      top: 50%
-      display: block
-      width: 9px
-      height: 9px
-      margin-top: -4px
-      background-image: url(../icons/icon-down-arrow-dark-gray.svg)
-      background-repeat: no-repeat
-      background-position: 0 0
-      transform: rotate(0)
-      transition: all .4s
+      content: '\e918'
+      display: inline-block
+      margin-left: 5px
+      font-family: icons
+      font-size: 16px
+      line-height: 8px
+      font-weight: 400
+      color: #4c4c4c
+      vertical-align: middle
 
     &:hover,
     &:focus
@@ -82,45 +78,35 @@ $block: ".boss-dropdown"
     // $Dropdown button MOD: state opened
     &_state_opened
       &:after
-        transform: rotate(180deg)
+        content: '\e917'
 
     // $Dropdown button MOD: state closed
     &_state_closed
       &:after
-        transform: rotate(0)
+        content: '\e918'
 
     // $Dropdown button MOD: role filter
-    &_role_filter
-      padding-left: 22px
-
-      &:before
-        content: ''
-        position: absolute
-        left: 0
-        top: 50%
-        display: block
-        width: 15px
-        height: 15px
-        margin-top: -8px
-        background-image: url(../icons/filter-dark-gray.svg)
-        background-position: center center
-        background-size: contain
-
     // $Dropdown button MOD: role user review
+    &_role_filter,
     &_role_user-review
-      padding-left: 22px
 
       &:before
-        content: ""
-        position: absolute
-        left: 0
-        top: 50%
-        display: block
-        width: 15px
-        height: 15px
-        margin-top: -8px
-        background: url(../icons/icon-users-dark-gray.svg) no-repeat center center
-        background-size: contain
+        content: '\e923'
+        display: inline-block
+        margin-right: 8px
+        font-family: icons
+        font-size: 15px
+        line-height: 1
+        font-weight: 400
+        color: #4c4c4c
+
+    &_role_filter
+      &:before
+        content: '\e923'
+
+    &_role_user-review
+      &:before
+        content: '\e96e'
 
 
   // $Dropdown content
