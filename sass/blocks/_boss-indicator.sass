@@ -17,6 +17,7 @@ $block: ".boss-indicator"
 #{$block}
   flex-grow: 0
   flex-shrink: 0
+  position: relative
   display: inline-block
   white-space: nowrap
 
@@ -28,6 +29,15 @@ $block: ".boss-indicator"
   &_position_after
     margin-left: 20px
 
+  &_adjust_flow
+    margin-bottom: 10px
+
+    &:not(:last-child)
+      margin-right: 15px
+
+  &_adjust_tooltip
+    cursor: pointer
+
   // $Indicator MOD: role action
   &_role_action
     cursor: pointer
@@ -35,6 +45,146 @@ $block: ".boss-indicator"
 
     &:hover
       opacity: 0.8
+
+
+  &__counter
+    +text-normalizer()
+    position: absolute
+    top: 0
+    right: 0
+    display: block
+    min-width: 14px
+    min-height: 14px
+    padding: 0 2px
+    font-size: 10px
+    line-height: 14px
+    color: #fff
+    text-align: center
+    background-color: #ec3100
+    border-radius: 50%
+    transform: translate(50%,-50%)
+
+
+  &__tooltip
+    +text-normalizer()
+    position: absolute
+    top: 100%
+    z-index: 10
+    display: none
+    top: calc(100% + 5px)
+    left: 50%
+    width: 150px
+    margin-left: -75px
+    padding: 8px 10px
+    font-size: 12px
+    line-height: 1.2
+    text-align: center
+    white-space: normal
+    border: 1px solid $boss-very-light-gray
+    border-radius: 3px
+    background-color: $boss-extra-light-gray
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,.2)
+
+    #{$block}:hover &
+      display: block
+
+    &:before
+      content: ""
+      position: absolute
+      z-index: 11
+      top: auto
+      bottom: 100%
+      right: 50%
+      margin-right: -6px
+      border-bottom: 6px solid $boss-very-light-gray
+      border-right: 6px solid transparent
+      border-left: 6px solid transparent
+
+    &:after
+      content: ""
+      position: absolute
+      z-index: 12
+      top: auto
+      bottom: 100%
+      right: 50%
+      margin-right: -5px
+      border-bottom: 5px solid $boss-extra-light-gray
+      border-right: 5px solid transparent
+      border-left: 5px solid transparent
+
+
+  // $Indicator tooltip text line
+  &__tooltip-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 2px
+
+  &__tooltip-marked
+    font-weight: 600
+
+
+  // $Indicator icon
+  &__icon
+    display: inline-block
+    color: #4c4c4c
+
+    &:before
+      content: ''
+      display: inline-block
+      font-family: icons
+      font-size: 20px
+      line-height: 20px
+      font-weight: 400
+      color: inherit
+
+    &_apron
+      &:before
+        content: '\e96f'
+
+    &_bar-blade
+      &:before
+        content: '\e970'
+        font-size: 22px
+
+    &_chef-hat
+      &:before
+        content: '\e971'
+
+    &_coat
+      &:before
+        content: '\e972'
+        font-size: 18px
+
+    &_discount-card
+      &:before
+        content: '\e973'
+        font-size: 24px
+
+    &_fob
+      &:before
+        content: '\e974'
+
+    &_hoodie
+      &:before
+        content: '\e975'
+
+    &_pants
+      &:before
+        content: '\e976'
+
+    &_shirt
+      &:before
+        content: '\e977'
+
+    &_t-shirt
+      &:before
+        content: '\e978'
+
+    &_void-card
+      &:before
+        content: '\e979'
+        font-size: 24px
 
 
   // $Indicator marker

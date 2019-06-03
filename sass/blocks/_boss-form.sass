@@ -1119,6 +1119,20 @@ $block: ".boss-form"
     vertical-align: top
 
 
+  &__area
+    display: block
+    width: 100%
+
+    &_size_nano
+      min-width: 75px
+
+    &_size_micro
+      min-width: 100px
+
+    &_size_min
+      min-width: 125px
+
+
   // $Common form value
   &__value
     +text-normalizer()
@@ -1535,13 +1549,81 @@ $block: ".boss-form"
   &__select
     text-align: left
 
+    & .Select-icon-indicator
+      display: inline-block
+      margin-right: 5px
+      vertical-align: middle
+
+      &:before
+        content: ''
+        display: inline-block
+        min-width: 24px
+        font-family: icons
+        font-size: 20px
+        line-height: 20px
+        font-weight: 400
+        color: #4c4c4c
+
+      &_apron
+        &:before
+          content: '\e96f'
+
+      &_bar-blade
+        &:before
+          content: '\e970'
+          font-size: 22px
+
+      &_chef-hat
+        &:before
+          content: '\e971'
+
+      &_coat
+        &:before
+          content: '\e972'
+          font-size: 18px
+
+      &_discount-card
+        &:before
+          content: '\e973'
+          font-size: 24px
+
+      &_fob
+        &:before
+          content: '\e974'
+
+      &_hoodie
+        &:before
+          content: '\e975'
+
+      &_pants
+        &:before
+          content: '\e976'
+
+      &_shirt
+        &:before
+          content: '\e977'
+
+      &_t-shirt
+        &:before
+          content: '\e978'
+
+      &_void-card
+        &:before
+          content: '\e979'
+          font-size: 24px
+
     & .Select-color-indicator
       display: inline-block
       margin-right: 5px
-      width: 10px
-      height: 10px
+      margin-top: -2px
+      width: 14px
+      height: 14px
       background-color: #d8d8d8
       border-radius: 50%
+      vertical-align: middle
+
+      &_type_square
+        border-radius: 2px
 
       &_priority_high
         background-color: map-get($boss-app-palette, alert)
