@@ -263,19 +263,33 @@ $block: ".boss-indicator"
       background-color: map-get($boss-app-palette, pending)
 
     // $Indicator marker MOD: icon check
-    &_icon_check
-      background-size: 16px 16px
-      background-image: url('../icons/icon-checked-white.svg')
-
     // $Indicator marker MOD: icon hour glass
-    &_icon_hour-glass
-      background-size: 18px 18px
-      background-image: url('../icons/icon-hour-glass-white.svg')
-
     // $Indicator marker MOD: icon reload
+    &_icon_check,
+    &_icon_hour-glass,
     &_icon_reload
-      background-size: 18px 18px
-      background-image: url('../icons/icon-reload-white.svg')
+      &:before
+        content: ''
+        display: block
+        text-align: center
+        font-family: icons
+        font-size: 18px
+        line-height: 30px
+        font-weight: 400
+        color: #fff
+
+    &_icon_check
+      &:before
+        content: '\e969'
+        font-size: 16px
+
+    &_icon_hour-glass
+      &:before
+        content: '\e922'
+
+    &_icon_reload
+      &:before
+        content: '\e950'
 
 
   // $Indicator MOD: marker label

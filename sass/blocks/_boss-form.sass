@@ -733,16 +733,17 @@ $block: ".boss-form"
       padding-left: 25px
 
     &:before
-      content: ''
+      content: '\e961'
       position: absolute
       bottom: 20px
       left: 0
       z-index: 10
       display: none
-      width: 15px
-      height: 15px
-      background: url(../icons/icon-clock-medium-gray.svg) no-repeat 0 0
-      background-size: contain
+      font-family: icons
+      font-size: 15px
+      line-height: 15px
+      font-weight: 400
+      color: #808080
 
       @media screen and (max-width: 640px)
         display: block
@@ -1498,8 +1499,11 @@ $block: ".boss-form"
       left: 12px
       z-index: 10
       display: none
-      width: 15px
-      height: 15px
+      font-family: icons
+      font-size: 15px
+      line-height: 15px
+      font-weight: 400
+      color: #808080
       background-size: contain
       transform: translateY(-50%)
 
@@ -1533,22 +1537,13 @@ $block: ".boss-form"
 
     &_role_time
       &:before
+        content: '\e961'
         display: block
-        background: url(../icons/icon-clock-medium-gray.svg) no-repeat 0 0
 
         @media screen and (max-width: 640px)
           display: none
 
     &_role_indicator
-
-    &_icon_time
-      &:before
-        left: auto
-        right: 20px
-        display: block
-        width: 16px
-        height: 16px
-        background: url(../icons/icon-clock-medium-gray.svg) no-repeat 0 0
 
 
   // React-select adjusments
@@ -1817,10 +1812,6 @@ $block: ".boss-form"
         width: 100%
         height: 100%
         background-color: rgba(20,20,20,.2)
-
-    &_icon_time
-      & .Select-arrow
-        display: none
 
     &_role_time
       & .Select-placeholder,
