@@ -217,6 +217,13 @@ $block: ".boss-requests"
     vertical-align: middle
 
 
+  // $Requests title indicator
+  &__title-indicator
+    display: inline-block
+    margin-right: 5px
+    vertical-align: middle
+
+
   // $Requests title name
   &__title-name
     margin-right: 5px
@@ -263,19 +270,19 @@ $block: ".boss-requests"
         left: 0
         top: 50%
         display: block
-        width: 12px
-        height: 12px
         margin-top: -6px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        font-family: icons
+        font-size: 12px
+        line-height: 12px
+        font-weight: 400
+        color: inherit
         transition: all .4s
 
     &_role_cancel
       color: map-get($boss-app-palette, alert)
 
       &:after
-        background-image: url(../icons/icon-close-alert.svg)
+        content: '\e96a'
 
       &:hover,
       &:focus
@@ -286,7 +293,7 @@ $block: ".boss-requests"
       color: map-get($boss-app-palette, primary)
 
       &:after
-        background-image: url(../icons/icon-pencil-primary.svg)
+        content: '\e96b'
 
       &:hover,
       &:focus
@@ -318,12 +325,12 @@ $block: ".boss-requests"
       left: 0
       top: 50%
       display: block
-      width: 12px
-      height: 12px
       margin-top: -6px
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
+      font-family: icons
+      font-size: 12px
+      line-height: 12px
+      font-weight: 400
+      color: inherit
       transition: all .4s
 
     &:hover,
@@ -338,7 +345,7 @@ $block: ".boss-requests"
       color: map-get($boss-app-palette, primary)
 
       &:after
-        background-image: url(../icons/icon-text-paper-primary.svg)
+        content: '\e927'
 
       &:hover,
       &:focus
@@ -349,7 +356,7 @@ $block: ".boss-requests"
       color: map-get($boss-app-palette, alert)
 
       &:after
-        background-image: url(../icons/icon-close-alert.svg)
+        content: '\e96a'
 
       &:hover,
       &:focus
@@ -421,15 +428,17 @@ $block: ".boss-requests"
       &:after
         content: ""
         display: inline-block
-        width: 12px
-        height: 12px
         margin-left: 5px
-        background-size: contain
+        font-family: icons
+        font-size: 12px
+        line-height: 12px
+        font-weight: 400
+        color: inherit
         vertical-align: baseline
 
     &_indicator_frozen
       &:after
-        background-image: url('../icons/icon-snowflake-dark-gray.svg')
+        content: '\e946'
 
 
   // $Requests details text-marked

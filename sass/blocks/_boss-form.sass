@@ -733,16 +733,17 @@ $block: ".boss-form"
       padding-left: 25px
 
     &:before
-      content: ''
+      content: '\e961'
       position: absolute
       bottom: 20px
       left: 0
       z-index: 10
       display: none
-      width: 15px
-      height: 15px
-      background: url(../icons/icon-clock-medium-gray.svg) no-repeat 0 0
-      background-size: contain
+      font-family: icons
+      font-size: 15px
+      line-height: 15px
+      font-weight: 400
+      color: #808080
 
       @media screen and (max-width: 640px)
         display: block
@@ -1119,6 +1120,20 @@ $block: ".boss-form"
     vertical-align: top
 
 
+  &__area
+    display: block
+    width: 100%
+
+    &_size_nano
+      min-width: 75px
+
+    &_size_micro
+      min-width: 100px
+
+    &_size_min
+      min-width: 125px
+
+
   // $Common form value
   &__value
     +text-normalizer()
@@ -1222,6 +1237,9 @@ $block: ".boss-form"
     padding: 0 20px
     border-radius: 2px
     box-shadow: none
+    appearance: none
+    -moz-appearance: none
+    -webkit-appearance: none
 
     #{$block}__search &
       border: none
@@ -1350,6 +1368,9 @@ $block: ".boss-form"
     border: 1px solid $boss-very-light-gray
     padding: 15px 20px
     box-shadow: none
+    appearance: none
+    -moz-appearance: none
+    -webkit-appearance: none
 
     &:focus
       outline: none
@@ -1478,8 +1499,11 @@ $block: ".boss-form"
       left: 12px
       z-index: 10
       display: none
-      width: 15px
-      height: 15px
+      font-family: icons
+      font-size: 15px
+      line-height: 15px
+      font-weight: 400
+      color: #808080
       background-size: contain
       transform: translateY(-50%)
 
@@ -1513,35 +1537,94 @@ $block: ".boss-form"
 
     &_role_time
       &:before
+        content: '\e961'
         display: block
-        background: url(../icons/icon-clock-medium-gray.svg) no-repeat 0 0
 
         @media screen and (max-width: 640px)
           display: none
 
     &_role_indicator
 
-    &_icon_time
-      &:before
-        left: auto
-        right: 20px
-        display: block
-        width: 16px
-        height: 16px
-        background: url(../icons/icon-clock-medium-gray.svg) no-repeat 0 0
-
 
   // React-select adjusments
   &__select
     text-align: left
 
+    & .Select-icon-indicator
+      display: inline-block
+      margin-right: 5px
+      vertical-align: middle
+
+      &:before
+        content: ''
+        display: inline-block
+        min-width: 24px
+        font-family: icons
+        font-size: 20px
+        line-height: 20px
+        font-weight: 400
+        color: inherit
+
+      &_apron
+        &:before
+          content: '\e96f'
+
+      &_bar-blade
+        &:before
+          content: '\e970'
+          font-size: 22px
+
+      &_chef-hat
+        &:before
+          content: '\e971'
+
+      &_coat
+        &:before
+          content: '\e972'
+          font-size: 18px
+
+      &_discount-card
+        &:before
+          content: '\e973'
+          font-size: 24px
+
+      &_fob
+        &:before
+          content: '\e974'
+
+      &_hoodie
+        &:before
+          content: '\e975'
+
+      &_pants
+        &:before
+          content: '\e976'
+
+      &_shirt
+        &:before
+          content: '\e977'
+
+      &_t-shirt
+        &:before
+          content: '\e978'
+
+      &_void-card
+        &:before
+          content: '\e979'
+          font-size: 24px
+
     & .Select-color-indicator
       display: inline-block
       margin-right: 5px
-      width: 10px
-      height: 10px
+      margin-top: -2px
+      width: 14px
+      height: 14px
       background-color: #d8d8d8
       border-radius: 50%
+      vertical-align: middle
+
+      &_type_square
+        border-radius: 2px
 
       &_priority_high
         background-color: map-get($boss-app-palette, alert)
@@ -1729,10 +1812,6 @@ $block: ".boss-form"
         width: 100%
         height: 100%
         background-color: rgba(20,20,20,.2)
-
-    &_icon_time
-      & .Select-arrow
-        display: none
 
     &_role_time
       & .Select-placeholder,
