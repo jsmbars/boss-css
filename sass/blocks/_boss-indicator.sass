@@ -33,7 +33,7 @@ $block: ".boss-indicator"
     margin-bottom: 10px
 
     &:not(:last-child)
-      margin-right: 15px
+      margin-right: 10px
 
   &_adjust_tooltip
     cursor: pointer
@@ -138,6 +138,11 @@ $block: ".boss-indicator"
       font-weight: 400
       color: inherit
 
+    &_size_s
+      &:before
+        font-size: 18px
+        line-height: 18px
+
     &_apron
       &:before
         content: '\e96f'
@@ -146,6 +151,10 @@ $block: ".boss-indicator"
       &:before
         content: '\e970'
         font-size: 22px
+
+    &_bar-blade#{&}_size_s
+      &:before
+        font-size: 20px
 
     &_chef-hat
       &:before
@@ -156,10 +165,18 @@ $block: ".boss-indicator"
         content: '\e972'
         font-size: 18px
 
+    &_coat#{&}_size_s
+      &:before
+        font-size: 16px
+
     &_discount-card
       &:before
         content: '\e973'
         font-size: 24px
+
+    &_discount-card#{&}_size_s
+      &:before
+        font-size: 22px
 
     &_fob
       &:before
@@ -185,6 +202,10 @@ $block: ".boss-indicator"
       &:before
         content: '\e979'
         font-size: 24px
+
+    &_void-card#{&}_size_s
+      &:before
+        font-size: 22px
 
 
   // $Indicator marker

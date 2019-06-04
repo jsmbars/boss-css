@@ -738,6 +738,7 @@ $block: ".boss-table"
     #{$block}_page_payroll-reports &
       padding: 15px 5px
 
+    #{$block}_page_staff-members-index &,
     #{$block}_page_message-board &,
     #{$block}_page_maintenance-index &,
     #{$block}_page_maintenance-managers-index &,
@@ -797,6 +798,7 @@ $block: ".boss-table"
         padding-left: 0
         padding-right: 0
 
+      #{$block}_page_staff-members-index &,
       #{$block}_page_smp-holidays &,
       #{$block}_page_smp-holiday-requests &,
       #{$block}_page_message-board &,
@@ -865,7 +867,10 @@ $block: ".boss-table"
       #{$block}_page_staff-members-index &
         flex-grow: 0
         flex-shrink: 0
-        width: 130px
+        width: 120px
+
+        &:nth-last-child(7)
+          width: 130px
 
       #{$block}_page_fruit-order-history &
         width: 18%
@@ -1089,6 +1094,14 @@ $block: ".boss-table"
           width: 100%
           padding-left: 10px
 
+        #{$block}_page_staff-members-index &
+          flex-grow: 1
+          flex-shrink: 1
+          padding-bottom: 25px
+
+          &:nth-last-child(7)
+            width: 100%
+
         #{$block}_page_smp-owed-hours &
           padding-left: 0
 
@@ -1121,13 +1134,6 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &
           padding-left: 10px
-
-        #{$block}_page_staff-members-index &
-          padding-bottom: 25px
-
-        #{$block}_page_staff-members-index &
-          flex-grow: 1
-          flex-shrink: 1
 
         #{$block}_page_maintenance-index &,
         #{$block}_page_maintenance-managers-index &
@@ -1215,7 +1221,10 @@ $block: ".boss-table"
     &:nth-child(2)
 
       #{$block}_page_staff-members-index &
-        width: 16%
+        width: 14%
+
+        &:nth-last-child(6)
+          width: 16%
 
       #{$block}_page_fruit-order-history &
         width: 29%
@@ -1400,6 +1409,10 @@ $block: ".boss-table"
         #{$block}_page_id-scanner-keys &
           width: 100%
 
+        #{$block}_page_staff-members-index &
+          &:nth-last-child(6)
+            width: 100%
+
         #{$block}_page_smp-owed-hours &
           &:nth-last-child(7)
             width: 100%
@@ -1489,7 +1502,10 @@ $block: ".boss-table"
     &:nth-child(3)
 
       #{$block}_page_staff-members-index &
-        width: 18%
+        width: 14%
+
+        &:nth-last-child(5)
+          width: 18%
 
       #{$block}_page_fruit-order-history &
         width: 24%
@@ -1663,6 +1679,10 @@ $block: ".boss-table"
         #{$block}_page_id-scanner-keys &
           width: 100%
 
+        #{$block}_page_staff-members-index &
+          &:nth-last-child(5)
+            width: 100%
+
         #{$block}_page_smp-owed-hours &
           &:nth-last-child(6)
             width: 100%
@@ -1738,7 +1758,10 @@ $block: ".boss-table"
     &:nth-child(4)
 
       #{$block}_page_staff-members-index &
-        width: 14%
+        width: 11%
+
+        &:nth-last-child(4)
+          width: 14%
 
       #{$block}_page_fruit-order-history &
         width: 29%
@@ -1918,6 +1941,10 @@ $block: ".boss-table"
         #{$block}_page_id-scanner-keys &
           width: 100%
 
+        #{$block}_page_staff-members-index &
+          &:nth-last-child(4)
+            width: 100%
+
         #{$block}_page_smp-owed-hours &
           &:nth-last-child(5)
             width: 100%
@@ -1963,7 +1990,10 @@ $block: ".boss-table"
     &:nth-child(5)
 
       #{$block}_page_staff-members-index &
-        width: 14%
+        width: 12%
+
+        &:nth-last-child(3)
+          width: 14%
 
       #{$block}_page_holidays-report &
         flex-grow: 0
@@ -2132,6 +2162,10 @@ $block: ".boss-table"
           flex-grow: 1
           flex-shrink: 1
 
+        #{$block}_page_staff-members-index &
+          &:nth-last-child(3)
+            width: 100%
+
         #{$block}_page_smp-holidays &
           &:nth-last-child(1)
             width: 100%
@@ -2165,7 +2199,10 @@ $block: ".boss-table"
     &:nth-child(6)
 
       #{$block}_page_staff-members-index &
-        width: 12%
+        width: 11%
+
+        &:nth-last-child(2)
+          width: 12%
 
       #{$block}_page_change-order-report &
         width: 11%
@@ -2281,6 +2318,10 @@ $block: ".boss-table"
         #{$block}_page_smp-holidays &
           flex-grow: 1
           flex-shrink: 1
+
+        #{$block}_page_staff-members-index &
+          &:nth-last-child(2)
+            width: 100%
 
         #{$block}_page_smp-holiday-requests &
           &:nth-last-child(1)
@@ -2404,6 +2445,10 @@ $block: ".boss-table"
         #{$block}_page_smp-holiday-requests &
           padding-right: 15px
 
+        #{$block}_page_staff-members-index &
+          &:nth-last-child(1)
+            width: 100%
+
         #{$block}_page_smp-owed-hours &
           &:nth-last-child(2)
             width: 100%
@@ -2413,6 +2458,9 @@ $block: ".boss-table"
 
     // $Common table cell eighth column
     &:nth-child(8)
+
+      #{$block}_page_staff-members-index &
+        width: 12%
 
       #{$block}_page_change-order-report &
         width: 11%
@@ -2477,6 +2525,7 @@ $block: ".boss-table"
 
       @media screen and (max-width: 960px)
 
+        #{$block}_page_staff-members-index &,
         #{$block}_page_change-order-report &
           width: 100%
 
@@ -2682,7 +2731,7 @@ $block: ".boss-table"
     // $Common table cell MOD: role header
     &_role_header
       min-height: 60px
-      font-size: 16px
+      font-size: 14px
       text-transform: uppercase
 
       #{$block}_page_finance-reports &,
