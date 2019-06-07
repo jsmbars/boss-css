@@ -1,0 +1,475 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Common tag
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+=tag-common($background-color: #4c4c4c, $color: #fff )
+  background-color: $background-color
+  color: $color
+
+
+=tag-bordered($color: #4c4c4c, $border-color: #aaa, $border-width: 2px, $border-radius: 4px, $bg-color: #fff)
+  border: $border-width solid $border-color
+  border-radius: $border-radius
+  background-color: $bg-color
+  color: $color
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-tag"
+
+#{$block}
+  +tag-common()
+
+  position: relative
+  display: inline-flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+  border-radius: 6px
+  text-decoration: none
+  vertical-align: middle
+  text-align: left
+  outline: none
+  border: none
+  overflow: hidden
+
+  &:not(:only-child)
+    margin-bottom: 10px
+    margin-right: 10px
+
+  &_space_extra:not(:only-child)
+    margin-bottom: 20px
+    margin-right: 20px
+
+  &:last-child
+    margin-right: 0
+
+  &_type_sortable
+    cursor: move
+
+  // $Common tag MOD: size extra large
+  &_size_xxl
+    min-height: 55px
+
+    &:not(:only-child)
+      margin-bottom: 22px
+      margin-right: 22px
+
+  // $Common tag MOD: size extra large
+  &_size_xl
+    min-height: 50px
+
+    &:not(:only-child)
+      margin-bottom: 20px
+      margin-right: 20px
+
+  // $Common tag MOD: size large
+  &_size_l
+    min-height: 45px
+
+    &:not(:only-child)
+      margin-bottom: 18px
+      margin-right: 18px
+
+  // $Common tag MOD: size medium
+  &_size_m
+    min-height: 40px
+
+    &:not(:only-child)
+      margin-bottom: 16px
+      margin-right: 16px
+
+  // $Common tag MOD: size small
+  &_size_s
+    min-height: 35px
+
+    &:not(:only-child)
+      margin-bottom: 14px
+      margin-right: 14px
+
+  // $Common tag MOD: size extra small
+  &_size_xs
+    min-height: 30px
+
+    &:not(:only-child)
+      margin-bottom: 12px
+      margin-right: 12px
+
+  // $Common tag MOD: size 2 extra small
+  &_size_xxs
+    min-height: 25px
+
+    &:not(:only-child)
+      margin-bottom: 10px
+      margin-right: 10px
+
+  // $Common tag MOD: state visible
+  &_state_visible
+    display: inline-block
+
+  // $Common tag MOD: state hidden
+  &_state_hidden
+    display: none
+
+  // $Common tag MOD: role key
+  &_role_key
+    padding-left: 0 !important
+    padding-right: 10px !important
+    font-weight: 600
+    color: #4c4c4c
+    background-color: transparent !important
+
+  // $Common tag MOD: role action
+  &_role_action
+    cursor: pointer
+    transition: all .3s
+
+    &:hover
+      box-shadow: inset 0 0 200px -50px rgba(0,0,0,.1)
+
+
+  // $Common tag text
+  &__text
+    +text-normalizer()
+    flex-grow: 1
+    flex-shrink: 1
+    display: inline-block
+    padding: 10px 25px
+    font-size: 14px
+    line-height: 1
+    font-weight: 400
+    color: inherit
+    vertical-align: middle
+    white-space: normal
+
+    #{$block}_size_xxl &
+      padding: 10px 40px
+      font-size: 20px
+
+    #{$block}_size_xl &
+      padding: 10px 35px
+      font-size: 18px
+
+    #{$block}_size_l &
+      padding: 10px 30px
+      font-size: 16px
+
+    #{$block}_size_m &
+      padding: 10px 25px
+      font-size: 14px
+
+    #{$block}_size_s &
+      padding: 5px 20px
+      font-size: 14px
+
+    #{$block}_size_xs &
+      padding: 5px 15px
+      font-size: 14px
+
+    #{$block}_size_xxs &
+      padding: 5px 10px
+      font-size: 14px
+
+
+  // $Common tag text icon
+  &__text-icon
+    display: inline-block
+    font-size: inherit
+    line-height: inherit
+    color: inherit
+
+    &:before
+      content: ''
+      display: inline-block
+      font-family: icons
+      font-size: inherit
+      line-height: inherit
+      font-weight: 400
+      color: inherit
+
+    // $Common tag text icon MOD: default accessory
+    &_accessory
+      &:before
+        content: '\e93a'
+
+    // $Common tag text icon MOD: apron
+    &_apron
+      &:before
+        content: '\e96f'
+
+    // $Common tag text icon MOD: bar blade
+    &_bar-blade
+      &:before
+        content: '\e970'
+
+        #{$block}_size_xxl &
+          font-size: 22px
+
+        #{$block}_size_xl &
+          font-size: 20px
+
+        #{$block}_size_l &
+          font-size: 18px
+
+        #{$block}_size_m &,
+        #{$block}_size_s &,
+        #{$block}_size_xs &,
+        #{$block}_size_xxs &
+          font-size: 16px
+
+    // $Common tag text icon MOD: chef hat
+    &_chef-hat
+      &:before
+        content: '\e971'
+
+    // $Common tag text icon MOD: coat
+    &_coat
+      &:before
+        content: '\e972'
+
+    // $Common tag text icon MOD: discount card
+    &_discount-card
+      &:before
+        content: '\e973'
+
+        #{$block}_size_xxl &
+          font-size: 22px
+
+        #{$block}_size_xl &
+          font-size: 20px
+
+        #{$block}_size_l &
+          font-size: 18px
+
+        #{$block}_size_m &,
+        #{$block}_size_s &,
+        #{$block}_size_xs &,
+        #{$block}_size_xxs &
+          font-size: 16px
+
+    // $Common tag text icon MOD: fob
+    &_fob
+      &:before
+        content: '\e974'
+
+    // $Common tag text icon MOD: hoodie
+    &_hoodie
+      &:before
+        content: '\e975'
+
+    // $Common tag text icon MOD: pants
+    &_pants
+      &:before
+        content: '\e976'
+
+    // $Common tag text icon MOD: shirt
+    &_shirt
+      &:before
+        content: '\e977'
+
+    // $Common tag text icon MOD: t-shirt
+    &_t-shirt
+      &:before
+        content: '\e978'
+
+    // $Common tag text icon MOD: void card
+    &_void-card
+      &:before
+        content: '\e979'
+
+        #{$block}_size_xxl &
+          font-size: 22px
+
+        #{$block}_size_xl &
+          font-size: 20px
+
+        #{$block}_size_l &
+          font-size: 18px
+
+        #{$block}_size_m &,
+        #{$block}_size_s &,
+        #{$block}_size_xs &,
+        #{$block}_size_xxs &
+          font-size: 16px
+
+    // $Common tag text icon MOD: position before
+    &_position_before
+      margin-right: 8px
+
+      #{$block}_size_xxl &,
+      #{$block}_size_xl &
+        margin-right: 10px
+
+      #{$block}_size_l &,
+      #{$block}_size_m &,
+      #{$block}_size_s &
+        margin-right: 8px
+
+      #{$block}_size_xs &,
+      #{$block}_size_xxs &
+        margin-right: 6px
+
+    // $Common tag text icon MOD: position after
+    &_position_after
+      margin-left: 10px
+
+      #{$block}_size_xxl &,
+      #{$block}_size_xl &
+        margin-left: 10px
+
+      #{$block}_size_l &,
+      #{$block}_size_m &,
+      #{$block}_size_s &
+        margin-left: 8px
+
+      #{$block}_size_xs &,
+      #{$block}_size_xxs &
+        margin-left: 6px
+
+
+  // $Common tag service area
+  &__service
+    align-self: stretch
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    min-width: 40px
+    padding-right: 10px
+    padding-left: 10px
+    font-size: 18px
+    line-height: 1
+    color: #fff
+    text-align: center
+    background-color: rgba(0, 0, 0, .3)
+
+    #{$block}_size_xxl &
+      min-width: 55px
+      min-height: 55px
+      font-size: 24px
+
+    #{$block}_size_xl &
+      min-width: 50px
+      min-height: 50px
+      font-size: 22px
+
+    #{$block}_size_l &
+      min-width: 45px
+      min-height: 45px
+      font-size: 20px
+
+    #{$block}_size_m &
+      min-width: 40px
+      min-height: 40px
+      font-size: 18px
+
+    #{$block}_size_s &
+      min-width: 35px
+      min-height: 35px
+      font-size: 16px
+
+    #{$block}_size_xs &
+      min-width: 30px
+      min-height: 30px
+      font-size: 16px
+
+    #{$block}_size_xxs &
+      min-width: 25px
+      min-height: 25px
+      font-size: 16px
+
+    &_role_action
+      cursor: pointer
+      transition: all .3s
+
+      &:hover
+        background-color: rgba(0, 0, 0, .6)
+
+    &_icon_close
+
+      &:before
+        content: "\e909"
+        font-family: icons
+        font-size: 24px
+        line-height: 1
+
+        #{$block}_size_xxl &
+          font-size: 30px
+
+        #{$block}_size_xl &
+          font-size: 28px
+
+        #{$block}_size_l &
+          font-size: 26px
+
+        #{$block}_size_m &
+          font-size: 24px
+
+        #{$block}_size_s &
+          font-size: 22px
+
+        #{$block}_size_xs &
+          font-size: 20px
+
+        #{$block}_size_xxs &
+          font-size: 18px
+
+  // Color modifiers
+  &_color_accent-red
+    +tag-common($background-color: map-get($boss-accent-palette, red), $color: #fff)
+
+  &_color_accent-orange
+    +tag-common($background-color: map-get($boss-accent-palette, orange), $color: #fff)
+
+  &_color_accent-yellow
+    +tag-common($background-color: map-get($boss-accent-palette, yellow), $color: #fff)
+
+  &_color_accent-green
+    +tag-common($background-color: map-get($boss-accent-palette, green), $color: #fff)
+
+  &_color_accent-blue
+    +tag-common($background-color: map-get($boss-accent-palette, blue), $color: #fff)
+
+  &_color_accent-purple
+    +tag-common($background-color: map-get($boss-accent-palette, purple), $color: #fff)
+
+  &_color_accent-pink
+    +tag-common($background-color: map-get($boss-accent-palette, pink), $color: #fff)
+
+  &_color_gray
+    +tag-common($background-color: #aaa, $color: #fff)
+
+  // Border modifiers
+  &_border_accent-red
+    +tag-bordered($color: map-get($boss-accent-palette, red), $bg-color: transparent, $border-color: map-get($boss-accent-palette, red))
+
+  &_border_accent-orange
+    +tag-bordered($color: map-get($boss-accent-palette, orange), $bg-color: transparent, $border-color: map-get($boss-accent-palette, orange))
+
+  &_border_accent-yellow
+    +tag-bordered($color: map-get($boss-accent-palette, yellow), $bg-color: transparent, $border-color: map-get($boss-accent-palette, yellow))
+
+  &_border_accent-green
+    +tag-bordered($color: map-get($boss-accent-palette, green), $bg-color: transparent, $border-color: map-get($boss-accent-palette, green))
+
+  &_border_accent-blue
+    +tag-bordered($color: map-get($boss-accent-palette, blue), $bg-color: transparent, $border-color: map-get($boss-accent-palette, blue))
+
+  &_border_accent-purple
+    +tag-bordered($color: map-get($boss-accent-palette, purple), $bg-color: transparent, $border-color: map-get($boss-accent-palette, purple))
+
+  &_border_accent-pink
+    +tag-bordered($color: map-get($boss-accent-palette, pink), $bg-color: transparent, $border-color: map-get($boss-accent-palette, pink))
+
+  &_border_gray
+    +tag-bordered($color: #4c4c4c, $bg-color: transparent, $border-color: #aaa)
