@@ -2144,7 +2144,6 @@ $block: ".boss-form"
   &__checkbox-label
     +text-normalizer()
     display: block
-    cursor: pointer
 
     &_context_field
       margin: 15px 0
@@ -2163,6 +2162,9 @@ $block: ".boss-form"
     display: inline-block
     min-height: 20px
     padding-left: 30px
+
+    #{$block}__checkbox-input ~ &
+      cursor: pointer
 
     @media screen and (max-width: 640px)
       min-height: 15px
@@ -2231,6 +2233,9 @@ $block: ".boss-form"
       &:after
         visibility: visible
         color: #808080
+
+    &_type_inactive
+      cursor: default
 
     &_layout_reverse
       padding-left: 0
