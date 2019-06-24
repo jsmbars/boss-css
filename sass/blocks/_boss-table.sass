@@ -386,21 +386,19 @@ $block: ".boss-table"
         display: block
         border-bottom: 1px solid #eee
 
-      #{$block}_page_fruit-order-history &
-        padding-top: 20px
-        padding-bottom: 20px
-
       #{$block}_page_staff-members-index &
         padding-top: 40px
         padding-bottom: 40px
 
+      #{$block}_page_fruit-order-history &,
+      #{$block}_page_change-order-report &,
+      #{$block}_page_bonai
+        padding-bottom: 20px
+        padding-top: 20px
+
       #{$block}_page_holidays-report &
         padding-top: 15px
         padding-bottom: 15px
-
-      #{$block}_page_change-order-report &
-        padding-bottom: 20px
-        padding-top: 20px
 
       #{$block}_page_change-order-history &
         background-color: transparent
@@ -508,7 +506,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-pending > &,
         #{$block}_page_ssr-admin-completed > &,
         #{$block}_page_wages-index &,
-        #{$block}_page_id-scanner-keys &
+        #{$block}_page_id-scanner-keys &,
+        #{$block}_page_bonai &
           display: none
 
       @media screen and (min-width: 1120px)
@@ -849,7 +848,8 @@ $block: ".boss-table"
       #{$block}_page_ssr-pending &,
       #{$block}_page_ssr-completed &,
       #{$block}_page_ssr-admin-pending &,
-      #{$block}_page_ssr-admin-completed &
+      #{$block}_page_ssr-admin-completed &,
+      #{$block}_page_bonai &
         border-right: 1px solid #eee
 
       @media screen and (max-width: 960px)
@@ -859,7 +859,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-pending &,
-        #{$block}_page_ssr-admin-completed &
+        #{$block}_page_ssr-admin-completed &,
+        #{$block}_page_bonai &
           border-right: none
 
     // $Common table cell first column
@@ -1034,6 +1035,10 @@ $block: ".boss-table"
         width: 33.3%
         padding-left: 30px
 
+      #{$block}_page_bonai &
+        width: 20%
+        justify-content: center
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1090,7 +1095,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
         #{$block}_page_wtl-clients-index &,
-        #{$block}_page_id-scanner-keys &
+        #{$block}_page_id-scanner-keys &,
+        #{$block}_page_bonai &
           width: 100%
           padding-left: 10px
 
@@ -1159,6 +1165,9 @@ $block: ".boss-table"
 
         #{$block}_page_clocking-app-page-api-keys-card &
           padding-left: 20px
+
+        #{$block}_page_bonai &
+          padding-bottom: 25px
 
       @media screen and (max-width: 640px)
         #{$block}_page_clocking-app-page-api-keys-card &
@@ -1363,6 +1372,10 @@ $block: ".boss-table"
       #{$block}_page_clocking-app-page-api-keys-card &
         width: 33.3%
 
+      #{$block}_page_bonai &
+        width: 30%
+        justify-content: center
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1406,7 +1419,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
         #{$block}_page_wtl-clients-index &,
-        #{$block}_page_id-scanner-keys &
+        #{$block}_page_id-scanner-keys &,
+        #{$block}_page_bonai &
           width: 100%
 
         #{$block}_page_staff-members-index &
@@ -1637,6 +1651,10 @@ $block: ".boss-table"
         width: 33.3%
         padding-right: 30px
 
+      #{$block}_page_bonai &
+        width: 25%
+        justify-content: center
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1676,7 +1694,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
         #{$block}_page_wtl-clients-index &,
-        #{$block}_page_id-scanner-keys &
+        #{$block}_page_id-scanner-keys &,
+        #{$block}_page_bonai &
           width: 100%
 
         #{$block}_page_staff-members-index &
@@ -1889,6 +1908,10 @@ $block: ".boss-table"
         width: 20%
         justify-content: center
 
+      #{$block}_page_bonai &
+        width: 25%
+        justify-content: center
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
@@ -1938,7 +1961,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
         #{$block}_page_wtl-clients-index &,
-        #{$block}_page_id-scanner-keys &
+        #{$block}_page_id-scanner-keys &,
+        #{$block}_page_bonai &
           width: 100%
 
         #{$block}_page_staff-members-index &
@@ -3192,7 +3216,8 @@ $block: ".boss-table"
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(2) &,
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(3) &,
     #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(2) &,
-    #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(3) &
+    #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(3) &,
+    #{$block}_page_bonai &
       text-align: center
 
     #{$block}_page_message-board #{$block}__cell:nth-child(4):nth-last-child(3) &,
@@ -3270,7 +3295,8 @@ $block: ".boss-table"
       #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(2) &,
       #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(3) &,
       #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(2) &,
-      #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(3) &
+      #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(3) &,
+      #{$block}_page_bonai &
         text-align: left
 
       #{$block}_page_message-board #{$block}__cell:nth-child(4):nth-last-child(3) &

@@ -21,7 +21,14 @@ $block: ".boss-avatar"
   width: $avatar-side-size
   height: $avatar-side-size
   border-radius: 50%
+  background-image: url('../icons/avatar-placeholder.svg')
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: contain
   overflow: hidden
+
+  &_type_scannable
+    box-shadow: 0 0 0 6px map-get($boss-app-palette, primary)
 
   &-avatar-container
     position: relative
