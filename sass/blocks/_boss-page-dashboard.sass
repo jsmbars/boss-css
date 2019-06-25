@@ -506,61 +506,58 @@ $block: ".boss-page-dashboard"
     &_role_date,
     &_role_time
       &:before
-        content: ""
+        content: '\e904'
         display: inline-block
-        width: 16px
-        height: 16px
         margin-right: 7px
-        background-size: contain
+        font-family: icons
+        font-size: 16px
+        line-height: 16px
+        font-weight: 400
+        color: inherit
         vertical-align: middle
-        background-image: url(../icons/user-verified.svg)
 
     &_role_arcade
       &:before
-        background-image: url('../icons/icon-arcade-dark-gray.svg')
+        content: '\e968'
 
     &_role_voucher
       &:before
-        width: 18px
-        height: 18px
-        background-image: url(../icons/icon-ticket-dark-gray.svg)
+        content: '\e94e'
+        font-size: 18px
 
     &_role_venue
       &:before
-        background-image: url(../icons/icon-storefront-dark-gray.svg)
+        content: '\e901'
 
     &_role_user
       &:before
-        background-image: url(../icons/user-verified.svg)
+        content: '\e904'
 
     &_role_date
       &:before
-        background-image: url(../icons/icon-calendar-dark-gray.svg)
-
-    &_role_date#{&}_type_faded
-      &:before
-        background-image: url(../icons/icon-calendar-medium-gray.svg)
+        content: '\e900'
 
     &_role_time
       &:before
-        background-image: url(../icons/icon-clock-dark-gray.svg)
+        content: '\e961'
 
     &_role_popover
       cursor: pointer
 
       &:after
-        content: ""
+        content: "\e919"
         display: inline-block
-        width: 16px
-        height: 16px
         margin-left: 7px
-        background-size: contain
+        font-family: icons
+        font-size: 25px
+        line-height: 15px
+        font-weight: 400
+        color: #4c4c4c
         vertical-align: middle
-        background-image: url(../icons/icon-arrow-down-dark-gray.svg)
 
     &_role_popover#{&}_state_opened
       &:after
-        transform: rotate(-180deg)
+        content: '\e91a'
 
 
   // $Page dashboard meta text
