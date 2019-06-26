@@ -558,7 +558,8 @@ $block: ".boss-table"
 
     // $Common table row MOD: state alert
     &_state_alert,
-    &_state_pre-calculated
+    &_state_pre-calculated,
+    &_state_report-requiring-update
       &:nth-child(odd),
       &:nth-child(even)
         background-color: #feeeee
@@ -594,7 +595,8 @@ $block: ".boss-table"
     // $Common table row MOD: state edited corner
     &_state_frozen,
     &_state_edited,
-    &_state_pre-calculated
+    &_state_pre-calculated,
+    &_state_report-requiring-update
       position: relative
 
       &:before
@@ -642,7 +644,8 @@ $block: ".boss-table"
       &:after
         content: '\e96b'
 
-    &_state_pre-calculated
+    &_state_pre-calculated,
+    &_state_report-requiring-update
       &:before
         background-image: -ms-linear-gradient(-45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
         background-image: -moz-linear-gradient(-45deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
