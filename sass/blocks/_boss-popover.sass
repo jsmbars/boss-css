@@ -160,7 +160,7 @@ $block: ".boss-popover"
   &_context_rotas-daily
     left: auto
     right: -20px
-    top: 65px
+    top: 80px
     width: 340px
     border: none
 
@@ -231,15 +231,21 @@ $block: ".boss-popover"
     display: block
     width: 32px
     height: 32px
-    background-image: url(../icons/icon-close-alert.svg)
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: 8px 8px
     cursor: pointer
     font-size: 0
     color: transparent
     line-height: 0
     outline: none
+
+    &:before
+      content: '\e96a'
+      display: block
+      font-family: icons
+      font-size: 8px
+      line-height: 32px
+      font-weight: 400
+      color: map-get($boss-app-palette, alert)
+      text-align: center
 
     &:hover,
     &:focus
@@ -262,11 +268,17 @@ $block: ".boss-popover"
   &__icon
     display: inline-block
     vertical-align: middle
-    width: 15px
-    height: 15px
-    background: url(../icons/envelope.svg) no-repeat
-    background-size: contain
     margin-right: 5px
+
+    &:before
+      content: '\e925'
+      display: block
+      font-family: icons
+      font-size: 15px
+      line-height: 15px
+      font-weight: 400
+      font-style: normal
+      color: #4c4c4c
 
 
   // $Popover title

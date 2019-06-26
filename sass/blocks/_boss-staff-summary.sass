@@ -32,6 +32,39 @@ $block: ".boss-staff-summary"
       border-top: 1px solid #eee
 
 
+  &__indicator
+    +text-normalizer()
+    position: absolute
+    top: 10px
+    left: 100px
+    z-index: 2
+    display: block
+    font-size: 14px
+    line-height: 1
+    font-weight: 600
+    white-space: nowrap
+
+    @media screen and (max-width: 960px)
+      left: 120px
+
+    @media screen and (max-width: 640px)
+      left: 85px
+
+    &:before
+      display: inline-block
+      margin-right: 5px
+      font-family: icons
+      font-size: 12px
+      line-height: 12px
+      color: inherit
+
+    &_status_on-holiday
+      color: map-get($boss-app-palette, alert)
+
+      &:before
+        content: '\e9af'
+
+
   // $Staff summary row
   &__row
     +text-normalizer()
@@ -55,6 +88,10 @@ $block: ".boss-staff-summary"
       @media screen and (max-width: 960px)
         display: none
 
+    &_status_on-holiday
+      position: relative
+      background-color: #f0f0f0
+
 
   // $Staff summary cell
   &__cell
@@ -63,7 +100,14 @@ $block: ".boss-staff-summary"
     flex-direction: column
     justify-content: flex-start
     align-items: flex-start
-    padding: 15px 10px 20px 0
+    padding: 30px 10px 20px
+    transition: opacity .4s
+
+    #{$block}__row_status_on-holiday &
+      opacity: .5
+
+    #{$block}__row_status_on-holiday:hover &
+      opacity: 1
 
     @media screen and (max-width: 960px)
       border-top: 1px solid #eee
@@ -116,7 +160,6 @@ $block: ".boss-staff-summary"
         flex-grow: 1
         flex-shrink: 1
         width: 50%
-        padding-top: 20px
         padding-left: 30px
         padding-right: 20px
 
@@ -136,10 +179,11 @@ $block: ".boss-staff-summary"
     &_role_action
       flex-grow: 0
       flex-shrink: 0
-      width: auto
+      width: 135px
+      padding-top: 35px
 
       @media screen and (max-width: 960px)
-        padding-top: 20px
+        width: 140px
         padding-right: 15px
 
     // $Staff summary cell MOD: state opened
@@ -170,9 +214,10 @@ $block: ".boss-staff-summary"
     flex-direction: column
     justify-content: flex-start
     align-items: flex-start
-    padding: 15px 0 20px
+    padding: 25px 0
 
     @media screen and (max-width: 960px)
+      padding: 15px 0 20px
       border-top: 1px solid #eee
 
       #{$block}_page_ssr &
@@ -205,8 +250,13 @@ $block: ".boss-staff-summary"
 
         #{$block}_page_rotas-daily &
           width: 100%
-          padding-right: 15%
-          padding-left: 15%
+          padding-right: 120px
+          padding-left: 120px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_rotas-daily &
+          padding-right: 20px
+          padding-left: 20px
 
     // $Staff summary cell MOD: role holidays
     &_role_holidays
@@ -238,8 +288,13 @@ $block: ".boss-staff-summary"
 
         #{$block}_page_rotas-daily &
           width: 100%
-          padding-right: 15%
-          padding-left: 15%
+          padding-right: 120px
+          padding-left: 120px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_rotas-daily &
+          padding-right: 20px
+          padding-left: 20px
 
     // $Staff summary cell MOD: role preferences
     &_role_preferences
@@ -270,8 +325,13 @@ $block: ".boss-staff-summary"
 
         #{$block}_page_rotas-daily &
           width: 100%
-          padding-right: 15%
-          padding-left: 15%
+          padding-right: 120px
+          padding-left: 120px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_rotas-daily &
+          padding-right: 20px
+          padding-left: 20px
 
 
   // $Staff summary label
@@ -298,9 +358,11 @@ $block: ".boss-staff-summary"
   &__toggle
     +text-normalizer()
     position: absolute
-    top: 55px
+    top: 50px
     left: 10px
     display: none
+    width: 15px
+    height: 30px
     font-size: 0
     color: transparent
     line-height: 0
@@ -310,21 +372,23 @@ $block: ".boss-staff-summary"
       display: block
 
     @media screen and (max-width: 640px)
-      top: 40px
+      top: 35px
 
     &:hover,
     &:focus
       outline: none
 
     &:after
-      content: ''
+      content: '\e918'
       display: block
-      width: 9px
-      height: 9px
-      background: url(../icons/icon-down-arrow-medium-gray.svg) no-repeat 0 0
+      font-family: icons
+      font-size: 15px
+      line-height: 30px
+      font-weight: 400
+      color: #4c4c4c
 
     // $Staff summary toggle MOD: state opened
     &_state_opened
       &:after
-        transform: rotate(-180deg)
+        content: '\e917'
 
