@@ -377,9 +377,30 @@ $block: ".boss-planner"
     // $Planner day MOD: type other month
     &_type_other-month
 
-    // $Planner day MOD: type todat
+    // $Planner day MOD: type today
     &_type_today
       background-color: #fff8ec
+
+    // $Planner day MOD: state selected
+    &_state_selected
+      background-color: #ecf3ff
+
+    // Hover behavior for planner day links
+    @at-root
+      a#{&}
+        cursor: pointer
+        color: inherit
+        background-color: transparent
+        text-decoration: none
+        transition: all .4s
+
+        &:hover
+         background-color: #ecf3ff
+         text-decoration: none
+
+        &:focus
+          text-decoration: none
+          outline: none
 
 
   // $Planner day header
@@ -618,7 +639,7 @@ $block: ".boss-planner"
     border-radius: 4px
     background-color: #ddd
     overflow: hidden
-    cursor: default
+    cursor: inherit
 
     @media screen and (max-width: 960px)
       #{$block}_type_week#{$block}_layout_responsive &
