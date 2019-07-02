@@ -1444,6 +1444,26 @@ $block: ".boss-form"
       &:before
         left: 0
 
+    // $Common form search MOD: state processing
+    &_state_processing
+      &:before
+        display: none
+
+      &:after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 15px
+        margin-top: -10px
+        display: block
+        width: 20px
+        height: 20px
+        background-image: url("../icons/spinner.svg")
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center center
+        vertical-align: middle
+
 
   // $Checklist search-clear
   &__search-clear
