@@ -20,15 +20,28 @@ $block: ".boss-planner"
   // Planner MOD: type month view
   &_type_month
 
-  // Planner MOD: type month view page handover & planner
-  &_type_month#{&}_page_handover-planner
-    min-width: 960px
-
   // Planner MOD: type week view
   &_type_week
 
   // Planner MOD: layout_responsive
   &_layout_responsive
+
+
+  // Planner scroll area
+  &__scroll
+    position: relative
+    display: block
+    width: 100%
+    padding-bottom: 20px
+    overflow: hidden
+    text-align: center
+
+
+  // Planner scroll area content
+  &__scroll-content
+    display: inline-block
+    min-width: 100%
+    text-align: left
 
 
   // Planner keys
@@ -53,12 +66,10 @@ $block: ".boss-planner"
     line-height: 30px
 
     @media screen and (max-width: 960px)
-      #{$block}_type_week#{$block}_layout_responsive &
-        margin-right: 15px
+      margin-right: 15px
 
     @media screen and (max-width: 480px)
-      #{$block}_type_week#{$block}_layout_responsive &
-        margin-right: 10px
+      margin-right: 10px
 
 
   // Planner keys list
@@ -115,8 +126,7 @@ $block: ".boss-planner"
     margin-bottom: 20px
 
     @media screen and (max-width: 640px)
-      #{$block}_type_week#{$block}_layout_responsive &
-        flex-wrap: wrap
+      flex-wrap: wrap
 
 
   // $Planner date
@@ -126,10 +136,9 @@ $block: ".boss-planner"
     line-height: 1
 
     @media screen and (max-width: 640px)
-      #{$block}_type_week#{$block}_layout_responsive &
-        width: 100%
-        margin-bottom: 20px
-        text-align: center
+      width: 100%
+      margin-bottom: 20px
+      text-align: center
 
 
   // $Planner switches
@@ -166,9 +175,8 @@ $block: ".boss-planner"
     transition: all .4s
 
     @media screen and (max-width: 400px)
-      #{$block}_type_week#{$block}_layout_responsive &
-        padding-left: 4px
-        padding-right: 4px
+      padding-left: 4px
+      padding-right: 4px
 
     &:hover
       color: #fff
@@ -178,8 +186,7 @@ $block: ".boss-planner"
       margin-right: 15px
 
       @media screen and (max-width: 400px)
-        #{$block}_type_week#{$block}_layout_responsive &
-          margin-right: 8px
+        margin-right: 8px
 
     // $Planner switch MOD: role view
     &_role_view
@@ -205,8 +212,7 @@ $block: ".boss-planner"
         margin-right: 0
 
         @media screen and (max-width: 400px)
-          #{$block}_type_week#{$block}_layout_responsive &
-            margin-right: 0
+          margin-right: 0
 
       &:before
         content: ''
@@ -226,8 +232,7 @@ $block: ".boss-planner"
       border-bottom-right-radius: 0
 
       @media screen and (max-width: 400px)
-        #{$block}_type_week#{$block}_layout_responsive &
-          padding-left: 10px
+        padding-left: 10px
 
       &:before
         content: "\2039"
@@ -239,8 +244,7 @@ $block: ".boss-planner"
       border-bottom-left-radius: 0
 
       @media screen and (max-width: 400px)
-        #{$block}_type_week#{$block}_layout_responsive &
-          padding-right: 10px
+        padding-right: 10px
 
       &:before
         content: "\203A"
@@ -278,6 +282,9 @@ $block: ".boss-planner"
     align-items: flex-start
     width: 100%
     border: 1px solid #d8d8d8
+
+    #{$block}_type_month &
+      min-width: 960px
 
     @media screen and (max-width: 960px)
       #{$block}_type_week#{$block}_layout_responsive &
