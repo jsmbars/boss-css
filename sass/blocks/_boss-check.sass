@@ -1153,6 +1153,12 @@ $block: ".boss-check"
     vertical-align: middle
 
 
+  &__title-label
+    display: inline-block
+    margin-left: 10px
+    vertical-align: middle
+
+
   // $Check block text
   &__text
 
@@ -1854,6 +1860,9 @@ $block: ".boss-check"
   // $Check block meta
   &__meta
     display: block
+
+    &:not(:last-child)
+      margin-bottom: 10px
 
     @media screen and (max-width: 640px)
       display: block

@@ -823,6 +823,9 @@ $block: ".boss-modal-window"
         padding-left: 15px
         padding-right: 15px
 
+    &_adjust_column
+      flex-direction: column
+
 
   // $Modal window action
   &__action
@@ -878,12 +881,21 @@ $block: ".boss-modal-window"
     &_position_after
       margin-left: 20px
 
+    &_adjust_column
+      &:not(:last-child)
+        margin-bottom: 20px
+
 
   // $Modal window button
   &__button
 
-    &:not(:last-of-type)
+    &:not(:last-child)
       margin-right: 15px
+
+    &_adjust_column
+      &:not(:last-child)
+        margin-right: 0
+        margin-bottom: 20px
 
 
   // $Modal window numpad
