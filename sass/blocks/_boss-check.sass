@@ -72,18 +72,41 @@ $block: ".boss-check"
     @media screen and (min-width: 961px)
       display: none
 
+  // $Check block MOD: state success
+  &_state_success
+    background-color: #dbfddb
+
+  // $Check block MOD: state alert
+  &_state_warning
+    background-color: #ffe3bd
+
+  // $Check block MOD: state alert faded
+  &_state_warning-faded
+    background-color: #ffe3bd
+    opacity: 0.6
+    transition: all .3s
+
+    &:hover
+      opacity: 1
+
   // $Check block MOD: state alert
   &_state_alert
     background-color: #feeeee
 
-  // $Check block MOD: state success
-  &_state_success
-    background-color: #dbfddb
+  // $Check block MOD: state alert faded
+  &_state_alert-faded
+    background-color: #feeeee
+    opacity: 0.6
+    transition: all .3s
+
+    &:hover
+      opacity: 1
 
   // $Check block MOD: state inactive
   &_state_inactive
     background-color: #f0f0f0
 
+  // $Check block MOD: state inactive faded
   &_state_inactive-faded
     opacity: 0.6
     transition: all .3s
@@ -686,6 +709,9 @@ $block: ".boss-check"
       background-color: #fbfbfb
 
       #{$block}_state_alert &,
+      #{$block}_state_alert-faded &,
+      #{$block}_state_warning &,
+      #{$block}_state_warning-faded &,
       #{$block}_state_success &,
       #{$block}_state_frozen &
         background-color: transparent
@@ -720,6 +746,9 @@ $block: ".boss-check"
         background-color: #FFF
 
         #{$block}_state_alert &,
+        #{$block}_state_alert-faded &,
+        #{$block}_state_warning &,
+        #{$block}_state_warning-faded &,
         #{$block}_state_success &,
         #{$block}_state_frozen &
           background-color: transparent
@@ -728,6 +757,9 @@ $block: ".boss-check"
         background-color: #fbfbfb
 
         #{$block}_state_alert &,
+        #{$block}_state_alert-faded &,
+        #{$block}_state_warning &,
+        #{$block}_state_warning-faded &,
         #{$block}_state_success &,
         #{$block}_state_frozen &
           background-color: transparent
@@ -737,6 +769,9 @@ $block: ".boss-check"
       background-color: #fbfbfb
 
       #{$block}_state_alert &,
+      #{$block}_state_alert-faded &,
+      #{$block}_state_warning &,
+      #{$block}_state_warning-faded &,
       #{$block}_state_success &,
       #{$block}_state_frozen &
         background-color: transparent
@@ -1528,7 +1563,11 @@ $block: ".boss-check"
       background-color: #fbfbfb
 
     #{$block}_state_alert &,
-    #{$block}_state_success &
+    #{$block}_state_alert-faded &,
+    #{$block}_state_warning &,
+    #{$block}_state_warning-faded &,
+    #{$block}_state_success &,
+    #{$block}_state_frozen &
       background-color: transparent
 
     // $Check block dropdown CONTEXT: $Check block MOD: page message board
@@ -1875,7 +1914,7 @@ $block: ".boss-check"
       width: 100%
 
 
-  // $Check block header meta item
+  // $Check block meta item
   &__meta-item
     display: inline-block
     margin-bottom: 5px
@@ -1889,6 +1928,63 @@ $block: ".boss-check"
 
       @media screen and (max-width: 640px)
         margin-right: 0
+
+
+  // $Check block activity list
+  &__activity
+    display: block
+    width: 100%
+    margin: 0
+    padding: 0
+    list-style: none
+
+
+  // $Check block activity list item
+  &__activity-item
+    position: relative
+    padding-left: 20px
+
+    &:before
+      content: ""
+      z-index: 10
+      position: absolute
+      top: 5px
+      left: 0
+      display: block
+      width: 10px
+      height: 10px
+      border-radius: 50%
+      background-color: $boss-light-gray
+
+    &:not(:last-of-type)
+      margin-bottom: 20px
+
+      &:after
+        content: ""
+        z-index: 1
+        position: absolute
+        left: 4px
+        top: 10px
+        bottom: -30px
+        width: 2px
+        background-color: $boss-very-light-gray
+
+    // $Check block activity item MOD: role created
+    &_role_created
+      &:before
+        background-color: $boss-very-light-gray
+
+    // $Check block activity item MOD: role updated
+    // $Check block activity item MOD: role assigned
+    &_role_updated,
+    &_role_postponed
+      &:before
+        background-color: map-get($boss-app-palette, primary)
+
+    // $Check block activity item MOD: role declined
+    &_role_declined
+      &:before
+        background-color: map-get($boss-app-palette, warning)
 
 
   // $Check checkbox label

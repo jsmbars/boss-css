@@ -123,26 +123,24 @@ $block: ".boss-overview"
     transition: .4s
 
     &:before
-      content: ""
+      content: '\e91a'
       position: absolute
       top: 50%
       left: 50%
       display: block
-      width: 20px
-      height: 15px
-      background-image: url(../icons/icon-arrow-down-dark-gray.svg)
-      transform: translate(-50%, -50%) rotate(180deg)
-      background-position: center center
-      background-repeat: no-repeat
-      background-size: contain
-      transform-origin: center center
-      transition: all .4s
+      margin-top: -10px
+      margin-left: -10px
+      font-family: icons
+      font-size: 30px
+      line-height: 20px
+      font-weight: 400
+      color: #4c4c4c
+
 
     // $Report dropdown switch MOD: state closed
     &_state_closed
       &:before
-        background-image: url(../icons/icon-arrow-down-dark-gray.svg)
-        transform: translate(-50%, -50%) rotate(0)
+        content: '\e919'
 
 
   // $Overview dropdown switch
@@ -151,8 +149,6 @@ $block: ".boss-overview"
     width: 100%
     padding: 15px 20px
     border-radius: $boss-global-border-radius
-    line-height: 1
-    color: #fff
     white-space: nowrap
     cursor: pointer
     transition: all .4s
@@ -161,51 +157,57 @@ $block: ".boss-overview"
       padding: 10px 15px
 
     &:after
-      content: ""
+      content: '\e91a'
       display: inline-block
-      width: 12px
-      height: 12px
       margin-top: -2px
       margin-left: 10px
+      font-family: icons
+      font-size: 18px
+      line-height: 14px
+      font-weight: 400
+      color: #fff
       vertical-align: middle
-      background: url(../icons/icon-arrow-down-white.svg) no-repeat center center
-      background-size: contain
-      transform: rotate(180deg)
-
-    // $Overview dropdown switch MOD: role activity switch
-    &_role_activity
-      background-color: map-get($boss-app-palette, primary)
-
-      &:before
-        content: ""
-        display: inline-block
-        width: 18px
-        height: 16px
-        margin-top: -2px
-        margin-right: 10px
-        vertical-align: middle
-        background: url(../icons/icon-bell-white.svg) no-repeat center center
-        background-size: contain
-
-    // $Overview dropdown switch MOD: role notes switch
-    &_role_notes
-      background-color: map-get($boss-app-palette, action)
-
-      &:before
-        content: ""
-        display: inline-block
-        width: 18px
-        height: 16px
-        margin-top: -2px
-        margin-right: 10px
-        vertical-align: middle
-        background: url(../icons/icon-envelope-white.svg) no-repeat center center
-        background-size: contain
 
     // $Overview dropdown switch MOD: state closed
     &_state_closed
       &:after
-        transform: rotate(0)
+        content: '\e919'
+
+    // $Overview dropdown switch MOD: role activity switch
+    // $Overview dropdown switch MOD: role notes switch
+    &_role_activity,
+    &_role_notes
+      background-color: map-get($boss-app-palette, primary)
+
+      &:before
+        display: inline-block
+        margin-top: -2px
+        margin-right: 10px
+        font-family: icons
+        font-size: 14px
+        line-height: 14px
+        font-weight: 400
+        color: #fff
+        vertical-align: middle
+
+    &_role_activity
+      background-color: map-get($boss-app-palette, primary)
+
+      &:before
+        content: '\e964'
+
+    &_role_notes
+      background-color: map-get($boss-app-palette, action)
+
+      &:before
+        content: '\e91f'
+        font-size: 16px
+
+
+  &__dropdown-switch-text
+    +text-normalizer()
+    line-height: 1
+    color: #fff
 
 
   // $Overview dropdown content
@@ -379,6 +381,10 @@ $block: ".boss-overview"
       margin-bottom: 5px
 
 
+  &__text-light
+    font-weight: 300
+
+
   &__text-marked
     font-weight: 600
 
@@ -421,31 +427,31 @@ $block: ".boss-overview"
     &_role_details
       padding-left: 20px
 
-      &:after
+      &:before
         content: ''
         position: absolute
         left: 0
         top: 50%
         display: block
-        width: 14px
-        height: 14px
         margin-top: -7px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        font-family: icons
+        font-size: 14px
+        line-height: 1
+        font-weight: 400
+        color: inherit
         transition: all .4s
 
     &_role_edit
-      &:after
-        background-image: url(../icons/icon-pencil-primary.svg)
+      &:before
+        content: '\e96b'
 
     &_role_save
-      &:after
-        background-image: url(../icons/icon-checked-primary.svg)
+      &:before
+        content: '\e969'
 
     &_role_details
-      &:after
-        background-image: url(../icons/icon-zoom-primary.svg)
+      &:before
+        content: '\e921'
 
     &_position_after
       margin-left: 20px
@@ -460,7 +466,7 @@ $block: ".boss-overview"
         color: transparent
         text-decoration: none
 
-      &:after
+      &:before
         @media screen and (max-width: 960px)
           position: relative
           top: auto
@@ -578,10 +584,15 @@ $block: ".boss-overview"
     line-height: 0
     color: transparent
     outline: none
-    background-image: url(../icons/icon-close-light-gray.svg)
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: contain
+
+    &:before
+      content: '\e96a'
+      display: block
+      font-family: icons
+      font-size: 12px
+      line-height: 1
+      font-weight: 400
+      color: #808080
 
 
   // $Overview gallery actions area
@@ -685,15 +696,16 @@ $block: ".boss-overview"
     color: $boss-medium-gray
 
     &:before
-      content: ''
+      content: '\e91f'
       display: inline-block
-      width: 18px
-      height: 16px
       margin-top: -2px
       margin-right: 10px
+      font-family: icons
+      font-size: 14px
+      line-height: 1
+      font-weight: 400
+      color: inherit
       vertical-align: middle
-      background: url(../icons/icon-envelope-medium-gray.svg) no-repeat center center
-      background-size: contain
 
 
   // $Overview notes switch
@@ -707,30 +719,29 @@ $block: ".boss-overview"
     color: map-get($boss-app-palette, primary)
     text-decoration: underline
 
-    &:after
-      content: ''
+    &:before
+      content: '\e96a'
       position: absolute
       left: 0
       top: 50%
       display: block
-      width: 14px
-      height: 14px
       margin-top: -7px
-      background-image: url(../icons/icon-plus-primary.svg)
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
-      transform: rotate(45deg)
-      transition: all .4s
+      font-family: icons
+      font-size: 10px
+      line-height: 14px
+      font-weight: 400
+      color: inherit
 
     &:hover,
     &:focus
       color: map-get($boss-app-palette, primary)
+      text-decoration: none
 
     // $Overview notes switch MOD: state closed
     &_state_closed
-      &:after
-        transform: rotate(0)
+      &:before
+        content: '\e97d'
+        font-size: 12px
 
 
   // $Overview notes form
@@ -767,28 +778,8 @@ $block: ".boss-overview"
   &__meta
     +text-normalizer()
 
-    // $Overview meta information MOD: role date
-    &_role_date
-      position: relative
-      padding-left: 25px
-
-      &:before
-        content: ""
-        position: absolute
-        top: 50%
-        left: 0
-        display: block
-        width: 15px
-        height: 14px
-        margin-top: -7px
-        background-image: url(../icons/icon-clock-primary.svg)
-        background-position: center center
-        background-repeat: no-repeat
-        background-size: contain
-
-    &_adjust_nested
-      margin-left: 5px
-
+  &__meta-light
+    font-weight: 300
 
   // $Overview meta information label
   // $Overview meta information user

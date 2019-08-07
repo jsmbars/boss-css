@@ -391,35 +391,33 @@ $block: ".boss-message"
       margin-bottom: 0
       font-size: 12px
 
-    &:before
-      content: ""
-      display: none
-      margin-right: 8px
-      vertical-align: middle
-      line-height: 100%
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
-
     &:last-of-type
       margin-right: 0
 
     // $Message meta information text MOD: role date
-    &_role_date
-      &:before
-        display: inline-block
-        width: 16px
-        height: 16px
-        margin-top: -2px
-        background-image: url("../icons/icon-calendar-dark-gray.svg")
-
     // $Message meta information text MOD: role user
+    &_role_date,
     &_role_user
       &:before
+        content: ''
         display: inline-block
-        width: 12px
-        height: 16px
-        background-image: url("../icons/icon-user-dark-gray.svg")
+        margin-right: 8px
+        margin-top: -2px
+        font-family: icons
+        font-size: 14px
+        line-height: 14px
+        font-weight: 400
+        color: inherit
+        vertical-align: middle
+
+    &_role_date
+      &:before
+        content: '\e900'
+
+    &_role_user
+      &:before
+        content: '\e904'
+        font-size: 12px
 
   // $Message meta actions
   &__meta-actions
