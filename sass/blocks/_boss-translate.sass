@@ -114,25 +114,25 @@ $block: ".boss-translate"
     &_role_cancel
       padding-left: 20px
 
-      &:after
+      &:before
         content: ''
         position: absolute
         left: 0
         top: 50%
         display: block
-        width: 12px
-        height: 12px
         margin-top: -6px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        font-family: icons
+        font-size: 12px
+        line-height: 12px
+        font-weight: 400
+        color: inherit
         transition: all .4s
 
     &_role_cancel
       color: map-get($boss-app-palette, alert)
 
-      &:after
-        background-image: url(../icons/icon-close-alert.svg)
+      &:before
+        content: '\e96a'
 
       &:hover,
       &:focus
