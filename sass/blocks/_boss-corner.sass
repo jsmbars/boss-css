@@ -80,6 +80,15 @@ $block: ".boss-corner"
   &_color_accent-red#{&}_position_bottom-left
     background-image: linear-gradient(-135deg, transparent 0%, transparent 50%, #ff8587 50%, #ff8587 100%)
 
+  &_color_accent-red-saturated#{&}_position_top-right
+    background-image: linear-gradient(45deg, transparent 0%, transparent 50%, #fd554f 50%, #fd554f 100%)
+  &_color_accent-red-saturated#{&}_position_top-left
+    background-image: linear-gradient(-45deg, transparent 0%, transparent 50%, #fd554f 50%, #fd554f 100%)
+  &_color_accent-red-saturated#{&}_position_bottom-right
+    background-image: linear-gradient(135deg, transparent 0%, transparent 50%, #fd554f 50%, #fd554f 100%)
+  &_color_accent-red-saturated#{&}_position_bottom-left
+    background-image: linear-gradient(-135deg, transparent 0%, transparent 50%, #fd554f 50%, #fd554f 100%)
+
   &_color_accent-amber#{&}_position_top-right
     background-image: linear-gradient(45deg, transparent 0%, transparent 50%, #f4a84f 50%, #f4a84f 100%)
   &_color_accent-amber#{&}_position_top-left
@@ -159,11 +168,6 @@ $block: ".boss-corner"
     position: absolute
     z-index: 1
     display: block
-    width: 18px
-    height: 18px
-    background-repeat: no-repeat
-    background-position: center center
-    background-size: contain
 
     // $Corner icon CONTEXT: $Corner MOD: position top right
     #{$block}_position_top-right &
@@ -185,11 +189,25 @@ $block: ".boss-corner"
       bottom: 4px
       left: 4px
 
+    &:before
+      content: ''
+      display: block
+      font-family: icons
+      font-size: 18px
+      line-height: 1
+      font-weight: 400
+      color: #fff
+
+      #{$block}_position_top-right &,
+      #{$block}_position_bottom-right &
+        text-align: right
+
+      #{$block}_position_top-left &,
+      #{$block}_position_bottom-left &
+        text-align: left
+
     // $Corner icon MOD: size small
     &_size_s
-      width: 14px
-      height: 14px
-
       #{$block}_position_top-right &
         top: 3px
         right: 3px
@@ -205,12 +223,12 @@ $block: ".boss-corner"
       #{$block}_position_bottom-left &
         bottom: 3px
         left: 3px
+
+      &:before
+        font-size: 14px
 
     // $Corner icon MOD: size large
     &_size_l
-      width: 22px
-      height: 22px
-
       #{$block}_position_top-right &
         top: 5px
         right: 5px
@@ -227,19 +245,31 @@ $block: ".boss-corner"
         bottom: 5px
         left: 5px
 
+      &:before
+        font-size: 22px
+
     // $Corner icon MOD: clock
     &_clock
-      background-image: url("../icons/icon-clock-white.svg")
+      &:before
+        content: '\e961'
 
     // $Corner icon MOD: snowflake
     &_snowflake
-      background-image: url("../icons/icon-snowflake-white.svg")
+      &:before
+        content: '\e946'
 
     // $Corner icon MOD: pencil
     &_pencil
-      background-image: url("../icons/icon-pencil-white.svg")
+      &:before
+        content: '\e96b'
 
     // $Corner icon MOD: calculator
     &_calculator
-      background-image: url("../icons/icon-calculator-white.svg")
+      &:before
+        content: '\e963'
+
+    // $Corner icon MOD: trash
+    &_trash
+      &:before
+        content: '\e94d'
 
