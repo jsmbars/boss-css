@@ -114,6 +114,15 @@ $block: ".boss-check"
     &:hover
       opacity: 1
 
+  // $Check block MOD: state postponed
+  &_state_postponed
+    background-color: #f0f0f0
+    opacity: 0.6
+    transition: all .3s
+
+    &:hover
+      opacity: 1
+
   // $Check block MOD: state frozen
   &_state_frozen
     background-color: #daecff
@@ -1203,6 +1212,38 @@ $block: ".boss-check"
     display: inline-block
     margin-left: 10px
     vertical-align: middle
+
+
+  &__title-link
+    display: inline-block
+    margin-left: 10px
+    color: #1585cf
+    font-size: inherit
+    line-height: inherit
+    font-weight: 400
+    text-decoration: none
+    transition: all .4s
+
+    &:hover,
+    &:focus
+      color: #4c4c4c
+      text-decoration: none
+
+    &_role_details
+      &:before
+        content: ""
+        display: inline-block
+        margin-right: 5px
+        font-family: icons
+        font-size: 14px
+        line-height: inherit
+        color: inherit
+        font-weight: 400
+        vertical-align: baseline
+
+    &_role_details
+      &:before
+        content: '\e921'
 
 
   // $Check block text
