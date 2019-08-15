@@ -1187,6 +1187,17 @@ $block: ".boss-check"
     margin-right: 5px
     vertical-align: middle
 
+    #{$block}_page_handover-planner-event &,
+    #{$block}_page_handover-planner-reminder &,
+    #{$block}_page_handover-planner-task &
+      margin-right: 15px
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_handover-planner-event &,
+      #{$block}_page_handover-planner-reminder &,
+      #{$block}_page_handover-planner-task &
+        margin-right: 5px
+
 
   &__title-label
     display: inline-block
