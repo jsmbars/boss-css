@@ -284,9 +284,9 @@ $block: ".boss-planner"
     border: 1px solid #d8d8d8
 
     #{$block}_type_month &
-      min-width: 960px
+      min-width: 1120px
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
         flex-direction: row
         align-items: stretch
@@ -301,7 +301,7 @@ $block: ".boss-planner"
     width: 100%
     border-bottom: 1px solid #d3d3d3
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
         display: none
 
@@ -339,7 +339,7 @@ $block: ".boss-planner"
     align-items: stretch
     width: 100%
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
         flex-direction: column
         align-items: flex-start
@@ -347,7 +347,7 @@ $block: ".boss-planner"
     &:not(:last-child)
       border-bottom: 1px solid #d3d3d3
 
-      @media screen and (max-width: 960px)
+      @media screen and (max-width: 1120px)
         #{$block}_type_week#{$block}_layout_responsive &
           border-bottom: none
 
@@ -360,7 +360,7 @@ $block: ".boss-planner"
     width: 14.25%
     min-height: 55px
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
         display: flex
         flex-direction: row
@@ -376,7 +376,7 @@ $block: ".boss-planner"
     &:not(:last-child)
       border-right: 1px solid #d3d3d3
 
-      @media screen and (max-width: 960px)
+      @media screen and (max-width: 1120px)
         #{$block}_type_week#{$block}_layout_responsive &
           border-right: none
           border-bottom: 1px solid #d3d3d3
@@ -422,7 +422,7 @@ $block: ".boss-planner"
     #{$block}__day_type_other-month &
       opacity: 0.4
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1120px)
 
       #{$block}_type_week#{$block}_layout_responsive &
         flex-grow: 0
@@ -452,7 +452,7 @@ $block: ".boss-planner"
     font-weight: 600
     line-height: 1
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
         text-align: left
         white-space: nowrap
@@ -471,7 +471,7 @@ $block: ".boss-planner"
     #{$block}__day_type_other-month &
       opacity: 0.4
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
         display: flex
         flex-direction: row
@@ -501,7 +501,7 @@ $block: ".boss-planner"
     border-radius: 4px
     overflow: hidden
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
         width: calc(33.3% - 10px)
         margin-bottom: 10px
@@ -516,7 +516,7 @@ $block: ".boss-planner"
     &:not(:last-child)
       margin-bottom: 10px
 
-      @media screen and (max-width: 960px)
+      @media screen and (max-width: 1120px)
         #{$block}_type_week#{$block}_layout_responsive &
           margin-bottom: 10px
 
@@ -570,7 +570,7 @@ $block: ".boss-planner"
       border-color: $boss-light-gray
       background-color: $boss-light-gray
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
         padding-right: 10px
         padding-left: 10px
@@ -592,7 +592,7 @@ $block: ".boss-planner"
     list-style: none
     padding: 5px 4px 10px
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
         padding-left: 10px
         padding-right: 10px
@@ -633,22 +633,25 @@ $block: ".boss-planner"
 
   // $Planner record
   &__record
-    +text-normalizer()
-    display: block
+    display: flex
+    font-display: row
+    justify-content: space-between
+    align-items: center
     width: 100%
     max-width: 100%
     height: 30px
-    padding: 5px 4px
-    line-height: 1
-    font-weight: 300
+    padding: 5px 10px
     white-space: nowrap
-    border: 2px solid #ddd
     border-radius: 4px
     background-color: #ddd
-    overflow: hidden
     cursor: inherit
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 1280px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        padding-left: 5px
+        padding-right: 5px
+
+    @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
         width: calc(33.3% - 10px)
         margin-bottom: 10px
@@ -665,7 +668,7 @@ $block: ".boss-planner"
     &:not(:last-child)
       margin-bottom: 10px
 
-      @media screen and (max-width: 960px)
+      @media screen and (max-width: 1120px)
         #{$block}_type_week#{$block}_layout_responsive &
           margin-bottom: 10px
 
@@ -709,3 +712,79 @@ $block: ".boss-planner"
     &_role_task#{&}_role_action
       &:hover
         color: $boss-light-gray
+
+
+  // $Planner record number
+  &__record-number
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    font-size: 16px
+    line-height: 16px
+    font-weight: 600
+    color: inherit
+
+
+  // $Planner record indicators
+  &__record-indicators
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+
+
+  // $Planner record indicator
+  &__record-indicator
+    display: block
+    color: inherit
+
+    &:not(:last-child)
+      margin-right: 10px
+
+      @media screen and (max-width: 1280px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          margin-right: 6px
+
+      @media screen and (max-width: 1120px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          margin-right: 10px
+
+      @media screen and (max-width: 960px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          margin-right: 8px
+
+      @media screen and (max-width: 640px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          margin-right: 10px
+
+    &:before
+      content: ''
+      display: block
+      font-family: icons
+      font-size: 16px
+      line-height: 16px
+      font-weight: 400
+      color: inherit
+
+    &_role_pending
+      &:before
+        content: '\e961'
+
+    &_role_postponed
+      &:before
+        content: '\e97f'
+
+    &_role_completed
+      &:before
+        content: '\e980'
+
+    &_role_declined
+      &:before
+        content: '\e981'
+
+    &_role_recurring
+      &:before
+        content: '\e982'
