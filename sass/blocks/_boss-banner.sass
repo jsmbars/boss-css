@@ -1,0 +1,114 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Banner
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-banner"
+
+#{$block}
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  width: 100%
+  min-height: 150px
+  padding: 20px
+  background-color: #f0f0f0
+  border-radius: 2px
+  font-size: 18px
+  color: #4c4c4c
+
+  // Vertical alignmemnt fix for IE11
+  &:after
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      content: ''
+      display: block
+      min-height: inherit
+      font-size: 0
+      line-height: 0
+
+  // $Banner MOD: size xs
+  &_size_xs
+    min-height: 50px
+    font-size: 14px
+
+  // $Banner MOD: size s
+  &_size_s
+    min-height: 100px
+    font-size: 16px
+
+  // $Banner MOD: size m
+  &_size_m
+    min-height: 150px
+    font-size: 18px
+
+  // $Banner MOD: size l
+  &_size_l
+    min-height: 200px
+    font-size: 20px
+
+  // $Banner MOD: size xl
+  &_size_xl
+    min-height: 250px
+    font-size: 22px
+
+  // $Banner MOD: size xxl
+  &_size_xxl
+    min-height: 300px
+    font-size: 24px
+
+  // $Banner MOD: color accent-blue
+  &_color_accent-blue
+    background-color: map-get($boss-app-palette, primary)
+    color: #fff
+
+  // $Banner MOD: color accent-green
+  &_color_accent-green
+    background-color: map-get($boss-app-palette, secondary)
+    color: #fff
+
+  // $Banner MOD: color accent-amber
+  &_color_accent-amber
+    background-color: map-get($boss-app-palette, warning)
+    color: #fff
+
+  // $Banner MOD: color accent-red
+  &_color_accent-red
+    background-color: map-get($boss-app-palette, alert)
+    color: #fff
+
+  // $Banner MOD: color dark
+  &_color_dark
+    background-color: #4c4c4c
+    color: #fff
+
+
+  // $Banner content
+  &__content
+    display: block
+    width: 100%
+
+
+  // $Banner text
+  &__text
+    +text-normalizer()
+    display: block
+    width: 100%
+    max-width: 100%
+    font-size: inherit
+    font-weight: 400
+    line-height: 1.2
+    color: inherit
+    text-align: center
+
+    &:not(:last-child)
+      margin-bottom: 10px
