@@ -36,6 +36,17 @@ $block: ".boss-banner"
       font-size: 0
       line-height: 0
 
+  // $Banner MOD: role overlay
+  &_role_overlay
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 5
+    overflow: hidden
+    background-color: transparentize(#f0f0f0, 0.25)
+
   // $Banner MOD: size xs
   &_size_xs
     min-height: 50px
@@ -71,25 +82,40 @@ $block: ".boss-banner"
     background-color: map-get($boss-app-palette, primary)
     color: #fff
 
+  &_role_overlay#{&}_color_accent-blue
+    background-color: transparentize(map-get($boss-app-palette, primary), 0.25)
+
   // $Banner MOD: color accent-green
   &_color_accent-green
     background-color: map-get($boss-app-palette, secondary)
     color: #fff
+
+  &_role_overlay#{&}_color_accent-green
+    background-color: transparentize(map-get($boss-app-palette, secondary), 0.25)
 
   // $Banner MOD: color accent-amber
   &_color_accent-amber
     background-color: map-get($boss-app-palette, warning)
     color: #fff
 
+  &_role_overlay#{&}_color_accent-amber
+    background-color: transparentize(map-get($boss-app-palette, warning), 0.25)
+
   // $Banner MOD: color accent-red
   &_color_accent-red
     background-color: map-get($boss-app-palette, alert)
     color: #fff
 
+  &_role_overlay#{&}_color_accent-red
+    background-color: transparentize(map-get($boss-app-palette, alert), 0.25)
+
   // $Banner MOD: color dark
   &_color_dark
     background-color: #4c4c4c
     color: #fff
+
+  &_role_overlay#{&}_color_dark
+    background-color: transparentize(#000, 0.25)
 
 
   // $Banner content
