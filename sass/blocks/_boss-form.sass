@@ -1724,6 +1724,11 @@ $block: ".boss-form"
 
     & .Select--multi .Select-input
       margin-top: 5px
+      margin-left: 10px
+
+    &.Select--multi.has-value .Select-input
+      margin-left: 10px
+
 
     & .Select--multi .Select-value
       margin-left: 10px
@@ -1952,6 +1957,10 @@ $block: ".boss-form"
           height: 30px
           padding: 0
 
+    &_type_empty-value
+
+      & .Select-value
+        display: none
 
 
   // $Common form switcher
