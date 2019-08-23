@@ -31,7 +31,7 @@ $block: ".boss-upload"
     @media screen and (max-width: 960px)
       margin-bottom: 5px
 
-    @media screen and (max-width: 479px)
+    @media screen and (max-width: 480px)
       margin-bottom: 10px
 
     @media screen and (max-width: 400px)
@@ -47,17 +47,18 @@ $block: ".boss-upload"
     padding: 30px 30px 20px
     background-color: $boss-extra-light-gray
 
-    @media screen and (max-width: 479px)
+    @media screen and (max-width: 480px)
       padding: 35px 12px 20px
 
 
-  // $Upload control full image
+  // $Upload control full width preview image
   &__full-image
     display: block
     width: 100%
+    margin: 0 auto
 
 
-  // $Upload control close
+  // $Upload control full width preview close
   &__full-close
     position: absolute
     top: 12px
@@ -71,13 +72,19 @@ $block: ".boss-upload"
     line-height: 0
     color: transparent
     outline: none
-    background-image: url(../icons/icon-close-light-gray.svg)
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: contain
+
+    &:before
+      content: '\e96a'
+      display: block
+      font-family: icons
+      font-size: 12px
+      line-height: 12px
+      font-weight: 400
+      color: #aaa
+      text-align: center
 
 
-  // $Upload control actions area
+  // $Upload control full width preview actions area
   &__full-actions
     padding-top: 20px
     text-align: center
@@ -91,13 +98,12 @@ $block: ".boss-upload"
     height: 150px
     vertical-align: top
     background-color: $boss-extra-light-gray
-    transition: opacity .4s
 
     @media screen and (max-width: 960px)
       width: 135px
       height: 135px
 
-    @media screen and (max-width: 479px)
+    @media screen and (max-width: 480px)
       width: 120px
       height: 120px
 
@@ -105,12 +111,27 @@ $block: ".boss-upload"
       width: 105px
       height: 105px
 
-    &:hover
-      opacity: 0.75
-
     // $Upload control preview area MOD: adjust form
     &_adjust_form
       width: 100%
+      height: auto
+      min-height: 150px
+      padding: 10px
+
+      @media screen and (max-width: 960px)
+        width: 100%
+        height: auto
+        min-height: 140px
+
+      @media screen and (max-width: 480px)
+        width: 100%
+        height: auto
+        min-height: 130px
+
+      @media screen and (max-width: 400px)
+        width: 100%
+        height: auto
+        min-height: 120px
 
     // $Upload control preview area MOD: adjust flow
     &_adjust_flow
@@ -121,7 +142,7 @@ $block: ".boss-upload"
         margin-right: 25px
         margin-bottom: 25px
 
-      @media screen and (max-width: 479px)
+      @media screen and (max-width: 480px)
         margin-right: 20px
         margin-bottom: 20px
 
@@ -130,25 +151,76 @@ $block: ".boss-upload"
         margin-bottom: 15px
 
       &:nth-child(2n)
-        @media screen and (max-width: 479px)
+        @media screen and (max-width: 480px)
           margin-right: 0
 
         @media screen and (max-width: 400px)
           margin-right: 0
 
+    &_state_broken,
+    &_state_loading
+      display: inline-flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+    &_state_broken#{&}_adjust_form,
+    &_state_loading#{&}_adjust_form
+      height: 150px
+
+      @media screen and (max-width: 960px)
+        height: 140px
+
+      @media screen and (max-width: 480px)
+        height: 130px
+
+      @media screen and (max-width: 400px)
+        height: 120px
+
     // $Upload control preview area MOD: state broken
     &_state_broken
-      background-image: url(../icons/icon-broken-file-very-light-gray.svg)
-      background-position: center center
-      background-repeat: no-repeat
-      background-size: auto 50%
+      &:before
+        content: '\e933'
+        display: block
+        font-family: icons
+        font-size: 60px
+        line-height: 1
+        font-weight: 400
+        color: $boss-very-light-gray
+        text-align: center
+
+        @media screen and (max-width: 960px)
+          font-size: 55px
+
+        @media screen and (max-width: 480px)
+          font-size: 50px
+
+        @media screen and (max-width: 400px)
+          font-size: 45px
 
     // $Upload control preview area MOD: state loading
     &_state_loading
-      background-image: url(../icons/spinner.svg)
-      background-position: center center
-      background-repeat: no-repeat
-      background-size: auto 30%
+      &:before
+        content: ''
+        display: block
+        width: 50px
+        height: 50px
+        background-image: url(../icons/spinner.svg)
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: contain
+
+        @media screen and (max-width: 960px)
+          width: 45px
+          height: 45px
+
+        @media screen and (max-width: 480px)
+          width: 40px
+          height: 40px
+
+        @media screen and (max-width: 400px)
+          width: 35px
+          height: 35px
 
 
   // $Upload control preview link
@@ -160,12 +232,46 @@ $block: ".boss-upload"
     bottom: 0
     left: 0
     overflow: hidden
+    transition: opacity .4s
+
+    &:hover
+      opacity: 0.75
 
 
   // $Upload control preview image
   &__preview-image
     display: block
     width: 100%
+    margin: 0 auto
+
+    &_size_xxs
+      max-width: 160px
+
+    &_size_xs
+      max-width: 240px
+
+    &_size_s
+      max-width: 320px
+
+    &_size_m
+      max-width: 400px
+
+    &_size_l
+      max-width: 480px
+
+    &_size_xl
+      max-width: 560px
+
+    &_size_xxl
+      max-width: 640px
+
+
+  // $Upload control preview actions area
+  &__preview-actions
+    display: block
+    width: 100%
+    padding-top: 20px
+    text-align: center
 
 
   // #Upload control area
@@ -240,7 +346,7 @@ $block: ".boss-upload"
       width: 135px
       height: 135px
 
-    @media screen and (max-width: 479px)
+    @media screen and (max-width: 480px)
       width: 120px
       height: 120px
 
@@ -260,6 +366,15 @@ $block: ".boss-upload"
       #{$block}_state_error &
         border-color: map-get($boss-app-palette, alert-border)
 
+      @media screen and (max-width: 960px)
+        height: 140px
+
+      @media screen and (max-width: 480px)
+        height: 130px
+
+      @media screen and (max-width: 400px)
+        height: 120px
+
     // $Upload control field MOD: adjust flow
     &_adjust_flow
       margin-right: 30px
@@ -269,7 +384,7 @@ $block: ".boss-upload"
         margin-right: 25px
         margin-bottom: 25px
 
-      @media screen and (max-width: 479px)
+      @media screen and (max-width: 480px)
         margin-right: 20px
         margin-bottom: 20px
 
@@ -278,7 +393,7 @@ $block: ".boss-upload"
         margin-bottom: 15px
 
       &:nth-child(2n)
-        @media screen and (max-width: 479px)
+        @media screen and (max-width: 480px)
           margin-right: 0
 
         @media screen and (max-width: 400px)
@@ -290,7 +405,7 @@ $block: ".boss-upload"
         @media screen and (max-width: 960px)
           margin-right: 0
 
-        @media screen and (max-width: 479px)
+        @media screen and (max-width: 480px)
           margin-right: 0
 
         @media screen and (max-width: 400px)
@@ -311,7 +426,7 @@ $block: ".boss-upload"
     @media screen and (max-width: 960px)
       height: 135px
 
-    @media screen and (max-width: 479px)
+    @media screen and (max-width: 480px)
       height: 120px
 
     @media screen and (max-width: 400px)
@@ -354,26 +469,25 @@ $block: ".boss-upload"
     transform: translateY(-50%)
 
     &:before
-      content: ""
+      content: '\e97d'
       display: block
-      width: 40px
-      height: 40px
-      margin: 0 auto 20px
-      background-image: url(../icons/icon-plus-white.svg)
-      background-position: center center
-      background-repeat: no-repeat
-      background-size: contain
+      margin-bottom: 20px
+      font-family: icons
+      font-size: 40px
+      line-height: 40px
+      font-weight: 400
+      color: #fff
+      text-align: center
 
       @media screen and (max-width: 400px)
-        width: 30px
-        height: 30px
         margin-bottom: 10px
+        font-size: 30px
 
     // $Upload control field label MOD: adjust form
     &_adjust_form
       color: #808080
 
       &:before
-        background-image: url(../icons/icon-plus-light-gray.svg)
+        color: $boss-light-gray
 
 

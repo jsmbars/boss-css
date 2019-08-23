@@ -243,6 +243,10 @@ $block: ".boss-check"
       min-height: 0
       padding: 15px
 
+    #{$block}_page_quiz-category &
+      padding: 15px 20px
+
+
     @media screen and (max-width: 960px)
       min-height: 60px
       padding: 20px
@@ -271,9 +275,13 @@ $block: ".boss-check"
       #{$block}_page_contacts &
         padding-bottom: 15px
 
+      #{$block}_page_quiz-category &
+        padding: 15px 10px
+
     @media screen and (max-width: 480px)
       #{$block}_page_clocking-app-page-index &,
-      #{$block}_page_contacts-admin &
+      #{$block}_page_contacts-admin &,
+      #{$block}_page_quiz-category &
         flex-wrap: wrap
 
       #{$block}_page_contacts-admin &
@@ -392,8 +400,13 @@ $block: ".boss-check"
         width: calc(100% - 60px)
         margin-top: 0
 
-      #{$block}_page_contacts-admin &
+      #{$block}_page_contacts-admin &,
+      #{$block}_page_quiz-category &
         margin-top: 0
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_quiz-category &
+        width: calc(100% - 50px)
 
 
   // $Check block header meta
@@ -424,6 +437,23 @@ $block: ".boss-check"
 
       @media screen and (max-width: 640px)
         margin-right: 0
+
+
+  // $Check block header image
+  &__header-image
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    width: 100%
+    max-width: 60px
+    max-height: 60px
+
+    #{$block}_page_quiz-category &
+      margin-right: 20px
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_quiz-category &
+        margin-right: 10px
 
 
   // $Check block header field
@@ -578,7 +608,8 @@ $block: ".boss-check"
     #{$block}_page_handover-planner-reminder &,
     #{$block}_page_handover-planner-task &,
     #{$block}_page_contacts &,
-    #{$block}_page_contacts-admin &
+    #{$block}_page_contacts-admin &,
+    #{$block}_page_quiz-category &
       display: flex
       flex-direction: row
       justify-content: flex-start
@@ -587,7 +618,8 @@ $block: ".boss-check"
     #{$block}_page_handover-planner-event &,
     #{$block}_page_handover-planner-reminder &,
     #{$block}_page_handover-planner-task &,
-    #{$block}_page_contacts-admin &
+    #{$block}_page_contacts-admin &,
+    #{$block}_page_quiz-category &
       padding-left: 20px
 
     #{$block}_page_clocking-app-page-index &,
@@ -602,7 +634,8 @@ $block: ".boss-check"
       #{$block}_page_ssr-requests &,
       #{$block}_page_profile-disciplinary &,
       #{$block}_page_venue-alert-levels &,
-      #{$block}_page_contacts-admin &
+      #{$block}_page_contacts-admin &,
+      #{$block}_page_quiz-category &
         flex-direction: column
         align-items: stretch
 
@@ -660,6 +693,21 @@ $block: ".boss-check"
         padding-left: 0
         border-top: 1px solid #eee
 
+      #{$block}_page_quiz-category &
+        order: 99
+        flex-grow: 1
+        flex-shrink: 1
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        width: 100%
+        margin-top: 10px
+        padding-left: 0
+        padding-right: 0
+        padding-top: 15px
+        text-align: center
+        border-top: 1px solid #eee
+
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
         order: 99
@@ -683,14 +731,16 @@ $block: ".boss-check"
       #{$block}_page_venue-alert-levels &,
       #{$block}_page_wtl-cards-index &,
       #{$block}_page_contacts &,
-      #{$block}_page_contacts-admin &
+      #{$block}_page_contacts-admin &,
+      #{$block}_page_quiz-category &
         margin-left: 15px
 
       @media screen and (max-width: 960px)
         #{$block}_page_ssr-requests &,
         #{$block}_page_profile-disciplinary &,
         #{$block}_page_venue-alert-levels &,
-        #{$block}_page_contacts-admin &
+        #{$block}_page_contacts-admin &,
+        #{$block}_page_quiz-category &
           margin-left: 0
           margin-top: 10px
 
@@ -702,7 +752,8 @@ $block: ".boss-check"
           margin-top: 0
 
       @media screen and (max-width: 480px)
-        #{$block}_page_contacts-admin &
+        #{$block}_page_contacts-admin &,
+        #{$block}_page_quiz-category &
           margin-left: 15px
           margin-top: 0
 
@@ -732,8 +783,14 @@ $block: ".boss-check"
     width: 100%
     padding: 15px
 
+    #{$block}_page_quiz-category &
+      padding: 15px 20px
+
     @media screen and (max-width: 960px)
       padding: 15px 10px
+
+      #{$block}_page_quiz-category &
+        padding: 15px 10px
 
 
   // $Check block row
@@ -1105,7 +1162,8 @@ $block: ".boss-check"
     #{$block}_page_clocking-app-page-index &,
     #{$block}_page_clocking-app-page-api-keys &,
     #{$block}_page_contacts &,
-    #{$block}_page_contacts-admin &
+    #{$block}_page_contacts-admin &,
+    #{$block}_page_quiz-category &
       font-size: 20px
 
     #{$block}_page_security-venues &
@@ -1130,6 +1188,10 @@ $block: ".boss-check"
         flex-shrink: 1
         width: 100%
         margin-right: 0
+
+      #{$block}_page_quiz-category &
+        font-size: 18px
+        line-height: 1.2
 
     @media screen and (max-width: 480px)
       #{$block}_page_contacts-admin &

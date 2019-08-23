@@ -16,15 +16,65 @@ $block: ".boss-choice-list"
 
 #{$block}
   +box-model-normalizer()
-
   display: block
   width: 100%
 
   // $Choice list MOD: state error
   &_state_error
+    outline: 1px solid map-get($boss-app-palette, alert-border)
 
   // $Choice list MOD: type required
   &_type_required
+
+  &_role_question-preview
+    position: relative
+    border: 2px solid map-get($boss-app-palette, primary)
+    border-radius: 10px
+
+  &_role_question-form
+    background-color: #FFF
+    box-shadow: 0 0 30px 0 rgba(0,0,0,.1)
+
+
+  // $Choice list ribbon container
+  &__ribbon-container
+    position: absolute
+    top: 0
+    right: 0
+    width: 90px
+    height: 90px
+    overflow: hidden
+
+    @media screen and (max-width: 480px)
+      width: 75px
+      height: 75px
+
+
+  // $Choice list ribbon
+  &__ribbon
+    +text-normalizer()
+    position: absolute
+    bottom: 100%
+    left: 0
+    display: block
+    width: 130px
+    height: 40px
+    background-color: $boss-light-gray
+    color: #fff
+    text-align: center
+    line-height: 40px
+    font-weight: 600
+    transform: rotate(45deg)
+    transform-origin: 0 100%
+
+    // $Choice list ribbon MOD: type accent
+    &_color_accent-blue
+      background-color: map-get($boss-app-palette, primary)
+
+    @media screen and (max-width: 480px)
+      width: 110px
+      height: 30px
+      line-height: 30px
 
 
   // $Choice list header
@@ -36,8 +86,87 @@ $block: ".boss-choice-list"
     border-top-left-radius: 2px
     border-bottom: none
 
-    #{$block}_state_error &
-      border-color: map-get($boss-app-palette, alert-border)
+    #{$block}_role_question-preview &
+      padding: 15px 60px 10px 20px
+      background-color: transparent
+      border: none
+
+    #{$block}_role_question-form &
+      padding: 20px 25px 10px
+      background-color: transparent
+      border: none
+
+    #{$block}_role_question-details &
+      padding: 0 0 15px
+      background-color: transparent
+      border: none
+
+    @media screen and (max-width: 960px)
+      #{$block}_role_question-form &
+        padding-left: 20px
+        padding-right: 20px
+
+    @media screen and (max-width: 800px)
+      #{$block}_role_question-form &
+        padding-left: 15px
+        padding-right: 15px
+
+    @media screen and (max-width: 640px)
+      #{$block}_role_question-form &
+        padding: 15px 10px 10px
+
+    @media screen and (max-width: 480px)
+      #{$block}_role_question-preview &
+        padding: 20px 50px 10px 20px
+
+
+  // $Choice list content
+  &__content
+    padding: 20px
+    border: 1px solid $boss-very-light-gray
+    border-top: none
+    border-bottom-right-radius: 2px
+    border-bottom-left-radius: 2px
+
+    #{$block}_role_question-preview &
+      padding: 10px 20px 20px
+      background-color: transparent
+      border: none
+      border: none
+
+    #{$block}_role_question-form &
+      padding: 10px 25px 20px
+      background-color: transparent
+      border: none
+
+    #{$block}_role_question-details &
+      padding: 15px 0 0
+      background-color: transparent
+      border: none
+
+    @media screen and (max-width: 960px)
+      #{$block}_role_question-form &
+        padding-left: 20px
+        padding-right: 20px
+
+    @media screen and (max-width: 800px)
+      #{$block}_role_question-form &
+        padding-left: 15px
+        padding-right: 15px
+
+    @media screen and (max-width: 640px)
+      #{$block}_role_question-form &
+        padding: 10px 10px 15px
+
+
+  // $Choice list image
+  &__image
+    display: block
+    width: 100%
+    max-width: 320px
+
+    &:not(:last-child)
+      margin-bottom: 15px
 
 
   // $Choice list title
@@ -45,6 +174,7 @@ $block: ".boss-choice-list"
     +text-normalizer()
     margin: 0
     font-size: 16px
+    font-weight: 600
     color: #FFF
 
     // $Choice list title CONTEXT: $Choice list MOD: required field
@@ -53,38 +183,808 @@ $block: ".boss-choice-list"
         content: '*'
         margin-left: 2px
 
+    #{$block}_role_question-preview &,
+    #{$block}_role_question-form &,
+    #{$block}_role_question-details &
+      color: #4c4c4c
 
-  // $Choice list content
-  &__content
-    padding: 20px 20px 50px
-    border: 1px solid $boss-very-light-gray
-    border-top: none
-    border-bottom-right-radius: 2px
-    border-bottom-left-radius: 2px
+    #{$block}_role_question-form &
+      font-size: 18px
+      font-weight: 400
 
-    #{$block}_state_error &
-      border-color: map-get($boss-app-palette, alert-border)
+    &:not(:last-child)
+      margin-bottom: 5px
 
 
   // $Choice list text
   &__text
     +text-normalizer()
-    margin-bottom: 20px
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+
+  // $Choice list text faded
+  &__text-faded
+    color: #808080
+
+
+  // $Choice list text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Choice list text bold
+  &__text-bold
+    font-weight: 400
 
 
   // $Choice list controls
   &__controls
+    display: block
+    width: 100%
+
+    #{$block}__text + &
+      margin-top: 20px
+
+
+  // $Choice list control
+  &__control
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+
+    #{$block}_role_question-details &
+      padding: 0 10px
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+      #{$block}_role_question-details &
+        margin-bottom: 25px
+
+    // $Choice list control MOD: highlight accent blue
+    &_highlight_accent-blue
+      background-color: #daecff
+
+    // $Choice list control MOD: highlight accent green
+    &_highlight_accent-green
+      background-color: #dbfddb
+
+    // $Choice list control MOD: highlight accent amber
+    &_highlight_accent-amber
+      background-color: #ffedda
+
+    // $Choice list control MOD: highlight accent red
+    &_highlight_accent-red
+      background-color: #feeeee
+
+    &_highlight_accent-blue,
+    &_highlight_accent-green,
+    &_highlight_accent-amber,
+    &_highlight_accent-red
+      #{$block}_role_question-details &
+        padding: 10px
+
+    // $Choice list control MOD: role text
+    &_type_text
+
+    // $Choice list control MOD: role text editor
+    &_type_text-editor
+
+      @media screen and (max-width: 480px)
+        flex-wrap: wrap
+
+    // $Choice list control MOD: role image
+    &_type_image
+
+    // $Choice list control MOD: role image editor
+    &_type_image-editor
+      max-width: 450px
+
+      @media screen and (max-width: 480px)
+        flex-wrap: wrap
+
+
+  // $Choice list control
+  &__option
+    flex-grow: 0
+    flex-shrink: 1
+    display: block
+    width: auto
+    max-width: 100%
+    cursor: default
+
+    &:not(:last-child)
+      margin-right: 20px
+
+      @media screen and (max-width: 480px)
+        margin-right: 10px
+
+        #{$block}__control_type_text-editor &,
+        #{$block}__control_type_image-editor &
+          margin-right: 0
+
+
+  // $Choice list control option input
+  &__option-input
+    display: none
+
+
+  // $Choice list control option control
+  // $Choice list control option value
+  &__option-control,
+  &__option-value
+    position: relative
+    display: block
+    min-height: 20px
+    padding-left: 35px
+
+    #{$block}__control_type_text &,
+    #{$block}__control_type_image &
+      min-height: 25px
+      padding-left: 40px
+
+    #{$block}__control_type_text-editor &,
+    #{$block}__control_type_image-editor &
+      min-height: 30px
+      padding-left: 45px
+
+    &:before
+      content: ""
+      box-sizing: border-box
+      position: absolute
+      top: 50%
+      left: 0
+      display: block
+      width: 20px
+      height: 20px
+      margin-top: -10px
+      background-color: #FFF
+      border: 2px solid $boss-very-light-gray
+      border-radius: 4px
+
+      #{$block}__control_type_text &,
+      #{$block}__control_type_image &
+        width: 25px
+        height: 25px
+        margin-top: -13px
+
+      #{$block}__control_type_text-editor &,
+      #{$block}__control_type_image-editor &
+        width: 30px
+        height: 30px
+        margin-top: -15px
+        border-width: 1px
+        border-radius: 2px
+
+    &:after
+      content: '\e969'
+      box-sizing: border-box
+      position: absolute
+      top: 50%
+      left: 0
+      display: block
+      width: 20px
+      height: 20px
+      margin-top: -10px
+      font-family: icons
+      font-size: 10px
+      line-height: 20px
+      font-weight: 400
+      color: #fff
+      text-align: center
+      visibility: hidden
+
+      #{$block}__control_type_text &,
+      #{$block}__control_type_image &
+        width: 25px
+        height: 25px
+        margin-top: -13px
+        font-size: 12px
+        line-height: 25px
+
+      #{$block}__control_type_text-editor &,
+      #{$block}__control_type_image-editor &
+        width: 30px
+        height: 30px
+        margin-top: -15px
+        font-size: 14px
+        line-height: 30px
+
+    &:empty
+      padding-left: 20px
+
+      #{$block}__control_type_text &,
+      #{$block}__control_type_image &
+        padding-left: 25px
+
+      #{$block}__control_type_text-editor &,
+      #{$block}__control_type_image-editor &
+        padding-left: 30px
+
+
+  // $Choice list control option control
+  &__option-control
+    cursor: pointer
+
+    #{$block}__option-input:disabled ~ &
+      cursor: not-allowed
+
+    &:before
+      #{$block}__option-input:checked ~ &
+        background-color: map-get($boss-app-palette, primary)
+        border-color: map-get($boss-app-palette, primary)
+
+      #{$block}__option-input:disabled ~ &
+        background-color: $boss-very-light-gray
+        border-color: $boss-very-light-gray
+
+    &:after
+      #{$block}__option-input:checked ~ &
+        visibility: visible
+
+      #{$block}__option-input:disabled ~ &
+        color: $boss-dark-gray
+
+
+  // $Choice list control option value
+  &__option-value
+
+    // $Choice list control option value MOD: type checked
+    &_type_checked
+
+      &:before
+        background-color: map-get($boss-app-palette, primary)
+        border-color: map-get($boss-app-palette, primary)
+
+      &:after
+        visibility: visible
+
+    // $Choice list control option value MOD: type disabled
+    &_type_disabled
+
+      &:before
+        background-color: $boss-very-light-gray
+        border-color: $boss-very-light-gray
+
+      &:after
+        color: $boss-dark-gray
+
+
+  // $Choice list control text
+  &__option-text
+    +text-normalizer()
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+  // $Choice list control image
+  &__option-image
+    display: block
+    width: 100%
+    max-width: 320px
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+  // $Choice list field
+  &__field
+    flex-grow: 1
+    flex-shrink: 1
+    position: relative
+    width: 100%
+    max-width: 100%
+
+    &:not(:last-child)
+      #{$block}__control_type_text-editor &
+        margin-right: 15px
+
+      @media screen and (max-width: 480px)
+        #{$block}__control_type_text-editor &
+          order: 99
+          margin-right: 0
+          margin-top: 10px
+
+
+  // $Choice list field input
+  &__field-input
+    +text-normalizer()
+    box-sizing: border-box
+    display: block
+    width: 100%
+    max-width: 100%
+    height: 30px
+    padding: 0 10px
+    line-height: 30px
+    background-color: #FFF
+    border: 1px solid $boss-very-light-gray
+    border-radius: 2px
+    box-shadow: none
+    appearance: none
+    -moz-appearance: none
+    -webkit-appearance: none
+
+    &:focus
+      outline: none
+      box-shadow: 0 0 5px 0 $boss-very-light-gray
+      border-color: $boss-very-light-gray
+
+    &[type=text]::-ms-clear
+      display: none
+
+    &[readonly]
+      background-color: #FFF
+      cursor: text
+
+    &:invalid
+      box-shadow: none
+
+    &:disabled,
+    &_state_disabled
+      background-color: $boss-very-light-gray
+      border-color: $boss-very-light-gray
+      color: $boss-dark-gray
+      cursor: default
+
+    &::-webkit-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:-moz-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::-moz-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:-ms-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::-ms-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:placeholder-shown
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+
+  // $Choice list field textarea
+  &__field-textarea
+    +text-normalizer()
+    resize: vertical
+    box-sizing: border-box
+    display: block
+    width: 100%
+    max-width: 100%
+    min-height: 60px
+    padding: 10px
+    background-color: #FFF
+    border: 1px solid $boss-very-light-gray
+    border-radius: 2px
+    box-shadow: none
+    appearance: none
+    -moz-appearance: none
+    -webkit-appearance: none
+
+    @media screen and (max-width: 640px)
+      min-height: 80px
+
+    @media screen and (max-width: 480px)
+      min-height: 100px
+
+    &:focus
+      outline: none
+      box-shadow: 0 0 5px 0 $boss-very-light-gray
+      border-color: $boss-very-light-gray
+
+    &[type=text]::-ms-clear
+      display: none
+
+    &[readonly]
+      background-color: #FFF
+      cursor: text
+
+    &:invalid
+      box-shadow: none
+
+    &:disabled,
+    &_state_disabled
+      background-color: $boss-very-light-gray
+      border-color: $boss-very-light-gray
+      color: $boss-dark-gray
+      cursor: default
+
+    &::-webkit-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:-moz-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::-moz-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:-ms-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::-ms-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:placeholder-shown
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+
+  // $Choice list upload
+  &__upload
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 100%
+    max-width: 320px
+
+    &:not(:last-child)
+      #{$block}__control_type_image-editor &
+        margin-right: 20px
+
+      @media screen and (max-width: 480px)
+        #{$block}__control_type_image-editor &
+          order: 99
+          max-width: none
+          margin-right: 0
+          margin-top: 10px
+
+
+  // $Choice list upload field
+  &__upload-field
+    position: relative
+    display: block
+    width: 100%
+    height: 150px
+    background-color: $boss-extra-light-gray
+    border: 1px solid $boss-very-light-gray
+    border-radius: 2px
+    overflow: hidden
+    transition: opacity .4s
+
+    @media screen and (max-width: 960px)
+      height: 140px
+
+    @media screen and (max-width: 480px)
+      height: 130px
+
+    @media screen and (max-width: 400px)
+      height: 120px
+
+    &:hover
+      opacity: 0.75
+
+
+  // $Choice list upload input
+  &__upload-input
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 10
+    display: block
+    margin: 0
+    cursor: pointer
+    opacity: 0
+
+
+  // $Choice list upload label
+  &__upload-label
+    +text-normalizer()
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    max-width: 100%
+    color: $boss-medium-gray
+    text-align: center
+    white-space: nowrap
+
+    &:before
+      content: '\e97d'
+      display: block
+      margin-bottom: 10px
+      font-family: icons
+      font-size: 30px
+      line-height: 40px
+      font-weight: 400
+      color: $boss-light-gray
+      text-align: center
+
+
+  // $Choice list upload preview
+  &__upload-preview
+    display: block
+    width: 100%
+    max-width: 320px
+    min-height: 150px
+    background-color: $boss-extra-light-gray
+
+    @media screen and (max-width: 960px)
+      min-height: 140px
+
+    @media screen and (max-width: 480px)
+      max-width: 100%
+      min-height: 130px
+
+    @media screen and (max-width: 400px)
+      min-height: 120px
+
+    &_state_broken,
+    &_state_loading
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      height: 150px
+
+      @media screen and (max-width: 960px)
+        height: 140px
+
+      @media screen and (max-width: 480px)
+        height: 130px
+
+      @media screen and (max-width: 400px)
+        height: 120px
+
+    // $Choice list upload preview area MOD: state broken
+    &_state_broken
+      &:before
+        content: '\e933'
+        display: block
+        font-family: icons
+        font-size: 60px
+        line-height: 1
+        font-weight: 400
+        color: $boss-very-light-gray
+        text-align: center
+
+        @media screen and (max-width: 960px)
+          font-size: 55px
+
+        @media screen and (max-width: 480px)
+          font-size: 50px
+
+        @media screen and (max-width: 400px)
+          font-size: 45px
+
+    // $Choice list upload preview area MOD: state loading
+    &_state_loading
+      &:before
+        content: ''
+        display: block
+        width: 50px
+        height: 50px
+        background-image: url(../icons/spinner.svg)
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: contain
+
+        @media screen and (max-width: 960px)
+          width: 45px
+          height: 45px
+
+        @media screen and (max-width: 480px)
+          width: 40px
+          height: 40px
+
+        @media screen and (max-width: 400px)
+          width: 35px
+          height: 35px
+
+
+  // $Choice list upload preview image
+  &__upload-preview-image
+    display: block
+    width: 100%
+    max-width: 100%
+    border-radius: 2px
+
+
+  // $Choice list actions
+  &__actions
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+
+    #{$block}__control_type_text-editor &
+      flex-direction: row
+      justify-content: flex-start
+      align-items: center
+
+    #{$block}__control_type_image-editor &
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+
+    @media screen and (max-width: 480px)
+      #{$block}__control_type_text-editor &
+        flex-grow: 1
+        flex-shrink: 1
+        justify-content: flex-end
+
+      #{$block}__control_type_image-editor &
+        flex-grow: 1
+        flex-shrink: 1
+        flex-direction: row
+        justify-content: flex-end
+
+
+  // $Choice list action
+  &__action
+    +text-normalizer()
+    display: inline-block
+    white-space: nowrap
+
+    &:before
+      content: ''
+      display: inline-block
+      width: 25px
+      height: 20px
+      margin-right: 5px
+      font-family: icons
+      line-height: 20px
+      font-weight: 400
+      color: inherit
+      text-align: center
+      vertical-align: middle
+
+      #{$block}__control_type_text-editor &,
+      #{$block}__control_type_image-editor &
+        width: 30px
+        height: 30px
+        line-height: 30px
+
+      @media screen and (max-width: 480px)
+        #{$block}__control_type_text-editor &,
+        #{$block}__control_type_image-editor &
+          text-align: right
+
+    &:hover
+      opacity: .8
+
+    &:not(:last-child)
+      margin-right: 15px
+
+      #{$block}__control_type_image-editor &
+        margin-right: 0
+        margin-bottom: 15px
+
+      @media screen and (max-width: 480px)
+        margin-right: 10px
+
+        #{$block}__control_type_image-editor &
+          margin-right: 15px
+          margin-bottom: 0
+
+    &:empty:before
+      margin-right: 0
+
+    // $Choice list action MOD: role add
+    &_role_add
+      color: map-get($boss-app-palette, primary)
+
+      &:before
+        content: '\e97d'
+        font-size: 18px
+
+        #{$block}__control_type_text-editor &
+          font-size: 20px
+
+        #{$block}__control_type_image-editor &
+          font-size: 24px
+
+    // $Choice list action MOD: role confirm
+    &_role_confirm
+      color: map-get($boss-app-palette, secondary)
+
+      &:before
+        content: '\e914'
+        font-size: 24px
+
+        #{$block}__control_type_text-editor &
+          font-size: 26px
+
+        #{$block}__control_type_image-editor &
+          font-size: 30px
+
+    // $Choice list action MOD: role edit
+    &_role_edit
+      color: map-get($boss-app-palette, warning)
+
+      &:before
+        content: '\e96b'
+        font-size: 18px
+
+        #{$block}__control_type_text-editor &
+          font-size: 20px
+
+        #{$block}__control_type_image-editor &
+          font-size: 24px
+
+    // $Choice list action MOD: role remove
+    &_role_remove
+      color: map-get($boss-app-palette, alert)
+
+      &:before
+        content: '\e93b'
+        font-size: 24px
+
+        #{$block}__control_type_text-editor &
+          font-size: 26px
+
+        #{$block}__control_type_image-editor &
+          font-size: 30px
+
+    // $Choice list action MOD: role reload
+    &_role_reload
+      color: map-get($boss-app-palette, primary)
+
+      &:before
+        content: '\e97a'
+        font-size: 18px
+
+        #{$block}__control_type_text-editor &
+          font-size: 20px
+
+        #{$block}__control_type_image-editor &
+          font-size: 24px
+
+
+  // $Choice list action text
+  &__action-text
+    +text-normalizer()
+    display: inline-block
+    font-size: 16px
+    line-height: 20px
+    vertical-align: middle
+
+    #{$block}__control_type_text-editor &,
+    #{$block}__control_type_image-editor &
+      line-height: 30px
 
 
   // $Choice list radio label
   &__radio-label
     +text-normalizer()
     display: block
-    margin-bottom: 20px
     cursor: pointer
 
-    &:last-of-type
-      margin-bottom: 0
+    &:not(:last-child)
+      margin-bottom: 20px
 
 
   // $Choice list radio button
@@ -96,7 +996,7 @@ $block: ".boss-choice-list"
   &__radio-label-text
     position: relative
     display: inline-block
-    line-height: 25px
+    line-height: 20px
     padding-left: 35px
 
     &:before
@@ -109,8 +1009,8 @@ $block: ".boss-choice-list"
       width: 20px
       height: 20px
       background-color: #FFF
-      border: 2px solid map-get($boss-app-palette, inactive)
-      border-radius: 5px
+      border: 2px solid $boss-very-light-gray
+      border-radius: 4px
 
       #{$block}__radio-button:checked ~ &
         background-color: map-get($boss-app-palette, primary)
@@ -120,12 +1020,14 @@ $block: ".boss-choice-list"
       content: '\e969'
       box-sizing: border-box
       position: absolute
-      top: 8px
-      left: 5px
+      top: 3px
+      left: 0px
       display: block
+      width: 20px
+      height: 20px
       font-family: icons
       font-size: 10px
-      line-height: 1
+      line-height: 20px
       font-weight: 400
       color: #fff
       text-align: center

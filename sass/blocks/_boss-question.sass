@@ -20,6 +20,8 @@ $block: ".boss-question"
 
   // $Question form
   &__form
+    display: block
+    width: 100%
 
 
   // $Question main
@@ -89,7 +91,6 @@ $block: ".boss-question"
   // $Question subject
   &__subject
     +text-normalizer()
-    margin: 0
     font-weight: normal
 
 
@@ -222,31 +223,29 @@ $block: ".boss-question"
     margin-left: 15px
     font-size: 0
     color: transparent
-    vertical-align: middle
     white-space: nowrap
 
     &:before
       content: ""
       display: inline-block
-      width: 14px
-      height: 14px
       margin-right: 5px
-      white-space: nowrap
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
+      font-family: icons
+      font-size: 14px
+      line-height: 14px
+      font-weight: 400
+      color: #808080
       opacity: 1
       transition: all .4s
 
     // $Question icon MOD: role attachment
     &_role_att
       &:before
-        background-image: url(../icons/envelope-medium-gray.svg)
+        content: '\e925'
 
     // $Question icon MOD: role photo
     &_role_photo
       &:before
-        background-image: url(../icons/icon-camera-solid-medium-gray.svg)
+        content: '\e948'
 
     // $Question icon MOD: state visible
     &_state_visible
@@ -264,7 +263,6 @@ $block: ".boss-question"
     margin-left: 15px
     color: map-get($boss-app-palette, primary)
     outline: none
-    vertical-align: middle
     text-decoration: none
 
     @media screen and (max-width: 960px)
@@ -284,30 +282,28 @@ $block: ".boss-question"
     &:before
       content: ""
       display: inline-block
-      width: 12px
-      height: 12px
       margin-right: 5px
-      white-space: nowrap
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
+      font-family: icons
+      font-size: 12px
+      line-height: 12px
+      font-weight: 400
+      color: map-get($boss-app-palette, primary)
 
     // $Question helpers link MOD: role edit
     &_role_edit
       &:before
-        background-image: url(../icons/icon-pencil-primary.svg)
+        content: '\e96b'
 
     // $Question helpers link MOD: role add
     &_role_add
       &:before
-        background-image: url(../icons/icon-plus-primary.svg)
+        content: '\e97d'
 
     // $Question helpers link MOD: role cancel
     &_role_cancel
       &:before
-        width: 10px
-        height: 10px
-        background-image: url(../icons/icon-close-primary.svg)
+        content: '\e96a'
+        font-size: 10px
 
     // $Question helpers link MOD: state visible
     &_state_visible
@@ -429,20 +425,20 @@ $block: ".boss-question"
   // $Question file label text
   &__file-label-text
     position: relative
-    padding-left: 30px
     color: $boss-very-light-gray
+    white-space: nowrap
 
     &:before
-      content: ""
-      box-sizing: border-box
-      position: absolute
-      top: 0
-      left: 0
-      display: block
-      width: 20px
-      height: 20px
-      background: url(../icons/icon-camera-solid-very-light-gray.svg) center center no-repeat
-      background-size: contain
+      content: '\e948'
+      display: inline-block
+      margin-top: -4px
+      margin-right: 5px
+      font-family: icons
+      font-size: 20px
+      line-height: 18px
+      font-weight: 400
+      color: $boss-very-light-gray
+      vertical-align: middle
 
 
   // $Question submit
@@ -480,15 +476,21 @@ $block: ".boss-question"
     overflow: hidden
     opacity: 0.7
     transition: all .5s
+    text-align: center
 
     &:hover
       opacity: 1
 
     &_state_broken
-      background-image: url(../icons/icon-broken-file-very-light-gray.svg)
-      background-position: center center
-      background-repeat: no-repeat
-      background-size: auto 70%
+      &:before
+        content: '\e933'
+        box-sizing: border-box
+        display: inline-block
+        font-family: icons
+        font-size: 25px
+        line-height: 35px
+        font-weight: 400
+        color: $boss-very-light-gray
 
 
   // Question preview image
