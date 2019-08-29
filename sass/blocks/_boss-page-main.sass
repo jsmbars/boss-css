@@ -584,17 +584,14 @@ $block: ".boss-page-main"
       font-weight: 400
       color: inherit
 
-    &:hover
-      outline: none
-      color: #fff
-      background-color: map-get($boss-app-palette, primary)
-
+    &:hover,
     &:focus
       outline: none
+      color: $boss-medium-gray
 
-    &:hover:before,
-    &_state_active:before
-      color: #fff
+    &:hover
+      @media (hover: hover)
+        background-color: #eee
 
     // $Page main container control MOD: role view history
     &_role_view-history
@@ -603,6 +600,10 @@ $block: ".boss-page-main"
       &:before
         content: '\e927'
         display: inline-block
+
+      &:hover,
+      &:focus
+        color: map-get($boss-app-palette, primary)
 
     // $Page main container control MOD: role venue
     &_role_venue
@@ -627,9 +628,13 @@ $block: ".boss-page-main"
       color: #FFF
       background-color: map-get($boss-app-palette, primary)
 
-      &:hover
+      &:hover,
+      &:focus
         color: #FFF
         cursor: default
+
+        @media (hover: hover)
+          background-color: map-get($boss-app-palette, primary)
 
     // $Page main container control MOD: adjust row third
     &_adjust_row-third
