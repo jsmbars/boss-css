@@ -584,11 +584,13 @@ $block: ".boss-page-main"
       font-weight: 400
       color: inherit
 
-    &:hover,
-    &:focus
+    &:hover
       outline: none
       color: #fff
       background-color: map-get($boss-app-palette, primary)
+
+    &:focus
+      outline: none
 
     &:hover:before,
     &_state_active:before
@@ -625,8 +627,7 @@ $block: ".boss-page-main"
       color: #FFF
       background-color: map-get($boss-app-palette, primary)
 
-      &:hover,
-      &:focus
+      &:hover
         color: #FFF
         cursor: default
 
