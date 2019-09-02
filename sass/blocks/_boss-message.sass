@@ -487,7 +487,6 @@ $block: ".boss-message"
     position: relative
     display: inline-block
     cursor: pointer
-    padding-left: 20px
     font-size: 18px
     color: map-get($boss-app-palette, primary)
     text-decoration: none
@@ -495,21 +494,17 @@ $block: ".boss-message"
     &:hover
       text-decoration: underline
 
-    &:after
-      content: ''
-      position: absolute
-      left: 0
-      top: 50%
-      display: block
-      width: 14px
-      height: 14px
-      margin-top: -7px
-      background-image: url(../icons/icon-arrow-down-primary.svg)
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
-      transform: rotate(180deg)
-      transition: all .4s
+    &:before
+      content: '\e91a'
+      display: inline-block
+      margin-top: -2px
+      margin-right: 5px
+      font-family: icons
+      font-size: 24px
+      line-height: 18px
+      font-weight: 400
+      color: map-get($boss-app-palette, primary)
+      vertical-align: middle
 
     &:hover,
     &:focus
@@ -517,8 +512,8 @@ $block: ".boss-message"
 
     // $Message details switch MOD: state closed
     &_state_closed
-      &:after
-        transform: rotate(0)
+      &:before
+        content: '\e919'
 
 
   // $Message wysiwyg-generated content

@@ -196,18 +196,18 @@ $block: ".boss-checklist"
           height: 20px
 
       &:after
-        content: ""
+        content: '\e969'
         box-sizing: border-box
         position: absolute
         top: 6px
         left: 6px
         display: block
-        width: 12px
-        height: 12px
-        background-image: url('../icons/icon-checked-light-gray.svg')
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        font-family: icons
+        font-size: 12px
+        line-height: 1
+        font-weight: 400
+        color: #aaa
+        text-align: center
         visibility: hidden
 
         #{$block}__checkbox-input:checked ~ &
@@ -274,36 +274,35 @@ $block: ".boss-checklist"
       top: 50%
       left: 0
       display: block
-      width: 10px
-      height: 10px
-      background-repeat: no-repeat
-      background-size: contain
-      background-position: center center
+      font-family: icons
+      font-size: 10px
+      line-height: 1
+      font-weight: 400
       transform: translateY(-50%)
 
     // $Checklist icon MOD: role confirm
     &_role_confirm
       padding-left: 16px
       &:before
-        width: 16px
-        height: 16px
-        background-image: url("../icons/icon-checked-primary.svg")
+        content: '\e969'
+        font-size: 16px
+        color: map-get($boss-app-palette, primary)
 
     // $Checklist icon MOD: role edit
     &_role_edit
       padding-left: 14px
       &:before
-        width: 14px
-        height: 14px
-        background-image: url("../icons/icon-pencil-primary.svg")
+        content: '\e96b'
+        font-size: 14px
+        color: map-get($boss-app-palette, primary)
 
     // $Checklist icon MOD: role delete
     &_role_delete
       padding-left: 12px
       &:before
-        width: 12px
-        height: 12px
-        background-image: url("../icons/icon-close-alert.svg")
+        content: '\e96a'
+        font-size: 12px
+        color: map-get($boss-app-palette, alert)
 
     // $Checklist icon MOD: role field-cancel
     &_role_field-cancel
@@ -319,10 +318,10 @@ $block: ".boss-checklist"
         width: 30px
 
       &:before
+        content: '\e96a'
         left: 50%
-        width: 12px
-        height: 12px
-        background-image: url("../icons/icon-close-alert.svg")
+        font-size: 12px
+        color: map-get($boss-app-palette, alert)
         transform: translate(-50%, -50%)
 
     // $Checklist icon MOD: role field-confirm
@@ -339,10 +338,10 @@ $block: ".boss-checklist"
         width: 30px
 
       &:before
+        content: '\e969'
         left: 50%
-        width: 16px
-        height: 16px
-        background-image: url("../icons/icon-checked-primary.svg")
+        font-size: 16px
+        color: map-get($boss-app-palette, primary)
         transform: translate(-50%, -50%)
 
 
