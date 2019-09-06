@@ -129,6 +129,13 @@ $block: ".boss-indicator"
   &__icon
     display: inline-block
     color: #4c4c4c
+    vertical-align: middle
+
+    #{$block}_color_accent-green &
+      color: map-get($boss-app-palette, secondary)
+
+    #{$block}_color_accent-red &
+      color: map-get($boss-app-palette, alert)
 
     &:before
       content: ''
@@ -148,6 +155,16 @@ $block: ".boss-indicator"
       &:before
         font-size: 18px
         line-height: 18px
+
+    &_size_l
+      &:before
+        font-size: 22px
+        line-height: 22px
+
+    &_size_xl
+      &:before
+        font-size: 24px
+        line-height: 24px
 
     &_size_extra
       &:before
@@ -246,6 +263,14 @@ $block: ".boss-indicator"
     &_loop-circle
       &:before
         content: '\e982'
+
+    &_thumb-down
+      &:before
+        content: '\e943'
+
+    &_thumb-up
+      &:before
+        content: '\e944'
 
 
   // $Indicator marker
@@ -360,7 +385,8 @@ $block: ".boss-indicator"
     #{$block}_status_success &,
     #{$block}_status_collected &,
     #{$block}_status_active &,
-    #{$block}_status_logged-in &
+    #{$block}_status_logged-in &,
+    #{$block}_color_accent-green &
       color: map-get($boss-app-palette, secondary)
 
     // $Indicator label CONTEXT: $Indicator MOD: role info alert
@@ -371,7 +397,8 @@ $block: ".boss-indicator"
     #{$block}_status_sent-back &,
     #{$block}_status_disabled &,
     #{$block}_status_revoked &,
-    #{$block}_level_red &
+    #{$block}_level_red &,
+    #{$block}_color_accent-red &
       color: map-get($boss-app-palette, alert)
 
     #{$block}_level_amber &
