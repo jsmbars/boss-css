@@ -454,6 +454,27 @@ $block: ".boss-choice-list"
       &:after
         color: $boss-dark-gray
 
+    &_color_accent-red,
+    &_color_accent-red#{&}_type_checked
+
+      &:before
+        background-color: map-get($boss-app-palette, alert)
+        border-color: map-get($boss-app-palette, alert)
+
+    &_color_accent-amber,
+    &_color_accent-amber#{&}_type_checked
+
+      &:before
+        background-color: map-get($boss-app-palette, warning)
+        border-color: map-get($boss-app-palette, warning)
+
+    &_color_accent-green,
+    &_color_accent-green#{&}_type_checked
+
+      &:before
+        background-color: map-get($boss-app-palette, secondary)
+        border-color: map-get($boss-app-palette, secondary)
+
 
   // $Choice list control text
   &__option-text
@@ -461,6 +482,15 @@ $block: ".boss-choice-list"
 
     &:not(:last-child)
       margin-bottom: 10px
+
+    &_color_accent-red
+      color: #eb6e6d
+
+    &_color_accent-amber
+      color: #f2962a
+
+    &_color_accent-green
+      color: #41b12c
 
 
   // $Choice list control image
@@ -471,6 +501,15 @@ $block: ".boss-choice-list"
 
     &:not(:last-child)
       margin-bottom: 10px
+
+    &_outline_accent-red
+      border: 5px solid map-get($boss-app-palette, alert)
+
+    &_outline_accent-amber
+      border: 5px solid map-get($boss-app-palette, warning)
+
+    &_outline_accent-green
+      border: 5px solid map-get($boss-app-palette, secondary)
 
 
   // $Choice list field
