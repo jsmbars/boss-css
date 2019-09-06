@@ -354,11 +354,15 @@ $block: ".boss-planner"
 
   // $Planner day
   &__day
+    position: relative
     flex-grow: 1
     flex-shrink: 1
     display: block
     width: 14.25%
-    min-height: 55px
+    min-height: 150px
+
+    #{$block}_type_week#{$block}_layout_responsive &
+      min-height: 130px
 
     @media screen and (max-width: 1120px)
       #{$block}_type_week#{$block}_layout_responsive &
@@ -367,7 +371,7 @@ $block: ".boss-planner"
         justify-content: flex-start
         align-items: stretch
         width: 100%
-        min-height: 0
+        min-height: 60px
 
     @media screen and (max-width: 400px)
       #{$block}_type_week#{$block}_layout_responsive &
@@ -495,6 +499,126 @@ $block: ".boss-planner"
     @media screen and (max-width: 400px)
       #{$block}_type_week#{$block}_layout_responsive &
         width: 100%
+
+
+  // $Planner day details
+  &__day-details
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 10
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    padding: 10px 5px
+    background-color: #ecf3ff
+    visibility: hidden
+    opacity: 0
+    transition: all .4s
+
+    #{$block}__day:hover &
+      visibility: visible
+      opacity: 1
+
+    @media screen and (max-width: 1120px)
+     #{$block}_type_week#{$block}_layout_responsive &
+       top: 5px
+       right: 5px
+       left: 104px
+       bottom: auto
+       min-height: calc(100% - 10px)
+       border-radius: 4px
+       box-shadow: 0 5px 15px -5px rgba(0,0,0,.3)
+       border: 1px solid map-get($boss-app-palette, primary)
+
+    @media screen and (max-width: 400px)
+      #{$block}_type_week#{$block}_layout_responsive &
+        top: 40px
+        right: 5px
+        left: 5px
+
+    &:before
+      @media screen and (max-width: 1120px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          content: ''
+          position: absolute
+          z-index: 10002
+          top: 25px
+          right: 100%
+          display: block
+          margin-top: -5px
+          border-right: 5px solid #ecf3ff
+          border-top: 5px solid transparent
+          border-bottom: 5px solid transparent
+
+      @media screen and (max-width: 400px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          top: auto
+          right: auto
+          bottom: 100%
+          left: 50%
+          margin-top: 0
+          margin-left: -5px
+          border-top: none
+          border-bottom: 5px solid #ecf3ff
+          border-left: 5px solid transparent
+          border-right: 5px solid transparent
+
+    &:after
+      @media screen and (max-width: 1120px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          content: ''
+          position: absolute
+          z-index: 10001
+          top: 25px
+          right: 100%
+          display: block
+          margin-top: -6px
+          border-right: 6px solid map-get($boss-app-palette, primary)
+          border-top: 6px solid transparent
+          border-bottom: 6px solid transparent
+
+      @media screen and (max-width: 400px)
+        #{$block}_type_week#{$block}_layout_responsive &
+          top: auto
+          right: auto
+          bottom: 100%
+          left: 50%
+          margin-top: 0
+          margin-left: -6px
+          border-top: none
+          border-bottom: 6px solid map-get($boss-app-palette, primary)
+          border-left: 6px solid transparent
+          border-right: 6px solid transparent
+
+
+  // $Planner day details header
+  &__day-details-header
+    flex-grow: 0
+    flex-shrink: 1
+    display: block
+    width: 100%
+    padding-bottom: 10px
+
+
+  // $Planner day details title
+  &__day-details-title
+    +text-normalizer()
+    text-align: right
+    font-weight: 600
+    line-height: 1
+
+
+  // $Planner day details content
+  &__day-details-content
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 100%
+    overflow: auto
 
 
   // $Planner group
@@ -646,6 +770,7 @@ $block: ".boss-planner"
     width: 100%
     max-width: 100%
     height: 30px
+    margin: 0
     padding: 5px 10px
     white-space: nowrap
     border-radius: 4px
@@ -794,3 +919,52 @@ $block: ".boss-planner"
     &_role_recurring
       &:before
         content: '\e982'
+
+
+  // $Planner list
+  &__list
+    display: block
+    width: 100%
+    margin: 0
+    list-style: none
+
+    & + &
+      margin-top: 8px
+      padding-top: 8px
+      border-top: 1px solid $boss-very-light-gray
+
+
+  // $Planner list item
+  &__list-item
+    position: relative
+    display: block
+    width: 100%
+    margin: 0
+    padding: 0
+
+    &:not(:last-child)
+      margin-bottom: 4px
+
+
+  // $Planner text
+  &__text
+    +text-normalizer()
+    max-width: 100%
+    line-height: 1.2
+
+    // $Planner text MOD: size small
+    &_size_s
+      font-size: 12px
+
+
+  // $Planner text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Planner text bold
+  &__text-bold
+    font-weight: 600
+
+
+
