@@ -602,6 +602,8 @@ $block: ".boss-button"
   // $Common button MOD: role action-confirm
   // $Common button MOD: success reverse
   // $Common button MOD: accessories
+  // $Common button MOD: pass
+  // $Common button MOD: pass reverse
   &_role_view-order,
   &_role_update,
   &_role_edit-alt,
@@ -617,7 +619,9 @@ $block: ".boss-button"
   &_role_confirmed-task,
   &_role_accept,
   &_role_success_reverse,
-  &_role_accessories-alt
+  &_role_accessories-alt,
+  &_role_pass,
+  &_role_pass_reverse
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -655,6 +659,12 @@ $block: ".boss-button"
 
   &_role_accessories-alt
     +button-with-icon-left($icon: '\e93a')
+
+  &_role_pass
+    +button-with-icon-left($icon: '\e944')
+
+  &_role_pass_reverse
+    +button-with-icon-right($icon: '\e944')
 
 
   // $Common button MOD: role exclamation
@@ -835,7 +845,8 @@ $block: ".boss-button"
   &_role_shifts,
   &_role_payments,
   &_role_disciplinary,
-  &_role_user-light
+  &_role_user-light,
+  &_role_quizzes
     $primary-color: #4c4c4c
     +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
     +button-bordered-hover($color: #fff, $border-color: $primary-color, $background-color: $primary-color)
@@ -870,6 +881,9 @@ $block: ".boss-button"
 
   &_role_user-light
     +button-with-icon-left($icon: '\e904')
+
+  &_role_quizzes
+    +button-with-icon-left($icon: '\e983', $size: 14px)
 
 
   // $Common button MOD: role contacts tag

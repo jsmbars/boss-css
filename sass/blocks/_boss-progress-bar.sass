@@ -1,0 +1,127 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Progress bar
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+@keyframes stripes-move
+  0%
+    background-position: 0 0
+
+  100%
+    background-position: 40px 40px
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-progress-bar"
+
+#{$block}
+  display: block
+  max-width: 100%
+
+
+  // $Progress bar content
+  &__content
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+
+
+  // $Progress bar meter
+  &__meter
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 100%
+    height: 30px
+    padding: 5px
+    border-radius: 5px
+    background-color: $boss-extra-light-gray
+
+
+  // $Progress bar value
+  &__value
+    display: block
+    width: 0
+    height: 20px
+    background-color: $boss-medium-gray
+    border-radius: 5px
+    transition: width .4s
+
+    // $Progress bar value MOD: color accent-blue
+    &_color_accent-blue
+      background-color: map-get($boss-app-palette, primary)
+
+    // $Progress bar value MOD: color accent-green
+    &_color_accent-green
+      background-color: map-get($boss-app-palette, secondary)
+
+    // $Progress bar value MOD: color accent-amber
+    &_color_accent-amber
+      background-color: map-get($boss-app-palette, warning)
+
+    // $Progress bar value MOD: color accent-red
+    &_color_accent-red
+      background-color: map-get($boss-app-palette, alert)
+
+    &_type_striped
+      position: relative
+      overflow: hidden
+
+      &:after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        z-index: 1
+        background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+        background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+        background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+        background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+        background-image: linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+        background-size: 40px 40px
+
+    &_type_striped#{&}_type_animated
+      &:after
+        animation: stripes-move 2s linear infinite
+
+
+  // $Progress bar label
+  &__label
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    max-width: 100%
+    font-size: 14px
+    line-height: 1.2
+
+    @media screen and (max-width: 960px)
+      max-width: 60px
+      font-size: 12px
+
+    // $Progress bar label MOD: position before
+    &_position_before
+      padding-right: 10px
+      text-align: left
+
+    // $Progress bar label MOD: position after
+    &_position_after
+      padding-left: 10px
+      text-align: right
+
+    // $Progress bar label MOD: type bold
+    &_type_bold
+      font-weight: 600
+
+    // $Progress bar label MOD: type light
+    &_type_light
+      font-weight: 300

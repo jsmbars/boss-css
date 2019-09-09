@@ -1,0 +1,150 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Number
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-number"
+
+#{$block}
+  display: inline-block
+  max-width: 100%
+
+  // $Number MOD: layout row
+  &_layout_row
+
+  // $Number MOD: layout column
+  &_layout_column
+
+  // $Number MOD: layout fluid
+  &_layout_fluid
+
+  // $Number action
+  &_role_action
+    opacity: 1
+    cursor: pointer
+    transition: all .3s
+
+    &:hover
+      opacity: .6
+
+
+  // $Number content
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+
+    #{$block}_layout_row &
+      flex-direction: row
+
+    #{$block}_layout_fluid &
+      flex-direction: row
+
+      @media screen and (max-width: 960px)
+        flex-direction: column
+
+
+  // $Number value
+  &__value
+    +text-normalizer()
+    display: inline-block
+    max-width: 100%
+    font-size: 24px
+    line-height: 1
+    font-weight: 600
+
+    // $Number value MOD: size extra small
+    &_size_xs
+      font-size: 16px
+
+    // $Number value MOD: size small
+    &_size_s
+      font-size: 20px
+
+    // $Number value MOD: size large
+    &_size_l
+      font-size: 28px
+
+    // $Number value MOD: size extra large
+    &_size_xl
+      font-size: 32px
+
+    &_color_accent-blue
+      color: map-get($boss-app-palette, primary)
+
+
+  // $Number value meta
+  &__value-meta
+    font-weight: 300
+    color: #aaa
+
+
+  // $Number label
+  &__label
+    +text-normalizer()
+    display: inline-block
+    max-width: 100%
+    font-size: 14px
+    line-height: 1.2
+
+    // $Number label MOD: position before
+    &_position_before
+      margin-bottom: 5px
+
+      #{$block}_layout_row &,
+      #{$block}_layout_fluid &
+        margin-bottom: 0
+        padding-right: 10px
+        text-align: right
+
+      @media screen and (max-width: 960px)
+        #{$block}_layout_fluid &
+          margin-bottom: 5px
+          padding-right: 0
+          text-align: center
+
+    // $Number label MOD: position after
+    &_position_after
+      margin-top: 5px
+
+      #{$block}_layout_row &,
+      #{$block}_layout_fluid &
+        margin-top: 0
+        padding-left: 10px
+        text-align: left
+
+      @media screen and (max-width: 960px)
+        #{$block}_layout_fluid &
+          margin-top: 5px
+          padding-left: 0
+          text-align: center
+
+    // $Number label MOD: type bold
+    &_type_bold
+      font-weight: 600
+
+    // $Number label MOD: type light
+    &_type_light
+      font-weight: 300
+
+    // $Number label MOD: size small
+    &_size_s
+      font-size: 12px
+
+    // $Number label MOD: size large
+    &_size_l
+      font-size: 16px
+
+    // $Number label MOD: size extra large
+    &_size_xl
+      font-size: 18px

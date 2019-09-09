@@ -39,7 +39,7 @@ $block: ".boss-timeline"
       margin-bottom: 30px
 
     &:before
-      content: ""
+      content: '\e961'
       position: absolute
       top: 0
       left: 0
@@ -49,11 +49,13 @@ $block: ".boss-timeline"
       height: 30px
       border: 5px solid #fff
       border-radius: 50%
-      background-color: #FFF
-      background-image: url('../icons/icon-clock-dark-gray.svg')
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: 15px auto
+      font-family: icons
+      font-size: 15px
+      line-height: 20px
+      color: #4c4c4c
+      font-weight: 400
+      text-align: center
+      background-color: #fff
 
     &:after
       content: ""
@@ -89,6 +91,16 @@ $block: ".boss-timeline"
         @media screen and (max-width: 480px)
           left: 18px
 
+    // $Timeline item MOD: adjust card
+    &_adjust_card
+      &:before
+        top: 15px
+        left: 0
+
+      &:after
+        top: 30px
+        bottom: -60px
+
     // $Timeline item MOD: role card
     &_role_card
       &:before
@@ -109,12 +121,12 @@ $block: ".boss-timeline"
     // $Timeline item MOD: state alert
     &_state_alert
       &:before
-        background-image: url('../icons/icon-clock-alert.svg')
+        color: map-get($boss-app-palette, alert)
 
     // $Timeline item MOD: role initial
     &_role_initial
       &:before
-        background-image: url('../icons/icon-clock-primary.svg')
+        color: map-get($boss-app-palette, primary)
 
 
   &__count
@@ -163,7 +175,6 @@ $block: ".boss-timeline"
       @media screen and (max-width: 480px)
         width: calc(100% - 45px)
         margin-left: 45px
-
 
     // $Timeline inner container MOD: role card
     &_role_card
@@ -346,17 +357,14 @@ $block: ".boss-timeline"
       color: #808080
 
       &:before
-        content: ""
+        content: '\e901'
         display: inline-block
-        width: 12px
-        height: 12px
         margin-right: 7px
-        margin-top: -4px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
-        background-image: url('../icons/icon-storefront-medium-gray.svg')
-        vertical-align: middle
+        font-family: icons
+        font-size: 12px
+        line-height: 12px
+        font-weight: 400
+        color: #808080
 
 
   // $Timeline text marked
@@ -396,25 +404,18 @@ $block: ".boss-timeline"
 
     // $Timeline link MOD: role details
     &_role_details
-      padding-left: 20px
 
-      &:after
-        content: ''
-        position: absolute
-        left: 0
-        top: 50%
-        display: block
-        width: 12px
-        height: 12px
-        margin-top: -6px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+      &:before
+        content: '\e921'
+        display: inline-block
+        margin-right: 5px
+        font-family: icons
+        font-size: 14px
+        line-height: 14px
+        font-weight: 400
+        color: inherit
+        vertical-align: middle
         transition: all .4s
-
-    &_role_details
-      &:after
-        background-image: url(../icons/icon-zoom-primary.svg)
 
 
   // $Timeline details
@@ -460,23 +461,23 @@ $block: ".boss-timeline"
     cursor: pointer
 
     &:after
-      content: ""
+      content: '\e919'
       display: inline-block
       width: 30px
       height: 30px
       margin-left: 10px
-      margin-top: -3px
-      background-image: url('../icons/icon-arrow-down-dark-gray.svg')
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: 15px 15px
+      font-family: icons
+      font-size: 25px
+      line-height: 30px
+      font-weight: 400
+      color: #4c4c4c
+      text-align: center
       vertical-align: middle
-      transform: rotate(180deg)
 
     // $Timeline details switch MOD: state closed
     &_state_closed
       &:after
-        transform: rotate(0)
+        content: '\e91a'
 
 
   // $Timeline previews
