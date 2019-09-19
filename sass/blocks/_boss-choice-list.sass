@@ -571,6 +571,15 @@ $block: ".boss-choice-list"
       color: $boss-dark-gray
       cursor: default
 
+    // $Choice list field input MOD: state error
+    &_state_error
+      outline: 1px solid map-get($boss-app-palette, alert-border)
+      color: map-get($boss-app-palette, alert)
+
+      &:focus
+        border-color: map-get($boss-app-palette, alert)
+        box-shadow: 0 0 5px 0 map-get($boss-app-palette, alert)
+
     &::-webkit-input-placeholder
       color: $boss-input-placeholder-color !important
       opacity:  1 !important
@@ -646,6 +655,15 @@ $block: ".boss-choice-list"
       color: $boss-dark-gray
       cursor: default
 
+    // $Choice list field textarea MOD: state error
+    &_state_error
+      outline: 1px solid map-get($boss-app-palette, alert-border)
+      color: map-get($boss-app-palette, alert)
+
+      &:focus
+        border-color: map-get($boss-app-palette, alert)
+        box-shadow: 0 0 5px 0 map-get($boss-app-palette, alert)
+
     &::-webkit-input-placeholder
       color: $boss-input-placeholder-color !important
       opacity:  1 !important
@@ -718,6 +736,11 @@ $block: ".boss-choice-list"
 
     &:hover
       opacity: 0.75
+
+    // $Choice list upload field MOD: state error
+    &_state_error
+      outline: 1px solid map-get($boss-app-palette, alert-border)
+      color: map-get($boss-app-palette, alert)
 
 
   // $Choice list upload input
@@ -843,6 +866,10 @@ $block: ".boss-choice-list"
         @media screen and (max-width: 400px)
           width: 35px
           height: 35px
+
+    // $Choice list upload preview area MOD: state error
+    &_state_error
+      outline: 1px solid map-get($boss-app-palette, alert-border)
 
 
   // $Choice list upload preview image
@@ -1014,6 +1041,46 @@ $block: ".boss-choice-list"
     #{$block}__control_type_text-editor &,
     #{$block}__control_type_image-editor &
       line-height: 30px
+
+
+  // $Choice list error message
+  &__error
+    display: block
+    position: relative
+    padding: 5px 10px
+    background-color: map-get($boss-app-palette, error-background)
+    border-radius: $boss-global-border-radius
+
+    &:before
+      content: '\e911'
+      position: absolute
+      top: 50%
+      left: 10px
+      display: block
+      margin-top: -6px
+      font-family: icons
+      font-size: 12px
+      line-height: 1
+      font-weight: 400
+      color: #fff
+
+    // $Choice list error message MOD: position below
+    &_position_below
+      margin-top: 10px
+
+    // $Choice list error message MOD: position above
+    &_position_above
+      margin-bottom: 10px
+
+
+  // $Choice list error message text
+  &__error-text
+    +text-normalizer()
+    position: relative
+    display: block
+    padding-left: 20px
+    font-weight: 300
+    color: #FFF
 
 
   // $Choice list radio label
