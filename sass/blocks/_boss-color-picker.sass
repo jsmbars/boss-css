@@ -1,0 +1,178 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Color Picker
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-color-picker"
+
+#{$block}
+  +box-model-normalizer()
+  +normalize-block()
+
+  position: relative
+  display: inline-block
+  padding: 4px
+  border: 1px solid $boss-very-light-gray
+  border-radius: 2px
+  background: $boss-extra-light-gray
+  cursor: pointer
+  white-space: nowrap
+  font-size: 1px
+
+
+  // $Color Picker group
+  &-group
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+
+
+  // $Color Picker input
+  &-input
+    +text-normalizer()
+    flex-grow: 1
+    flex-shrink: 1
+    box-sizing: border-box
+    display: block
+    width: calc(100% - 70px)
+    max-width: calc(100% - 70px)
+    height: 30px
+    margin-bottom: 0
+    padding: 0 10px
+    line-height: 30px
+    background-color: #FFF
+    border: 1px solid $boss-very-light-gray
+    border-radius: 2px
+    box-shadow: none
+    appearance: none
+    -moz-appearance: none
+    -webkit-appearance: none
+
+    @media screen and (max-width: 400px)
+      width: calc(100% - 60px)
+      max-width: calc(100% - 60px)
+      padding: 0 5px
+
+
+    &:focus
+      outline: none
+      box-shadow: 0 0 5px 0 $boss-very-light-gray
+      border-color: $boss-very-light-gray
+
+    &[type=text]::-ms-clear
+      display: none
+
+    &[readonly]
+      background-color: #FFF
+      cursor: text
+
+    &:invalid
+      box-shadow: none
+
+    &:disabled,
+    &_state_disabled
+      background-color: $boss-very-light-gray
+      border-color: $boss-very-light-gray
+      color: $boss-dark-gray
+      cursor: default
+
+    // $Choice list field input MOD: state error
+    &_state_error
+      outline: 1px solid map-get($boss-app-palette, alert-border)
+      color: map-get($boss-app-palette, alert)
+
+      &:focus
+        border-color: map-get($boss-app-palette, alert)
+        box-shadow: 0 0 5px 0 map-get($boss-app-palette, alert)
+
+    // $Color Picker input MOD :position before
+    &_position_before
+      margin-right: 20px
+
+      @media screen and (max-width: 400px)
+        margin-right: 10px
+
+    // $Color Picker input MOD: position after
+    &_position_after
+      margin-left: 20px
+
+      @media screen and (max-width: 400px)
+        margin-left: 10px
+
+    &::-webkit-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:-moz-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::-moz-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:-ms-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::-ms-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:placeholder-shown
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+
+  // $Color Picker control
+  &-control
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  // $Color Picker color-preview
+  &__color_preview
+    display: inline-block
+    width: 25px
+    height: 20px
+    margin-right: 4px
+    border: solid 1px #808080
+    vertical-align: middle
+
+
+  // $Color Picker dropdown arrow
+  &__dropdown-arrow
+    display: inline-block
+    font-size: 10px
+    vertical-align: middle
+    color: #4c4c4c
+
+
+  // $Color Picker popup container
+  &__popup-container
+    position: absolute
+    z-index: 1
+
+
+  // $Color Picker cover
+  &__cover
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0

@@ -68,7 +68,8 @@ $block: ".boss-check"
   &_page_wtl-clients-index,
   &_page_holidays-report-details,
   &_page_wages-index,
-  &_page_id-scanner-keys
+  &_page_id-scanner-keys,
+  &_page_staff-types-index
     @media screen and (min-width: 961px)
       display: none
 
@@ -1001,6 +1002,16 @@ $block: ".boss-check"
     &:not(:last-child)
       border-right: 1px solid #eee
 
+    &_size_min
+      flex-grow: 0
+      flex-shrink: 0
+      width: auto
+
+    &_size_max
+      flex-grow: 1
+      flex-shrink: 1
+      width: auto
+
     &_size_half
       width: 50%
 
@@ -1022,7 +1033,9 @@ $block: ".boss-check"
 
     &_size_half#{&}_delimiter_light,
     &_size_third#{&}_delimiter_light,
-    &_size_fourth#{&}_delimiter_light
+    &_size_fourth#{&}_delimiter_light,
+    &_size_min#{&}_delimiter_light,
+    &_size_max#{&}_delimiter_light
       position: relative
 
       &:not(:last-child)
@@ -1312,7 +1325,8 @@ $block: ".boss-check"
     #{$block}_page_contacts-admin &,
     #{$block}_page_quiz-category &,
     #{$block}_page_smp-quizzes-history &,
-    #{$block}_page_smp-quizzes-category &
+    #{$block}_page_smp-quizzes-category &,
+    #{$block}_page_staff-types-index &
       font-size: 20px
 
     #{$block}_page_security-venues &
