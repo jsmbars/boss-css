@@ -125,11 +125,42 @@ $block: ".boss-indicator"
     font-weight: 600
 
 
+  // $Indicator badge
+  &__badge
+    display: inline-flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 30px
+    height: 30px
+    line-height: 30px
+    background-color: #4c4c4c
+    border-radius: 50%
+    text-align: center
+    vertical-align: middle
+
+    // $Indicator badge MODE: size s
+    &_size_s
+      width: 25px
+      height: 25px
+      line-height: 25px
+
+    // $Indicator badge MODE: size xs
+    &_size_xs
+      width: 20px
+      height: 20px
+      line-height: 20px
+
+
   // $Indicator icon
   &__icon
     display: inline-block
     color: #4c4c4c
     vertical-align: middle
+
+    #{$block}__badge &
+      color: #fff
+      line-height: inherit
 
     #{$block}_color_accent-green &
       color: map-get($boss-app-palette, secondary)
@@ -145,6 +176,9 @@ $block: ".boss-indicator"
       line-height: 20px
       font-weight: 400
       color: inherit
+
+      #{$block}__badge &
+        line-height: inherit
 
     &_size_xs
       &:before
@@ -271,6 +305,46 @@ $block: ".boss-indicator"
     &_thumb-up
       &:before
         content: '\e944'
+
+    &_chevron-down
+      &:before
+        content: '\e987'
+
+    &_chevrons-down
+      &:before
+        content: '\e986'
+
+    &_trophy
+      &:before
+        content: '\e988'
+
+    &_trophy#{&}_size_xs
+      &:before
+        font-size: 14px
+
+    &_shield
+      &:before
+        content: '\e93c'
+
+    &_shield#{&}_size_xs
+      &:before
+        font-size: 14px
+
+    &_star
+      &:before
+        content: '\e985'
+
+    &_bolt
+      &:before
+        content: '\e984'
+
+    &_infinite
+      &:before
+        content: '\ea2f'
+
+    &_shield#{&}_size_xs
+      &:before
+        font-size: 14px
 
 
   // $Indicator marker
@@ -413,6 +487,24 @@ $block: ".boss-indicator"
     #{$block}_status_logged-out &
       color: map-get($boss-app-palette, pending)
 
+    // $Indicator label MOD: type regular
+    &_type_regular
+      font-weight: 400
+
+    // $Indicator label MOD: type light
+    &_type_light
+      font-weight: 300
+
+    // $Indicator label MOD: size s
+    &_size_s
+      font-size: 16px
+      line-height: 16px
+
+    // $Indicator label MOD: size xs
+    &_size_xs
+      font-size: 14px
+      line-height: 14px
+
     // $Indicator MOD: position before
     &_position_before
       margin-right: 5px
@@ -435,3 +527,8 @@ $block: ".boss-indicator"
     &_state_hidden-xs
       @media screen and (max-width: 480px)
         display: none
+
+
+  // $Indicator label faded
+  &__label-faded
+    color: #808080
