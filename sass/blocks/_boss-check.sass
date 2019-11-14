@@ -245,8 +245,11 @@ $block: ".boss-check"
       padding: 15px
 
     #{$block}_page_quiz-category &,
-    #{$block}_page_smp-quizzes-history &,
+    #{$block}_page_smp-quizzes-history &
+      padding: 15px 20px
+
     #{$block}_page_smp-quizzes-category &
+      min-height: 0
       padding: 15px 20px
 
     #{$block}_page_smp-quizzes-stats &
@@ -265,6 +268,9 @@ $block: ".boss-check"
         min-height: 0
         padding: 15px 10px 10px
 
+      #{$block}_page_smp-quizzes-category &
+        padding: 15px 10px
+
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &,
       #{$block}_page_ops-diary-index &,
@@ -276,7 +282,8 @@ $block: ".boss-check"
       #{$block}_page_handover-planner-task &,
       #{$block}_page_contacts &,
       #{$block}_page_sv-missattributed-logins &,
-      #{$block}_page_smp-quizzes-history &
+      #{$block}_page_smp-quizzes-history &,
+      #{$block}_page_smp-quizzes-category &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
@@ -286,8 +293,7 @@ $block: ".boss-check"
         padding-bottom: 15px
 
       #{$block}_page_quiz-category &,
-      #{$block}_page_smp-quizzes-history &,
-      #{$block}_page_smp-quizzes-category &
+      #{$block}_page_smp-quizzes-history &
         padding: 15px 10px
 
     @media screen and (max-width: 480px)
@@ -465,19 +471,9 @@ $block: ".boss-check"
     #{$block}_page_quiz-category &
       margin-right: 20px
 
-    #{$block}_page_smp-quizzes-category &
-      max-width: 40px
-      max-height: 40px
-      margin-rleft: 20px
-
     @media screen and (max-width: 640px)
       #{$block}_page_quiz-category &
         margin-right: 10px
-
-      #{$block}_page_smp-quizzes-category &
-        max-width: 35px
-        max-height: 35px
-        margin-left: 10px
 
 
   // $Check block header field
@@ -518,13 +514,6 @@ $block: ".boss-check"
       position: relative
       padding-right: 20px
 
-    #{$block}_page_smp-quizzes-category &
-      padding-right: 20px
-
-    @media screen and (max-width: 640px)
-      #{$block}_page_smp-quizzes-category &
-        padding-right: 15px
-
     @media screen and (max-width: 480px)
       #{$block}_page_smp-quizzes-stats &
         padding-right: 0
@@ -561,6 +550,19 @@ $block: ".boss-check"
         padding-left: 0
         padding-top: 10px
 
+
+  // $Check block header badge
+  &__header-badge
+    flex-grow: 0
+    flex-shrink: 0
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_smp-quizzes-category &
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        margin-top: 10px
+        text-align: center
 
   // $Check block header status
   &__header-status
@@ -907,6 +909,16 @@ $block: ".boss-check"
         padding: 15px 10px
 
 
+  // $Check block group area
+  &__group-area
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+  // $Check block group title
   &__group-title
     +text-normalizer()
     margin-bottom: 15px
@@ -921,6 +933,10 @@ $block: ".boss-check"
     flex-direction: row
     justify-content: center
     align-items: stretch
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_smp-quizzes-category &
+        flex-wrap: wrap
 
     &:not(:first-child)
       border-top: 1px solid #eee
@@ -987,6 +1003,9 @@ $block: ".boss-check"
     #{$block}_page_smp-quizzes-category &
       flex-direction: row
 
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      #{$block}_page_smp-quizzes-category &
+        flex-direction: column
 
     @media screen and (max-width: 960px)
       padding: 15px 10px
@@ -997,7 +1016,7 @@ $block: ".boss-check"
       #{$block}_page_smp-quizzes-category &
         flex-direction: column
         justify-content: flex-start
-        padding: 10px 5px
+        padding: 10px
 
     &:not(:last-child)
       border-right: 1px solid #eee
@@ -1031,6 +1050,10 @@ $block: ".boss-check"
     &_size_fourth
       width: 25%
 
+      @media screen and (max-width: 640px)
+        #{$block}_page_smp-quizzes-category &
+          width: 50%
+
     &_size_half#{&}_delimiter_light,
     &_size_third#{&}_delimiter_light,
     &_size_fourth#{&}_delimiter_light,
@@ -1051,6 +1074,13 @@ $block: ".boss-check"
           height: 30px
           margin-top: -15px
           border-right: 1px solid #ddd
+
+    &_size_fourth#{&}_delimiter_light
+      &:nth-child(2)
+        &:after
+          @media screen and (max-width: 640px)
+            #{$block}_page_smp-quizzes-category &
+              display: none
 
     // $Check block cell MOD: role table
     &_role_table
@@ -1247,6 +1277,12 @@ $block: ".boss-check"
       &:before
         content: '\e952'
 
+    &_role_alert
+      color: map-get($boss-app-palette, alert)
+
+      #{$block}_state_alert &
+        color: map-get($boss-app-palette, danger)
+
     &_role_alert-action
       cursor: pointer
       color: map-get($boss-app-palette, alert)
@@ -1335,10 +1371,6 @@ $block: ".boss-check"
     #{$block}_page_wtl-cards-index &
       text-align: center
 
-    #{$block}_page_smp-quizzes-category &
-      flex-grow: 1
-      flex-shrink: 1
-
     @media screen and (max-width: 960px)
       #{$block}_page_contacts &
         flex-grow: 1
@@ -1347,10 +1379,12 @@ $block: ".boss-check"
         margin-right: 0
 
     @media screen and (max-width: 640px)
-      #{$block}_page_contacts &
+      #{$block}_page_contacts &,
+      #{$block}_page_smp-quizzes-category &
         text-align: center
 
-      #{$block}_page_contacts-admin &
+      #{$block}_page_contacts-admin &,
+      #{$block}_page_smp-quizzes-category &
         flex-grow: 1
         flex-shrink: 1
         width: 100%
@@ -1628,31 +1662,6 @@ $block: ".boss-check"
     display: inline-block
     font-size: 24px
     font-weight: 600
-
-    #{$block}_page_smp-quizzes-category &
-      width: 60px
-      height: 60px
-      font-size: 24px
-      line-height: 50px
-      color: #fff
-      border-radius: 30px
-      display: inline-block
-      text-align: center
-      padding: 5px
-
-    @media screen and (max-width: 960px)
-      #{$block}_page_smp-quizzes-category &
-        width: 50px
-        height: 50px
-        line-height: 40px
-        font-size: 22px
-
-    @media screen and (max-width: 640px)
-      #{$block}_page_smp-quizzes-category &
-        width: 40px
-        height: 40px
-        line-height: 30px
-        font-size: 20px
 
     &_state_success
       color: map-get($boss-app-palette, secondary)

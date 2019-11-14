@@ -68,6 +68,12 @@ $block: ".boss-board"
   &_state_hidden
     display: none
 
+  &_role_profile-quizzes-categories
+
+  &_role_profile-quizzes-categories-novice
+    background-color: map-get($boss-app-palette, alert)
+    border: 2px solid #ed7f7e
+
   &_role_venue-alert-levels-red
     background-color: #feeeee
     border: 2px solid #ed7f7e
@@ -87,6 +93,9 @@ $block: ".boss-board"
     width: 100%
     padding: 20px
 
+    #{$block}_role_profile-quizzes-categories-novice &
+      padding-bottom: 0
+
     @media screen and (max-width: 960px)
       #{$block}_state_edit-mode &
         flex-wrap: wrap
@@ -97,7 +106,8 @@ $block: ".boss-board"
       #{$block}_role_checklist &,
       #{$block}_role_finance-report &,
       #{$block}_role_venue-alert-levels-red &,
-      #{$block}_role_venue-alert-levels-amber &
+      #{$block}_role_venue-alert-levels-amber &,
+      #{$block}_role_profile-quizzes-categories &
         flex-wrap: wrap
         overflow: hidden
 
@@ -117,6 +127,9 @@ $block: ".boss-board"
       height: 1px
       width: 100%
       background-color: map-get($boss-app-palette, inactive)
+
+      #{$block}_role_profile-quizzes-categories-novice &
+        display: none
 
     // $Board header MOD: status fail
     // $Board header MOD: state alert
@@ -176,6 +189,10 @@ $block: ".boss-board"
     font-weight: 400
     color: $boss-global-font-color
 
+    #{$block}_role_profile-quizzes-categories-novice &
+      font-weight: 600
+      color: #fff
+
     #{$block}_role_venue-alert-levels-amber &
       font-weight: 600
       color: map-get($boss-app-palette, warning)
@@ -191,7 +208,8 @@ $block: ".boss-board"
         width: calc(100% - 220px)
 
     @media screen and (max-width: 640px)
-      #{$block}__header_adjust_rotas-weekly &
+      #{$block}__header_adjust_rotas-weekly &,
+      #{$block}_role_profile-quizzes-categories &
         text-align: center
         margin-bottom: 15px
 
@@ -200,6 +218,9 @@ $block: ".boss-board"
       #{$block}_role_venue-alert-levels-red &,
       #{$block}_role_venue-alert-levels-amber &
         width: calc(100% - 50px)
+
+      #{$block}_role_profile-quizzes-categories &
+        width: 100%
 
     @media screen and (max-width: 400px)
       font-size: 20px
@@ -372,6 +393,19 @@ $block: ".boss-board"
 
     @media screen and (max-width: 960px)
       padding: 0 20px
+
+
+  // $Board filter
+  &__filter
+    display: block
+    flex-grow: 0
+    flex-shrink: 1
+    width: auto
+
+    @media screen and (max-width: 640px)
+      #{$block}_role_profile-quizzes-categories &
+        flex-grow: 1
+        width: 100%
 
 
   // $Board field
