@@ -16,6 +16,7 @@ $block: ".hours-chart"
 
 #{$block}
   -webkit-user-select: none
+  width: 100%
 
   &__inner
     position: relative
@@ -34,18 +35,21 @@ $block: ".hours-chart"
     shape-rendering: crispEdges
 
 
+  // Old chart styles
+  // Remove after markup update
   & .domain
     fill: none
     stroke: #bebebe
 
 
-  & .axis .tick line
-    stroke: #ededed
+  & .axis
+    & line
+     stroke: #ededed
 
-  & .tick text
-    fill: #4c4c4c
-    font-family: $boss-global-font-family
-    font-size: 12px
+    & text
+      fill: #4c4c4c
+      font-family: $boss-global-font-family
+      font-size: 12px
 
   &__labels
     & text
@@ -94,5 +98,23 @@ $block: ".hours-chart"
 
   &__event-indicator
     cursor: pointer
+
+
+  // New chart styles (override)
+  // Remove after markup update
+
+  & .hc-domain
+    fill: none
+    stroke: none
+
+
+  & .hc-axis
+    & line
+      stroke: #ebebeb
+
+    & text
+      fill: #aaa
+
+
 
 

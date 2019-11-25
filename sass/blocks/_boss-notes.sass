@@ -2,7 +2,7 @@
 @import '../helpers/mixins'
 
 ////////////////////////////////////////
-// $Notes block
+// $Notes
 ////////////////////////////////////////
 
 //////////////////////////////////////// Block variables
@@ -19,7 +19,13 @@ $block: ".boss-notes"
   display: block
   width: 100%
 
-  // $Notes block label
+  &_page_hrc
+
+  &_role_clock-in
+
+  &_role_overtime-reasons
+
+  // $Notes label
   &__label
     +text-normalizer()
     margin-bottom: 10px
@@ -27,7 +33,7 @@ $block: ".boss-notes"
     font-weight: 600
 
 
-  // $Notes block content
+  // $Notes content
   &__content
     position: relative
     display: block
@@ -40,6 +46,10 @@ $block: ".boss-notes"
     #{$block}_page_hrc &
       max-height: 140px
 
+    // $Notes content CONTEXT: $Notes MOD: role clock-in
+    #{$block}_role_clock-in &
+      max-height: 70px
+
     @media screen and (max-width: 1280px)
       #{$block}_page_hrc &
         max-height: 70px
@@ -49,23 +59,26 @@ $block: ".boss-notes"
         max-height: 140px
 
     @media screen and (max-width: 960px)
-      #{$block}_page_hrc &
+      #{$block}_page_hrc &,
+      #{$block}_role_clock-in &
         max-height: 80px
 
     @media screen and (max-width: 800px)
-      #{$block}_page_hrc &
+      #{$block}_page_hrc &,
+      #{$block}_role_clock-in &
         max-height: 90px
 
     @media screen and (max-width: 640px)
-      #{$block}_page_hrc &
+      #{$block}_page_hrc &,
+      #{$block}_role_clock-in &
         max-height: 100px
 
 
-  // $Notes block content inner container
+  // $Notes content inner container
   &__content-inner
 
 
-  // $Notes block lsit
+  // $Notes lsit
   &__list
     position: relative
     display: block
@@ -74,22 +87,24 @@ $block: ".boss-notes"
     margin: 0
     padding: 0
 
-    @media screen and (max-width: 1280px)
+    #{$block}_role_clock-in &
+      column-count: 2
+      column-gap: 40px
+      column-width: 50%
 
+    @media screen and (max-width: 1280px)
       #{$block}_page_hrc &
         column-count: 2
         column-gap: 40px
         column-width: 50%
 
     @media screen and (max-width: 1120px)
-
       #{$block}_page_hrc &
         column-count: auto
         column-gap: normal
         column-width: auto
 
     @media screen and (max-width: 960px)
-
       #{$block}_page_hrc &
         column-count: 2
         column-gap: 40px
@@ -97,13 +112,14 @@ $block: ".boss-notes"
 
     @media screen and (max-width: 400px)
 
-      #{$block}_page_hrc &
+      #{$block}_page_hrc &,
+      #{$block}_role_clock-in &
         column-count: auto
         column-gap: normal
         column-width: auto
 
 
-  // $Notes block item
+  // $Notes item
   &__item
     position: relative
     display: block
@@ -123,26 +139,26 @@ $block: ".boss-notes"
       border-radius: 50%
       background-color: #808080
 
-    // $Notes block item MOD: role not working
+    // $Notes item MOD: role not working
     &_role_not-working
       &:before
         background-color: map-get($boss-app-palette, inactive)
 
-    // $Notes block item MOD: working
+    // $Notes item MOD: working
     &_role_working
       &:before
         background-color: map-get($boss-app-palette, secondary)
 
-    // $Notes block item MOD: state hidden
+    // $Notes item MOD: state hidden
     &_state_hidden
       display: none
 
-    // $Notes block item MOD: state visible
+    // $Notes item MOD: state visible
     &_state_visible
       display: block
 
 
-  // $Notes block link
+  // $Notes link
   &__link
     +text-normalizer()
     font-size: 14px
@@ -157,7 +173,7 @@ $block: ".boss-notes"
       color: $boss-dark-gray
 
 
-  // $Notes block text
+  // $Notes text
   &__text
     +text-normalizer()
     font-size: 14px
@@ -177,7 +193,7 @@ $block: ".boss-notes"
   &__text-light
     font-weight: 300
 
-  // $Notes block button
+  // $Notes button
   &__button
     position: relative
     display: block
@@ -208,10 +224,10 @@ $block: ".boss-notes"
       text-decoration: none
       color: $boss-dark-gray
 
-    // $Notes block button MOD: state hidden
+    // $Notes button MOD: state hidden
     &_state_hidden
       display: none
 
 
-  // $Notes block button notes count
+  // $Notes button notes count
   &__button-count
