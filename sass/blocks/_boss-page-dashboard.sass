@@ -530,6 +530,9 @@ $block: ".boss-page-dashboard"
     &_role_subtitle
       font-size: 18px
 
+    &_role_status
+      font-weight: 600
+
     // $Page dashboard meta item MOD: role user
     // $Page dashboard meta item MOD: role arcade
     // $Page dashboard meta item MOD: role venue
@@ -604,6 +607,16 @@ $block: ".boss-page-dashboard"
     padding: 0
     display: inline-block
     vertical-align: middle
+
+
+  // $Page dashboard meta text accent green
+  &__meta-text-accent-green
+    color: map-get($boss-app-palette, secondary)
+
+
+  // $Page dashboard meta text accent red
+  &__meta-text-accent-red
+    color: map-get($boss-app-palette, alert)
 
 
   // $Page dashboard link

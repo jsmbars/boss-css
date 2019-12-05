@@ -3336,12 +3336,6 @@ $block: ".boss-table"
     max-width: 100%
     vertical-align: middle
 
-    &:not(:last-child)
-      margin-bottom: 10px
-
-      #{$block}_page_payroll-reports &
-        margin-bottom: 0
-
     #{$block}__cell_state_alert &,
     #{$block}__cell_state_success &
       color: #fff
@@ -3356,8 +3350,15 @@ $block: ".boss-table"
     #{$block}_page_holidays-report-details &
       text-align: left
 
+    #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &
       position: relative
+
+    #{$block}_page_csv-upload &
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
 
     #{$block}_page_holidays-report &,
     #{$block}_page_safe-checks-index &,
@@ -3413,12 +3414,6 @@ $block: ".boss-table"
     #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(1) &
       font-size: 16px
       font-weight: 600
-
-    #{$block}_page_csv-upload &
-      overflow-wrap: break-word
-      word-wrap: break-word
-      word-break: break-word
-      hyphens: auto
 
     #{$block}_page_smp-quizzes-history #{$block}__cell:nth-child(4) &
       flex-grow: 1
@@ -3513,6 +3508,13 @@ $block: ".boss-table"
       #{$block}_page_holidays-report &
         padding-left: 10px
         width: 50%
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+      #{$block}_page_finance-reports &,
+      #{$block}_page_payroll-reports &
+        margin-bottom: 0
 
     &_align_center
       text-align: center
@@ -3786,6 +3788,7 @@ $block: ".boss-table"
 
   &__text-indicator
 
+    #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &
       position: absolute
       bottom: 100%
