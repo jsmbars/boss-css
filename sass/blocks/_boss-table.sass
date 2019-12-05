@@ -3339,6 +3339,9 @@ $block: ".boss-table"
     &:not(:last-child)
       margin-bottom: 10px
 
+      #{$block}_page_payroll-reports &
+        margin-bottom: 0
+
     #{$block}__cell_state_alert &,
     #{$block}__cell_state_success &
       color: #fff
@@ -3352,6 +3355,9 @@ $block: ".boss-table"
 
     #{$block}_page_holidays-report-details &
       text-align: left
+
+    #{$block}_page_payroll-reports &
+      position: relative
 
     #{$block}_page_holidays-report &,
     #{$block}_page_safe-checks-index &,
@@ -3523,6 +3529,10 @@ $block: ".boss-table"
         color: #FFF
         font-weight: 600
 
+    // $Common table text MOD: state success
+    &_state_success
+      color: map-get($boss-app-palette, secondary)
+
     &_indicator_accessory,
     &_indicator_clock,
     &_indicator_disabled,
@@ -3666,6 +3676,9 @@ $block: ".boss-table"
       &:hover
         color: map-get($boss-app-palette, primary)
 
+    &_adjust_nowrap
+      white-space: nowrap
+
     &_adjust_wrap
       overflow-wrap: break-word
       word-wrap: break-word
@@ -3769,6 +3782,16 @@ $block: ".boss-table"
   &__text-content
     &:not(:last-child)
       margin-right: 15px
+
+
+  &__text-indicator
+
+    #{$block}_page_payroll-reports &
+      position: absolute
+      bottom: 100%
+      display: block
+      width: 100%
+      text-align: center
 
 
   &__note
