@@ -3336,9 +3336,6 @@ $block: ".boss-table"
     max-width: 100%
     vertical-align: middle
 
-    &:not(:last-child)
-      margin-bottom: 10px
-
     #{$block}__cell_state_alert &,
     #{$block}__cell_state_success &
       color: #fff
@@ -3352,6 +3349,16 @@ $block: ".boss-table"
 
     #{$block}_page_holidays-report-details &
       text-align: left
+
+    #{$block}_page_finance-reports &,
+    #{$block}_page_payroll-reports &
+      position: relative
+
+    #{$block}_page_csv-upload &
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto
 
     #{$block}_page_holidays-report &,
     #{$block}_page_safe-checks-index &,
@@ -3407,12 +3414,6 @@ $block: ".boss-table"
     #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(1) &
       font-size: 16px
       font-weight: 600
-
-    #{$block}_page_csv-upload &
-      overflow-wrap: break-word
-      word-wrap: break-word
-      word-break: break-word
-      hyphens: auto
 
     #{$block}_page_smp-quizzes-history #{$block}__cell:nth-child(4) &
       flex-grow: 1
@@ -3508,6 +3509,13 @@ $block: ".boss-table"
         padding-left: 10px
         width: 50%
 
+    &:not(:last-child)
+      margin-bottom: 10px
+
+      #{$block}_page_finance-reports &,
+      #{$block}_page_payroll-reports &
+        margin-bottom: 0
+
     &_align_center
       text-align: center
 
@@ -3522,6 +3530,10 @@ $block: ".boss-table"
       #{$block}__cell_state_success &
         color: #FFF
         font-weight: 600
+
+    // $Common table text MOD: state success
+    &_state_success
+      color: map-get($boss-app-palette, secondary)
 
     &_indicator_accessory,
     &_indicator_clock,
@@ -3666,6 +3678,9 @@ $block: ".boss-table"
       &:hover
         color: map-get($boss-app-palette, primary)
 
+    &_adjust_nowrap
+      white-space: nowrap
+
     &_adjust_wrap
       overflow-wrap: break-word
       word-wrap: break-word
@@ -3769,6 +3784,17 @@ $block: ".boss-table"
   &__text-content
     &:not(:last-child)
       margin-right: 15px
+
+
+  &__text-indicator
+
+    #{$block}_page_finance-reports &,
+    #{$block}_page_payroll-reports &
+      position: absolute
+      bottom: 100%
+      display: block
+      width: 100%
+      text-align: center
 
 
   &__note
