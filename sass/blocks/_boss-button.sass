@@ -315,15 +315,20 @@ $block: ".boss-button"
 
   // $Common button MOD: role alert
   // $Common button MOD: role disabled
+  // $Common button MOD: role rejected
+  // $Common button MOD: role red alert
   &_role_alert,
   &_role_disabled,
-  &_role_rejected
+  &_role_rejected,
+  &_role_red-alert
     $background-color: map-get($boss-app-palette, alert)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
   // $Common button MOD: role warning
-  &_role_warning
+  // $Common button MOD: role amber alert
+  &_role_warning,
+  &_role_amber-alert
     $background-color: map-get($boss-app-palette, warning)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
