@@ -24,6 +24,24 @@ $block: ".boss-progress-bar"
   display: block
   max-width: 100%
 
+  // $Progress bar MOD: indicator locked
+  &_indicator_locked
+    position: relative
+    padding-left: 30px
+
+    &:before
+      content: '\e930'
+      position: absolute
+      top: 50%
+      left: 0
+      display: inline-block
+      margin-top: -10px
+      font-family: icons
+      font-size: 20px
+      line-height: 20px
+      font-weight: 400
+      color: inherit
+
 
   // $Progress bar content
   &__content
@@ -36,6 +54,7 @@ $block: ".boss-progress-bar"
 
   // $Progress bar meter
   &__meter
+    position: relative
     flex-grow: 1
     flex-shrink: 1
     display: block
@@ -48,26 +67,29 @@ $block: ".boss-progress-bar"
 
   // $Progress bar value
   &__value
+    +text-normalizer()
     display: block
     width: 0
     height: 20px
+    padding: 0 5px
+    color: #fff
     background-color: $boss-medium-gray
     border-radius: 5px
     transition: width .4s
 
-    // $Progress bar value MOD: color accent-blue
+    // $Progress bar value MOD: color accent blue
     &_color_accent-blue
       background-color: map-get($boss-app-palette, primary)
 
-    // $Progress bar value MOD: color accent-green
+    // $Progress bar value MOD: color accent green
     &_color_accent-green
       background-color: map-get($boss-app-palette, secondary)
 
-    // $Progress bar value MOD: color accent-amber
-    &_color_accent-amber
+    // $Progress bar value MOD: color accent orange
+    &_color_accent-orange
       background-color: map-get($boss-app-palette, warning)
 
-    // $Progress bar value MOD: color accent-red
+    // $Progress bar value MOD: color accent red
     &_color_accent-red
       background-color: map-get($boss-app-palette, alert)
 
@@ -93,6 +115,43 @@ $block: ".boss-progress-bar"
     &_type_striped#{&}_type_animated
       &:after
         animation: stripes-move 2s linear infinite
+
+
+  // $Progress bar marker
+  &__marker
+    position: absolute
+    top: 0
+    bottom: 0
+    display: block
+
+    // $Progress bar marker MOD: color accent carmine
+    &_color_accent-carmine
+
+
+  // $Progress bar marker line
+  &__marker-line
+    display: block
+    width: 2px
+    height: 100%
+    background-color: #4c4c4c
+
+    #{$block}__marker_color_accent-carmine &
+      background-color: #fd554f
+
+
+  // $Progress bar marker text
+  &__marker-text
+    +text-normalizer()
+    position: absolute
+    bottom: 100%
+    display: block
+    font-weight: 600
+    color: #4c4c4c
+    text-align: center
+    transform: translateX(-50%)
+
+    #{$block}__marker_color_accent-carmine &
+      color: #fd554f
 
 
   // $Progress bar label
@@ -125,3 +184,12 @@ $block: ".boss-progress-bar"
     // $Progress bar label MOD: type light
     &_type_light
       font-weight: 300
+
+    // $Progress bar label MOD: type compact
+    &_type_compact
+      width: 120px
+      min-width: 120px
+      font-size: 12px
+
+      @media screen and (max-width: 400px)
+        min-width: 0

@@ -27,7 +27,7 @@ $block: ".boss-number"
   // $Number MOD: layout fluid
   &_layout_fluid
 
-  // $Number action
+  // $Number MOD: role action
   &_role_action
     opacity: 1
     cursor: pointer
@@ -35,6 +35,24 @@ $block: ".boss-number"
 
     &:hover
       opacity: .6
+
+  // $Number MOD: indicator locked row layout
+  &_indicator_locked#{&}_layout_row
+    position: relative
+    padding-left: 30px
+
+    &:before
+      content: '\e930'
+      position: absolute
+      top: 50%
+      left: 0
+      display: inline-block
+      margin-top: -10px
+      font-family: icons
+      font-size: 20px
+      line-height: 20px
+      font-weight: 400
+      color: inherit
 
 
   // $Number content
