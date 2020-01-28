@@ -99,6 +99,10 @@ $block: ".boss-board"
     #{$block}_role_profile-quizzes-categories-novice &
       padding-bottom: 0
 
+    #{$block}_role_bonai &
+      display: block
+      padding: 0
+
     @media screen and (max-width: 960px)
       #{$block}_state_edit-mode &
         flex-wrap: wrap
@@ -129,9 +133,10 @@ $block: ".boss-board"
       display: block
       height: 1px
       width: 100%
-      background-color: map-get($boss-app-palette, inactive)
+      background-color: #d8d8d8
 
-      #{$block}_role_profile-quizzes-categories-novice &
+      #{$block}_role_profile-quizzes-categories-novice &,
+      #{$block}_role_bonai &
         display: none
 
     // $Board header MOD: status fail
@@ -179,6 +184,27 @@ $block: ".boss-board"
     &_adjust_rotas-weekly
       @media screen and (max-width: 640px)
         flex-direction: column
+
+
+  // $Board header group
+  &__header-group
+    display: block
+    width: 100%
+
+    &:nth-child(1)
+      #{$block}_role_bonai &
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        padding: 20px
+        border-bottom: 1px solid #d8d8d8
+
+    &:nth-child(2)
+      #{$block}_role_bonai &
+        padding: 20px
+        background-color: #f8f8f8
+        border-bottom: 1px solid #d8d8d8
 
 
   // $Board info group
@@ -411,27 +437,21 @@ $block: ".boss-board"
     flex-direction: row
     justify-content: flex-start
     align-items: center
+    max-width: 100%
 
     #{$block}_role_bonai &
       margin-top: 5px
-
-    @media screen and (max-width: 960px)
-      #{$block}_role_bonai &
-        width: 100%
 
 
   // $Board meta text
   &__meta-text
     +text-normalizer()
     font-size: 18px
-    line-height: 1
+    line-height: 1.2
     color: #808080
 
     @media screen and (max-width: 960px)
       font-size: 16px
-
-    @media screen and (max-width: 640px)
-      font-size: 14px
 
 
   // $Board meta action
