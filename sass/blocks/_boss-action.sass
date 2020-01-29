@@ -26,7 +26,6 @@ $block: ".boss-action"
   &:before
     content: ''
     display: inline-block
-    margin-right: 5px
     font-family: icons
     font-size: 16px
     line-height: 1
@@ -34,9 +33,36 @@ $block: ".boss-action"
     color: inherit
     vertical-align: middle
 
+  &:not(:empty):before
+    margin-right: 5px
+
   &:hover
     color: inherit
     text-decoration: none
+
+  &_size_s
+    font-size: 14px
+
+    &:before
+      font-size: 14px
+
+  &_size_m
+    font-size: 16px
+
+    &:before
+      font-size: 16px
+
+  &_size_l
+    font-size: 18px
+
+    &:before
+      font-size: 18px
+
+  &_size_xl
+    font-size: 20px
+
+    &:before
+      font-size: 20px
 
   &_role_alert
     color: map-get($boss-app-palette, alert)
@@ -46,6 +72,34 @@ $block: ".boss-action"
 
     &:hover
       color: map-get($boss-app-palette, alert)
+
+  &_role_details
+    color: map-get($boss-app-palette, primary)
+
+    &:before
+      content: '\e921'
+
+    &:hover
+      color: map-get($boss-app-palette, primary)
+
+  &_role_edit
+    color: map-get($boss-app-palette, primary)
+
+    &:before
+      content: '\e96b'
+
+    &:hover
+      color: map-get($boss-app-palette, primary)
+
+  &_role_confirm
+    color: map-get($boss-app-palette, secondary)
+
+    &:before
+      content: '\e914'
+      font-size: 20px
+
+    &:hover
+      color: map-get($boss-app-palette, secondary)
 
 
   // $Action text

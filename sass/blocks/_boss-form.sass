@@ -1579,6 +1579,18 @@ $block: ".boss-form"
     &_size_narrow,
     &_type_narrow
 
+    &_size_full
+      #{$block}__field_role_control &,
+      #{$block}__control &
+        flex-grow: 1
+        min-width: 0
+
+      @media screen and (max-width: 960px)
+        #{$block}__field_role_control &,
+        #{$block}__control &
+          flex-grow: 1
+          width: 100%
+
     // $Common form select MOD: size small
     &_size_small
       width: 240px
@@ -2466,6 +2478,22 @@ $block: ".boss-form"
 
   &__text-success
     color: map-get($boss-app-palette, secondary)
+
+
+  // $Common form action
+  &__action
+
+    #{$block}__field_role_control &,
+    #{$block}__control &
+      flex-grow: 0
+      flex-shrink: 0
+      align-self: center
+
+    &:first-child
+      margin-right: 10px
+
+    &:last-child
+      margin-left: 10px
 
 
   // $Common form link
