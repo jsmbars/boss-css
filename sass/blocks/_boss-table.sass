@@ -767,6 +767,7 @@ $block: ".boss-table"
     #{$block}_page_payroll-reports &
       padding: 15px 5px
 
+    #{$block}_page_checklist-review &,
     #{$block}_page_staff-members-index &,
     #{$block}_page_message-board &,
     #{$block}_page_maintenance-index &,
@@ -936,8 +937,10 @@ $block: ".boss-table"
         border-right: 1px solid #eee
 
       #{$block}_page_checklist-review &
-        width: 24%
-        padding-left: 40px
+        flex-grow: 0
+        flex-shrink: 0
+        width: 90px
+        padding-left: 30px
 
       #{$block}_page_vhci &
         width: 30%
@@ -1163,9 +1166,12 @@ $block: ".boss-table"
           width: 100%
           padding-left: 10px
 
+        #{$block}_page_checklist-review &,
         #{$block}_page_staff-members-index &
           flex-grow: 1
           flex-shrink: 1
+
+        #{$block}_page_staff-members-index &
           padding-bottom: 25px
 
         #{$block}_page_smp-owed-hours &
@@ -1316,7 +1322,7 @@ $block: ".boss-table"
         overflow: hidden
 
       #{$block}_page_checklist-review &
-        width: 20%
+        width: 22%
 
       #{$block}_page_vhci &
         width: 25%
@@ -1619,7 +1625,7 @@ $block: ".boss-table"
         width: 11%
 
       #{$block}_page_checklist-review &
-        width: 16%
+        width: 20%
 
       #{$block}_page_vhci &
         width: 20%
@@ -1894,8 +1900,7 @@ $block: ".boss-table"
         width: 12%
 
       #{$block}_page_checklist-review &
-        width: 20%
-        justify-content: center
+        width: 15%
 
       #{$block}_page_vhci &
         width: 25%
@@ -2137,7 +2142,10 @@ $block: ".boss-table"
       #{$block}_page_safe-checks-index &
         width: 12%
 
-      #{$block}_page_checklist-review &,
+      #{$block}_page_checklist-review &
+        width: 17%
+        justify-content: center
+
       #{$block}_page_vouchers-index &
         width: 20%
         padding-right: 40px
@@ -2296,7 +2304,6 @@ $block: ".boss-table"
           flex-grow: 1
           flex-shrink: 1
 
-        #{$block}_page_checklist-review &,
         #{$block}_page_vouchers-index &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-pending &,
@@ -2327,6 +2334,13 @@ $block: ".boss-table"
 
       #{$block}_page_safe-checks-index &
         width: 12%
+
+      #{$block}_page_checklist-review &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 170px
+        padding-right: 30px
+        justify-content: center
 
       #{$block}_page_smp-holidays &
         flex-grow: 0
@@ -2413,6 +2427,7 @@ $block: ".boss-table"
       @media screen and (max-width: 960px)
         width: 100%
 
+        #{$block}_page_checklist-review &,
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_message-board &,
         #{$block}_page_staff-members-index &,
@@ -2424,12 +2439,14 @@ $block: ".boss-table"
         #{$block}_page_bonai &
           width: 100%
 
+        #{$block}_page_checklist-review &,
         #{$block}_page_ssr-completed &,
         #{$block}_page_message-board &,
         #{$block}_page_smp-holidays &
           flex-grow: 1
           flex-shrink: 1
 
+        #{$block}_page_checklist-review &,
         #{$block}_page_ssr-completed &
           padding-right: 10px
 
@@ -2949,7 +2966,6 @@ $block: ".boss-table"
           padding-right: 35px
 
       &:nth-child(4)
-        #{$block}_page_checklist-review &,
         #{$block}_page_vhci &,
         #{$block}_page_smp-holidays &,
         #{$block}_page_vouchers-index &,
@@ -2974,6 +2990,7 @@ $block: ".boss-table"
           text-align: center
 
       &:nth-child(6)
+        #{$block}_page_checklist-review &,
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_message-board &
           text-align: center
@@ -3309,8 +3326,8 @@ $block: ".boss-table"
 
     #{$block}_page_holidays-report &,
     #{$block}_page_safe-checks-index &,
-    #{$block}_page_checklist-review #{$block}__cell:nth-child(4) &,
     #{$block}_page_checklist-review #{$block}__cell:nth-child(5) &,
+    #{$block}_page_checklist-review #{$block}__cell:nth-child(6) &,
     #{$block}_page_vhci #{$block}__cell:nth-child(3) &,
     #{$block}_page_vhci #{$block}__cell:nth-child(4) &,
     #{$block}_page_vouchers-index #{$block}__cell:nth-child(3) &,
