@@ -506,11 +506,11 @@ $block: ".boss-button"
   // $Common button MOD: role publish
   // $Common button MOD: role edit
   // $Common button MOD: role view orders
-  // $Common button MOD: role view assignments
   // $Common button MOD: role view alerts
   // $Common button MOD: role view notes
   // $Common button MOD: role view report
   // $Common button MOD: role view details
+  // $Common button MOD: role view qrcode
   // $Common button MOD: role add
   // $Common button MOD: role enable
   // $Common button MOD: role confirm
@@ -524,11 +524,11 @@ $block: ".boss-button"
   &_role_edit,
   &_role_add-note,
   &_role_view-orders,
-  &_role_view-assignments,
   &_role_view-alerts,
   &_role_view-history-alt,
   &_role_view-report,
   &_role_view-details,
+  &_role_view-qrcode,
   &_role_add,
   &_role_download,
   &_role_print,
@@ -564,6 +564,9 @@ $block: ".boss-button"
   &_role_view-report,
   &_role_view-details
     +button-with-icon-left($icon: '\e921', $size: 12px)
+
+  &_role_view-qrcode
+    +button-with-icon-left($icon: '\e947', $size: 15px)
 
   &_role_add
     +button-with-icon-left($icon: '\e97d', $size: 12px)
@@ -745,6 +748,16 @@ $block: ".boss-button"
     +button-with-icon-left($icon: '\e930')
 
 
+  // $Common button MOD: role view assignments
+  &_role_view-assignments
+    $background-color: #8c7ae6
+    +button-common($background-color: $background-color)
+    +button-common-hover($background-color: $background-color)
+
+  &_role_view-assignments
+    +button-with-icon-left($icon: '\e927')
+
+
   // Bordered buttons
 
   // $Common button MOD: primary light
@@ -846,7 +859,6 @@ $block: ".boss-button"
 
   &_role_override
     font-weight: 600
-
 
 
   // $Common button MOD: monochrome button profile
