@@ -424,6 +424,50 @@ $block: ".boss-tag"
         #{$block}_size_xxs &
           font-size: 18px
 
+    &_icon_spinner
+      cursor: default
+
+      &:before
+        content: ''
+        display: block
+        width: 24px
+        height: 24px
+        background-image: url(../icons/spinner-light.svg)
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: contain
+
+        #{$block}_size_xxl &
+          width: 30px
+          height: 30px
+
+        #{$block}_size_xl &
+          width: 28px
+          height: 28px
+
+        #{$block}_size_l &
+          width: 26px
+          height: 26px
+
+        #{$block}_size_m &
+          width: 24px
+          height: 24px
+
+        #{$block}_size_s &
+          width: 22px
+          height: 22px
+
+        #{$block}_size_xs &
+          width: 20px
+          height: 20px
+
+        #{$block}_size_xxs &
+          width: 18px
+          height: 18px
+
+      &:hover
+        background-color: rgba(0, 0, 0, .3)
+
   // Color modifiers
   &_color_accent-red
     +tag-common($background-color: map-get($boss-accent-palette, red), $color: #fff)
