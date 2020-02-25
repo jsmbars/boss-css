@@ -503,7 +503,13 @@ $block: ".boss-count"
     &_role_date,
     &_role_time,
     &_role_arcade,
-    &_role_user
+    &_role_user,
+    &_role_default-table,
+    &_role_pool-table,
+    &_role_shuffle-table,
+    &_role_tennis-table,
+    &_role_footpool-table,
+    &_role_darts
       &:before
         content: ""
         display: inline-block
@@ -527,6 +533,30 @@ $block: ".boss-count"
         content: '\e968'
         font-size: 18px
         line-height: 18px
+
+    &_role_default-table
+      &:before
+        content: '\e993'
+
+    &_role_pool-table
+      &:before
+        content: '\e992'
+
+    &_role_shuffle-table
+      &:before
+        content: '\e991'
+
+    &_role_tennis-table
+      &:before
+        content: '\e990'
+
+    &_role_footpool-table
+      &:before
+        content: '\e98f'
+
+    &_role_darts
+      &:before
+        content: '\e98e'
 
     &_role_user
       &:before

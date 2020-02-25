@@ -333,38 +333,36 @@ $block: ".boss-report"
       &:before
         content: ""
         display: inline-block
-        width: 16px
-        height: 16px
         margin-right: 7px
-        margin-top: -3px
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
-        vertical-align: middle
+        font-family: icons
+        font-size: 16px
+        line-height: 16px
+        font-weight: 400
+        color: #4c4c4c
 
     &_role_date
       &:before
-        background-image: url('../icons/icon-calendar-dark-gray.svg')
+        content: '\e900'
 
     &_role_time
       &:before
-        background-image: url('../icons/icon-clock-dark-gray.svg')
+        content: '\e961'
 
     &_role_user
       &:before
-        background-image: url('../icons/icon-user-dark-gray.svg')
+        content: '\e904'
 
     &_role_venue
       &:before
-        background-image: url('../icons/icon-storefront-dark-gray.svg')
+        content: '\e904'
 
     &_role_title
       &:before
-        background-image: url('../icons/icon-pencil-dark-gray.svg')
+        content: '\e96b'
 
     &_role_location
       &:before
-        background-image: url('../icons/icon-location-pin-dark-gray.svg')
+        content: '\e958'
 
 
   // $Report note
@@ -469,26 +467,24 @@ $block: ".boss-report"
     transition: .4s
 
     &:before
-      content: ""
+      content: '\e91a'
       position: absolute
       top: 50%
       left: 50%
       display: block
-      width: 20px
-      height: 15px
-      background-image: url(../icons/icon-arrow-down-dark-gray.svg)
-      transform: translate(-50%, -50%) rotate(180deg)
-      background-position: center center
-      background-repeat: no-repeat
-      background-size: contain
+      font-family: icons
+      font-size: 30px
+      line-height: 15px
+      font-weight: 400
+      color: #4c4c4c
+      transform: translate(-50%, -50%)
       transform-origin: center center
       transition: all .4s
 
     // $Report dropdown switch MOD: state closed
     &_state_closed
       &:before
-        background-image: url(../icons/icon-arrow-down-dark-gray.svg)
-        transform: translate(-50%, -50%) rotate(0)
+        content: '\e919'
 
 
   // $Report dropdown content
@@ -530,27 +526,25 @@ $block: ".boss-report"
       &:before
         content: ""
         display: inline-block
-        width: 18px
-        height: 18px
         margin-right: 10px
-        margin-top: -2px
-        background-size: contain
-        background-repeat: no-repeat
-        background-position: center center
-        vertical-align: middle
+        font-family: icons
+        font-size: 18px
+        line-height: 18px
+        font-weight: 400
+        color: #4c4c4c
 
     &_role_readings,
     &_role_data
       &:before
-        background-image: url(../icons/icon-text-paper-dark-gray.svg)
+        content: '\e927'
 
     &_role_calculate
       &:before
-        background-image: url(../icons/icon-calculator-dark-gray.svg)
+        content: '\e963'
 
     &_role_errors
       &:before
-        background-image: url(../icons/icon-danger-dark-gray.svg)
+        content: '\e911'
 
 
   // $Report text
