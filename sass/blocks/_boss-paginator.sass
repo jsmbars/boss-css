@@ -223,10 +223,13 @@ $block: ".boss-paginator"
       display: none
       position: absolute
       top: 50%
-      width: 14px
-      height: 14px
       margin-top: -7px
-      background-size: contain
+      font-family: icons
+      font-size: 14px
+      line-height: 1
+      font-weight: 400
+      color: inherit
+      transition: all .2s
 
     &:hover
       background-color: map-get($boss-app-palette, primary)
@@ -275,25 +278,13 @@ $block: ".boss-paginator"
         padding-left: 30px
 
       &:before
+        content: '\e953'
         left: 15px
         display: block
-        background-image: url(../icons/icon-navigation-back-dark-gray.svg)
+        text-align: left
 
         @media screen and (max-width: 960px)
           left: 10px
-
-      &:hover:before
-        background-image: url(../icons/icon-navigation-back-white.svg)
-
-    // $Paginator action MOD: role previous state active
-    &_role_prev#{&}_state_active
-      &:before
-        background-image: url(../icons/icon-navigation-back-white.svg)
-
-    // $Paginator action MOD: role previous state disabled
-    &_role_prev#{&}_state_disabled
-      &:hover:before
-        background-image: url(../icons/icon-navigation-back-dark-gray.svg)
 
     // $Paginator action MOD: role next
     &_role_next
@@ -304,25 +295,13 @@ $block: ".boss-paginator"
         padding-right: 30px
 
       &:before
+        content: '\e954'
         right: 15px
         display: block
-        background-image: url(../icons/icon-navigation-forward-dark-gray.svg)
+        text-align: right
 
         @media screen and (max-width: 960px)
           right: 10px
-
-      &:hover:before
-        background-image: url(../icons/icon-navigation-forward-white.svg)
-
-    // $Paginator action MOD: role next state active
-    &_role_next#{&}_state_active
-      &:before
-        background-image: url(../icons/icon-navigation-forward-white.svg)
-
-    // $Paginator action MOD: role next state disabled
-    &_role_next#{&}_state_disabled
-      &:hover:before
-        background-image: url(../icons/icon-navigation-forward-dark-gray.svg)
 
     // $Paginator action MOD: type light
     &_type_light
@@ -354,6 +333,7 @@ $block: ".boss-paginator"
   // $Paginator action link
   &__action-link
     +text-normalizer()
+    transition: all .2s
 
     #{$block}__action:hover &,
     #{$block}__action_state_active &
@@ -367,14 +347,8 @@ $block: ".boss-paginator"
       color: #4c4c4c
       cursor: default
 
-    &:before
-      content: ""
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      z-index: 0
+    &:focus,
+      color: #4c4c4c
 
-      #{$block}__action_role_delimiter &
-        display: none
+      #{$block}__action_state_active &
+        color: #fff
