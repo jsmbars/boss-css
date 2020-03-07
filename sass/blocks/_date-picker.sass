@@ -29,18 +29,19 @@ $block: ".date-picker"
         position: relative
         min-width: 150px
 
-        &:before
-          content: ''
+        &:after
+          content: '\e900'
           position: absolute
           top: 50%
           left: 20px
           z-index: 10
           display: block
-          width: 14px
-          height: 14px
           margin-top: -7px
-          background: url(../icons/icon-calendar-medium-gray.svg) no-repeat 0 0
-          background-size: contain
+          font-family: icons
+          font-size: 14px
+          line-height: 14px
+          font-weight: 400
+          color: #808080
 
         & input,
         & .date-picker-input-field
@@ -195,20 +196,25 @@ $block: ".date-picker"
       height: 15px
       border: none
 
+      &:before
+        content: ''
+        font-family: icons
+        font-size: 25px
+        line-height: 15px
+        font-weight: 400
+        color: #aaa
+
       &--previous
         left: 20px
-        background-image: url(../icons/icon-arrow-left-light-gray.svg)
-        background-position: center center
-        background-repeat: no-repeat
-        background-size: contain
+
+        &:before
+          content: '\e91c'
 
       &--next
         right: 20px
-        background-image: url(../icons/icon-arrow-left-light-gray.svg)
-        background-position: center center
-        background-repeat: no-repeat
-        background-size: contain
-        transform: rotate(-180deg)
+
+        &:before
+          content: '\e91b'
 
       &--hidden
         display: none
