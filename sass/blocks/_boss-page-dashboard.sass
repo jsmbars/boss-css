@@ -325,18 +325,14 @@ $block: ".boss-page-dashboard"
       #{$block}_page_rotas-daily-security &
         display: none
 
-    @media screen and (max-width: 640px)
+    @media screen and (max-width: 480px)
       #{$block}_page_staff-members-index &,
       #{$block}_page_fruit-order-form &,
       #{$block}_page_checklist &,
       #{$block}_page_rotas-weekly &,
+      #{$block}_page_rotas-weekly-security &,
       #{$block}_page_incident-report-full &,
-      #{$block}_page_venues &
-        flex-direction: column
-        justify-content: center
-        align-items: stretch
-
-    @media screen and (max-width: 480px)
+      #{$block}_page_venues &,
       #{$block}_page_profile &,
       #{$block}_page_profile-disabled &,
       #{$block}_page_change-order-form &,
@@ -346,13 +342,23 @@ $block: ".boss-page-dashboard"
       #{$block}_page_daily-reports &,
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
-      #{$block}_page_handover-planner &
+      #{$block}_page_handover-planner &,
+      #{$block}_page_vhcq &
         flex-direction: column
+        justify-content: center
 
     @media screen and (max-width: 480px)
+      #{$block}_page_staff-members-index &,
+      #{$block}_page_fruit-order-form &,
+      #{$block}_page_checklist &,
+      #{$block}_page_rotas-weekly &,
+      #{$block}_page_rotas-weekly-security &,
+      #{$block}_page_incident-report-full &,
+      #{$block}_page_venues &,
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
-      #{$block}_page_handover-planner &
+      #{$block}_page_handover-planner &,
+      #{$block}_page_vhcq &
         align-items: stretch
 
     &:empty
@@ -399,7 +405,8 @@ $block: ".boss-page-dashboard"
       #{$block}_page_venues &,
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
-      #{$block}_page_handover-planner &
+      #{$block}_page_handover-planner &,
+      #{$block}_page_vhcq &
         margin-right: 15px
 
       @media screen and (max-width: 1120px)
@@ -414,18 +421,14 @@ $block: ".boss-page-dashboard"
           margin-bottom: 0
           margin-right: 15px
 
-      @media screen and (max-width: 640px)
+      @media screen and (max-width: 480px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_fruit-order-form &,
         #{$block}_page_checklist &,
         #{$block}_page_rotas-weekly &,
         #{$block}_page_rotas-weekly-security &,
         #{$block}_page_incident-report-full &,
-        #{$block}_page_venues &
-          margin-right: 0
-          margin-bottom: 15px
-
-      @media screen and (max-width: 480px)
+        #{$block}_page_venues &,
         #{$block}_page_profile &,
         #{$block}_page_profile-disabled &,
         #{$block}_page_change-order-form &,
@@ -435,7 +438,8 @@ $block: ".boss-page-dashboard"
         #{$block}_page_daily-reports &,
         #{$block}_page_finance-reports &,
         #{$block}_page_payroll-reports &,
-        #{$block}_page_handover-planner &
+        #{$block}_page_handover-planner &,
+        #{$block}_page_vhcq &
           margin-right: 0
           margin-bottom: 15px
 
