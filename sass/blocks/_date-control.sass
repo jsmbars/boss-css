@@ -241,17 +241,17 @@ $block: ".date-control"
       width: 150px
 
       &:after
-        content: ""
+        content: '\e900'
         position: absolute
         top: 50%
         left: 20px
         display: block
-        width: 14px
-        height: 14px
         margin-top: -7px
-        background-size: contain
-        vertical-align: middle
-        background-image: url(../icons/icon-calendar-medium-gray.svg)
+        font-family: icons
+        font-size: 14px
+        line-height: 14px
+        font-weight: 400
+        color: #808080
 
         @media screen and (max-width: 480px)
           left: 15px
@@ -560,16 +560,13 @@ $block: ".date-control"
       display: inline-block
       white-space: nowrap
       border-radius: 4px
+      transition: all .3s
 
       &:before
         content: ""
         display: inline-block
         margin-right: 10px
-        line-height: 100%
         vertical-align: baseline
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
         transition: all .3s
 
       &:not(:last-child)
@@ -582,16 +579,15 @@ $block: ".date-control"
         background-color: trnsparent
 
         &:before
-          width: 10px
-          height: 10px
-          background-image: url('../icons/icon-close-alert.svg')
+          content: '\e96a'
+          font-family: icons
+          font-size: 10px
+          line-height: 10px
+          color: inherit
 
         &:hover
           background-color: map-get($boss-app-palette, alert)
           color: #fff
-
-          &:before
-            background-image: url('../icons/icon-close-white.svg')
 
       &_role_apply
         padding: 5px 10px
@@ -599,9 +595,11 @@ $block: ".date-control"
         background-color: map-get($boss-app-palette, primary)
 
         &:before
-          width: 12px
-          height: 12px
-          background-image: url('../icons/icon-checked-white.svg')
+          content: '\e969'
+          font-family: icons
+          font-size: 12px
+          line-height: 12px
+          color: inherit
 
         &:disabled
           background-color: #aaa

@@ -159,32 +159,58 @@ $block: ".boss-hrc"
 
 
   // $HRC form date
-  &__date
+  // $HRC form venue
+  &__date,
+  &__venue
     display: block
     margin: 0
     white-space: nowrap
 
     &:before
-      content: ""
+      content: ''
       display: inline-block
-      width: 16px
-      height: 16px
+      margin-top: -2px
       margin-right: 7px
-      background-size: contain
+      font-family: icons
+      font-size: 16px
+      line-height: 16px
+      font-weight: 400
+      color: #4c4c4c
       vertical-align: middle
-      background-image: url(../icons/icon-calendar-dark-gray.svg)
 
       @media screen and (max-width: 640px)
         display: none
 
 
+  // $HRC form date
+  &__date
+
+    &:before
+      content: '\e900'
+
+      @media screen and (max-width: 640px)
+        display: none
+
+
+  // $HRC form venue
+  &__venue
+
+    &:before
+      content: '\e901'
+
   // $HRC form date-text
-  &__date-text
+  // $HRC form venue-text
+  &__date-text,
+  &__venue-text
     +text-normalizer()
     display: inline-block
     vertical-align: middle
-    font-size: 16px
     white-space: normal
+
+
+  // $HRC form date-text
+  &__date-text
+    font-size: 16px
 
     @media screen and (max-width: 960px)
       font-size: 15px
@@ -193,31 +219,11 @@ $block: ".boss-hrc"
       font-size: 16px
 
 
-  // $HRC form venue
-  &__venue
-    display: block
-    margin: 0
-    white-space: nowrap
-
-    &:before
-      content: ""
-      display: inline-block
-      width: 16px
-      height: 16px
-      margin-right: 7px
-      background-size: contain
-      vertical-align: middle
-      background-image: url(../icons/icon-storefront-dark-gray.svg)
-
-
   // $HRC form venue-text
   &__venue-text
     +text-normalizer()
-    display: inline-block
-    vertical-align: middle
     font-size: 18px
     font-weight: bold
-    white-space: normal
 
 
   // $HRC form content

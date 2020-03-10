@@ -639,7 +639,8 @@ $block: ".boss-button"
   &_role_success_reverse,
   &_role_accessories-alt,
   &_role_pass,
-  &_role_pass_reverse
+  &_role_pass_reverse,
+  &_role_manage-categories
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -654,7 +655,8 @@ $block: ".boss-button"
 
   &_role_view-submissions,
   &_role_view-notes,
-  &_role_view-history
+  &_role_view-history,
+  &_role_manage-categories
     +button-with-icon-left($icon: '\e927')
 
   &_role_view-details-alt

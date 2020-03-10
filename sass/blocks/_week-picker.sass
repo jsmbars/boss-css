@@ -40,47 +40,49 @@ $block: ".week-picker"
       border: none
 
 
-    & .ui-datepicker-prev
-      left: 20px
+    & .ui-datepicker-prev,
+    & .ui-datepicker-next
       top: 50%
       width: 20px
       height: 20px
       margin-top: -10px
       cursor: pointer
+
+      & span
+        background: none
+
+      &:before
+        content: ''
+        z-index: 5
+        display: block
+        width: 20px
+        height: 20px
+        font-family: icons
+        font-size: 30px
+        line-height: 20px
+        font-weight: 400
+        color: #aaa
+        text-align: center
+        text-indent: 0
+
+    & .ui-datepicker-prev
+      left: 20px
 
       @media screen and (max-width: 480px)
         left: 15px
 
-      & span
-        display: block
-        width: 20px
-        height: 20px
-        background-image: url(../icons/icon-arrow-left-light-gray.svg)
-        background-position: center center
-        background-repeat: no-repeat
-        background-size: contain
+      &:before
+        content: '\e91c'
 
 
     & .ui-datepicker-next
       right: 20px
-      top: 50%
-      width: 20px
-      height: 20px
-      margin-top: -10px
-      cursor: pointer
 
       @media screen and (max-width: 480px)
         right: 15px
 
-      & span
-        display: block
-        width: 20px
-        height: 20px
-        background-image: url(../icons/icon-arrow-left-light-gray.svg)
-        background-position: center center
-        background-repeat: no-repeat
-        background-size: contain
-        transform: rotate(-180deg)
+      &:before
+        content: '\e91b'
 
 
     & .ui-datepicker-next-hover,

@@ -94,15 +94,16 @@ $block: ".boss-stats"
     font-weight: 600
 
     &:before
-      content: ''
+      content: '\e91f'
       display: inline-block
-      width: 18px
-      height: 16px
       margin-top: -2px
       margin-right: 10px
       vertical-align: middle
-      background: url(../icons/icon-envelope-dark-gray.svg) no-repeat center center
-      background-size: contain
+      font-family: icons
+      font-size: 16px
+      line-height: 16px
+      font-weight: 400
+      color: inherit
 
 
   // $Stats block note switch
@@ -117,19 +118,17 @@ $block: ".boss-stats"
     text-decoration: underline
 
     &:after
-      content: ''
+      content: '\e937'
       position: absolute
       left: 0
       top: 50%
       display: block
-      width: 14px
-      height: 14px
       margin-top: -7px
-      background-image: url(../icons/icon-plus-primary.svg)
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
-      transform: rotate(45deg)
+      font-family: icons
+      font-size: 14px
+      line-height: 14px
+      font-weight: 400
+      color: inherit
       transition: all .4s
 
     &:hover,
@@ -139,7 +138,7 @@ $block: ".boss-stats"
     // $Stats block note switch MOD: state closed
     &_state_closed
       &:after
-        transform: rotate(0)
+        transform: rotate(45deg)
 
 
   // $Stats block note form
@@ -195,15 +194,15 @@ $block: ".boss-stats"
       top: 50%
       right: 0
       display: block
-      width: 22px
-      height: 14px
       margin-top: -7px
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
+      font-family: icons
+      font-size: 14px
+      line-height: 14px
+      font-weight: 400
+      color: inherit
 
     &_indicator_att:after
-      background-image: url("../icons/icon-envelope-dark-gray.svg")
+      content: '\e91f'
 
     @media screen and (max-width: 1120px)
       #{$block}_adjust_table &
@@ -291,19 +290,26 @@ $block: ".boss-stats"
         margin-bottom: 0
 
     // $Stats block label MOD: role date
-    &_role_date
+    // $Stats block label MOD: role user
+    // $Stats block label MOD: role venue
+    &_role_date,
+    &_role_user,
+    &_role_venue
       &:before
         content: ""
         display: inline-block
-        width: 20px
-        height: 20px
         margin-right: 10px
+        font-family: icons
+        font-size: 18px
+        line-height: 18px
+        font-weight: 400
+        color: inherit
         vertical-align: middle
-        line-height: 100%
-        background-image: url("../icons/icon-calendar-dark-gray.svg")
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+
+    // $Stats block label MOD: role date
+    &_role_date
+      &:before
+        content: '\e900'
 
     // $Stats block label MOD: role user
     &_role_user
@@ -311,17 +317,7 @@ $block: ".boss-stats"
       white-space: normal
 
       &:before
-        content: ""
-        display: inline-block
-        width: 16px
-        height: 20px
-        margin-right: 10px
-        vertical-align: middle
-        line-height: 100%
-        background-image: url("../icons/icon-user-dark-gray.svg")
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        content: '\e904'
 
     // $Stats block label MOD: role venue
     &_role_venue
@@ -329,17 +325,7 @@ $block: ".boss-stats"
       white-space: normal
 
       &:before
-        content: ""
-        display: inline-block
-        width: 20px
-        height: 20px
-        margin-right: 10px
-        vertical-align: middle
-        line-height: 100%
-        background-image: url("../icons/icon-storefront-dark-gray.svg")
-        background-repeat: no-repeat
-        background-position: center center
-        background-size: contain
+        content: '\e901'
 
     // $Stats block label MOD: state alert
     &_state_alert

@@ -401,16 +401,17 @@ $block: ".boss-time-shift"
     height: 45px
 
     &:before
-      content: ''
+      content: '\e961'
       position: absolute
       top: 50%
       left: 15px
       z-index: 10
       display: block
-      width: 15px
-      height: 15px
-      background: url(../icons/icon-clock-medium-gray.svg) no-repeat 0 0
-      background-size: contain
+      font-family: icons
+      font-size: 15px
+      line-height: 15px
+      font-weight: 400
+      color: #808080
       transform: translateY(-50%)
 
       #{$block}__log_state_accepted &
@@ -423,8 +424,7 @@ $block: ".boss-time-shift"
     // $Time shift MOD: error
     &_state_error
       &:before
-        background: url(../icons/icon-clock-alert.svg) no-repeat 0 0
-        background-size: contain
+        color: map-get($boss-app-palette, alert)
 
 
   &__select
@@ -871,15 +871,15 @@ $block: ".boss-time-shift"
       color: $boss-medium-gray
 
     &:before
-      content: ""
+      content: '\e97d'
       display: inline-block
-      width: 12px
-      height: 12px
       margin-right: 5px
-      background-image: url(../icons/icon-plus-medium-gray.svg)
-      background-repeat: no-repeat
-      background-position: center center
-      background-size: contain
+      font-family: icons
+      font-size: 12px
+      line-height: 12px
+      font-weight: 400
+      color: #808080
+      text-decoration: none
 
     // $Time shift break add link MOD: state hidden
     &_state_hidden
@@ -902,16 +902,14 @@ $block: ".boss-time-shift"
     cursor: pointer
 
     &:before
-      content: ''
+      content: '\e918'
       display: inline-block
-      width: 9px
-      height: 9px
       margin-right: 10px
-      background: url(../icons/icon-down-arrow-dark-gray.svg) no-repeat 0 0
-      background-repeat: no-repeat
-      background-position: center center
-      transform: rotate(0)
-      transition: all .4s
+      font-family: icons
+      font-size: 14px
+      line-height: 14px
+      font-weight: 400
+      color: inherit
 
     &:hover,
     &:focus
@@ -930,7 +928,7 @@ $block: ".boss-time-shift"
       text-decoration: none
 
       &:before
-        transform: rotate(180deg)
+        content: '\e917'
 
     // $Time shift break toggle MOD: state closed
     &_state_closed

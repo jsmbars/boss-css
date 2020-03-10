@@ -131,15 +131,22 @@ $block: ".boss-notifications"
     height: 40px
     font-size: 0
     line-height: 0
+    text-align: center
     color: transparent
-    background-repeat: no-repeat
-    background-position: center center
-    background-size: 10px 10px
     transition: all .4s
-    background-image: url(../icons/icon-close-alert-dark.svg)
     cursor: pointer
     opacity: 0.9
     transition: opacity .3s
+
+    &:after
+      content: '\e96a'
+      display: inline-block
+      font-family: icons
+      font-size: 10px
+      line-height: 40px
+      font-weight: 400
+      color: #b35456
+      vertical-align: middle
 
     &:hover
       opacity: 0.8

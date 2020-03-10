@@ -130,6 +130,7 @@ $block: ".boss-form"
         width: 100%
 
     // $Common form group MOD: last position
+    &:last-of-type,
     &_position_last
       margin-right: 0
       margin-bottom: 0
@@ -635,6 +636,7 @@ $block: ".boss-form"
       @media screen and (max-width: 960px)
         padding-top: 0
 
+        #{$block}__row_layout_nowrap &,
         #{$block}__row_layout_wrap-xs &
           padding-top: 26px
 
@@ -660,6 +662,13 @@ $block: ".boss-form"
     // $Common form field MOD: justify start
     &_justify_start
       text-align: left
+
+    // $Common form field MOD: justify start center
+    &_justify_start-center
+      text-align: left
+
+      @media screen and (max-width: 960px)
+        text-align: center
 
     // $Common form field MOD: justify mobile center
     &_justify_mobile-center
@@ -1403,6 +1412,10 @@ $block: ".boss-form"
         box-shadow: 0 0 5px 0 map-get($boss-app-palette, alert)
         border-color: map-get($boss-app-palette, alert)
 
+    &[disabled]
+      cursor: not-allowed
+      background-color: #e6e6e6
+
 
   // $Common form textarea
   &__textarea
@@ -1444,6 +1457,10 @@ $block: ".boss-form"
       &:focus
         border-color: map-get($boss-app-palette, alert)
         box-shadow: 0 0 5px 0 map-get($boss-app-palette, alert)
+
+    &[disabled]
+      cursor: not-allowed
+      background-color: #e6e6e6
 
 
   // $Common form submit button
@@ -1748,6 +1765,10 @@ $block: ".boss-form"
       border-radius: 2px
       border-color: #d8d8d8
 
+    & .Select.is-disabled .Select-control,
+      background-color: #e6e6e6
+      cursor: not-allowed
+
     & .Select-multi-value-wrapper
       line-height: 48px
 
@@ -1887,7 +1908,6 @@ $block: ".boss-form"
       & .Select-placeholder
         color: map-get($boss-app-palette, alert)
 
-
     &_state_inactive
       position: relative
 
@@ -1902,7 +1922,7 @@ $block: ".boss-form"
         display: block
         width: 100%
         height: 100%
-        background-color: rgba(20,20,20,.2)
+        background-color: rgba(0,0,0,.1)
 
     &_role_time
       & .Select-placeholder,

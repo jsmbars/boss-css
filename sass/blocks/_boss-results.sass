@@ -33,31 +33,36 @@ $block: ".boss-results"
 
   // $Results switch
   &__switch
-    content: ""
     position: absolute
     top: 18px
     left: 10px
     display: none
-    width: 20px
-    height: 15px
     margin: 0 auto
-    background: url(../icons/arrow-left-dark-gray.svg) center center no-repeat
-    background-size: contain
     cursor: pointer
-    transform: rotate(-90deg)
     transform-origin: center center
     transition: all .4s
 
     @media screen and (max-width: 960px)
       display: block
 
+    &:after
+      content: '\e919'
+      display: inline-block
+      font-family: icons
+      font-size: 24px
+      line-height: 12px
+      font-weight: 400
+      color: #4c4c4c
+
     // $Results switch MOD: state opened
     &_state_opened
-      transform: rotate(90deg)
+      &:after
+        content: '\e91a'
 
     // $Results switch MOD: state closed
     &_state_closed
-      transform: rotate(-90deg)
+      &:after
+        content: '\e919'
 
 
   // $Results meta information
@@ -137,6 +142,9 @@ $block: ".boss-results"
       @media screen and (max-width: 960px)
         width: 110px
 
+      @media screen and (max-width: 480px)
+        width: 100px
+
     &:nth-of-type(2)
       width: 130px
 
@@ -160,6 +168,9 @@ $block: ".boss-results"
       @media screen and (max-width: 960px)
         width: 90px
 
+      @media screen and (max-width: 480px)
+        width: 80px
+
     // $Results cell MOD: role header
     &_role_header
       position: relative
@@ -172,51 +183,49 @@ $block: ".boss-results"
         padding: 15px 10px
 
     // $Results cell MOD: status
+    // $Results cell MOD: action popover
     &_status_rejected,
     &_status_approved,
     &_status_failed,
     &_status_passed,
+    &_action_popover
       &:before
-        content: ""
-        display: block
-        width: 20px
-        height: 20px
-        margin: 0 auto
-        background-size: contain
-        background-position: center center
-        background-repeat: no-repeat
+        content: ''
+        display: inline-block
+        font-family: icons
+        font-size: 20px
+        line-height: 20px
+        font-weight: 400
+
+    &_status_rejected,
+    &_status_approved,
+    &_status_failed,
+    &_status_passed
+      text-align: center
 
     // $Results cell MOD: status rejected
-    &_status_rejected
-      &:before
-        background-image: url(../icons/thumb-down_red.svg)
-
-    // $Results cell MOD: status approved
-    &_status_approved
-      &:before
-        background-image: url(../icons/thumb-up_green.svg)
-
     // $Results cell MOD: status failed
+    &_status_rejected,
     &_status_failed
       &:before
-        background-image: url(../icons/thumb-down_red.svg)
+        content: '\e943'
+        color: #f54c49
 
+    // $Results cell MOD: status approved
     // $Results cell MOD: status passed
+    &_status_approved,
     &_status_passed
       &:before
-        background-image: url(../icons/thumb-up_green.svg)
+        content: '\e944'
+        color: #5dac43
 
-    // $Results cell MOD: action popover
     &_action_popover
       position: relative
+      cursor: pointer
+
       &:before
-        content: ""
-        display: block
-        width: 20px
-        height: 20px
-        background: url(../icons/envelope.svg) center center no-repeat
-        background-size: contain
-        cursor: pointer
+        content: '\e925'
+        color: #4c4c4c
 
 
   // $Results sort link
@@ -234,18 +243,17 @@ $block: ".boss-results"
     outline: none
 
     &:before
-      content: ""
+      content: '\e92e'
       position: absolute
       right: 10px
       top: 50%
       display: block
-      width: 15px
-      height: 20px
-      margin-top: -11px
-      background-image: url(../icons/sort.svg)
-      background-repeat: no-repeat
-      background-size: contain
-      background-position: center center
+      margin-top: -10px
+      font-family: icons
+      font-size: 20px
+      line-height: 20px
+      font-weight: 400
+      color: #4c4c4c
       opacity: .2
       transition: opacity .4s
 

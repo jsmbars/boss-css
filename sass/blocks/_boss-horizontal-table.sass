@@ -334,34 +334,29 @@ $block: ".boss-horizontal-table"
         border: 2px solid $boss-extra-light-gray
         background-color: transparent
         box-shadow: none
+        text-align: center
 
         &:before
           content: ""
-          position: absolute
-          top: 50%
-          left: 50%
-          margin-top: -8px
-          margin-left: -8px
-          display: block
-          width: 16px
-          height: 16px
-          background-repeat: no-repeat
-          background-position: center center
-          background-size: contain
+          display: inline-block
+          font-family: icons
+          font-size: 24px
+          line-height: 24px
+          font-weight: 400
+          color: #aaa
 
       .owl-prev
         margin-right: 10px
 
         &:before
-          background-image: url('../icons/icon-arrow-left-light-gray.svg')
+          content: '\e91c'
 
 
       .owl-next
         border-color: $boss-very-light-gray
 
         &:before
-          transform: rotate(-180deg)
-          background-image: url('../icons/icon-arrow-left-light-gray.svg')
+          content: '\e91b'
 
       .owl-pagination
         flex-grow: 0

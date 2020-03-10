@@ -104,22 +104,24 @@ $block: ".boss-notification"
     top: 8px
     right: 0
     display: block
-    width: 20px
-    height: 16px
     text-decoration: none
     outline: none
     font-size: 0
     line-height: 0
     color: transparent
-    background-image: url(../icons/icon-arrow-down-white.svg)
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: contain
-    transform: rotate(180deg)
 
-    // $Notification switch CONTEXT: $Notification MOD: State closed
-    #{$block}_state_closed &
-      transform: rotate(0)
+    &:after
+      content: '\e91a'
+      display: block
+      font-family: icons
+      font-size: 30px
+      line-height: 12px
+      font-weight: 400
+      color: #fff
+
+      // $Notification switch CONTEXT: $Notification MOD: State closed
+      #{$block}_state_closed &
+        content: '\e919'
 
     @media screen and (max-width: 960px)
       position: relative
