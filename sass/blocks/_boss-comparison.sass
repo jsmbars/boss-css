@@ -28,6 +28,9 @@ $block: ".boss-comparison"
       justify-content: flex-start
       align-items: center
 
+  // $Comparison MOD: page staff member profile quizzes history
+  &_page_smp-quizzes-history
+
 
   // $Comparison content
   &__content
@@ -40,6 +43,11 @@ $block: ".boss-comparison"
     @media screen and (max-width: 960px)
       #{$block}_page_sv-missattributed-logins &
         flex-wrap: wrap
+
+      #{$block}_page_smp-quizzes-history &
+        flex-direction: column-reverse
+        justify-content: flex-start
+        align-items: flex-start
 
     @media screen and (max-width: 640px)
       #{$block}_page_sv-missattributed-logins &
@@ -77,6 +85,10 @@ $block: ".boss-comparison"
   &__item
     flex-grow: 1
     flex-shrink: 1
+
+    // $Comparison item MOD: type faded
+    &_type_faded
+      opacity: 0.5
 
     // $Comparison item MOD: position start
     &_position_start
@@ -153,6 +165,9 @@ $block: ".boss-comparison"
       #{$block}_page_sv-missattributed-logins &
         width: 100px
 
+      #{$block}_page_smp-quizzes-history &
+        align-self: center
+
     @media screen and (max-width: 640px)
       #{$block}_page_sv-missattributed-logins &
         width: 80px
@@ -170,6 +185,17 @@ $block: ".boss-comparison"
       @media screen and (max-width: 1120px)
         #{$block}_page_sv-missattributed-logins &
           font-size: 24px
+
+    &:before
+      #{$block}_page_smp-quizzes-history &
+        content: '\e954'
+        padding: 0 10px
+        font-size: 24px
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_smp-quizzes-history &
+          padding: 5px 0
+          transform: rotate(-90deg)
 
     // $Comparison delimiter MOD: position start
     &_position_start

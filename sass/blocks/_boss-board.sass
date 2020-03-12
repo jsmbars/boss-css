@@ -114,7 +114,8 @@ $block: ".boss-board"
       #{$block}_role_finance-report &,
       #{$block}_role_venue-alert-levels-red &,
       #{$block}_role_venue-alert-levels-amber &,
-      #{$block}_role_profile-quizzes-categories &
+      #{$block}_role_profile-quizzes-categories &,
+      #{$block}_role_profile-quizzes-history &
         flex-wrap: wrap
         overflow: hidden
 
@@ -258,7 +259,8 @@ $block: ".boss-board"
 
     @media screen and (max-width: 640px)
       #{$block}__header_adjust_rotas-weekly &,
-      #{$block}_role_profile-quizzes-categories &
+      #{$block}_role_profile-quizzes-categories &,
+      #{$block}_role_profile-quizzes-history &
         text-align: center
         margin-bottom: 15px
 
@@ -267,7 +269,8 @@ $block: ".boss-board"
       #{$block}_role_venue-alert-levels-amber &
         width: calc(100% - 50px)
 
-      #{$block}_role_profile-quizzes-categories &
+      #{$block}_role_profile-quizzes-categories &,
+      #{$block}_role_profile-quizzes-history &
         width: 100%
 
     @media screen and (max-width: 400px)
@@ -583,6 +586,11 @@ $block: ".boss-board"
 
     #{$block}_state_edit &
       display: none
+
+    @media screen and (max-width: 640px)
+      #{$block}_role_profile-quizzes-history &
+        width: 100%
+        text-align: center
 
     &_role_edit
       #{$block}_state_edit &
