@@ -128,6 +128,46 @@ $block: ".boss-timeline"
       &:before
         color: map-get($boss-app-palette, primary)
 
+    // $Timeline item MOD: role passed
+    &_role_passed
+      &:before
+        content: '\e969'
+        font-size: 16px
+        line-height: 28px
+        color: #eee
+        border-width: 1px
+        background-color: map-get($boss-app-palette, secondary)
+
+    // $Timeline item MOD: role failed
+    &_role_failed
+      &:before
+        content: '\e96a'
+        font-size: 12px
+        line-height: 28px
+        color: #eee
+        border-width: 1px
+        background-color: map-get($boss-app-palette, alert)
+
+    // $Timeline item MOD: role up
+    &_role_up
+      &:before
+        content: '\e995'
+        font-size: 18px
+        line-height: 26px
+        color: #eee
+        border-width: 1px
+        background-color: map-get($boss-app-palette, secondary)
+
+    // $Timeline item MOD: role down
+    &_role_down
+      &:before
+        content: '\e994'
+        font-size: 18px
+        line-height: 26px
+        color: #eee
+        border-width: 1px
+        background-color: map-get($boss-app-palette, alert)
+
 
   &__count
     +text-normalizer()

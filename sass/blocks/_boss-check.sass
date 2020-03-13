@@ -431,8 +431,7 @@ $block: ".boss-check"
 
       #{$block}_page_handover-planner-event &,
       #{$block}_page_handover-planner-reminder &,
-      #{$block}_page_handover-planner-task &,
-      #{$block}_page_smp-quizzes-history &
+      #{$block}_page_handover-planner-task &
         width: calc(100% - 60px)
         margin-top: 0
 
@@ -443,9 +442,16 @@ $block: ".boss-check"
       #{$block}_page_vhcq &
         padding-left: 10px
 
+      #{$block}_page_smp-quizzes-history &
+        width: calc(100% - 100px)
+        margin-top: 0
+
     @media screen and (max-width: 480px)
       #{$block}_page_quiz-category &
         width: calc(100% - 50px)
+
+      #{$block}_page_smp-quizzes-history &
+        width: 100%
 
 
   // $Check block header meta
@@ -605,13 +611,23 @@ $block: ".boss-check"
     flex-grow: 0
     flex-shrink: 0
 
+    #{$block}_page_smp-quizzes-category &,
+    #{$block}_page_smp-quizzes-history &
+      padding-left: 20px
+
     @media screen and (max-width: 640px)
       #{$block}_page_smp-quizzes-category &
         flex-grow: 1
         flex-shrink: 1
         width: 100%
         margin-top: 10px
+        padding-left: 0
         text-align: center
+
+      #{$block}_page_smp-quizzes-history &
+        margin-top: 15px
+        padding-left: 0
+
 
   // $Check block header status
   &__header-status
@@ -749,7 +765,9 @@ $block: ".boss-check"
     #{$block}_page_handover-planner-reminder &,
     #{$block}_page_handover-planner-task &,
     #{$block}_page_contacts-admin &,
-    #{$block}_page_quiz-category &
+    #{$block}_page_quiz-category &,
+    #{$block}_page_smp-quizzes-category &,
+    #{$block}_page_smp-quizzes-history &
       padding-left: 20px
 
     #{$block}_page_vhcq &
@@ -805,6 +823,23 @@ $block: ".boss-check"
 
       #{$block}_page_vhcq &
         padding-left: 10px
+
+      #{$block}_page_smp-quizzes-category &
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        margin-top: 15px
+        padding-top: 15px
+        padding-left: 0
+        text-align: center
+        border-top: 1px solid #eee
+
+      #{$block}_page_smp-quizzes-history &
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        margin-top: 15px
+        padding-left: 0
 
     @media screen and (max-width: 480px)
       #{$block}_page_clocking-app-page-index &
@@ -920,31 +955,9 @@ $block: ".boss-check"
     flex-grow: 0
     flex-shrink: 0
 
-    #{$block}_page_smp-quizzes-history &
-      padding-left: 20px
-
-    @media screen and (max-width: 640px)
-      #{$block}_page_smp-quizzes-history &
-        order: -99
-        flex-grow: 1
-        flex-shrink: 1
-        flex-direction: row
-        justify-content: center
-        align-items: center
-        width: 100%
-        margin-bottom: 10px
-        padding-left: 0
-        padding-bottom: 10px
-        border-bottom: 1px solid #eee
-        text-align: center
-
 
   // $Check block label
   &__header-label
-    #{$block}_page_smp-quizzes-history &
-      min-width: 90px
-      font-weight: 600
-      text-transform: uppercase
 
 
   // $Check block group
@@ -1447,6 +1460,10 @@ $block: ".boss-check"
 
     #{$block}_page_wtl-cards-index &
       text-align: center
+
+    #{$block}_page_smp-quizzes-category &
+      flex-grow: 1
+      flex-shrink: 1
 
     @media screen and (max-width: 960px)
       #{$block}_page_contacts &
