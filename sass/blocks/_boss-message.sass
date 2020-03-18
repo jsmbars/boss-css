@@ -100,6 +100,11 @@ $block: ".boss-message"
     padding: 10px 15px
     background-color: map-get($boss-app-palette, primary)
 
+  // $Message MOD: role bonai note
+  &_role_bonai-note
+    padding: 10px 15px
+    background-color: map-get($boss-app-palette, alert)
+
   // $Message MOD: role clocking app note
   &_role_ca-note
     padding: 20px 25px
@@ -235,6 +240,12 @@ $block: ".boss-message"
       text-transform: uppercase
       color: #fff
 
+    #{$block}_role_bonai-note &
+      margin-bottom: 5px
+      font-size: 16px
+      line-height: 1.2
+      color: #fff
+
     // $Message title MOD: accent
     &_accent
       color: map-get($boss-app-palette, primary)
@@ -274,21 +285,18 @@ $block: ".boss-message"
     margin: 0
     font-size: 18px
 
-    @media screen and (max-width: 480px)
-      font-size: 16px
-
     #{$block}_role_calendar-note &,
     #{$block}_role_note &,
+    #{$block}_role_bonai-note &,
     #{$block}_role_ca-note &,
     #{$block}_role_sc-details &,
     #{$block}_role_checklist-note &,
     #{$block}_status_success &
       color: #fff
 
-    #{$block}_role_calendar-note &
-      font-size: 14px
-
-    #{$block}_role_note &
+    #{$block}_role_calendar-note &,
+    #{$block}_role_note &,
+    #{$block}_role_bonai-note &
       font-size: 14px
 
     #{$block}_role_ca-note &
@@ -302,6 +310,9 @@ $block: ".boss-message"
     #{$block}_role_checklist-note &
       color: map-get($boss-app-palette, alert)
       font-size: 14px
+
+    @media screen and (max-width: 480px)
+      font-size: 16px
 
     // $Message text MOD: marked text
     &_marked

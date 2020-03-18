@@ -167,8 +167,7 @@ $block: ".boss-table"
       display: none
 
     &_state_alert
-      #{$block}_page_message-board &
-        background-color: #feeeee
+      background-color: #feeeee
 
 
   &__dropdown-actions
@@ -182,6 +181,13 @@ $block: ".boss-table"
   &__details
     padding: 10px 0
     border-bottom: 1px solid #eee
+
+    #{$block}_page_bonai &
+      padding: 10px 20px 20px
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_bonai &
+        padding: 10px 10px 20px
 
     // $Common table details MOD: state closed
     &_state_closed
@@ -204,6 +210,9 @@ $block: ".boss-table"
         #{$block}_page_maintenance-index &,
         #{$block}_page_maintenance-managers-index &
           display: none !important
+
+    &_state_alert
+      background-color: #feeeee
 
 
   // $Common table details inner container
@@ -289,6 +298,19 @@ $block: ".boss-table"
 
     &_nowrap
       white-space: nowrap
+
+
+  // $Common table details text
+  &__details-text
+    +text-normalizer()
+
+    &:not(:last-child)
+      #{$block}_page_bonai &
+        margin-bottom: 10px
+
+  // $Common table details text-faded
+  &__details-text-faded
+    color: #808080
 
 
   &__details-switch
@@ -497,7 +519,8 @@ $block: ".boss-table"
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
-        #{$block}_page_venues-index &
+        #{$block}_page_venues-index &,
+        #{$block}_page_csv-upload > &
           display: none
 
       @media screen and (max-width: 960px)
@@ -523,7 +546,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed > &,
         #{$block}_page_wages-index &,
         #{$block}_page_id-scanner-keys &,
-        #{$block}_page_bonai &,
+        #{$block}_page_message-board > &,
+        #{$block}_page_bonai > &,
         #{$block}_page_smp-quizzes-history &,
         #{$block}_page_smp-quizzes-category &,
         #{$block}_page_smp-quizzes-overview &
@@ -550,15 +574,6 @@ $block: ".boss-table"
           position: static
           z-index: auto
           top: auto
-
-    &_role_header
-      @media screen and (max-width: 1120px)
-        #{$block}_page_csv-upload &
-          display: none
-
-      @media screen and (max-width: 960px)
-        #{$block}_page_message-board &
-          display: none
 
     // $Common table second row
     &:nth-child(2)
@@ -1432,7 +1447,7 @@ $block: ".boss-table"
         width: 33.3%
 
       #{$block}_page_bonai &
-        width: 18%
+        width: 15%
         justify-content: center
 
         &:nth-last-child(4)
@@ -2000,7 +2015,7 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_bonai &
-        width: 11%
+        width: 9%
         justify-content: center
 
         &:nth-last-child(2)
@@ -2231,7 +2246,7 @@ $block: ".boss-table"
         min-width: 160px
 
       #{$block}_page_bonai &
-        width: 11%
+        width: 9%
         justify-content: center
 
         &:nth-last-child(1)
@@ -2403,7 +2418,7 @@ $block: ".boss-table"
         width: 6%
 
       #{$block}_page_bonai &
-        width: 11%
+        width: 8%
         justify-content: center
 
       @media screen and (max-width: 1120px)
@@ -2615,8 +2630,7 @@ $block: ".boss-table"
         width: 6%
 
       #{$block}_page_bonai &
-        width: 11%
-        padding-right: 15px
+        width: 9%
         justify-content: center
 
       @media screen and (max-width: 1120px)
@@ -2648,9 +2662,6 @@ $block: ".boss-table"
           flex-shrink: 1
           width: 100%
           padding-right: 0
-
-        #{$block}_page_bonai &
-          padding-right: 10px
 
       @media screen and (max-width: 480px)
         #{$block}_page_daily-reports &
@@ -2696,6 +2707,11 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_bonai &
+        width: 12%
+        padding-right: 20px
+        justify-content: center
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &,
         #{$block}_page_venues-index &,
@@ -2713,13 +2729,17 @@ $block: ".boss-table"
       @media screen and (max-width: 960px)
 
         #{$block}_page_change-order-report &,
-        #{$block}_page_smp-owed-hours &
+        #{$block}_page_smp-owed-hours &,
+        #{$block}_page_bonai &
           flex-grow: 1
           flex-shrink: 1
           width: 100%
 
         #{$block}_page_smp-owed-hours &
           padding-right: 0
+
+        #{$block}_page_bonai &
+          padding-right: 10px
 
     // $Common table cell tenth column
     &:nth-child(10)
@@ -3650,6 +3670,8 @@ $block: ".boss-table"
     &_role_active-status,
     &_role_alert-status,
     &_role_disabled-status,
+    &_role_eligible-status,
+    &_role_not-eligible-status,
     &_role_pending-status,
     &_role_status
       text-transform: uppercase
@@ -3660,11 +3682,13 @@ $block: ".boss-table"
       color: map-get($boss-app-palette, primary)
 
     &_role_success-status,
-    &_role_active-status
+    &_role_active-status,
+    &_role_eligible-status
       color: map-get($boss-app-palette, secondary)
 
     &_role_alert-status,
-    &_role_disabled-status
+    &_role_disabled-status,
+    &_role_not-eligible-status
       color: map-get($boss-app-palette, alert)
 
     &_role_pending-status
@@ -3814,7 +3838,8 @@ $block: ".boss-table"
     #{$block}_page_id-scanner-keys &,
     #{$block}_page_smp-quizzes-history &,
     #{$block}_page_smp-quizzes-category &,
-    #{$block}_page_staff-types-index &
+    #{$block}_page_staff-types-index &,
+    #{$block}_page_bonai &
       text-align: center
 
     #{$block}_page_change-order-report &,
@@ -3871,7 +3896,8 @@ $block: ".boss-table"
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_wages-index &,
       #{$block}_page_wtl-clients-index &,
-      #{$block}_page_id-scanner-keys &
+      #{$block}_page_id-scanner-keys &,
+      #{$block}_page_bonai &
         text-align: left
 
       #{$block}_page_holidays-report &,
