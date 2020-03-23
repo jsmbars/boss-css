@@ -343,6 +343,7 @@ $block: ".boss-page-dashboard"
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_handover-planner &,
+      #{$block}_page_vhci &,
       #{$block}_page_vhcq &
         flex-direction: column
         justify-content: center
@@ -358,6 +359,7 @@ $block: ".boss-page-dashboard"
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_handover-planner &,
+      #{$block}_page_vhci &,
       #{$block}_page_vhcq &
         align-items: stretch
 
@@ -406,6 +408,7 @@ $block: ".boss-page-dashboard"
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_handover-planner &,
+      #{$block}_page_vhci &,
       #{$block}_page_vhcq &
         margin-right: 15px
 
@@ -439,6 +442,7 @@ $block: ".boss-page-dashboard"
         #{$block}_page_finance-reports &,
         #{$block}_page_payroll-reports &,
         #{$block}_page_handover-planner &,
+        #{$block}_page_vhci &,
         #{$block}_page_vhcq &
           margin-right: 0
           margin-bottom: 15px
@@ -514,8 +518,10 @@ $block: ".boss-page-dashboard"
     text-decoration: none
     color: $boss-dark-gray
     font-weight: 300
-    text-align: center
     vertical-align: middle
+
+    @media screen and (max-width: 960px)
+      text-align: center
 
     @media screen and (max-width: 480px)
       display: block
@@ -648,6 +654,20 @@ $block: ".boss-page-dashboard"
     // $Page dashboard link MOD: role name
     &_role_name
       text-decoration: none
+
+
+  // $Page dashboard label
+  &__meta-label
+    display: inline-block
+    color: $boss-dark-gray
+    vertical-align: middle
+    font-weight: 600
+
+    &:first-of-type
+      margin-left: 5px
+
+    &:not(:last-of-type)
+      margin-right: 15px
 
 
   // $Page dashboard filter
