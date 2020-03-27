@@ -83,7 +83,8 @@ $block: ".boss-page-dashboard"
         align-items: flex-start
 
     @media screen and (max-width: 1120px)
-      #{$block}_page_profile &
+      #{$block}_page_profile &,
+      #{$block}_page_vhcq &
         flex-direction: column
         justify-content: flex-start
 
@@ -180,6 +181,10 @@ $block: ".boss-page-dashboard"
     font-weight: 400
     color: $boss-global-font-color
     margin-bottom: 20px
+
+    @media screen and (max-width: 1120px)
+      #{$block}_page_vhcq &
+        text-align: center
 
     @media screen and (max-width: 960px)
       text-align: center
@@ -296,6 +301,11 @@ $block: ".boss-page-dashboard"
         align-items: center
         width: 100%
 
+      #{$block}_page_vhcq &
+        flex-direction: row
+        justify-content: center
+        align-items: center
+
     @media screen and (max-width: 960px)
       margin-bottom: 25px
 
@@ -325,6 +335,12 @@ $block: ".boss-page-dashboard"
       #{$block}_page_rotas-daily-security &
         display: none
 
+    @media screen and (max-width: 640px)
+      #{$block}_page_vhcq &
+        flex-direction: column
+        justify-content: center
+        align-items: stretch
+
     @media screen and (max-width: 480px)
       #{$block}_page_staff-members-index &,
       #{$block}_page_fruit-order-form &,
@@ -343,8 +359,7 @@ $block: ".boss-page-dashboard"
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_handover-planner &,
-      #{$block}_page_vhci &,
-      #{$block}_page_vhcq &
+      #{$block}_page_vhci &
         flex-direction: column
         justify-content: center
 
@@ -359,8 +374,7 @@ $block: ".boss-page-dashboard"
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_handover-planner &,
-      #{$block}_page_vhci &,
-      #{$block}_page_vhcq &
+      #{$block}_page_vhci &
         align-items: stretch
 
     &:empty
@@ -424,6 +438,11 @@ $block: ".boss-page-dashboard"
           margin-bottom: 0
           margin-right: 15px
 
+      @media screen and (max-width: 640px)
+        #{$block}_page_vhcq &
+          margin-right: 0
+          margin-bottom: 15px
+
       @media screen and (max-width: 480px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_fruit-order-form &,
@@ -442,8 +461,7 @@ $block: ".boss-page-dashboard"
         #{$block}_page_finance-reports &,
         #{$block}_page_payroll-reports &,
         #{$block}_page_handover-planner &,
-        #{$block}_page_vhci &,
-        #{$block}_page_vhcq &
+        #{$block}_page_vhci &
           margin-right: 0
           margin-bottom: 15px
 
