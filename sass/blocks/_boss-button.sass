@@ -631,6 +631,7 @@ $block: ".boss-button"
   &_role_view-history,
   &_role_view-details-alt,
   &_role_add-secondary,
+  &_role_add-alt,
   &_role_csv-download,
   &_role_success,
   &_role_restore,
@@ -640,7 +641,8 @@ $block: ".boss-button"
   &_role_accessories-alt,
   &_role_pass,
   &_role_pass_reverse,
-  &_role_manage-categories
+  &_role_manage-categories,
+  &_role_manage-areas
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -659,10 +661,14 @@ $block: ".boss-button"
   &_role_manage-categories
     +button-with-icon-left($icon: '\e927')
 
+  &_role_manage-areas
+    +button-with-icon-left($icon: '\e958')
+
   &_role_view-details-alt
     +button-with-icon-left($icon: '\e921', $size: 12px)
 
-  &_role_add-secondary
+  &_role_add-secondary,
+  &_role_add-alt
     +button-with-icon-left($icon: '\e97d', $size: 12px)
 
   &_role_csv-download
