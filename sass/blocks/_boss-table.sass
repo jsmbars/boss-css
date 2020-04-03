@@ -116,7 +116,7 @@ $block: ".boss-table"
     min-width: 1760px
 
   &_page_payroll-reports
-    min-width: 1360px
+    min-width: 1560px
 
 
   // $Common table group
@@ -1050,7 +1050,7 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         align-items: flex-start
         width: 10%
-        padding-left: 25px
+        padding-left: 15px
 
       #{$block}_page_wages-index &
         width: 30%
@@ -1410,7 +1410,7 @@ $block: ".boss-table"
         width: 5%
 
       #{$block}_page_payroll-reports &
-        width: 7%
+        width: 6%
 
       #{$block}_page_wages-index &
         width: 20%
@@ -2723,7 +2723,7 @@ $block: ".boss-table"
         width: 4%
 
       #{$block}_page_payroll-reports &
-        width: 7%
+        width: 6%
 
     // $Common table cell eleventh column
     &:nth-child(11)
@@ -2732,7 +2732,7 @@ $block: ".boss-table"
         width: 4%
 
       #{$block}_page_payroll-reports &
-        width: 7%
+        width: 6%
 
     // $Common table cell twelfth column
     &:nth-child(12)
@@ -2741,7 +2741,7 @@ $block: ".boss-table"
         width: 5%
 
       #{$block}_page_payroll-reports &
-        width: 7%
+        width: 6%
 
     // $Common table cell thirteenth column
     &:nth-child(13)
@@ -2750,7 +2750,7 @@ $block: ".boss-table"
         width: 5%
 
       #{$block}_page_payroll-reports &
-        width: 7%
+        width: 6%
 
     // $Common table cell fourteenth column
     &:nth-child(14)
@@ -2759,7 +2759,7 @@ $block: ".boss-table"
         width: 4%
 
       #{$block}_page_payroll-reports &
-        width: 7%
+        width: 6%
 
     // $Common table cell fifteenth column
     &:nth-child(15)
@@ -2775,6 +2775,11 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &
         width: 4%
+
+      #{$block}_page_payroll-reports &
+        width: 6%
+        min-width: 120px
+        padding-right: 15px
 
     // $Common table cell seventeenth column
     &:nth-child(17)
@@ -3319,6 +3324,7 @@ $block: ".boss-table"
     #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(3) &,
     #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(4) &,
     #{$block}_page_finance-reports &,
+    #{$block}_page_payroll-reports &,
     #{$block}_page_wages-index &,
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(2) &,
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(3) &,
@@ -3336,7 +3342,8 @@ $block: ".boss-table"
 
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(7) &,
     #{$block}_page_finance-reports #{$block}__cell:nth-child(1) &,
-    #{$block}_page_finance-reports #{$block}__cell:nth-child(2) &
+    #{$block}_page_finance-reports #{$block}__cell:nth-child(2) &,
+    #{$block}_page_payroll-reports #{$block}__cell:nth-child(1) &
       text-align: left
 
     #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(1) &
