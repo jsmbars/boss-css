@@ -394,11 +394,16 @@ $block: ".boss-table"
       padding-bottom: 5px
 
     @media screen and (max-width: 1120px)
+      #{$block}_page_staff-members-index &,
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
       #{$block}_page_venues-index &,
       #{$block}_page_csv-upload &
         display: block
+
+      #{$block}_page_staff-members-index &
+        padding-top: 40px
+        padding-bottom: 40px
 
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
@@ -412,10 +417,6 @@ $block: ".boss-table"
       #{$block}_type_common &
         display: block
         border-bottom: 1px solid #eee
-
-      #{$block}_page_staff-members-index &
-        padding-top: 40px
-        padding-bottom: 40px
 
       #{$block}_page_fruit-order-history &,
       #{$block}_page_change-order-report &,
@@ -517,6 +518,7 @@ $block: ".boss-table"
         background-color: #fbfbfb
 
       @media screen and (max-width: 1120px)
+        #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
@@ -525,7 +527,6 @@ $block: ".boss-table"
 
       @media screen and (max-width: 960px)
         #{$block}_type_common &,
-        #{$block}_page_staff-members-index &,
         #{$block}_page_fruit-order-history &,
         #{$block}_page_change-order-report &,
         #{$block}_page_change-order-history &,
@@ -808,6 +809,7 @@ $block: ".boss-table"
       padding: 15px 10px
 
     @media screen and (max-width: 1120px)
+      #{$block}_page_staff-members-index &,
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
       #{$block}_page_venues-index &,
@@ -846,7 +848,6 @@ $block: ".boss-table"
         padding-left: 0
         padding-right: 0
 
-      #{$block}_page_staff-members-index &,
       #{$block}_page_smp-holidays &,
       #{$block}_page_smp-holiday-requests &,
       #{$block}_page_message-board &,
@@ -1134,10 +1135,16 @@ $block: ".boss-table"
           width: 100%
           padding-left: 15px
 
+        #{$block}_page_staff-members-index &,
         #{$block}_page_venues-index &,
         #{$block}_page_csv-upload &
           width: 100%
           padding-left: 10px
+
+        #{$block}_page_staff-members-index &
+          flex-grow: 1
+          flex-shrink: 1
+          padding-bottom: 25px
 
         #{$block}_page_csv-upload &
           border-right: none
@@ -1149,7 +1156,6 @@ $block: ".boss-table"
       @media screen and (max-width: 960px)
         width: 100%
 
-        #{$block}_page_staff-members-index &,
         #{$block}_page_fruit-order-history &,
         #{$block}_page_holidays-report &,
         #{$block}_page_change-order-report &,
@@ -1181,13 +1187,9 @@ $block: ".boss-table"
           width: 100%
           padding-left: 10px
 
-        #{$block}_page_checklist-review &,
-        #{$block}_page_staff-members-index &
+        #{$block}_page_checklist-review &
           flex-grow: 1
           flex-shrink: 1
-
-        #{$block}_page_staff-members-index &
-          padding-bottom: 25px
 
         #{$block}_page_smp-owed-hours &
           padding-left: 0
@@ -1313,7 +1315,7 @@ $block: ".boss-table"
     &:nth-child(2)
 
       #{$block}_page_staff-members-index &
-        width: 14%
+        width: 12%
 
       #{$block}_page_fruit-order-history &
         width: 29%
@@ -1480,6 +1482,7 @@ $block: ".boss-table"
           width: 100%
           border-right: none
 
+        #{$block}_page_staff-members-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
         #{$block}_page_csv-upload &
@@ -1494,7 +1497,6 @@ $block: ".boss-table"
       @media screen and (max-width: 960px)
         width: 100%
 
-        #{$block}_page_staff-members-index &,
         #{$block}_page_fruit-order-history &,
         #{$block}_page_holidays-report &,
         #{$block}_page_change-order-report &,
@@ -1769,6 +1771,7 @@ $block: ".boss-table"
         width: 20%
 
       @media screen and (max-width: 1120px)
+        #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
@@ -1785,7 +1788,6 @@ $block: ".boss-table"
       @media screen and (max-width: 960px)
         width: 100%
 
-        #{$block}_page_staff-members-index &,
         #{$block}_page_fruit-order-history &,
         #{$block}_page_holidays-report &,
         #{$block}_page_change-order-report &,
@@ -2042,6 +2044,7 @@ $block: ".boss-table"
         width: 20%
 
       @media screen and (max-width: 1120px)
+        #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
@@ -2064,7 +2067,6 @@ $block: ".boss-table"
       @media screen and (max-width: 960px)
         width: 100%
 
-        #{$block}_page_staff-members-index &,
         #{$block}_page_fruit-order-history &,
         #{$block}_page_holidays-report &,
         #{$block}_page_change-order-report &,
@@ -2268,6 +2270,7 @@ $block: ".boss-table"
         justify-content: center
 
       @media screen and (max-width: 1120px)
+        #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
@@ -2287,7 +2290,6 @@ $block: ".boss-table"
       @media screen and (max-width: 960px)
         width: 100%
 
-        #{$block}_page_staff-members-index &,
         #{$block}_page_holidays-report &,
         #{$block}_page_change-order-report &,
         #{$block}_page_change-order-history &,
@@ -2422,6 +2424,7 @@ $block: ".boss-table"
         justify-content: center
 
       @media screen and (max-width: 1120px)
+        #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
@@ -2445,7 +2448,6 @@ $block: ".boss-table"
         #{$block}_page_checklist-review &,
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_message-board &,
-        #{$block}_page_staff-members-index &,
         #{$block}_page_change-order-report &,
         #{$block}_page_change-order-history &,
         #{$block}_page_ssr-completed &,
@@ -2483,7 +2485,7 @@ $block: ".boss-table"
     &:nth-child(7)
 
       #{$block}_page_staff-members-index &
-        width: 12%
+        width: 10%
 
       #{$block}_page_change-order-report &
         width: 11%
@@ -2543,6 +2545,7 @@ $block: ".boss-table"
         justify-content: center
 
       @media screen and (max-width: 1120px)
+        #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
@@ -2561,8 +2564,8 @@ $block: ".boss-table"
           display: none
 
       @media screen and (max-width: 960px)
+        width: 100%
 
-        #{$block}_page_staff-members-index &,
         #{$block}_page_change-order-report &,
         #{$block}_page_change-order-history &,
         #{$block}_page_smp-holiday-requests &,
@@ -2589,7 +2592,7 @@ $block: ".boss-table"
     &:nth-child(8)
 
       #{$block}_page_staff-members-index &
-        width: 12%
+        width: 10%
 
       #{$block}_page_change-order-report &
         width: 11%
@@ -2634,6 +2637,7 @@ $block: ".boss-table"
         justify-content: center
 
       @media screen and (max-width: 1120px)
+        #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_venues-index &,
         #{$block}_page_csv-upload &
@@ -2651,8 +2655,8 @@ $block: ".boss-table"
           display: block
 
       @media screen and (max-width: 960px)
+        width: 100%
 
-        #{$block}_page_staff-members-index &,
         #{$block}_page_change-order-report &,
         #{$block}_page_bonai &
           width: 100%
@@ -2670,6 +2674,12 @@ $block: ".boss-table"
 
     // $Common table cell ninth column
     &:nth-child(9)
+
+      #{$block}_page_staff-members-index &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 140px
+        justify-content: center
 
       #{$block}_page_change-order-report &
         flex-grow: 0
@@ -2713,11 +2723,13 @@ $block: ".boss-table"
         justify-content: center
 
       @media screen and (max-width: 1120px)
+        #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_venues-index &,
         #{$block}_page_csv-upload &
           width: 100%
 
+        #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_venues-index &
           flex-grow: 1
@@ -2727,6 +2739,7 @@ $block: ".boss-table"
           padding-right: 10px
 
       @media screen and (max-width: 960px)
+        width: 100%
 
         #{$block}_page_change-order-report &,
         #{$block}_page_smp-owed-hours &,
@@ -3117,6 +3130,7 @@ $block: ".boss-table"
       width: auto
 
     @media screen and (max-width: 1120px)
+      #{$block}_page_staff-members-index &,
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
       #{$block}_page_venues-index &,
@@ -3189,6 +3203,7 @@ $block: ".boss-table"
       #{$block}_page_holidays-report &
         font-size: 16px
 
+      #{$block}_page_staff-members-index &,
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
       #{$block}_page_venues-index &,
@@ -3257,6 +3272,7 @@ $block: ".boss-table"
       #{$block}_page_holidays-report &
         font-size: 16px
 
+      #{$block}_page_staff-members-index &,
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &
         flex-grow: 0
@@ -3294,6 +3310,12 @@ $block: ".boss-table"
       justify-content: flex-start
       align-items: center
 
+    @media screen and (max-width: 1120px)
+      #{$block}_page_staff-members-index &
+        flex-grow: 1
+        flex-shrink: 0
+        width: 50%
+
     @media screen and (max-width: 960px)
       flex-grow: 1
       flex-shrink: 0
@@ -3304,6 +3326,10 @@ $block: ".boss-table"
       #{$block}_page_smp-quizzes-category &,
       #{$block}_page_smp-quizzes-overview &
         display: block
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_staff-members-index &
+        flex-shrink: 1
 
 
   &__form
@@ -3344,6 +3370,7 @@ $block: ".boss-table"
       word-break: break-word
       hyphens: auto
 
+    #{$block}_page_staff-members-index #{$block}__cell:nth-child(9) &,
     #{$block}_page_holidays-report &,
     #{$block}_page_safe-checks-index &,
     #{$block}_page_checklist-review #{$block}__cell:nth-child(5) &,
@@ -3402,6 +3429,7 @@ $block: ".boss-table"
       flex-shrink: 1
 
     @media screen and (max-width: 1120px)
+      #{$block}_page_staff-members-index &,
       #{$block}_page_safe-checks-index &,
       #{$block}_page_invites-index &,
       #{$block}_page_venues-index &,
@@ -3409,6 +3437,9 @@ $block: ".boss-table"
         flex-grow: 1
         flex-shrink: 0
         width: 50%
+        text-align: left
+
+      #{$block}_page_staff-members-index #{$block}__cell:nth-child(9) &
         text-align: left
 
     @media screen and (max-width: 960px)
@@ -3488,6 +3519,9 @@ $block: ".boss-table"
         padding-left: 10px
         width: 50%
 
+      #{$block}_page_staff-members-index &
+        flex-shrink: 1
+
     &:not(:last-child)
       margin-bottom: 10px
 
@@ -3532,6 +3566,12 @@ $block: ".boss-table"
         font-weight: 400
         color: inherit
 
+    &_indicator_checkbox-checked,
+    &_indicator_checkbox-unchecked
+      &:empty
+        &:after
+          margin-left: 0
+
     &_indicator_accessory
       &:after
         content: '\e93a'
@@ -3555,6 +3595,7 @@ $block: ".boss-table"
         color: #808080
         border: 1px solid #aaa
         border-radius: 4px
+        text-align: center
 
         #{$block}__cell_state_alert &,
         #{$block}__cell_state_success &
@@ -3579,6 +3620,7 @@ $block: ".boss-table"
         border: 1px solid #aaa
         border-radius: 4px
         background-size: 14px 14px
+        text-align: center
 
         #{$block}__cell_state_alert &,
         #{$block}__cell_state_success &
