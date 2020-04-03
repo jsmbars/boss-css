@@ -1044,8 +1044,8 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &
         align-items: flex-start
-        width: 10%
-        padding-left: 25px
+        width: 9%
+        padding-left: 15px
 
       #{$block}_page_payroll-reports &
         align-items: flex-start
@@ -2729,7 +2729,7 @@ $block: ".boss-table"
     &:nth-child(11)
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4%
 
       #{$block}_page_payroll-reports &
         width: 7%
@@ -2765,7 +2765,7 @@ $block: ".boss-table"
     &:nth-child(15)
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4.5%
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -2774,21 +2774,28 @@ $block: ".boss-table"
     &:nth-child(16)
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4%
 
     // $Common table cell seventeenth column
     &:nth-child(17)
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4.5%
 
     // $Common table cell eighteenth column
     &:nth-child(18)
 
       #{$block}_page_finance-reports &
-        width: 12%
+        width: 10%
         max-width: 300px
-        min-width: 185px
+        min-width: 180px
+
+    // $Common table cell nineteenth column
+    &:nth-child(19)
+
+      #{$block}_page_finance-reports &
+        width: 6%
+        min-width: 100px
         padding-right: 15px
 
     // $Common table cell MOD: role header
@@ -3311,6 +3318,7 @@ $block: ".boss-table"
     #{$block}_page_ssr-completed #{$block}__cell:nth-child(5) &,
     #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(3) &,
     #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(4) &,
+    #{$block}_page_finance-reports &,
     #{$block}_page_wages-index &,
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(2) &,
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(3) &,
@@ -3326,7 +3334,9 @@ $block: ".boss-table"
     #{$block}_page_staff-types-index &
       text-align: center
 
-    #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(7) &
+    #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(7) &,
+    #{$block}_page_finance-reports #{$block}__cell:nth-child(1) &,
+    #{$block}_page_finance-reports #{$block}__cell:nth-child(2) &
       text-align: left
 
     #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(1) &
