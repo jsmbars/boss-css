@@ -291,6 +291,7 @@ $block: ".boss-check"
       #{$block}_page_handover-planner-task &,
       #{$block}_page_contacts &,
       #{$block}_page_sv-missattributed-logins &,
+      #{$block}_page_quiz-category &,
       #{$block}_page_smp-quizzes-history &,
       #{$block}_page_smp-quizzes-category &
         flex-wrap: wrap
@@ -309,7 +310,6 @@ $block: ".boss-check"
     @media screen and (max-width: 480px)
       #{$block}_page_clocking-app-page-index &,
       #{$block}_page_contacts-admin &,
-      #{$block}_page_quiz-category &,
       #{$block}_page_smp-quizzes-stats &
         flex-wrap: wrap
 
@@ -439,6 +439,9 @@ $block: ".boss-check"
       #{$block}_page_quiz-category &
         margin-top: 0
 
+      #{$block}_page_quiz-category &
+        width: calc(100% - 50px)
+
       #{$block}_page_vhcq &
         padding-left: 10px
 
@@ -447,9 +450,6 @@ $block: ".boss-check"
         margin-top: 0
 
     @media screen and (max-width: 480px)
-      #{$block}_page_quiz-category &
-        width: calc(100% - 50px)
-
       #{$block}_page_smp-quizzes-history &
         width: 100%
 
@@ -466,6 +466,9 @@ $block: ".boss-check"
     &:not(:last-child)
       @media screen and (max-width: 640px)
         border-bottom: 1px solid #eee
+
+        #{$block}_page_quiz-category &
+          border-bottom: none
 
 
   // $Check block header meta item
@@ -674,6 +677,9 @@ $block: ".boss-check"
       flex-grow: 1
       flex-shrink: 1
 
+    #{$block}_page_quiz-category &
+      margin-top: 10px
+
     @media screen and (max-width: 960px)
       #{$block}_page_contacts &
         width: 100%
@@ -692,11 +698,21 @@ $block: ".boss-check"
         text-align: center
 
 
+  &__header-tags-key
+    display: inline-block
+    margin-right: 5px
+    margin-top: 3px
+    vertical-align: top
+
+
   // $Check block header tag
   &__header-tag
     display: inline-block
     margin-top: 5px
     margin-bottom: 5px
+
+    #{$block}_page_quiz-category &
+      margin-top: 0
 
     &:not(:last-child)
       margin-right: 10px
@@ -754,12 +770,17 @@ $block: ".boss-check"
     #{$block}_page_handover-planner-task &,
     #{$block}_page_contacts &,
     #{$block}_page_contacts-admin &,
-    #{$block}_page_quiz-category &,
     #{$block}_page_vhcq &
       display: flex
       flex-direction: row
       justify-content: flex-start
       align-items: center
+
+    #{$block}_page_quiz-category &
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: stretch
 
     #{$block}_page_handover-planner-event &,
     #{$block}_page_handover-planner-reminder &,
@@ -786,7 +807,6 @@ $block: ".boss-check"
       #{$block}_page_profile-disciplinary &,
       #{$block}_page_venue-alert-levels &,
       #{$block}_page_contacts-admin &,
-      #{$block}_page_quiz-category &,
       #{$block}_page_vhcq &
         flex-direction: column
         align-items: stretch
@@ -820,6 +840,21 @@ $block: ".boss-check"
         flex-direction: column
         align-items: flex-start
         justify-content: center
+
+      #{$block}_page_quiz-category &
+        order: 99
+        flex-grow: 1
+        flex-shrink: 1
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        width: 100%
+        margin-top: 10px
+        padding-left: 0
+        padding-right: 0
+        padding-top: 15px
+        text-align: center
+        border-top: 1px solid #eee
 
       #{$block}_page_vhcq &
         padding-left: 10px
@@ -865,21 +900,6 @@ $block: ".boss-check"
         padding-left: 0
         border-top: 1px solid #eee
 
-      #{$block}_page_quiz-category &
-        order: 99
-        flex-grow: 1
-        flex-shrink: 1
-        flex-direction: row
-        justify-content: center
-        align-items: center
-        width: 100%
-        margin-top: 10px
-        padding-left: 0
-        padding-right: 0
-        padding-top: 15px
-        text-align: center
-        border-top: 1px solid #eee
-
       #{$block}_page_vhcq &
         order: 99
         flex-grow: 1
@@ -917,16 +937,17 @@ $block: ".boss-check"
       #{$block}_page_wtl-cards-index &,
       #{$block}_page_contacts &,
       #{$block}_page_contacts-admin &,
-      #{$block}_page_quiz-category &,
       #{$block}_page_vhcq &
         margin-left: 15px
+
+      #{$block}_page_quiz-category &
+        margin-top: 15px
 
       @media screen and (max-width: 960px)
         #{$block}_page_ssr-requests &,
         #{$block}_page_profile-disciplinary &,
         #{$block}_page_venue-alert-levels &,
         #{$block}_page_contacts-admin &,
-        #{$block}_page_quiz-category &,
         #{$block}_page_vhcq &
           margin-left: 0
           margin-top: 10px
@@ -934,13 +955,13 @@ $block: ".boss-check"
       @media screen and (max-width: 640px)
         #{$block}_page_ssr-requests &,
         #{$block}_page_profile-disciplinary &,
-        #{$block}_page_venue-alert-levels &
+        #{$block}_page_venue-alert-levels &,
+        #{$block}_page_quiz-category &
           margin-left: 15px
           margin-top: 0
 
       @media screen and (max-width: 480px)
         #{$block}_page_contacts-admin &,
-        #{$block}_page_quiz-category &,
         #{$block}_page_vhcq &
           margin-left: 15px
           margin-top: 0
@@ -1707,6 +1728,14 @@ $block: ".boss-check"
 
       &:hover
         color: $boss-medium-gray
+
+    & code
+      font-family: Consolas, "Liberation Mono", Courier, monospace
+      font-weight: normal
+      padding: 2px 4px
+      color: #4c4c4c
+      background-color: #eee
+      border: 1px solid #ccc
 
 
   // $Check block text line
