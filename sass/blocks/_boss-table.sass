@@ -3492,28 +3492,9 @@ $block: ".boss-table"
 
     &_indicator_checkbox-checked,
     &_indicator_checkbox-unchecked
-      &:empty
-        &:after
-          margin-left: 0
-
-    &_indicator_accessory
       &:after
-        content: '\e93a'
-
-    &_indicator_clock
-      &:after
-        content: '\e961'
-
-    &_indicator_disabled
-      &:after
-        content: '\e928'
-
-    &_indicator_checkbox-checked
-      &:after
-        content: '\e969'
         width: 18px
         height: 18px
-        margin-top: -2px
         font-size: 12px
         line-height: 16px
         color: #808080
@@ -3526,7 +3507,12 @@ $block: ".boss-table"
           border-color: #fff
           color: #fff
 
-    &_indicator_checkbox-checked#{&}_state_alert
+      &:empty
+        &:after
+          margin-left: 0
+
+    &_indicator_checkbox-checked#{&}_state_alert,
+    &_indicator_checkbox-unchecked#{&}_state_alert
       &:after
         border-color: map-get($boss-app-palette, alert)
         color: map-get($boss-app-palette, alert)
@@ -3536,27 +3522,27 @@ $block: ".boss-table"
           border-color: #fff
           color: #fff
 
+    &_indicator_checkbox-checked
+      &:after
+        content: '\e969'
+        margin-top: -2px
+
     &_indicator_checkbox-unchecked
       &:after
-        width: 18px
-        height: 18px
-        margin-top: -2px
-        border: 1px solid #aaa
-        border-radius: 4px
-        background-size: 14px 14px
-        text-align: center
+        content: ''
+        margin-top: 2px
 
-        #{$block}__cell_state_alert &,
-        #{$block}__cell_state_success &
-          border-color: #fff
-
-    &_indicator_checkbox-unchecked#{&}_state_alert
+    &_indicator_accessory
       &:after
-        border-color: map-get($boss-app-palette, alert)
+        content: '\e93a'
 
-        #{$block}__cell_state_alert &,
-        #{$block}__cell_state_success &
-          border-color: #fff
+    &_indicator_clock
+      &:after
+        content: '\e961'
+
+    &_indicator_disabled
+      &:after
+        content: '\e928'
 
     &_role_date,
     &_role_venue
