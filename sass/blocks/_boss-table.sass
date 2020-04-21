@@ -84,7 +84,8 @@ $block: ".boss-table"
   &_page_accessory-requests-card,
   &_page_marketing-index-card,
   &_page_marketing-managers-index-card,
-  &_page_holiday-requests
+  &_page_holiday-requests,
+  &_page_bonai-venue
     background-color: transparent
 
   &_page_invites-index,
@@ -124,12 +125,16 @@ $block: ".boss-table"
     display: block
     width: 100%
 
+    #{$block}_page_bonai-venue &
+      padding: 10px 0 15px
+
     &:not(:last-child)
       #{$block}_page_holiday-requests &,
       #{$block}_page_ssr-pending &,
       #{$block}_page_ssr-completed &,
       #{$block}_page_ssr-admin-pending &,
-      #{$block}_page_ssr-admin-completed &
+      #{$block}_page_ssr-admin-completed &,
+      #{$block}_page_bonai-venue &
         border-bottom: 1px solid #eee
 
     &:nth-child(even)
@@ -375,7 +380,8 @@ $block: ".boss-table"
     #{$block}_page_marketing-managers-index-card &,
     #{$block}_page_holiday-requests &,
     #{$block}_page_finance-reports &,
-    #{$block}_page_payroll-reports &
+    #{$block}_page_payroll-reports &,
+    #{$block}_page_bonai-venue &
       background-color: transparent
 
     #{$block}_page_marketing-index-card &,
@@ -738,8 +744,8 @@ $block: ".boss-table"
       justify-content: center
 
     #{$block}_page_bonai-venue &
-      min-height: 50px
-      padding: 0 10px
+      min-height: 0
+      padding: 15px 10px 0
 
     #{$block}_page_smp-holidays &,
     #{$block}_page_smp-holiday-requests &,
@@ -857,9 +863,6 @@ $block: ".boss-table"
       #{$block}_page_clocking-app-page-api-keys-card &
         align-items: center
         justify-content: flex-start
-
-      #{$block}_page_bonai-venue &
-        min-height: 0
 
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys-card &
@@ -1077,7 +1080,7 @@ $block: ".boss-table"
           padding-left: 25px
 
       #{$block}_page_bonai-venue &
-        width: 17.5%
+        width: 25%
         padding-left: 0
 
       #{$block}_page_smp-quizzes-history &
@@ -1226,8 +1229,7 @@ $block: ".boss-table"
             padding-left: 10px
 
         #{$block}_page_bonai-venue &
-          width: 30%
-          padding-bottom: 20px
+          width: 50%
 
       @media screen and (max-width: 640px)
         #{$block}_page_clocking-app-page-api-keys-card &
@@ -1238,7 +1240,6 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue &
           width: 100%
           padding-right: 0
-          padding-bottom: 15px
 
       @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index &,
@@ -1434,7 +1435,7 @@ $block: ".boss-table"
           width: 30%
 
       #{$block}_page_bonai-venue &
-        width: 17.5%
+        width: 25%
 
       #{$block}_page_smp-quizzes-history &
         width: 10%
@@ -1539,8 +1540,8 @@ $block: ".boss-table"
             width: 100%
 
         #{$block}_page_bonai-venue &
-          width: 30%
-          padding-bottom: 20px
+          width: 50%
+          padding-right: 0
 
       @media screen and (max-width: 640px)
         #{$block}_page_accessory-requests-card &
@@ -1556,8 +1557,6 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue &
           width: 100%
           padding-left: 0
-          padding-right: 0
-          padding-bottom: 15px
 
       @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index-card &
@@ -1730,7 +1729,7 @@ $block: ".boss-table"
           width: 20%
 
       #{$block}_page_bonai-venue &
-        width: 22.5%
+        width: 25%
 
       #{$block}_page_smp-quizzes-history &
         width: 14%
@@ -1828,9 +1827,8 @@ $block: ".boss-table"
             width: 100%
 
         #{$block}_page_bonai-venue &
-          width: 40%
-          padding-right: 0
-          padding-bottom: 20px
+          width: 50%
+          padding-left: 0
 
       @media screen and (max-width: 640px)
         #{$block}_page_accessory-requests-card &
@@ -1846,8 +1844,7 @@ $block: ".boss-table"
 
         #{$block}_page_bonai-venue &
           width: 100%
-          padding-left: 0
-          padding-bottom: 15px
+          padding-right: 0
 
       @media screen and (max-width: 400px)
         #{$block}_page_clocking-app-page-api-keys-card &
@@ -1998,7 +1995,7 @@ $block: ".boss-table"
           width: 15%
 
       #{$block}_page_bonai-venue &
-        width: 42.5%
+        width: 25%
         padding-right: 0
 
       #{$block}_page_smp-quizzes-history &
@@ -2100,9 +2097,7 @@ $block: ".boss-table"
             width: 100%
 
         #{$block}_page_bonai-venue &
-          width: 100%
-          padding-left: 0
-          padding-top: 10px
+          width: 50%
 
       @media screen and (max-width: 640px)
         #{$block}_page_accessory-requests-card &
@@ -2112,6 +2107,7 @@ $block: ".boss-table"
 
         #{$block}_page_bonai-venue &
           width: 100%
+          padding-left: 0
 
     // $Common table cell fifth column
     &:nth-child(5)
@@ -3034,6 +3030,9 @@ $block: ".boss-table"
         transform-origin: 100% 0
         transform: rotate(45deg)
 
+    &_role_api-data
+      color: #8c7ae6
+
 
   // $Common table info
   &__info
@@ -3119,6 +3118,10 @@ $block: ".boss-table"
       word-wrap: break-word
       word-break: break-word
       hyphens: auto
+
+    #{$block}__cell_role_api-data &
+      color: #8c7ae6
+      font-weight: 600
 
     @media screen and (max-width: 1120px)
       #{$block}_page_holidays-report &
@@ -3270,6 +3273,10 @@ $block: ".boss-table"
     #{$block}__cell_state_alert &,
     #{$block}__cell_state_success &
       color: #fff
+      font-weight: 600
+
+    #{$block}__cell_role_api-data &
+      color: #8c7ae6
       font-weight: 600
 
     #{$block}_page_holidays-report &
@@ -3475,6 +3482,7 @@ $block: ".boss-table"
     &_indicator_accessory,
     &_indicator_clock,
     &_indicator_disabled,
+    &_indicator_frozen,
     &_indicator_checkbox-checked,
     &_indicator_checkbox-unchecked
       vertical-align: middle
@@ -3543,6 +3551,10 @@ $block: ".boss-table"
     &_indicator_disabled
       &:after
         content: '\e928'
+
+    &_indicator_frozen
+      &:after
+        content: '\e946'
 
     &_role_date,
     &_role_venue
