@@ -757,13 +757,19 @@ $block: ".boss-button"
 
 
   // $Common button MOD: role view assignments
-  &_role_view-assignments
+  &_role_view-assignments,
+  &_role_freeze,
+  &_role_unfreeze
     $background-color: #8c7ae6
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
   &_role_view-assignments
     +button-with-icon-left($icon: '\e927')
+
+  &_role_freeze,
+  &_role_unfreeze
+    +button-with-icon-left($icon: '\e946')
 
 
   // Bordered buttons
