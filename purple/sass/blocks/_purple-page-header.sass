@@ -61,6 +61,23 @@ $block: ".purple-page-header"
     #{$block}_adjust_full &
       max-width: 100%
 
+    @media screen and (max-width: 480px)
+      flex-wrap: wrap
+      padding-bottom: 10px
+
+    &:before
+      content: ""
+      position: absolute
+      top: 60px
+      left: 0
+      right: 0
+      display: none
+      height: 0
+      border-top: 1px solid #f0f0f0
+
+      @media screen and (max-width: 480px)
+        display: block
+
 
   // $Page header navigation group
   &__logo-group
@@ -109,6 +126,142 @@ $block: ".purple-page-header"
     &:hover
       text-decoration: none
       color: inherit
+
+
+  // $Page header control
+  &__control
+    position: relative
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    height: 40px
+    padding: 13px 55px 13px 25px
+    border: 1px solid $c-gray-dark
+    border-radius: 20px / 50%
+    transition: background-color .4s
+
+    @media screen and (max-width: 480px)
+      padding-right: 40px
+
+    &:hover,
+    &_state_active
+      background-color: $c-gray-ultra-light
+
+    &_state_active
+      &:after
+        content: ""
+        position: absolute
+        bottom: -12px
+        right: 20px
+        z-index: 10001
+        margin-right: -5px
+        border-bottom: 11px solid $c-border-light
+        border-right: 11px solid transparent
+        border-left: 11px solid transparent
+
+      &:before
+        content: ""
+        position: absolute
+        bottom: -13px
+        right: 20px
+        z-index: 10002
+        margin-right: -5px
+        border-bottom: 10px solid $c-border-light
+        border-right: 10px solid transparent
+        border-left: 10px solid transparent
+
+    &_type_single
+      width: auto
+      padding: 13px 25px
+      cursor: default
+
+    &_type_single:hover,
+    &_type_single#{&}_state_active
+      background-color: transparent
+
+    &_type_single#{&}_state_active
+      &:after,
+      &:before
+        display: none
+
+    &_role_site-select
+      flex-grow: 0
+      flex-shrink: 0
+      width: auto
+      max-width: 220px
+      margin-left: 30px
+      cursor: pointer
+
+      @media screen and (max-width: 640px)
+        margin-left: 20px
+
+      @media screen and (max-width: 480px)
+        flex-grow: 1
+        flex-shrink: 1
+        order: 99
+        width: 100%
+        max-width: 100%
+        margin-top: 20px
+        margin-left: 0
+
+    &_role_site-select#{&}_type_single
+      cursor: default
+
+
+  // $Page header control value
+  &__control-value
+    line-height: 15px
+    width: 100%
+    padding-left: 1px
+    font-family: $f-sans
+    font-size: 14px
+    line-height: 1
+    color: $c-text-primary
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+    #{$block}__control_type_single &
+      text-align: center
+
+
+  // $Page header control arrow
+  &__control-arrow
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 20px
+    z-index: 10
+    display: block
+    height: 100%
+    width: 15px
+    font-size: 0
+    line-height: 0
+    color: transparent
+    outline: none
+    transition: all .4s
+
+    #{$block}__control_type_single &
+      display: none
+
+    &:before
+      content: '\e919'
+      position: absolute
+      top: 50%
+      left: 0
+      display: block
+      margin-top: -6px
+      font-family: icons
+      font-size: 22px
+      line-height: 12px
+      font-weight: 400
+      color: $c-text-primary
+      vertical-align: middle
+
+      #{$block}__control_state_active &
+        content: '\e91a'
+        margin-top: -7px
 
 
   // $Page header action
@@ -242,6 +395,21 @@ $block: ".purple-page-header"
       @media screen and (max-width: 640px)
         padding: 15px 5px
 
+    // $Page header dropdown MOD: site select
+    &_role_site-select
+      top: 60px
+      right: 70px
+      width: 220px
+
+      @media screen and (max-width: 640px)
+        right: 60px
+
+      @media screen and (max-width: 480px)
+        top: 120px
+        width: 100%
+        right: 0
+        left: 0
+
     // $Page header dropdown MOD: role profile
     &_role_profile
       top: 60px
@@ -282,6 +450,14 @@ $block: ".purple-page-header"
     #{$block}__dropdown_role_search &
       height: calc(100% - 60px)
 
+    // $Page header dropdown scroll CONTEXT: $Page header dropdown MOD: role site select
+    #{$block}__dropdown_role_site-select &
+      height: 200px
+
+    #{$block}__dropdown_role_site-select#{$block}__dropdown_type_fluid &
+      height: auto
+      max-height: 200px
+
     @media screen and (max-width: 640px)
       #{$block}__dropdown_role_search &
         height: calc(100% - 110px)
@@ -303,7 +479,7 @@ $block: ".purple-page-header"
   // $Page header dropdown filter
   &__dropdown-filter
     flex-grow: 1
-    padding: 0 30px
+    padding: 0 20px
 
     @media screen and (max-width: 640px)
       order: 99
@@ -311,44 +487,51 @@ $block: ".purple-page-header"
       margin-top: 20px
       padding: 0
 
+    &:empty
+      @media screen and (max-width: 640px)
+        margin-top: 0
+
 
   // $Page header dropdown label
   &__dropdown-label
     position: relative
     flex-grow: 0
     display: inline-block
-    padding-left: 30px
     font-family: $f-sans
     font-size: 20px
     line-height: 1
     font-weight: 300
     white-space: nowrap
 
-    &:before
-      content: ""
-      position: absolute
-      top: 50%
-      left: 0
-      display: block
-      margin-top: -10px
-      font-family: icons
-      font-size: 20px
-      line-height: 1
-      color: $c-text-primary
+    // $Page header dropdown label MOD: role action
+    &_role_action
+      outline: none
 
     // $Page header dropdown label MOD: role close
+    // $Page header dropdown label MOD: role search
+    &_role_close,
+    &_role_search
+      &:before
+        content: ""
+        display: inline-block
+        margin-right: 10px
+        font-family: icons
+        font-size: 20px
+        line-height: 1
+        font-weight: 400
+        color: $c-text-primary
+        vertical-align: baseline
+
     &_role_close
       &:before
         content: "\e91e"
 
-    // $Page header dropdown label MOD: role search
     &_role_search
       &:before
         content: "\e908"
 
     // $Page header dropdown label MOD: type icon only
     &_type_icon
-      padding-left: 20px
       font-size: 0
       line-height: 0
       color: transparent
