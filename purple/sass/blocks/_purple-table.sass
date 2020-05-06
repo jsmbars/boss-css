@@ -40,7 +40,9 @@ $block: ".purple-table"
 
   &_page_counting-totals
 
-  &_page_counting-bundle-check
+  &_page_counting-bundles
+
+  &_page_counting-loose
 
 
   &__sorting
@@ -314,14 +316,19 @@ $block: ".purple-table"
         width: 150px
         padding: 0
 
-      #{$block}_page_counting-bundle-check &
+      #{$block}_page_counting-bundles &
         width: calc(100% - 100px)
+
+      #{$block}_page_counting-loose &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 80px
 
       @media screen and (max-width: 960px)
         #{$block}_page_counting-totals &
           width: 130px
 
-        #{$block}_page_counting-bundle-check &
+        #{$block}_page_counting-bundles &
           width: calc(100% - 80px)
 
     // $Common table cell second column
@@ -336,14 +343,17 @@ $block: ".purple-table"
         width: 25%
         padding: 0
 
-      #{$block}_page_counting-bundle-check &
+      #{$block}_page_counting-bundles &
         flex-grow: 0
         flex-shrink: 0
         width: 100px
 
+      #{$block}_page_counting-loose &
+        width: calc(100% - 80px)
+
       @media screen and (max-width: 960px)
 
-        #{$block}_page_counting-bundle-check &
+        #{$block}_page_counting-bundles &
           width: 80px
 
     // $Common table cell third column
@@ -411,18 +421,19 @@ $block: ".purple-table"
     &_role_header
       #{$block}_page_invites-index &,
       #{$block}_page_users-index &,
-      #{$block}_page_counting-totals &,
-      #{$block}_page_counting-bundle-check &
+      #{$block}_page_counting-totals &
         text-align: center
 
       #{$block}_page_counting-totals &,
-      #{$block}_page_counting-bundle-check &
+      #{$block}_page_counting-bundles &,
+      #{$block}_page_counting-loose &
         font-size: 16px
         font-weight: 600
 
       @media screen and (max-width: 960px)
         #{$block}_page_counting-totals &,
-        #{$block}_page_counting-bundle-check &
+        #{$block}_page_counting-bundles &,
+        #{$block}_page_counting-loose &
           font-size: 14px
 
     &_type_no-border
@@ -527,17 +538,20 @@ $block: ".purple-table"
     #{$block}_page_users-index #{$block}__cell:nth-child(3) &,
     #{$block}_page_users-index #{$block}__cell:nth-child(4) &,
     #{$block}_page_counting-totals &,
-    #{$block}_page_counting-bundle-check #{$block}__cell:nth-child(1) &
+    #{$block}_page_counting-bundles #{$block}__cell:nth-child(1) &,
+    #{$block}_page_counting-loose &
       text-align: center
 
     #{$block}_page_counting-totals #{$block}__cell:nth-child(1) &,
-    #{$block}_page_counting-bundle-check #{$block}__cell:nth-child(2) &
+    #{$block}_page_counting-bundles #{$block}__cell:nth-child(2) &,
+    #{$block}_page_counting-loose #{$block}__cell:nth-child(1) &
       font-size: 16px
       font-weight: 600
 
     @media screen and (max-width: 960px)
       #{$block}_page_counting-totals #{$block}__cell:nth-child(1) &,
-      #{$block}_page_counting-bundle-check #{$block}__cell:nth-child(2) &
+      #{$block}_page_counting-bundles #{$block}__cell:nth-child(2) &,
+      #{$block}_page_counting-loose #{$block}__cell:nth-child(1) &
         font-size: 14px
 
     &:before

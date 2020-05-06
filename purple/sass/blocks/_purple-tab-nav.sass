@@ -110,12 +110,22 @@ $block: ".purple-tab-nav"
       #{$block}_adjust_week-all &
         font-size: 14px
 
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      right: 0
+      left: 0
+      height: 5px
+      background-color: transparent
+      transition: all .3s
+
     &:hover,
     &:focus
-      color: $c-text-light
-      background-color: $c-accent-primary
-      border-color: $c-accent-primary
       outline: none
+
+      &:after
+        background-color: $c-accent-primary
 
     &:disabled
       color: $c-text-secondary
@@ -128,6 +138,9 @@ $block: ".purple-tab-nav"
       color: $c-text-secondary
       background-color: $c-gray-ultra-light
       border-color: $c-gray-ultra-light
+
+      &:after
+        background-color: transparent
 
     // $Tab navigation control MOD: size small
     &_size_s
@@ -188,14 +201,8 @@ $block: ".purple-tab-nav"
 
     // $Tab navigation control MOD: state active
     &_state_active
-      color: $c-text-light
-      background-color: $c-accent-primary
-      border-color: $c-accent-primary
-
-      &:hover
+      &:after
         background-color: $c-accent-primary
-        border-color: $c-accent-primary
-        cursor: default
 
 
   // $Tab navigation control text

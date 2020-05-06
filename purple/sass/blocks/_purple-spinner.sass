@@ -1,0 +1,77 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Spinner
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".purple-spinner"
+
+#{$block}
+  flex-grow: 0
+  flex-shrink: 0
+  display: block
+  width: 40px
+  height: 40px
+  background-image: url('../images/spinner.svg')
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: center center
+
+  // $Spinner MOD: position above
+  &_position_above
+    margin-bottom: 10px
+
+  // $Spinner MOD: position below
+  &_position_below
+    margin-top: 10px
+
+  // $Spinner MOD: position before
+  &_position_before
+    margin-right: 10px
+
+  // $Spinner MOD: position after
+  &_position_after
+    margin-left: 10px
+
+  // $Spinner MOD: size xxs
+  &_size_xxs
+    width: 25px
+    height: 25px
+
+  // $Spinner MOD: size xs
+  &_size_xs
+    width: 30px
+    height: 30px
+
+  // $Spinner MOD: size s
+  &_size_s
+    width: 35px
+    height: 35px
+
+  // $Spinner MOD: size m
+  &_size_m
+    width: 40px
+    height: 40px
+
+  // $Spinner MOD: size l
+  &_size_l
+    width: 45px
+    height: 45px
+
+  // $Spinner MOD: size xl
+  &_size_xl
+    width: 50px
+    height: 50px
+
+  // $Spinner MOD: size xxl
+  &_size_xxl
+    width: 55px
+    height: 55px
