@@ -209,11 +209,19 @@ $block: ".purple-page-main"
 
       #{$block}_page_counting &,
       #{$block}_page_counting-history &
+        flex-direction: row
+        justify-content: space-between
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_counting &,
+      #{$block}_page_counting-history &
+        flex-direction: column
+        justify-content: flex-start
         align-items: center
 
 
   &__info-group-area
-    flex-shrink: 0
+    flex-shrink: 1
     display: flex
     flex-direction: column
     align-items: flex-start
@@ -222,9 +230,27 @@ $block: ".purple-page-main"
     @media screen and (max-width: 960px)
       align-items: center
 
+      #{$block}_page_counting &,
+      #{$block}_page_counting-history &
+        align-items: flex-start
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_counting &,
+      #{$block}_page_counting-history &
+        align-items: center
+
     &:not(:last-child)
       @media screen and (max-width: 960px)
         margin-bottom: 20px
+
+        #{$block}_page_counting &,
+        #{$block}_page_counting-history &
+          margin-bottom: 0
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_counting &,
+        #{$block}_page_counting-history &
+          margin-bottom: 20px
 
     &:not(:last-child):empty
       @media screen and (max-width: 960px)
@@ -247,9 +273,29 @@ $block: ".purple-page-main"
       flex-direction: column
       align-items: center
 
+      #{$block}_page_counting &,
+      #{$block}_page_counting-history &
+        flex-direction: row
+        align-items: flex-start
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_counting &,
+      #{$block}_page_counting-history &
+        flex-direction: column
+        align-items: center
+
     &:not(:last-child)
       @media screen and (max-width: 960px)
         margin-bottom: 20px
+
+        #{$block}_page_counting &,
+        #{$block}_page_counting-history &
+          margin-bottom: 0
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_counting &,
+        #{$block}_page_counting-history &
+          margin-bottom: 20px
 
     &:not(:last-child):empty
       @media screen and (max-width: 960px)
@@ -257,7 +303,7 @@ $block: ".purple-page-main"
 
 
   &__info-group-controls
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 640px)
       #{$block}_page_counting &
         order: 99
 
@@ -267,7 +313,7 @@ $block: ".purple-page-main"
       flex-direction: column
       align-items: stretch
 
-    @media screen and (max-width: 960px)
+    @media screen and (max-width: 640px)
       #{$block}_page_counting &
         flex-direction: row
         align-items: center
@@ -286,6 +332,7 @@ $block: ".purple-page-main"
         margin-right: 0
         margin-bottom: 15px
 
+      @media screen and (max-width: 640px)
         #{$block}_page_counting &
           margin-right: 20px
           margin-bottom: 0
@@ -300,9 +347,27 @@ $block: ".purple-page-main"
     @media screen and (max-width: 960px)
       text-align: center
 
+      #{$block}_page_counting &,
+      #{$block}_page_counting-history &
+        text-align: left
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_counting &,
+      #{$block}_page_counting-history &
+        text-align: center
+
     &:not(:last-child)
       @media screen and (max-width: 960px)
         margin-bottom: 20px
+
+        #{$block}_page_counting &,
+        #{$block}_page_counting-history &
+          margin-bottom: 0
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_counting &,
+        #{$block}_page_counting-history &
+          margin-bottom: 20px
 
     &:not(:last-child):empty
       @media screen and (max-width: 960px)
@@ -312,6 +377,7 @@ $block: ".purple-page-main"
   // $Page main title
   &__title
     flex-grow: 0
+    flex-shrink: 1
     display: block
     max-width: 100%
     font-family: $f-sans
@@ -324,6 +390,15 @@ $block: ".purple-page-main"
 
     @media screen and (max-width: 960px)
       text-align: center
+
+      #{$block}_page_counting &,
+      #{$block}_page_counting-history &
+        text-align: left
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_counting &,
+      #{$block}_page_counting-history &
+        text-align: center
 
     &:not(:last-child)
       @media screen and (max-width: 960px)
