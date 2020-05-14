@@ -320,6 +320,9 @@ $block: ".purple-form-field"
         border-color: $c-accent-red
         color: $c-accent-red
 
+      #{$block}_state_error#{$block}_adjust_table-cell &
+        box-shadow: inset 0 0 0 1px $c-accent-red
+
       &:invalid
         box-shadow: none
 
@@ -329,6 +332,9 @@ $block: ".purple-form-field"
 
         #{$block}_adjust_table-cell &
           box-shadow: inset 0 0 3px 0 $c-accent-blue
+
+        #{$block}_state_error#{$block}_adjust_table-cell &
+          box-shadow: inset 0 0 0 1px $c-accent-red, inset 0 0 3px 1px $c-accent-blue
 
       &:disabled
         background-color: $c-gray-ultra-light

@@ -143,12 +143,22 @@ $block: ".purple-form-error"
     #{$block}_role_general &
       font-size: 14px
 
-    &_adjust_no-wrap
+    &:not(:last-child)
+      margin-bottom: 4px
+
+      #{$block}_type_tooltip &
+        margin-bottom: 2px
+
+      #{$block}_role_general &
+        margin-bottom: 6px
+
+    // $Common form error message text MOD: adjust nowrap
+    &_adjust_nowrap
       white-space: nowrap
 
 
   // $Common form error message text line
-  &__line
+  &__text-line
     display: block
 
 
