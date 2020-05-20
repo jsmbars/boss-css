@@ -130,8 +130,11 @@ $block: ".purple-form"
       @media screen and (max-width: 960px)
         flex-direction: row
 
-    // $Common form row MOD: adjust wrap-xs
+    // $Common form row MOD: adjust wrap-m-minor
     // $Common form row MOD: adjust wrap-s-major
+    // $Common form row MOD: adjust wrap-s-minor
+    // $Common form row MOD: adjust wrap-xs
+    &_adjust_wrap-m-minor,
     &_adjust_wrap-s-major,
     &_adjust_wrap-s-minor,
     &_adjust_wrap-xs
@@ -139,6 +142,10 @@ $block: ".purple-form"
 
       @media screen and (max-width: 960px)
         flex-direction: row
+
+    &_adjust_wrap-m-minor
+      @media screen and (max-width: 800px)
+        flex-direction: column
 
     &_adjust_wrap-s-major
       @media screen and (max-width: 640px)
@@ -184,6 +191,7 @@ $block: ".purple-form"
         width: 100%
 
         #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-m-minor > &,
         #{$block}__row_adjust_wrap-s-major > &,
         #{$block}__row_adjust_wrap-s-minor > &,
         #{$block}__row_adjust_wrap-xs > &,
@@ -191,6 +199,12 @@ $block: ".purple-form"
           flex-grow: 0
           flex-shrink: 1
           width: 50%
+
+      @media screen and (max-width: 800px)
+        #{$block}__row_adjust_wrap-m-minor > &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major > &
@@ -222,6 +236,7 @@ $block: ".purple-form"
         width: 100%
 
         #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-m-minor > &,
         #{$block}__row_adjust_wrap-s-major > &,
         #{$block}__row_adjust_wrap-s-minor > &,
         #{$block}__row_adjust_wrap-xs > &,
@@ -229,6 +244,12 @@ $block: ".purple-form"
           flex-grow: 0
           flex-shrink: 1
           width: 33%
+
+      @media screen and (max-width: 800px)
+        #{$block}__row_adjust_wrap-m-minor > &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major > &
@@ -260,6 +281,7 @@ $block: ".purple-form"
         width: 100%
 
         #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-m-minor > &,
         #{$block}__row_adjust_wrap-s-major > &,
         #{$block}__row_adjust_wrap-s-minor > &,
         #{$block}__row_adjust_wrap-xs > &,
@@ -267,6 +289,12 @@ $block: ".purple-form"
           flex-grow: 0
           flex-shrink: 1
           width: 33%
+
+      @media screen and (max-width: 800px)
+        #{$block}__row_adjust_wrap-m-minor > &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major > &
@@ -298,6 +326,7 @@ $block: ".purple-form"
         width: 100%
 
         #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-m-minor > &,
         #{$block}__row_adjust_wrap-s-major > &,
         #{$block}__row_adjust_wrap-s-minor > &,
         #{$block}__row_adjust_wrap-xs > &,
@@ -305,6 +334,12 @@ $block: ".purple-form"
           flex-grow: 0
           flex-shrink: 1
           width: 20%
+
+      @media screen and (max-width: 800px)
+        #{$block}__row_adjust_wrap-m-minor > &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major > &
@@ -336,6 +371,7 @@ $block: ".purple-form"
         width: 100%
 
         #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-m-minor > &,
         #{$block}__row_adjust_wrap-s-major > &,
         #{$block}__row_adjust_wrap-s-minor > &,
         #{$block}__row_adjust_wrap-xs > &,
@@ -343,6 +379,12 @@ $block: ".purple-form"
           flex-grow: 0
           flex-shrink: 1
           width: 16.6%
+
+      @media screen and (max-width: 800px)
+        #{$block}__row_adjust_wrap-m-minor > &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major > &
@@ -372,11 +414,18 @@ $block: ".purple-form"
         width: 100%
 
         #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-m-minor > &,
         #{$block}__row_adjust_wrap-s-major > &,
         #{$block}__row_adjust_wrap-s-minor > &,
         #{$block}__row_adjust_wrap-xs > &,
         #{$block}__row_adjust_flow &
           width: auto
+
+      @media screen and (max-width: 800px)
+        #{$block}__row_adjust_wrap-m-minor > &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major > &
@@ -402,6 +451,7 @@ $block: ".purple-form"
         width: 100%
 
         #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-m-minor > &,
         #{$block}__row_adjust_wrap-s-major > &,
         #{$block}__row_adjust_wrap-s-minor > &,
         #{$block}__row_adjust_wrap-xs > &,
@@ -409,6 +459,12 @@ $block: ".purple-form"
           flex-grow: 0
           flex-shrink: 1
           width: auto
+
+      @media screen and (max-width: 800px)
+        #{$block}__row_adjust_wrap-m-minor > &
+          flex-shrink: 1
+          flex-grow: 1
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major > &
@@ -446,6 +502,7 @@ $block: ".purple-form"
         margin-bottom: 30px
 
         #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-m-minor > &,
         #{$block}__row_adjust_wrap-s-major > &,
         #{$block}__row_adjust_wrap-s-minor > &,
         #{$block}__row_adjust_wrap-xs > &
@@ -455,6 +512,11 @@ $block: ".purple-form"
         #{$block}__row_adjust_flow &
           margin-right: 30px
           margin-bottom: 20px
+
+      @media screen and (max-width: 800px)
+        #{$block}__row_adjust_wrap-m-minor > &
+          margin-right: 0
+          margin-bottom: 30px
 
       @media screen and (max-width: 640px)
         #{$block}__row_adjust_wrap-s-major > &
@@ -490,10 +552,16 @@ $block: ".purple-form"
         margin-bottom: 0
 
         #{$block}__row_adjust_no-wrap > &,
+        #{$block}__row_adjust_wrap-m-minor > &,
         #{$block}__row_adjust_wrap-s-major > &,
         #{$block}__row_adjust_wrap-s-minor > &,
         #{$block}__row_adjust_wrap-xs > &,
         #{$block}__row_adjust_flow &
+          margin-right: 0
+          margin-bottom: 0
+
+      @media screen and (max-width: 800px)
+        #{$block}__row_adjust_wrap-m-minor > &
           margin-right: 0
           margin-bottom: 0
 
