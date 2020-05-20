@@ -94,22 +94,6 @@ $block: ".purple-page-header"
       text-align: center
 
 
-  // $Page header navigation group
-  &__nav-group
-    flex-grow: 0
-    flex-shrink: 0
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
-
-
-  // $Page header navigation
-  &__nav
-    flex-grow: 0
-    flex-shrink: 0
-
-
   // $Page header logo
   &__logo
     display: inline-block
@@ -126,6 +110,22 @@ $block: ".purple-page-header"
     &:hover
       text-decoration: none
       color: inherit
+
+
+  // $Page header navigation group
+  &__nav-group
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+
+  // $Page header navigation
+  &__nav
+    flex-grow: 0
+    flex-shrink: 0
 
 
   // $Page header control
@@ -236,10 +236,14 @@ $block: ".purple-page-header"
     display: block
     height: 100%
     width: 15px
+    margin: 0
+    padding: 0
     font-size: 0
     line-height: 0
     color: transparent
     outline: none
+    background-color: transparent
+    border: none
     transition: all .4s
 
     #{$block}__control_type_single &
@@ -270,12 +274,15 @@ $block: ".purple-page-header"
     display: block
     width: 40px
     height: 40px
+    margin: 0
+    padding: 0
     font-size: 0
     line-height: 0
     color: transparent
     outline: none
     border: 1px solid $c-gray-dark
     border-radius: 50%
+    background-color: transparent
     transition: background-color .3s
 
     &:before
@@ -497,11 +504,15 @@ $block: ".purple-page-header"
     position: relative
     flex-grow: 0
     display: inline-block
+    margin: 0
+    padding: 0
     font-family: $f-sans
     font-size: 20px
     line-height: 1
     font-weight: 300
     white-space: nowrap
+    background-color: transparent
+    border: none
 
     // $Page header dropdown label MOD: role action
     &_role_action
