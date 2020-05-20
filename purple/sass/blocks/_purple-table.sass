@@ -39,10 +39,30 @@ $block: ".purple-table"
   &_page_users-index
 
   &_page_counting-totals
+    @media screen and (max-width: 800px)
+      border: none
 
   &_page_counting-bundles
+    @media screen and (max-width: 800px)
+      position: relative
+      z-index: 10
+      padding: 15px
+      overflow: hidden
+      border: none
+      background-color: $c-bg-light
+      border-radius: 10px
+      box-shadow: 0 5px 15px 0 $c-shadow-secondary
 
   &_page_counting-loose
+    @media screen and (max-width: 800px)
+      position: relative
+      z-index: 10
+      padding: 15px
+      overflow: hidden
+      border: none
+      background-color: $c-bg-light
+      border-radius: 10px
+      box-shadow: 0 5px 15px 0 $c-shadow-secondary
 
 
   &__sorting
@@ -98,6 +118,13 @@ $block: ".purple-table"
     &:nth-child(odd)
       #{$block}_type_common &
         background-color: $c-gray-ultra-light
+
+    &:not(:last-child)
+      border-bottom: 1px solid $c-border-primary
+
+      @media screen and (max-width: 800px)
+        #{$block}_page_counting-totals &
+          border: none
 
     // $Common table group MOD: highlight red medium
     &_highlight_accent-red-medium
@@ -164,6 +191,24 @@ $block: ".purple-table"
       background-color: $c-gray-ultra-light
 
 
+  // $Common table panel
+  &__panel
+    display: block
+    width: 100%
+
+    #{$block}_page_counting-totals &
+      display: none
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_counting-totals &
+        display: block
+        margin-bottom: 30px
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_counting-totals &
+        margin-bottom: 25px
+
+
   // $Common table row
   &__row
     position: relative
@@ -177,6 +222,10 @@ $block: ".purple-table"
     #{$block}_type_common &
       display: table-row
 
+    @media screen and (max-width: 800px)
+      #{$block}_page_counting-totals &
+        display: none
+
     &:nth-child(odd)
       #{$block}_type_common &
         background-color: $c-gray-ultra-light
@@ -184,8 +233,20 @@ $block: ".purple-table"
     &:not(:last-child)
       border-bottom: 1px solid $c-border-primary
 
+      #{$block}_page_counting-totals &
+        border-bottom: none
+
+      @media screen and (max-width: 800px)
+        #{$block}_page_counting-bundles &,
+        #{$block}_page_counting-loose &
+          border-bottom: none
+          margin-bottom: 20px
+
     // $Common table row MOD: role header
     &_role_header
+      &:not(:last-child)
+        #{$block}_page_counting-totals &
+          border-bottom: 1px solid $c-border-primary
 
     // $Common table row MOD: adjust group
     &_adjust_group
@@ -298,6 +359,12 @@ $block: ".purple-table"
     #{$block}_type_common #{$block}__row:last-child &
       border-bottom: none
 
+    @media screen and (max-width: 800px)
+      #{$block}_page_counting-bundles &,
+      #{$block}_page_counting-loose &
+        min-height: 0
+        padding: 0
+
     &:not(:last-child)
       border-right: 1px solid $c-border-primary
 
@@ -331,6 +398,14 @@ $block: ".purple-table"
         #{$block}_page_counting-bundles &
           width: calc(100% - 80px)
 
+      @media screen and (max-width: 800px)
+        #{$block}_page_counting-bundles &
+          width: 100%
+          border-right: none
+
+        #{$block}_page_counting-loose &
+          display: none
+
     // $Common table cell second column
     &:nth-child(2)
       #{$block}_page_invites-index &
@@ -355,6 +430,13 @@ $block: ".purple-table"
 
         #{$block}_page_counting-bundles &
           width: 80px
+
+      @media screen and (max-width: 800px)
+        #{$block}_page_counting-bundles &
+          display: none
+
+        #{$block}_page_counting-loose &
+          width: 100%
 
     // $Common table cell third column
     &:nth-child(3)
@@ -435,6 +517,17 @@ $block: ".purple-table"
         #{$block}_page_counting-bundles &,
         #{$block}_page_counting-loose &
           font-size: 14px
+
+      &:nth-child(1)
+        @media screen and (max-width: 800px)
+          #{$block}_page_counting-bundles &,
+          #{$block}_page_counting-loose &
+            display: flex
+            width: 100%
+            margin-top: 10px
+            text-align: center
+            font-size: 18px
+            font-weight: 600
 
     &_type_no-border
       &:not(:last-child)
