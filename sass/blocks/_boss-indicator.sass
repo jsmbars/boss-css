@@ -414,14 +414,16 @@ $block: ".boss-indicator"
   &__marker
     +text-normalizer()
     display: inline-block
-    width: 30px
+    min-width: 30px
     height: 30px
-    border-radius: 50%
+    padding: 0 10px
+    border-radius: 15px
     background-color: #4c4c4c
     background-position:  center center
     background-repeat: no-repeat
-    font-size: 20px
+    font-size: 18px
     line-height: 30px
+    font-weight: 600
     text-align: center
     color: #fff
     vertical-align: middle
@@ -470,6 +472,9 @@ $block: ".boss-indicator"
     &_icon_check,
     &_icon_hour-glass,
     &_icon_reload
+      width: 30px
+      min-width: 0
+      padding: 0
       &:before
         content: ''
         display: block

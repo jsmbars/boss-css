@@ -409,7 +409,12 @@ $block: ".boss-board"
   // $Board title indicator
   &__title-indicator
     display: inline-block
-    margin-left: 10px
+
+    &:first-child
+      margin-right: 10px
+
+    &:last-child
+      margin-left: 10px
 
 
   // $Board title number
