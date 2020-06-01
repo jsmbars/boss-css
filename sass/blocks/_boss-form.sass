@@ -1642,6 +1642,57 @@ $block: ".boss-form"
 
     &_role_indicator
 
+    & select
+      +text-normalizer()
+      display: block
+      width: 100%
+      height: auto
+      height: 50px
+      line-height: 50px
+      padding: 0 10px 0 20px
+      box-sizing: border-box
+      border: 1px solid $boss-very-light-gray
+      background-color: #FFF
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28138, 138, 138%29'></polygon></svg>")
+      background-size: 9px 6px
+      background-position: right center
+      background-origin: content-box
+      background-repeat: no-repeat
+      box-shadow: none
+      appearance: none
+      -moz-appearance: none
+      -webkit-appearance: none
+
+      &:invalid
+        box-shadow: none
+
+      &:focus
+        outline: none
+        outline: none
+        box-shadow: 0 0 5px 0 $boss-very-light-gray
+        border-color: $boss-very-light-gray
+
+      &::-ms-expand
+        display: none
+
+      &:focus::-ms-value
+        background-color: transparent
+        color: #4c4c4c
+
+      &:disabled
+        background-color: $boss-very-light-gray
+        cursor: not-allowed
+
+    // $Common form select option
+    & option
+      +text-normalizer()
+      display: block
+      width: 100%
+      max-width: 100%
+      line-height: 1.5
+      outline: none
+      border: none
+
 
   // React-select adjusments
   &__select
