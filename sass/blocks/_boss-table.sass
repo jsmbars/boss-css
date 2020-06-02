@@ -110,7 +110,6 @@ $block: ".boss-table"
   &_page_wtl-clients-index,
   &_page_holidays-report-details,
   &_page_wages-index,
-  &_page_api-keys,
   &_page_id-scanner-keys,
   &_page_staff-types-index
     @media screen and (max-width: 960px)
@@ -485,7 +484,8 @@ $block: ".boss-table"
       #{$block}_page_bonai-venue &,
       #{$block}_page_staff-tracking-staff-added &,
       #{$block}_page_staff-tracking-staff-disabled &,
-      #{$block}_page_staff-tracking-accessories-payments &
+      #{$block}_page_staff-tracking-accessories-payments &,
+      #{$block}_page_api-keys &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -498,6 +498,11 @@ $block: ".boss-table"
     @media screen and (max-width: 640px)
       #{$block}_page_clocking-app-page-api-keys-card &
         flex-wrap: wrap
+
+      #{$block}_page_api-keys &
+        flex-wrap: wrap
+        padding-top: 5px
+        padding-bottom: 10px
 
     &:last-child
       border-bottom: none
@@ -569,6 +574,13 @@ $block: ".boss-table"
         #{$block}_page_smp-quizzes-history &,
         #{$block}_page_smp-quizzes-category &,
         #{$block}_page_smp-quizzes-overview &
+          display: none
+
+        #{$block}_page_api-keys &
+          display: flex
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_api-keys &
           display: none
 
       @media screen and (min-width: 1120px)
@@ -742,8 +754,9 @@ $block: ".boss-table"
       padding-top: 30px
       padding-bottom: 40px
 
-    #{$block}_page_change-order-history &
-      min-height: 55px
+    #{$block}_page_change-order-history &,
+    #{$block}_page_api-keys &
+      min-height: 60px
       padding: 10px 15px
 
     #{$block}_page_clocking-app-page-api-keys-card &
@@ -896,6 +909,17 @@ $block: ".boss-table"
       #{$block}_page_clocking-app-page-api-keys-card &
         align-items: center
         justify-content: flex-start
+
+      #{$block}_page_api-keys &
+        flex-direction: row
+        justify-content: flex-start
+        min-height: 60px
+        padding: 10px
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_api-keys &
+        min-height: 0
+        padding: 5px 10px
 
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys-card &
@@ -1209,7 +1233,6 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
         #{$block}_page_wtl-clients-index &,
-        #{$block}_page_api-keys &,
         #{$block}_page_id-scanner-keys &,
         #{$block}_page_bonai &,
         #{$block}_page_smp-quizzes-history &,
@@ -1280,6 +1303,9 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue &
           width: 50%
 
+        #{$block}_page_api-keys &
+          padding-left: 10px
+
       @media screen and (max-width: 640px)
         #{$block}_page_clocking-app-page-api-keys-card &
           width: 49.5%
@@ -1289,6 +1315,9 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue &
           width: 100%
           padding-right: 0
+
+        #{$block}_page_api-keys &
+          width: 100%
 
       @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index &,
@@ -1470,7 +1499,7 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_api-keys &
-        width: 45%
+        width: 55%
 
       #{$block}_page_id-scanner-keys &
         width: 35%
@@ -1557,7 +1586,6 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
         #{$block}_page_wtl-clients-index &,
-        #{$block}_page_api-keys &,
         #{$block}_page_id-scanner-keys &,
         #{$block}_page_bonai &,
         #{$block}_page_smp-quizzes-history &,
@@ -1619,6 +1647,9 @@ $block: ".boss-table"
           width: 100%
           padding-left: 0
 
+        #{$block}_page_api-keys &
+          width: calc(100% - 140px)
+
       @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index-card &
           width: 100%
@@ -1630,6 +1661,9 @@ $block: ".boss-table"
           width: 100%
           padding-left: 20px
           padding-right: 20px
+
+        #{$block}_page_api-keys &
+          width: 100%
 
       &:after
         #{$block}_page_maintenance-index-card &,
@@ -1775,8 +1809,10 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_api-keys &
-        width: 20%
+        flex-grow: 0
+        flex-shrink: 0
         justify-content: center
+        width: 140px
 
       #{$block}_page_id-scanner-keys &
         width: 20%
@@ -1858,7 +1894,6 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
         #{$block}_page_wtl-clients-index &,
-        #{$block}_page_api-keys &,
         #{$block}_page_id-scanner-keys &,
         #{$block}_page_bonai &,
         #{$block}_page_smp-quizzes-history &,
@@ -1924,6 +1959,11 @@ $block: ".boss-table"
 
       @media screen and (max-width: 400px)
         #{$block}_page_clocking-app-page-api-keys-card &
+          width: 100%
+
+        #{$block}_page_api-keys &
+          flex-grow: 1
+          flex-shrink: 1
           width: 100%
 
       &:after
@@ -3541,7 +3581,8 @@ $block: ".boss-table"
         text-align: left
 
       #{$block}_page_accessory-requests-card &,
-      #{$block}_page_clocking-app-page-api-keys-card &
+      #{$block}_page_clocking-app-page-api-keys-card &,
+      #{$block}_page_api-keys
         width: 100%
 
     @media screen and (max-width: 640px)
@@ -3558,6 +3599,10 @@ $block: ".boss-table"
 
       #{$block}_page_staff-members-index &
         flex-shrink: 1
+
+    @media screen and (max-width: 400px)
+      #{$block}_page_api-keys &
+        text-align: center
 
     &:not(:last-child)
       margin-bottom: 10px
@@ -3970,7 +4015,6 @@ $block: ".boss-table"
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_wages-index &,
       #{$block}_page_wtl-clients-index &,
-      #{$block}_page_api-keys &,
       #{$block}_page_id-scanner-keys &,
       #{$block}_page_bonai &
         text-align: left
