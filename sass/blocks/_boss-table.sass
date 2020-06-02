@@ -73,6 +73,7 @@ $block: ".boss-table"
   &_page_finance-reports,
   &_page_payroll-reports,
   &_page_wages-index,
+  &_page_api-keys,
   &_page_id-scanner-keys,
   &_page_smp-quizzes-history,
   &_page_smp-quizzes-overview,
@@ -109,6 +110,7 @@ $block: ".boss-table"
   &_page_wtl-clients-index,
   &_page_holidays-report-details,
   &_page_wages-index,
+  &_page_api-keys,
   &_page_id-scanner-keys,
   &_page_staff-types-index
     @media screen and (max-width: 960px)
@@ -512,6 +514,7 @@ $block: ".boss-table"
       #{$block}_page_wtl-clients-index &,
       #{$block}_page_weekly-reports &,
       #{$block}_page_wages-index &,
+      #{$block}_page_api-keys &,
       #{$block}_page_id-scanner-keys &,
       #{$block}_page_staff-types-index &,
       #{$block}_page_staff-tracking-staff-added &,
@@ -559,6 +562,7 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-pending > &,
         #{$block}_page_ssr-admin-completed > &,
         #{$block}_page_wages-index &,
+        #{$block}_page_api-keys &,
         #{$block}_page_id-scanner-keys &,
         #{$block}_page_message-board > &,
         #{$block}_page_bonai > &,
@@ -624,6 +628,7 @@ $block: ".boss-table"
         #{$block}_page_wtl-clients-index &,
         #{$block}_page_weekly-reports &,
         #{$block}_page_wages-index &,
+        #{$block}_page_api-keys &,
         #{$block}_page_id-scanner-keys &,
         #{$block}_page_staff-tracking-staff-added &,
         #{$block}_page_staff-tracking-staff-disabled &,
@@ -1089,6 +1094,9 @@ $block: ".boss-table"
       #{$block}_page_wtl-clients-index &
         width: 20%
 
+      #{$block}_page_api-keys &
+        width: 35%
+
       #{$block}_page_id-scanner-keys &
         width: 30%
 
@@ -1134,17 +1142,14 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-staff-added &
         align-items: flex-start
         width: 33%
-        padding-left: 20px
 
       #{$block}_page_staff-tracking-staff-disabled &
         align-items: flex-start
         width: 33%
-        padding-left: 20px
 
       #{$block}_page_staff-tracking-accessories-payments &
         align-items: flex-start
         width: 20%
-        padding-left: 20px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
@@ -1204,6 +1209,7 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
         #{$block}_page_wtl-clients-index &,
+        #{$block}_page_api-keys &,
         #{$block}_page_id-scanner-keys &,
         #{$block}_page_bonai &,
         #{$block}_page_smp-quizzes-history &,
@@ -1463,9 +1469,11 @@ $block: ".boss-table"
         width: 40%
         justify-content: center
 
+      #{$block}_page_api-keys &
+        width: 45%
+
       #{$block}_page_id-scanner-keys &
-        width: 25%
-        justify-content: center
+        width: 35%
 
       #{$block}_page_clocking-app-page-api-keys-card &
         width: 33.3%
@@ -1549,6 +1557,7 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
         #{$block}_page_wtl-clients-index &,
+        #{$block}_page_api-keys &,
         #{$block}_page_id-scanner-keys &,
         #{$block}_page_bonai &,
         #{$block}_page_smp-quizzes-history &,
@@ -1765,8 +1774,12 @@ $block: ".boss-table"
         width: 20%
         justify-content: center
 
+      #{$block}_page_api-keys &
+        width: 20%
+        justify-content: center
+
       #{$block}_page_id-scanner-keys &
-        width: 25%
+        width: 20%
         justify-content: center
 
       #{$block}_page_clocking-app-page-api-keys-card &
@@ -1799,11 +1812,9 @@ $block: ".boss-table"
 
       #{$block}_page_staff-tracking-staff-added &
         width: 33%
-        padding-right: 20px
 
       #{$block}_page_staff-tracking-staff-disabled &
         width: 33%
-        padding-right: 20px
 
       #{$block}_page_staff-tracking-accessories-payments &
         width: 20%
@@ -1847,6 +1858,7 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
         #{$block}_page_wtl-clients-index &,
+        #{$block}_page_api-keys &,
         #{$block}_page_id-scanner-keys &,
         #{$block}_page_bonai &,
         #{$block}_page_smp-quizzes-history &,
@@ -1870,7 +1882,8 @@ $block: ".boss-table"
           padding-right: 15px
 
         #{$block}_page_ssr-pending &,
-        #{$block}_page_ssr-admin-pending &
+        #{$block}_page_ssr-admin-pending &,
+        #{$block}_page_api-keys &
           padding-right: 10px
 
         #{$block}_page_maintenance-index-card &
@@ -2047,7 +2060,7 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_id-scanner-keys &
-        width: 20%
+        width: 15%
         justify-content: center
 
       #{$block}_page_bonai &
@@ -2305,7 +2318,6 @@ $block: ".boss-table"
 
       #{$block}_page_staff-tracking-accessories-payments &
         width: 20%
-        padding-right: 20px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
@@ -3420,7 +3432,6 @@ $block: ".boss-table"
     #{$block}_page_wages-index &,
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(2) &,
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(3) &,
-    #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(2) &,
     #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(3) &,
     #{$block}_page_bonai &,
     #{$block}_page_smp-quizzes-history #{$block}__cell:nth-child(1) &,
@@ -3444,6 +3455,7 @@ $block: ".boss-table"
     #{$block}_page_staff-tracking-accessories-payments #{$block}__cell:nth-child(1) &
       text-align: left
 
+    #{$block}_page_api-keys #{$block}__cell:nth-child(1) &,
     #{$block}_page_id-scanner-keys #{$block}__cell:nth-child(1) &
       font-size: 16px
       font-weight: 600
@@ -3896,6 +3908,7 @@ $block: ".boss-table"
     #{$block}_page_ssr-admin-completed &,
     #{$block}_page_wages-index &,
     #{$block}_page_wtl-clients-index &,
+    #{$block}_page_api-keys &,
     #{$block}_page_id-scanner-keys &,
     #{$block}_page_smp-quizzes-history &,
     #{$block}_page_smp-quizzes-category &,
@@ -3957,6 +3970,7 @@ $block: ".boss-table"
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_wages-index &,
       #{$block}_page_wtl-clients-index &,
+      #{$block}_page_api-keys &,
       #{$block}_page_id-scanner-keys &,
       #{$block}_page_bonai &
         text-align: left
@@ -4034,6 +4048,9 @@ $block: ".boss-table"
     #{$block}_page_smp-holiday-requests &:not(:last-of-type),
     #{$block}_page_maintenance-managers-index #{$block}__cell:nth-child(6) &:not(:last-of-type)
       margin-bottom: 10px
+
+    #{$block}_page_api-keys &
+      width: 120px
 
     @media screen and (max-width: 960px)
       #{$block}_page_change-order-report &:not(:last-of-type),
