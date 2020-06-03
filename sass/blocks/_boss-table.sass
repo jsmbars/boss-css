@@ -73,7 +73,6 @@ $block: ".boss-table"
   &_page_finance-reports,
   &_page_payroll-reports,
   &_page_wages-index,
-  &_page_api-keys,
   &_page_id-scanner-keys,
   &_page_smp-quizzes-history,
   &_page_smp-quizzes-overview,
@@ -81,7 +80,9 @@ $block: ".boss-table"
   &_page_staff-types-index,
   &_page_staff-tracking-staff-added,
   &_page_staff-tracking-staff-disabled,
-  &_page_staff-tracking-accessories-payments
+  &_page_staff-tracking-accessories-payments,
+  &_page_api-keys,
+  &_page_names
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -429,8 +430,7 @@ $block: ".boss-table"
         border-bottom: 1px solid #eee
 
       #{$block}_page_fruit-order-history &,
-      #{$block}_page_change-order-report &,
-      #{$block}_page_bonai
+      #{$block}_page_change-order-report &
         padding-bottom: 20px
         padding-top: 20px
 
@@ -485,7 +485,8 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-staff-added &,
       #{$block}_page_staff-tracking-staff-disabled &,
       #{$block}_page_staff-tracking-accessories-payments &,
-      #{$block}_page_api-keys &
+      #{$block}_page_api-keys &,
+      #{$block}_page_names &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -519,12 +520,13 @@ $block: ".boss-table"
       #{$block}_page_wtl-clients-index &,
       #{$block}_page_weekly-reports &,
       #{$block}_page_wages-index &,
-      #{$block}_page_api-keys &,
       #{$block}_page_id-scanner-keys &,
       #{$block}_page_staff-types-index &,
       #{$block}_page_staff-tracking-staff-added &,
       #{$block}_page_staff-tracking-staff-disabled &,
-      #{$block}_page_staff-tracking-accessories-payments &
+      #{$block}_page_staff-tracking-accessories-payments &,
+      #{$block}_page_api-keys &,
+      #{$block}_page_names &
         background-color: #fbfbfb
 
     // $Common table first row
@@ -755,7 +757,8 @@ $block: ".boss-table"
       padding-bottom: 40px
 
     #{$block}_page_change-order-history &,
-    #{$block}_page_api-keys &
+    #{$block}_page_api-keys &,
+    #{$block}_page_names &
       min-height: 60px
       padding: 10px 15px
 
@@ -915,6 +918,12 @@ $block: ".boss-table"
         justify-content: flex-start
         min-height: 60px
         padding: 10px
+
+      #{$block}_page_names &
+        flex-direction: row
+        justify-content: flex-start
+        min-height: 0
+        padding: 10px 15px
 
     @media screen and (max-width: 640px)
       #{$block}_page_api-keys &
@@ -1118,9 +1127,6 @@ $block: ".boss-table"
       #{$block}_page_wtl-clients-index &
         width: 20%
 
-      #{$block}_page_api-keys &
-        width: 35%
-
       #{$block}_page_id-scanner-keys &
         width: 30%
 
@@ -1174,6 +1180,12 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-accessories-payments &
         align-items: flex-start
         width: 20%
+
+      #{$block}_page_api-keys &
+        width: 35%
+
+      #{$block}_page_names &
+        width: 100%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
@@ -1498,9 +1510,6 @@ $block: ".boss-table"
         width: 40%
         justify-content: center
 
-      #{$block}_page_api-keys &
-        width: 55%
-
       #{$block}_page_id-scanner-keys &
         width: 35%
 
@@ -1542,6 +1551,9 @@ $block: ".boss-table"
 
       #{$block}_page_staff-tracking-accessories-payments &
         width: 20%
+
+      #{$block}_page_api-keys &
+        width: 55%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
@@ -1808,12 +1820,6 @@ $block: ".boss-table"
         width: 20%
         justify-content: center
 
-      #{$block}_page_api-keys &
-        flex-grow: 0
-        flex-shrink: 0
-        justify-content: center
-        width: 140px
-
       #{$block}_page_id-scanner-keys &
         width: 20%
         justify-content: center
@@ -1854,6 +1860,12 @@ $block: ".boss-table"
 
       #{$block}_page_staff-tracking-accessories-payments &
         width: 20%
+
+      #{$block}_page_api-keys &
+        flex-grow: 0
+        flex-shrink: 0
+        justify-content: center
+        width: 140px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
@@ -3582,7 +3594,8 @@ $block: ".boss-table"
 
       #{$block}_page_accessory-requests-card &,
       #{$block}_page_clocking-app-page-api-keys-card &,
-      #{$block}_page_api-keys
+      #{$block}_page_api-keys &,
+      #{$block}_page_names &
         width: 100%
 
     @media screen and (max-width: 640px)
