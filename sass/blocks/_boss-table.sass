@@ -82,7 +82,8 @@ $block: ".boss-table"
   &_page_staff-tracking-staff-disabled,
   &_page_staff-tracking-accessories-payments,
   &_page_api-keys,
-  &_page_names
+  &_page_names,
+  &_page_pay-rates
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -486,7 +487,8 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-staff-disabled &,
       #{$block}_page_staff-tracking-accessories-payments &,
       #{$block}_page_api-keys &,
-      #{$block}_page_names &
+      #{$block}_page_names &,
+      #{$block}_page_pay-rates &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -503,6 +505,11 @@ $block: ".boss-table"
       #{$block}_page_api-keys &
         flex-wrap: wrap
         padding-top: 5px
+        padding-bottom: 10px
+
+      #{$block}_page_pay-rates &
+        display: block
+        padding-top: 10px
         padding-bottom: 10px
 
     &:last-child
@@ -526,7 +533,8 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-staff-disabled &,
       #{$block}_page_staff-tracking-accessories-payments &,
       #{$block}_page_api-keys &,
-      #{$block}_page_names &
+      #{$block}_page_names &,
+      #{$block}_page_pay-rates &
         background-color: #fbfbfb
 
     // $Common table first row
@@ -578,11 +586,13 @@ $block: ".boss-table"
         #{$block}_page_smp-quizzes-overview &
           display: none
 
-        #{$block}_page_api-keys &
+        #{$block}_page_api-keys &,
+        #{$block}_page_pay-rates &
           display: flex
 
       @media screen and (max-width: 640px)
-        #{$block}_page_api-keys &
+        #{$block}_page_api-keys &,
+        #{$block}_page_pay-rates &
           display: none
 
       @media screen and (min-width: 1120px)
@@ -793,6 +803,8 @@ $block: ".boss-table"
       min-height: 0
       padding: 15px 10px 0
 
+    #{$block}_page_marketing-index-card &,
+    #{$block}_page_marketing-managers-index-card &,
     #{$block}_page_smp-holidays &,
     #{$block}_page_smp-holiday-requests &,
     #{$block}_page_holidays-report-details &,
@@ -800,13 +812,13 @@ $block: ".boss-table"
     #{$block}_page_ssr-assign &,
     #{$block}_page_smp-quizzes-history &,
     #{$block}_page_smp-quizzes-category &,
-    #{$block}_page_smp-quizzes-overview &
+    #{$block}_page_smp-quizzes-overview &,
+    #{$block}_page_pay-rates &
       min-height: 0
 
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &
       padding: 10px
-      min-height: 0
 
     #{$block}_page_smp-owed-hours &,
     #{$block}_page_safe-checks-index &,
@@ -842,7 +854,8 @@ $block: ".boss-table"
     #{$block}_page_smp-quizzes-overview &,
     #{$block}_page_staff-tracking-staff-added &,
     #{$block}_page_staff-tracking-staff-disabled &,
-    #{$block}_page_staff-tracking-accessories-payments &
+    #{$block}_page_staff-tracking-accessories-payments &,
+    #{$block}_page_pay-rates &
       padding: 15px 10px
 
     @media screen and (max-width: 1120px)
@@ -925,8 +938,15 @@ $block: ".boss-table"
         min-height: 0
         padding: 10px 15px
 
+      #{$block}_page_pay-rates &
+        flex-direction: row
+        justify-content: flex-start
+        min-height: 0
+        padding: 10px
+
     @media screen and (max-width: 640px)
-      #{$block}_page_api-keys &
+      #{$block}_page_api-keys &,
+      #{$block}_page_pay-rates &
         min-height: 0
         padding: 5px 10px
 
@@ -1187,6 +1207,10 @@ $block: ".boss-table"
       #{$block}_page_names &
         width: 100%
 
+      #{$block}_page_pay-rates &
+        width: 24%
+        padding-left: 15px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1274,7 +1298,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-completed &,
         #{$block}_page_ssr-admin-pending &,
         #{$block}_page_ssr-admin-completed &,
-        #{$block}_page_wages-index &
+        #{$block}_page_wages-index &,
+        #{$block}_page_pay-rates &
           padding-left: 10px
 
         #{$block}_page_maintenance-index &,
@@ -1328,7 +1353,8 @@ $block: ".boss-table"
           width: 100%
           padding-right: 0
 
-        #{$block}_page_api-keys &
+        #{$block}_page_api-keys &,
+        #{$block}_page_pay-rates &
           width: 100%
 
       @media screen and (max-width: 480px)
@@ -1555,6 +1581,9 @@ $block: ".boss-table"
       #{$block}_page_api-keys &
         width: 55%
 
+      #{$block}_page_pay-rates &
+        width: 18%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1661,6 +1690,9 @@ $block: ".boss-table"
 
         #{$block}_page_api-keys &
           width: calc(100% - 140px)
+
+        #{$block}_page_pay-rates &
+          width: 100%
 
       @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index-card &
@@ -1867,6 +1899,9 @@ $block: ".boss-table"
         justify-content: center
         width: 140px
 
+      #{$block}_page_pay-rates &
+        width: 24%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -1968,6 +2003,9 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue &
           width: 100%
           padding-right: 0
+
+        #{$block}_page_pay-rates &
+          width: 100%
 
       @media screen and (max-width: 400px)
         #{$block}_page_clocking-app-page-api-keys-card &
@@ -2145,6 +2183,9 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-accessories-payments &
         width: 20%
 
+      #{$block}_page_pay-rates &
+        width: 14%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -2239,6 +2280,9 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue &
           width: 100%
           padding-left: 0
+
+        #{$block}_page_pay-rates &
+          width: 100%
 
     // $Common table cell fifth column
     &:nth-child(5)
@@ -2371,6 +2415,12 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-accessories-payments &
         width: 20%
 
+      #{$block}_page_pay-rates &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 200px
+        padding-right: 15px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -2427,7 +2477,8 @@ $block: ".boss-table"
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-admin-completed &,
-        #{$block}_page_wages-index &
+        #{$block}_page_wages-index &,
+        #{$block}_page_pay-rates &
           padding-right: 10px
 
         #{$block}_page_maintenance-index &,
@@ -2438,6 +2489,15 @@ $block: ".boss-table"
           &:nth-last-child(1)
             width: 100%
             padding-right: 10px
+
+        #{$block}_page_pay-rates &
+          width: 110px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_pay-rates &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
 
     // $Common table cell sixth column
     &:nth-child(6)
@@ -2977,7 +3037,8 @@ $block: ".boss-table"
       #{$block}_page_staff-types-index &,
       #{$block}_page_staff-tracking-staff-added &,
       #{$block}_page_staff-tracking-staff-disabled &,
-      #{$block}_page_staff-tracking-accessories-payments &
+      #{$block}_page_staff-tracking-accessories-payments &,
+      #{$block}_page_pay-rates &
         font-size: 14px
         text-transform: none
         font-weight: 600
@@ -3226,13 +3287,18 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_clocking-app-page-api-keys-card &,
-      #{$block}_page_bonai-venue &
+      #{$block}_page_bonai-venue &,
+      #{$block}_page_pay-rates &
         display: block
 
       #{$block}_page_holidays-report &
         justify-content: center
         align-items: flex-start
         padding-top: 0
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_pay-rates &
+        display: flex
 
 
   // $Common table label
@@ -3316,6 +3382,9 @@ $block: ".boss-table"
         text-transform: none
         font-weight: 600
 
+      #{$block}_page_pay-rates &
+        display: none
+
     @media screen and (max-width: 640px)
       padding-right: 40px
 
@@ -3324,6 +3393,9 @@ $block: ".boss-table"
 
       #{$block}_page_csv-upload &
         width: 60%
+
+      #{$block}_page_pay-rates &
+        display: block
 
     @media screen and (max-width: 480px)
       #{$block}_page_fruit-order-history &
@@ -3595,7 +3667,8 @@ $block: ".boss-table"
       #{$block}_page_accessory-requests-card &,
       #{$block}_page_clocking-app-page-api-keys-card &,
       #{$block}_page_api-keys &,
-      #{$block}_page_names &
+      #{$block}_page_names &,
+      #{$block}_page_pay-rates &
         width: 100%
 
     @media screen and (max-width: 640px)
@@ -3604,6 +3677,9 @@ $block: ".boss-table"
 
       #{$block}_page_csv-upload &
         width: 40%
+
+      #{$block}_page_pay-rates &
+        width: 50%
 
     @media screen and (max-width: 480px)
       #{$block}_page_holidays-report &
@@ -3953,7 +4029,8 @@ $block: ".boss-table"
   &__actions
     text-align: left
 
-    #{$block}_page_fruit-order-history &
+    #{$block}_page_fruit-order-history &,
+    #{$block}_page_pay-rates &
       display: flex
       flex-direction: row
       justify-content: flex-start
@@ -4054,7 +4131,8 @@ $block: ".boss-table"
 
       #{$block}_page_accessory-requests-card &,
       #{$block}_page_smp-quizzes-history &,
-      #{$block}_page_smp-quizzes-category &
+      #{$block}_page_smp-quizzes-category &,
+      #{$block}_page_pay-rates &
         width: 100%
 
       #{$block}_page_ssr-pending &,
@@ -4062,6 +4140,9 @@ $block: ".boss-table"
         flex-direction: column
         align-items: flex-start
 
+      #{$block}_page_pay-rates &
+        flex-direction: column
+        align-items: stretch
 
     @media screen and (max-width: 640px)
       #{$block}_page_fruit-order-history &
@@ -4072,13 +4153,19 @@ $block: ".boss-table"
         flex-direction: column
         align-items: flex-start
 
+      #{$block}_page_pay-rates &
+        flex-direction: row
+        align-items: flex-start
+        width: 50%
+
     @media screen and (max-width: 480px)
       #{$block}_page_change-order-report &,
       #{$block}_page_smp-owed-hours &,
       #{$block}_page_smp-holidays &,
       #{$block}_page_smp-holiday-requests &,
       #{$block}_page_marketing-index-card &,
-      #{$block}_page_marketing-managers-index-card &
+      #{$block}_page_marketing-managers-index-card &,
+      #{$block}_page_pay-rates &
         flex-direction: column
 
 
@@ -4087,7 +4174,8 @@ $block: ".boss-table"
     #{$block}_page_message-board &:not(:last-of-type),
     #{$block}_page_holiday-requests &:not(:last-of-type),
     #{$block}_page_ssr-pending &:not(:last-of-type),
-    #{$block}_page_ssr-admin-pending &:not(:last-of-type)
+    #{$block}_page_ssr-admin-pending &:not(:last-of-type),
+    #{$block}_page_pay-rates &:not(:last-of-type)
       margin-right: 10px
 
     #{$block}_page_fruit-order-history &:not(:last-of-type)
@@ -4116,7 +4204,8 @@ $block: ".boss-table"
         margin-right: 10px
 
       #{$block}_page_ssr-pending &:not(:last-of-type),
-      #{$block}_page_ssr-admin-pending &:not(:last-of-type)
+      #{$block}_page_ssr-admin-pending &:not(:last-of-type),
+      #{$block}_page_pay-rates &:not(:last-of-type)
         margin-right: 0
         margin-bottom: 10px
 
@@ -4125,6 +4214,10 @@ $block: ".boss-table"
       #{$block}_page_holiday-requests &:not(:last-of-type)
         margin-right: 0
         margin-bottom: 10px
+
+      #{$block}_page_pay-rates &:not(:last-of-type)
+        margin-bottom: 0
+        margin-right: 10px
 
     @media screen and (max-width: 480px)
       #{$block}_page_fruit-order-history &:not(:last-of-type)
@@ -4135,7 +4228,8 @@ $block: ".boss-table"
       #{$block}_page_smp-holidays &:not(:last-of-type),
       #{$block}_page_smp-holiday-requests &:not(:last-of-type),
       #{$block}_page_marketing-index-card &:not(:last-of-type),
-      #{$block}_page_marketing-managers-index-card &:not(:last-of-type)
+      #{$block}_page_marketing-managers-index-card &:not(:last-of-type),
+      #{$block}_page_pay-rates &:not(:last-of-type)
         margin-right: 0
         margin-bottom: 10px
 
@@ -4210,11 +4304,11 @@ $block: ".boss-table"
     #{$block}_page_weekly-reports &
       text-align: center
 
-
     #{$block}_page_venues-index &,
     #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &,
-    #{$block}_page_wtl-clients-index &
+    #{$block}_page_wtl-clients-index &,
+    #{$block}_page_pay-rates &
       color: #1585cf
 
     #{$block}__cell_state_alert &,

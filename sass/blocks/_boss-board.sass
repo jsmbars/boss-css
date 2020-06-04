@@ -85,6 +85,9 @@ $block: ".boss-board"
   // $Board MOD: role bonai
   &_role_bonai
 
+  // $Board MOD: role pay-rates
+  &_role_pay-rates
+
 
   // $Board header area
   &__header
@@ -115,7 +118,8 @@ $block: ".boss-board"
       #{$block}_role_venue-alert-levels-red &,
       #{$block}_role_venue-alert-levels-amber &,
       #{$block}_role_profile-quizzes-categories &,
-      #{$block}_role_profile-quizzes-history &
+      #{$block}_role_profile-quizzes-history &,
+      #{$block}_role_pay-rates &
         flex-wrap: wrap
         overflow: hidden
 
@@ -502,6 +506,17 @@ $block: ".boss-board"
       padding: 0 20px
 
 
+  // $Board text
+  &__text
+    +text-normalizer()
+    display: block
+    font-size: 14px
+    font-weight: 400
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
   // $Board filter
   &__filter
     display: block
@@ -619,7 +634,8 @@ $block: ".boss-board"
       @media screen and (max-width: 640px)
         #{$block}_role_finance-report &,
         #{$block}_role_venue-alert-levels-red &,
-        #{$block}_role_venue-alert-levels-amber &
+        #{$block}_role_venue-alert-levels-amber &,
+        #{$block}_role_pay-rates &
           order: -99
           width: 100%
           margin-bottom: 15px
