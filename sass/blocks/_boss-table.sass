@@ -83,7 +83,9 @@ $block: ".boss-table"
   &_page_staff-tracking-accessories-payments,
   &_page_api-keys,
   &_page_names,
-  &_page_pay-rates
+  &_page_pay-rates,
+  &_page_pay-rates-staff-members,
+  &_page_pay-rates-admin-staff-members
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -488,7 +490,9 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-accessories-payments &,
       #{$block}_page_api-keys &,
       #{$block}_page_names &,
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -507,7 +511,9 @@ $block: ".boss-table"
         padding-top: 5px
         padding-bottom: 10px
 
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         display: block
         padding-top: 10px
         padding-bottom: 10px
@@ -534,7 +540,9 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-accessories-payments &,
       #{$block}_page_api-keys &,
       #{$block}_page_names &,
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         background-color: #fbfbfb
 
     // $Common table first row
@@ -587,12 +595,16 @@ $block: ".boss-table"
           display: none
 
         #{$block}_page_api-keys &,
-        #{$block}_page_pay-rates &
+        #{$block}_page_pay-rates &,
+        #{$block}_page_pay-rates-staff-members &,
+        #{$block}_page_pay-rates-admin-staff-members &
           display: flex
 
       @media screen and (max-width: 640px)
         #{$block}_page_api-keys &,
-        #{$block}_page_pay-rates &
+        #{$block}_page_pay-rates &,
+        #{$block}_page_pay-rates-staff-members &,
+        #{$block}_page_pay-rates-admin-staff-members &
           display: none
 
       @media screen and (min-width: 1120px)
@@ -813,7 +825,9 @@ $block: ".boss-table"
     #{$block}_page_smp-quizzes-history &,
     #{$block}_page_smp-quizzes-category &,
     #{$block}_page_smp-quizzes-overview &,
-    #{$block}_page_pay-rates &
+    #{$block}_page_pay-rates &,
+    #{$block}_page_pay-rates-staff-members &,
+    #{$block}_page_pay-rates-admin-staff-members &
       min-height: 0
 
     #{$block}_page_marketing-index-card &,
@@ -855,7 +869,9 @@ $block: ".boss-table"
     #{$block}_page_staff-tracking-staff-added &,
     #{$block}_page_staff-tracking-staff-disabled &,
     #{$block}_page_staff-tracking-accessories-payments &,
-    #{$block}_page_pay-rates &
+    #{$block}_page_pay-rates &,
+    #{$block}_page_pay-rates-staff-members &,
+    #{$block}_page_pay-rates-admin-staff-members &
       padding: 15px 10px
 
     @media screen and (max-width: 1120px)
@@ -938,7 +954,9 @@ $block: ".boss-table"
         min-height: 0
         padding: 10px 15px
 
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         flex-direction: row
         justify-content: flex-start
         min-height: 0
@@ -946,7 +964,9 @@ $block: ".boss-table"
 
     @media screen and (max-width: 640px)
       #{$block}_page_api-keys &,
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         min-height: 0
         padding: 5px 10px
 
@@ -1211,6 +1231,12 @@ $block: ".boss-table"
         width: 24%
         padding-left: 15px
 
+      #{$block}_page_pay-rates-staff-members &
+        width: 30%
+
+      #{$block}_page_pay-rates-admin-staff-members &
+        width: 40%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1299,7 +1325,9 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-pending &,
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
-        #{$block}_page_pay-rates &
+        #{$block}_page_pay-rates &,
+        #{$block}_page_pay-rates-staff-members &,
+        #{$block}_page_pay-rates-admin-staff-members &
           padding-left: 10px
 
         #{$block}_page_maintenance-index &,
@@ -1354,7 +1382,9 @@ $block: ".boss-table"
           padding-right: 0
 
         #{$block}_page_api-keys &,
-        #{$block}_page_pay-rates &
+        #{$block}_page_pay-rates &,
+        #{$block}_page_pay-rates-staff-members &,
+        #{$block}_page_pay-rates-admin-staff-members &
           width: 100%
 
       @media screen and (max-width: 480px)
@@ -1584,6 +1614,12 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &
         width: 18%
 
+      #{$block}_page_pay-rates-staff-members &
+        width: 25%
+
+      #{$block}_page_pay-rates-admin-staff-members &
+        width: 30%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1691,7 +1727,9 @@ $block: ".boss-table"
         #{$block}_page_api-keys &
           width: calc(100% - 140px)
 
-        #{$block}_page_pay-rates &
+        #{$block}_page_pay-rates &,
+        #{$block}_page_pay-rates-staff-members &,
+        #{$block}_page_pay-rates-admin-staff-members &
           width: 100%
 
       @media screen and (max-width: 480px)
@@ -1902,6 +1940,13 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &
         width: 24%
 
+      #{$block}_page_pay-rates-staff-members &
+        width: 20%
+
+      #{$block}_page_pay-rates-admin-staff-members &
+        width: 30%
+        padding-right: 15px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -1965,7 +2010,8 @@ $block: ".boss-table"
 
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-admin-pending &,
-        #{$block}_page_api-keys &
+        #{$block}_page_api-keys &,
+        #{$block}_page_pay-rates-admin-staff-members &
           padding-right: 10px
 
         #{$block}_page_maintenance-index-card &
@@ -2004,7 +2050,9 @@ $block: ".boss-table"
           width: 100%
           padding-right: 0
 
-        #{$block}_page_pay-rates &
+        #{$block}_page_pay-rates &,
+        #{$block}_page_pay-rates-staff-members &,
+        #{$block}_page_pay-rates-admin-staff-members &
           width: 100%
 
       @media screen and (max-width: 400px)
@@ -2186,6 +2234,10 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &
         width: 14%
 
+      #{$block}_page_pay-rates-staff-members &
+        width: 25%
+        padding-right: 15px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -2246,7 +2298,8 @@ $block: ".boss-table"
         #{$block}_page_users-index &,
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wtl-clients-index &,
-        #{$block}_page_id-scanner-keys &
+        #{$block}_page_id-scanner-keys &,
+        #{$block}_page_pay-rates-staff-members &
           padding-right: 10px
 
         #{$block}_page_fruit-order-history &
@@ -2281,7 +2334,9 @@ $block: ".boss-table"
           width: 100%
           padding-left: 0
 
-        #{$block}_page_pay-rates &
+        #{$block}_page_pay-rates &,
+        #{$block}_page_pay-rates-staff-members &,
+        #{$block}_page_pay-rates-admin-staff-members &
           width: 100%
 
     // $Common table cell fifth column
@@ -3038,7 +3093,9 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-staff-added &,
       #{$block}_page_staff-tracking-staff-disabled &,
       #{$block}_page_staff-tracking-accessories-payments &,
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         font-size: 14px
         text-transform: none
         font-weight: 600
@@ -3288,7 +3345,9 @@ $block: ".boss-table"
 
       #{$block}_page_clocking-app-page-api-keys-card &,
       #{$block}_page_bonai-venue &,
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         display: block
 
       #{$block}_page_holidays-report &
@@ -3297,7 +3356,9 @@ $block: ".boss-table"
         padding-top: 0
 
     @media screen and (max-width: 640px)
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         display: flex
 
 
@@ -3382,7 +3443,9 @@ $block: ".boss-table"
         text-transform: none
         font-weight: 600
 
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         display: none
 
     @media screen and (max-width: 640px)
@@ -3394,7 +3457,9 @@ $block: ".boss-table"
       #{$block}_page_csv-upload &
         width: 60%
 
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         display: block
 
     @media screen and (max-width: 480px)
@@ -3668,7 +3733,9 @@ $block: ".boss-table"
       #{$block}_page_clocking-app-page-api-keys-card &,
       #{$block}_page_api-keys &,
       #{$block}_page_names &,
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         width: 100%
 
     @media screen and (max-width: 640px)
@@ -3678,7 +3745,9 @@ $block: ".boss-table"
       #{$block}_page_csv-upload &
         width: 40%
 
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_pay-rates-staff-members &,
+      #{$block}_page_pay-rates-admin-staff-members &
         width: 50%
 
     @media screen and (max-width: 480px)
@@ -4308,7 +4377,9 @@ $block: ".boss-table"
     #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_wtl-clients-index &,
-    #{$block}_page_pay-rates &
+    #{$block}_page_pay-rates &,
+    #{$block}_page_pay-rates-staff-members &,
+    #{$block}_page_pay-rates-admin-staff-members &
       color: #1585cf
 
     #{$block}__cell_state_alert &,
