@@ -1693,6 +1693,14 @@ $block: ".boss-form"
       outline: none
       border: none
 
+    &_state_error select
+      outline: 1px solid map-get($boss-app-palette, alert-border)
+      color: map-get($boss-app-palette, alert)
+
+    &_state_error select:focus
+      border-color: map-get($boss-app-palette, alert)
+      box-shadow: 0 0 5px 0 map-get($boss-app-palette, alert)
+
 
   // React-select adjusments
   &__select
