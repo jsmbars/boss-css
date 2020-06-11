@@ -85,7 +85,9 @@ $block: ".boss-table"
   &_page_names,
   &_page_pay-rates,
   &_page_pay-rates-staff-members,
-  &_page_pay-rates-admin-staff-members
+  &_page_pay-rates-admin-staff-members,
+  &_page_yearly-reports,
+  &_page_yearly-reports-hour-report
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -158,7 +160,8 @@ $block: ".boss-table"
     &:nth-child(even)
       #{$block}_page_maintenance-index &,
       #{$block}_page_maintenance-managers-index &,
-      #{$block}_page_daily-reports &
+      #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &
         background-color: #fbfbfb
 
 
@@ -207,7 +210,8 @@ $block: ".boss-table"
     // $Common table details MOD: state closed
     &_state_closed
       @media screen and (max-width: 1120px)
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           display: none
 
       @media screen and (max-width: 960px)
@@ -218,7 +222,8 @@ $block: ".boss-table"
     // $Common form row MOD: visible on mobiles
     &_state_visible-mobile
       @media screen and (min-width: 1121px)
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           display: none !important
 
       @media screen and(min-width: 961px)
@@ -237,7 +242,8 @@ $block: ".boss-table"
 
     #{$block}_page_maintenance-index &,
     #{$block}_page_maintenance-managers-index &,
-    #{$block}_page_daily-reports &
+    #{$block}_page_daily-reports &,
+    #{$block}_page_yearly-reports &
       max-width: 350px
 
 
@@ -267,7 +273,8 @@ $block: ".boss-table"
       width: 150px
       padding-left: 20px
 
-    #{$block}_page_daily-reports &
+    #{$block}_page_daily-reports &,
+    #{$block}_page_yearly-reports &
       width: calc(100% - 120px)
       padding-left: 20px
 
@@ -277,7 +284,8 @@ $block: ".boss-table"
         width: 120px
         padding-left: 10px
 
-      #{$block}_page_daily-reports &
+      #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &
         padding-left: 10px
 
 
@@ -294,7 +302,8 @@ $block: ".boss-table"
       width: calc(100% - 150px)
       padding-right: 10px
 
-    #{$block}_page_daily-reports &
+    #{$block}_page_daily-reports &,
+    #{$block}_page_yearly-reports &
       flex-grow: 0
       flex-shrink: 0
       width: 100px
@@ -305,7 +314,8 @@ $block: ".boss-table"
       #{$block}_page_maintenance-managers-index &
         width: calc(100% - 100px)
 
-      #{$block}_page_daily-reports &
+      #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &
         padding-right: 10px
 
     &_role_action
@@ -326,6 +336,27 @@ $block: ".boss-table"
   // $Common table details text-faded
   &__details-text-faded
     color: #808080
+
+
+  // $Common table details link
+  &__details-link
+    +text-normalizer()
+    display: inline-block
+    max-width: 100%
+    color: $boss-dark-gray
+    vertical-align: middle
+    text-decoration: none
+    transition: color .3s
+    cursor: pointer
+
+    #{$block}_page_yearly-reports &
+      color: #1585cf
+
+    &:hover,
+    &:focus
+      outline: none
+      text-decoration: none
+      color: $boss-medium-gray
 
 
   &__details-switch
@@ -394,6 +425,7 @@ $block: ".boss-table"
     #{$block}_page_clocking-app-page-api-keys-card &,
     #{$block}_page_accessory-requests-card &,
     #{$block}_page_daily-reports &,
+    #{$block}_page_yearly-reports &,
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &,
     #{$block}_page_holiday-requests &,
@@ -479,6 +511,7 @@ $block: ".boss-table"
       #{$block}_page_accessory-requests-card &,
       #{$block}_page_weekly-reports &,
       #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &,
       #{$block}_page_marketing-index-card &,
       #{$block}_page_marketing-managers-index-card &,
       #{$block}_page_ssr-assign &,
@@ -492,7 +525,8 @@ $block: ".boss-table"
       #{$block}_page_names &,
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_yearly-reports-hour-report &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -542,7 +576,8 @@ $block: ".boss-table"
       #{$block}_page_names &,
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_yearly-reports-hour-report &
         background-color: #fbfbfb
 
     // $Common table first row
@@ -780,7 +815,8 @@ $block: ".boss-table"
 
     #{$block}_page_change-order-history &,
     #{$block}_page_api-keys &,
-    #{$block}_page_names &
+    #{$block}_page_names &,
+    #{$block}_page_yearly-reports-hour-report &
       min-height: 60px
       padding: 10px 15px
 
@@ -798,7 +834,9 @@ $block: ".boss-table"
     #{$block}_page_ssr-admin-pending &,
     #{$block}_page_ssr-admin-completed &,
     #{$block}_page_wages-index &,
-    #{$block}_page_staff-types-index &
+    #{$block}_page_staff-types-index &,
+    #{$block}_page_yearly-reports &,
+    #{$block}_page_yearly-reports-hour-report &
       justify-content: center
 
     #{$block}_page_weekly-reports &,
@@ -839,6 +877,7 @@ $block: ".boss-table"
     #{$block}_page_venues-index &,
     #{$block}_page_weekly-reports &,
     #{$block}_page_daily-reports &,
+    #{$block}_page_yearly-reports &,
     #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &
       padding: 15px 5px
@@ -885,7 +924,8 @@ $block: ".boss-table"
         min-height: 0
         padding: 10px
 
-      #{$block}_page_daily-reports &
+      #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &
         flex-direction: column
         min-height: 0
         justify-content: flex-start
@@ -953,6 +993,12 @@ $block: ".boss-table"
         justify-content: flex-start
         min-height: 0
         padding: 10px 15px
+
+      #{$block}_page_yearly-reports-hour-report &
+        flex-direction: row
+        justify-content: center
+        min-height: 0
+        padding: 10px
 
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
@@ -1113,7 +1159,8 @@ $block: ".boss-table"
         width: 18%
         padding-left: 15px
 
-      #{$block}_page_daily-reports &
+      #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &
         justify-content: flex-start
         width: 16%
         padding-left: 20px
@@ -1237,6 +1284,10 @@ $block: ".boss-table"
       #{$block}_page_pay-rates-admin-staff-members &
         width: 40%
 
+      #{$block}_page_yearly-reports-hour-report &
+        width: 25%
+        padding-left: 20px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1266,7 +1317,8 @@ $block: ".boss-table"
         #{$block}_page_csv-upload &
           border-right: none
 
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           width: calc(100% - 50px)
           padding-left: 20px
 
@@ -1327,7 +1379,8 @@ $block: ".boss-table"
         #{$block}_page_wages-index &,
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
-        #{$block}_page_pay-rates-admin-staff-members &
+        #{$block}_page_pay-rates-admin-staff-members &,
+        #{$block}_page_yearly-reports-hour-report &
           padding-left: 10px
 
         #{$block}_page_maintenance-index &,
@@ -1399,7 +1452,8 @@ $block: ".boss-table"
           padding-right: 20px
           border-right: none
 
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           width: calc(100% - 40px)
           padding-left: 10px
 
@@ -1520,7 +1574,8 @@ $block: ".boss-table"
       #{$block}_page_weekly-reports &
         width: 10%
 
-      #{$block}_page_daily-reports &
+      #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &
         width: 14%
 
       #{$block}_page_marketing-managers-index-card &
@@ -1620,6 +1675,9 @@ $block: ".boss-table"
       #{$block}_page_pay-rates-admin-staff-members &
         width: 30%
 
+      #{$block}_page_yearly-reports-hour-report &
+        width: 50%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1636,7 +1694,8 @@ $block: ".boss-table"
         #{$block}_page_csv-upload &
           border-right: none
 
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           display: none
 
       @media screen and (max-width: 960px)
@@ -1852,7 +1911,8 @@ $block: ".boss-table"
       #{$block}_page_weekly-reports &
         width: 10%
 
-      #{$block}_page_daily-reports &
+      #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &
         width: 14%
 
       #{$block}_page_csv-upload &
@@ -1935,7 +1995,7 @@ $block: ".boss-table"
         flex-grow: 0
         flex-shrink: 0
         justify-content: center
-        width: 140px
+        width: 160px
 
       #{$block}_page_pay-rates &
         width: 24%
@@ -1947,19 +2007,25 @@ $block: ".boss-table"
         width: 30%
         padding-right: 15px
 
+      #{$block}_page_yearly-reports-hour-report &
+        width: 25%
+        padding-right: 20px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
         #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &,
         #{$block}_page_csv-upload &
           width: 100%
 
         #{$block}_page_csv-upload &
           border-right: none
 
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           display: none
 
       @media screen and (max-width: 960px)
@@ -2011,7 +2077,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-admin-pending &,
         #{$block}_page_api-keys &,
-        #{$block}_page_pay-rates-admin-staff-members &
+        #{$block}_page_pay-rates-admin-staff-members &,
+        #{$block}_page_yearly-reports-hour-report &
           padding-right: 10px
 
         #{$block}_page_maintenance-index-card &
@@ -2033,6 +2100,9 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue &
           width: 50%
           padding-left: 0
+
+        #{$block}_page_api-keys &
+          width: 140px
 
       @media screen and (max-width: 640px)
         #{$block}_page_accessory-requests-card &
@@ -2160,7 +2230,8 @@ $block: ".boss-table"
       #{$block}_page_weekly-reports &
         width: 10%
 
-      #{$block}_page_daily-reports &
+      #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &
         width: 14%
 
       #{$block}_page_csv-upload &
@@ -2244,6 +2315,7 @@ $block: ".boss-table"
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
         #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &,
         #{$block}_page_csv-upload &
           width: 100%
 
@@ -2256,7 +2328,8 @@ $block: ".boss-table"
         #{$block}_page_csv-upload &
           border-right: none
 
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           display: none
 
       @media screen and (max-width: 960px)
@@ -2410,6 +2483,9 @@ $block: ".boss-table"
       #{$block}_page_daily-reports &
         width: 14%
 
+      #{$block}_page_yearly-reports &
+        width: 12%
+
       #{$block}_page_csv-upload &
         width: 11%
         border-right: 1px solid #eee
@@ -2482,6 +2558,7 @@ $block: ".boss-table"
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
         #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &,
         #{$block}_page_csv-upload &
           width: 100%
 
@@ -2491,7 +2568,8 @@ $block: ".boss-table"
         #{$block}_page_csv-upload &
           border-right: none
 
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           display: none
 
       @media screen and (max-width: 960px)
@@ -2624,6 +2702,9 @@ $block: ".boss-table"
       #{$block}_page_daily-reports &
         width: 14%
 
+      #{$block}_page_yearly-reports &
+        width: 12%
+
       #{$block}_page_csv-upload &
         width: 11%
         border-right: 1px solid #eee
@@ -2644,6 +2725,7 @@ $block: ".boss-table"
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
         #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &,
         #{$block}_page_csv-upload &
           width: 100%
 
@@ -2654,7 +2736,8 @@ $block: ".boss-table"
           flex-grow: 1
           flex-shrink: 1
 
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           display: none
 
       @media screen and (max-width: 960px)
@@ -2738,6 +2821,10 @@ $block: ".boss-table"
         width: 14%
         padding-right: 10px
 
+      #{$block}_page_yearly-reports &
+        width: 18%
+        padding-right: 10px
+
       #{$block}_page_venues-index &
         width: 11%
 
@@ -2763,6 +2850,7 @@ $block: ".boss-table"
         #{$block}_page_invites-index &,
         #{$block}_page_venues-index &,
         #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &,
         #{$block}_page_csv-upload &
           width: 100%
 
@@ -2773,7 +2861,8 @@ $block: ".boss-table"
           flex-grow: 1
           flex-shrink: 1
 
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           display: none
 
       @media screen and (max-width: 960px)
@@ -2822,7 +2911,8 @@ $block: ".boss-table"
       #{$block}_page_weekly-reports &
         width: 10%
 
-      #{$block}_page_daily-reports &
+      #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &
         display: none
         flex-grow: 0
         flex-shrink: 0
@@ -2862,7 +2952,8 @@ $block: ".boss-table"
           flex-grow: 1
           flex-shrink: 1
 
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           display: block
 
       @media screen and (max-width: 960px)
@@ -2879,7 +2970,8 @@ $block: ".boss-table"
           padding-right: 0
 
       @media screen and (max-width: 480px)
-        #{$block}_page_daily-reports &
+        #{$block}_page_daily-reports &,
+        #{$block}_page_yearly-reports &
           width: 40px
 
 
@@ -3072,6 +3164,7 @@ $block: ".boss-table"
       #{$block}_page_venues-index &,
       #{$block}_page_weekly-reports &,
       #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &,
       #{$block}_page_ssr-pending &,
       #{$block}_page_ssr-admin-pending &,
       #{$block}_page_ssr-completed &,
@@ -3095,7 +3188,8 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-accessories-payments &,
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_yearly-reports-hour-report &
         font-size: 14px
         text-transform: none
         font-weight: 600
@@ -3105,6 +3199,7 @@ $block: ".boss-table"
       #{$block}_page_venues-index &,
       #{$block}_page_weekly-reports &,
       #{$block}_page_daily-reports &,
+      #{$block}_page_yearly-reports &,
       #{$block}_page_ssr-pending &,
       #{$block}_page_ssr-admin-pending &,
       #{$block}_page_ssr-completed &,
@@ -3116,7 +3211,8 @@ $block: ".boss-table"
       #{$block}_page_staff-types-index &,
       #{$block}_page_staff-tracking-staff-added &,
       #{$block}_page_staff-tracking-staff-disabled &,
-      #{$block}_page_staff-tracking-accessories-payments &
+      #{$block}_page_staff-tracking-accessories-payments &,
+      #{$block}_page_yearly-reports-hour-report &
         text-align: center
 
       #{$block}_page_csv-upload &
@@ -3211,6 +3307,12 @@ $block: ".boss-table"
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_message-board &
           text-align: center
+
+    // $Common table cell MOD: role footer
+    &_role_footer
+      font-size: 14px
+      text-transform: none
+      font-weight: 600
 
     // $Common table cell MOD: state alert
     &_state_alert
@@ -3632,7 +3734,8 @@ $block: ".boss-table"
     #{$block}_page_staff-types-index &,
     #{$block}_page_staff-tracking-staff-added &,
     #{$block}_page_staff-tracking-staff-disabled &,
-    #{$block}_page_staff-tracking-accessories-payments &
+    #{$block}_page_staff-tracking-accessories-payments &,
+    #{$block}_page_yearly-reports-hour-report &
       text-align: center
 
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(7) &,
@@ -3735,7 +3838,8 @@ $block: ".boss-table"
       #{$block}_page_names &,
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_yearly-reports-hour-report &
         width: 100%
 
     @media screen and (max-width: 640px)
@@ -3757,6 +3861,9 @@ $block: ".boss-table"
 
       #{$block}_page_staff-members-index &
         flex-shrink: 1
+
+      #{$block}_page_yearly-reports-hour-report #{$block}__cell:nth-child(2) &
+        text-indent: 10px
 
     @media screen and (max-width: 400px)
       #{$block}_page_api-keys &
@@ -4306,6 +4413,9 @@ $block: ".boss-table"
       #{$block}_page_marketing-managers-index-card &
         width: 100%
 
+    @media screen and (max-width: 400px)
+      #{$block}_page_api-keys &
+        width: auto
 
     // $Common table action MOD: desktop visible
     &_desktop
@@ -4379,7 +4489,8 @@ $block: ".boss-table"
     #{$block}_page_wtl-clients-index &,
     #{$block}_page_pay-rates &,
     #{$block}_page_pay-rates-staff-members &,
-    #{$block}_page_pay-rates-admin-staff-members &
+    #{$block}_page_pay-rates-admin-staff-members &,
+    #{$block}_page_yearly-reports &
       color: #1585cf
 
     #{$block}__cell_state_alert &,
