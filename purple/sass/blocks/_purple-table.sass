@@ -64,6 +64,8 @@ $block: ".purple-table"
       border-radius: 10px
       box-shadow: 0 5px 15px 0 $c-shadow-secondary
 
+  &_page_counting-overview
+    min-width: 620px
 
   &__sorting
     position: absolute
@@ -121,6 +123,9 @@ $block: ".purple-table"
 
     &:not(:last-child)
       border-bottom: 1px solid $c-border-primary
+
+      #{$block}_page_counting-overview &
+        border-bottom: none
 
       @media screen and (max-width: 800px)
         #{$block}_page_counting-totals &
@@ -207,6 +212,69 @@ $block: ".purple-table"
     @media screen and (max-width: 480px)
       #{$block}_page_counting-totals &
         margin-bottom: 25px
+
+
+  // $Common table dropdown
+  &__dropdown
+    position: relative
+    padding: 20px 20px 60px
+    border-bottom: 1px solid $c-border-primary
+
+    @media screen and (max-width: 960px)
+      #{$block}_page_counting-overview &
+        padding: 10px 10px 40px
+
+    // $Common table dropdown MOD: state hidden
+    &_state_hidden
+      display: none
+
+
+  // $Common table dropdown close
+  &__dropdown-close
+    position: absolute
+    bottom: 20px
+    left: 20px
+    z-index: 10
+    display: block
+    width: 20px
+    height: 20px
+    margin: 0
+    padding: 0
+    font-size: 0
+    line-height: 0
+    color: transparent
+    outline: none
+    border: none
+    background-color: $c-gray-medium
+    border-radius: 50%
+    transition: all .4s
+    cursor: pointer
+
+    @media screen and (max-width: 960px)
+      left: 50%
+      margin-left: -10px
+
+      #{$block}_page_counting-overview &
+        left: 10px
+        bottom: 10px
+        margin: 0
+
+    &:before
+      content: '\e91a'
+      display: block
+      margin-top: -2px
+      font-family: icons
+      font-size: 16px
+      line-height: 8px
+      font-weight: 400
+      color: $c-text-light
+      text-align: center
+
+    &:hover
+      opacity: .8
+
+    &:focus
+      outline: $c-text-light
 
 
   // $Common table row
@@ -359,11 +427,20 @@ $block: ".purple-table"
     #{$block}_type_common #{$block}__row:last-child &
       border-bottom: none
 
+    @media screen and (max-width: 960px)
+      #{$block}_page_counting-overview &
+        min-height: 50px
+        padding: 5px
+
     @media screen and (max-width: 800px)
       #{$block}_page_counting-bundles &,
       #{$block}_page_counting-loose &
         min-height: 0
         padding: 0
+
+      #{$block}_page_counting-overview &
+        padding-left: 3px
+        padding-right: 3px
 
     &:not(:last-child)
       border-right: 1px solid $c-border-primary
@@ -391,6 +468,11 @@ $block: ".purple-table"
         flex-shrink: 0
         width: 80px
 
+      #{$block}_page_counting-overview &
+        width: 15%
+        flex-grow: 0
+        flex-shrink: 0
+
       @media screen and (max-width: 960px)
         #{$block}_page_counting-totals &
           width: 130px
@@ -405,6 +487,9 @@ $block: ".purple-table"
 
         #{$block}_page_counting-loose &
           display: none
+
+        #{$block}_page_counting-overview &
+          width: 12%
 
     // $Common table cell second column
     &:nth-child(2)
@@ -425,6 +510,9 @@ $block: ".purple-table"
 
       #{$block}_page_counting-loose &
         width: calc(100% - 80px)
+
+      #{$block}_page_counting-overview &
+        width: 12.5%
 
       @media screen and (max-width: 960px)
 
@@ -450,6 +538,9 @@ $block: ".purple-table"
         width: 25%
         padding: 0
 
+      #{$block}_page_counting-overview &
+        width: 12.5%
+
     // $Common table cell fourth column
     &:nth-child(4)
       #{$block}_page_invites-index &
@@ -462,6 +553,9 @@ $block: ".purple-table"
         width: 25%
         padding: 0
 
+      #{$block}_page_counting-overview &
+        width: 12.5%
+
     // $Common table cell fifth column
     &:nth-child(5)
       #{$block}_page_invites-index &
@@ -472,10 +566,16 @@ $block: ".purple-table"
         flex-shrink: 0
         width: 125px
 
+      #{$block}_page_counting-overview &
+        width: 12.5%
+
     // $Common table cell sixth column
     &:nth-child(6)
       #{$block}_page_invites-index &
         width: 12%
+
+      #{$block}_page_counting-overview &
+        width: 12.5%
 
     // $Common table cell seventh column
     &:nth-child(7)
@@ -484,8 +584,24 @@ $block: ".purple-table"
         flex-shrink: 0
         width: 130px
 
+      #{$block}_page_counting-overview &
+        width: 12.5%
+
     // $Common table cell eighth column
     &:nth-child(8)
+
+      #{$block}_page_counting-overview &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 115px
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_counting-overview &
+          width: 105px
+
+      @media screen and (max-width: 800px)
+        #{$block}_page_counting-overview &
+          width: 100px
 
     // $Common table cell ninth column
     &:nth-child(9)
@@ -508,17 +624,31 @@ $block: ".purple-table"
 
       #{$block}_page_counting-totals &,
       #{$block}_page_counting-bundles &,
-      #{$block}_page_counting-loose &
+      #{$block}_page_counting-loose &,
+      #{$block}_page_counting-overview &
         font-size: 16px
         font-weight: 600
+
+      #{$block}_page_counting-overview &
+        background-color: $c-gray-ultra-light
+
+      #{$block}_page_counting-overview #{$block}__row &
+        text-align: right
 
       @media screen and (max-width: 960px)
         #{$block}_page_counting-totals &,
         #{$block}_page_counting-bundles &,
-        #{$block}_page_counting-loose &
+        #{$block}_page_counting-loose &,
+        #{$block}_page_counting-overview &
           font-size: 14px
 
-      &:nth-child(1)
+      @media screen and (max-width: 800px)
+        #{$block}_page_counting-overview &
+          font-size: 12px
+
+        #{$block}_page_counting-overview #{$block}__row &
+          text-align: left
+
         @media screen and (max-width: 800px)
           #{$block}_page_counting-bundles &,
           #{$block}_page_counting-loose &
@@ -528,6 +658,31 @@ $block: ".purple-table"
             text-align: center
             font-size: 18px
             font-weight: 600
+
+      &:nth-child(1)
+        #{$block}_page_counting-overview #{$block}__row &
+          text-align: left
+
+    &_role_footer
+      #{$block}_page_counting-overview &
+        font-size: 16px
+        font-weight: 600
+        background-color: $c-gray-ultra-light
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_counting-overview &
+          font-size: 14px
+
+      @media screen and (max-width: 800px)
+        #{$block}_page_counting-overview &
+          font-size: 12px
+
+      #{$block}_page_counting-overview #{$block}__row &
+        text-align: right
+
+      &:nth-child(1)
+        #{$block}_page_counting-overview #{$block}__row &
+          text-align: left
 
     &_type_no-border
       &:not(:last-child)
@@ -635,6 +790,13 @@ $block: ".purple-table"
     #{$block}_page_counting-loose &
       text-align: center
 
+    #{$block}_page_counting-overview &
+      text-align: right
+
+    #{$block}_page_counting-overview #{$block}__cell:nth-child(1) &
+      text-align: left
+      font-weight: 600
+
     #{$block}_page_counting-totals #{$block}__cell:nth-child(1) &,
     #{$block}_page_counting-bundles #{$block}__cell:nth-child(2) &,
     #{$block}_page_counting-loose #{$block}__cell:nth-child(1) &
@@ -646,6 +808,14 @@ $block: ".purple-table"
       #{$block}_page_counting-bundles #{$block}__cell:nth-child(2) &,
       #{$block}_page_counting-loose #{$block}__cell:nth-child(1) &
         font-size: 14px
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_counting-overview &
+        font-size: 12px
+
+      #{$block}_page_counting-overview #{$block}__cell:nth-child(1) &
+        word-wrap: break-word
+        hyphens: auto
 
     &:before
       display: inline-block
@@ -682,9 +852,7 @@ $block: ".purple-table"
 
     // $Common table text MOD: adjust wrap
     &_adjust_wrap
-      overflow-wrap: break-word
       word-wrap: break-word
-      word-break: break-word
       hyphens: auto
 
     // $Common table text MOD: role action
@@ -741,10 +909,16 @@ $block: ".purple-table"
 
   // $Common table actions
   &__actions
+    #{$block}_page_counting-overview #{$block}__cell:nth-child(7) &
+      display: block
+      width: 100%
 
 
   // $Common table action
   &__action
+    #{$block}_page_counting-overview #{$block}__cell:nth-child(7) &
+      display: block
+      width: 100%
 
 
   // $Common table labels
@@ -795,3 +969,16 @@ $block: ".purple-table"
     &_role_food
       &:after
         content: '\e926'
+
+
+  // $Common table meta
+  &__meta
+    display: block
+    width: 100%
+
+  &__meta-item
+    display: inline-block
+    margin-bottom: 5px
+
+    &:not(:last-child)
+      margin-right: 20px
