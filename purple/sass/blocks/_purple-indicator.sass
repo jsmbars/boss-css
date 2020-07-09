@@ -61,6 +61,92 @@ $block: ".purple-indicator"
   &_color_gray
 
 
+  // $Indicator icon
+  &__icon
+    display: inline-block
+    color: $c-gray-dark
+    vertical-align: middle
+
+    // $Indicator marker CONTEXT: $Indicator MOD: color blue
+    #{$block}_color_accent-blue &
+      color: $c-accent-blue
+
+    // $Indicator marker CONTEXT: $Indicator MOD: color red
+    #{$block}_color_accent-red &
+      color: $c-accent-red
+
+    // $Indicator marker CONTEXT: $Indicator MOD: color orange
+    #{$block}_color_accent-orange &
+      color: $c-accent-orange
+
+    // $Indicator marker CONTEXT: $Indicator MOD: color yellow
+    #{$block}_color_accent-yellow &
+      color: $c-accent-yellow
+
+    // $Indicator marker CONTEXT: $Indicator MOD: color green
+    #{$block}_color_accent-green &
+      color: $c-accent-green
+
+    // $Indicator marker CONTEXT: $Indicator MOD: color purple
+    #{$block}_color_accent-purple &
+      color: $c-accent-purple
+
+    // $Indicator marker CONTEXT: $Indicator MOD: color pink
+    #{$block}_color_accent-pink &
+      color: $c-accent-pink
+
+    // $Indicator marker CONTEXT: $Indicator MOD: color gray
+    #{$block}_color_gray &
+      color: $c-gray-medium
+
+    &:before
+      content: ''
+      display: inline-block
+      font-family: icons
+      font-size: 20px
+      line-height: 20px
+      font-weight: 400
+      color: inherit
+
+    &_size_xs
+      &:before
+        font-size: 16px
+        line-height: 16px
+
+    &_size_s
+      &:before
+        font-size: 18px
+        line-height: 18px
+
+    &_size_l
+      &:before
+        font-size: 22px
+        line-height: 22px
+
+    &_size_xl
+      &:before
+        font-size: 24px
+        line-height: 24px
+
+    &_size_extra
+      &:before
+        font-size: 30px
+        line-height: 30px
+
+    &_adjust_table
+      &:before
+        font-size: 35px
+        line-height: 35px
+
+    &_check
+      &:before
+        content: '\e90d'
+
+    &_check-bold
+      &:before
+        content: '\e914'
+
+
   // $Indicator marker
   &__marker
     display: inline-block
@@ -114,28 +200,6 @@ $block: ".purple-indicator"
       height: 12px
       line-height: 12px
 
-    // $Indicator marker MOD: icon check
-    // $Indicator marker MOD: icon hourglass
-    &_icon_check,
-    &_icon_hourglass
-      &:before
-        content: ''
-        font-family: icons
-        font-size: 18px
-        line-height: 30px
-        color: $c-text-light
-        text-align: center
-        vertical-align: middle
-
-    &_icon_check
-      &:before
-        content: '\e90d'
-
-    &_icon_hourglass
-      &:before
-        content: '\e922'
-        font-size: 16px
-
 
   // $Indicator MOD: marker label
   &__label
@@ -178,16 +242,6 @@ $block: ".purple-indicator"
     // $Indicator label CONTEXT: $Indicator MOD: color gray
     #{$block}_color_gray &
       color: $c-gray-medium
-
-    // $Indicator label MOD: adjust board title
-    &_adjust_board-title
-      font-size: inherit
-      line-height: inherit
-      vertical-align: baseline
-
-      @media screen and (max-width: 640px)
-        font-size: inherit
-        line-height: inherit
 
     #{$block}_adjust_select &
       font-size: 14px
