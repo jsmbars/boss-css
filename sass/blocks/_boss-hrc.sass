@@ -289,7 +289,7 @@ $block: ".boss-hrc"
       #{$block}_updated &
         flex-direction: row
 
-    @media screen and (max-width: 800px)
+    @media screen and (max-width: 640px)
       #{$block}_updated &
         flex-wrap: wrap
 
@@ -304,15 +304,10 @@ $block: ".boss-hrc"
     @media screen and (max-width: 960px)
       width: 120px
 
-    @media screen and (max-width: 800px)
-      width: 150px
-
-    @media screen and (max-width: 400px)
-      width: 120px
-
 
   // $HRC form scan photo
   &__scan-photo
+    position: relative
     display: block
     width: 150px
     height: 150px
@@ -326,17 +321,36 @@ $block: ".boss-hrc"
       width: 120px
       height: 120px
 
-    @media screen and (max-width: 800px)
-      width: 150px
-      height: 150px
+    &_role_manager
 
-    @media screen and (max-width: 400px)
-      width: 120px
-      height: 120px
+      &:before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        z-index: 2
+        display: block
+        box-shadow: inset 0 0 0 3px #fd554f
+
+      &:after
+        content: '\e996'
+        position: absolute
+        top: 10px
+        right: 6px
+        z-index: 3
+        display: block
+        font-family: icons
+        font-size: 30px
+        line-height: 30px
+        color: #fd554f
 
 
   // $HRC form scan image
   &__scan-image
+    position: relative
+    z-index: 1
     display: block
     width: 100%
     max-width: 100%
@@ -389,7 +403,7 @@ $block: ".boss-hrc"
       #{$block}_updated &
         width: auto
 
-    @media screen and (max-width: 800px)
+    @media screen and (max-width: 640px)
       #{$block}_updated &
         order: 99
         width: 100%
