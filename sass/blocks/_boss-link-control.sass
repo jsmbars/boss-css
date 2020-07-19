@@ -1,0 +1,139 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Link control
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-link-control"
+
+#{$block}
+  +box-model-normalizer()
+  display: block
+  width: 100%
+
+
+  // $Link control group
+  &__group
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    height: 50px
+    padding: 10px
+    border: 1px solid $boss-very-light-gray
+    border-radius: 2px
+
+
+  // $Link control info
+  &__info
+    flex-grow: 1
+    flex-shrink: 1
+    overflow: hidden
+
+
+  // $Link control text
+  &__text
+    +text-normalizer()
+    display: block
+    max-width: 100%
+    line-height: 30px
+    color: #808080
+    white-space: nowrap
+    border: none
+    background-color: transparent
+    box-shadow: none
+    cursor: text
+    appearance: none
+    -moz-appearance: none
+    -webkit-appearance: none
+
+    &:read-only
+      border: none
+      background-color: transparent
+      box-shadow: none
+      cursor: text
+
+    &[readonly]
+      border: none
+      background-color: transparent
+      box-shadow: none
+      cursor: text
+
+
+
+  // $Link control actions
+  &__actions
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    padding-left: 10px
+
+
+  // $Link control action
+  &__action
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    display: inline-block
+    height: 30px
+    padding: 0 10px
+    line-height: 26px
+    color: #4c4c4c
+    white-space: nowrap
+    border-radius: 4px
+    border: 2px solid #4c4c4c
+    background-color: trnsparent
+    transition: all .3s
+
+    &:not(:last-child)
+      margin-right: 15px
+
+      @media screen and (max-width: 480px)
+        margin-right: 10px
+
+    &:focus
+      outline: none
+
+    // $Link control MOD: role copy
+    &_role_copy
+      color: map-get($boss-app-palette, secondary)
+      border-color: map-get($boss-app-palette, secondary)
+
+      &:hover,
+      &:focus
+        background-color: map-get($boss-app-palette, secondary)
+        color: #fff
+
+    // $Link control MOD: role visit
+    &_role_visit
+      color: map-get($boss-app-palette, primary)
+      border-color: map-get($boss-app-palette, primary)
+
+      &:hover,
+      &:focus
+        background-color: map-get($boss-app-palette, primary)
+        color: #fff
+
+
+  // $Link control placeholder
+  &__placeholder
+    +text-normalizer()
+    display: block
+    width: 100%
+    font-size: 32px
+    line-height: 50px
+    color: #d8d8d8
+    text-align: center
+    font-weight: 300
