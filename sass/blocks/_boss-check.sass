@@ -270,6 +270,14 @@ $block: ".boss-check"
       border: none
       padding: 0 0 20px
 
+
+    #{$block}_page_native-app-links &
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+      min-height: 0
+      padding: 10px 15px 15px
+
     @media screen and (max-width: 960px)
       min-height: 60px
       padding: 20px
@@ -441,7 +449,8 @@ $block: ".boss-check"
 
       #{$block}_page_contacts-admin &,
       #{$block}_page_quiz-category &,
-      #{$block}_page_quiz-rank &
+      #{$block}_page_quiz-rank &,
+      #{$block}_page_native-app-links &
         margin-top: 0
 
       #{$block}_page_quiz-category &,
@@ -1294,6 +1303,7 @@ $block: ".boss-check"
 
 
   &__title,
+  &__subtitle,
   &__text
     +text-normalizer()
     max-width: 100%
@@ -1496,6 +1506,11 @@ $block: ".boss-check"
       flex-grow: 1
       flex-shrink: 1
 
+    #{$block}_page_native-app-links &
+      font-size: 22px
+      color: #fff
+      text-align: center
+
     @media screen and (max-width: 960px)
       #{$block}_page_contacts &
         flex-grow: 1
@@ -1637,6 +1652,16 @@ $block: ".boss-check"
     &_role_details
       &:before
         content: '\e921'
+
+
+  // $Check block sub title
+  &__subtitle
+    font-size: 16px
+
+    #{$block}_page_native-app-links &
+      font-size: 14px
+      color: #fff
+      text-align: center
 
 
   // $Check block text
