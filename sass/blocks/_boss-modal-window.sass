@@ -98,7 +98,8 @@ $block: ".boss-modal-window"
   &_role_disciplinary-details,
   &_role_edit,
   &_role_add,
-  &_role_restore
+  &_role_restore,
+  &_role_question-move
     width: 90%
     max-width: 800px
 
@@ -313,7 +314,8 @@ $block: ".boss-modal-window"
       background-color: map-get($boss-app-palette, alert)
 
     // $Modal window header CONTEXT: $Modal window MOD: role warning
-    #{$block}_role_warning &
+    #{$block}_role_warning &,
+    #{$block}_role_question-move &
       background-color: map-get($boss-app-palette, warning)
 
     // $Modal window header CONTEXT: $Modal window MOD: role action
