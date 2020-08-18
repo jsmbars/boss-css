@@ -1702,10 +1702,10 @@ $block: ".boss-form"
       box-shadow: 0 0 5px 0 map-get($boss-app-palette, alert)
 
 
-  // React-select adjusments
   &__select
     text-align: left
 
+    // React-select v1 adjustments
     & .Select-icon-indicator
       display: inline-block
       margin-right: 5px
@@ -2099,6 +2099,394 @@ $block: ".boss-form"
     &_type_empty-value
 
       & .Select-value
+        display: none
+
+
+    // React-select v2, v3 adjustments
+    & .react-select-icon-indicator
+      display: inline-block
+      margin-right: 5px
+      vertical-align: middle
+
+      &:before
+        content: ''
+        display: inline-block
+        min-width: 24px
+        font-family: icons
+        font-size: 20px
+        line-height: 20px
+        font-weight: 400
+        color: inherit
+        text-align: center
+
+      &--accessory
+        &:before
+          content: '\e93a'
+          font-size: 18px
+
+      &--apron
+        &:before
+          content: '\e96f'
+
+      &--bar-blade
+        &:before
+          content: '\e970'
+          font-size: 22px
+
+      &--chef-hat
+        &:before
+          content: '\e971'
+
+      &--coat
+        &:before
+          content: '\e972'
+          font-size: 18px
+
+      &--discount-card
+        &:before
+          content: '\e973'
+          font-size: 24px
+
+      &--fob
+        &:before
+          content: '\e974'
+
+      &--hoodie
+        &:before
+          content: '\e975'
+
+      &--pants
+        &:before
+          content: '\e976'
+
+      &--shirt
+        &:before
+          content: '\e977'
+
+      &--t-shirt
+        &:before
+          content: '\e978'
+
+      &--void-card
+        &:before
+          content: '\e979'
+          font-size: 24px
+
+    & .react-select-color-indicator
+      display: inline-block
+      margin-right: 5px
+      margin-top: -2px
+      width: 14px
+      height: 14px
+      background-color: #d8d8d8
+      border-radius: 50%
+      vertical-align: middle
+
+      &--type-square
+        border-radius: 2px
+
+      &--priority-high
+        background-color: map-get($boss-app-palette, alert)
+
+      &--priority-medium
+        background-color: map-get($boss-app-palette, warning)
+
+      &--priority-low
+        background-color: map-get($boss-app-palette, secondary)
+
+      &--status-completed
+        background-color: map-get($boss-app-palette, secondary)
+
+      &--status-pending
+        background-color: map-get($boss-app-palette, pending)
+
+      &--status-accepted
+        background-color: map-get($boss-app-palette, secondary)
+
+      &--status-waiting
+        background-color: map-get($boss-app-palette, warning)
+
+      &--status-rejected
+        background-color: map-get($boss-app-palette, alert)
+
+      &--level-amber
+        background-color: map-get($boss-app-palette, warning)
+
+      &--level-red
+        background-color: map-get($boss-app-palette, alert)
+
+    & .react-select--is-disabled
+      pointer-events: none
+      position: relative
+      box-sizing: border-box
+
+    & .react-select__control
+      box-sizing: border-box
+      min-height: 50px
+      border-radius: 2px
+      border-color: $boss-very-light-gray
+
+    & .react-select__control:hover
+      border-color: $boss-very-light-gray
+
+    & .react-select__control--is-focused,
+    & .react-select__control--is-focused:hover
+      box-shadow: 0 0 5px 0 $boss-very-light-gray
+
+    & .react-select__control--is-disabled
+      background-color: #f0f0f0
+      border-color: #d8d8d8
+
+    & .react-select__value-container
+      padding: 5px 20px
+
+    & .react-select__value-container--is-multi
+      padding: 5px 10px
+
+    & .react-select__placeholder
+      +text-normalizer()
+      line-height: 1
+      color: #aaa
+
+    & .react-select__single-value
+      +text-normalizer()
+      line-height: 1.5
+      color: #4c4c4c
+
+    & .react-select__single-value--is-disabled
+      color: #808080
+
+    & .react-select__multi-value
+      margin-right: 10px
+      margin-bottom: 5px
+
+      background-color: map-get($boss-app-palette, primary)
+      border-radius: 5px
+      line-height: 1
+      color: #fff
+
+      &--priority-high
+        background-color: map-get($boss-app-palette, alert)
+
+      &--priority-medium
+        background-color: map-get($boss-app-palette, warning)
+
+      &--priority-low
+        background-color: map-get($boss-app-palette, secondary)
+
+      &--status-completed
+        background-color: map-get($boss-app-palette, secondary)
+
+      &--status-pending
+        background-color: map-get($boss-app-palette, pending)
+
+      &--status-accepted
+        background-color: map-get($boss-app-palette, secondary)
+
+      &--status-rejected
+        background-color: map-get($boss-app-palette, alert)
+
+      &--status-waiting
+        background-color: map-get($boss-app-palette, warning)
+
+      &--status-deleted
+        background-color: map-get($boss-app-palette, alert)
+
+    & .react-select__multi-value__label
+      text-transform: uppercase
+      color: inherit
+      padding: 6px 10px
+      font-size: 12px
+
+      @media screen and (max-width: 480px)
+        font-size: 11px
+        padding-left: 5px
+        padding-right: 5px
+
+    & .react-select__input
+      vertical-align: middle
+      line-height: 1
+      height: auto
+
+      & input
+        line-height: 1
+        height: 30px
+        margin: auto
+        padding: 0
+        box-shadow: none
+
+    & .react-select__multi-value__remove
+      padding-left: 5px
+      padding-right: 5px
+      background-color: rgba(0,0,0,.3)
+      border-right: 0
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+      cursor: pointer
+
+    & .react-select__multi-value__remove:hover
+      background-color: rgba(0,0,0,.6)
+
+    & .react-select__multi-value__remove svg
+      color: #fff
+
+    & .react-select__clear-indicator,
+    & .react-select__dropdown-indicator
+      cursor: pointer
+
+    & .react-select__clear-indicator,
+    & .react-select__dropdown-indicator,
+    & .react-select__loading-indicator span:nth-child(1),
+    & .react-select__loading-indicator span:nth-child(2),
+    & .react-select__loading-indicator span:nth-child(3)
+      color: #808080
+
+    & .react-select__clear-indicator:hover,
+    & .react-select__dropdown-indicator:hover
+      color: #4c4c4c
+
+    & .react-select__control--is-focused .react-select__clear-indicator,
+    & .react-select__control--is-focused .react-select__dropdown-indicator,
+    & .react-select__control--is-focused .react-select__loading-indicator,
+    & .react-select__control--is-focused .react-select__loading-indicator span
+      color: #4c4c4c
+
+    & .react-select__indicator-separator
+      background-color: #d8d8d8
+
+    & .react-select__menu
+      z-index: 100
+      margin-top: -1px
+      margin-bottom: 0
+      border-radius: 0
+      box-shadow: none
+      border: 1px solid $boss-very-light-gray
+      background-color: #fff
+
+    & .react-select__option
+      +text-normalizer()
+      padding: 10px 10px 10px 20px
+      color: #4c4c4c
+
+    & .react-select__option--is-selected,
+    & .react-select__option--is-focused
+      background-color: #f2f9fc
+
+    &_state_error
+      & .react-select__control,
+      & .react-select__control:hover,
+      & .react-select__control--is-focused,
+      & .react-select__menu
+        border-color: map-get($boss-app-palette, alert)
+
+    &_state_inactive
+      & .react-select,
+      & .react-select--is-disabled
+        pointer-events: none
+        position: relative
+        box-sizing: border-box
+
+      & .react-select__control,
+      & .react-select__control--is-disabled
+        background-color: #f0f0f0
+        border-color: #d8d8d8
+
+      & .react-select__single-value,
+      & .react-select__single-value--is-disabled
+        color: #808080
+
+    &_role_time
+
+      & .react-select__value-container
+        padding-left: 35px
+
+        @media screen and (max-width: 640px)
+          padding-left: 10px
+
+      & .react-select__option
+        padding-left: 35px
+
+        @media screen and (max-width: 640px)
+          padding-left: 10px
+
+    &_role_staff-member
+      & .react-select__control
+        min-height: 75px
+
+      & .react-select-staff-member
+        display: inline-block
+        width: 100%
+        white-space: nowrap
+
+      & .react-select-staff-member-avatar
+        display: inline-block
+        width: 50px
+        height: 50px
+        overflow: hidden
+        border-radius: 50%
+        vertical-align: middle
+
+        @media screen and (max-width: 479px)
+          width: 40px
+          height: 40px
+
+        & > img
+          display: block
+          width: 100%
+          max-width: 100%
+
+      & .react-select-staff-member-info
+        +text-normalizer()
+        display: inline-block
+        width: calc(100% - 50px)
+        padding: 0 20px 0 10px
+        vertical-align: middle
+        white-space: normal
+
+        @media screen and (max-width: 479px)
+          width: calc(100% - 40px)
+          padding-left: 5px
+
+      & .react-select-staff-member-name
+        display: inline-block
+        width: 100%
+        max-width: 100%
+        font-size: 18px
+
+        @media screen and (max-width: 479px)
+          font-size: 16px
+
+      & .react-select-staff-member-type
+        display: inline-block
+
+    &_size_narrow,
+    &_type_narrow
+
+      & .react-select__control
+        height: 30px
+        min-height: 30px
+
+      & .react-select__value-container > div:last-child
+        display: block
+        margin-top: 0
+        margin-bottom: 0
+        padding-top: 0
+        padding-bottom: 0
+        line-height: 1
+
+      & .react-select__input input
+        height: 20px
+
+      & .react-select__dropdown-indicator,
+      & .react-select__clear-indicator,
+      & .react-select__loading-indicator
+        padding-top: 0
+        padding-bottom: 0
+
+    &_type_empty-value
+
+      & .react-select__single-value,
+      & .react-select__multi-value
         display: none
 
 
