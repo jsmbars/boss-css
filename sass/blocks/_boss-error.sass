@@ -92,11 +92,10 @@ $block: ".boss-error"
   &__image
     display: block
     width: 100%
-    max-width: 100%
+    max-width: 400px
 
     &:not(:last-child)
-      #{$block}_role_stack &
-        margin-bottom: 30px
+      margin-bottom: 30px
 
 
   // $Error information
@@ -199,6 +198,18 @@ $block: ".boss-error"
     &:hover
       text-decoration: none
       color: map-get($boss-app-palette, primary)
+
+
+  // $Error text action
+  &__text-action
+    display: inline-block
+    vertical-align: middle
+
+    &:first-child
+      margin-right: 10px
+
+    &:last-child
+      margin-left: 10px
 
 
   // $Error actions
