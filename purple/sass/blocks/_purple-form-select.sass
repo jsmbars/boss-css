@@ -1006,12 +1006,16 @@ $block: ".purple-form-select"
     background-color: $c-gray-extra-light
 
   & .react-select__menu
+    z-index: 50
     margin-top: -1px
     margin-bottom: 0
     border-radius: 0
     box-shadow: none
     border: 1px solid $c-border-primary
     background-color: $c-bg-light
+
+  & .react-select__menu-list
+    max-height: 200px
 
   & .react-select__option
     font-family: $f-sans

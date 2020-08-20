@@ -2355,13 +2355,16 @@ $block: ".boss-form"
       background-color: #d8d8d8
 
     & .react-select__menu
-      z-index: 100
+      z-index: 50
       margin-top: -1px
       margin-bottom: 0
       border-radius: 0
       box-shadow: none
       border: 1px solid $boss-very-light-gray
       background-color: #fff
+
+    & .react-select__menu-list
+      max-height: 200px
 
     & .react-select__option
       +text-normalizer()
