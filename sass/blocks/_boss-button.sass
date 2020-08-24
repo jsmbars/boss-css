@@ -769,7 +769,8 @@ $block: ".boss-button"
   // $Common button MOD: role view assignments
   &_role_view-assignments,
   &_role_freeze,
-  &_role_unfreeze
+  &_role_unfreeze,
+  &_role_email-payslip
     $background-color: #8c7ae6
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -780,6 +781,9 @@ $block: ".boss-button"
   &_role_freeze,
   &_role_unfreeze
     +button-with-icon-left($icon: '\e946')
+
+  &_role_email-payslip
+    +button-with-icon-left($icon: '\e91f')
 
 
   // Bordered buttons
@@ -883,6 +887,12 @@ $block: ".boss-button"
 
   &_role_override
     font-weight: 600
+
+  &_role_view-payslip
+    $primary-color: #8c7ae6
+    +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
+    +button-bordered-hover($color: #fff, $border-color: $primary-color, $background-color: $primary-color)
+    +button-bordered-active($color: #fff, $border-color: $primary-color, $background-color: $primary-color)
 
 
   // $Common button MOD: monochrome button profile

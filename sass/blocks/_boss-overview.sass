@@ -233,6 +233,24 @@ $block: ".boss-overview"
           display: block !important
 
 
+  // $Overview scroll area
+  &__scroll
+    position: relative
+    display: block
+    width: 100%
+    padding-bottom: 10px
+    overflow: hidden
+    text-align: center
+    overflow-x: auto
+
+
+  // $Overview scroll area content
+  &__scroll-content
+    display: inline-block
+    text-align: left
+    min-width: 100%
+
+
   // $Overview group
   &__group
     display: block
@@ -282,6 +300,16 @@ $block: ".boss-overview"
     &_role_value
       margin-left: 15px
       text-transform: none
+
+
+  // $Overview label action
+  &__label-action
+
+    &:first-child
+      margin-right: 20px
+
+    &:last-child
+      margin-left: 20px
 
 
   // $Overview indicator
