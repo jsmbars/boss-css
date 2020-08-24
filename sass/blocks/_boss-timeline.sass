@@ -425,6 +425,22 @@ $block: ".boss-timeline"
     hyphens: auto
 
 
+  // $Timeline text action
+  &__text-action
+    margin-top: 5px
+    margin-bottom: 5px
+
+    &:first-child
+      margin-right: 20px
+
+    &:last-child
+      margin-left: 20px
+
+    & + &,
+    &:only-child
+      margin: 0
+
+
   // $Timeline link
   &__link
     +text-normalizer()

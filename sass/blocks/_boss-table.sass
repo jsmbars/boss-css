@@ -139,6 +139,9 @@ $block: ".boss-table"
   &_page_staff-tracking-accessories-payments
     min-width: 860px
 
+  &_page_payslip
+    min-width: 1120px
+
 
   // $Common table group
   &__group
@@ -148,6 +151,9 @@ $block: ".boss-table"
     #{$block}_page_bonai-venue &
       padding: 10px 0 15px
 
+    #{$block}_page_payslip &
+      border: 1px solid $boss-very-light-gray
+
     &:not(:last-child)
       #{$block}_page_holiday-requests &,
       #{$block}_page_ssr-pending &,
@@ -156,6 +162,9 @@ $block: ".boss-table"
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_bonai-venue &
         border-bottom: 1px solid #eee
+
+      #{$block}_page_payslip &
+        margin-bottom: 20px
 
     &:nth-child(even)
       #{$block}_page_maintenance-index &,
@@ -416,7 +425,13 @@ $block: ".boss-table"
     #{$block}_page_clocking-app-page-api-keys-card &,
     #{$block}_page_maintenance-managers-index-card &,
     #{$block}_page_marketing-index-card &,
-    #{$block}_page_marketing-managers-index-card &
+    #{$block}_page_marketing-managers-index-card &,
+    #{$block}_page_payslip-header &,
+    #{$block}_page_payslip-info &,
+    #{$block}_page_payslip-payments &,
+    #{$block}_page_payslip-deductions &,
+    #{$block}_page_payslip-totals &,
+    #{$block}_page_payslip-summary &
       border-bottom: none
 
     #{$block}_page_maintenance-index &,
@@ -526,7 +541,14 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
-      #{$block}_page_yearly-reports-hour-report &
+      #{$block}_page_yearly-reports-hour-report &,
+      #{$block}_page_payslip &,
+      #{$block}_page_payslip-header &,
+      #{$block}_page_payslip-info &,
+      #{$block}_page_payslip-payments &,
+      #{$block}_page_payslip-deductions &,
+      #{$block}_page_payslip-totals &,
+      #{$block}_page_payslip-summary &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -579,6 +601,13 @@ $block: ".boss-table"
       #{$block}_page_pay-rates-admin-staff-members &,
       #{$block}_page_yearly-reports-hour-report &
         background-color: #fbfbfb
+
+    &_role_header
+      #{$block}_page_payslip-payments &,
+      #{$block}_page_payslip-deductions &,
+      #{$block}_page_payslip-totals &,
+      #{$block}_page_payslip-summary &
+        background-color: $boss-light-gray
 
     // $Common table first row
     &:nth-child(1),
@@ -789,6 +818,29 @@ $block: ".boss-table"
       opacity: 0.5
 
 
+  // $Common table column
+  &__column
+    position: relative
+    flex-grow: 1
+    flex-shrink: 1
+
+    &:nth-child(1)
+      #{$block}_page_payslip &
+        width: 45%
+
+    &:nth-child(2)
+      #{$block}_page_payslip &
+        width: 27.5%
+
+    &:nth-child(3)
+      #{$block}_page_payslip &
+        width: 27.5%
+
+    &:not(:last-child)
+      #{$block}_page_payslip &
+        border-right: 1px solid $boss-very-light-gray
+
+
   // $Common table cell
   &__cell
     position: relative
@@ -838,8 +890,14 @@ $block: ".boss-table"
     #{$block}_page_staff-types-index &,
     #{$block}_page_yearly-reports &,
     #{$block}_page_yearly-reports-hour-report &,
-    #{$block}_page_native-app-links &
+    #{$block}_page_native-app-links &,
+    #{$block}_page_payslip-summary &
       justify-content: center
+
+    #{$block}_page_payslip-payments &,
+    #{$block}_page_payslip-deductions &,
+    #{$block}_page_payslip-totals &
+      justify-content: flex-end
 
     #{$block}_page_weekly-reports &,
     #{$block}_page_finance-reports &,
@@ -848,12 +906,7 @@ $block: ".boss-table"
     #{$block}_page_staff-tracking-staff-disabled &,
     #{$block}_page_staff-tracking-accessories-payments &
       flex-direction: column
-      min-height: 90px
       justify-content: center
-
-    #{$block}_page_bonai-venue &
-      min-height: 0
-      padding: 15px 10px 0
 
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &,
@@ -867,12 +920,52 @@ $block: ".boss-table"
     #{$block}_page_smp-quizzes-overview &,
     #{$block}_page_pay-rates &,
     #{$block}_page_pay-rates-staff-members &,
-    #{$block}_page_pay-rates-admin-staff-members &
+    #{$block}_page_pay-rates-admin-staff-members &,
+    #{$block}_page_payslip-header &,
+    #{$block}_page_payslip-info &,
+    #{$block}_page_payslip-payments &,
+    #{$block}_page_payslip-deductions &,
+    #{$block}_page_payslip-totals &,
+    #{$block}_page_payslip-summary &
       min-height: 0
+
+    #{$block}_page_payslip-payments &,
+    #{$block}_page_payslip-deductions &,
+    #{$block}_page_payslip-totals &
+      min-height: 25px
+
+    #{$block}_page_payslip-header &,
+    #{$block}_page_payslip-info &,
+    #{$block}_page_payslip-summary &
+      min-height: 40px
+
+    #{$block}_page_weekly-reports &,
+    #{$block}_page_staff-tracking-staff-added &,
+    #{$block}_page_staff-tracking-staff-disabled &,
+    #{$block}_page_staff-tracking-accessories-payments &
+      min-height: 90px
+
+    #{$block}_page_finance-reports &,
+    #{$block}_page_payroll-reports &
+      min-height: 100px
+
+    #{$block}_page_bonai-venue &
+      min-height: 0
+      padding: 15px 10px 0
 
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &
       padding: 10px
+
+    #{$block}_page_finance-reports &,
+    #{$block}_page_payroll-reports &,
+    #{$block}_page_payslip-header &,
+    #{$block}_page_payslip-info &,
+    #{$block}_page_payslip-summary &,
+    #{$block}_page_payslip-payments &,
+    #{$block}_page_payslip-deductions &,
+    #{$block}_page_payslip-totals &
+      padding: 0 5px
 
     #{$block}_page_smp-owed-hours &,
     #{$block}_page_safe-checks-index &,
@@ -880,8 +973,6 @@ $block: ".boss-table"
     #{$block}_page_weekly-reports &,
     #{$block}_page_daily-reports &,
     #{$block}_page_yearly-reports &,
-    #{$block}_page_finance-reports &,
-    #{$block}_page_payroll-reports &
       padding: 15px 5px
 
     #{$block}_page_checklist-review &,
@@ -1012,6 +1103,15 @@ $block: ".boss-table"
 
       #{$block}_page_native-app-links &
         padding: 15px
+
+
+      #{$block}_page_payslip-header &,
+      #{$block}_page_payslip-info &,
+      #{$block}_page_payslip-summary &,
+      #{$block}_page_payslip-payments &,
+      #{$block}_page_payslip-deductions &,
+      #{$block}_page_payslip-totals &
+        flex-direction: row
 
     @media screen and (max-width: 640px)
       #{$block}_page_api-keys &,
@@ -1297,6 +1397,36 @@ $block: ".boss-table"
         width: 50%
         padding-left: 15px
         border-right: 1px solid #eee
+
+      #{$block}_page_payslip-header &
+        width: 100%
+        padding-left: 15px
+
+      #{$block}_page_payslip-info &
+        width: 45%
+        padding-left: 15px
+        padding-right: 15px
+
+      #{$block}_page_payslip-payments &
+        justify-content: flex-start
+        width: calc(100% - 320px)
+        padding-left: 15px
+
+      #{$block}_page_payslip-deductions &
+        justify-content: flex-start
+        width: calc(100% - 120px)
+        padding-left: 15px
+
+      #{$block}_page_payslip-totals &
+        justify-content: flex-start
+        width: calc(100% - 120px)
+        padding-left: 15px
+
+      #{$block}_page_payslip-summary &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 80px
+        padding-left: 15px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
@@ -1697,6 +1827,33 @@ $block: ".boss-table"
         width: 50%
         padding-right: 15px
 
+      #{$block}_page_payslip-info &
+        width: 27.5%
+        padding-left: 15px
+        padding-right: 15px
+
+      #{$block}_page_payslip-payments &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 100px
+
+      #{$block}_page_payslip-deductions &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 120px
+        padding-right: 15px
+
+      #{$block}_page_payslip-totals &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 120px
+        padding-right: 15px
+
+      #{$block}_page_payslip-summary &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 120px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -2031,6 +2188,21 @@ $block: ".boss-table"
         width: 25%
         padding-right: 20px
 
+      #{$block}_page_payslip-info &
+        width: 27.5%
+        padding-left: 15px
+        padding-right: 15px
+
+      #{$block}_page_payslip-payments &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 100px
+
+      #{$block}_page_payslip-summary &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 100px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -2329,6 +2501,17 @@ $block: ".boss-table"
         width: 25%
         padding-right: 15px
 
+      #{$block}_page_payslip-payments &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 120px
+        padding-right: 15px
+
+      #{$block}_page_payslip-summary &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 110px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -2538,8 +2721,9 @@ $block: ".boss-table"
         width: 6%
 
       #{$block}_page_wages-index &
-        width: 15%
-        min-width: 160px
+        flex-grow: 0
+        flex-shrink: 0
+        min-width: 170px
 
       #{$block}_page_bonai &
         width: 9%
@@ -2571,6 +2755,11 @@ $block: ".boss-table"
         flex-shrink: 0
         width: 200px
         padding-right: 15px
+
+      #{$block}_page_payslip-summary &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 110px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
@@ -2739,6 +2928,10 @@ $block: ".boss-table"
         width: 8%
         justify-content: center
 
+      #{$block}_page_payslip-summary &
+        justify-content: flex-start
+        width: calc(100% - 640px)
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -2863,6 +3056,13 @@ $block: ".boss-table"
         flex-shrink: 0
         width: 130px
         justify-content: center
+
+      #{$block}_page_payslip-summary &
+        flex-grow: 0
+        flex-shrink: 0
+        justify-content: flex-end
+        width: 120px
+        padding-right: 15px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
@@ -3143,6 +3343,7 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &
         width: 4.5%
+        min-width: 100px
 
     // $Common table cell eighteenth column
     &:nth-child(18)
@@ -3170,7 +3371,11 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         align-items: stretch
 
-      #{$block}_page_change-order-history &
+      #{$block}_page_change-order-history &,
+      #{$block}_page_payslip-payments &,
+      #{$block}_page_payslip-deductions &,
+      #{$block}_page_payslip-totals &,
+      #{$block}_page_payslip-summary &
         min-height: 40px
         color: #FFF
 
@@ -3232,8 +3437,14 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-staff-added &,
       #{$block}_page_staff-tracking-staff-disabled &,
       #{$block}_page_staff-tracking-accessories-payments &,
-      #{$block}_page_yearly-reports-hour-report &
+      #{$block}_page_yearly-reports-hour-report &,
+      #{$block}_payslip-summary &
         text-align: center
+
+      #{$block}_page_payslip-payments,
+      #{$block}_page_payslip-deductions,
+      #{$block}_page_payslip-totals
+        text-align: right
 
       #{$block}_page_csv-upload &
         display: block
@@ -3265,7 +3476,10 @@ $block: ".boss-table"
         #{$block}_page_payroll-reports &,
         #{$block}_page_staff-tracking-staff-added &,
         #{$block}_page_staff-tracking-staff-disabled &,
-        #{$block}_page_staff-tracking-accessories-payments &
+        #{$block}_page_staff-tracking-accessories-payments &,
+        #{$block}_page_payslip-payments,
+        #{$block}_page_payslip-deductions,
+        #{$block}_page_payslip-totals
           text-align: left
 
         #{$block}_page_smp-quizzes-history &,
@@ -3277,6 +3491,11 @@ $block: ".boss-table"
       &:nth-child(2)
         #{$block}_page_smp-holiday-requests &
           text-align: center
+
+        #{$block}_page_payslip-payments,
+        #{$block}_page_payslip-deductions,
+        #{$block}_page_payslip-totals
+          text-align: left
 
         #{$block}_page_safe-checks-index &
           padding: 15px
@@ -3292,6 +3511,11 @@ $block: ".boss-table"
         #{$block}_page_vhci &,
         #{$block}_page_vouchers-index &
           text-align: center
+
+        #{$block}_page_payslip-payments,
+        #{$block}_page_payslip-deductions,
+        #{$block}_page_payslip-totals
+          text-align: left
 
         #{$block}_page_smp-quizzes-history &,
         #{$block}_page_smp-quizzes-category &,
@@ -3327,6 +3551,13 @@ $block: ".boss-table"
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_message-board &
           text-align: center
+
+        #{$block}_page_payslip-summary &
+          text-align: left
+
+      &:nth-child(7)
+        #{$block}_page_payslip-summary &
+          text-align: right
 
     // $Common table cell MOD: role footer
     &_role_footer
@@ -3765,8 +3996,15 @@ $block: ".boss-table"
     #{$block}_page_staff-tracking-staff-added &,
     #{$block}_page_staff-tracking-staff-disabled &,
     #{$block}_page_staff-tracking-accessories-payments &,
-    #{$block}_page_yearly-reports-hour-report &
+    #{$block}_page_yearly-reports-hour-report &,
+    #{$block}_page_payslip-summary &
       text-align: center
+
+    #{$block}_page_payslip-payments &,
+    #{$block}_page_payslip-deductions &,
+    #{$block}_page_payslip-totals &,
+    #{$block}_page_payslip-summary #{$block}__cell:nth-child(7) &
+      text-align: right
 
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(7) &,
     #{$block}_page_finance-reports #{$block}__cell:nth-child(1) &,
@@ -3774,7 +4012,11 @@ $block: ".boss-table"
     #{$block}_page_payroll-reports #{$block}__cell:nth-child(1) &,
     #{$block}_page_staff-tracking-staff-added #{$block}__cell:nth-child(1) &,
     #{$block}_page_staff-tracking-staff-disabled #{$block}__cell:nth-child(1) &,
-    #{$block}_page_staff-tracking-accessories-payments #{$block}__cell:nth-child(1) &
+    #{$block}_page_staff-tracking-accessories-payments #{$block}__cell:nth-child(1) &,
+    #{$block}_page_payslip-payments #{$block}__cell:nth-child(1) &,
+    #{$block}_page_payslip-deductions #{$block}__cell:nth-child(1) &,
+    #{$block}_page_payslip-totals #{$block}__cell:nth-child(1) &,
+    #{$block}_page_payslip-summary #{$block}__cell:nth-child(6) &
       text-align: left
 
     #{$block}_page_api-keys #{$block}__cell:nth-child(1) &,
@@ -3786,9 +4028,16 @@ $block: ".boss-table"
       flex-grow: 1
       flex-shrink: 1
 
+    #{$block}_page_payslip-summary &
+      font-size: 16px
+
     #{$block}_page_native-app-links &
       font-size: 16px
       text-align: center
+
+    #{$block}_page_payslip-header &
+      font-size: 18px
+      font-weight: 600
 
     @media screen and (max-width: 1120px)
       #{$block}_page_staff-members-index &,
@@ -3873,7 +4122,13 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
-      #{$block}_page_yearly-reports-hour-report &
+      #{$block}_page_yearly-reports-hour-report &,
+      #{$block}_page_payslip-header &,
+      #{$block}_page_payslip-info &,
+      #{$block}_page_payslip-payments &,
+      #{$block}_page_payslip-deductions &,
+      #{$block}_page_payslip-totals &,
+      #{$block}_page_payslip-summary &
         width: 100%
 
     @media screen and (max-width: 640px)
@@ -4265,7 +4520,8 @@ $block: ".boss-table"
     #{$block}_page_smp-owed-hours &,
     #{$block}_page_smp-holidays &,
     #{$block}_page_smp-holiday-requests &,
-    #{$block}_page_maintenance-managers-index #{$block}__cell:nth-child(6) &
+    #{$block}_page_maintenance-managers-index #{$block}__cell:nth-child(6) &,
+    #{$block}_page_wages-index #{$block}__cell:nth-child(5) &,
       display: flex
       flex-direction: column
       align-items: stretch
@@ -4401,11 +4657,18 @@ $block: ".boss-table"
     #{$block}_page_smp-owed-hours &:not(:last-of-type),
     #{$block}_page_smp-holidays &:not(:last-of-type),
     #{$block}_page_smp-holiday-requests &:not(:last-of-type),
-    #{$block}_page_maintenance-managers-index #{$block}__cell:nth-child(6) &:not(:last-of-type)
+    #{$block}_page_maintenance-managers-index #{$block}__cell:nth-child(6) &:not(:last-of-type),
+    #{$block}_page_wages-index #{$block}__cell:nth-child(5) &:not(:last-of-type)
       margin-bottom: 10px
 
     #{$block}_page_api-keys &
       width: 120px
+
+    #{$block}_page_finance-reports &,
+    #{$block}_page_payroll-reports &
+      padding: 4px
+      font-size: 12px
+      font-weight: 600
 
     @media screen and (max-width: 960px)
       #{$block}_page_change-order-report &:not(:last-of-type),
