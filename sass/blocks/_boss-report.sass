@@ -21,6 +21,24 @@ $block: ".boss-report"
   width: 100%
 
 
+  // $Report scroll area
+  &__scroll
+    position: relative
+    display: block
+    width: 100%
+    padding-bottom: 10px
+    overflow: hidden
+    text-align: center
+    overflow-x: auto
+
+
+  // $Report scroll area content
+  &__scroll-content
+    display: inline-block
+    text-align: left
+    min-width: 100%
+
+
   // $Report group
   &__group
     position: relative
@@ -567,6 +585,14 @@ $block: ".boss-report"
 
     &_size_l
       font-size: 18px
+
+
+  &__text-line
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
 
   &__text-label
     display: block
