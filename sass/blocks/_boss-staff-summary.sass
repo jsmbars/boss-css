@@ -64,6 +64,12 @@ $block: ".boss-staff-summary"
       &:before
         content: '\e9af'
 
+    &_status_on-sick-leave
+      color: map-get($boss-app-palette, alert)
+
+      &:before
+        content: '\e997'
+
 
   // $Staff summary row
   &__row
@@ -88,7 +94,8 @@ $block: ".boss-staff-summary"
       @media screen and (max-width: 960px)
         display: none
 
-    &_status_on-holiday
+    &_status_on-holiday,
+    &_status_on-sick-leave
       position: relative
       background-color: #f0f0f0
 
@@ -103,10 +110,12 @@ $block: ".boss-staff-summary"
     padding: 30px 10px 20px
     transition: opacity .4s
 
-    #{$block}__row_status_on-holiday &
+    #{$block}__row_status_on-holiday &,
+    #{$block}__row_status_on-sick-leave &
       opacity: .5
 
-    #{$block}__row_status_on-holiday:hover &
+    #{$block}__row_status_on-holiday:hover &,
+    #{$block}__row_status_on-sick-leave:hover &
       opacity: 1
 
     @media screen and (max-width: 960px)
