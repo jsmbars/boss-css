@@ -45,7 +45,8 @@ $block: ".boss-info-table"
   &__tr
     display: table-row
 
-    &_state_on-holiday
+    &_state_on-holiday,
+    &_state_on-sick-leave
       background-color: #f0f0f0
 
 
@@ -54,13 +55,13 @@ $block: ".boss-info-table"
     padding: 1.6em 0 1.6em 1em
     border-bottom: 1px solid $boss-extra-light-gray
 
-    #{$block}__tr_state_on-holiday &
+    #{$block}__tr_state_on-holiday &,
+    #{$block}__tr_state_on-sick-leave &
       &:first-child
         position: relative
 
         &:after
           +text-normalizer()
-          content: 'On Holiday'
           position: absolute
           top: 10px
           left: 100px
@@ -72,11 +73,23 @@ $block: ".boss-info-table"
           font-weight: 600
           color: map-get($boss-app-palette, alert)
           white-space: nowrap
-          background-image: url('../icons/icon-airplane-alert.svg')
           background-repeat: no-repeat
           background-size: 14px 14px
           background-position: left center
           opacity: 1
+
+    #{$block}__tr_state_on-holiday &
+      &:first-child
+        &:after
+          content: 'On Holiday'
+          background-image: url('../icons/icon-airplane-alert.svg')
+
+    #{$block}__tr_state_on-sick-leave &
+      &:first-child
+        &:after
+          content: 'Sick'
+          background-image: url('../icons/icon-stethoscope-alert.svg')
+          background-size: 16px 16px
 
 
   &__rotaed-text
@@ -87,7 +100,8 @@ $block: ".boss-info-table"
     background: url('../icons/icon-clock-medium-gray.svg') left 45% no-repeat
     background-size: 0.8em
 
-    #{$block}__tr_state_on-holiday &
+    #{$block}__tr_state_on-holiday &,
+    #{$block}__tr_state_on-sick-leave &
       opacity: .4
 
 
@@ -100,7 +114,8 @@ $block: ".boss-info-table"
     text-overflow: ellipsis
     white-space: nowrap
 
-    #{$block}__tr_state_on-holiday &
+    #{$block}__tr_state_on-holiday &,
+    #{$block}__tr_state_on-sick-leave &
       opacity: .4
 
 
@@ -112,7 +127,8 @@ $block: ".boss-info-table"
     color: $boss-medium-gray
     cursor: pointer
 
-    #{$block}__tr_state_on-holiday &
+    #{$block}__tr_state_on-holiday &,
+    #{$block}__tr_state_on-sick-leave &
       opacity: .4
 
     &:before
@@ -145,7 +161,8 @@ $block: ".boss-info-table"
     font-size: 0.7em
     cursor: pointer
 
-    #{$block}__tr_state_on-holiday &
+    #{$block}__tr_state_on-holiday &,
+    #{$block}__tr_state_on-sick-leave &
       opacity: .4
 
 
@@ -156,7 +173,8 @@ $block: ".boss-info-table"
     height: 66px
     margin-right: 1em
 
-    #{$block}__tr_state_on-holiday &
+    #{$block}__tr_state_on-holiday &,
+    #{$block}__tr_state_on-sick-leave &
       opacity: .4
 
     &:before
@@ -224,7 +242,8 @@ $block: ".boss-info-table"
     display: inline-block
     padding-top: 0.4em
 
-    #{$block}__tr_state_on-holiday &
+    #{$block}__tr_state_on-holiday &,
+    #{$block}__tr_state_on-sick-leave &
       opacity: .4
 
     &_adjust
