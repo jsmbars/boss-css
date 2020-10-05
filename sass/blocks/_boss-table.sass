@@ -128,7 +128,7 @@ $block: ".boss-table"
     min-width: 1760px
 
   &_page_payroll-reports
-    min-width: 1560px
+    min-width: 1760px
 
   &_page_staff-tracking-staff-added
     min-width: 630px
@@ -2120,7 +2120,10 @@ $block: ".boss-table"
         min-width: 160px
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4.5%
+
+        &:nth-last-child(17)
+          width: 5%
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -2448,7 +2451,10 @@ $block: ".boss-table"
         padding-right: 10px
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4.5%
+
+        &:nth-last-child(16)
+          width: 5%
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -2909,7 +2915,10 @@ $block: ".boss-table"
         width: 12%
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4.5%
+
+        &:nth-last-child(14)
+          width: 5%
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -3031,7 +3040,10 @@ $block: ".boss-table"
         width: 11%
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4.5%
+
+        &:nth-last-child(13)
+          width: 5%
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -3129,7 +3141,10 @@ $block: ".boss-table"
         width: 120px
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4.5%
+
+        &:nth-last-child(12)
+          width: 5%
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -3207,7 +3222,10 @@ $block: ".boss-table"
         padding-right: 10px
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4.5%
+
+        &:nth-last-child(11)
+          width: 5%
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -3279,7 +3297,10 @@ $block: ".boss-table"
     &:nth-child(13)
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 6%
+
+        &:nth-last-child(7)
+          width: 5%
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -3288,10 +3309,16 @@ $block: ".boss-table"
     &:nth-child(14)
 
       #{$block}_page_finance-reports &
-        width: 4%
+        width: 3.5%
+
+        &:nth-last-child(6)
+          width: 4%
 
       #{$block}_page_payroll-reports &
-        width: 6%
+        width: 4.5%
+
+        &:nth-last-child(3)
+          width: 6%
 
     // $Common table cell fifteenth column
     &:nth-child(15)
@@ -3300,7 +3327,10 @@ $block: ".boss-table"
         width: 4.5%
 
       #{$block}_page_payroll-reports &
-        width: 6%
+        width: 4.5%
+
+        &:nth-last-child(2)
+          width: 6%
 
     // $Common table cell sixteenth column
     &:nth-child(16)
@@ -3310,26 +3340,55 @@ $block: ".boss-table"
 
       #{$block}_page_payroll-reports &
         width: 6%
-        min-width: 120px
-        padding-right: 15px
+
+        &:nth-last-child(1)
+          width: 6%
+          min-width: 120px
+          padding-right: 15px
 
     // $Common table cell seventeenth column
     &:nth-child(17)
 
       #{$block}_page_finance-reports &
-        width: 4.5%
-        min-width: 100px
+        width: 4%
+
+        &:nth-last-child(3)
+          width: 4.5%
+          min-width: 100px
+
+      #{$block}_page_payroll-reports &
+        width: 6%
+        min-width: 120px
+        padding-right: 15px
 
     // $Common table cell eighteenth column
     &:nth-child(18)
 
       #{$block}_page_finance-reports &
-        width: 10%
-        max-width: 300px
-        min-width: 180px
+        width: 4.5%
+        min-width: 100px
+
+        &:nth-last-child(2)
+          width: 8%
+          max-width: 300px
+          min-width: 150px
 
     // $Common table cell nineteenth column
     &:nth-child(19)
+
+      #{$block}_page_finance-reports &
+        width: 8%
+        max-width: 300px
+        min-width: 150px
+
+        &:nth-last-child(1)
+          width: 6%
+          max-width: none
+          min-width: 100px
+          padding-right: 15px
+
+    // $Common table cell twenth column
+    &:nth-child(20)
 
       #{$block}_page_finance-reports &
         width: 6%
@@ -3553,6 +3612,11 @@ $block: ".boss-table"
     &_state_success
       background-color: #67db72
       color: #fff
+      font-weight: 600
+
+    // $Common table cell MOD: state outdated
+    &_state_outdated
+      background-color: #ccc
       font-weight: 600
 
     &_indicator_clock-warning
