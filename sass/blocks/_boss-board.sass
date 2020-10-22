@@ -74,11 +74,13 @@ $block: ".boss-board"
     background-color: map-get($boss-app-palette, alert)
     border: 2px solid #ed7f7e
 
-  &_role_venue-alert-levels-red
+  &_role_venue-alert-levels-red,
+  &_role_training-failed
     background-color: #feeeee
     border: 2px solid #ed7f7e
 
-  &_role_venue-alert-levels-amber
+  &_role_venue-alert-levels-amber,
+  &_role_training-pending-failure
     background-color: #ffedda
     border: 2px solid #f4a84f
 
@@ -240,11 +242,13 @@ $block: ".boss-board"
       font-weight: 600
       color: #fff
 
-    #{$block}_role_venue-alert-levels-amber &
+    #{$block}_role_venue-alert-levels-amber &,
+    #{$block}_role_training-pending-failure &
       font-weight: 600
       color: map-get($boss-app-palette, warning)
 
-    #{$block}_role_venue-alert-levels-red &
+    #{$block}_role_venue-alert-levels-red &,
+    #{$block}_role_training-failed &
       font-weight: 600
       color: map-get($boss-app-palette, alert)
 
@@ -270,7 +274,9 @@ $block: ".boss-board"
 
       #{$block}_role_finance-report &,
       #{$block}_role_venue-alert-levels-red &,
-      #{$block}_role_venue-alert-levels-amber &
+      #{$block}_role_venue-alert-levels-amber &,
+      #{$block}_role_training-failed &,
+      #{$block}_role_training-pending-failure &
         width: calc(100% - 50px)
 
       #{$block}_role_profile-quizzes-categories &,
