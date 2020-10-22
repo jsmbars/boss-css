@@ -61,6 +61,13 @@ $block: ".boss-user-summary"
   &_role_user-profile
     align-items: center
 
+  &_role_card-header
+    align-items: center
+
+    @media screen and (max-width: 960px)
+      flex-direction: row
+      align-items: center
+
   &_role_card-header-short
 
   // $User summary MOD: role rotas daily
@@ -196,6 +203,11 @@ $block: ".boss-user-summary"
       height: 80px
       line-height: 80px
 
+    #{$block}_role_card-header &
+      width: 50px
+      height: 50px
+      line-height: 50px
+
     &_type_scannable
       box-shadow: 0 0 0 6px map-get($boss-app-palette, primary)
 
@@ -220,6 +232,7 @@ $block: ".boss-user-summary"
       #{$block}_role_ssr-assign &,
       #{$block}_role_table-short &,
       #{$block}_role_card-short &,
+      #{$block}_role_card-header &,
       #{$block}_role_card-header-short &,
       #{$block}_role_sv-ml-start &,
       #{$block}_role_sv-ml-middle &,
@@ -404,6 +417,7 @@ $block: ".boss-user-summary"
     #{$block}_role_user-profile &,
     #{$block}_role_table-short &,
     #{$block}_role_card-short &,
+    #{$block}_role_card-header &,
     #{$block}_role_card-header-short &,
     #{$block}_role_ssr-assign &
       padding-left: 20px
@@ -523,6 +537,7 @@ $block: ".boss-user-summary"
       #{$block}_role_review-short &,
       #{$block}_role_table-short &,
       #{$block}_role_card-short &,
+      #{$block}_role_card-header &,
       #{$block}_role_card-header-short &,
       #{$block}_role_ssr-assign &,
       #{$block}_role_hours-overview &,
@@ -570,6 +585,10 @@ $block: ".boss-user-summary"
     #{$block}_role_ssr-assign &
       display: block
       font-size: 16px
+      font-weight: 400
+
+    #{$block}_role_card-header &
+      font-size: 18px
       font-weight: 400
 
     #{$block}_role_hours-overview &
@@ -620,7 +639,8 @@ $block: ".boss-user-summary"
       #{$block}_role_report &
         white-space: normal
 
-      #{$block}_role_review &
+      #{$block}_role_review &,
+      #{$block}_role_card-header &
         display: inline-block
         text-align: left
 
@@ -663,6 +683,9 @@ $block: ".boss-user-summary"
       #{$block}_role_report &
         margin-right: 20px
 
+      #{$block}_role_card-header &
+        margin-right: 10px
+
       #{$block}_role_rotas-daily &,
       #{$block}_role_rotas-daily-tooltip &,
       #{$block}_role_review-short &,
@@ -692,6 +715,10 @@ $block: ".boss-user-summary"
         #{$block}_role_report &
           margin-right: auto
           margin-bottom: 10px
+
+        #{$block}_role_card-header &
+          margin-right: 10px
+          margin-bottom: 0
 
     &_role_alert
       color: map-get($boss-app-palette, alert)
