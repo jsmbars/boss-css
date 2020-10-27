@@ -548,3 +548,151 @@ $block: ".purple-page-header"
       color: transparent
 
 
+  // $Page header select
+  &__select
+    flex-grow: 0
+    flex-shrink: 0
+    width: auto
+    width: 220px
+    margin-left: 30px
+    cursor: pointer
+
+    @media screen and (max-width: 640px)
+      margin-left: 20px
+
+    @media screen and (max-width: 480px)
+      flex-grow: 1
+      flex-shrink: 1
+      order: 99
+      width: 100%
+      max-width: 100%
+      margin-top: 20px
+      margin-left: 0
+
+    & .react-select__control
+      height: 40px
+      width: 100%
+      border: 1px solid $c-gray-dark
+      border-radius: 20px / 50%
+      transition: background-color .4s
+      cursor: pointer
+
+    & .react-select__control:hover
+      background-color: $c-gray-ultra-light
+      border-color: $c-gray-dark
+
+    & .react-select__control--is-focused
+      box-shadow: none
+
+    & .react-select__control--is-focused:hover
+      border-color: $c-gray-dark
+
+    & .react-select__value-container
+      padding: 5px 10px
+
+    & .react-select__placeholder
+      font-family: $f-sans
+      font-size: 14px
+      line-height: 1
+      color: $c-text-faded
+
+    & .react-select__single-value
+      font-family: $f-sans
+      font-size: 14px
+      line-height: 1.5
+      color: $c-text-primary
+
+    & .react-select__single-value--is-disabled
+      color: $c-text-secondary
+
+    & .react-select__indicators
+      padding-right: 5px
+
+    & .react-select__clear-indicator,
+    & .react-select__dropdown-indicator
+      cursor: pointer
+
+    & .react-select__clear-indicator,
+    & .react-select__dropdown-indicator,
+    & .react-select__loading-indicator span:nth-child(1),
+    & .react-select__loading-indicator span:nth-child(2),
+    & .react-select__loading-indicator span:nth-child(3)
+      color: $c-text-primary
+
+    & .react-select__clear-indicator:hover,
+    & .react-select__dropdown-indicator:hover
+      color: $c-text-primary
+
+    & .react-select__control--is-focused .react-select__clear-indicator,
+    & .react-select__control--is-focused .react-select__dropdown-indicator,
+    & .react-select__control--is-focused .react-select__loading-indicator,
+    & .react-select__control--is-focused .react-select__loading-indicator span
+      color: $c-text-primary
+
+    & .react-select__indicator-separator
+      background-color: $c-gray-extra-light
+      display: none
+
+    & .react-select__input input
+      font-family: $f-sans !important
+      font-size: 14px !important
+      color: $c-text-primary !important
+
+    & .react-select__menu
+      z-index: 10000
+      right: 0
+      margin-top: 10px
+      margin-bottom: 0
+      padding: 10px 0
+      background-color: $c-bg-light
+      border: 1px solid $c-border-primary
+      border-radius: 10px
+      box-shadow: 0 5px 30px 0 rgba(0,0,0,.25)
+
+      &:before
+        content: ""
+        position: absolute
+        bottom: 100%
+        right: 17px
+        z-index: 10002
+        margin-right: -4px
+        border-bottom: 10px solid $c-border-light
+        border-right: 10px solid transparent
+        border-left: 10px solid transparent
+
+      &:after
+        content: ""
+        position: absolute
+        bottom: 100%
+        right: 17px
+        z-index: 10001
+        margin-right: -5px
+        border-bottom: 11px solid $c-border-primary
+        border-right: 11px solid transparent
+        border-left: 11px solid transparent
+
+    & .react-select__menu-list
+      max-height: 200px
+
+    & .react-select__menu-notice
+      font-family: $f-sans
+      font-size: 14px
+      color: $c-text-primary
+
+    & .react-select__menu-notice--no-options
+      color: $c-text-secondary
+
+    & .react-select__option
+      font-family: $f-sans
+      font-size: 14px
+      color: $c-text-primary
+
+      &:focus
+        outline: none
+
+    & .react-select__option--is-selected,
+    & .react-select__option--is-focused
+      background-color: $c-gray-ultra-light
+
+      &:active
+        background-color: $c-gray-ultra-light
