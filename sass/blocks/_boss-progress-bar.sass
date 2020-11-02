@@ -24,23 +24,8 @@ $block: ".boss-progress-bar"
   display: block
   max-width: 100%
 
-  // $Progress bar MOD: indicator locked
-  &_indicator_locked
-    position: relative
-    padding-left: 30px
-
-    &:before
-      content: '\e930'
-      position: absolute
-      top: 50%
-      left: 0
-      display: inline-block
-      margin-top: -10px
-      font-family: icons
-      font-size: 20px
-      line-height: 20px
-      font-weight: 400
-      color: inherit
+  // $Progress bar MOD: adjust wrap
+  &_adjust_wrap
 
 
   // $Progress bar content
@@ -51,6 +36,11 @@ $block: ".boss-progress-bar"
     align-items: center
     width: 100%
 
+    @media screen and (max-width: 960px)
+      #{$block}_adjust_wrap &
+        flex-wrap: wrap
+        justify-content: center
+
 
   // $Progress bar meter
   &__meter
@@ -59,7 +49,6 @@ $block: ".boss-progress-bar"
     flex-shrink: 1
     display: block
     width: 100%
-    height: 30px
     padding: 5px
     border-radius: 5px
     background-color: $boss-extra-light-gray
@@ -72,10 +61,26 @@ $block: ".boss-progress-bar"
     width: 0
     height: 20px
     padding: 0 5px
+    line-height: 20px
     color: #fff
     background-color: $boss-medium-gray
     border-radius: 5px
     transition: width .4s
+
+    // $Progress bar value MOD: position front
+    &_position_front
+      position: absolute
+      top: 50%
+      left: 10px
+      z-index: 2
+      margin-top: -10px
+      text-align: right
+
+    // $Progress bar value MOD: position back
+    &_position_back
+      height: 30px
+      line-height: 30px
+      text-align: right
 
     // $Progress bar value MOD: color accent blue
     &_color_accent-blue
@@ -122,6 +127,7 @@ $block: ".boss-progress-bar"
     position: absolute
     top: 0
     bottom: 0
+    z-index: 3
     display: block
 
     // $Progress bar marker MOD: color accent carmine
@@ -154,6 +160,34 @@ $block: ".boss-progress-bar"
       color: #fd554f
 
 
+  // $Progress bar info
+  &__info
+    flex-grow: 0
+    flex-shrink: 0
+
+    @media screen and (max-width: 960px)
+      #{$block}_adjust_wrap &
+        order: -99
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        max-width: 100%
+        margin-bottom: 30px
+        padding-right: 0
+        padding-left: 0
+        text-align: left
+
+    // $Progress bar info MOD: position before
+    &_position_before
+      padding-right: 10px
+      text-align: left
+
+    // $Progress bar info MOD: position after
+    &_position_after
+      padding-left: 10px
+      text-align: right
+
+
   // $Progress bar label
   &__label
     +text-normalizer()
@@ -166,6 +200,13 @@ $block: ".boss-progress-bar"
     @media screen and (max-width: 960px)
       max-width: 80px
       font-size: 12px
+
+      #{$block}_adjust_wrap &
+        max-width: 100%
+        padding-left: 0
+        padding-right: 0
+        font-size: 14px
+        text-align: center
 
     // $Progress bar label MOD: position before
     &_position_before
@@ -191,5 +232,66 @@ $block: ".boss-progress-bar"
       min-width: 120px
       font-size: 12px
 
+      @media screen and (max-width: 960px)
+        #{$block}_adjust_wrap &
+          width: 100%
+          min-width: 0
+
       @media screen and (max-width: 400px)
         min-width: 0
+
+    // $Progress bar label MOD: color accent purple
+    &_color_accent-purple
+      color: map-get($boss-accent-palette, purple)
+
+    // $Progress bar label MOD: color accent blue
+    &_color_accent-blue
+      color: map-get($boss-app-palette, primary)
+
+    // $Progress bar label MOD: color accent green
+    &_color_accent-green
+      color: map-get($boss-app-palette, secondary)
+
+    // $Progress bar label MOD: color accent orange
+    &_color_accent-orange
+      color: map-get($boss-app-palette, warning)
+
+    // $Progress bar label MOD: color accent red
+    &_color_accent-red
+      color: map-get($boss-app-palette, alert)
+
+    // $Progress bar label MOD: indicator frozen
+    &_indicator_frozen
+
+      &:after
+        content: ""
+        display: inline-block
+        margin-left: 5px
+        font-family: icons
+        font-size: 14px
+        line-height: 1
+        font-weight: 400
+        color: inherit
+
+    &_indicator_frozen
+      &:after
+        content: '\e946'
+
+
+  // $Progress bar meta
+  &__meta
+    +text-normalizer()
+    display: block
+    font-size: 12px
+    line-height: 1
+    color: $boss-light-gray
+
+    @media screen and (max-width: 960px)
+      #{$block}_adjust_wrap &
+        text-align: center
+
+    &:first-child
+      margin-bottom: 5px
+
+    &:last-child
+      margin-top: 5px
