@@ -253,7 +253,8 @@ $block: ".boss-check"
 
     #{$block}_page_sv-missattributed-logins &,
     #{$block}_page_vhcq &,
-    #{$block}_page_training-failures &
+    #{$block}_page_training-failures &,
+    #{$block}_page_training-materials &
       min-height: 0
       padding: 15px
 
@@ -272,7 +273,6 @@ $block: ".boss-check"
       min-height: 0
       border: none
       padding: 0 0 20px
-
 
     #{$block}_page_native-app-links &
       flex-direction: column
@@ -328,8 +328,12 @@ $block: ".boss-check"
       #{$block}_page_clocking-app-page-index &,
       #{$block}_page_contacts-admin &,
       #{$block}_page_smp-quizzes-stats &,
-      #{$block}_page_design-showcases-admin &
+      #{$block}_page_design-showcases-admin &,
+      #{$block}_page_training-materials &
         flex-wrap: wrap
+
+      #{$block}_page_training-materials &
+        justify-content: center
 
       #{$block}_page_contacts-admin &
         padding-bottom: 15px
@@ -486,6 +490,10 @@ $block: ".boss-check"
     display: block
     margin-top: 10px
 
+    #{$block}_page_training-materials &
+      margin-top: 0
+      padding-right: 15px
+
     @media screen and (max-width: 480px)
       #{$block}_page_contacts-admin &
         text-align: center
@@ -494,7 +502,8 @@ $block: ".boss-check"
       @media screen and (max-width: 640px)
         border-bottom: 1px solid #eee
 
-        #{$block}_page_quiz-category &
+        #{$block}_page_quiz-category &,
+        #{$block}_page_training-materials &
           border-bottom: none
 
 
@@ -502,6 +511,9 @@ $block: ".boss-check"
   &__header-meta-item
     display: inline-block
     margin-bottom: 5px
+
+    #{$block}_page_training-materials &
+      margin-bottom: 0
 
     @media screen and (max-width:800px)
       #{$block}_page_vhcq &
@@ -1533,10 +1545,16 @@ $block: ".boss-check"
     #{$block}_page_security-venues &
       font-size: 24px
 
+    #{$block}_page_training-materials &
+      padding-right: 15px
+      font-size: 20px
+      line-height: 1.2
+
     #{$block}_page_wtl-cards-index &
       text-align: center
 
-    #{$block}_page_smp-quizzes-category &
+    #{$block}_page_smp-quizzes-category &,
+    #{$block}_page_training-materials &
       flex-grow: 1
       flex-shrink: 1
 
@@ -1575,6 +1593,13 @@ $block: ".boss-check"
 
     @media screen and (max-width: 480px)
       #{$block}_page_contacts-admin &
+        text-align: center
+
+      #{$block}_page_training-materials &
+        width: 100%
+        margin-bottom: 15px
+        padding-right: 0
+        font-size: 18px
         text-align: center
 
     @media screen and (max-width: 400px)
@@ -1836,7 +1861,16 @@ $block: ".boss-check"
   &__text-action
     cursor: pointer
 
+    // $Check block text action MOD: position before
+    &_position_before
+      margin-right: 10px
 
+    // $Check block text action MOD: position after
+    &_position_after
+      margin-left: 10px
+
+
+  // $Check block text tooltip
   &__text-tooltip
     display: inline-block
     margin-left: 3px
@@ -2457,6 +2491,10 @@ $block: ".boss-check"
     @media screen and (max-width: 640px)
       display: block
       width: 100%
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_training-materials &
+        text-align: center
 
 
   // $Check block meta item
