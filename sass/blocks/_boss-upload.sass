@@ -287,6 +287,10 @@ $block: ".boss-upload"
     #{$block}_state_error &
       border-color: map-get($boss-app-palette, alert-border)
 
+    &_adjust_form
+      border: 1px solid $boss-very-light-gray
+      border-radius: 2px
+
 
   // $Upload control area inner container
   &__area-inner
@@ -312,14 +316,45 @@ $block: ".boss-upload"
     &:not(:last-child)
       margin-bottom: 15px
 
+    // $Upload control area text MOD: adjust wrap
     &_adjust_wrap
       overflow-wrap: break-word
       word-wrap: break-word
       word-break: break-word
       hyphens: auto
 
+    // $Upload control area text MOD: adjust form
+    &_adjust_form
+      color: $boss-medium-gray
+
+  // $Upload control area text marked
   &__area-text-marked
     font-weight: 600
+
+
+  // $Upload control area icon
+  &__area-icon
+
+    &:before
+      content: '\e97d'
+      display: block
+      margin-bottom: 20px
+      font-family: icons
+      font-size: 60px
+      line-height: 60px
+      font-weight: 400
+      color: $boss-light-gray
+      text-align: center
+
+      @media screen and (max-width: 400px)
+        margin-bottom: 10px
+        font-size: 40px
+        line-height: 40px
+
+    // $Upload control field label MOD: adjust form
+    &_role_add
+      &:before
+        content: '\e97d'
 
 
   // $Upload control area button
@@ -362,6 +397,7 @@ $block: ".boss-upload"
       width: 100%
       background-color: $boss-extra-light-gray
       border: 1px solid $boss-very-light-gray
+      border-radius: 2px
 
       #{$block}_state_error &
         border-color: map-get($boss-app-palette, alert-border)
@@ -485,7 +521,7 @@ $block: ".boss-upload"
 
     // $Upload control field label MOD: adjust form
     &_adjust_form
-      color: #808080
+      color: $boss-medium-gray
 
       &:before
         color: $boss-light-gray

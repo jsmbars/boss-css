@@ -1,0 +1,327 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Preview
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-preview"
+
+#{$block}
+  display: block
+  width: 100%
+
+  // $Preview group
+  &__group
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: stretch
+    width: 100%
+
+    @media screen and (max-width: 960px)
+      flex-direction: column
+      align-items: flex-start
+
+
+  // $Preview area
+  &__area
+    flex-grow: 1
+    flex-shrink: 1
+    width: 50%
+
+    @media screen and (max-width: 960px)
+      width: 100%
+
+    &:nth-child(1):not(:only-child)
+      padding-right: 20px
+      border-right: 1px solid #d8d8d8
+
+      @media screen and (max-width: 960px)
+        padding-right: 0
+        padding-bottom: 20px
+        border-right: none
+        border-bottom: 1px solid #d8d8d8
+
+    &:nth-child(2)
+      padding-left: 20px
+
+      @media screen and (max-width: 960px)
+        padding-left: 0
+        padding-top: 20px
+
+      @media screen and (max-width: 480px)
+        padding-top: 10px
+
+
+  // $Preview header
+  &__header
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+
+    @media screen and (max-width: 480px)
+      flex-direction: column
+
+
+  // $Preview title
+  &__title
+    +text-normalizer()
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    padding-right: 20px
+    font-size: 20px
+    font-weight: 600
+
+    @media screen and (max-width: 480px)
+      margin-bottom: 10px
+
+
+  // $Preview controls
+  &__controls
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+
+
+  // $Preview form
+  &__form
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+
+
+  // $Preview content
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    padding-top: 40px
+
+    @media screen and (max-width: 960px)
+      padding-top: 30px
+
+
+  // $Preview device
+  &__device
+    flex-grow: 0
+    position: relative
+    display: block
+    margin: 0 auto
+
+    // $Preview device MOD: role iphone 12 mini
+    &_role_i12m
+
+
+  // $Preview device image
+  &__device-image
+    position: relative
+    z-index: 0
+    display: block
+
+    // $Preview device image CONTEXT: $Preview device MOD: role iphone 12 mini
+    #{$block}__device_role_i12m &
+      width: 100%
+      max-width: 400px
+
+
+  // $Preview device screen
+  &__device-screen
+    position: absolute
+    z-index: 1
+    display: block
+    overflow: hidden
+
+    // $Preview device screen CONTEXT: $Preview device MOD: role iphone 12 mini
+    #{$block}__device_role_i12m &
+      top: 2.4%
+      right: 5.1%
+      bottom: 2.4%
+      left: 5.1%
+
+
+  // $Preview device content
+  &__device-content
+    position: absolute
+    display: block
+    overflow: auto
+    padding: 0 16px
+
+    // $Preview device content CONTEXT: $Preview device MOD: role iphone 12 mini
+    #{$block}__device_role_i12m &
+      top: 7.1%
+      right: 0
+      bottom: 5.2%
+      left: 0
+
+    // Reset
+    *,
+    *:before,
+    *:after
+      box-sizing: border-box
+      margin: 0
+      padding: 0
+
+    //Typography styles
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p
+      display: block
+
+    h1:not(:first-child),
+    h2:not(:first-child),
+    h3:not(:first-child),
+    h4:not(:first-child),
+    h5:not(:first-child),
+    h6:not(:first-child),
+    p:not(:first-child)
+      margin-top: 16px
+
+    h1:not(:last-child),
+    h2:not(:last-child),
+    h3:not(:last-child),
+    h4:not(:last-child),
+    h5:not(:last-child),
+    h6:not(:last-child),
+    p:not(:last-child)
+      margin-bottom: 16px
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a
+      font-family: "Montserrat"
+      color: #4c4c4c
+      text-align: left
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+      font-weight: 600
+
+    p,
+    a
+      font-weight: 400
+
+    h1
+      font-size: 28px
+      line-height: 32px
+
+    h2
+      font-size: 22px
+      line-height: 26px
+
+    h3
+      font-size: 16px
+      line-height: 20px
+
+    h4
+      font-size: 14px
+      line-height: 16px
+
+    h5
+      font-size: 12px
+      line-height: 16px
+
+    h6
+      font-size: 10px
+      line-height: 16px
+
+    p
+      font-size: 14px
+      line-height: 16px
+
+    a
+      color: #1585cf
+      text-decoration: underline
+
+    a:hover
+      text-decoration: none
+
+    //List styles
+    ol,
+    ul
+      list-style-type: none
+      counter-reset: item
+
+    ol:not(:first-child),
+    ul:not(:first-child)
+      margin-top: 16px
+
+    ol:not(:last-child),
+    ul:not(:last-child)
+      margin-bottom: 16px
+
+    ul ul:not(:first-child),
+    ul ol:not(:first-child),
+    ol ol:not(:first-child),
+    ol ul:not(:first-child),
+    ul ul:only-child,
+    ul ol:only-child,
+    ol ol:only-child,
+    ol ul:only-child
+      margin-top: 8px
+
+    ul ul:not(:last-child),
+    ul ol:not(:last-child),
+    ol ol:not(:last-child),
+    ol ul:not(:last-child)
+      margin-bottom: 8px
+
+    li
+      display: table
+      font-family: "Montserrat"
+      color: #4c4c4c
+      text-align: left
+      font-size: 14px
+      line-height: 16px
+      font-weight: 400
+
+    li:before
+      display: table-cell
+      padding-right: 8px
+
+    li:not(:last-child)
+      margin-bottom: 8px
+
+    ol li:before
+      content: counters(item,".") "."
+      counter-increment: item
+
+    ul li:before
+      content: '\2022'
+      font-size: 22px
+
+    ul ul li:before
+      content: '\25e6'
+      font-size: 18px
+
+    ul ul ul li:before
+      content: '\2043'
+      font-size: 20px
