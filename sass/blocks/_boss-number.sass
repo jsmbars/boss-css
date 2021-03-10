@@ -27,6 +27,9 @@ $block: ".boss-number"
   // $Number MOD: layout fluid
   &_layout_fluid
 
+  // $Number MOD: layout flow
+  &_layout_flow
+
   // $Number MOD: role action
   &_role_action
     opacity: 1
@@ -62,13 +65,16 @@ $block: ".boss-number"
     justify-content: flex-start
     align-items: center
 
-    #{$block}_layout_row &
+    #{$block}_layout_row &,
+    #{$block}_layout_fluid &,
+    #{$block}_layout_flow &
       flex-direction: row
 
-    #{$block}_layout_fluid &
-      flex-direction: row
+    #{$block}_layout_flow &
+      flex-wrap: wrap
 
-      @media screen and (max-width: 960px)
+    @media screen and (max-width: 960px)
+      #{$block}_layout_fluid &
         flex-direction: column
 
 
@@ -116,6 +122,11 @@ $block: ".boss-number"
     color: #aaa
 
 
+  // $Number value delta
+  &__value-delta
+    color: #ed7f7e
+
+
   // $Number label
   &__label
     +text-normalizer()
@@ -129,7 +140,8 @@ $block: ".boss-number"
       margin-bottom: 5px
 
       #{$block}_layout_row &,
-      #{$block}_layout_fluid &
+      #{$block}_layout_fluid &,
+      #{$block}_layout_flow &
         margin-bottom: 0
         padding-right: 10px
         text-align: right
@@ -145,7 +157,8 @@ $block: ".boss-number"
       margin-top: 5px
 
       #{$block}_layout_row &,
-      #{$block}_layout_fluid &
+      #{$block}_layout_fluid &,
+      #{$block}_layout_flow &
         margin-top: 0
         padding-left: 10px
         text-align: left

@@ -87,7 +87,9 @@ $block: ".boss-table"
   &_page_pay-rates-staff-members,
   &_page_pay-rates-admin-staff-members,
   &_page_yearly-reports,
-  &_page_yearly-reports-hour-report
+  &_page_yearly-reports-hour-report,
+  &_page_finance-reports-overview,
+  &_page_payroll-reports-overview
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -458,6 +460,10 @@ $block: ".boss-table"
     #{$block}_page_bonai-venue-hour-data &
       background-color: transparent
 
+    #{$block}_page_finance-reports-overview &,
+    #{$block}_page_payroll-reports-overview &
+        background-color: #fbfbfb
+
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &
       padding-top: 5px
@@ -466,6 +472,10 @@ $block: ".boss-table"
     @media screen and (max-width: 1280px)
       #{$block}_page_bonai-venue-hour-data &
           flex-wrap: wrap
+
+      #{$block}_page_finance-reports-overview &,
+      #{$block}_page_payroll-reports-overview &
+        display: block
 
     @media screen and (max-width: 1120px)
       #{$block}_page_staff-members-index &,
@@ -957,6 +967,10 @@ $block: ".boss-table"
     #{$block}_page_payslip-summary &
       min-height: 40px
 
+    #{$block}_page_finance-reports-overview &,
+    #{$block}_page_payroll-reports-overview &
+      min-height: 60px
+
     #{$block}_page_weekly-reports &,
     #{$block}_page_staff-tracking-staff-added &,
     #{$block}_page_staff-tracking-staff-disabled &,
@@ -976,7 +990,9 @@ $block: ".boss-table"
       padding: 20px 5px
 
     #{$block}_page_marketing-index-card &,
-    #{$block}_page_marketing-managers-index-card &
+    #{$block}_page_marketing-managers-index-card &,
+    #{$block}_page_finance-reports-overview &,
+    #{$block}_page_payroll-reports-overview &
       padding: 10px
 
     #{$block}_page_finance-reports &,
@@ -1034,6 +1050,12 @@ $block: ".boss-table"
       flex-shrink: 0
       width: 140px
       border-right: 1px solid #eee
+
+    @media screen and (max-width: 1280px)
+      #{$block}_page_finance-reports-overview &,
+      #{$block}_page_payroll-reports-overview &
+        min-height: 0
+        padding: 10px 20px
 
     @media screen and (max-width: 1120px)
       #{$block}_page_staff-members-index &,
@@ -1155,7 +1177,9 @@ $block: ".boss-table"
         padding: 5px 10px
 
     @media screen and (max-width: 400px)
-      #{$block}_page_clocking-app-page-api-keys-card &
+      #{$block}_page_clocking-app-page-api-keys-card &,
+      #{$block}_page_finance-reports-overview &,
+      #{$block}_page_payroll-reports-overview &
         padding: 10px
 
     &:first-child
@@ -1195,8 +1219,15 @@ $block: ".boss-table"
       #{$block}_page_smp-quizzes-history &,
       #{$block}_page_smp-quizzes-category &,
       #{$block}_page_smp-quizzes-overview &,
-      #{$block}_page_training-failures &
+      #{$block}_page_training-failures &,
+      #{$block}_page_finance-reports-overview &,
+      #{$block}_page_payroll-reports-overview &
         border-right: 1px solid #eee
+
+      @media screen and (max-width: 1280px)
+        #{$block}_page_finance-reports-overview &,
+        #{$block}_page_payroll-reports-overview &
+          border-bottom: 1px solid #eee
 
       @media screen and (max-width: 960px)
         #{$block}_page_smp-holidays &,
@@ -1357,6 +1388,11 @@ $block: ".boss-table"
         width: 10%
         padding-left: 15px
 
+      #{$block}_page_finance-reports-overview &,
+      #{$block}_page_payroll-reports-overview &
+        width: 33%
+        padding-left: 10px
+
       #{$block}_page_wages-index &
         width: 30%
 
@@ -1489,6 +1525,11 @@ $block: ".boss-table"
           width: 33%
           padding-bottom: 10px
 
+        #{$block}_page_finance-reports-overview &,
+        #{$block}_page_payroll-reports-overview &
+          width: 100%
+          padding-left: 20px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
           flex-grow: 1
@@ -1581,6 +1622,10 @@ $block: ".boss-table"
         #{$block}_page_pay-rates-admin-staff-members &,
         #{$block}_page_yearly-reports-hour-report &
           padding-left: 10px
+
+        #{$block}_page_finance-reports-overview &,
+        #{$block}_page_payroll-reports-overview &
+          padding-left: 20px
 
         #{$block}_page_maintenance-index &,
         #{$block}_page_maintenance-managers-index &
@@ -1681,6 +1726,10 @@ $block: ".boss-table"
           width: 100%
           padding-left: 20px
           padding-right: 20px
+
+        #{$block}_page_finance-reports-overview &,
+        #{$block}_page_payroll-reports-overview &
+          padding-left: 10px
 
       &:after
         #{$block}_page_maintenance-index-card &,
@@ -1826,6 +1875,10 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_finance-reports-overview &,
+      #{$block}_page_payroll-reports-overview &
+        width: 33%
+
       #{$block}_page_wages-index &
         width: 20%
 
@@ -1934,6 +1987,10 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
           padding-bottom: 10px
+
+        #{$block}_page_finance-reports-overview &,
+        #{$block}_page_payroll-reports-overview &
+          width: 100%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
@@ -2211,6 +2268,11 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_finance-reports-overview &,
+      #{$block}_page_payroll-reports-overview &
+        width: 33%
+        padding-right: 10px
+
       #{$block}_page_wages-index &
         width: 15%
 
@@ -2309,6 +2371,11 @@ $block: ".boss-table"
           padding-right: 20px
           padding-bottom: 10px
 
+        #{$block}_page_finance-reports-overview &,
+        #{$block}_page_payroll-reports-overview &
+          width: 100%
+          padding-right: 20px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -2377,6 +2444,10 @@ $block: ".boss-table"
         #{$block}_page_yearly-reports-hour-report &
           padding-right: 10px
 
+        #{$block}_page_finance-reports-overview &,
+        #{$block}_page_payroll-reports-overview &
+          padding-right: 20px
+
         #{$block}_page_maintenance-index-card &
           width: 100%
           padding-left: 20px
@@ -2443,6 +2514,10 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue-hour-data &
           width: 100%
           padding-right: 20px
+
+        #{$block}_page_finance-reports-overview &,
+        #{$block}_page_payroll-reports-overview &
+          padding-right: 10px
 
       &:after
         #{$block}_page_accessory-requests-card &
@@ -3903,6 +3978,15 @@ $block: ".boss-table"
     #{$block}_page_accessory-requests-card #{$block}__cell:nth-child(1) &
       display: inline-block
       width: auto
+
+    #{$block}_page_finance-reports-overview &,
+    #{$block}_page_payroll-reports-overview &
+      text-align: center
+
+    @media screen and (max-width: 1280px)
+      #{$block}_page_finance-reports-overview &,
+      #{$block}_page_payroll-reports-overview &
+        text-align: left
 
     @media screen and (max-width: 1120px)
       #{$block}_page_staff-members-index &,
