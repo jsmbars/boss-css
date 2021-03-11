@@ -72,14 +72,22 @@ $block: ".boss-page-dashboard"
     // $Page dashboard group CONTEXT: $Page dashboard group MOD: vouchers index page
     // $Page dashboard group CONTEXT: $Page dashboard group MOD: profile reduced page
     // $Page dashboard group CONTEXT: $Page dashboard group MOD: id scanner keys page
-    #{$block}_page_vouchers-index &:nth-of-type(2),
+    #{$block}_page_vouchers-index &:nth-child(2),
     #{$block}_page_profile-reduced &,
-    #{$block}_page_id-scanner-keys &:nth-of-type(2)
+    #{$block}_page_id-scanner-keys &:nth-child(2)
       justify-content: flex-end
 
+    #{$block}_page_finance-reports &:nth-child(2),
+    #{$block}_page_payroll-reports &:nth-child(2)
+      margin-bottom: 20px
+
+    #{$block}_page_finance-reports &:last-child,
+    #{$block}_page_payroll-reports &:last-child
+      margin-bottom: 0
+
     @media screen and (max-width: 1280px)
-      #{$block}_page_finance-reports &:nth-of-type(2),
-      #{$block}_page_payroll-reports &:nth-of-type(2)
+      #{$block}_page_finance-reports &:last-child,
+      #{$block}_page_payroll-reports &:last-child
         align-items: flex-start
 
     @media screen and (max-width: 1120px)
@@ -93,28 +101,28 @@ $block: ".boss-page-dashboard"
       flex-direction: column
       justify-content: flex-start
 
-      #{$block}_page_profile-edit &:first-of-type
+      #{$block}_page_profile-edit &:first-child
         flex-direction: row
         justify-content: space-between
 
-      #{$block}_page_rotas-daily &:first-of-type
+      #{$block}_page_rotas-daily &:first-child
         flex-direction: row
         justify-content: space-between
 
-      #{$block}_page_vouchers-index &:nth-of-type(2)
+      #{$block}_page_vouchers-index &:nth-child(2)
         justify-content: flex-start
 
-      #{$block}_page_finance-reports &:nth-of-type(2),
-      #{$block}_page_payroll-reports &:nth-of-type(2)
+      #{$block}_page_finance-reports &:last-child,
+      #{$block}_page_payroll-reports &:last-child
         align-items: center
 
     @media screen and (max-width: 640px)
-      #{$block}_page_rotas-daily &:first-of-type
+      #{$block}_page_rotas-daily &:first-child
         flex-direction: column
         justify-content: center
 
     @media screen and (max-width: 480px)
-      #{$block}_page_profile-edit &:first-of-type
+      #{$block}_page_profile-edit &:first-child
         flex-direction: column
         justify-content: center
 
@@ -676,7 +684,7 @@ $block: ".boss-page-dashboard"
     &:focus
       color: $boss-dark-gray
 
-    &:first-of-type
+    &:first-child
       margin-left: 5px
 
     &:not(:last-of-type)
@@ -694,7 +702,7 @@ $block: ".boss-page-dashboard"
     vertical-align: middle
     font-weight: 600
 
-    &:first-of-type
+    &:first-child
       margin-left: 5px
 
     &:not(:last-of-type)
