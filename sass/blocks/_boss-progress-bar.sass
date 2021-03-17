@@ -42,6 +42,46 @@ $block: ".boss-progress-bar"
         justify-content: center
 
 
+  // $Progress bar status
+  &__status
+    position: relative
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    font-size: 18px
+    line-height: 1
+    font-weight: 600
+    color: #808080
+    width: 100%
+    padding: 0 10px
+
+    @media screen and (max-width: 960px)
+      #{$block}_adjust_wrap &
+        margin-top: 15px
+        padding: 0
+        text-align: center
+
+    // $Progress bar status MOD: color accent purple
+    &_color_accent-purple
+      color: map-get($boss-accent-palette, purple)
+
+    // $Progress bar status MOD: color accent blue
+    &_color_accent-blue
+      color: map-get($boss-app-palette, primary)
+
+    // $Progress bar status MOD: color accent green
+    &_color_accent-green
+      color: map-get($boss-app-palette, secondary)
+
+    // $Progress bar status MOD: color accent orange
+    &_color_accent-orange
+      color: map-get($boss-app-palette, warning)
+
+    // $Progress bar status MOD: color accent red
+    &_color_accent-red
+      color: map-get($boss-app-palette, alert)
+
+
   // $Progress bar meter
   &__meter
     position: relative
@@ -52,6 +92,10 @@ $block: ".boss-progress-bar"
     padding: 5px
     border-radius: 5px
     background-color: $boss-extra-light-gray
+
+    @media screen and (max-width: 960px)
+      #{$block}_adjust_wrap &
+        margin-top: 30px
 
 
   // $Progress bar value
@@ -172,7 +216,6 @@ $block: ".boss-progress-bar"
         flex-shrink: 1
         width: 100%
         max-width: 100%
-        margin-bottom: 30px
         padding-right: 0
         padding-left: 0
         text-align: left
