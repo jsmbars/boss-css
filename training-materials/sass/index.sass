@@ -176,15 +176,18 @@ ul ul ul li:before
 
 img
   display: block
-  margin-top: 20px
-  margin-bottom: 20px
   width: auto
   max-width: 100%
+  margin: 20px auto
 
 
 // Elements
 .title
+  display: block
+  margin-top: 20px
+  margin-bottom: 20px
   font-size: 32px
+  line-height: 32px
   font-weight: 700
   color: #f66c02
   background-color: transparent
@@ -195,6 +198,7 @@ img
 .toc-header
   display: block
   font-size: 22px
+  line-height: 22px
   font-weight: 700
   color: #f66c02
   background-color: transparent
@@ -261,15 +265,18 @@ ol.toc li
 ol.toc li:before
   content: counter(item-l1, upper-alpha) "."
   counter-increment: item-l1
+  white-space: nowrap
 
 
 ol.toc ol li:before
   content: counter(item-l1, upper-alpha) "-" counter(item-l2, decimal) "."
   counter-increment: item-l2
+  white-space: nowrap
 
 
 ol.toc ol ol li:before
   content: counter(item-l1, upper-alpha) "-" counter(item-l2, decimal) "-" counter(item-l3, decimal) "."
   counter-increment: item-l3
+  white-space: nowrap
 
 
