@@ -89,7 +89,8 @@ $block: ".boss-table"
   &_page_yearly-reports,
   &_page_yearly-reports-hour-report,
   &_page_finance-reports-overview,
-  &_page_payroll-reports-overview
+  &_page_payroll-reports-overview,
+  &_page_kpi
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -574,7 +575,8 @@ $block: ".boss-table"
       #{$block}_page_payslip-deductions &,
       #{$block}_page_payslip-totals &,
       #{$block}_page_payslip-summary &,
-      #{$block}_page_csv-upload &
+      #{$block}_page_csv-upload &,
+      #{$block}_page_kpi &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -954,7 +956,8 @@ $block: ".boss-table"
     #{$block}_page_payslip-payments &,
     #{$block}_page_payslip-deductions &,
     #{$block}_page_payslip-totals &,
-    #{$block}_page_payslip-summary &
+    #{$block}_page_payslip-summary &,
+    #{$block}_page_kpi &
       min-height: 0
 
     #{$block}_page_payslip-payments &,
@@ -1520,6 +1523,12 @@ $block: ".boss-table"
         width: 20%
         padding-left: 15px
 
+      #{$block}_page_kpi &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 60px
+        padding: 0
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -1983,6 +1992,10 @@ $block: ".boss-table"
       #{$block}_page_training-failures &
         width: 20%
 
+      #{$block}_page_kpi &
+        width: calc(100% - 60px)
+        padding-right: 15px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -2083,6 +2096,9 @@ $block: ".boss-table"
 
         #{$block}_page_csv-upload &
           width: 140px
+
+        #{$block}_page_kpi &
+          padding-right: 10px
 
       @media screen and (max-width: 800px)
         #{$block}_page_bonai-venue-hour-data &
@@ -3879,6 +3895,13 @@ $block: ".boss-table"
       #{$block}_page_csv-upload &
         cursor: pointer
 
+      #{$block}_page_kpi &
+        background-color: #EC6A6A
+
+    // $Common table cell MOD: state warning
+    &_state_warning
+      background-color: #F3A84D
+
     // $Common table cell MOD: state success
     &_state_success
       background-color: #67db72
@@ -4242,6 +4265,7 @@ $block: ".boss-table"
     vertical-align: middle
 
     #{$block}__cell_state_alert &,
+    #{$block}__cell_state_warning &,
     #{$block}__cell_state_success &
       color: #fff
       font-weight: 600
@@ -4354,7 +4378,8 @@ $block: ".boss-table"
     #{$block}_page_payslip-summary &
       font-size: 16px
 
-    #{$block}_page_native-app-links &
+    #{$block}_page_native-app-links &,
+    #{$block}_page_kpi #{$block}__cell:nth-child(1) &
       font-size: 16px
       text-align: center
 
@@ -4500,8 +4525,15 @@ $block: ".boss-table"
     &_state_alert
       color: map-get($boss-app-palette, alert)
 
-      #{$block}__cell_state_alert &,
-      #{$block}__cell_state_success &
+      #{$block}__cell_state_alert &
+        color: #FFF
+        font-weight: 600
+
+    // $Common table text MOD: state warning
+    &_state_warning
+      color: map-get($boss-app-palette, warning)
+
+      #{$block}__cell_state_warning &
         color: #FFF
         font-weight: 600
 
@@ -4540,7 +4572,6 @@ $block: ".boss-table"
         border-radius: 4px
         text-align: center
 
-        #{$block}__cell_state_alert &,
         #{$block}__cell_state_success &
           border-color: #fff
           color: #fff
@@ -5113,10 +5144,12 @@ $block: ".boss-table"
     #{$block}_page_pay-rates-staff-members &,
     #{$block}_page_pay-rates-admin-staff-members &,
     #{$block}_page_yearly-reports &,
-    #{$block}_page_native-app-links &
+    #{$block}_page_native-app-links &,
+    #{$block}_page_kpi &
       color: #1585cf
 
     #{$block}__cell_state_alert &,
+    #{$block}__cell_state_warning &,
     #{$block}__cell_state_success &
       color: #fff
       font-weight: 600
