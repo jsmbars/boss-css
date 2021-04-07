@@ -20,6 +20,10 @@ $block: ".boss-overview"
   display: block
   width: 100%
 
+  &_page_kpi
+    min-width: 240px
+    padding: 5px 0 10px
+
   // $Overview header
   &__header
     display: flex
@@ -66,6 +70,10 @@ $block: ".boss-overview"
     #{$block}_page_smp-disciplinary-details &
       margin-bottom: 10px
       font-size: 24px
+      text-align: center
+
+    #{$block}_page_kpi &
+      font-size: 16px
       text-align: center
 
 
@@ -1074,6 +1082,9 @@ $block: ".boss-overview"
   &__actions
     display: block
     width: 100%
+
+    #{$block}_page_kpi &
+      text-align: center
 
 
   // $Overview action
