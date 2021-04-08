@@ -90,6 +90,9 @@ $block: ".boss-board"
   // $Board MOD: role pay-rates
   &_role_pay-rates
 
+  // $Board MOD: role kpi
+  &_role_kpi
+
 
   // $Board header area
   &__header
@@ -107,6 +110,9 @@ $block: ".boss-board"
     #{$block}_role_bonai &
       display: block
       padding: 0
+
+    #{$block}_role_kpi &
+      padding: 15px 20px
 
     @media screen and (max-width: 960px)
       #{$block}_state_edit &,
@@ -130,7 +136,10 @@ $block: ".boss-board"
 
       #{$block}_role_profile-disciplinary &
         flex-wrap: wrap
+
         justify-content: center
+      #{$block}_role_kpi &
+        padding: 15px
 
     &:before
       content: ''

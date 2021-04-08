@@ -453,6 +453,10 @@ $block: ".boss-page-main"
     @media screen and (max-width: 480px)
       padding: 20px 10px 0
 
+    &_adjust_boards
+      background-color: transparent
+      padding: 0
+
 
   // $Page main container isle area
   &__isle
@@ -462,6 +466,21 @@ $block: ".boss-page-main"
 
     @media screen and (max-width: 960px)
       width: 100%
+
+    &_adjust_board-half
+      flex-grow: 0
+      flex-shrink: 1
+      width: calc(50% - 10px)
+      margin-bottom: 20px
+
+      @media screen and (max-width: 960px)
+        width: 100%
+
+      &:nth-child(odd)
+        margin-right: 20px
+
+        @media screen and (max-width: 960px)
+          margin-right: 0
 
     &_adjust_check-full
       width: 100%
