@@ -454,8 +454,9 @@ $block: ".boss-page-main"
       padding: 20px 10px 0
 
     &_adjust_boards
-      background-color: transparent
+      align-items: stretch
       padding: 0
+      background-color: transparent
 
 
   // $Page main container isle area
@@ -470,6 +471,10 @@ $block: ".boss-page-main"
     &_adjust_board-half
       flex-grow: 0
       flex-shrink: 1
+      display: flex
+      flex-direction: row
+      justify-content: flex-start
+      align-items: stretch
       width: calc(50% - 10px)
       margin-bottom: 20px
 
