@@ -16,162 +16,112 @@ $block: ".boss-kpi"
 
 #{$block}
   +box-model-normalizer()
-  display: flex
-  flex-direction: row
-  justify-content: flex-start
-  align-items: flex-start
+  display: block
   width: 100%
-
-  @media screen and (max-width: 480px)
-    flex-direction: column
-    align-items: center
-
-
-  // $KPI chart
-  &__chart
-    flex-grow: 0
-    flex-shrink: 0
-    display: block
-    width: 150px
-
-
-  // $KPI gauge
-  &__gauge
-    position: relative
-    width: 150px
-    height: 150px
-    display: block
-    overflow: hidden
-
-    & > .gauge .dial
-      stroke: #ecf0f1
-      stroke-width: 20
-      fill: rgba(0,0,0,0)
-
-    & > .gauge .value
-      stroke: #4c4c4c
-      stroke-width: 20
-      fill: rgba(0,0,0,0)
-
-    & > .gauge .value-text
-      fill: #4c4c4c
-      font-weight: 600
-      font-size: 20px
-      text-transform: uppercase
-
-    // $KPI gauge MOD: state bad
-    &_state_bad
-      & > .gauge .value
-        stroke: #EC6A6A
-
-      & > .gauge .value-text
-        fill: #EC6A6A
-
-    // $KPI gauge MOD: state poor
-    &_state_poor
-      & > .gauge .value
-        stroke: #F3A84D
-
-      & > .gauge .value-text
-        fill: #F3A84D
-
-    // $KPI gauge MOD: state good
-    &_state_good
-      & > .gauge .value
-        stroke: #74DC61
-
-      & > .gauge .value-text
-        fill: #74DC61
-
-
-  // $KPI gauge status
-  &__gauge-status
-    +text-normalizer()
-    position: absolute
-    bottom: 5px
-    display: block
-    width: 100%
-    margin: 0
-    padding: 0
-    font-size: 30px
-    line-height: 1
-    color: #4c4c4c
-    text-align: center
-
-    #{$block}__gauge_state_bad &
-      color: #EC6A6A
-
-    #{$block}__gauge_state_poor &
-      color: #F3A84D
-
-    #{$block}__gauge_state_good &
-      color: #74DC61
 
 
   // $KPI data
   &__data
-    flex-grow: 1
-    flex-shrink: 1
-    width: calc(100% - 150px)
-    padding-left: 40px
-
-    @media screen and (max-width: 1120px)
-      padding-left: 20px
-
-    @media screen and (max-width: 960px)
-      padding-left: 40px
-
-    @media screen and (max-width: 640px)
-      padding-left: 20px
-
-    @media screen and (max-width: 480px)
-      width: 100%
-      margin-top: 20px
-      padding-top: 20px
-      padding-left: 0
-      border-top: 1px solid #d8d8d8
+    display: block
+    width: 100%
 
 
   // $KPI data title
   &__data-title
     +text-normalizer()
-    margin-bottom: 5px
+    line-height: 1
+
+    #{$block}__data-item_role_month &
+      margin-bottom: 12px
+      text-align: center
 
 
-  // $KPI months
-  &__months
+  // $KPI data list
+  &__data-list
     display: flex
     flex-direction: row
     justify-content: flex-start
     align-items: flex-start
+    flex-wrap: wrap
     width: 100%
+    list-style: none
 
 
-  // $KPI month
-  &__month
+  // $KPI data-item
+  &__data-item
     flex-grow: 1
     flex-shrink: 1
     position: relative
     display: block
-    width: 33%
+    margin: 0 5px 10px 0
+    padding: 0
+
+    // $KPI data-point MOD: role month
+    &_role_month
+      width: calc(33% - 5px)
+
+    // $KPI data-point MOD: role week
+    &_role_week
+      width: calc(25% - 5px)
+
+
+  // $KPI data group
+  &__data-group
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: stretch
+    width: 100%
+
+
+  // $KPI data area
+  &__data-area
+    flex-grow: 1
+    flex-shrink: 1
+    width: 50%
 
     &:not(:last-child)
-      margin-right: 20px
+      border-right: 1px solid #fff
 
 
-  // $KPI month title
-  &__month-title
+  // $KPI data label
+  &__data-label
     +text-normalizer()
-    margin-bottom: 5px
+    display: block
+    width: 100%
+    margin-top: 5px
+    font-size: 11px
+    line-height: 1
     text-align: center
+    color: #808080
+
+    @media screen and (max-width: 480px)
+      font-size: 10px
+      overflow: hidden
 
 
-  // $KPI month indicator
-  &__month-indicator
+  // $KPI data number
+  &__data-number
+    +text-normalizer()
+    display: block
+    width: 100%
+    margin-bottom: 1px
+    font-size: 12px
+    line-height: 1
+    font-weight: 600
+    text-align: right
+    color: #808080
+
+    @media screen and (max-width: 480px)
+      font-size: 11px
+
+
+  // $KPI data indicator
+  &__data-indicator
     display: block
     width: 100%
     height: 40px
-    background-color: #eee
+    background-color: #ddd
     cursor: pointer
     opacity: 1
     transition: all .3s
@@ -179,21 +129,17 @@ $block: ".boss-kpi"
     &:hover
       opacity: .75
 
-    // $KPI month indicator MOD: state bad
-    &_state_bad
+    // $KPI data indicator MOD: role fail
+    &_role_fail
       background-color: #EC6A6A
 
-    // $KPI month indicator MOD: state poor
-    &_state_poor
-      background-color: #F3A84D
-
-    // $KPI month indicator MOD: state good
-    &_state_good
-      background-color: #74DC61
+    // $KPI data indicator MOD: role pass
+    &_role_pass
+      background-color: #519a43
 
 
-  // $KPI month value
-  &__month-indicator-value
+  // $KPI data indicator value
+  &__data-indicator-value
     +text-normalizer()
     display: block
     width: 100%
@@ -202,9 +148,8 @@ $block: ".boss-kpi"
     line-height: 40px
     text-align: center
 
-    #{$block}__month-indicator_state_bad &,
-    #{$block}__month-indicator_state_poor &,
-    #{$block}__month-indicator_state_good &
+    #{$block}__data-indicator_role_fail &,
+    #{$block}__data-indicator_role_pass &
       color: #fff
 
     @media screen and (max-width: 1120px)
@@ -217,153 +162,53 @@ $block: ".boss-kpi"
       font-size: 14px
 
 
-  // $KPI weeks
-  &__weeks
-    display: flex
-    flex-direction: row
-    justify-content: flex-start
-    align-items: flex-start
-    flex-wrap: wrap
-    width: 100%
-
-
-  // $KPI week
-  &__week
-    flex-grow: 0
-    flex-shrink: 1
-    position: relative
-    display: block
-    width: 25%
-    margin: 0
-    padding: 0
-    border-right: 1px solid #fff
-    border-bottom: 1px solid #fff
-
-
-  // $KPI week indicator
-  &__week-indicator
-    display: block
-    width: 100%
-    height: 40px
-    background-color: #eee
-    cursor: pointer
-    opacity: 1
-    transition: all .3s
-
-    &:hover
-      opacity: .75
-
-    // $KPI week indicator MOD: state bad
-    // $KPI week indicator MOD: state fail
-    &_state_bad,
-    &_state_fail
-      background-color: #EC6A6A
-
-    // $KPI week indicator MOD: state poor
-    &_state_poor
-      background-color: #F3A84D
-
-    // $KPI week indicator MOD: state good
-    // $KPI week indicator MOD: state pass
-    &_state_good,
-    &_state_pass
-      background-color: #74DC61
-
-
-  // $KPI week number
-  &__week-indicator-number
-    +text-normalizer()
-    position: absolute
-    top: 4px
-    right: 2px
-    display: block
-    width: 100%
-    font-size: 12px
-    line-height: 1
-    text-align: right
-
-    #{$block}__week-indicator_state_bad &,
-    #{$block}__week-indicator_state_poor &,
-    #{$block}__week-indicator_state_good &,
-    #{$block}__week-indicator_state_fail &,
-    #{$block}__week-indicator_state_pass &
-      color: #fff
-
-
-  // $KPI week value
-  &__week-indicator-value
-    +text-normalizer()
-    display: block
-    width: 100%
-    padding-top: 5px
-    font-size: 16px
-    font-weight: 600
-    line-height: 35px
-    text-align: center
-
-    #{$block}__week-indicator_state_bad &,
-    #{$block}__week-indicator_state_poor &,
-    #{$block}__week-indicator_state_good &,
-      color: #fff
-
-    #{$block}__week-indicator_state_fail &,
-    #{$block}__week-indicator_state_pass &
-      font-size: 0
-      line-height: 0
-      color: transparent
-
-    @media screen and (max-width: 1120px)
-      font-size: 14px
-
-    @media screen and (max-width: 960px)
-      font-size: 16px
-
-    @media screen and (max-width: 640px)
-      font-size: 16px
+  // $KPI data indicator icon
+  &__data-indicator-icon
+    display: inline-block
 
     &:before
-      #{$block}__week-indicator_state_fail &,
-      #{$block}__week-indicator_state_pass &
+      #{$block}__data-indicator_role_fail &,
+      #{$block}__data-indicator_role_pass &
         content: ''
         display: inline-block
         font-family: icons
-        font-size: 20px
-        line-height: 35px
+        line-height: 40px
         font-weight: 400
         color: #fff
 
+    &:before
+      #{$block}__data-indicator_role_pass &
+        content: '\e914'
+        font-size: 20px
+
       @media screen and (max-width: 1120px)
-        #{$block}__week-indicator_state_fail &,
-        #{$block}__week-indicator_state_pass &
+        #{$block}__data-indicator_role_fail &,
+        #{$block}__data-indicator_role_pass &
           font-size: 16px
 
       @media screen and (max-width: 960px)
-        #{$block}__week-indicator_state_fail &,
-        #{$block}__week-indicator_state_pass &
+        #{$block}__data-indicator_role_fail &,
+        #{$block}__data-indicator_role_pass &
           font-size: 20px
 
       @media screen and (max-width: 640px)
-        #{$block}__week-indicator_state_fail &,
-        #{$block}__week-indicator_state_pass &
+        #{$block}__data-indicator_role_fail &,
+        #{$block}__data-indicator_role_pass &
           font-size: 16px
 
     &:before
-      #{$block}__week-indicator_state_pass &
-        content: '\e914'
-
-    &:before
-      #{$block}__week-indicator_state_fail &
+      #{$block}__data-indicator_role_fail &
         content: '\e96a'
         font-size: 16px
 
       @media screen and (max-width: 1120px)
-        #{$block}__week-indicator_state_fail &
+        #{$block}__data-indicator_role_fail &
           font-size: 12px
 
       @media screen and (max-width: 960px)
-        #{$block}__week-indicator_state_fail &
+        #{$block}__data-indicator_role_fail &
           font-size: 16px
 
       @media screen and (max-width: 640px)
-        #{$block}__week-indicator_state_fail &
+        #{$block}__data-indicator_role_fail &
           font-size: 12px

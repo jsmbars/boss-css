@@ -92,6 +92,28 @@ $block: ".boss-board"
 
   // $Board MOD: role kpi
   &_role_kpi
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+
+  // $KPI rating indicator MOD: role kpi status bad
+  &_role_kpi-status-bad
+
+  // $KPI rating indicator MOD: role kpi status fail
+  &_role_kpi-status-fail
+
+  // $KPI rating indicator MOD: role kpi status poor
+  &_role_kpi-status-poor
+
+  // $KPI rating indicator MOD: role kpi status ok
+  &_role_kpi-status-ok
+
+  // $KPI rating indicator MOD: role kpi status good
+  &_role_kpi-status-good
+
+  // $KPI rating indicator MOD: role kpi status pass
+  &_role_kpi-status-pass
 
 
   // $Board header area
@@ -112,7 +134,24 @@ $block: ".boss-board"
       padding: 0
 
     #{$block}_role_kpi &
+      flex-grow: 0
+      flex-shrink: 0
+      min-height: 55px
       padding: 15px 20px
+
+    #{$block}_role_kpi-status-bad &,
+    #{$block}_role_kpi-status-fail &
+      background-color: #EC6A6A
+
+    #{$block}_role_kpi-status-poor &
+      background-color: #F3A84D
+
+    #{$block}_role_kpi-status-ok &
+      background-color: #74DC61
+
+    #{$block}_role_kpi-status-good &,
+    #{$block}_role_kpi-status-pass &
+      background-color: #519a43
 
     @media screen and (max-width: 960px)
       #{$block}_state_edit &,
@@ -136,8 +175,8 @@ $block: ".boss-board"
 
       #{$block}_role_profile-disciplinary &
         flex-wrap: wrap
-
         justify-content: center
+
       #{$block}_role_kpi &
         padding: 15px
 
@@ -262,6 +301,18 @@ $block: ".boss-board"
       font-weight: 600
       color: #fff
 
+    #{$block}_role_kpi &
+      font-size: 20px
+      line-height: 1
+
+    #{$block}_role_kpi-status-bad &,
+    #{$block}_role_kpi-status-fail &,
+    #{$block}_role_kpi-status-poor &,
+    #{$block}_role_kpi-status-ok &,
+    #{$block}_role_kpi-status-good &,
+    #{$block}_role_kpi-status-pass &
+      color: #fff
+
     #{$block}_role_venue-alert-levels-amber &,
     #{$block}_role_training-pending-failure &
       font-weight: 600
@@ -302,6 +353,10 @@ $block: ".boss-board"
       #{$block}_role_profile-quizzes-categories &,
       #{$block}_role_profile-quizzes-history &
         width: 100%
+
+    @media screen and (max-width: 480px)
+      #{$block}_role_kpi &
+        font-size: 18px
 
     @media screen and (max-width: 400px)
       font-size: 20px
@@ -518,6 +573,31 @@ $block: ".boss-board"
     margin-right: 15px
 
 
+  // $Board status
+  &__status
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    font-size: 24px
+    line-height: 1
+    font-weight: 600
+    text-transform: uppercase
+    color: #4c4c4c
+
+    #{$block}_role_kpi-status-bad &,
+    #{$block}_role_kpi-status-fail &,
+    #{$block}_role_kpi-status-poor &,
+    #{$block}_role_kpi-status-ok &,
+    #{$block}_role_kpi-status-good &,
+    #{$block}_role_kpi-status-pass &
+      color: #fff
+
+    @media screen and (max-width: 480px)
+      #{$block}_role_kpi &
+        font-size: 22px
+
+
   // $Board subtitle
   &__subtitle
     +text-normalizer()
@@ -541,6 +621,25 @@ $block: ".boss-board"
 
     &:not(:last-child)
       margin-bottom: 20px
+
+    // $Board text MOD: type faded
+    &_type_faded
+      color: #808080
+
+
+  // $Board text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Board text bold
+  &__text-bold
+    font-weight: 600
+
+
+  // $Board text part
+  &__text-part
+    white-space: nowrap
 
 
   // $Board filter
@@ -693,6 +792,9 @@ $block: ".boss-board"
         @media screen and (max-width: 640px)
           display: block
 
+          #{$block}_role_kpi &
+            display: none
+
 
   // $Board action
   &__action
@@ -825,6 +927,10 @@ $block: ".boss-board"
     display: block
     width: 100%
 
+    #{$block}_role_kpi &
+      flex-grow: 1
+      flex-shrink: 1
+
 
   // $Board main content area inner
   &__main-inner
@@ -832,9 +938,66 @@ $block: ".boss-board"
     width: 100%
     padding: 20px 20px 30px
 
+    #{$block}_role_kpi &
+      padding-bottom: 20px
+
     @media screen and (max-width: 400px)
       padding-left: 15px
       padding-right: 15px
+
+
+  // $Board main content area group
+  &__main-group
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      padding-bottom: 10px
+
+
+  // $Board footer area
+  &__footer
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 20px
+
+    #{$block}_role_kpi &
+      flex-grow: 0
+      flex-shrink: 0
+      min-height: 60px
+      padding: 15px 20px
+
+    @media screen and (max-width: 400px)
+      padding-left: 15px
+      padding-right: 15px
+
+      #{$block}_role_kpi &
+        padding: 15px
+
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      display: block
+      height: 1px
+      width: 100%
+      background-color: #d8d8d8
+
+
+  // $Board footer area group
+  &__footer-group
+    display: block
+    width: 100%
+
+    #{$block}_role_kpi &
+      width: auto
+      flex-grow: 1
+      flex-shrink: 1
 
 
   // $Board scroll area
