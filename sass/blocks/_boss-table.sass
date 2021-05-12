@@ -4618,7 +4618,8 @@ $block: ".boss-table"
         content: '\e946'
 
     &_role_date,
-    &_role_venue
+    &_role_venue,
+    &_role_details
       vertical-align: middle
 
       &:before
@@ -4641,6 +4642,10 @@ $block: ".boss-table"
     &_role_venue
       &:before
         content: '\e901'
+
+    &_role_details
+      &:before
+        content: '\e921'
 
     &_role_action
       cursor: pointer
