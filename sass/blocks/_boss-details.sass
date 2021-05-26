@@ -217,13 +217,20 @@ $block: ".boss-details"
       hyphens: auto
 
 
-  // $Details value new line
+  // $Details value line
   &__value-line
     display: block
-    margin-bottom: 10px
 
-    &:last-of-type
-      margin-bottom: 0
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+  // $Details value part
+  &__value-part
+    display: inline-block
+
+    &:not(:last-child)
+      margin-right: 10px
 
 
   // $Details value action
