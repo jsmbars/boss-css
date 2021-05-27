@@ -40,6 +40,12 @@ $block: ".boss-action"
     color: inherit
     text-decoration: none
 
+  &:empty
+    transition: all .3s
+
+  &:empty:hover
+    opacity: .8
+
   &_size_s
     font-size: 14px
 
@@ -100,6 +106,14 @@ $block: ".boss-action"
 
     &:hover
       color: map-get($boss-app-palette, secondary)
+
+  &_role_show
+    &:before
+      content: '\e99d'
+
+  &_role_hide
+    &:before
+      content: '\e99c'
 
 
   // $Action text
