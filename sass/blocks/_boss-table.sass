@@ -998,7 +998,9 @@ $block: ".boss-table"
     #{$block}_page_payroll-reports-overview &
       padding: 10px
 
-    #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports &
+      padding: 0 3px
+
     #{$block}_page_payroll-reports &,
     #{$block}_page_payslip-header &,
     #{$block}_page_payslip-info &,
@@ -1879,7 +1881,7 @@ $block: ".boss-table"
         padding-right: 15px
 
       #{$block}_page_finance-reports &
-        width: 5%
+        width: 4%
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -2278,9 +2280,6 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4.5%
 
-        &:nth-last-child(17)
-          width: 5%
-
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -2654,9 +2653,6 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &
         width: 4.5%
-
-        &:nth-last-child(16)
-          width: 5%
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -3174,9 +3170,6 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4.5%
 
-        &:nth-last-child(14)
-          width: 5%
-
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -3318,9 +3311,6 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4.5%
 
-        &:nth-last-child(13)
-          width: 5%
-
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -3422,9 +3412,6 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4.5%
 
-        &:nth-last-child(12)
-          width: 5%
-
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -3505,9 +3492,6 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4.5%
 
-        &:nth-last-child(11)
-          width: 5%
-
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -3583,9 +3567,6 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 6%
 
-        &:nth-last-child(7)
-          width: 5%
-
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -3594,9 +3575,6 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &
         width: 3.5%
-
-        &:nth-last-child(6)
-          width: 4%
 
       #{$block}_page_payroll-reports &
         width: 4.5%
@@ -3636,10 +3614,6 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4%
 
-        &:nth-last-child(3)
-          width: 4.5%
-          min-width: 100px
-
       #{$block}_page_payroll-reports &
         width: 6%
         min-width: 120px
@@ -3652,11 +3626,6 @@ $block: ".boss-table"
         width: 4.5%
         min-width: 100px
 
-        &:nth-last-child(2)
-          width: 8%
-          max-width: 300px
-          min-width: 150px
-
     // $Common table cell nineteenth column
     &:nth-child(19)
 
@@ -3665,18 +3634,23 @@ $block: ".boss-table"
         max-width: 300px
         min-width: 150px
 
-        &:nth-last-child(1)
-          width: 6%
-          max-width: none
-          min-width: 100px
-          padding-right: 15px
-
     // $Common table cell twenth column
     &:nth-child(20)
 
       #{$block}_page_finance-reports &
-        width: 6%
-        min-width: 100px
+        width: 5%
+        min-width: 90px
+
+        &:nth-last-child(1)
+          min-width: 100px
+          padding-right: 15px
+
+    // $Common table cell twenty first column
+    &:nth-child(21)
+
+      #{$block}_page_finance-reports &
+        width: 3.5%
+        min-width: 60px
         padding-right: 15px
 
     // $Common table cell MOD: role header
@@ -4727,6 +4701,7 @@ $block: ".boss-table"
     &_role_important
       font-weight: 800
 
+
   &__text-line,
   &__text-meta
     display: block
@@ -4800,7 +4775,6 @@ $block: ".boss-table"
 
 
   &__text-indicator
-
     #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &
       position: absolute
@@ -4814,6 +4788,23 @@ $block: ".boss-table"
     #{$block}_page_bonai &,
     #{$block}_page_bonai-staff-member-data &
       margin-left: 10px
+
+  &__text-underline
+    #{$block}_page_finance-reports &,
+    #{$block}_page_payroll-reports &
+      position: absolute
+      top: 100%
+      display: block
+      width: 100%
+      height: 10px
+
+    &_role_bank-details-update
+      background-image:  url('data:image/svg+xml;charset=UTF-8,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%20512%20512%22%20xml%3Aspace%3D%22preserve%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m225.89%200v59.623c-67.163%2013.184-106.12%2056.457-106.12%20111.69%200%2060.856%2045.851%2092.223%20113.02%20114.81%2046.459%2015.68%2066.547%2030.753%2066.547%2054.617%200%2025.088-24.481%2038.879-60.264%2038.879-40.84%200-77.848-13.184-104.22-27.592l-18.863%2073.424c23.866%2013.792%2064.658%2025.089%20106.72%2026.977v59.576h61.545v-63.969c72.173-12.568%20111.73-60.232%20111.73-116.08%200-56.512-30.156-90.999-104.83-117.36-53.365-20.08-75.342-33.255-75.342-53.951%200-17.576%2013.188-35.152%2053.973-35.152%2045.234%200%2074.117%2014.463%2090.42%2021.359l18.199-70.92c-20.704-10.072-48.97-18.807-91.035-20.695v-55.232z%22%20fill%3D%22%23fd554f%22%2F%3E%3C%2Fsvg%3E')
+      background-size: contain
+      background-repeat: repeat
+
+      #{$block}__cell_state_alert &
+        background-image:  url('data:image/svg+xml;charset=UTF-8,%3Csvg%20version%3D%221.1%22%20viewBox%3D%220%200%20512%20512%22%20xml%3Aspace%3D%22preserve%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m225.89%200v59.623c-67.163%2013.184-106.12%2056.457-106.12%20111.69%200%2060.856%2045.851%2092.223%20113.02%20114.81%2046.459%2015.68%2066.547%2030.753%2066.547%2054.617%200%2025.088-24.481%2038.879-60.264%2038.879-40.84%200-77.848-13.184-104.22-27.592l-18.863%2073.424c23.866%2013.792%2064.658%2025.089%20106.72%2026.977v59.576h61.545v-63.969c72.173-12.568%20111.73-60.232%20111.73-116.08%200-56.512-30.156-90.999-104.83-117.36-53.365-20.08-75.342-33.255-75.342-53.951%200-17.576%2013.188-35.152%2053.973-35.152%2045.234%200%2074.117%2014.463%2090.42%2021.359l18.199-70.92c-20.704-10.072-48.97-18.807-91.035-20.695v-55.232z%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fsvg%3E')
 
 
   // $Common table note
@@ -5031,6 +5022,15 @@ $block: ".boss-table"
       font-size: 12px
       font-weight: 600
 
+    #{$block}_page_finance-reports #{$block}__cell_state_alert &
+      color: #fff
+      border-color: #fff
+
+    &:hover
+      #{$block}_page_finance-reports #{$block}__cell_state_alert &
+        color: #ff8587
+        background-color: #fff
+
     @media screen and (max-width: 960px)
       #{$block}_page_change-order-report &:not(:last-of-type),
       #{$block}_page_smp-owed-hours &:not(:last-of-type)
@@ -5219,6 +5219,16 @@ $block: ".boss-table"
 
       &:hover
         color: map-get($boss-app-palette, primary)
+
+
+  //  $Common table indicator
+  &__indicator
+
+    & > *
+      #{$block}__cell_state_alert &,
+      #{$block}__cell_state_warning &,
+      #{$block}__cell_state_success &
+        color: #fff
 
 
   //  $Common table sort link
