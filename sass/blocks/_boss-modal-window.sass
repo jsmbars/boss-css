@@ -100,6 +100,8 @@ $block: ".boss-modal-window"
   &_role_venue-details,
   &_role_staff-type-details,
   &_role_question-details,
+  &_role_bank-details,
+  &_role_bank-details-updated,
   &_role_disciplinary-details,
   &_role_edit,
   &_role_add,
@@ -233,6 +235,8 @@ $block: ".boss-modal-window"
     #{$block}_role_venue-details &,
     #{$block}_role_staff-type-details &,
     #{$block}_role_question-details &,
+    #{$block}_role_bank-details &,
+    #{$block}_role_bank-details-updated &,
     #{$block}_role_quiz-overview &,
     #{$block}_role_disciplinary-details &,
     #{$block}_role_shift-details &,
@@ -268,6 +272,8 @@ $block: ".boss-modal-window"
       #{$block}_role_venue-details &,
       #{$block}_role_staff-type-details &,
       #{$block}_role_question-details &,
+      #{$block}_role_bank-details-updated &,
+      #{$block}_role_bank-details &,
       #{$block}_role_quiz-overview &,
       #{$block}_role_disciplinary-details &,
       #{$block}_role_shift-details &,
@@ -279,6 +285,9 @@ $block: ".boss-modal-window"
         font-size: 16px
         color: #808080
 
+      #{$block}_role_bank-details-updated &
+        color: #fff
+
     @media screen and (max-width: 960px)
       #{$block}_role_edit &,
       #{$block}_role_add &,
@@ -286,6 +295,8 @@ $block: ".boss-modal-window"
       #{$block}_role_venue-details &,
       #{$block}_role_staff-type-details &,
       #{$block}_role_question-details &,
+      #{$block}_role_bank-details &,
+      #{$block}_role_bank-details-updated &,
       #{$block}_role_quiz-overview &,
       #{$block}_role_disciplinary-details &,
       #{$block}_role_task-create &,
@@ -363,6 +374,8 @@ $block: ".boss-modal-window"
     #{$block}_role_venue-details &,
     #{$block}_role_staff-type-details &,
     #{$block}_role_question-details &,
+    #{$block}_role_bank-details &,
+    #{$block}_role_bank-details-updated &,
     #{$block}_role_quiz-overview &,
     #{$block}_role_disciplinary-details &,
     #{$block}_role_shift-details &,
@@ -379,6 +392,10 @@ $block: ".boss-modal-window"
       font-weight: 400
       color: #4c4c4c
       text-align: left
+
+    #{$block}_role_bank-details-updated &
+      background-color: map-get($boss-app-palette, alert)
+      color: #fff
 
     #{$block}_role_login &,
     #{$block}_role_reset &,
@@ -429,6 +446,8 @@ $block: ".boss-modal-window"
       #{$block}_role_venue-details &,
       #{$block}_role_staff-type-details &,
       #{$block}_role_question-details &,
+      #{$block}_role_bank-details &,
+      #{$block}_role_bank-details-updated &,
       #{$block}_role_quiz-overview &,
       #{$block}_role_disciplinary-details &,
       #{$block}_role_shift-details &,
@@ -464,6 +483,8 @@ $block: ".boss-modal-window"
       #{$block}_role_venue-details &,
       #{$block}_role_staff-type-details &,
       #{$block}_role_question-details &,
+      #{$block}_role_bank-details &,
+      #{$block}_role_bank-details-updated &,
       #{$block}_role_quiz-overview &,
       #{$block}_role_disciplinary-details &,
       #{$block}_role_shift-details &,
@@ -600,6 +621,8 @@ $block: ".boss-modal-window"
     #{$block}_role_venue-details &,
     #{$block}_role_staff-type-details &,
     #{$block}_role_question-details &,
+    #{$block}_role_bank-details &,
+    #{$block}_role_bank-details-updated &,
     #{$block}_role_quiz-overview &,
     #{$block}_role_disciplinary-details &,
     #{$block}_role_csv-upload-payments &,
@@ -637,6 +660,8 @@ $block: ".boss-modal-window"
       #{$block}_role_venue-details &,
       #{$block}_role_staff-type-details &,
       #{$block}_role_question-details &,
+      #{$block}_role_bank-details &,
+      #{$block}_role_bank-details-updated &,
       #{$block}_role_quiz-overview &,
       #{$block}_role_disciplinary-details &,
       #{$block}_role_csv-upload-payments &,
