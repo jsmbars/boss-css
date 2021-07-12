@@ -705,6 +705,9 @@ $block: ".boss-user-summary"
         margin-right: 0
         margin-bottom: 10px
 
+      #{$block}_role_ssr-assign-confirmation &
+        margin-right: 0
+
       @media screen and (max-width: 960px)
         margin-right: 0
         margin-bottom: 15px
@@ -768,6 +771,12 @@ $block: ".boss-user-summary"
     &_role_text
       +text-normalizer()
       margin-left: 5px
+      color: #808080
+
+      #{$block}_role_ssr-assign-confirmation &
+        display: block
+        margin: 0 auto
+        text-align: center
 
 
   // $User summary label
