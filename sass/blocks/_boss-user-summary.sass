@@ -765,6 +765,17 @@ $block: ".boss-user-summary"
     #{$block}_role_card-header-short &
       margin-bottom: 3px
 
+    &_role_text
+      +text-normalizer()
+      margin-left: 5px
+
+
+  // $User summary label
+  &__label
+    display: inline-block
+    vertical-align: middle
+    cursor: default
+
 
   // $User summary icon
   &__icon
