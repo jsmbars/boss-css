@@ -85,6 +85,9 @@ $block: ".date-control"
       padding-right: 15px
       padding-left: 15px
 
+  & .DateInput__disabled
+    background-color: #e6e6e6
+
   & .DateInput_input
     +text-normalizer()
     position: absolute
@@ -103,9 +106,16 @@ $block: ".date-control"
       padding-right: 15px
       padding-left: 15px
 
+  & .DateInput_input__disabled
+    background-color: #e6e6e6
+    cursor: not-allowed
+
   & .SingleDatePickerInput
     & .DateInput
       width: 100%
+
+  & .SingleDatePickerInput__disabled
+    background-color: #e6e6e6
 
   &_type_inline
     & .DateInput
