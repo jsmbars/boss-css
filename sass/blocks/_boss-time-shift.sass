@@ -20,8 +20,6 @@ $block: ".boss-time-shift"
   width: 100%
   border: 1px solid $boss-very-light-gray
 
-  &_updated
-
 
   // $Time shift header
   &__header
@@ -30,11 +28,8 @@ $block: ".boss-time-shift"
     justify-content: space-between
     align-items: center
     width: 100%
-    padding: 20px 15px
+    padding: 10px 15px
     border-bottom: 1px solid $boss-very-light-gray
-
-    #{$block}_updated &
-      padding: 10px 15px
 
     @media screen and (max-width: 400px)
       flex-direction: column
@@ -174,10 +169,7 @@ $block: ".boss-time-shift"
   &__form
     display: block
     width: 100%
-    padding: 20px 15px
-
-    #{$block}_updated &
-      padding: 10px 15px 15px
+    padding: 10px 15px 15px
 
 
   // $Time shift log
@@ -255,23 +247,15 @@ $block: ".boss-time-shift"
     align-items: flex-start
     width: 100%
     max-width: 300px
-    padding-right: 20px
-
-    #{$block}_updated &
-      padding-right: 0
 
     // $Time shift time CONTEXT: $Time shift log MOD: state accepted
     #{$block}__log_state_accepted &
       width: 50%
-      padding-right: 10px
 
-    #{$block}_updated #{$block}__log_state_accepted &
-      padding-right: 0
-
-    #{$block}_updated #{$block}__log_layout_break &
+    #{$block}__log_layout_break &
       padding-right: 20px
 
-    #{$block}_updated #{$block}__log_layout_break#{$block}__log_state_accepted &
+    #{$block}__log_layout_break#{$block}__log_state_accepted &
       padding-right: 10px
 
     @media screen and (max-width: 1280px)
@@ -288,10 +272,9 @@ $block: ".boss-time-shift"
       flex-grow: 1
       flex-shrink: 1
       max-width: none
-      padding-right: 0
 
-      #{$block}_updated #{$block}__log_layout_break &,
-      #{$block}_updated #{$block}__log_layout_break#{$block}__log_state_accepted &
+      #{$block}__log_layout_break &,
+      #{$block}__log_layout_break#{$block}__log_state_accepted &
         padding-right: 0
 
     @media screen and (max-width: 480px)
@@ -319,10 +302,10 @@ $block: ".boss-time-shift"
       margin-bottom: 0
 
     @media screen and (max-width: 400px)
-      #{$block}_updated #{$block}__log_state_accepted &
+      #{$block}__log_state_accepted &
         margin-bottom: 10px
 
-      #{$block}_updated #{$block}__log_layout_break#{$block}__log_state_accepted &
+      #{$block}__log_layout_break#{$block}__log_state_accepted &
         margin-bottom: 0
 
 
@@ -621,104 +604,61 @@ $block: ".boss-time-shift"
     flex-grow: 0
     flex-shrink: 0
     display: flex
-    flex-direction: column
+    flex-direction: row
     justify-content: flex-start
     align-items: flex-start
     min-width: 160px
     padding-top: 25px
 
-    #{$block}_updated &
-      flex-direction: row
-
     // $Time shift actions CONTEXT: $Time shift log MOD: state accepted
     #{$block}__log_state_accepted &
-      padding-top: 0
-
-    #{$block}_updated #{$block}__log_state_accepted &
       padding-top: 10px
-
-    // $Time shift actions CONTEXT: $Time shift log MOD: layout break
-    #{$block}__log_layout_break &
-      flex-direction: row
-      margin-bottom: 0
 
     @media screen and (max-width: 960px)
       flex-grow: 1
       flex-shrink: 1
-      flex-direction: row
       width: 100%
       margin-bottom: 15px
+      padding-top: 0
 
-      #{$block}_updated &
+      #{$block}__log_state_accepted &
         padding-top: 0
 
-      #{$block}_updated #{$block}__log_state_accepted &
-        padding-top: 0
-
-      #{$block}_updated #{$block}__log_layout_break &
+      #{$block}__log_layout_break &
         padding-top: 25px
 
     @media screen and (max-width: 400px)
       flex-direction: column
 
-      #{$block}_updated &
-        flex-direction: column
-
-      #{$block}_updated #{$block}__log_layout_break &
+      #{$block}__log_layout_break &
         flex-direction: row
 
 
   // $Time shift button
   &__button
-    margin-bottom: 10px
-
-    #{$block}_updated &
-      margin-bottom: 0
-
-    // $Time shift button CONTEXT: $Time shift log MOD: layout break
-    #{$block}__log_layout_break &
-      margin-bottom: 0
-      margin-right: 20px
-
-    #{$block}_updated #{$block}__log_layout_break &
-      margin-right: 0
 
     @media screen and (max-width: 960px)
       flex-grow: 1
       width: 100%
-      margin-bottom: 0
       margin-right: 20px
       padding-left: 15px
       padding-right: 15px
       text-align: center
-
-      #{$block}_updated #{$block}__log_layout_break &
-        margin-right: 20px
 
     @media screen and (max-width: 480px)
       margin-right: 10px
       padding-left: 10px
       padding-right: 10px
 
-      #{$block}__log_layout_break &,
-      #{$block}_updated #{$block}__log_layout_break &
-        margin-right: 10px
-
     @media screen and (max-width: 400px)
       margin-right: 0
       margin-bottom: 10px
 
-      #{$block}_updated &
-        margin-right: 0
-        margin-bottom: 10px
-
     &:not(:first-child)
-      #{$block}_updated &
-        margin-left: 20px
+      margin-left: 20px
 
       @media screen and (max-width: 960px)
-        #{$block}_updated &
-          margin-left: 0
+        margin-left: 0
 
     // $Time shift button MOD: role add break
     &_role_add-break
@@ -777,10 +717,6 @@ $block: ".boss-time-shift"
     +text-normalizer()
     display: none
     width: auto
-    max-width: 180px
-
-    #{$block}_updated &
-      max-width: none
 
     @media screen and (max-width: 960px)
       flex-grow: 1
@@ -977,7 +913,4 @@ $block: ".boss-time-shift"
     width: 100%
 
     &:not(:last-child)
-      margin-bottom: 30px
-
-      #{$block}_updated &
-        margin-bottom: 20px
+      margin-bottom: 20px
