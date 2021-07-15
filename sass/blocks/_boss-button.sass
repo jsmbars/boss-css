@@ -761,13 +761,18 @@ $block: ".boss-button"
 
 
   // $Common button MOD: role move
-  &_role_move
+  // $Common button MOD: role recover
+  &_role_move,
+  &_role_recover
     $background-color: map-get($boss-app-palette, warning)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
   &_role_move
     +button-with-icon-left($icon: '\e93d')
+
+  &_role_recover
+    +button-with-icon-left($icon: '\e950')
 
 
   // $Common button MOD: role view assignments
