@@ -20,6 +20,12 @@ $block: ".boss-time-shift"
   width: 100%
   border: 1px solid $boss-very-light-gray
 
+  // $Time shift MOD: state deleted
+  &_state_deleted
+    border-color: #ed7f7e
+    outline: 1px solid #ed7f7e
+    background-color: #feeeee
+
 
   // $Time shift header
   &__header
@@ -195,6 +201,10 @@ $block: ".boss-time-shift"
       @media screen and (max-width: 960px)
         flex-direction: row
         margin-bottom: 0
+
+    // $Time shift log MOD: state deleted
+    &_state_deleted
+      margin-bottom: 0
 
 
   // $Time shift group
@@ -483,6 +493,13 @@ $block: ".boss-time-shift"
     #{$block}__log_state_accepted &
       padding-top: 10px
 
+    // $Time shift actions CONTEXT: $Time shift log MOD: state deleted
+    #{$block}__log_state_deleted &
+      flex-grow: 1
+      flex-shrink: 1
+      width: 100%
+      padding-top: 10px
+
     // $Time shift actions CONTEXT: $Time shift break item
     #{$block}__break-inner > &
       padding-top: 0
@@ -572,6 +589,11 @@ $block: ".boss-time-shift"
     +text-normalizer()
     width: auto
 
+    #{$block}__log_state_deleted &
+      flex-grow: 1
+      flex-shrink: 1
+      width: 50%
+
     @media screen and (max-width: 960px)
       flex-grow: 1
       flex-shrink: 1
@@ -579,6 +601,9 @@ $block: ".boss-time-shift"
 
     @media screen and (max-width: 480px)
       width: 100%
+
+      #{$block}__log_state_deleted &
+        width: 100%
 
     @media screen and (max-width: 400px)
       margin-right: 0
@@ -610,6 +635,11 @@ $block: ".boss-time-shift"
     font-weight: 600
     white-space: nowrap
     color: map-get($boss-app-palette, secondary)
+
+    // $Time shift status count CONTEXT: $Time shift log MOD: state deleted
+    #{$block}__log_state_deleted &
+      font-size: 18px
+      color: #ed7f7e
 
 
   // $Time shift status meta
