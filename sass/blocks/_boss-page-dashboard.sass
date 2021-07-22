@@ -79,16 +79,19 @@ $block: ".boss-page-dashboard"
 
     #{$block}_page_finance-reports &:nth-child(2),
     #{$block}_page_payroll-reports &:nth-child(2),
+    #{$block}_page_security-payroll-report &:nth-child(2),
     #{$block}_page_kpi &:nth-child(2)
       margin-bottom: 20px
 
     #{$block}_page_finance-reports &:last-child,
-    #{$block}_page_payroll-reports &:last-child
+    #{$block}_page_payroll-reports &:last-child,
+    #{$block}_page_security-payroll-report &:last-child
       margin-bottom: 0
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports &:last-child,
-      #{$block}_page_payroll-reports &:last-child
+      #{$block}_page_payroll-reports &:last-child,
+      #{$block}_page_security-payroll-report &:last-child
         align-items: flex-start
 
     @media screen and (max-width: 1120px)
@@ -114,7 +117,8 @@ $block: ".boss-page-dashboard"
         justify-content: flex-start
 
       #{$block}_page_finance-reports &:last-child,
-      #{$block}_page_payroll-reports &:last-child
+      #{$block}_page_payroll-reports &:last-child,
+      #{$block}_page_security-payroll-report &:last-child
         align-items: center
 
     @media screen and (max-width: 640px)
@@ -153,7 +157,8 @@ $block: ".boss-page-dashboard"
     display: block
 
     #{$block}_page_finance-reports &,
-    #{$block}_page_payroll-reports &
+    #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &
       flex-grow: 0
       flex-shrink: 1
       max-width: 100%
@@ -174,7 +179,8 @@ $block: ".boss-page-dashboard"
         width: auto
 
       #{$block}_page_finance-reports &,
-      #{$block}_page_payroll-reports &
+      #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &
         margin-right: 0
         margin-top: 0
 
@@ -262,7 +268,8 @@ $block: ".boss-page-dashboard"
     margin-bottom: 25px
 
     #{$block}_page_finance-reports &,
-    #{$block}_page_payroll-reports &
+    #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &
       flex-shrink: 1
 
     @media screen and (max-width: 960px)
@@ -367,6 +374,7 @@ $block: ".boss-page-dashboard"
       #{$block}_page_daily-reports &,
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &,
       #{$block}_page_handover-planner &,
       #{$block}_page_vhci &,
       #{$block}_page_quiz-category &,
@@ -384,6 +392,7 @@ $block: ".boss-page-dashboard"
       #{$block}_page_venues &,
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &,
       #{$block}_page_handover-planner &,
       #{$block}_page_vhci &,
       #{$block}_page_quiz-category &,
@@ -434,6 +443,7 @@ $block: ".boss-page-dashboard"
       #{$block}_page_venues &,
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &,
       #{$block}_page_handover-planner &,
       #{$block}_page_vhci &,
       #{$block}_page_vhcq &,
@@ -475,6 +485,7 @@ $block: ".boss-page-dashboard"
         #{$block}_page_daily-reports &,
         #{$block}_page_finance-reports &,
         #{$block}_page_payroll-reports &,
+        #{$block}_page_security-payroll-report &,
         #{$block}_page_handover-planner &,
         #{$block}_page_vhci &,
         #{$block}_page_quiz-category &,
@@ -502,19 +513,22 @@ $block: ".boss-page-dashboard"
     margin-bottom: 25px
 
     #{$block}_page_finance-reports #{$block}__sub-group > &,
-    #{$block}_page_payroll-reports #{$block}__sub-group > &
+    #{$block}_page_payroll-reports #{$block}__sub-group > &,
+    #{$block}_page_security-payroll-report #{$block}__sub-group > &
       display: block
       margin-bottom: 0
       text-align: left
 
     #{$block}_page_finance-reports #{$block}__group > &,
-    #{$block}_page_payroll-reports #{$block}__group > &
+    #{$block}_page_payroll-reports #{$block}__group > &,
+    #{$block}_page_security-payroll-report #{$block}__group > &
       flex-shrink: 0
       margin-right: 20px
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports #{$block}__group > &,
-      #{$block}_page_payroll-reports #{$block}__group > &
+      #{$block}_page_payroll-reports #{$block}__group > &,
+      #{$block}_page_security-payroll-report #{$block}__group > &
         flex-shrink: 0
         margin-top: 8px
 
@@ -527,11 +541,13 @@ $block: ".boss-page-dashboard"
         width: 100%
 
       #{$block}_page_finance-reports #{$block}__sub-group > &,
-      #{$block}_page_payroll-reports #{$block}__sub-group > &
+      #{$block}_page_payroll-reports #{$block}__sub-group > &,
+      #{$block}_page_security-payroll-report #{$block}__sub-group > &
         text-align: center
 
       #{$block}_page_finance-reports #{$block}__group > &,
-      #{$block}_page_payroll-reports #{$block}__group > &
+      #{$block}_page_payroll-reports #{$block}__group > &,
+      #{$block}_page_security-payroll-report #{$block}__group > &
         margin-right: 0
         margin-top: 0
 
@@ -540,7 +556,8 @@ $block: ".boss-page-dashboard"
 
     &:not(:last-child)
       #{$block}_page_finance-reports #{$block}__sub-group > &,
-      #{$block}_page_payroll-reports #{$block}__sub-group > &
+      #{$block}_page_payroll-reports #{$block}__sub-group > &,
+      #{$block}_page_security-payroll-report #{$block}__sub-group > &
         margin-bottom: 5px
 
 
