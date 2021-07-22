@@ -72,6 +72,8 @@ $block: ".boss-table"
   &_page_ssr-completed,
   &_page_finance-reports,
   &_page_payroll-reports,
+  &_page_security-payroll-report,
+  &_page_security-payroll-report-week-details,
   &_page_wages-index,
   &_page_id-scanner-keys,
   &_page_smp-quizzes-history,
@@ -132,6 +134,9 @@ $block: ".boss-table"
     min-width: 1760px
 
   &_page_payroll-reports
+    min-width: 1760px
+
+  &_page_security-payroll-report
     min-width: 1760px
 
   &_page_staff-tracking-staff-added
@@ -457,6 +462,8 @@ $block: ".boss-table"
     #{$block}_page_holiday-requests &,
     #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &,
+    #{$block}_page_security-payroll-report-week-details &,
     #{$block}_page_bonai-venue &,
     #{$block}_page_bonai-venue-hour-data &
       background-color: transparent
@@ -557,6 +564,8 @@ $block: ".boss-table"
       #{$block}_page_ssr-assign &,
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &,
+      #{$block}_page_security-payroll-report-week-details &,
       #{$block}_page_bonai-venue &,
       #{$block}_page_bonai-venue-hour-data &,
       #{$block}_page_staff-tracking-staff-added &,
@@ -598,7 +607,8 @@ $block: ".boss-table"
 
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_security-payroll-report-week-details &
         display: block
         padding-top: 10px
         padding-bottom: 10px
@@ -690,14 +700,16 @@ $block: ".boss-table"
         #{$block}_page_api-keys &,
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
-        #{$block}_page_pay-rates-admin-staff-members &
+        #{$block}_page_pay-rates-admin-staff-members &,
+        #{$block}_page_security-payroll-report-week-details &
           display: flex
 
       @media screen and (max-width: 640px)
         #{$block}_page_api-keys &,
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
-        #{$block}_page_pay-rates-admin-staff-members &
+        #{$block}_page_pay-rates-admin-staff-members &,
+        #{$block}_page_security-payroll-report-week-details &
           display: none
 
       @media screen and (min-width: 1120px)
@@ -932,6 +944,7 @@ $block: ".boss-table"
     #{$block}_page_weekly-reports &,
     #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &,
     #{$block}_page_staff-tracking-staff-added &,
     #{$block}_page_staff-tracking-staff-disabled &,
     #{$block}_page_staff-tracking-accessories-payments &
@@ -957,7 +970,8 @@ $block: ".boss-table"
     #{$block}_page_payslip-deductions &,
     #{$block}_page_payslip-totals &,
     #{$block}_page_payslip-summary &,
-    #{$block}_page_kpi &
+    #{$block}_page_kpi &,
+    #{$block}_page_security-payroll-report-week-details &
       min-height: 0
 
     #{$block}_page_payslip-payments &,
@@ -981,7 +995,8 @@ $block: ".boss-table"
       min-height: 90px
 
     #{$block}_page_finance-reports &,
-    #{$block}_page_payroll-reports &
+    #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &
       min-height: 100px
 
     #{$block}_page_bonai-venue &
@@ -997,6 +1012,9 @@ $block: ".boss-table"
     #{$block}_page_finance-reports-overview &,
     #{$block}_page_payroll-reports-overview &
       padding: 10px
+
+    #{$block}_page_security-payroll-report &
+      padding: 0
 
     #{$block}_page_finance-reports &
       padding: 0 3px
@@ -1047,7 +1065,8 @@ $block: ".boss-table"
     #{$block}_page_staff-tracking-accessories-payments &,
     #{$block}_page_pay-rates &,
     #{$block}_page_pay-rates-staff-members &,
-    #{$block}_page_pay-rates-admin-staff-members &
+    #{$block}_page_pay-rates-admin-staff-members &,
+    #{$block}_page_security-payroll-report-week-details &
       padding: 15px 10px
 
     #{$block}_page_csv-upload &
@@ -1151,7 +1170,8 @@ $block: ".boss-table"
 
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_security-payroll-report-week-details &
         flex-direction: row
         justify-content: flex-start
         min-height: 0
@@ -1177,7 +1197,8 @@ $block: ".boss-table"
       #{$block}_page_api-keys &,
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_security-payroll-report-week-details &
         min-height: 0
         padding: 5px 10px
 
@@ -1229,6 +1250,9 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports-overview &
         border-right: 1px solid #eee
 
+      #{$block}_page_security-payroll-report &
+        border-right: 1px solid #fff
+
       @media screen and (max-width: 1280px)
         #{$block}_page_finance-reports-overview &,
         #{$block}_page_payroll-reports-overview &
@@ -1248,6 +1272,10 @@ $block: ".boss-table"
         #{$block}_page_smp-quizzes-category &,
         #{$block}_page_smp-quizzes-overview &,
         #{$block}_page_training-failures &
+          border-right: none
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_security-payroll-report &
           border-right: none
 
     // $Common table cell first column
@@ -1391,6 +1419,15 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         align-items: flex-start
         width: 10%
+        padding-left: 15px
+
+      #{$block}_page_security-payroll-report &
+        align-items: flex-start
+        width: 11%
+        padding-left: 15px
+
+      #{$block}_page_security-payroll-report-week-details &
+        width: 25%
         padding-left: 15px
 
       #{$block}_page_finance-reports-overview &,
@@ -1705,7 +1742,8 @@ $block: ".boss-table"
         #{$block}_page_api-keys &,
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
-        #{$block}_page_pay-rates-admin-staff-members &
+        #{$block}_page_pay-rates-admin-staff-members &,
+        #{$block}_page_security-payroll-report-week-details &
           width: 100%
 
       @media screen and (max-width: 480px)
@@ -1885,6 +1923,12 @@ $block: ".boss-table"
 
       #{$block}_page_payroll-reports &
         width: 6%
+
+      #{$block}_page_security-payroll-report &
+        width: 9%
+
+      #{$block}_page_security-payroll-report-week-details &
+        width: 20%
 
       #{$block}_page_finance-reports-overview &,
       #{$block}_page_payroll-reports-overview &
@@ -2127,7 +2171,8 @@ $block: ".boss-table"
 
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
-        #{$block}_page_pay-rates-admin-staff-members &
+        #{$block}_page_pay-rates-admin-staff-members &,
+        #{$block}_page_security-payroll-report-week-details &
           width: 100%
 
       @media screen and (max-width: 480px)
@@ -2282,6 +2327,12 @@ $block: ".boss-table"
 
       #{$block}_page_payroll-reports &
         width: 6%
+
+      #{$block}_page_security-payroll-report &
+        width: 9%
+
+      #{$block}_page_security-payroll-report-week-details &
+        width: 25%
 
       #{$block}_page_finance-reports-overview &,
       #{$block}_page_payroll-reports-overview &
@@ -2456,7 +2507,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-admin-pending &,
         #{$block}_page_api-keys &,
         #{$block}_page_pay-rates-admin-staff-members &,
-        #{$block}_page_yearly-reports-hour-report &
+        #{$block}_page_yearly-reports-hour-report &,
+        #{$block}_page_security-payroll-report-week-details &
           padding-right: 10px
 
         #{$block}_page_finance-reports-overview &,
@@ -2514,7 +2566,8 @@ $block: ".boss-table"
 
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
-        #{$block}_page_pay-rates-admin-staff-members &
+        #{$block}_page_pay-rates-admin-staff-members &,
+        #{$block}_page_security-payroll-report-week-details &
           width: 100%
 
       @media screen and (max-width: 400px)
@@ -2657,6 +2710,12 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_security-payroll-report &
+        width: 9%
+
+      #{$block}_page_security-payroll-report-week-details &
+        width: 10%
+
       #{$block}_page_wages-index &
         width: 15%
 
@@ -2794,7 +2853,8 @@ $block: ".boss-table"
         #{$block}_page_wtl-clients-index &,
         #{$block}_page_id-scanner-keys &,
         #{$block}_page_pay-rates-staff-members &,
-        #{$block}_page_training-failures &
+        #{$block}_page_training-failures &,
+        #{$block}_page_security-payroll-report-week-details &
           padding-right: 10px
 
         #{$block}_page_fruit-order-history &
@@ -2841,7 +2901,8 @@ $block: ".boss-table"
 
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
-        #{$block}_page_pay-rates-admin-staff-members &
+        #{$block}_page_pay-rates-admin-staff-members &,
+        #{$block}_page_security-payroll-report-week-details &
           width: 100%
 
       @media screen and (max-width: 480px)
@@ -2949,6 +3010,13 @@ $block: ".boss-table"
 
       #{$block}_page_payroll-reports &
         width: 6%
+
+      #{$block}_page_security-payroll-report &
+        width: 9%
+
+      #{$block}_page_security-payroll-report-week-details &
+        width: 15%
+        padding-right: 15px
 
       #{$block}_page_wages-index &
         flex-grow: 0
@@ -3058,7 +3126,8 @@ $block: ".boss-table"
         #{$block}_page_ssr-pending &,
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wages-index &,
-        #{$block}_page_pay-rates &
+        #{$block}_page_pay-rates &,
+        #{$block}_page_security-payroll-report-week-details &
           padding-right: 10px
 
         #{$block}_page_maintenance-index &,
@@ -3083,7 +3152,8 @@ $block: ".boss-table"
           padding-left: 20px
 
       @media screen and (max-width: 640px)
-        #{$block}_page_pay-rates &
+        #{$block}_page_pay-rates &,
+        #{$block}_page_security-payroll-report-week-details &
           flex-grow: 1
           flex-shrink: 1
           width: 100%
@@ -3172,6 +3242,9 @@ $block: ".boss-table"
 
       #{$block}_page_payroll-reports &
         width: 6%
+
+      #{$block}_page_security-payroll-report &
+        width: 9%
 
       #{$block}_page_bonai &,
       #{$block}_page_bonai-staff-member-data &
@@ -3314,6 +3387,9 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_security-payroll-report &
+        width: 9%
+
       #{$block}_page_bonai &,
       #{$block}_page_bonai-staff-member-data &
         flex-grow: 0
@@ -3415,6 +3491,9 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_security-payroll-report &
+        width: 9%
+
       #{$block}_page_bonai &,
       #{$block}_page_bonai-staff-member-data &
         width: 9%
@@ -3495,6 +3574,9 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_security-payroll-report &
+        width: 8%
+
       #{$block}_page_bonai &,
       #{$block}_page_bonai-staff-member-data &
         width: 12%
@@ -3543,6 +3625,9 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports &
         width: 6%
 
+      #{$block}_page_security-payroll-report &
+        width: 8%
+
     // $Common table cell eleventh column
     &:nth-child(11)
 
@@ -3551,6 +3636,12 @@ $block: ".boss-table"
 
       #{$block}_page_payroll-reports &
         width: 6%
+
+      #{$block}_page_security-payroll-report &
+        width: 9%
+        max-width: 280px
+        min-width: 150px
+        padding-right: 15px
 
     // $Common table cell twelfth column
     &:nth-child(12)
@@ -3660,7 +3751,8 @@ $block: ".boss-table"
       text-transform: uppercase
 
       #{$block}_page_finance-reports &,
-      #{$block}_page_payroll-reports &
+      #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &
         align-items: stretch
 
       #{$block}_page_change-order-history &,
@@ -3688,6 +3780,8 @@ $block: ".boss-table"
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &,
+      #{$block}_page_security-payroll-report-week-details &,
       #{$block}_page_bonai &,
       #{$block}_page_bonai-staff-member-data &,
       #{$block}_page_smp-holidays &,
@@ -3725,6 +3819,7 @@ $block: ".boss-table"
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &,
       #{$block}_page_wages-index &,
       #{$block}_page_bonai &,
       #{$block}_page_bonai-staff-member-data &,
@@ -3769,6 +3864,7 @@ $block: ".boss-table"
         #{$block}_page_weekly-reports &,
         #{$block}_page_finance-reports &,
         #{$block}_page_payroll-reports &,
+        #{$block}_page_security-payroll-report &,
         #{$block}_page_staff-tracking-staff-added &,
         #{$block}_page_staff-tracking-staff-disabled &,
         #{$block}_page_staff-tracking-accessories-payments &,
@@ -3961,6 +4057,44 @@ $block: ".boss-table"
       color: #8c7ae6
 
 
+  // $Common table cell group
+  &__cell-group
+    flex-grow: 1
+    flex-shrink: 1
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: stretch
+    width: 100%
+    transition: all .2s
+
+    #{$block}_page_security-payroll-report &
+      height: 100%
+
+
+  // $Common table cell area
+  &__cell-area
+    flex-grow: 1
+    flex-shrink: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+
+    #{$block}_page_security-payroll-report &
+      width: 50%
+      padding: 3px
+
+    // $Common table area MOD: role normal-hours
+    &_role_normal-hours
+      background-color: #74dc61
+
+    // $Common table area MOD: role head-doorman-hours
+    &_role_head-doorman-hours
+      background-color:  #8c7ae6
+
+
   // $Common table info
   &__info
     display: block
@@ -4017,7 +4151,8 @@ $block: ".boss-table"
       #{$block}_page_bonai-venue-hour-data &,
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_security-payroll-report-week-details &
         display: block
 
       #{$block}_page_holidays-report &
@@ -4028,7 +4163,8 @@ $block: ".boss-table"
     @media screen and (max-width: 640px)
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_security-payroll-report-week-details &
         display: flex
 
 
@@ -4114,7 +4250,8 @@ $block: ".boss-table"
 
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_security-payroll-report-week-details &
         display: none
 
     @media screen and (max-width: 640px)
@@ -4125,7 +4262,8 @@ $block: ".boss-table"
 
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_security-payroll-report-week-details &
         display: block
 
     @media screen and (max-width: 480px)
@@ -4240,7 +4378,9 @@ $block: ".boss-table"
 
     #{$block}__cell_state_alert &,
     #{$block}__cell_state_warning &,
-    #{$block}__cell_state_success &
+    #{$block}__cell_state_success &,
+    #{$block}__cell-area_role_normal-hours &,
+    #{$block}__cell-area_role_head-doorman-hours &
       color: #fff
       font-weight: 600
 
@@ -4258,7 +4398,8 @@ $block: ".boss-table"
       text-align: left
 
     #{$block}_page_finance-reports &,
-    #{$block}_page_payroll-reports &
+    #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &,
       position: relative
 
     #{$block}_page_csv-upload &
@@ -4301,6 +4442,7 @@ $block: ".boss-table"
     #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(4) &,
     #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &,
     #{$block}_page_wages-index &,
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(2) &,
     #{$block}_page_wtl-clients-index #{$block}__cell:nth-child(3) &,
@@ -4331,6 +4473,7 @@ $block: ".boss-table"
     #{$block}_page_finance-reports #{$block}__cell:nth-child(1) &,
     #{$block}_page_finance-reports #{$block}__cell:nth-child(2) &,
     #{$block}_page_payroll-reports #{$block}__cell:nth-child(1) &,
+    #{$block}_page_security-payroll-report #{$block}__cell:nth-child(1) &,
     #{$block}_page_staff-tracking-staff-added #{$block}__cell:nth-child(1) &,
     #{$block}_page_staff-tracking-staff-disabled #{$block}__cell:nth-child(1) &,
     #{$block}_page_staff-tracking-accessories-payments #{$block}__cell:nth-child(1) &,
@@ -4385,6 +4528,7 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &,
       #{$block}_page_staff-tracking-staff-added &,
       #{$block}_page_staff-tracking-staff-disabled &,
       #{$block}_page_staff-tracking-accessories-payments &
@@ -4451,7 +4595,8 @@ $block: ".boss-table"
       #{$block}_page_payslip-deductions &,
       #{$block}_page_payslip-totals &,
       #{$block}_page_payslip-summary &,
-      #{$block}_page_csv-upload &
+      #{$block}_page_csv-upload &,
+      #{$block}_page_security-payroll-report-week-details &
         width: 100%
 
     @media screen and (max-width: 640px)
@@ -4460,7 +4605,8 @@ $block: ".boss-table"
 
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
-      #{$block}_page_pay-rates-admin-staff-members &
+      #{$block}_page_pay-rates-admin-staff-members &,
+      #{$block}_page_security-payroll-report-week-details &
         width: 50%
 
     @media screen and (max-width: 480px)
@@ -4484,6 +4630,7 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &,
       #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &,
       #{$block}_page_staff-tracking-staff-added &,
       #{$block}_page_staff-tracking-staff-disabled &,
       #{$block}_page_staff-tracking-accessories-payments &
@@ -4776,7 +4923,8 @@ $block: ".boss-table"
 
   &__text-indicator
     #{$block}_page_finance-reports &,
-    #{$block}_page_payroll-reports &
+    #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &
       position: absolute
       bottom: 100%
       display: block
@@ -4791,7 +4939,8 @@ $block: ".boss-table"
 
   &__text-underline
     #{$block}_page_finance-reports &,
-    #{$block}_page_payroll-reports &
+    #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &
       position: absolute
       top: 100%
       display: block
@@ -4929,7 +5078,8 @@ $block: ".boss-table"
 
       #{$block}_page_holidays-report &,
       #{$block}_page_finance-reports &,
-      #{$block}_page_payroll-reports &
+      #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &
         flex-grow: 0
         width: auto
 
@@ -5017,7 +5167,8 @@ $block: ".boss-table"
       width: 120px
 
     #{$block}_page_finance-reports &,
-    #{$block}_page_payroll-reports &
+    #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &
       padding: 4px
       font-size: 12px
       font-weight: 600
@@ -5135,6 +5286,7 @@ $block: ".boss-table"
     color: $boss-dark-gray
     vertical-align: middle
     text-decoration: none
+    font-weight: inherit
     transition: color .3s
     cursor: pointer
 
@@ -5144,18 +5296,22 @@ $block: ".boss-table"
     #{$block}_page_venues-index &,
     #{$block}_page_finance-reports &,
     #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &,
     #{$block}_page_wtl-clients-index &,
     #{$block}_page_pay-rates &,
     #{$block}_page_pay-rates-staff-members &,
     #{$block}_page_pay-rates-admin-staff-members &,
     #{$block}_page_yearly-reports &,
     #{$block}_page_native-app-links &,
-    #{$block}_page_kpi &
+    #{$block}_page_kpi &,
+    #{$block}_page_security-payroll-report-week-details &
       color: #1585cf
 
     #{$block}__cell_state_alert &,
     #{$block}__cell_state_warning &,
-    #{$block}__cell_state_success &
+    #{$block}__cell_state_success &,
+    #{$block}__cell-area_role_normal-hours &,
+    #{$block}__cell-area_role_head-doorman-hours &
       color: #fff
       font-weight: 600
 
@@ -5170,14 +5326,18 @@ $block: ".boss-table"
       color: $boss-medium-gray
 
       #{$block}__cell_state_alert &,
-      #{$block}__cell_state_success &
+      #{$block}__cell_state_warning &,
+      #{$block}__cell_state_success &,
+      #{$block}__cell-area_role_normal-hours &,
+      #{$block}__cell-area_role_head-doorman-hours &
         color: #eee
 
     &_state_alert
       color: map-get($boss-app-palette, alert)
 
       #{$block}_page_finance-reports &,
-      #{$block}_page_payroll-reports &
+      #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &
         color: map-get($boss-app-palette, alert)
 
       #{$block}__cell_state_alert &,

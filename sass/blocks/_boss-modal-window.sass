@@ -56,7 +56,8 @@ $block: ".boss-modal-window"
     margin-bottom: 1.7em !important
 
 
-  &_role_payslip
+  &_role_payslip,
+  &_role_week-details
     width: 90%
     max-width: 1200px
 
@@ -174,6 +175,38 @@ $block: ".boss-modal-window"
       margin-top: 25px
       margin-bottom: 25px
 
+  &_type_full-height
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    max-height: calc(100vh - 200px)
+    margin-top: 100px
+    margin-bottom: 100px
+    overflow: hidden
+
+    // Fix flex max-height issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+      height: calc(100vh - 200px)
+
+    @media screen and (max-width: 640px), screen and (max-height: 640px)
+      max-height: calc(100vh - 100px)
+      margin-top: 50px
+      margin-bottom: 50px
+
+    // Fix flex max-height issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), screen and (max-height: 640px)
+      height: calc(100vh - 100px)
+
+    @media screen and (max-width: 480px), screen and (max-height: 480px)
+      max-height: calc(100vh - 50px)
+      margin-top: 25px
+      margin-bottom: 25px
+
+    // Fix flex max-height issue in IE11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active), screen and (max-height: 480px)
+      height: calc(100vh - 50px)
+
 
   // $Modal window close
   &__close
@@ -244,7 +277,8 @@ $block: ".boss-modal-window"
     #{$block}_role_payslip &,
     #{$block}_role_history &,
     #{$block}_role_wtl-card-history &,
-    #{$block}_role_action-details &
+    #{$block}_role_action-details &,
+    #{$block}_role_week-details &
       top: 30px
       right: 30px
 
@@ -281,7 +315,8 @@ $block: ".boss-modal-window"
       #{$block}_role_payslip &,
       #{$block}_role_history &,
       #{$block}_role_wtl-card-history &,
-      #{$block}_role_action-details &
+      #{$block}_role_action-details &,
+      #{$block}_role_week-details &
         font-size: 16px
         color: #808080
 
@@ -310,12 +345,15 @@ $block: ".boss-modal-window"
       #{$block}_role_payslip &,
       #{$block}_role_history &,
       #{$block}_role_wtl-card-history &,
-      #{$block}_role_action-details &
+      #{$block}_role_action-details &,
+      #{$block}_role_week-details &
         right: 15px
 
   // $Modal window header
   &__header
     position: relative
+    display: block
+    width: 100%
     background-color: #77dd6f
     color: white
     padding: 15px 10px
@@ -325,6 +363,10 @@ $block: ".boss-modal-window"
     font-weight: 600
     border-top-left-radius: $border-radius
     border-top-right-radius: $border-radius
+
+    #{$block}_type_full-height &
+      flex-grow: 0
+      flex-shrink: 0
 
     // $Modal window header CONTEXT: $Modal window MOD: role danger
     // $Modal window header CONTEXT: $Modal window MOD: role error
@@ -384,7 +426,8 @@ $block: ".boss-modal-window"
     #{$block}_role_history &,
     #{$block}_role_wtl-card-history &,
     #{$block}_role_wtl-ev-almost-done &,
-    #{$block}_role_action-details &
+    #{$block}_role_action-details &,
+    #{$block}_role_week-details &
       padding: 20px 50px 20px 30px
       background-color: $boss-extra-light-gray
       text-transform: none
@@ -455,7 +498,8 @@ $block: ".boss-modal-window"
       #{$block}_role_payslip &,
       #{$block}_role_history &,
       #{$block}_role_wtl-card-history &,
-      #{$block}_role_action-details &
+      #{$block}_role_action-details &,
+      #{$block}_role_week-details &
         padding-left: 15px
         padding-right: 35px
 
@@ -492,7 +536,8 @@ $block: ".boss-modal-window"
       #{$block}_role_payslip &,
       #{$block}_role_history &,
       #{$block}_role_wtl-card-history &,
-      #{$block}_role_action-details &
+      #{$block}_role_action-details &,
+      #{$block}_role_week-details &
         font-size: 22px
 
     // $Modal window header MOD: error
@@ -585,6 +630,15 @@ $block: ".boss-modal-window"
     border-bottom-right-radius: $border-radius !important
     border-bottom-left-radius: $border-radius !important
 
+    #{$block}_type_full-height &
+      flex-grow: 1
+      flex-shrink: 1
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: stretch
+      overflow: hidden
+
     // $Modal window content CONTEXT: $Modal window MOD: role preview
     #{$block}_role_preview &
       padding: 30px
@@ -630,7 +684,8 @@ $block: ".boss-modal-window"
     #{$block}_role_history &,
     #{$block}_role_details &,
     #{$block}_role_wtl-card-history &,
-    #{$block}_role_action-details &
+    #{$block}_role_action-details &,
+    #{$block}_role_week-details &
       padding: 0
 
     #{$block}_role_rota &
@@ -668,7 +723,8 @@ $block: ".boss-modal-window"
       #{$block}_role_payslip &,
       #{$block}_role_history &,
       #{$block}_role_wtl-card-history &,
-      #{$block}_role_action-details &
+      #{$block}_role_action-details &,
+      #{$block}_role_week-details &
         padding: 0
 
       #{$block}_role_shift-details &
@@ -691,6 +747,16 @@ $block: ".boss-modal-window"
       padding-top: 230px
       background: #fff url('../icons/icon-success.svg') center 35px no-repeat
       background-size: 165px 165px
+
+
+  // $Modal window scroll
+  &__scroll
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 100%
+    max-height: 100%
+    overflow: auto
 
 
   // $Modal window group
