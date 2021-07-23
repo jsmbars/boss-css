@@ -16,5 +16,5 @@ Checking tags from local repo:
 Creating tags:
 1) Merge feature-branch PR into master
 2) In your local repo checkout master branch and pull the last changes (with merge commit)
-3) Add local tag `git tag tagname` 
+3) Add local tag `git tag tagname`
 4) Push tag to remote repo `git push origin tagname`
