@@ -254,7 +254,9 @@ $block: ".boss-check"
     #{$block}_page_sv-missattributed-logins &,
     #{$block}_page_vhcq &,
     #{$block}_page_training-failures &,
-    #{$block}_page_training-materials &
+    #{$block}_page_training-materials &,
+    #{$block}_page_security-pay-rate-base &,
+    #{$block}_page_security-pay-rate-special &
       min-height: 0
       padding: 15px
 
@@ -294,6 +296,10 @@ $block: ".boss-check"
       #{$block}_page_design-showcases &,
       #{$block}_page_design-showcases-admin &
         padding: 15px 10px
+
+      #{$block}_page_security-pay-rate-base &,
+      #{$block}_page_security-pay-rate-special &
+        flex-wrap: wrap
 
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &,
@@ -439,6 +445,10 @@ $block: ".boss-check"
       #{$block}_page_design-showcases-admin &
         width: calc(100% - 130px)
 
+      #{$block}_page_security-pay-rate-base &,
+      #{$block}_page_security-pay-rate-special &
+        width: calc(100% - 50px)
+
     @media screen and (max-width: 640px)
       width: 100%
       margin-top: 10px
@@ -465,7 +475,9 @@ $block: ".boss-check"
       #{$block}_page_native-app-links &,
       #{$block}_page_design-showcases &,
       #{$block}_page_design-showcases-admin &,
-      #{$block}_page_training-failures &
+      #{$block}_page_training-failures &,
+      #{$block}_page_security-pay-rate-base &,
+      #{$block}_page_security-pay-rate-special &
         margin-top: 0
 
       #{$block}_page_quiz-category &,
@@ -812,7 +824,9 @@ $block: ".boss-check"
     #{$block}_page_contacts-admin &,
     #{$block}_page_vhcq &,
     #{$block}_page_design-showcases &,
-    #{$block}_page_design-showcases-admin &
+    #{$block}_page_design-showcases-admin &,
+    #{$block}_page_security-pay-rate-base &,
+    #{$block}_page_security-pay-rate-special &
       display: flex
       flex-direction: row
       justify-content: flex-start
@@ -855,6 +869,16 @@ $block: ".boss-check"
       #{$block}_page_design-showcases-admin &
         flex-direction: column
         align-items: stretch
+
+      #{$block}_page_security-pay-rate-base &,
+      #{$block}_page_security-pay-rate-special &
+        order: 99
+        width: 100%
+        margin-top: 10px
+        padding-top: 10px
+        border-top: 1px solid #eee
+        flex-grow: 1
+        flex-shrink: 1
 
     @media screen and (max-width: 640px)
       #{$block}_page_ssr-requests &,
@@ -969,6 +993,9 @@ $block: ".boss-check"
         padding-left: 0
         border-bottom: 1px solid #eee
 
+      #{$block}_page_security-pay-rate-special &
+        flex-wrap: wrap
+
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
         order: 99
@@ -988,6 +1015,9 @@ $block: ".boss-check"
         flex-grow: 1
         flex-shrink: 1
 
+      #{$block}_page_security-pay-rate-base &
+        width: calc(50% - 8px)
+
     &:not(:first-child)
       #{$block}_page_ssr-requests &,
       #{$block}_page_profile-disciplinary &,
@@ -996,7 +1026,9 @@ $block: ".boss-check"
       #{$block}_page_contacts &,
       #{$block}_page_contacts-admin &,
       #{$block}_page_vhcq &,
-      #{$block}_page_design-showcases-admin &
+      #{$block}_page_design-showcases-admin &,
+      #{$block}_page_security-pay-rate-base &,
+      #{$block}_page_security-pay-rate-special &
         margin-left: 15px
 
       #{$block}_page_quiz-category &
@@ -1031,6 +1063,24 @@ $block: ".boss-check"
         #{$block}_page_vhcq &
           margin-left: 10px
 
+    &:nth-child(1)
+      @media screen and (max-width: 480px)
+        #{$block}_page_security-pay-rate-special &
+          width: 100%
+          margin-bottom: 10px
+
+    &:nth-child(2)
+      @media screen and (max-width: 480px)
+        #{$block}_page_security-pay-rate-special &
+          width: calc(50% - 8px)
+          margin-left: 0
+
+    &:nth-child(3)
+      @media screen and (max-width: 480px)
+        #{$block}_page_security-pay-rate-special &
+          width: calc(50% - 8px)
+
+
 
   // $Check block labels
   &__header-labels
@@ -1059,6 +1109,51 @@ $block: ".boss-check"
       #{$block}_state_success &,
       #{$block}_state_frozen &
         background-color: transparent
+
+
+  // $Check block group header
+  &__group-header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 15px 15px 0
+
+    @media screen and (max-width: 960px)
+      padding: 15px 10px 0
+
+
+  // $Check block group title
+  &__group-title
+    +text-normalizer()
+    margin-bottom: 15px
+    font-size: 18px
+    font-weight: 600
+    text-align: center
+
+    #{$block}_page_security-pay-rate-base &,
+    #{$block}_page_security-pay-rate-special &
+      margin-bottom: 0
+      font-size: 16px
+      color: #808080
+
+    @media screen and (max-width: 480px)
+      #{$block}_page_security-pay-rate-base &,
+      #{$block}_page_security-pay-rate-special &
+        font-size: 14px
+
+  // $Check block group action
+  &__group-action
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  // $Check block group content
+  &__group-content
+    display: block
+    width: 100%
+    padding: 15px
 
 
   // $Check block group content
@@ -1090,15 +1185,6 @@ $block: ".boss-check"
 
     &:not(:last-child)
       margin-bottom: 10px
-
-
-  // $Check block group title
-  &__group-title
-    +text-normalizer()
-    margin-bottom: 15px
-    font-size: 18px
-    font-weight: 600
-    text-align: center
 
 
   // $Check block row
@@ -1545,6 +1631,12 @@ $block: ".boss-check"
     #{$block}_page_security-venues &
       font-size: 24px
 
+    #{$block}_page_security-pay-rate-base &,
+    #{$block}_page_security-pay-rate-special &
+      font-size: 24px
+      line-height: 1.2
+      padding-right: 10px
+
     #{$block}_page_training-materials &
       padding-right: 15px
       font-size: 20px
@@ -1554,7 +1646,9 @@ $block: ".boss-check"
       text-align: center
 
     #{$block}_page_smp-quizzes-category &,
-    #{$block}_page_training-materials &
+    #{$block}_page_training-materials &,
+    #{$block}_page_security-pay-rate-base &,
+    #{$block}_page_security-pay-rate-special &
       flex-grow: 1
       flex-shrink: 1
 
@@ -1601,6 +1695,11 @@ $block: ".boss-check"
         padding-right: 0
         font-size: 18px
         text-align: center
+
+      #{$block}_page_security-pay-rate-base &,
+      #{$block}_page_security-pay-rate-special &
+        font-size: 20px
+        line-height: 1
 
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
@@ -1651,6 +1750,10 @@ $block: ".boss-check"
 
   &__title-light
     font-weight: 300
+
+
+  &__title-bold
+    font-weight: 600
 
 
   &__title-tooltip
