@@ -102,7 +102,9 @@ $block: ".boss-table"
   &_page_marketing-managers-index-card,
   &_page_holiday-requests,
   &_page_bonai-venue,
-  &_page_bonai-venue-hour-data
+  &_page_bonai-venue-hour-data,
+  &_page_security-pay-rate-rules,
+  &_page_security-pay-rate-exceptions
     background-color: transparent
 
   &_page_invites-index,
@@ -447,7 +449,8 @@ $block: ".boss-table"
     #{$block}_page_payslip-payments &,
     #{$block}_page_payslip-deductions &,
     #{$block}_page_payslip-totals &,
-    #{$block}_page_payslip-summary &
+    #{$block}_page_payslip-summary &,
+    #{$block}_page_security-pay-rate-rules &
       border-bottom: none
 
     #{$block}_page_maintenance-index &,
@@ -465,7 +468,9 @@ $block: ".boss-table"
     #{$block}_page_security-payroll-report &,
     #{$block}_page_security-payroll-report-week-details &,
     #{$block}_page_bonai-venue &,
-    #{$block}_page_bonai-venue-hour-data &
+    #{$block}_page_bonai-venue-hour-data &,
+    #{$block}_page_security-pay-rate-rules &,
+    #{$block}_page_security-pay-rate-exceptions &
       background-color: transparent
 
     #{$block}_page_finance-reports-overview &,
@@ -476,6 +481,10 @@ $block: ".boss-table"
     #{$block}_page_marketing-managers-index-card &
       padding-top: 5px
       padding-bottom: 5px
+
+    #{$block}_page_security-pay-rate-exceptions &
+      border-bottom: 2px solid #fff
+      background-color: #ffe3bd
 
     @media screen and (max-width: 1280px)
       #{$block}_page_bonai-venue-hour-data &
@@ -585,7 +594,9 @@ $block: ".boss-table"
       #{$block}_page_payslip-totals &,
       #{$block}_page_payslip-summary &,
       #{$block}_page_csv-upload &,
-      #{$block}_page_kpi &
+      #{$block}_page_kpi &,
+      #{$block}_page_security-pay-rate-rules &,
+      #{$block}_page_security-pay-rate-exceptions &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -613,8 +624,16 @@ $block: ".boss-table"
         padding-top: 10px
         padding-bottom: 10px
 
+    @media screen and (max-width: 480px)
+      #{$block}_page_security-pay-rate-exceptions &
+        flex-wrap: wrap
+
     &:last-child
       border-bottom: none
+
+    &:not(:last-child)
+      #{$block}_page_security-pay-rate-rules &
+        margin-bottom: 10px
 
     &:nth-child(even)
       #{$block}_page_change-order-report &,
@@ -971,7 +990,9 @@ $block: ".boss-table"
     #{$block}_page_payslip-totals &,
     #{$block}_page_payslip-summary &,
     #{$block}_page_kpi &,
-    #{$block}_page_security-payroll-report-week-details &
+    #{$block}_page_security-payroll-report-week-details &,
+    #{$block}_page_security-pay-rate-rules &,
+    #{$block}_page_security-pay-rate-exceptions &
       min-height: 0
 
     #{$block}_page_payslip-payments &,
@@ -1010,8 +1031,12 @@ $block: ".boss-table"
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &,
     #{$block}_page_finance-reports-overview &,
-    #{$block}_page_payroll-reports-overview &
+    #{$block}_page_payroll-reports-overview &,
+    #{$block}_page_security-pay-rate-exceptions &
       padding: 10px
+
+    #{$block}_page_security-pay-rate-rules &
+      padding: 0 10px
 
     #{$block}_page_security-payroll-report &
       padding: 0
@@ -1211,7 +1236,9 @@ $block: ".boss-table"
     &:first-child
       padding-left: 25px
 
-      #{$block}_page_csv-upload &
+      #{$block}_page_csv-upload &,
+      #{$block}_page_security-pay-rate-rules &,
+      #{$block}_page_security-pay-rate-exceptions &
         padding-left: 10px
 
       @media screen and (max-width: 960px)
@@ -1223,7 +1250,9 @@ $block: ".boss-table"
     &:last-child
       padding-right: 25px
 
-      #{$block}_page_csv-upload &
+      #{$block}_page_csv-upload &,
+      #{$block}_page_security-pay-rate-rules &,
+      #{$block}_page_security-pay-rate-exceptions &
         padding-right: 10px
 
       @media screen and (max-width: 960px)
@@ -1568,6 +1597,12 @@ $block: ".boss-table"
         width: 60px
         padding: 0
 
+      #{$block}_page_security-pay-rate-rules &
+        width: 100%
+
+      #{$block}_page_security-pay-rate-exceptions &
+        width: calc(100% - 200px)
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -1769,6 +1804,9 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue-hour-data &
           width: 100%
           padding-right: 20px
+
+        #{$block}_page_security-pay-rate-exceptions &
+          width: 100%
 
       @media screen and (max-width: 400px)
         #{$block}_page_clocking-app-page-api-keys-card &
@@ -2042,6 +2080,11 @@ $block: ".boss-table"
         width: calc(100% - 60px)
         padding-right: 15px
 
+      #{$block}_page_security-pay-rate-exceptions &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 200px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -2185,6 +2228,9 @@ $block: ".boss-table"
           width: 100%
           padding-left: 20px
           padding-top: 10px
+
+        #{$block}_page_security-pay-rate-exceptions &
+          width: 100%
 
       @media screen and (max-width: 400px)
         #{$block}_page_clocking-app-page-api-keys-card &
@@ -4152,7 +4198,9 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
-      #{$block}_page_security-payroll-report-week-details &
+      #{$block}_page_security-payroll-report-week-details &,
+      #{$block}_page_security-pay-rate-rules &,
+      #{$block}_page_security-pay-rate-exceptions &
         display: block
 
       #{$block}_page_holidays-report &
@@ -4504,6 +4552,11 @@ $block: ".boss-table"
       font-size: 18px
       font-weight: 600
 
+    #{$block}_page_security-pay-rate-rules &,
+    #{$block}_page_security-pay-rate-exceptions &:nth-child(1)
+      font-size: 18px
+      font-weight: 600
+
     @media screen and (max-width: 1120px)
       #{$block}_page_staff-members-index &,
       #{$block}_page_safe-checks-index &,
@@ -4596,7 +4649,9 @@ $block: ".boss-table"
       #{$block}_page_payslip-totals &,
       #{$block}_page_payslip-summary &,
       #{$block}_page_csv-upload &,
-      #{$block}_page_security-payroll-report-week-details &
+      #{$block}_page_security-payroll-report-week-details &,
+      #{$block}_page_security-pay-rate-rules &,
+      #{$block}_page_security-pay-rate-exceptions &
         width: 100%
 
     @media screen and (max-width: 640px)
@@ -4620,6 +4675,10 @@ $block: ".boss-table"
 
       #{$block}_page_yearly-reports-hour-report #{$block}__cell:nth-child(2) &
         text-indent: 10px
+
+      #{$block}_page_security-pay-rate-rules &,
+      #{$block}_page_security-pay-rate-exceptions &:nth-child(1)
+        font-size: 16px
 
     @media screen and (max-width: 400px)
       #{$block}_page_api-keys &
@@ -4916,6 +4975,10 @@ $block: ".boss-table"
     font-weight: 600
 
 
+  &__text-important
+    font-weight: 800
+
+
   &__text-content
     &:not(:last-child)
       margin-right: 15px
@@ -4998,6 +5061,12 @@ $block: ".boss-table"
       display: flex
       flex-direction: row
       justify-content: flex-start
+      align-items: center
+
+    #{$block}_page_security-pay-rate-exceptions &
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
       align-items: center
 
     #{$block}_page_holidays-report &
@@ -5100,7 +5169,8 @@ $block: ".boss-table"
       #{$block}_page_accessory-requests-card &,
       #{$block}_page_smp-quizzes-history &,
       #{$block}_page_smp-quizzes-category &,
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_security-pay-rate-exceptions &
         width: 100%
 
       #{$block}_page_ssr-pending &,
@@ -5136,6 +5206,9 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &
         flex-direction: column
 
+      #{$block}_page_security-pay-rate-exceptions &
+        justify-content: flex-start
+
 
   // $Common table action
   &__action
@@ -5143,7 +5216,8 @@ $block: ".boss-table"
     #{$block}_page_holiday-requests &:not(:last-of-type),
     #{$block}_page_ssr-pending &:not(:last-of-type),
     #{$block}_page_ssr-admin-pending &:not(:last-of-type),
-    #{$block}_page_pay-rates &:not(:last-of-type)
+    #{$block}_page_pay-rates &:not(:last-of-type),
+    #{$block}_page_security-pay-rate-exceptions &:not(:last-of-type)
       margin-right: 10px
 
     #{$block}_page_fruit-order-history &:not(:last-of-type)
@@ -5221,6 +5295,9 @@ $block: ".boss-table"
       #{$block}_page_marketing-index-card &,
       #{$block}_page_marketing-managers-index-card &
         width: 100%
+
+      #{$block}_page_security-pay-rate-exceptions &
+        width: 50%
 
     @media screen and (max-width: 400px)
       #{$block}_page_api-keys &
@@ -5428,3 +5505,11 @@ $block: ".boss-table"
     &:hover
       &:before
         opacity: 1
+
+
+  // $Common table text placeholder
+  &__text-placeholder
+    +text-normalizer()
+    font-size: 16px
+    line-height: 1
+    color: #808080
