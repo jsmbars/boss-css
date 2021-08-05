@@ -420,9 +420,6 @@ $block: ".boss-time-shift"
 
 
   &__select
-    & .Select
-      #{$block}__log_state_accepted &
-        display: none
 
     & .Select-control
       height: 45px
@@ -492,7 +489,7 @@ $block: ".boss-time-shift"
   // $Time shift select value
   &__select-value
     +text-normalizer()
-    display: none
+    display: block
     width: 100%
     height: auto
     box-sizing: border-box
@@ -502,10 +499,6 @@ $block: ".boss-time-shift"
 
     #{$block}__time &
       padding: 12px 0 12px 30px
-
-    // $Time shift select value CONTEXT: $Time shift log MOD: state accepted
-    #{$block}__log_state_accepted &
-      display: block
 
 
   // $Time shift error
