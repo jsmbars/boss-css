@@ -91,6 +91,7 @@ $block: ".boss-table"
   &_page_yearly-reports,
   &_page_yearly-reports-hour-report,
   &_page_finance-reports-overview,
+  &_page_security-payroll-report-overview,
   &_page_payroll-reports-overview,
   &_page_kpi
     border: 1px solid #eee
@@ -474,6 +475,7 @@ $block: ".boss-table"
       background-color: transparent
 
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &
         background-color: #fbfbfb
 
@@ -491,6 +493,7 @@ $block: ".boss-table"
           flex-wrap: wrap
 
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &
         display: block
 
@@ -1006,6 +1009,7 @@ $block: ".boss-table"
       min-height: 40px
 
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &
       min-height: 60px
 
@@ -1031,6 +1035,7 @@ $block: ".boss-table"
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &,
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &,
     #{$block}_page_security-pay-rate-exceptions &
       padding: 10px
@@ -1102,6 +1107,7 @@ $block: ".boss-table"
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &
         min-height: 0
         padding: 10px 20px
@@ -1230,6 +1236,7 @@ $block: ".boss-table"
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys-card &,
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &
         padding: 10px
 
@@ -1276,6 +1283,7 @@ $block: ".boss-table"
       #{$block}_page_smp-quizzes-overview &,
       #{$block}_page_training-failures &,
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &
         border-right: 1px solid #eee
 
@@ -1284,6 +1292,7 @@ $block: ".boss-table"
 
       @media screen and (max-width: 1280px)
         #{$block}_page_finance-reports-overview &,
+        #{$block}_page_security-payroll-report-overview &,
         #{$block}_page_payroll-reports-overview &
           border-bottom: 1px solid #eee
 
@@ -1463,6 +1472,11 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports-overview &
         width: 33%
         padding-left: 10px
+
+      #{$block}_page_security-payroll-report-overview &
+        width: 100%
+        padding-left: 10px
+        padding-right: 10px
 
       #{$block}_page_wages-index &
         width: 30%
@@ -4157,11 +4171,13 @@ $block: ".boss-table"
       width: auto
 
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &
       text-align: center
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &
         text-align: left
 
