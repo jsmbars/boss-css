@@ -91,6 +91,7 @@ $block: ".boss-table"
   &_page_yearly-reports,
   &_page_yearly-reports-hour-report,
   &_page_finance-reports-overview,
+  &_page_finance-reports-payslip-counts,
   &_page_security-payroll-report-overview,
   &_page_payroll-reports-overview,
   &_page_kpi
@@ -475,6 +476,7 @@ $block: ".boss-table"
       background-color: transparent
 
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &
         background-color: #fbfbfb
@@ -493,6 +495,7 @@ $block: ".boss-table"
           flex-wrap: wrap
 
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &
         display: block
@@ -1009,6 +1012,7 @@ $block: ".boss-table"
       min-height: 40px
 
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &
       min-height: 60px
@@ -1035,6 +1039,7 @@ $block: ".boss-table"
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &,
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &,
     #{$block}_page_security-pay-rate-exceptions &
@@ -1107,6 +1112,7 @@ $block: ".boss-table"
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &
         min-height: 0
@@ -1236,6 +1242,7 @@ $block: ".boss-table"
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys-card &,
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &
         padding: 10px
@@ -1283,6 +1290,7 @@ $block: ".boss-table"
       #{$block}_page_smp-quizzes-overview &,
       #{$block}_page_training-failures &,
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &
         border-right: 1px solid #eee
@@ -1292,9 +1300,11 @@ $block: ".boss-table"
 
       @media screen and (max-width: 1280px)
         #{$block}_page_finance-reports-overview &,
+        #{$block}_page_finance-reports-payslip-counts &,
         #{$block}_page_security-payroll-report-overview &,
         #{$block}_page_payroll-reports-overview &
           border-bottom: 1px solid #eee
+          border-right: none
 
       @media screen and (max-width: 960px)
         #{$block}_page_smp-holidays &,
@@ -1473,6 +1483,10 @@ $block: ".boss-table"
         width: 33%
         padding-left: 10px
 
+      #{$block}_page_finance-reports-payslip-counts &
+        width: 50%
+        padding-left: 10px
+
       #{$block}_page_security-payroll-report-overview &
         width: 100%
         padding-left: 10px
@@ -1623,9 +1637,14 @@ $block: ".boss-table"
           padding-bottom: 10px
 
         #{$block}_page_finance-reports-overview &,
+        #{$block}_page_finance-reports-payslip-counts &,
         #{$block}_page_payroll-reports-overview &
           width: 100%
           padding-left: 20px
+
+        #{$block}_page_security-payroll-report-overview &
+          padding-left: 20px
+          padding-right: 20px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
@@ -1721,8 +1740,13 @@ $block: ".boss-table"
           padding-left: 10px
 
         #{$block}_page_finance-reports-overview &,
+        #{$block}_page_finance-reports-payslip-counts &,
         #{$block}_page_payroll-reports-overview &
           padding-left: 20px
+
+        #{$block}_page_security-payroll-report-overview &
+          padding-left: 20px
+          padding-right: 20px
 
         #{$block}_page_maintenance-index &,
         #{$block}_page_maintenance-managers-index &
@@ -1829,8 +1853,13 @@ $block: ".boss-table"
           padding-right: 20px
 
         #{$block}_page_finance-reports-overview &,
+        #{$block}_page_finance-reports-payslip-counts &,
         #{$block}_page_payroll-reports-overview &
           padding-left: 10px
+
+        #{$block}_page_security-payroll-report-overview &
+          padding-left: 10px
+          padding-right: 10px
 
       &:after
         #{$block}_page_maintenance-index-card &,
@@ -1986,6 +2015,10 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports-overview &
         width: 33%
 
+      #{$block}_page_finance-reports-payslip-counts &
+        width: 50%
+        padding-right: 10px
+
       #{$block}_page_wages-index &
         width: 20%
 
@@ -2107,6 +2140,10 @@ $block: ".boss-table"
         #{$block}_page_finance-reports-overview &,
         #{$block}_page_payroll-reports-overview &
           width: 100%
+
+        #{$block}_page_finance-reports-payslip-counts &
+          width: 100%
+          padding-right: 20px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_safe-checks-index &
@@ -2254,6 +2291,9 @@ $block: ".boss-table"
 
         #{$block}_page_api-keys &
           width: 100%
+
+        #{$block}_page_finance-reports-payslip-counts &
+          padding-right: 10px
 
       &:after
         #{$block}_page_maintenance-index-card &,
@@ -4171,12 +4211,14 @@ $block: ".boss-table"
       width: auto
 
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &
       text-align: center
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &
         text-align: left

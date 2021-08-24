@@ -65,8 +65,10 @@ $block: ".boss-page-dashboard"
     #{$block}_page_profile-disabled &
       align-items: flex-start
 
-    // $Page dashboard group CONTEXT: $Page dashboard group MOD: add staff member page
-    #{$block}_page_add-staff-member &
+    // $Page dashboard group CONTEXT: $Page dashboard MOD: add staff member page
+    // $Page dashboard group CONTEXT: $Page dashboard MOD: kpi page
+    #{$block}_page_add-staff-member &,
+    #{$block}_page_kpi &
       margin-bottom: 20px
 
     // $Page dashboard group CONTEXT: $Page dashboard group MOD: vouchers index page
@@ -79,16 +81,10 @@ $block: ".boss-page-dashboard"
     #{$block}_page_security-pay-rates &:nth-child(2)
       justify-content: flex-end
 
-    #{$block}_page_finance-reports &:nth-child(2),
-    #{$block}_page_payroll-reports &:nth-child(2),
-    #{$block}_page_security-payroll-report &:nth-child(2),
-    #{$block}_page_kpi &:nth-child(2)
+    #{$block}_page_finance-reports &:not(:last-child),
+    #{$block}_page_payroll-reports &:not(:last-child),
+    #{$block}_page_security-payroll-report &:not(:last-child),
       margin-bottom: 20px
-
-    #{$block}_page_finance-reports &:last-child,
-    #{$block}_page_payroll-reports &:last-child,
-    #{$block}_page_security-payroll-report &:last-child
-      margin-bottom: 0
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports &:last-child,
