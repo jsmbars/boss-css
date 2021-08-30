@@ -134,9 +134,6 @@ $block: ".boss-table"
   &_page_weekly-reports
     min-width: 1160px
 
-  &_page_security-payroll-report
-    min-width: 1760px
-
   &_page_staff-tracking-staff-added
     min-width: 630px
 
@@ -187,7 +184,8 @@ $block: ".boss-table"
     // $Common table group MOD: role header
     &_role_header
       #{$block}_page_finance-reports &,
-      #{$block}_page_payroll-reports &
+      #{$block}_page_payroll-reports &,
+      #{$block}_page_security-payroll-report &
         position: sticky
         z-index: 50
         top: 0
@@ -197,7 +195,8 @@ $block: ".boss-table"
       // Set default position in Edge
       @supports (-ms-ime-align: auto)
         #{$block}_page_finance-reports &,
-        #{$block}_page_payroll-reports &
+        #{$block}_page_payroll-reports &,
+        #{$block}_page_security-payroll-report &
           position: relative
           z-index: auto
           top: auto
@@ -205,7 +204,8 @@ $block: ".boss-table"
       // Set default position in IE11
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
         #{$block}_page_finance-reports &,
-        #{$block}_page_payroll-reports &
+        #{$block}_page_payroll-reports &,
+        #{$block}_page_security-payroll-report &
           position: relative
           z-index: auto
           top: auto
@@ -213,7 +213,8 @@ $block: ".boss-table"
     // $Common table group MOD: role main
     &_role_main
       #{$block}_page_finance-reports &,
-      #{$block}_page_payroll-reports &
+      #{$block}_page_payroll-reports &,
+        #{$block}_page_security-payroll-report &
         background-color: #fff
 
 
@@ -223,12 +224,14 @@ $block: ".boss-table"
     overflow: auto
 
     #{$block}_page_finance-reports #{$block}__group_role_header &,
-    #{$block}_page_payroll-reports #{$block}__group_role_header &
+    #{$block}_page_payroll-reports #{$block}__group_role_header &,
+    #{$block}_page_security-payroll-report #{$block}__group_role_header &
       -ms-overflow-style: none
       scrollbar-width: none
 
     #{$block}_page_finance-reports #{$block}__group_role_header &::-webkit-scrollbar,
-    #{$block}_page_payroll-reports #{$block}__group_role_header &::-webkit-scrollbar
+    #{$block}_page_payroll-reports #{$block}__group_role_header &::-webkit-scrollbar,
+    #{$block}_page_security-payroll-report #{$block}__group_role_header &::-webkit-scrollbar
       display: none
 
 
@@ -532,7 +535,8 @@ $block: ".boss-table"
       background-color: #ffe3bd
 
     #{$block}_page_finance-reports &,
-    #{$block}_page_payroll-reports &
+    #{$block}_page_payroll-reports &,
+    #{$block}_page_security-payroll-report &
         min-width: 1760px
 
     @media screen and (max-width: 1280px)
