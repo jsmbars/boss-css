@@ -45,14 +45,13 @@ $block: ".boss-user-summary"
 
   // $User summary MOD: role review
   &_role_review
-    padding: 20px
+    padding: 10px
     border-radius: 10px
     border: 2px solid transparent
 
     @media screen and (max-width: 960px)
       flex-direction: row
       align-items: flex-start
-      padding: 10px
 
     @media screen and (max-width: 400px)
       flex-direction: column
@@ -106,19 +105,24 @@ $block: ".boss-user-summary"
     align-items: center
 
   // $User summary MOD: state dismissed
-  &_state_dismissed
-    opacity: 0.3
-
-    &:hover
-      opacity: 1
-      border: 2px solid map-get($boss-app-palette, primary)
-
   // $User summary MOD: state inactive
+  &_state_dismissed,
   &_state_inactive
     opacity: 0.3
 
     &:hover
       opacity: 1
+
+  &_type_enabled
+    border-color: map-get($boss-app-palette, secondary)
+
+  &_type_disabled
+    border-color: map-get($boss-app-palette, alert)
+    background-color: #feeeee
+
+  &_type_flagged
+    border-color: map-get($boss-app-palette, alert)
+    background-color: map-get($boss-app-palette, alert)
 
   &_type_outline,
   &_type_outline-primary,
@@ -161,19 +165,24 @@ $block: ".boss-user-summary"
     vertical-align: middle
     text-align: center
 
-    // $User summary avatar CONTEXT: $User summary MOD: role review
-    #{$block}_role_review &
-      margin-bottom: 20px
 
+    // $User summary avatar CONTEXT: $User summary MOD: role review
+    // $User summary avatar CONTEXT: $User summary MOD: role ssr assign confirmation
+    #{$block}_role_review &,
     #{$block}_role_ssr-assign-confirmation &
       margin-bottom: 15px
 
+    // $User summary avatar CONTEXT: $User summary MOD: role staff vetting missattributed login start
+    // $User summary avatar CONTEXT: $User summary MOD: role staff vetting missattributed login middle
+    // $User summary avatar CONTEXT: $User summary MOD: role staff vetting missattributed login end
     #{$block}_role_sv-ml-start &,
     #{$block}_role_sv-ml-middle &,
     #{$block}_role_sv-ml-end &
       border-radius: 10px
 
+    // $User summary avatar CONTEXT: $User summary MOD: role review
     // $User summary avatar CONTEXT: $User summary MOD: role report
+    #{$block}_role_review &,
     #{$block}_role_report &,
     #{$block}_role_sv-ml-start &,
     #{$block}_role_sv-ml-middle &,
@@ -185,6 +194,10 @@ $block: ".boss-user-summary"
     // $User summary avatar CONTEXT: $User summary MOD: role rotas daily
     // $User summary avatar CONTEXT: $User summary MOD: role rotas daily tooltip
     // $User summary avatar CONTEXT: $User summary MOD: role review short
+    // $User summary avatar CONTEXT: $User summary MOD: role table short
+    // $User summary avatar CONTEXT: $User summary MOD: role card short
+    // $User summary avatar CONTEXT: $User summary MOD: role card header short
+    // $User summary avatar CONTEXT: $User summary MOD: role ssr assign
     #{$block}_role_rotas-daily &,
     #{$block}_role_rotas-daily-tooltip &,
     #{$block}_role_review-short &,
@@ -197,12 +210,14 @@ $block: ".boss-user-summary"
       line-height: 70px
 
     // $User summary avatar CONTEXT: $User summary MOD: role hours overview
+    // $User summary avatar CONTEXT: $User summary MOD: role user profile
     #{$block}_role_hours-overview &
     #{$block}_role_user-profile &
       width: 80px
       height: 80px
       line-height: 80px
 
+    // $User summary avatar CONTEXT: $User summary MOD: role card header
     #{$block}_role_card-header &
       width: 50px
       height: 50px
@@ -265,6 +280,9 @@ $block: ".boss-user-summary"
     background-position: center center
     background-size: contain
 
+    // $User summary avatar inner CONTEXT: $User summary MOD: role staff vetting missattributed login start
+    // $User summary avatar inner CONTEXT: $User summary MOD: role staff vetting missattributed login middle
+    // $User summary avatar inner CONTEXT: $User summary MOD: role staff vetting missattributed login end
     #{$block}_role_sv-ml-start &,
     #{$block}_role_sv-ml-middle &,
     #{$block}_role_sv-ml-end &
@@ -399,18 +417,26 @@ $block: ".boss-user-summary"
 
     // $User summary content CONTEXT: $User summary MOD: role review
     #{$block}_role_review &
-      padding-left: 25px
+      padding-left: 15px
 
+    // $User summary content CONTEXT: $User summary MOD: role staff vetting missattributed login start
     #{$block}_role_sv-ml-start &
       padding-left: 0
       padding-right: 20px
 
+    // $User summary content CONTEXT: $User summary MOD: role staff vetting missattributed login start
     #{$block}_role_sv-ml-end &
       padding-left: 20px
 
     // $User summary content CONTEXT: $User summary MOD: role rotas daily
     // $User summary content CONTEXT: $User summary MOD: role review short
-    // $User summary avatar CONTEXT: $User summary MOD: role hours overview
+    // $User summary content CONTEXT: $User summary MOD: role hours overview
+    // $User summary content CONTEXT: $User summary MOD: role user profile
+    // $User summary content CONTEXT: $User summary MOD: role table short
+    // $User summary content CONTEXT: $User summary MOD: role card short
+    // $User summary content CONTEXT: $User summary MOD: role card header
+    // $User summary content CONTEXT: $User summary MOD: role card header short
+    // $User summary content CONTEXT: $User summary MOD: role ssr assign
     #{$block}_role_rotas-daily &,
     #{$block}_role_review-short &,
     #{$block}_role_hours-overview &,
@@ -426,6 +452,7 @@ $block: ".boss-user-summary"
     #{$block}_role_rotas-daily-tooltip &
       padding-left: 20px
 
+    // $User summary content CONTEXT: $User summary MOD: role ssr assign confirmation
     #{$block}_role_ssr-assign-confirmation &
       padding-left: 0
       align-items: center
@@ -434,7 +461,7 @@ $block: ".boss-user-summary"
       padding-left: 0
 
       #{$block}_role_review &
-        padding-left: 25px
+        padding-left: 15px
 
       #{$block}_role_report &
         position: relative
@@ -492,20 +519,30 @@ $block: ".boss-user-summary"
     max-width: 100%
     text-align: left
 
+    // $User summary header CONTEXT: $User summary MOD: role report
     #{$block}_role_report &
       white-space: nowrap
 
+    // $User summary header CONTEXT: $User summary MOD: role ssr assign confirmation
     #{$block}_role_ssr-assign-confirmation &
       text-align: center
 
+    // $User summary content CONTEXT: $User summary MOD: role staff vetting missattributed login start
     #{$block}_role_sv-ml-start &
       text-align: right
 
+    // $User summary content CONTEXT: $User summary MOD: role staff vetting missattributed login end
     #{$block}_role_sv-ml-end &
       text-align: left
 
     &:not(:last-child)
       margin-bottom: 15px
+
+      #{$block}_role_ssr-assign-confirmation &
+        margin-bottom: 15px
+
+      #{$block}_role_review &
+        margin-bottom: 10px
 
       #{$block}_role_rotas-daily &,
       #{$block}_role_rotas-daily-tooltip &,
@@ -514,9 +551,6 @@ $block: ".boss-user-summary"
       #{$block}_role_card-short &,
       #{$block}_role_card-header-short &
         margin-top: 5px
-
-      #{$block}_role_ssr-assign-confirmation &
-        margin-bottom: 15px
 
       #{$block}_role_review-short &,
       #{$block}_role_table-short &,
@@ -573,10 +607,54 @@ $block: ".boss-user-summary"
     font-weight: 300
     vertical-align: middle
 
+    // $User summary name CONTEXT: $User summary MOD: role report
     #{$block}_role_report &
       font-weight: 400
       white-space: nowrap
 
+    // $User summary name CONTEXT: $User summary MOD: role review
+    #{$block}_role_review &
+      display: block
+      font-size: 22px
+      font-weight: 400
+
+    // $User summary name CONTEXT: $User summary MOD: role review MOD: type flagged
+    #{$block}_role_review#{$block}_type_flagged &
+      color: #fff
+
+    // $User summary name CONTEXT: $User summary MOD: role hours overview
+    #{$block}_role_hours-overview &
+      display: block
+      font-size: 20px
+      font-weight: 400
+
+    // $User summary name CONTEXT: $User summary MOD: role staff vetting missattributed login start
+    // $User summary name CONTEXT: $User summary MOD: role staff vetting missattributed login end
+    #{$block}_role_sv-ml-start &,
+    #{$block}_role_sv-ml-end &
+      display: block
+      font-size: 20px
+      font-weight: 400
+      line-height: 1.2
+
+    // $User summary name CONTEXT: $User summary MOD: role card header
+    #{$block}_role_card-header &
+      font-size: 18px
+      font-weight: 400
+
+    // $User summary name CONTEXT: $User summary MOD: role rotas daily tooltip
+    #{$block}_role_rotas-daily-tooltip &
+      display: block
+      font-size: 18px
+      font-weight: 400
+      color: #808080
+
+    // $User summary name CONTEXT: $User summary MOD: role rotas daily
+    // $User summary name CONTEXT: $User summary MOD: role review short
+    // $User summary name CONTEXT: $User summary MOD: role table short
+    // $User summary name CONTEXT: $User summary MOD: role card short
+    // $User summary name CONTEXT: $User summary MOD: role card header short
+    // $User summary name CONTEXT: $User summary MOD: role ssr assign
     #{$block}_role_rotas-daily &,
     #{$block}_role_review-short &,
     #{$block}_role_table-short &,
@@ -587,41 +665,24 @@ $block: ".boss-user-summary"
       font-size: 16px
       font-weight: 400
 
-    #{$block}_role_card-header &
-      font-size: 18px
-      font-weight: 400
-
-    #{$block}_role_hours-overview &
-      display: block
-      font-size: 20px
-      font-weight: 400
-
+    // $User summary name CONTEXT: $User summary MOD: role user profile
     #{$block}_role_user-profile &
       display: block
       font-weight: 400
 
+    // $User summary name CONTEXT: $User summary MOD: role rotas daily
     #{$block}_role_rotas-daily &
       color: #808080
 
-    #{$block}_role_rotas-daily-tooltip &
-      display: block
-      font-size: 18px
-      font-weight: 400
-      color: #808080
-
+    // $User summary name CONTEXT: $User summary MOD: role ssr assign confirmation
     #{$block}_role_ssr-assign-confirmation &
       text-align: center
 
-    #{$block}_role_sv-ml-start &,
-    #{$block}_role_sv-ml-end &
-      display: block
-      font-weight: 400
-      font-size: 20px
-      line-height: 1.2
-
+    // $User summary name CONTEXT: $User summary MOD: role staff vetting missattributed login start
     #{$block}_role_sv-ml-start &
       text-align: right
 
+    // $User summary name CONTEXT: $User summary MOD: role staff vetting missattributed login end
     #{$block}_role_sv-ml-end &
       text-align: left
 
@@ -639,11 +700,11 @@ $block: ".boss-user-summary"
       #{$block}_role_report &
         white-space: normal
 
-      #{$block}_role_review &,
       #{$block}_role_card-header &
         display: inline-block
         text-align: left
 
+      #{$block}_role_review &,
       #{$block}_role_rotas-daily &,
       #{$block}_role_review-short &,
       #{$block}_role_hours-overview &,
@@ -671,14 +732,14 @@ $block: ".boss-user-summary"
 
     @media screen and (max-width: 400px)
       #{$block}_role_review &
-        display: inline-block
         text-align: center
 
     &:not(:last-child)
       margin-right: 35px
 
       #{$block}_role_review &
-        margin-right: 25px
+        margin-right: 0
+        margin-bottom: 5px
 
       #{$block}_role_report &
         margin-right: 20px
@@ -714,6 +775,7 @@ $block: ".boss-user-summary"
 
         #{$block}_role_review &
           margin-right: 0
+          margin-bottom: 5px
 
         #{$block}_role_report &
           margin-right: auto
@@ -762,11 +824,19 @@ $block: ".boss-user-summary"
     vertical-align: middle
     cursor: default
 
+    // $User summary label CONTEXT: $User summary MOD: role review short
+    // $User summary label CONTEXT: $User summary MOD: role table short
+    // $User summary label CONTEXT: $User summary MOD: role card short
+    // $User summary label CONTEXT: $User summary MOD: role card header short
     #{$block}_role_review-short &,
     #{$block}_role_table-short &,
     #{$block}_role_card-short &,
     #{$block}_role_card-header-short &
       margin-bottom: 3px
+
+    // $User summary label CONTEXT: $User summary MOD: role review MOD: type flagged
+    #{$block}_role_review#{$block}_type_flagged &
+      box-shadow: 0 0 0 1px #fff
 
     &_role_text
       +text-normalizer()
@@ -777,13 +847,6 @@ $block: ".boss-user-summary"
         display: block
         margin: 0 auto
         text-align: center
-
-
-  // $User summary label
-  &__label
-    display: inline-block
-    vertical-align: middle
-    cursor: default
 
 
   // $User summary icon
@@ -980,10 +1043,20 @@ $block: ".boss-user-summary"
     margin-bottom: 5px
     color: $boss-medium-gray
 
+    // $User summary review item CONTEXT: $User summary MOD: role ssr assign confirmation
     #{$block}_role_ssr-assign-confirmation &
       text-align: center
       color: $boss-dark-gray
       font-size: 16px
+
+    // $User summary review item CONTEXT: $User summary MOD: role review
+    #{$block}_role_review &
+      font-size: 16px
+      line-height: 1.2
+
+    // $User summary review item CONTEXT: $User summary MOD: role review MOD: type flagged
+    #{$block}_role_review#{$block}_type_flagged &
+      color: #fff
 
     @media screen and (max-width: 960px)
       text-align: center
@@ -991,6 +1064,10 @@ $block: ".boss-user-summary"
       #{$block}_role_review &,
       #{$block}_role_review-short &
         text-align: left
+
+    @media screen and (max-width: 400px)
+      #{$block}_role_review &
+        text-align: center
 
     &_space_extra
       margin-bottom: 10px
@@ -1071,6 +1148,9 @@ $block: ".boss-user-summary"
       color: #4c4c4c
       font-weight: 600
 
+      #{$block}_role_review#{$block}_type_flagged &
+        color: #fff
+
 
   &__review-action
     margin-left: 20px
@@ -1107,6 +1187,10 @@ $block: ".boss-user-summary"
   &__action
     opacity: 1
     transition: all .4s
+
+    // $User summary action CONTEXT: $User summary MOD: role review MOD: type flagged
+    #{$block}_role_review#{$block}_type_flagged &
+      box-shadow: 0 0 0 2px #fff
 
     // $User summary action CONTEXT: $User summary MOD: state dismissed
     #{$block}_state_dismissed &

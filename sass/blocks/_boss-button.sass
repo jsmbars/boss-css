@@ -762,8 +762,10 @@ $block: ".boss-button"
 
   // $Common button MOD: role move
   // $Common button MOD: role recover
+  // $Common button MOD: role undo
   &_role_move,
-  &_role_recover
+  &_role_recover,
+  &_role_undo
     $background-color: map-get($boss-app-palette, warning)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -771,7 +773,8 @@ $block: ".boss-button"
   &_role_move
     +button-with-icon-left($icon: '\e93d')
 
-  &_role_recover
+  &_role_recover,
+  &_role_undo
     +button-with-icon-left($icon: '\e950')
 
 
