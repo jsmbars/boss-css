@@ -109,6 +109,39 @@ $block: ".boss-dropdown"
         content: '\e96e'
 
 
+  // $Dropdown label
+  &__label
+    +text-normalizer()
+
+    position: relative
+    display: inline-block
+    cursor: default
+    white-space: nowrap
+
+    // $Dropdown label MOD: role filter
+    // $Dropdown label MOD: role user review
+    &_role_filter,
+    &_role_user-review
+
+      &:before
+        content: '\e923'
+        display: inline-block
+        margin-right: 8px
+        font-family: icons
+        font-size: 15px
+        line-height: 1
+        font-weight: 400
+        color: #4c4c4c
+
+    &_role_filter
+      &:before
+        content: '\e923'
+
+    &_role_user-review
+      &:before
+        content: '\e96e'
+
+
   // $Dropdown content
   &__content
     display: none

@@ -74,7 +74,8 @@ $block: ".boss-modal-window"
     max-width: 800px
 
   &_role_csv-upload-payments,
-  &_role_quiz-overview
+  &_role_quiz-overview,
+  &_role_staff-members-review
     width: 90%
     max-width: 960px
 
@@ -162,7 +163,9 @@ $block: ".boss-modal-window"
   &_role_wtl-ev-success,
   &_role_wtl-ev-error,
   &_role_wtl-ev-almost-done,
-  &_role_payslip
+  &_role_payslip,
+  &_role_quiz-overview,
+  &_role_staff-members-review
     margin-top: 100px
 
     @media screen and (max-width: 960px)
@@ -273,6 +276,7 @@ $block: ".boss-modal-window"
     #{$block}_role_bank-details &,
     #{$block}_role_bank-details-updated &,
     #{$block}_role_quiz-overview &,
+    #{$block}_role_staff-members-review &,
     #{$block}_role_disciplinary-details &,
     #{$block}_role_shift-details &,
     #{$block}_role_csv-upload-payments &,
@@ -312,6 +316,7 @@ $block: ".boss-modal-window"
       #{$block}_role_bank-details-updated &,
       #{$block}_role_bank-details &,
       #{$block}_role_quiz-overview &,
+      #{$block}_role_staff-members-review &,
       #{$block}_role_disciplinary-details &,
       #{$block}_role_shift-details &,
       #{$block}_role_csv-upload-payments &,
@@ -337,6 +342,7 @@ $block: ".boss-modal-window"
       #{$block}_role_bank-details &,
       #{$block}_role_bank-details-updated &,
       #{$block}_role_quiz-overview &,
+      #{$block}_role_staff-members-review &,
       #{$block}_role_disciplinary-details &,
       #{$block}_role_task-create &,
       #{$block}_role_task-edit &,
@@ -424,6 +430,7 @@ $block: ".boss-modal-window"
     #{$block}_role_bank-details &,
     #{$block}_role_bank-details-updated &,
     #{$block}_role_quiz-overview &,
+    #{$block}_role_staff-members-review &,
     #{$block}_role_disciplinary-details &,
     #{$block}_role_shift-details &,
     #{$block}_role_csv-upload-payments &,
@@ -498,6 +505,7 @@ $block: ".boss-modal-window"
       #{$block}_role_bank-details &,
       #{$block}_role_bank-details-updated &,
       #{$block}_role_quiz-overview &,
+      #{$block}_role_staff-members-review &,
       #{$block}_role_disciplinary-details &,
       #{$block}_role_shift-details &,
       #{$block}_role_csv-upload-payments &,
@@ -537,6 +545,7 @@ $block: ".boss-modal-window"
       #{$block}_role_bank-details &,
       #{$block}_role_bank-details-updated &,
       #{$block}_role_quiz-overview &,
+      #{$block}_role_staff-members-review &,
       #{$block}_role_disciplinary-details &,
       #{$block}_role_shift-details &,
       #{$block}_role_csv-upload-payments &,
@@ -686,6 +695,7 @@ $block: ".boss-modal-window"
     #{$block}_role_bank-details &,
     #{$block}_role_bank-details-updated &,
     #{$block}_role_quiz-overview &,
+    #{$block}_role_staff-members-review &,
     #{$block}_role_disciplinary-details &,
     #{$block}_role_csv-upload-payments &,
     #{$block}_role_payslip &,
@@ -727,6 +737,7 @@ $block: ".boss-modal-window"
       #{$block}_role_bank-details &,
       #{$block}_role_bank-details-updated &,
       #{$block}_role_quiz-overview &,
+      #{$block}_role_staff-members-review &,
       #{$block}_role_disciplinary-details &,
       #{$block}_role_csv-upload-payments &,
       #{$block}_role_payslip &,
@@ -835,8 +846,10 @@ $block: ".boss-modal-window"
 
   // $Modal window overview
   // $Modal window timeline
+  // $Modal window vetting
   &__overview,
-  &__timeline
+  &__timeline,
+  &__vetting
     padding: 20px 30px 30px
 
     @media screen and (max-width: 960px)
@@ -979,10 +992,17 @@ $block: ".boss-modal-window"
     #{$block}_role_history &
       padding: 0 30px 45px
 
+    #{$block}_role_staff-members-review &
+      padding: 0 30px 30px
+
     @media screen and (max-width: 960px)
 
       #{$block}_role_history &
         padding: 0 30px 30px
+
+      #{$block}_role_staff-members-review &
+        padding-left: 15px
+        padding-right: 15px
 
     @media screen and (max-width: 480px)
       #{$block}_role_history &
