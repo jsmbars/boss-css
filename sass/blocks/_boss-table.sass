@@ -1518,8 +1518,11 @@ $block: ".boss-table"
 
       #{$block}_page_security-payroll-report &
         align-items: flex-start
-        width: 11%
+        width: 10%
         padding-left: 15px
+
+        &:nth-last-child(11)
+          width: 11%
 
       #{$block}_page_security-payroll-report-week-details &
         width: 25%
@@ -2053,7 +2056,10 @@ $block: ".boss-table"
         width: 6%
 
       #{$block}_page_security-payroll-report &
-        width: 9%
+        width: 4%
+
+        &:nth-last-child(10)
+          width: 9%
 
       #{$block}_page_security-payroll-report-week-details &
         width: 20%
@@ -3722,7 +3728,10 @@ $block: ".boss-table"
         width: 6%
 
       #{$block}_page_security-payroll-report &
-        width: 8%
+        width: 9%
+
+        &:nth-last-child(3)
+          width: 8%
 
       #{$block}_page_bonai &,
       #{$block}_page_bonai-staff-member-data &
@@ -3773,7 +3782,10 @@ $block: ".boss-table"
         width: 6%
 
       #{$block}_page_security-payroll-report &
-        width: 8%
+        width: 7%
+
+        &:nth-last-child(2)
+          width: 8%
 
     // $Common table cell eleventh column
     &:nth-child(11)
@@ -3785,10 +3797,13 @@ $block: ".boss-table"
         width: 6%
 
       #{$block}_page_security-payroll-report &
-        width: 9%
-        max-width: 280px
-        min-width: 150px
-        padding-right: 15px
+        width: 7%
+
+        &:nth-last-child(1)
+          width: 9%
+          max-width: 280px
+          min-width: 150px
+          padding-right: 15px
 
     // $Common table cell twelfth column
     &:nth-child(12)
@@ -3798,6 +3813,12 @@ $block: ".boss-table"
 
       #{$block}_page_payroll-reports &
         width: 6%
+
+      #{$block}_page_security-payroll-report &
+        width: 9%
+        max-width: 280px
+        min-width: 150px
+        padding-right: 15px
 
     // $Common table cell thirteenth column
     &:nth-child(13)
