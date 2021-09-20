@@ -1013,6 +1013,7 @@ $block: ".boss-form"
     flex-direction: row
     justify-content: space-between
     align-items: flex-start
+    flex-wrap: wrap
     width: 100%
 
 
@@ -2920,6 +2921,17 @@ $block: ".boss-form"
 
     &:not(:last-child)
       margin-bottom: 10px
+
+
+  &__text-indicator
+    display: inline-block
+    vertical-align: middle
+
+    &:first-child
+      margin-right: 10px
+
+    &:last-child
+      margin-left: 10px
 
 
   &__text-part
