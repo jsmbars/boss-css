@@ -170,6 +170,10 @@ $block: ".boss-form"
       @media screen and (max-width: 960px)
         margin-top: 20px
 
+    &_role_alert
+      background-color: #feeeee
+      border: 2px solid map-get($boss-app-palette, alert)
+
     &_adjust_overlay-xs,
     &_adjust_overlay-s,
     &_adjust_overlay-m,
@@ -2971,8 +2975,18 @@ $block: ".boss-form"
     color: map-get($boss-app-palette, secondary)
 
 
+  // $Common form actions
+  &__actions
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+
+
   // $Common form action
   &__action
+    flex-grow: 0
+    flex-shrink: 1
 
     #{$block}__field_role_control &,
     #{$block}__control &
