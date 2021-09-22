@@ -30,6 +30,12 @@ $block: ".boss-avatar"
   &_type_scannable
     box-shadow: 0 0 0 6px map-get($boss-app-palette, primary)
 
+  &_type_verification-fail
+    box-shadow: 0 0 0 6px map-get($boss-app-palette, alert)
+
+  &_type_scannable#{&}_type_verification-fail
+    box-shadow: 0 0 0 6px map-get($boss-app-palette, primary), 0 0 0 12px map-get($boss-app-palette, alert)
+
   &-avatar-container
     position: relative
     border-radius: 50%

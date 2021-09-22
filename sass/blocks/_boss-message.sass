@@ -144,6 +144,12 @@ $block: ".boss-message"
     @media screen and (max-width: 400px)
       padding: 10px 15px
 
+  // $Message MOD: role form note
+  &_role_form-note
+    padding: 0
+    border: none
+    background-color: transparent
+
   // $Message MOD: status success
   &_status_success
     background-color: map-get($boss-app-palette, secondary)
@@ -222,6 +228,11 @@ $block: ".boss-message"
     // $Message title CONTEXT: $Message MOD: role preview
     #{$block}_role_preview &
       padding-right: 20px
+
+    // $Message title CONTEXT: $Message MOD: role form-note
+    #{$block}_role_form-note &
+      margin-bottom: 5px
+      font-size: 18px
 
     @media screen and (max-width: 480px)
       font-size: 22px
@@ -311,6 +322,10 @@ $block: ".boss-message"
       color: map-get($boss-app-palette, alert)
       font-size: 14px
 
+    // $Message text CONTEXT: $Message MOD: role form-note
+    #{$block}_role_form-note &
+      font-size: 16px
+
     @media screen and (max-width: 480px)
       font-size: 16px
 
@@ -327,6 +342,13 @@ $block: ".boss-message"
 
     &:not(:last-child)
       margin-bottom: 5px
+
+      #{$block}_role_form-note &
+        margin-bottom: 0
+
+
+  &__text-marked
+    font-weight: 600
 
 
   // $Message List
@@ -354,6 +376,37 @@ $block: ".boss-message"
 
     @media screen and (max-width: 480px)
       font-size: 16px
+
+
+  // $Message actions
+  &__actions
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+
+    // $Message actions CONTEXT: $Message MOD: role form-note
+    #{$block}_role_form-note &
+      margin-top: 15px
+
+    @media screen and (max-width: 480px)
+      #{$block}_role_form-note &
+        flex-direction: column
+        align-items: flex-start
+
+
+  // $Message action
+  &__action
+    flex-grow: 0
+    flex-shrink: 1
+
+    &:not(:last-child)
+      margin-right: 15px
+
+      @media screen and (max-width: 480px)
+        #{$block}_role_form-note &
+          margin-right: 0
+          margin-bottom: 15px
 
 
   // $Message meta information

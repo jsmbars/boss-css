@@ -1112,6 +1112,7 @@ $block: ".boss-table"
     #{$block}_page_payslip-totals &
       padding: 0 5px
 
+    #{$block}_page_staff-members-index &,
     #{$block}_page_smp-owed-hours &,
     #{$block}_page_safe-checks-index &,
     #{$block}_page_venues-index &,
@@ -1121,7 +1122,6 @@ $block: ".boss-table"
       padding: 15px 5px
 
     #{$block}_page_checklist-review &,
-    #{$block}_page_staff-members-index &,
     #{$block}_page_message-board &,
     #{$block}_page_maintenance-index &,
     #{$block}_page_maintenance-managers-index &,
@@ -2761,7 +2761,7 @@ $block: ".boss-table"
     &:nth-child(4)
 
       #{$block}_page_staff-members-index &
-        width: 11%
+        width: 10%
 
       #{$block}_page_fruit-order-history &
         width: 29%
@@ -3321,7 +3321,7 @@ $block: ".boss-table"
     &:nth-child(6)
 
       #{$block}_page_staff-members-index &
-        width: 11%
+        width: 13%
 
       #{$block}_page_change-order-report &
         width: 11%
@@ -3696,7 +3696,7 @@ $block: ".boss-table"
       #{$block}_page_staff-members-index &
         flex-grow: 0
         flex-shrink: 0
-        width: 140px
+        width: 130px
         justify-content: center
 
       #{$block}_page_change-order-report &
@@ -4726,6 +4726,10 @@ $block: ".boss-table"
       #{$block}_page_staff-members-index #{$block}__cell:nth-child(9) &
         text-align: left
 
+      #{$block}_page_staff-members-index #{$block}__info-group &
+        flex-shrink: 1
+        width: auto
+
     @media screen and (max-width: 960px)
       flex-grow: 1
       flex-shrink: 0
@@ -5187,6 +5191,12 @@ $block: ".boss-table"
     border-radius: 4px
     border: 2px solid #aaa
 
+    #{$block}_page_staff-members-index &
+      display: inline-block
+      width: auto
+      max-width: none
+      padding: 5px
+
     &_role_primary
       border-color: map-get($boss-app-palette, primary)
 
@@ -5616,6 +5626,11 @@ $block: ".boss-table"
 
   //  $Common table indicator
   &__indicator
+    vertical-align: middle
+
+    #{$block}_page_staff-members-index &
+      line-height: 1
+      margin-left: 5px
 
     & > *
       #{$block}__cell_state_alert &,

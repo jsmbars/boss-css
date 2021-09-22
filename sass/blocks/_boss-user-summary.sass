@@ -226,6 +226,12 @@ $block: ".boss-user-summary"
     &_type_scannable
       box-shadow: 0 0 0 6px map-get($boss-app-palette, primary)
 
+    &_type_verification-fail
+      box-shadow: 0 0 0 6px map-get($boss-app-palette, alert)
+
+    &_type_scannable#{&}_type_verification-fail
+      box-shadow: 0 0 0 6px map-get($boss-app-palette, primary), 0 0 0 12px map-get($boss-app-palette, alert)
+
     @media screen and (max-width: 1120px)
       #{$block}_role_sv-ml-start &,
       #{$block}_role_sv-ml-middle &,
@@ -818,6 +824,19 @@ $block: ".boss-user-summary"
       color: map-get($boss-app-palette, alert)
 
 
+  // $User summary label box
+  &__label-box
+    display: inline-block
+    vertical-align: middle
+    cursor: default
+    border: 2px solid #808080
+    border-radius: 5px
+
+    // $User summary label box MOD: role alert
+    &_role_alert
+      border-color: map-get($boss-app-palette, alert)
+
+
   // $User summary label
   &__label
     display: inline-block
@@ -847,6 +866,14 @@ $block: ".boss-user-summary"
         display: block
         margin: 0 auto
         text-align: center
+
+
+  // $User summary label indicator
+  &__label-indicator
+    display: inline-block
+    line-height: 1
+    vertical-align: middle
+    margin: 0 10px
 
 
   // $User summary icon

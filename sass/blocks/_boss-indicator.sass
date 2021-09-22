@@ -47,6 +47,13 @@ $block: ".boss-indicator"
     &:hover
       opacity: 0.8
 
+  &_context_label-group
+    margin-top: -5px
+    margin-bottom: 10px
+
+    &:only-child
+      margin-left: auto
+
 
   &__counter
     +text-normalizer()
@@ -209,6 +216,22 @@ $block: ".boss-indicator"
       &:before
         font-size: 35px
         line-height: 35px
+
+    &_spinner
+      width: 25px
+      height: 25px
+      overflow: hidden
+
+      &:before
+        content: ''
+        width: 25px
+        height: 25px
+        font-size: 25px
+        line-height: 25px
+        background-image: url('../icons/spinner.svg')
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: center center
 
     &_accessory
       &:before
@@ -419,6 +442,14 @@ $block: ".boss-indicator"
         content: '\e911'
         font-size: 18px
         line-height: 18px
+
+    &_lock
+      &:before
+        content: '\e930'
+
+    &_exclamation-circle-solid
+      &:before
+        content: '\e99e'
 
 
   // $Indicator marker
