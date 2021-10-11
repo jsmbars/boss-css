@@ -67,6 +67,16 @@ $block: ".boss-user-summary"
       flex-direction: row
       align-items: center
 
+  &_role_contact-details
+    align-items: center
+
+    @media screen and (max-width: 960px)
+      flex-direction: row
+      align-items: center
+
+    @media screen and (max-width: 400px)
+      flex-direction: column
+
   &_role_card-header-short
 
   // $User summary MOD: role rotas daily
@@ -180,6 +190,12 @@ $block: ".boss-user-summary"
     #{$block}_role_sv-ml-end &
       border-radius: 10px
 
+    // $User summary avatar CONTEXT: $User summary MOD: role contact details
+    #{$block}_role_contact-details &
+      width: 120px
+      height: 120px
+      line-height: 120px
+
     // $User summary avatar CONTEXT: $User summary MOD: role review
     // $User summary avatar CONTEXT: $User summary MOD: role report
     #{$block}_role_review &,
@@ -257,8 +273,14 @@ $block: ".boss-user-summary"
       #{$block}_role_card-header-short &,
       #{$block}_role_sv-ml-start &,
       #{$block}_role_sv-ml-middle &,
-      #{$block}_role_sv-ml-end &
+      #{$block}_role_sv-ml-end &,
+      #{$block}_role_contact-details &
         margin-bottom: 0
+
+      #{$block}_role_contact-details &
+        width: 100px
+        height: 100px
+        line-height: 100px
 
     @media screen and (max-width: 640px)
       #{$block}_role_rotas-daily &
@@ -272,6 +294,10 @@ $block: ".boss-user-summary"
         width: 50px
         height: 50px
         line-height: 50px
+
+    @media screen and (max-width: 400px)
+      #{$block}_role_contact-details &
+        margin-bottom: 10px
 
 
   // $User summary avatar inner
@@ -431,7 +457,9 @@ $block: ".boss-user-summary"
       padding-right: 20px
 
     // $User summary content CONTEXT: $User summary MOD: role staff vetting missattributed login start
-    #{$block}_role_sv-ml-end &
+    // $User summary content CONTEXT: $User summary MOD: role contact details
+    #{$block}_role_sv-ml-end &,
+    #{$block}_role_contact-details &
       padding-left: 20px
 
     // $User summary content CONTEXT: $User summary MOD: role rotas daily
@@ -500,7 +528,8 @@ $block: ".boss-user-summary"
         padding-left: 0
 
     @media screen and (max-width: 400px)
-      #{$block}_role_review &
+      #{$block}_role_review &,
+      #{$block}_role_contact-details &
         padding-left: 0
 
       #{$block}_role_ssr-assign &
@@ -541,13 +570,51 @@ $block: ".boss-user-summary"
     #{$block}_role_sv-ml-end &
       text-align: left
 
+    @media screen and (max-width: 960px)
+      text-align: center
+
+      #{$block}_role_review &,
+      #{$block}_role_rotas-daily &,
+      #{$block}_role_review-short &,
+      #{$block}_role_table-short &,
+      #{$block}_role_card-short &,
+      #{$block}_role_card-header &,
+      #{$block}_role_card-header-short &,
+      #{$block}_role_ssr-assign &,
+      #{$block}_role_hours-overview &,
+      #{$block}_role_sv-ml-end &,
+      #{$block}_role_contact-details &
+        text-align: left
+
+      #{$block}_role_sv-ml-start &
+        text-align: right
+
+      #{$block}_role_report &
+        white-space: normal
+
+    @media screen and (max-width: 640px)
+      #{$block}_role_sv-ml-end &,
+      #{$block}_role_sv-ml-start &
+        text-align: left
+
+    @media screen and (max-width: 480px)
+      #{$block}_role_hours-overview &,
+      #{$block}_role_user-profile &
+        text-align: center
+
+    @media screen and (max-width: 400px)
+      #{$block}_role_review &,
+      #{$block}_role_contact-details &
+        text-align: center
+
     &:not(:last-child)
       margin-bottom: 15px
 
       #{$block}_role_ssr-assign-confirmation &
         margin-bottom: 15px
 
-      #{$block}_role_review &
+      #{$block}_role_review &,
+      #{$block}_role_contact-details &
         margin-bottom: 10px
 
       #{$block}_role_rotas-daily &,
@@ -568,41 +635,6 @@ $block: ".boss-user-summary"
       #{$block}_role_user-profile &,
       #{$block}_role_ssr-assign &
         margin-bottom: 0
-
-    @media screen and (max-width: 960px)
-      text-align: center
-
-      #{$block}_role_review &,
-      #{$block}_role_rotas-daily &,
-      #{$block}_role_review-short &,
-      #{$block}_role_table-short &,
-      #{$block}_role_card-short &,
-      #{$block}_role_card-header &,
-      #{$block}_role_card-header-short &,
-      #{$block}_role_ssr-assign &,
-      #{$block}_role_hours-overview &,
-      #{$block}_role_sv-ml-end &
-        text-align: left
-
-      #{$block}_role_sv-ml-start &
-        text-align: right
-
-      #{$block}_role_report &
-        white-space: normal
-
-    @media screen and (max-width: 640px)
-      #{$block}_role_sv-ml-end &,
-      #{$block}_role_sv-ml-start &
-        text-align: left
-
-    @media screen and (max-width: 480px)
-      #{$block}_role_hours-overview &,
-      #{$block}_role_user-profile &
-        text-align: center
-
-    @media screen and (max-width: 400px)
-      #{$block}_role_review &
-        text-align: center
 
 
   // $User summary name
@@ -642,6 +674,11 @@ $block: ".boss-user-summary"
       font-size: 20px
       font-weight: 400
       line-height: 1.2
+
+    // $User summary name CONTEXT: $User summary MOD: role contact details
+    #{$block}_role_contact-details &
+      display: inline-block
+      font-weight: 600
 
     // $User summary name CONTEXT: $User summary MOD: role card header
     #{$block}_role_card-header &
@@ -724,6 +761,10 @@ $block: ".boss-user-summary"
       #{$block}_role_sv-ml-start &
         text-align: right
 
+      #{$block}_role_contact-details &
+        font-size: 20px
+        text-align: left
+
     @media screen and (max-width: 640px)
       #{$block}_role_sv-ml-start &,
       #{$block}_role_sv-ml-end &
@@ -736,8 +777,12 @@ $block: ".boss-user-summary"
       #{$block}_role_ssr-assign &
         font-size: 14px
 
+      #{$block}_role_contact-details &
+        display: block
+
     @media screen and (max-width: 400px)
-      #{$block}_role_review &
+      #{$block}_role_review &,
+      #{$block}_role_contact-details &
         text-align: center
 
     &:not(:last-child)
@@ -747,7 +792,8 @@ $block: ".boss-user-summary"
         margin-right: 0
         margin-bottom: 5px
 
-      #{$block}_role_report &
+      #{$block}_role_report &,
+      #{$block}_role_contact-details &
         margin-right: 20px
 
       #{$block}_role_card-header &
@@ -789,6 +835,19 @@ $block: ".boss-user-summary"
 
         #{$block}_role_card-header &
           margin-right: 10px
+          margin-bottom: 0
+
+        #{$block}_role_contact-details &
+          margin-right: 20px
+          margin-bottom: 0
+
+      @media screen and (max-width: 480px)
+        #{$block}_role_contact-details &
+          margin-right: 0
+          margin-bottom: 5px
+
+      @media screen and (max-width: 400px)
+        #{$block}_role_contact-details &
           margin-bottom: 0
 
     &_role_alert
@@ -1081,6 +1140,10 @@ $block: ".boss-user-summary"
       font-size: 16px
       line-height: 1.2
 
+    // $User summary review item CONTEXT: $User summary MOD: role contact-details
+    #{$block}_role_contact-details &
+      font-size: 16px
+
     // $User summary review item CONTEXT: $User summary MOD: role review MOD: type flagged
     #{$block}_role_review#{$block}_type_flagged &
       color: #fff
@@ -1089,11 +1152,16 @@ $block: ".boss-user-summary"
       text-align: center
 
       #{$block}_role_review &,
-      #{$block}_role_review-short &
+      #{$block}_role_review-short &,
+      #{$block}_role_contact-details &
         text-align: left
 
+      #{$block}_role_contact-details &
+        font-size: 14px
+
     @media screen and (max-width: 400px)
-      #{$block}_role_review &
+      #{$block}_role_review &,
+      #{$block}_role_contact-details &
         text-align: center
 
     &_space_extra
