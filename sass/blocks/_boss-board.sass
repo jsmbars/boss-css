@@ -170,6 +170,11 @@ $block: ".boss-board"
         flex-wrap: wrap
         overflow: hidden
 
+    @media screen and (max-width: 480px)
+      #{$block}_role_venue-dashboard-attendance &
+        flex-wrap: wrap
+        justify-content: center
+
     @media screen and (max-width: 400px)
       padding: 15px
 
@@ -358,6 +363,11 @@ $block: ".boss-board"
       #{$block}_role_kpi &
         font-size: 18px
 
+      #{$block}_role_venue-dashboard-attendance &
+        margin-bottom: 5px
+        padding-right: 0
+        text-align: center
+
     @media screen and (max-width: 400px)
       font-size: 20px
 
@@ -542,8 +552,18 @@ $block: ".boss-board"
     line-height: 1.2
     color: #808080
 
+    #{$block}_role_venue-dashboard-attendance &
+      font-size: 14px
+
     @media screen and (max-width: 960px)
       font-size: 16px
+
+      #{$block}_role_venue-dashboard-attendance &
+        font-size: 14px
+
+    @media screen and (max-width: 480px)
+      #{$block}_role_venue-dashboard-attendance &
+        text-align: center
 
 
   // $Board meta action
@@ -1064,7 +1084,7 @@ $block: ".boss-board"
   &__form
 
 
-  // $Board manager form area
+  // $Board message form area
   &__message-form
     display: block
     width: 100%
@@ -1080,7 +1100,7 @@ $block: ".boss-board"
       padding: 25px 15px 35px
 
 
-  // $Board manager form area inner container
+  // $Board message form area inner container
   &__message-form-inner
     display: block
     width: 100%
@@ -1144,8 +1164,23 @@ $block: ".boss-board"
     @media screen and (max-width: 480px)
       padding: 10px
 
+    &_role_section
+      border: none
+
+      @media screen and (max-width: 960px)
+        padding: 0
+
+      @media screen and (max-width: 480px)
+        padding: 0
+
+      &:not(:last-child)
+        padding-bottom: 20px
+        border-bottom: 1px solid #e6e6e6
+        border-radius: 0
+
     &_role_data
       border-width: 1px
+
       @media screen and (max-width: 960px)
         padding: 0
         border: none
@@ -1159,6 +1194,7 @@ $block: ".boss-board"
     &_context_stack
       &:not(:last-child)
         margin-bottom: 30px
+
 
   // $Board manager area header
   &__manager-header
@@ -1294,6 +1330,16 @@ $block: ".boss-board"
 
     @media screen and (max-width: 960px)
       padding-bottom: 0
+
+
+  // $Board manager area attendance
+  // $Board manager area weather
+  // $Board manager area events
+  &__manager-attendance,
+  &__manager-weather,
+  &__manager-events
+    display: block
+    width: 100%
 
 
   // $Board calendar

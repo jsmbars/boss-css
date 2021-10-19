@@ -284,6 +284,11 @@ $block: ".boss-check"
       min-height: 0
       padding: 10px 15px 15px
 
+    #{$block}_page_venue-dashboard-attendance &
+      min-height: 0
+      border: none
+      padding: 0
+
     @media screen and (max-width: 960px)
       min-height: 60px
       padding: 20px
@@ -1201,6 +1206,10 @@ $block: ".boss-check"
     justify-content: center
     align-items: stretch
 
+    @media screen and (max-width: 1120px)
+      #{$block}_page_venue-dashboard-attendance &
+        flex-wrap: wrap
+
     @media screen and (max-width: 640px)
       #{$block}_page_smp-quizzes-category &
         flex-wrap: wrap
@@ -1267,6 +1276,10 @@ $block: ".boss-check"
     #{$block}_page_smp-quizzes-stats &
       padding: 10px
 
+    #{$block}_page_venue-dashboard-attendance &
+      align-items: flex-start
+      padding: 10px
+
     #{$block}_page_smp-quizzes-category &
       flex-direction: row
 
@@ -1317,9 +1330,16 @@ $block: ".boss-check"
     &_size_fourth
       width: 25%
 
+      @media screen and (max-width: 1120px)
+        #{$block}_page_venue-dashboard-attendance &
+          width: 50%
+
       @media screen and (max-width: 640px)
         #{$block}_page_smp-quizzes-category &
           width: 50%
+
+        #{$block}_page_venue-dashboard-attendance &
+          width: 100%
 
     &_size_half#{&}_delimiter_light,
     &_size_third#{&}_delimiter_light,
