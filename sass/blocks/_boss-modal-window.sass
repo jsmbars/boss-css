@@ -109,7 +109,8 @@ $block: ".boss-modal-window"
   &_role_edit,
   &_role_add,
   &_role_restore,
-  &_role_question-move
+  &_role_question-move,
+  &_role_attendance
     width: 90%
     max-width: 800px
 
@@ -284,7 +285,8 @@ $block: ".boss-modal-window"
     #{$block}_role_history &,
     #{$block}_role_wtl-card-history &,
     #{$block}_role_action-details &,
-    #{$block}_role_week-details &
+    #{$block}_role_week-details &,
+    #{$block}_role_attendance &
       top: 30px
       right: 30px
 
@@ -324,7 +326,8 @@ $block: ".boss-modal-window"
       #{$block}_role_history &,
       #{$block}_role_wtl-card-history &,
       #{$block}_role_action-details &,
-      #{$block}_role_week-details &
+      #{$block}_role_week-details &,
+      #{$block}_role_attendance &
         font-size: 16px
         color: #808080
 
@@ -356,7 +359,8 @@ $block: ".boss-modal-window"
       #{$block}_role_history &,
       #{$block}_role_wtl-card-history &,
       #{$block}_role_action-details &,
-      #{$block}_role_week-details &
+      #{$block}_role_week-details &,
+      #{$block}_role_attendance &
         right: 15px
 
   // $Modal window header
@@ -439,7 +443,8 @@ $block: ".boss-modal-window"
     #{$block}_role_wtl-card-history &,
     #{$block}_role_wtl-ev-almost-done &,
     #{$block}_role_action-details &,
-    #{$block}_role_week-details &
+    #{$block}_role_week-details &,
+    #{$block}_role_attendance &
       padding: 20px 50px 20px 30px
       background-color: $boss-extra-light-gray
       text-transform: none
@@ -513,7 +518,8 @@ $block: ".boss-modal-window"
       #{$block}_role_history &,
       #{$block}_role_wtl-card-history &,
       #{$block}_role_action-details &,
-      #{$block}_role_week-details &
+      #{$block}_role_week-details &,
+      #{$block}_role_attendance &
         padding-left: 15px
         padding-right: 35px
 
@@ -553,7 +559,8 @@ $block: ".boss-modal-window"
       #{$block}_role_history &,
       #{$block}_role_wtl-card-history &,
       #{$block}_role_action-details &,
-      #{$block}_role_week-details &
+      #{$block}_role_week-details &,
+      #{$block}_role_attendance &
         font-size: 22px
 
     // $Modal window header MOD: error
@@ -706,6 +713,9 @@ $block: ".boss-modal-window"
     #{$block}_role_week-details &
       padding: 0
 
+    #{$block}_role_attendance &
+      padding: 30px 30px 0
+
     #{$block}_role_rota &
       border-top-right-radius: $border-radius !important
       border-top-left-radius: $border-radius !important
@@ -750,6 +760,10 @@ $block: ".boss-modal-window"
       #{$block}_role_shift-details &
         padding-left: 30px
         padding-right: 30px
+
+    @media screen and (max-width: 640px)
+      #{$block}_role_attendance &
+        padding-bottom: 30px
 
     @media screen and (max-width: 480px)
       #{$block}_role_shift-details &

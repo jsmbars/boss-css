@@ -88,6 +88,7 @@ $block: ".boss-user-summary"
   &_role_card-short,
   &_role_card-header-short,
   &_role_ssr-assign,
+  &_role_venue-dashboard-attendance,
   &_role_sv-ml-end
     @media screen and (max-width: 960px)
       flex-direction: row
@@ -220,14 +221,15 @@ $block: ".boss-user-summary"
     #{$block}_role_table-short &,
     #{$block}_role_card-short &,
     #{$block}_role_card-header-short &,
-    #{$block}_role_ssr-assign &
+    #{$block}_role_ssr-assign &,
+    #{$block}_role_venue-dashboard-attendance &
       width: 70px
       height: 70px
       line-height: 70px
 
     // $User summary avatar CONTEXT: $User summary MOD: role hours overview
     // $User summary avatar CONTEXT: $User summary MOD: role user profile
-    #{$block}_role_hours-overview &
+    #{$block}_role_hours-overview &,
     #{$block}_role_user-profile &
       width: 80px
       height: 80px
@@ -267,6 +269,7 @@ $block: ".boss-user-summary"
       #{$block}_role_rotas-daily &,
       #{$block}_role_review-short &,
       #{$block}_role_ssr-assign &,
+      #{$block}_role_venue-dashboard-attendance &,
       #{$block}_role_table-short &,
       #{$block}_role_card-short &,
       #{$block}_role_card-header &,
@@ -290,7 +293,8 @@ $block: ".boss-user-summary"
 
       #{$block}_role_table-short &,
       #{$block}_role_card-short &,
-      #{$block}_role_ssr-assign &
+      #{$block}_role_ssr-assign &,
+      #{$block}_role_venue-dashboard-attendance &
         width: 50px
         height: 50px
         line-height: 50px
@@ -479,7 +483,8 @@ $block: ".boss-user-summary"
     #{$block}_role_card-short &,
     #{$block}_role_card-header &,
     #{$block}_role_card-header-short &,
-    #{$block}_role_ssr-assign &
+    #{$block}_role_ssr-assign &,
+    #{$block}_role_venue-dashboard-attendance &
       padding-left: 20px
 
     // $User summary content CONTEXT: $User summary MOD: role rotas daily tooltip
@@ -520,7 +525,8 @@ $block: ".boss-user-summary"
       #{$block}_role_table-short &,
       #{$block}_role_card-short &,
       #{$block}_role_card-header-short &,
-      #{$block}_role_ssr-assign &
+      #{$block}_role_ssr-assign &,
+      #{$block}_role_venue-dashboard-attendance &
         padding-left: 15px
 
     @media screen and (max-width: 480px)
@@ -532,7 +538,8 @@ $block: ".boss-user-summary"
       #{$block}_role_contact-details &
         padding-left: 0
 
-      #{$block}_role_ssr-assign &
+      #{$block}_role_ssr-assign &,
+      #{$block}_role_venue-dashboard-attendance &
         padding-left: 10px
 
     // $User summary content MOD: adjust middle alignment in a row
@@ -581,6 +588,7 @@ $block: ".boss-user-summary"
       #{$block}_role_card-header &,
       #{$block}_role_card-header-short &,
       #{$block}_role_ssr-assign &,
+      #{$block}_role_venue-dashboard-attendance &,
       #{$block}_role_hours-overview &,
       #{$block}_role_sv-ml-end &,
       #{$block}_role_contact-details &
@@ -633,7 +641,8 @@ $block: ".boss-user-summary"
 
       #{$block}_role_hours-overview &,
       #{$block}_role_user-profile &,
-      #{$block}_role_ssr-assign &
+      #{$block}_role_ssr-assign &,
+      #{$block}_role_venue-dashboard-attendance &
         margin-bottom: 0
 
 
@@ -703,7 +712,8 @@ $block: ".boss-user-summary"
     #{$block}_role_table-short &,
     #{$block}_role_card-short &,
     #{$block}_role_card-header-short &,
-    #{$block}_role_ssr-assign &
+    #{$block}_role_ssr-assign &,
+    #{$block}_role_venue-dashboard-attendance &
       display: block
       font-size: 16px
       font-weight: 400
@@ -755,6 +765,7 @@ $block: ".boss-user-summary"
       #{$block}_role_card-short &,
       #{$block}_role_card-header-short &,
       #{$block}_role_ssr-assign &,
+      #{$block}_role_venue-dashboard-attendance &,
       #{$block}_role_sv-ml-end &
         text-align: left
 
@@ -774,7 +785,8 @@ $block: ".boss-user-summary"
       #{$block}_role_hours-overview &
         text-align: center
 
-      #{$block}_role_ssr-assign &
+      #{$block}_role_ssr-assign &,
+      #{$block}_role_venue-dashboard-attendance &
         font-size: 14px
 
       #{$block}_role_contact-details &
@@ -805,7 +817,8 @@ $block: ".boss-user-summary"
       #{$block}_role_table-short &,
       #{$block}_role_card-short &,
       #{$block}_role_card-header-short &,
-      #{$block}_role_ssr-assign &
+      #{$block}_role_ssr-assign &,
+      #{$block}_role_venue-dashboard-attendance &
         margin-right: 0
         margin-bottom: 5px
 
@@ -1148,12 +1161,16 @@ $block: ".boss-user-summary"
     #{$block}_role_review#{$block}_type_flagged &
       color: #fff
 
+    #{$block}_role_venue-dashboard-attendance &
+      margin-bottom: 0
+
     @media screen and (max-width: 960px)
       text-align: center
 
       #{$block}_role_review &,
       #{$block}_role_review-short &,
-      #{$block}_role_contact-details &
+      #{$block}_role_contact-details &,
+      #{$block}_role_venue-dashboard-attendance &
         text-align: left
 
       #{$block}_role_contact-details &
