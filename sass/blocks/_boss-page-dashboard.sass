@@ -231,6 +231,36 @@ $block: ".boss-page-dashboard"
     vertical-align: middle
 
 
+  // $Page dashboard status group
+  &__status-group
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    margin-bottom: 25px
+
+
+  // $Page dashboard status indicator
+  &__status-indicator
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  &__status-select
+    flex-grow: 0
+    flex-shrink: 0
+
+    #{$block}_page_rotas-daily &
+      min-width: 150px
+
+
+  &__status-action
+    flex-grow: 0
+    flex-shrink: 0
+    margin-left: 20px
+
+
   // $Page dashboard status
   &__status
     +text-normalizer()
