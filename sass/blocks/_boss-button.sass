@@ -878,6 +878,17 @@ $block: ".boss-button"
     font-weight: 400
 
 
+  // $Common button MOD: role undo light
+  &_role_undo-light
+    $primary-color: map-get($boss-app-palette, warning)
+    +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
+    +button-bordered-hover($color: #fff, $border-color: $primary-color, $background-color: $primary-color)
+    +button-bordered-active($color: #fff, $border-color: $primary-color, $background-color: $primary-color)
+
+  &_role_undo-light
+    +button-with-icon-left($icon: '\e950')
+
+
   // $Common button MOD: role details hide
   // $Common button MOD: role alert light
   // $Common button MOD: monochrome button disabled
