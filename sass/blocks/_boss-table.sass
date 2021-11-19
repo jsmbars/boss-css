@@ -3901,7 +3901,18 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &
         width: 3.5%
-        min-width: 60px
+        min-width: 45px
+
+        &:nth-last-child(1)
+          min-width: 90px
+          padding-right: 15px
+
+    // $Common table cell twenty second column
+    &:nth-child(22)
+
+      #{$block}_page_finance-reports &
+        width: 3.5%
+        min-width: 90px
         padding-right: 15px
 
     // $Common table cell MOD: role header
@@ -5276,6 +5287,10 @@ $block: ".boss-table"
 
     #{$block}_page_venues-index &
       text-align: center
+
+    #{$block}_page_finance-reports #{$block}__cell:nth-child(22) &:only-child
+      margin-top: 24px
+
 
     @media screen and (max-width: 1120px)
       #{$block}_page_safe-checks-index &,
