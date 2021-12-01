@@ -73,6 +73,7 @@ $block: ".boss-overview"
       text-align: center
 
     #{$block}_page_kpi &
+      margin-bottom: 10px
       font-size: 16px
       text-align: center
 
@@ -298,13 +299,19 @@ $block: ".boss-overview"
     width: 100%
     margin-bottom: 25px
 
-    // $Overview group MOD: position last
-    &_position_last
-      margin-bottom: 0
+    #{$block}_page_kpi &
+      margin-bottom: 15px
 
     // $Overview group MOD: adjust gallery
     &_adjust_gallery
       margin-bottom: 5px
+
+    // $Overview group MOD: position last
+    &_position_last
+      margin-bottom: 0
+
+      #{$block}_page_kpi &
+        margin-bottom: 0
 
 
   // $Overview label
@@ -329,6 +336,9 @@ $block: ".boss-overview"
     vertical-align: middle
     white-space: normal
     color: $boss-medium-gray
+
+    #{$block}_page_kpi &
+      color: $boss-dark-gray
 
     // $Overview label text MOD: role key
     &_role_key
@@ -992,6 +1002,9 @@ $block: ".boss-overview"
     padding: 0
     list-style: none
 
+    &_adjust_label
+      padding-left: 10px
+
 
   // $Overview list item
   &__list-item
@@ -1047,6 +1060,12 @@ $block: ".boss-overview"
         justify-content: flex-start
         align-items: flex-start
 
+    &_role_kpi
+      padding: 0 0 5px
+      margin-bottom: 5px
+
+      &:nth-of-type(even)
+        background-color: transparent
 
     &_state_alert,
     &_state_alert:nth-of-type(even)
@@ -1078,9 +1097,10 @@ $block: ".boss-overview"
     text-align: left
 
     @media screen and (max-width: 400px)
-      width: 100%
-      margin-bottom: 5px
-      padding-right: 0
+      #{$block}__list-item_role_details &
+        width: 100%
+        margin-bottom: 5px
+        padding-right: 0
 
 
   // $Overview list value
@@ -1090,9 +1110,10 @@ $block: ".boss-overview"
     text-align: right
 
     @media screen and (max-width: 400px)
-      width: 100%
-      padding-left: 0
-      text-align: left
+      #{$block}__list-item_role_details &
+        width: 100%
+        padding-left: 0
+        text-align: left
 
 
   // $Overview list value light
