@@ -173,21 +173,29 @@ $block: ".boss-requests"
       &:before
         background-color: map-get($boss-app-palette, pending)
 
+    // $Requests status MOD: role received
+    // $Requests status MOD: role charged
+    // $Requests status MOD: role returned
+    &_role_received,
+    &_role_charged,
+    &_role_returned
+      color: map-get($boss-app-palette, secondary)
+
+      &:before
+        background-color: map-get($boss-app-palette, secondary)
+
     // $Requests status MOD: role rejected
-    &_role_rejected
+    // $Requests status MOD: role canceled,
+    &_role_rejected,
+    &_role_canceled
       color: map-get($boss-app-palette, alert)
 
       &:before
         background-color: map-get($boss-app-palette, alert)
 
     // $Requests status MOD: role accepted
-    &_role_accepted
-      color: map-get($boss-app-palette, secondary)
-
-      &:before
-        background-color: map-get($boss-app-palette, secondary)
-
     // $Requests status MOD: role requested
+    &_role_accepted,
     &_role_requested
       color: map-get($boss-app-palette, warning)
 
