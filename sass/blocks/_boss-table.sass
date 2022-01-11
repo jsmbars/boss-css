@@ -661,7 +661,8 @@ $block: ".boss-table"
       #{$block}_page_kpi &,
       #{$block}_page_security-pay-rate-rules &,
       #{$block}_page_security-pay-rate-exceptions &,
-      #{$block}_page_modulr-reports-venue-wages &
+      #{$block}_page_modulr-reports-venue-wages &,
+      #{$block}_page_clocking-app-multiple-matches &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -690,8 +691,13 @@ $block: ".boss-table"
         padding-bottom: 10px
 
     @media screen and (max-width: 480px)
-      #{$block}_page_security-pay-rate-exceptions &
+      #{$block}_page_security-pay-rate-exceptions &,
+      #{$block}_page_clocking-app-multiple-matches &
         flex-wrap: wrap
+
+      #{$block}_page_clocking-app-multiple-matches &
+        padding-top: 10px
+        padding-bottom: 10px
 
     &:last-child
       border-bottom: none
@@ -1062,7 +1068,8 @@ $block: ".boss-table"
     #{$block}_page_security-payroll-report-week-details &,
     #{$block}_page_security-pay-rate-rules &,
     #{$block}_page_security-pay-rate-exceptions &,
-    #{$block}_page_modulr-reports-venue-notes &
+    #{$block}_page_modulr-reports-venue-notes &,
+    #{$block}_page_clocking-app-multiple-matches &
       min-height: 0
 
     #{$block}_page_payslip-payments &,
@@ -1170,7 +1177,8 @@ $block: ".boss-table"
     #{$block}_page_security-payroll-report-week-details &,
     #{$block}_page_modulr-reports-accounts &,
     #{$block}_page_modulr-reports-venue-wages &,
-    #{$block}_page_modulr-reports-venue-notes &
+    #{$block}_page_modulr-reports-venue-notes &,
+    #{$block}_page_clocking-app-multiple-matches &
       padding: 15px 10px
 
     #{$block}_page_csv-upload &
@@ -1254,7 +1262,8 @@ $block: ".boss-table"
         padding-bottom: 20px
 
       #{$block}_page_smp-owed-hours &,
-      #{$block}_page_ssr-assign &
+      #{$block}_page_ssr-assign &,
+      #{$block}_page_clocking-app-multiple-matches &
         padding: 10px 0
 
       #{$block}_page_clocking-app-page-api-keys-card &
@@ -1720,6 +1729,10 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-venue-notes &
         width: 20%
 
+      #{$block}_page_clocking-app-multiple-matches &
+        width: calc(100% - 130px)
+        padding-left: 0
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -1889,6 +1902,9 @@ $block: ".boss-table"
         #{$block}_page_csv-upload &
           width: 140px
 
+        #{$block}_page_clocking-app-multiple-matches &
+          width: calc(100% - 130px)
+
       @media screen and (max-width: 800px)
         #{$block}_page_bonai-venue-hour-data &
           width: 50%
@@ -1935,6 +1951,9 @@ $block: ".boss-table"
           padding-right: 20px
 
         #{$block}_page_security-pay-rate-exceptions &
+          width: 100%
+
+        #{$block}_page_clocking-app-multiple-matches &
           width: 100%
 
       @media screen and (max-width: 400px)
@@ -2235,6 +2254,12 @@ $block: ".boss-table"
         width: 20%
         justify-content: center
 
+      #{$block}_page_clocking-app-multiple-matches &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 130px
+        padding-right: 0
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -2342,6 +2367,9 @@ $block: ".boss-table"
         #{$block}_page_kpi &
           padding-right: 10px
 
+        #{$block}_page_clocking-app-multiple-matches &
+          width: 130px
+
       @media screen and (max-width: 800px)
         #{$block}_page_bonai-venue-hour-data &
           width: 50%
@@ -2383,6 +2411,11 @@ $block: ".boss-table"
           padding-top: 10px
 
         #{$block}_page_security-pay-rate-exceptions &
+          width: 100%
+
+        #{$block}_page_clocking-app-multiple-matches &
+          flex-grow: 1
+          flex-shrink: 1
           width: 100%
 
       @media screen and (max-width: 400px)

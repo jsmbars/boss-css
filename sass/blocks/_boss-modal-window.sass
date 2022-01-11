@@ -121,7 +121,8 @@ $block: ".boss-modal-window"
   &_role_set-confirmation,
   &_role_wtl-ev-success,
   &_role_wtl-ev-error,
-  &_role_wtl-ev-almost-done
+  &_role_wtl-ev-almost-done,
+  &_role_multiple-matches
     width: 90%
     max-width: 640px
 
@@ -169,7 +170,8 @@ $block: ".boss-modal-window"
   &_role_payslip,
   &_role_quiz-overview,
   &_role_staff-members-review,
-  &_role_venue-notes
+  &_role_venue-notes,
+  &_role_multiple-matches
     margin-top: 100px
 
     @media screen and (max-width: 960px)
@@ -400,7 +402,8 @@ $block: ".boss-modal-window"
 
     // $Modal window header CONTEXT: $Modal window MOD: role warning
     #{$block}_role_warning &,
-    #{$block}_role_question-move &
+    #{$block}_role_question-move &,
+    #{$block}_role_multiple-matches &
       background-color: map-get($boss-app-palette, warning)
 
     // $Modal window header CONTEXT: $Modal window MOD: role action
