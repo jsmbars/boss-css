@@ -89,7 +89,8 @@ $block: ".boss-user-summary"
   &_role_card-header-short,
   &_role_ssr-assign,
   &_role_venue-dashboard-attendance,
-  &_role_sv-ml-end
+  &_role_sv-ml-end,
+  &_role_multiple-matches
     @media screen and (max-width: 960px)
       flex-direction: row
       align-items: flex-start
@@ -105,7 +106,8 @@ $block: ".boss-user-summary"
       align-items: flex-start
 
   &_role_hours-overview,
-  &_role_user-profile
+  &_role_user-profile,
+  &_role_multiple-matches
     @media screen and (max-width: 480px)
       flex-direction: column
       align-items: center
@@ -190,6 +192,12 @@ $block: ".boss-user-summary"
     #{$block}_role_sv-ml-middle &,
     #{$block}_role_sv-ml-end &
       border-radius: 10px
+
+    // $User summary avatar CONTEXT: $User summary MOD: role multiple matches
+    #{$block}_role_multiple-matches &
+      width: 140px
+      height: 140px
+      line-height: 140px
 
     // $User summary avatar CONTEXT: $User summary MOD: role contact details
     #{$block}_role_contact-details &
@@ -277,7 +285,8 @@ $block: ".boss-user-summary"
       #{$block}_role_sv-ml-start &,
       #{$block}_role_sv-ml-middle &,
       #{$block}_role_sv-ml-end &,
-      #{$block}_role_contact-details &
+      #{$block}_role_contact-details &,
+      #{$block}_role_multiple-matches &
         margin-bottom: 0
 
       #{$block}_role_contact-details &
@@ -298,6 +307,18 @@ $block: ".boss-user-summary"
         width: 50px
         height: 50px
         line-height: 50px
+
+      #{$block}_role_multiple-matches &
+        width: 120px
+        height: 120px
+        line-height: 120px
+
+    @media screen and (max-width: 480px)
+      #{$block}_role_multiple-matches &
+        width: 140px
+        height: 140px
+        line-height: 140px
+        margin-bottom: 10px
 
     @media screen and (max-width: 400px)
       #{$block}_role_contact-details &
@@ -484,7 +505,8 @@ $block: ".boss-user-summary"
     #{$block}_role_card-header &,
     #{$block}_role_card-header-short &,
     #{$block}_role_ssr-assign &,
-    #{$block}_role_venue-dashboard-attendance &
+    #{$block}_role_venue-dashboard-attendance &,
+    #{$block}_role_multiple-matches &
       padding-left: 20px
 
     // $User summary content CONTEXT: $User summary MOD: role rotas daily tooltip
@@ -526,11 +548,13 @@ $block: ".boss-user-summary"
       #{$block}_role_card-short &,
       #{$block}_role_card-header-short &,
       #{$block}_role_ssr-assign &,
-      #{$block}_role_venue-dashboard-attendance &
+      #{$block}_role_venue-dashboard-attendance &,
+      #{$block}_role_multiple-matches &
         padding-left: 15px
 
     @media screen and (max-width: 480px)
-      #{$block}_role_hours-overview &
+      #{$block}_role_hours-overview &,
+      #{$block}_role_multiple-matches &
         padding-left: 0
 
     @media screen and (max-width: 400px)
@@ -591,7 +615,8 @@ $block: ".boss-user-summary"
       #{$block}_role_venue-dashboard-attendance &,
       #{$block}_role_hours-overview &,
       #{$block}_role_sv-ml-end &,
-      #{$block}_role_contact-details &
+      #{$block}_role_contact-details &,
+      #{$block}_role_multiple-matches &
         text-align: left
 
       #{$block}_role_sv-ml-start &
@@ -607,7 +632,8 @@ $block: ".boss-user-summary"
 
     @media screen and (max-width: 480px)
       #{$block}_role_hours-overview &,
-      #{$block}_role_user-profile &
+      #{$block}_role_user-profile &,
+      #{$block}_role_multiple-matches &
         text-align: center
 
     @media screen and (max-width: 400px)
@@ -642,7 +668,8 @@ $block: ".boss-user-summary"
       #{$block}_role_hours-overview &,
       #{$block}_role_user-profile &,
       #{$block}_role_ssr-assign &,
-      #{$block}_role_venue-dashboard-attendance &
+      #{$block}_role_venue-dashboard-attendance &,
+      #{$block}_role_multiple-matches &
         margin-bottom: 0
 
 
@@ -685,7 +712,9 @@ $block: ".boss-user-summary"
       line-height: 1.2
 
     // $User summary name CONTEXT: $User summary MOD: role contact details
-    #{$block}_role_contact-details &
+    // $User summary name CONTEXT: $User summary MOD: role multiple matches
+    #{$block}_role_contact-details &,
+    #{$block}_role_multiple-matches &
       display: inline-block
       font-weight: 600
 
@@ -766,7 +795,8 @@ $block: ".boss-user-summary"
       #{$block}_role_card-header-short &,
       #{$block}_role_ssr-assign &,
       #{$block}_role_venue-dashboard-attendance &,
-      #{$block}_role_sv-ml-end &
+      #{$block}_role_sv-ml-end &,
+      #{$block}_role_multiple-matches &
         text-align: left
 
       #{$block}_role_sv-ml-start &
@@ -781,6 +811,9 @@ $block: ".boss-user-summary"
       #{$block}_role_sv-ml-end &
         text-align: left
 
+      #{$block}_role_multiple-matches &
+        font-size: 22px
+
     @media screen and (max-width: 480px)
       #{$block}_role_hours-overview &
         text-align: center
@@ -791,6 +824,10 @@ $block: ".boss-user-summary"
 
       #{$block}_role_contact-details &
         display: block
+
+      #{$block}_role_multiple-matches &
+        text-align: center
+        font-size: 24px
 
     @media screen and (max-width: 400px)
       #{$block}_role_review &,
@@ -818,7 +855,8 @@ $block: ".boss-user-summary"
       #{$block}_role_card-short &,
       #{$block}_role_card-header-short &,
       #{$block}_role_ssr-assign &,
-      #{$block}_role_venue-dashboard-attendance &
+      #{$block}_role_venue-dashboard-attendance &,
+      #{$block}_role_multiple-matches &
         margin-right: 0
         margin-bottom: 5px
 
