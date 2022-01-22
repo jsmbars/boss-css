@@ -549,7 +549,7 @@ $block: ".boss-table"
       min-width: 1760px
 
     #{$block}_page_modulr-reports-venue-wages &
-      min-width: 2100px
+      min-width: 2150px
 
 
     @media screen and (max-width: 1280px)
@@ -1725,9 +1725,9 @@ $block: ".boss-table"
         width: 30%
 
       #{$block}_page_modulr-reports-venue-wages &
-        align-items: flex-start
-        width: 6%
-        min-width: 150px
+        flex-grow: 0
+        flex-shrink: 0
+        width: 50px
         padding-left: 15px
 
       #{$block}_page_modulr-reports-venue-notes &
@@ -2674,8 +2674,9 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_modulr-reports-venue-wages &
-        width: 4%
-        min-width: 100px
+        align-items: flex-start
+        width: 6%
+        min-width: 150px
 
       #{$block}_page_modulr-reports-venue-notes &
         width: 40%
@@ -3535,8 +3536,8 @@ $block: ".boss-table"
         width: calc(100% - 640px)
 
       #{$block}_page_modulr-reports-venue-wages &
-        width: 8%
-        min-width: 200px
+        width: 4%
+        min-width: 100px
 
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
@@ -3874,8 +3875,8 @@ $block: ".boss-table"
         justify-content: center
 
       #{$block}_page_modulr-reports-venue-wages &
-        width: 6%
-        min-width: 150px
+        width: 8%
+        min-width: 200px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
@@ -3967,9 +3968,8 @@ $block: ".boss-table"
         padding-right: 15px
 
       #{$block}_page_modulr-reports-venue-wages &
-        flex-grow: 0
-        flex-shrink: 0
-        width: 60px
+        width: 6%
+        min-width: 150px
 
     // $Common table cell thirteenth column
     &:nth-child(13)
@@ -3983,7 +3983,7 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-venue-wages &
         flex-grow: 0
         flex-shrink: 0
-        width: 150px
+        width: 60px
 
     // $Common table cell fourteenth column
     &:nth-child(14)
@@ -4000,8 +4000,7 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-venue-wages &
         flex-grow: 0
         flex-shrink: 0
-        width: 240px
-        padding-right: 15px
+        width: 150px
 
     // $Common table cell fifteenth column
     &:nth-child(15)
@@ -4014,6 +4013,12 @@ $block: ".boss-table"
 
         &:nth-last-child(2)
           width: 6%
+
+      #{$block}_page_modulr-reports-venue-wages &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 240px
+        padding-right: 15px
 
     // $Common table cell sixteenth column
     &:nth-child(16)
