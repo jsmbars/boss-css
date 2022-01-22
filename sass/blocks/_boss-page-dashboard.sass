@@ -86,6 +86,9 @@ $block: ".boss-page-dashboard"
     #{$block}_page_security-payroll-report &:not(:last-child),
       margin-bottom: 20px
 
+    #{$block}_page_finance-reports &:last-child
+      flex-wrap: wrap
+
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports &:last-child,
       #{$block}_page_payroll-reports &:last-child,
@@ -352,6 +355,9 @@ $block: ".boss-page-dashboard"
       flex-direction: column
       align-items: stretch
 
+    #{$block}_page_finance-reports #{$block}__group:last-child &
+      margin-right: auto
+
     @media screen and (max-width: 1120px)
       #{$block}_page_profile &
         flex-direction: row
@@ -387,6 +393,9 @@ $block: ".boss-page-dashboard"
 
       #{$block}_page_checklist-edit &
         margin-bottom: 0
+
+      #{$block}_page_finance-reports #{$block}__group:last-child &
+        margin-right: 0
 
     @media screen and (min-width: 961px)
       #{$block}_page_rotas-daily &,
@@ -447,6 +456,10 @@ $block: ".boss-page-dashboard"
 
   // $Page dashboard button
   &__button
+    #{$block}_page_finance-reports #{$block}__group:last-child &
+      margin: 0 20px
+      font-size: 24px
+
     @media screen and (max-width: 1120px)
       #{$block}_page_profile &
         width: 50%
@@ -614,6 +627,9 @@ $block: ".boss-page-dashboard"
     font-weight: 300
     vertical-align: middle
 
+    #{$block}_page_finance-reports &
+      display: block
+
     @media screen and (max-width: 960px)
       text-align: center
 
@@ -622,6 +638,10 @@ $block: ".boss-page-dashboard"
 
     &:not(:last-of-type)
       margin-right: 30px
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_finance-reports &
+          margin-right: 0
 
       @media screen and (max-width: 480px)
         margin-right: 0
@@ -636,6 +656,11 @@ $block: ".boss-page-dashboard"
 
     &_role_status
       font-weight: 600
+
+    &_role_details
+      font-weight: 300
+      font-style: italic
+      color: #808080
 
     // $Page dashboard meta item MOD: role user
     // $Page dashboard meta item MOD: role arcade
