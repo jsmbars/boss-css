@@ -20,7 +20,8 @@ $block: ".boss-overview"
   display: block
   width: 100%
 
-  &_page_kpi
+  &_page_kpi,
+  &_page_modulr
     min-width: 240px
     padding: 5px 0 10px
 
@@ -299,7 +300,8 @@ $block: ".boss-overview"
     width: 100%
     margin-bottom: 25px
 
-    #{$block}_page_kpi &
+    #{$block}_page_kpi &,
+    #{$block}_page_modulr &
       margin-bottom: 15px
 
     // $Overview group MOD: adjust gallery
@@ -310,7 +312,8 @@ $block: ".boss-overview"
     &_position_last
       margin-bottom: 0
 
-      #{$block}_page_kpi &
+      #{$block}_page_kpi &,
+      #{$block}_page_modulr &
         margin-bottom: 0
 
 
@@ -503,6 +506,10 @@ $block: ".boss-overview"
     color: #808080
 
 
+  &__text-small
+    font-size: 12px
+
+
   &__text-large
     font-size: 16px
 
@@ -567,7 +574,7 @@ $block: ".boss-overview"
       margin-left: 20px
 
     &_type_inline
-      font-size: 14px
+      font-size: inherit
 
     &_type_fluid
       @media screen and (max-width: 960px)
