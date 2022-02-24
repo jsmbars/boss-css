@@ -14,6 +14,9 @@
   background-color: $background-color
   color: $color
 
+  & .boss-button__indicator
+    background-color: $color
+    color: $background-color
 
 =button-common-hover($background-color, $color: #fff, $amount: 3%)
   &:not(.boss-button_type_no-behavior):hover,
@@ -21,11 +24,14 @@
     background-color: lighten($background-color, $amount)
     color: $color
 
-=button-bordered($color: '#4c4c4c', $border-color: '#4c4c4c', $background-color: '#fff', $border-width: 2px, $border-radius: 4px)
+=button-bordered($color: #4c4c4c, $border-color: #4c4c4c, $background-color: #fff, $border-width: 2px, $border-radius: 4px)
   border: $border-width solid $border-color
   border-radius: $border-radius
   background-color: $background-color
   color: $color
+
+
+=button-bordered-hover($color: #4c4c4c, $border-color: #4c4c4c, $background-color: #fff)
 
   &:not(.boss-button_type_no-behavior):hover,
   &:not(.boss-button_type_no-behavior):focus
@@ -33,15 +39,7 @@
     background-color: $background-color
     border-color: $border-color
 
-
-=button-bordered-hover($color: '#4c4c4c', $border-color: '#4c4c4c', $background-color: '#fff')
-
-  &:not(.boss-button_type_no-behavior):hover
-    color: $color
-    background-color: $background-color
-    border-color: $border-color
-
-=button-bordered-active($color: '#4c4c4c', $border-color: '#4c4c4c', $background-color: '#fff')
+=button-bordered-active($color: #4c4c4c, $border-color: #4c4c4c, $background-color: #fff)
 
   &#{$block}_state_active:not(.boss-button_type_no-behavior),
   &#{$block}_state_active:not(.boss-button_type_no-behavior):focus
@@ -150,6 +148,15 @@ $block: ".boss-button"
   // $Common button MOD: adjust wrap
   &_adjust_wrap
     white-space: normal
+
+  // $Common button MOD: adjust indicator
+  &_adjust_indicator
+    padding-top: 10px
+    padding-bottom: 10px
+
+    @media screen and (max-width: 400px)
+      padding-top: 5px
+      padding-bottom: 5px
 
   // $Common button MOD: type small
   &_type_small
@@ -540,7 +547,8 @@ $block: ".boss-button"
   &_role_reload-page,
   &_role_repeat,
   &_role_unlock,
-  &_role_rate
+  &_role_rate,
+  &_role_download-door-book-in-progress
     $background-color: map-get($boss-app-palette, primary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -572,7 +580,8 @@ $block: ".boss-button"
   &_role_add
     +button-with-icon-left($icon: '\e97d', $size: 12px)
 
-  &_role_download
+  &_role_download,
+  &_role_download-door-book-in-progress
     +button-with-icon-left($icon: '\e960')
 
   &_role_print
@@ -647,7 +656,8 @@ $block: ".boss-button"
   &_role_pass_reverse,
   &_role_manage-categories,
   &_role_manage-areas,
-  &_role_mark-finished
+  &_role_mark-finished,
+  &_role_download-door-book-complete
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -696,6 +706,9 @@ $block: ".boss-button"
 
   &_role_pass_reverse
     +button-with-icon-right($icon: '\e944')
+
+  &_role_download-door-book-complete
+    +button-with-icon-left($icon: '\e960')
 
 
   // $Common button MOD: role exclamation
@@ -1055,3 +1068,16 @@ $block: ".boss-button"
     #{$block}_type_panel &
       width: calc(100% - 65px)
       max-width: calc(100% - 65px)
+
+
+  &__indicator
+    display: inline-block
+    width: 25px
+    height: 25px
+    margin-left: 10px
+    line-height: 25px
+    background-color: #fff
+    border-radius: 50%
+    vertical-align: middle
+    text-align: center
+

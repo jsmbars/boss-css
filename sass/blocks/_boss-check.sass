@@ -1791,18 +1791,21 @@ $block: ".boss-check"
   &__title-indicator
     display: inline-block
     margin-right: 5px
+    margin-left: 5px
     vertical-align: middle
 
     #{$block}_page_handover-planner-event &,
     #{$block}_page_handover-planner-reminder &,
     #{$block}_page_handover-planner-task &
       margin-right: 15px
+      margin-left: 0
 
     @media screen and (max-width: 640px)
       #{$block}_page_handover-planner-event &,
       #{$block}_page_handover-planner-reminder &,
       #{$block}_page_handover-planner-task &
         margin-right: 5px
+        margin-left: 0
 
 
   &__title-label

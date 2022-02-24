@@ -54,6 +54,10 @@ $block: ".boss-indicator"
     &:only-child
       margin-left: auto
 
+  &_context_button
+    color: inherit
+    line-height: inherit
+
 
   &__counter
     +text-normalizer()
@@ -175,6 +179,10 @@ $block: ".boss-indicator"
     #{$block}_color_accent-red &
       color: map-get($boss-app-palette, alert)
 
+    #{$block}_context_button &
+      color: inherit
+      line-height: inherit
+
     &:before
       content: ''
       display: inline-block
@@ -184,7 +192,8 @@ $block: ".boss-indicator"
       font-weight: 400
       color: inherit
 
-      #{$block}__badge &
+      #{$block}__badge &,
+      #{$block}_context_button &
         line-height: inherit
 
     &_size_xs
@@ -454,6 +463,10 @@ $block: ".boss-indicator"
     &_envelope
       &:before
         content: '\e91f'
+
+    &_book
+      &:before
+        content: '\e9a2'
 
 
   // $Indicator marker
