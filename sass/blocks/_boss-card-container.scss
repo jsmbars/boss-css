@@ -9,7 +9,7 @@
 
 .boss-card-container{
 
-  .boass-board{
+  .boss-board{
     background-color: #FCFCFC;
     border-radius: 10px;
     padding: 15px;
@@ -61,10 +61,10 @@
   }
 
   .boss-check__created-on{
-    position: absolute;
-    bottom:0;
+    position: relative;
+
     text-align: right;
-    background-color: map_get($boss-accent-palette, orchid-orange);
+    //background-color: map_get($boss-accent-palette, orchid-orange);
     padding: 10px;
     display: inline-block;
     float: right;
@@ -72,22 +72,13 @@
   }
 
   .boss-check__created-on-text{
-    float: right;
     display: inline-block !important;
     margin: 0;
-    background-color: antiquewhite;
+    background-color: #faebd7;
     padding: 10px;
     border-radius: 0px 0px 10px 15px;
+    position: absolute;
+    bottom: -15px;
+    right:-15px;
   }
-
-
 }
-
-
-//Helpers
-//.float-left{
-//  float: left !important;
-//}
-//.float-right{
-//  float: right !important;
-//}
