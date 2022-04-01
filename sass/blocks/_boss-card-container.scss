@@ -1,0 +1,14 @@
+@import '../helpers/settings';
+@import '../helpers/mixins';
+
+////////////////////////////////////////
+// This is a Card container. Created mainly for Issues Card Design components.
+// Cards design will be generic which later can be added to other pages if required.
+////////////////////////////////////////
+
+
+.boss-card-container{
+  background-color: #FCFCFC;
+  border-radius: 10px;
+  padding: 15px;
+}
