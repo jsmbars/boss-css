@@ -2127,6 +2127,14 @@ $block: ".boss-check"
     &_priority_low
       background-color: map-get($boss-app-palette, secondary)
 
+    // $Check indicator MOD: priority Pending
+    &_pending
+      background-color: map_get($boss-app-palette, third)
+
+    // $Check indicator MOD: priority Deleted
+    &_deleted
+      background-color: map_get($boss-accent-palette, red)
+
     // $Check indicator MOD: status completed
     &_status_completed
       background-color: map-get($boss-app-palette, secondary)

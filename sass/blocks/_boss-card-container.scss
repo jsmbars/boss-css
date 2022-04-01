@@ -8,7 +8,86 @@
 
 
 .boss-card-container{
-  background-color: #FCFCFC;
-  border-radius: 10px;
-  padding: 15px;
+
+  .boass-board{
+    background-color: #FCFCFC;
+    border-radius: 10px;
+    padding: 15px;
+
+    .boss-board__header{
+      padding:0 !important;
+      &:before{
+        content: none !important;
+        height: 0 !important;
+        background-color: transparent !important;
+      }
+
+      .boss-board__button-group{
+        .boss-board__info-group{
+          float: left;
+        }
+      }
+    }
+  }
+
+  .card-holder{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(#111,0.4);
+    border-left: 10px solid map_get($boss-app-palette, third);
+    .boss-board__button-group{
+      //width:200px;
+    }
+
+    .boss-check__box{
+      border:none;
+      padding:0;
+    }
+    .boss-check__box:not(:last-child){
+      margin-bottom: 5px;
+    }
+  }
+
+  .card-holder__priority-high{
+    border-left: 10px solid map_get($boss-app-palette, alert);
+  }
+
+  .card-holder__priority-low{
+    border-left: 10px solid map_get($boss-app-palette, secondary);
+  }
+
+  .card-holder_deleted{
+    opacity: 0.4;
+  }
+
+  .boss-check__created-on{
+    position: absolute;
+    bottom:0;
+    text-align: right;
+    background-color: map_get($boss-accent-palette, orchid-orange);
+    padding: 10px;
+    display: inline-block;
+    float: right;
+    width: 100%;
+  }
+
+  .boss-check__created-on-text{
+    float: right;
+    display: inline-block !important;
+    margin: 0;
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 0px 0px 10px 15px;
+  }
+
+
 }
+
+
+//Helpers
+//.float-left{
+//  float: left !important;
+//}
+//.float-right{
+//  float: right !important;
+//}
