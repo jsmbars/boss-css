@@ -105,6 +105,10 @@
   .boss-button-status__active-action{
     border-radius: 0 5px 5px 0;
     background-color: map_get($boss-sections-palette, staff-members);
+
+    &:hover,&:focus{
+      background-color: map_get($boss-app-palette, secondary);
+    }
   }
 
   .boss-button-status__pending{
@@ -115,5 +119,9 @@
   .boss-button-status__pending-action{
     border-radius: 0 5px 5px 0;
     background-color: map_get($boss-app-palette, third);
+
+    &:hover,&:focus{
+      background-color: map_get($boss-app-palette, inactive);
+    }
   }
 }
