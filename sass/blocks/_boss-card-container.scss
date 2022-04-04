@@ -14,6 +14,10 @@
     border-radius: 10px;
     padding: 15px;
 
+    .boss-board__content-cards{
+      flex-direction: column;
+    }
+
     .boss-board__header{
       padding:0 !important;
       &:before{
@@ -80,5 +84,36 @@
     position: absolute;
     bottom: -15px;
     right:-15px;
+  }
+}
+
+.boss_check__button-group-combined{
+  display: inline-block;
+  float: right;
+  margin-top: 0;
+
+  .boss-button-status{
+    margin-right: -5px;
+    font-weight: 400;
+  }
+
+  .boss-button-status__active{
+    border-radius: 5px 0px 0px 5px;
+    border-right:2px solid map_get($boss-sections-palette, staff-members);
+    background-color: map_get($boss-app-palette, secondary);
+  }
+  .boss-button-status__active-action{
+    border-radius: 0 5px 5px 0;
+    background-color: map_get($boss-sections-palette, staff-members);
+  }
+
+  .boss-button-status__pending{
+    border-radius: 5px 0px 0px 5px;
+    border-right:2px solid map_get($boss-sections-palette, third);
+    background-color: map_get($boss-app-palette, inactive);
+  }
+  .boss-button-status__pending-action{
+    border-radius: 0 5px 5px 0;
+    background-color: map_get($boss-sections-palette, third);
   }
 }
