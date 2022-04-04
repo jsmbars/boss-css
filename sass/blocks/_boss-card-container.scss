@@ -57,7 +57,7 @@
   }
 
   .card-holder__priority-low{
-    border-left: 10px solid map_get($boss-app-palette, secondary);
+    border-left: 10px solid map_get($boss-app-palette, warning);
   }
 
   .card-holder_deleted{
@@ -109,11 +109,11 @@
 
   .boss-button-status__pending{
     border-radius: 5px 0px 0px 5px;
-    border-right:2px solid map_get($boss-sections-palette, third);
+    border-right:2px solid map_get($boss-app-palette, third);
     background-color: map_get($boss-app-palette, inactive);
   }
   .boss-button-status__pending-action{
     border-radius: 0 5px 5px 0;
-    background-color: map_get($boss-sections-palette, third);
+    background-color: map_get($boss-app-palette, third);
   }
 }
