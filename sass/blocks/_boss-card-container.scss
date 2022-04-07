@@ -39,6 +39,7 @@
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(#111,0.4);
     border-left: 10px solid map_get($boss-app-palette, third);
+    width:100%;
     .boss-board__button-group{
       //width:200px;
     }
