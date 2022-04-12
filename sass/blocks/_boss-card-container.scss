@@ -6,7 +6,9 @@
 // Cards design will be generic which later can be added to other pages if required.
 ////////////////////////////////////////
 
-
+.select-year-container{
+  margin-bottom: 20px;
+}
 .boss-card-container{
 
   .boss-board{
@@ -40,6 +42,10 @@
     box-shadow: 0 3px 6px rgba(#111,0.4);
     border-left: 10px solid map_get($boss-app-palette, third);
     width:100%;
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
     .boss-board__button-group{
       //width:200px;
     }
