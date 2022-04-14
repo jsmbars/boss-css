@@ -17,10 +17,9 @@
 
   .card-holder{
     .boss-button_role_cancel{
-      $primary-color: map-get($boss-app-palette,disable);
-      +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent);
-      +button-bordered-hover($color: #fff, $border-color: $primary-color, $background-color: $primary-color);
-      +button-bordered-active($color: #fff, $border-color: $primary-color, $background-color: $primary-color);
+      $disable-color: map-get($boss-app-palette,disable);
+      color: #fff;
+      background-color: $disable-color;
     }
   }
 }
