@@ -15,6 +15,13 @@
     }
   }
 
+  .boss-card-container{
+    .boss-board{
+      .boss-check__indicator_priority_deleted{
+        background-color: map_get($boss-app-palette, disable);
+      }
+    }
+  }
   .card-holder{
     .boss-button_role_cancel{
       $disable-color: map-get($boss-app-palette,disable);
