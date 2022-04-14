@@ -6,6 +6,25 @@
 // Cards design will be generic which later can be added to other pages if required.
 ////////////////////////////////////////
 
+.boss-page__site-issues{
+  .boss-form__select{
+    .Select--multi{
+      .Select-value_status_rejected{
+        background-color: map_get($boss-app-palette,disable);
+      }
+    }
+  }
+
+  .card-holder{
+    .boss-button_role_cancel{
+      $primary-color: map-get($boss-app-palette,disable);
+    +button-bordered($color: $primary-color, $border-color: $primary-color, $background-color: transparent)
+    +button-bordered-hover($color: #fff, $border-color: $primary-color, $background-color: $primary-color)
+    +button-bordered-active($color: #fff, $border-color: $primary-color, $background-color: $primary-color)
+    }
+  }
+}
+
 .boss-select__year{
   margin-bottom: 20px;
 }
@@ -47,7 +66,7 @@
       margin-bottom: 0;
     }
     .boss-board__button-group{
-      //width:200px;
+
     }
 
     .boss-check__box{
