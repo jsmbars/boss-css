@@ -1,0 +1,159 @@
+@import '../helpers/settings';
+@import '../helpers/mixins';
+
+////////////////////////////////////////
+// This is a Card container. Created mainly for Issues Card Design components.
+// Cards design will be generic which later can be added to other pages if required.
+////////////////////////////////////////
+
+.boss-page__site-issues{
+  .boss-form__select{
+    .Select--multi{
+      .Select-value_status_rejected{
+        background-color: map_get($boss-app-palette,disable);
+      }
+    }
+  }
+
+  .boss-card-container{
+    .boss-board{
+      .boss-check__indicator_priority_deleted{
+        background-color: map_get($boss-app-palette, disable);
+      }
+    }
+  }
+  .card-holder{
+    .boss-button_role_cancel{
+      $disable-color: map-get($boss-app-palette,disable);
+      color: #fff;
+      background-color: $disable-color;
+    }
+  }
+}
+
+.boss-select__year{
+  margin-bottom: 20px;
+}
+.boss-card-container{
+
+  .boss-board{
+    background-color: #FCFCFC;
+    border-radius: 10px;
+    padding: 15px;
+
+    .boss-board__content-cards{
+      flex-direction: column;
+    }
+
+    .boss-board__header{
+      padding:0 !important;
+      &:before{
+        content: none !important;
+        height: 0 !important;
+        background-color: transparent !important;
+      }
+
+      .boss-board__button-group{
+        .boss-board__info-group{
+          float: left;
+        }
+      }
+    }
+  }
+
+  .card-holder{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(#111,0.4);
+    border-left: 10px solid map_get($boss-app-palette, third);
+    width:100%;
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .boss-board__button-group{
+
+    }
+
+    .boss-check__box{
+      border:none;
+      padding:0;
+    }
+    .boss-check__box:not(:last-child){
+      margin-bottom: 5px;
+    }
+  }
+
+  .card-holder__priority-high{
+    border-left: 10px solid map_get($boss-app-palette, alert);
+  }
+
+  .card-holder__priority-low{
+    border-left: 10px solid map_get($boss-app-palette, warning);
+  }
+
+  .card-holder__deleted{
+    opacity: 0.4;
+  }
+
+  .boss-check__created-on{
+    position: relative;
+
+    text-align: right;
+    //background-color: map_get($boss-accent-palette, orchid-orange);
+    padding: 10px;
+    display: inline-block;
+    float: right;
+    width: 100%;
+  }
+
+  .boss-check__created-on-text{
+    display: inline-block !important;
+    margin: 0;
+    background-color: #faebd7;
+    padding: 10px;
+    border-radius: 0px 0px 10px 15px;
+    position: absolute;
+    bottom: -15px;
+    right:-15px;
+  }
+}
+
+.boss_check__button-group-combined{
+  display: inline-block;
+  float: right;
+  margin-top: 0;
+
+  .boss-button-status{
+    margin-right: -5px;
+    font-weight: 400;
+  }
+
+  .boss-button-status__active{
+    border-radius: 5px 0px 0px 5px;
+    border-right:2px solid map_get($boss-sections-palette, staff-members);
+    background-color: map_get($boss-app-palette, secondary);
+  }
+  .boss-button-status__active-action{
+    border-radius: 0 5px 5px 0;
+    background-color: map_get($boss-sections-palette, staff-members);
+
+    &:hover,&:focus{
+      background-color: map_get($boss-app-palette, secondary);
+    }
+  }
+
+  .boss-button-status__pending{
+    border-radius: 5px 0px 0px 5px;
+    border-right:2px solid map_get($boss-app-palette, third);
+    background-color: map_get($boss-app-palette, inactive);
+  }
+  .boss-button-status__pending-action{
+    border-radius: 0 5px 5px 0;
+    background-color: map_get($boss-app-palette, third);
+
+    &:hover,&:focus{
+      background-color: map_get($boss-app-palette, inactive);
+    }
+  }
+}
