@@ -1,0 +1,16 @@
+@import '../helpers/settings';
+@import '../helpers/mixins';
+
+// Boss Summary Extended
+
+.boss-summary__item-head-doorman{
+  background-color: map_get($boss-accent-palette, purple) !important;
+
+  .boss-summary__text{
+    color: white !important;
+
+    &.boss-summary__text-faded{
+      color: white !important;
+    }
+  }
+}
