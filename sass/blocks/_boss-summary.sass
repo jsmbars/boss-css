@@ -74,6 +74,9 @@ $block: ".boss-summary"
     color: #808080
     font-weight: 300
 
+    #{$block}__item_role_head-doorman &
+      color: #fff
+
     // $Summary block text MOD: context row
     &_context_row
       padding-right: 25px
@@ -92,7 +95,7 @@ $block: ".boss-summary"
       color: map-get($boss-app-palette, primary)
 
     &_adjust_break
-      word-break: break-all;
+      word-break: break-all
 
 
   // $Summary block marked text
@@ -146,6 +149,11 @@ $block: ".boss-summary"
     // $Summary block content item MOD: role header
     &_role_header
       padding-top: 5px
+
+    // $Summary block content item MOD: role role head doorman hours
+    &_role_head-doorman,
+    &_role_head-doorman:nth-of-type(even)
+      background-color: map_get($boss-accent-palette, purple)
 
     // $Summary block content item MOD: layout row
     &_layout_row
