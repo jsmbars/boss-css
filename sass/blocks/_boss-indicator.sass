@@ -173,6 +173,9 @@ $block: ".boss-indicator"
       color: #fff
       line-height: inherit
 
+    #{$block}_color_accent-blue &
+      color: map-get($boss-app-palette, primary)
+
     #{$block}_color_accent-green &
       color: map-get($boss-app-palette, secondary)
 
@@ -467,6 +470,10 @@ $block: ".boss-indicator"
     &_book
       &:before
         content: '\e9a2'
+
+    &_chain
+      &:before
+        content: '\e9a3'
 
 
   // $Indicator marker

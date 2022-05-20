@@ -105,6 +105,9 @@ $block: ".boss-check"
     &:hover
       opacity: 1
 
+  &_state_disabled
+    background-color: #feeeee
+
   // $Check block MOD: state inactive
   &_state_inactive
     background-color: #f0f0f0
@@ -1119,7 +1122,8 @@ $block: ".boss-check"
       #{$block}_state_warning &,
       #{$block}_state_warning-faded &,
       #{$block}_state_success &,
-      #{$block}_state_frozen &
+      #{$block}_state_frozen &,
+      #{$block}_state_disabled &
         background-color: transparent
 
 
@@ -1236,7 +1240,8 @@ $block: ".boss-check"
         #{$block}_state_warning &,
         #{$block}_state_warning-faded &,
         #{$block}_state_success &,
-        #{$block}_state_frozen &
+        #{$block}_state_frozen &,
+        #{$block}_state_disabled &
           background-color: transparent
 
       &:nth-child(odd)
@@ -1247,7 +1252,8 @@ $block: ".boss-check"
         #{$block}_state_warning &,
         #{$block}_state_warning-faded &,
         #{$block}_state_success &,
-        #{$block}_state_frozen &
+        #{$block}_state_frozen &,
+        #{$block}_state_disabled &
           background-color: transparent
 
     // $Check block row MOD: marked
@@ -1259,7 +1265,8 @@ $block: ".boss-check"
       #{$block}_state_warning &,
       #{$block}_state_warning-faded &,
       #{$block}_state_success &,
-      #{$block}_state_frozen &
+      #{$block}_state_frozen &,
+      #{$block}_state_disabled &
         background-color: transparent
 
 
@@ -1586,7 +1593,8 @@ $block: ".boss-check"
     &_indicator_att,
     &_indicator_notes,
     &_indicator_images,
-    &_indicator_notes-images
+    &_indicator_notes-images,
+    &_indicator_linked-user
       position: relative
       padding-right: 25px
 
@@ -1617,6 +1625,11 @@ $block: ".boss-check"
       &:after
         width: 50px
         content: '\e91f\00a0\00a0\e935'
+
+    &_indicator_linked-user
+      &:after
+        content: '\e9a3'
+        color: map-get($boss-app-palette, primary)
 
     &_adjust_wrap
       overflow-wrap: break-word
@@ -1758,6 +1771,10 @@ $block: ".boss-check"
         #{$block}_page_security-venues &
           font-size: 22px
 
+    &_indicator_linked-user
+      &:after
+        font-size: 18px
+
     &_role_alert
       color: map-get($boss-app-palette, alert)
 
@@ -1799,6 +1816,10 @@ $block: ".boss-check"
     #{$block}_page_handover-planner-task &
       margin-right: 15px
       margin-left: 0
+
+    #{$block}_page_users-index &
+      margin-right: 0
+      margin-left: 10px
 
     @media screen and (max-width: 640px)
       #{$block}_page_handover-planner-event &,
@@ -2045,11 +2066,16 @@ $block: ".boss-check"
     color: inherit
     font-weight: inherit
     text-decoration: none
+    transition: color .3s
 
     #{$block}_page_venues-index &,
     #{$block}_page_wtl-clients-index &,
     #{$block}_page_wtl-clients-profile &
       color: #1585cf
+
+    #{$block}_page_users-index &
+      font-size: inherit
+      line-height: inherit
 
     &:hover,
     &:focus
@@ -2058,7 +2084,8 @@ $block: ".boss-check"
 
       #{$block}_page_venues-index &,
       #{$block}_page_wtl-clients-index &,
-      #{$block}_page_wtl-clients-profile &
+      #{$block}_page_wtl-clients-profile &,
+      #{$block}_page_users-index &
         color: $boss-medium-gray
 
 
@@ -2265,7 +2292,8 @@ $block: ".boss-check"
     #{$block}_state_warning &,
     #{$block}_state_warning-faded &,
     #{$block}_state_success &,
-    #{$block}_state_frozen &
+    #{$block}_state_frozen &,
+    #{$block}_state_disabled &
       background-color: transparent
 
     // $Check block dropdown CONTEXT: $Check block MOD: page message board

@@ -847,7 +847,8 @@ $block: ".boss-table"
     // $Common table row MOD: state alert
     &_state_alert,
     &_state_pre-calculated,
-    &_state_report-requiring-update
+    &_state_report-requiring-update,
+    &_state_disabled
       &:nth-child(odd),
       &:nth-child(even)
         background-color: #feeeee
@@ -1496,7 +1497,7 @@ $block: ".boss-table"
         width: 20%
 
       #{$block}_page_users-index &
-        width: 30%
+        width: 20%
         padding-left: 40px
 
       #{$block}_page_accessory-requests-card &
@@ -2523,7 +2524,7 @@ $block: ".boss-table"
         width: 14%
 
       #{$block}_page_users-index &
-        width: 30%
+        width: 15%
 
       #{$block}_page_accessory-requests-card &
         width: 20%
@@ -2922,8 +2923,7 @@ $block: ".boss-table"
         width: 10%
 
       #{$block}_page_users-index &
-        width: 20%
-        padding-right: 40px
+        width: 25%
 
       #{$block}_page_accessory-requests-card &
         width: 30%
@@ -3119,7 +3119,6 @@ $block: ".boss-table"
           min-width: 0
 
         #{$block}_page_vhci &,
-        #{$block}_page_users-index &,
         #{$block}_page_ssr-admin-completed &,
         #{$block}_page_wtl-clients-index &,
         #{$block}_page_id-scanner-keys &,
@@ -3239,6 +3238,10 @@ $block: ".boss-table"
 
       #{$block}_page_invites-index &
         width: 12%
+
+      #{$block}_page_users-index &
+        width: 20%
+        padding-right: 40px
 
       #{$block}_page_holidays-report-details &
         width: 14%
@@ -3374,6 +3377,7 @@ $block: ".boss-table"
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_message-board &,
+        #{$block}_page_users-index &,
         #{$block}_page_holidays-report-details &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-pending &,
@@ -3397,6 +3401,7 @@ $block: ".boss-table"
           flex-grow: 1
           flex-shrink: 1
 
+        #{$block}_page_users-index &,
         #{$block}_page_vouchers-index &,
         #{$block}_page_holiday-requests &,
         #{$block}_page_ssr-pending &,
@@ -5087,7 +5092,8 @@ $block: ".boss-table"
     &_indicator_disabled,
     &_indicator_frozen,
     &_indicator_checkbox-checked,
-    &_indicator_checkbox-unchecked
+    &_indicator_checkbox-unchecked,
+    &_indicator_linked-user
       vertical-align: middle
 
       &:after
@@ -5157,6 +5163,13 @@ $block: ".boss-table"
     &_indicator_frozen
       &:after
         content: '\e946'
+
+    &_indicator_linked-user
+      &:after
+        content: '\e9a3'
+        font-size: 16px
+        line-height: 16px
+        color: map-get($boss-app-palette, primary)
 
     &_role_date,
     &_role_venue,
@@ -5367,6 +5380,7 @@ $block: ".boss-table"
     #{$block}_page_bonai &,
     #{$block}_page_bonai-staff-member-data &
       margin-left: 10px
+
 
   &__text-underline
     #{$block}_page_finance-reports &,
@@ -5844,6 +5858,7 @@ $block: ".boss-table"
   &__indicator
     vertical-align: middle
 
+    #{$block}_page_users-index &,
     #{$block}_page_staff-members-index &
       line-height: 1
       margin-left: 5px
@@ -5853,7 +5868,6 @@ $block: ".boss-table"
       #{$block}__cell_state_warning &,
       #{$block}__cell_state_success &
         color: #fff
-
 
   //  $Common table sort link
   &__sort

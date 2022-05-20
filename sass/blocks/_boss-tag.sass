@@ -145,6 +145,14 @@ $block: ".boss-tag"
     &:hover
       opacity: 1
 
+  &_role_label
+    min-height: 15px
+
+    &:not(:only-child)
+      margin-bottom: 10px
+      margin-right: 5px
+
+
   // $Common tag color modifiers
   &_color_accent-red
     +tag-common($background-color: map-get($boss-accent-palette, red), $color: #fff)
@@ -169,6 +177,9 @@ $block: ".boss-tag"
 
   &_color_gray
     +tag-common($background-color: #aaa, $color: #fff)
+
+  &_color_gray-light
+    +tag-common($background-color: #ccc, $color: #fff)
 
   // $Common tag border modifiers
   &_border_accent-red
@@ -240,6 +251,11 @@ $block: ".boss-tag"
     #{$block}_size_xxs &
       padding: 5px 10px
       font-size: 14px
+
+    #{$block}_role_label &
+      padding: 5px 10px
+      font-size: 12px
+      text-transform: uppercase
 
 
   // $Common tag text icon
