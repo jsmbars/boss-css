@@ -255,6 +255,9 @@ $block: ".boss-table"
       padding: 25px
       background-color: #fbfbfb
 
+    #{$block}_page_app-access-venue-details &
+      padding: 0 10px 5px
+
     @media screen and (max-width: 960px)
       #{$block}_page_holidays-report &
         padding: 15px 15px 25px
@@ -551,6 +554,9 @@ $block: ".boss-table"
     #{$block}_page_modulr-reports-venue-wages &
       min-width: 2150px
 
+    #{$block}_page_app-access-venue-details #{$block}__column &
+      justify-content: flex-start
+      border-bottom: none
 
     @media screen and (max-width: 1280px)
       #{$block}_page_bonai-venue-hour-data &
@@ -665,7 +671,8 @@ $block: ".boss-table"
       #{$block}_page_security-pay-rate-rules &,
       #{$block}_page_security-pay-rate-exceptions &,
       #{$block}_page_modulr-reports-venue-wages &,
-      #{$block}_page_clocking-app-multiple-matches &
+      #{$block}_page_clocking-app-multiple-matches &,
+      #{$block}_page_app-access-venue-details &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -688,7 +695,8 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
-      #{$block}_page_security-payroll-report-week-details &
+      #{$block}_page_security-payroll-report-week-details &,
+      #{$block}_page_app-access-venue-details #{$block}__column &
         display: block
         padding-top: 10px
         padding-bottom: 10px
@@ -740,6 +748,10 @@ $block: ".boss-table"
       #{$block}_page_payslip-totals &,
       #{$block}_page_payslip-summary &
         background-color: $boss-light-gray
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_app-access-venue-details &
+          display: none
 
     // $Common table first row
     &:nth-child(1),
@@ -965,9 +977,21 @@ $block: ".boss-table"
       #{$block}_page_payslip &
         width: 45%
 
+      #{$block}_page_app-access-venue-details &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 40px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_app-access-venue-details &
+          width: 30px
+
     &:nth-child(2)
       #{$block}_page_payslip &
         width: 27.5%
+
+      #{$block}_page_app-access-venue-details &
+        width: calc(100% - 40px)
 
     &:nth-child(3)
       #{$block}_page_payslip &
@@ -1073,7 +1097,8 @@ $block: ".boss-table"
     #{$block}_page_security-pay-rate-rules &,
     #{$block}_page_security-pay-rate-exceptions &,
     #{$block}_page_modulr-reports-venue-notes &,
-    #{$block}_page_clocking-app-multiple-matches &
+    #{$block}_page_clocking-app-multiple-matches &,
+    #{$block}_page_app-access-venue-details &
       min-height: 0
 
     #{$block}_page_payslip-payments &,
@@ -1119,7 +1144,8 @@ $block: ".boss-table"
     #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &,
-    #{$block}_page_security-pay-rate-exceptions &
+    #{$block}_page_security-pay-rate-exceptions &,
+    #{$block}_page_app-access-venue-details &
       padding: 10px
 
     #{$block}_page_security-pay-rate-rules &
@@ -1190,6 +1216,15 @@ $block: ".boss-table"
       flex-shrink: 0
       width: 140px
       border-right: 1px solid #eee
+
+    #{$block}_page_app-access-venue-details #{$block}__row_role_header &
+      font-size: 14px
+      text-transform: none
+      color: #808080
+
+    #{$block}_page_app-access-venue-details #{$block}__column:nth-child(1) &
+      padding-right: 10px
+      padding-left: 10px
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports-overview &,
@@ -1271,8 +1306,13 @@ $block: ".boss-table"
         padding: 10px 0
 
       #{$block}_page_clocking-app-page-api-keys-card &
-        align-items: center
         justify-content: flex-start
+        align-items: center
+
+      #{$block}_page_app-access-venue-details &
+        flex-direction: row
+        justify-content: flex-start
+        align-items: flex-start
 
       #{$block}_page_api-keys &
         flex-direction: row
@@ -1324,6 +1364,12 @@ $block: ".boss-table"
       #{$block}_page_security-payroll-report-week-details &
         min-height: 0
         padding: 5px 10px
+
+      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        padding: 0 10px
 
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys-card &,
@@ -1738,6 +1784,17 @@ $block: ".boss-table"
         width: calc(100% - 130px)
         padding-left: 0
 
+      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(1) &
+        width: 100%
+        padding-right: 10px
+        padding-left: 10px
+
+      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 200px
+        padding-left: 10px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -1929,6 +1986,15 @@ $block: ".boss-table"
         #{$block}_page_pay-rates-staff-members &,
         #{$block}_page_pay-rates-admin-staff-members &,
         #{$block}_page_security-payroll-report-week-details &
+          width: 100%
+
+        #{$block}_page_app-access-venue-details #{$block}__column:nth-child(1) &
+          padding-left: 5px
+          padding-right: 5px
+
+        #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
+          flex-grow: 1
+          flex-shrink: 1
           width: 100%
 
       @media screen and (max-width: 480px)
@@ -2266,6 +2332,12 @@ $block: ".boss-table"
         width: 130px
         padding-right: 0
 
+      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 200px
+        padding-right: 10px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -2403,6 +2475,11 @@ $block: ".boss-table"
         #{$block}_page_pay-rates-staff-members &,
         #{$block}_page_pay-rates-admin-staff-members &,
         #{$block}_page_security-payroll-report-week-details &
+          width: 100%
+
+        #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
+          flex-grow: 1
+          flex-shrink: 1
           width: 100%
 
       @media screen and (max-width: 480px)
@@ -4584,6 +4661,11 @@ $block: ".boss-table"
       font-weight: 600
       font-size: 14px
 
+    #{$block}_page_app-access-venue-details &
+      text-transform: none
+      font-size: 14px
+      color: #808080
+
     #{$block}_page_csv-upload &
       overflow-wrap: break-word
       word-wrap: break-word
@@ -4640,7 +4722,8 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
-      #{$block}_page_security-payroll-report-week-details &
+      #{$block}_page_security-payroll-report-week-details &,
+      #{$block}_page_app-access-venue-details &
         display: none
 
     @media screen and (max-width: 640px)
@@ -4655,6 +4738,13 @@ $block: ".boss-table"
       #{$block}_page_pay-rates-admin-staff-members &,
       #{$block}_page_security-payroll-report-week-details &
         display: block
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_app-access-venue-details &
+        display: block
+        width: 60px
+        padding-right: 20px
+        text-align: left
 
     @media screen and (max-width: 480px)
       #{$block}_page_fruit-order-history &
@@ -4895,7 +4985,8 @@ $block: ".boss-table"
       flex-grow: 1
       flex-shrink: 1
 
-    #{$block}_page_payslip-summary &
+    #{$block}_page_payslip-summary &,
+    #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) #{$block}__row &
       font-size: 16px
 
     #{$block}_page_native-app-links &,
@@ -5015,13 +5106,17 @@ $block: ".boss-table"
       #{$block}_page_csv-upload &,
       #{$block}_page_security-payroll-report-week-details &,
       #{$block}_page_security-pay-rate-rules &,
-      #{$block}_page_security-pay-rate-exceptions &
+      #{$block}_page_security-pay-rate-exceptions &,
+      #{$block}_page_app-access-venue-details #{$block}__column &
         width: 100%
 
     @media screen and (max-width: 640px)
       #{$block}_page_fruit-order-history &,
       #{$block}_page_modulr-reports-venue-notes &
         width: 60%
+
+      #{$block}_page_app-access-venue-details #{$block}__column &
+        width: calc(100% - 60px)
 
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
@@ -5306,6 +5401,9 @@ $block: ".boss-table"
       color: map-get($boss-app-palette, alert)
 
 
+  &__text-part
+
+
   &__text-meta
     color: $boss-light-gray
     font-size: 12px
@@ -5405,6 +5503,9 @@ $block: ".boss-table"
   &__note
     margin-top: 15px
 
+    #{$block}_page_app-access-venue-details &
+      margin-top: 0
+      padding: 0 10px 5px
 
   // $Common table box
   &__box
@@ -5427,6 +5528,28 @@ $block: ".boss-table"
 
     &_role_alert
       border-color: map-get($boss-app-palette, alert)
+
+
+  // $Common table meta
+  &__meta
+    display: block
+
+
+  // $Common table meta item
+  &__meta-item
+    display: inline-block
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_app-access-venue-details &
+        display: block
+        width: 100%
+
+    &:not(:last-child)
+      margin-right: 20px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_app-access-venue-details &
+          margin-right: 0
 
 
   // $Common table stats
@@ -5906,6 +6029,35 @@ $block: ".boss-table"
     &:hover
       &:before
         opacity: 1
+
+  // $Common table dropdown switch
+  &__dropdown-switch
+    position: relative
+    display: inline-block
+    width: 20px
+    height: 20px
+    font-size: 0
+    line-height: 0
+    color: transparent
+    cursor: pointer
+    outline: none
+    vertical-align: middle
+    transition: .4s
+
+    &:before
+      content: '\e919'
+      display: inline-block
+      font-family: icons
+      font-size: 20px
+      line-height: 20px
+      font-weight: 400
+      color: #4c4c4c
+      transition: all .4s
+
+    // $Common table dropdown switch MOD: state closed
+    &_state_closed
+      &:before
+        content: '\e91a'
 
 
   // $Common table text placeholder

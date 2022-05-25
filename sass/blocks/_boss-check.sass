@@ -224,6 +224,30 @@ $block: ".boss-check"
         display: none
 
 
+  // Check block mark
+  &__mark
+    position: absolute
+    top: 0
+    bottom: 0
+    z-index: 5
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 40px
+
+    // Check block mark MOD: position left
+    &_position_left
+      left: 0
+
+    // Check block mark MOD: position right
+    &_position_right
+      right: 0
+
+    #{$block}_page_users-app-access-venues &
+      background-color: #d9ffd2
+
+
   // $Check block header
   &__header
     position: relative
@@ -254,6 +278,10 @@ $block: ".boss-check"
     #{$block}_page_contact-details &
       min-height: 0
       padding: 10px 15px
+
+    #{$block}_page_users-app-access-venues &
+      min-height: 0
+      padding: 10px 0 10px 55px
 
     #{$block}_page_sv-missattributed-logins &,
     #{$block}_page_vhcq &,
@@ -355,7 +383,8 @@ $block: ".boss-check"
         padding-bottom: 15px
 
     @media screen and (max-width: 400px)
-      #{$block}_page_clocking-app-page-api-keys &
+      #{$block}_page_clocking-app-page-api-keys &,
+      #{$block}_page_users-app-access-venues &
         flex-wrap: wrap
 
 
@@ -371,9 +400,18 @@ $block: ".boss-check"
     #{$block}_page_marketing-index &
       width: calc(100% - 50px)
 
+    #{$block}_page_users-app-access-venues &
+      width: calc(70% - 30px)
+
     #{$block}_page_contacts &,
     #{$block}_page_contacts-admin &
       flex-wrap: wrap
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_users-app-access-venues &
+        flex-direction: column
+        align-items: flex-start
+        width: calc(50% - 30px)
 
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &,
@@ -422,10 +460,18 @@ $block: ".boss-check"
       #{$block}_page_vhcq &
         flex-wrap: wrap
 
+      #{$block}_page_users-app-access-venues &
+        width: calc(60% - 30px)
+
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
         width: 100%
         justify-content: center
+
+      #{$block}_page_users-app-access-venues &
+        order: 99
+        width: 100%
+        margin-top: 5px
 
     &:not(:only-child)
       @media screen and (max-width: 640px)
@@ -602,11 +648,28 @@ $block: ".boss-check"
         margin-bottom: 10px
 
 
+  // $Check block header indicator
+  &__header-indicator
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+
+    #{$block}_page_users-app-access-venues &
+      width: 50%
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_users-app-access-venues &
+        width: 100%
+
+
   // $Check block header number
   &__header-number
     flex-grow: 0
     flex-shrink: 0
     display: block
+
+    #{$block}_page_users-app-access-venues &
+      width: 50%
 
     #{$block}_page_smp-quizzes-stats &
       position: relative
@@ -621,6 +684,11 @@ $block: ".boss-check"
       align-items: center
       width: 60px
       padding-right: 15px
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_users-app-access-venues &
+        width: 100%
+        margin-top: 5px
 
     @media screen and (max-width: 640px)
       #{$block}_page_vhcq &
@@ -1646,6 +1714,9 @@ $block: ".boss-check"
     font-size: 18px
     font-weight: 600
 
+    #{$block}_page_users-app-access-venues &
+      width: 30%
+
     #{$block}_page_contacts &,
     #{$block}_page_contacts-admin &
       flex-grow: 0
@@ -1677,7 +1748,8 @@ $block: ".boss-check"
       line-height: 1.2
       padding-right: 10px
 
-    #{$block}_page_training-materials &
+    #{$block}_page_training-materials &,
+    #{$block}_page_users-app-access-venues &
       padding-right: 15px
       font-size: 20px
       line-height: 1.2
@@ -1703,6 +1775,10 @@ $block: ".boss-check"
         flex-shrink: 1
         width: 100%
         margin-right: 0
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_users-app-access-venues &
+        width: 50%
 
     @media screen and (max-width: 640px)
       #{$block}_page_contacts &,
@@ -1741,9 +1817,16 @@ $block: ".boss-check"
         font-size: 20px
         line-height: 1
 
+      #{$block}_page_users-app-access-venues &
+        width: 40%
+        font-size: 18px
+
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
         text-align: center
+
+      #{$block}_page_users-app-access-venues &
+        width: calc(100% - 50px)
 
     &_role_date,
     &_role_date-calendar,
@@ -2389,6 +2472,10 @@ $block: ".boss-check"
     #{$block}_page_handover-planner-task &
       margin-right: 10px
 
+    #{$block}_page_users-app-access-venues &
+      flex-grow: 0
+      flex-shrink: 0
+
     @media screen and (max-width: 640px)
       #{$block}_page_handover-planner-event &,
       #{$block}_page_handover-planner-reminder &,
@@ -2419,6 +2506,13 @@ $block: ".boss-check"
         content: '\e97f'
         font-size: 22px
         color: map-get($boss-app-palette, primary)
+
+    &_role_details
+      &:after
+        content: '\e954'
+
+        #{$block}_page_users-app-access-venues &
+          font-size: 18px
 
 
   &__dropdown-link
