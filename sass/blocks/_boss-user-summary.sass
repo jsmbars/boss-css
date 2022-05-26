@@ -749,7 +749,6 @@ $block: ".boss-user-summary"
 
     // $User summary name CONTEXT: $User summary MOD: role user profile
     #{$block}_role_user-profile &
-      display: block
       font-weight: 400
 
     // $User summary name CONTEXT: $User summary MOD: role rotas daily
@@ -872,6 +871,9 @@ $block: ".boss-user-summary"
       #{$block}_role_ssr-assign-confirmation &
         margin-right: 0
 
+      #{$block}_role_user-profile &
+        margin-right: 10px
+
       @media screen and (max-width: 960px)
         margin-right: 0
         margin-bottom: 15px
@@ -978,6 +980,12 @@ $block: ".boss-user-summary"
         margin: 0 auto
         text-align: center
 
+    &_role_head-doorman
+      background-color: map_get($boss-accent-palette, purple)
+
+      #{$block}_role_rotas-daily &
+        margin-top: 5px
+
 
   // $User summary label indicator
   &__label-indicator
@@ -1022,6 +1030,12 @@ $block: ".boss-user-summary"
 
     @media screen and (max-width: 960px)
       text-align: center
+
+
+  // $User summary indicator
+  &__indicator
+    display: inline-block
+    vertical-align: middle
 
 
   // $User summary link

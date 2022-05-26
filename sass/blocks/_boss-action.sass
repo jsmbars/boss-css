@@ -97,6 +97,16 @@ $block: ".boss-action"
     &:hover
       color: map-get($boss-app-palette, primary)
 
+  &_role_remove
+    color: map-get($boss-app-palette, alert)
+
+    &:before
+      content: '\e93b'
+      font-size: 20px
+
+    &:hover
+      color: map-get($boss-app-palette, alert)
+
   &_role_confirm
     color: map-get($boss-app-palette, secondary)
 
@@ -106,6 +116,12 @@ $block: ".boss-action"
 
     &:hover
       color: map-get($boss-app-palette, secondary)
+
+  &_role_form
+    color: map-get($boss-app-palette, primary)
+
+    &:hover
+      color: map-get($boss-app-palette, primary)
 
   &_role_show
     &:before

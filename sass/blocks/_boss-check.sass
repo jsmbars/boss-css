@@ -105,6 +105,9 @@ $block: ".boss-check"
     &:hover
       opacity: 1
 
+  &_state_disabled
+    background-color: #feeeee
+
   // $Check block MOD: state inactive
   &_state_inactive
     background-color: #f0f0f0
@@ -221,6 +224,31 @@ $block: ".boss-check"
         display: none
 
 
+  // Check block mark
+  &__mark
+    position: absolute
+    top: 0
+    bottom: 0
+    z-index: 5
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 40px
+
+    // Check block mark MOD: position left
+    &_position_left
+      left: 0
+
+    // Check block mark MOD: position right
+    &_position_right
+      right: 0
+
+    #{$block}_page_users-app-access-venues &,
+    #{$block}_page_user-profile-app-access &
+      background-color: #d9ffd2
+
+
   // $Check block header
   &__header
     position: relative
@@ -251,6 +279,14 @@ $block: ".boss-check"
     #{$block}_page_contact-details &
       min-height: 0
       padding: 10px 15px
+
+    #{$block}_page_users-app-access-venues &
+      min-height: 0
+      padding: 10px 0 10px 55px
+
+    #{$block}_page_user-profile-app-access &
+      min-height: 0
+      padding: 10px 15px 10px 55px
 
     #{$block}_page_sv-missattributed-logins &,
     #{$block}_page_vhcq &,
@@ -307,6 +343,10 @@ $block: ".boss-check"
       #{$block}_page_security-pay-rate-special &
         flex-wrap: wrap
 
+    @media screen and (max-width: 800px)
+      #{$block}_page_user-profile-app-access &
+        flex-wrap: wrap
+
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &,
       #{$block}_page_ops-diary-index &,
@@ -352,7 +392,8 @@ $block: ".boss-check"
         padding-bottom: 15px
 
     @media screen and (max-width: 400px)
-      #{$block}_page_clocking-app-page-api-keys &
+      #{$block}_page_clocking-app-page-api-keys &,
+      #{$block}_page_users-app-access-venues &
         flex-wrap: wrap
 
 
@@ -368,9 +409,25 @@ $block: ".boss-check"
     #{$block}_page_marketing-index &
       width: calc(100% - 50px)
 
+    #{$block}_page_users-app-access-venues &
+      width: calc(70% - 30px)
+
+    #{$block}_page_user-profile-app-access &
+      width: calc(100% - 200px)
+
     #{$block}_page_contacts &,
     #{$block}_page_contacts-admin &
       flex-wrap: wrap
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_users-app-access-venues &
+        flex-direction: column
+        align-items: flex-start
+        width: calc(50% - 30px)
+
+      #{$block}_page_user-profile-app-access &
+        order: 99
+        width: 100%
 
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &,
@@ -419,10 +476,18 @@ $block: ".boss-check"
       #{$block}_page_vhcq &
         flex-wrap: wrap
 
+      #{$block}_page_users-app-access-venues &
+        width: calc(60% - 30px)
+
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
         width: 100%
         justify-content: center
+
+      #{$block}_page_users-app-access-venues &
+        order: 99
+        width: 100%
+        margin-top: 5px
 
     &:not(:only-child)
       @media screen and (max-width: 640px)
@@ -512,9 +577,14 @@ $block: ".boss-check"
     display: block
     margin-top: 10px
 
-    #{$block}_page_training-materials &
+    #{$block}_page_training-materials &,
+    #{$block}_page_user-profile-app-access &
       margin-top: 0
       padding-right: 15px
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_user-profile-app-access &
+        padding-right: 0
 
     @media screen and (max-width: 480px)
       #{$block}_page_contacts-admin &
@@ -525,7 +595,8 @@ $block: ".boss-check"
         border-bottom: 1px solid #eee
 
         #{$block}_page_quiz-category &,
-        #{$block}_page_training-materials &
+        #{$block}_page_training-materials &,
+        #{$block}_page_user-profile-app-access &
           border-bottom: none
 
 
@@ -546,11 +617,30 @@ $block: ".boss-check"
       display: block
       width: 100%
 
+      #{$block}_page_user-profile-app-access &
+        display: inline-block
+        width: auto
+
     &:not(:last-child)
       margin-right: 20px
 
       @media screen and (max-width: 640px)
         margin-right: 0
+
+        #{$block}_page_user-profile-app-access &
+          margin-right: 10px
+
+    &_role_actions
+
+    &_role_key
+      &:not(:last-child)
+        margin-right: 10px
+
+        @media screen and (max-width: 640px)
+          margin-right: 0
+
+          #{$block}_page_user-profile-app-access &
+            margin-right: 10px
 
 
   // $Check block header image
@@ -599,11 +689,28 @@ $block: ".boss-check"
         margin-bottom: 10px
 
 
+  // $Check block header indicator
+  &__header-indicator
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+
+    #{$block}_page_users-app-access-venues &
+      width: 50%
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_users-app-access-venues &
+        width: 100%
+
+
   // $Check block header number
   &__header-number
     flex-grow: 0
     flex-shrink: 0
     display: block
+
+    #{$block}_page_users-app-access-venues &
+      width: 50%
 
     #{$block}_page_smp-quizzes-stats &
       position: relative
@@ -618,6 +725,11 @@ $block: ".boss-check"
       align-items: center
       width: 60px
       padding-right: 15px
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_users-app-access-venues &
+        width: 100%
+        margin-top: 5px
 
     @media screen and (max-width: 640px)
       #{$block}_page_vhcq &
@@ -1119,7 +1231,8 @@ $block: ".boss-check"
       #{$block}_state_warning &,
       #{$block}_state_warning-faded &,
       #{$block}_state_success &,
-      #{$block}_state_frozen &
+      #{$block}_state_frozen &,
+      #{$block}_state_disabled &
         background-color: transparent
 
 
@@ -1150,6 +1263,10 @@ $block: ".boss-check"
       font-size: 16px
       color: #808080
 
+    #{$block}_page_user-profile-app-access &
+      margin-bottom: 0
+      font-size: 16px
+
     @media screen and (max-width: 480px)
       #{$block}_page_security-pay-rate-base &,
       #{$block}_page_security-pay-rate-special &
@@ -1159,13 +1276,6 @@ $block: ".boss-check"
   &__group-action
     flex-grow: 0
     flex-shrink: 0
-
-
-  // $Check block group content
-  &__group-content
-    display: block
-    width: 100%
-    padding: 15px
 
 
   // $Check block group content
@@ -1188,6 +1298,10 @@ $block: ".boss-check"
       #{$block}_page_smp-quizzes-history &,
       #{$block}_page_smp-quizzes-category &
         padding: 15px 10px
+
+    &:not(:last-child)
+      #{$block}_page_user-profile-app-access &
+        border-bottom: 2px solid #eee
 
 
   // $Check block group area
@@ -1236,7 +1350,8 @@ $block: ".boss-check"
         #{$block}_state_warning &,
         #{$block}_state_warning-faded &,
         #{$block}_state_success &,
-        #{$block}_state_frozen &
+        #{$block}_state_frozen &,
+        #{$block}_state_disabled &
           background-color: transparent
 
       &:nth-child(odd)
@@ -1247,7 +1362,8 @@ $block: ".boss-check"
         #{$block}_state_warning &,
         #{$block}_state_warning-faded &,
         #{$block}_state_success &,
-        #{$block}_state_frozen &
+        #{$block}_state_frozen &,
+        #{$block}_state_disabled &
           background-color: transparent
 
     // $Check block row MOD: marked
@@ -1259,7 +1375,8 @@ $block: ".boss-check"
       #{$block}_state_warning &,
       #{$block}_state_warning-faded &,
       #{$block}_state_success &,
-      #{$block}_state_frozen &
+      #{$block}_state_frozen &,
+      #{$block}_state_disabled &
         background-color: transparent
 
 
@@ -1586,7 +1703,8 @@ $block: ".boss-check"
     &_indicator_att,
     &_indicator_notes,
     &_indicator_images,
-    &_indicator_notes-images
+    &_indicator_notes-images,
+    &_indicator_linked-user
       position: relative
       padding-right: 25px
 
@@ -1618,11 +1736,19 @@ $block: ".boss-check"
         width: 50px
         content: '\e91f\00a0\00a0\e935'
 
+    &_indicator_linked-user
+      &:after
+        content: '\e9a3'
+        color: map-get($boss-app-palette, primary)
+
     &_adjust_wrap
       overflow-wrap: break-word
       word-wrap: break-word
       word-break: break-word
       hyphens: auto
+
+    &_adjust_nowrap
+      white-space: nowrap
 
     &_adjust_crossed-out
       text-decoration: line-through
@@ -1632,6 +1758,14 @@ $block: ".boss-check"
   &__title
     font-size: 18px
     font-weight: 600
+
+    #{$block}_page_users-app-access-venues &
+      width: 30%
+
+    #{$block}_page_user-profile-app-access &
+      flex-grow: 0
+      flex-shrink: 0
+      width: 170px
 
     #{$block}_page_contacts &,
     #{$block}_page_contacts-admin &
@@ -1664,7 +1798,9 @@ $block: ".boss-check"
       line-height: 1.2
       padding-right: 10px
 
-    #{$block}_page_training-materials &
+    #{$block}_page_training-materials &,
+    #{$block}_page_users-app-access-venues &,
+    #{$block}_page_user-profile-app-access &
       padding-right: 15px
       font-size: 20px
       line-height: 1.2
@@ -1690,6 +1826,13 @@ $block: ".boss-check"
         flex-shrink: 1
         width: 100%
         margin-right: 0
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_users-app-access-venues &
+        width: 50%
+
+      #{$block}_page_user-profile-app-access &
+        width: calc(100% - 30px)
 
     @media screen and (max-width: 640px)
       #{$block}_page_contacts &,
@@ -1728,9 +1871,19 @@ $block: ".boss-check"
         font-size: 20px
         line-height: 1
 
+      #{$block}_page_users-app-access-venues &
+        width: 40%
+        font-size: 18px
+
+      #{$block}_page_user-profile-app-access &
+        font-size: 18px
+
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
         text-align: center
+
+      #{$block}_page_users-app-access-venues &
+        width: calc(100% - 50px)
 
     &_role_date,
     &_role_date-calendar,
@@ -1757,6 +1910,10 @@ $block: ".boss-check"
 
         #{$block}_page_security-venues &
           font-size: 22px
+
+    &_indicator_linked-user
+      &:after
+        font-size: 18px
 
     &_role_alert
       color: map-get($boss-app-palette, alert)
@@ -1799,6 +1956,10 @@ $block: ".boss-check"
     #{$block}_page_handover-planner-task &
       margin-right: 15px
       margin-left: 0
+
+    #{$block}_page_users-index &
+      margin-right: 0
+      margin-left: 10px
 
     @media screen and (max-width: 640px)
       #{$block}_page_handover-planner-event &,
@@ -2045,11 +2206,16 @@ $block: ".boss-check"
     color: inherit
     font-weight: inherit
     text-decoration: none
+    transition: color .3s
 
     #{$block}_page_venues-index &,
     #{$block}_page_wtl-clients-index &,
     #{$block}_page_wtl-clients-profile &
       color: #1585cf
+
+    #{$block}_page_users-index &
+      font-size: inherit
+      line-height: inherit
 
     &:hover,
     &:focus
@@ -2058,7 +2224,8 @@ $block: ".boss-check"
 
       #{$block}_page_venues-index &,
       #{$block}_page_wtl-clients-index &,
-      #{$block}_page_wtl-clients-profile &
+      #{$block}_page_wtl-clients-profile &,
+      #{$block}_page_users-index &
         color: $boss-medium-gray
 
 
@@ -2265,7 +2432,8 @@ $block: ".boss-check"
     #{$block}_state_warning &,
     #{$block}_state_warning-faded &,
     #{$block}_state_success &,
-    #{$block}_state_frozen &
+    #{$block}_state_frozen &,
+    #{$block}_state_disabled &
       background-color: transparent
 
     // $Check block dropdown CONTEXT: $Check block MOD: page message board
@@ -2361,6 +2529,11 @@ $block: ".boss-check"
     #{$block}_page_handover-planner-task &
       margin-right: 10px
 
+    #{$block}_page_users-app-access-venues &,
+    #{$block}_page_user-profile-app-access &
+      flex-grow: 0
+      flex-shrink: 0
+
     @media screen and (max-width: 640px)
       #{$block}_page_handover-planner-event &,
       #{$block}_page_handover-planner-reminder &,
@@ -2374,11 +2547,18 @@ $block: ".boss-check"
         font-size: 18px
         color: map-get($boss-app-palette, warning)
 
+        #{$block}_page_user-profile-app-access &
+          font-size: 14px
+          color: map-get($boss-app-palette, primary)
+
     &_role_remove
       &:after
         content: '\e93b'
         font-size: 24px
         color: map-get($boss-app-palette, alert)
+
+        #{$block}_page_user-profile-app-access &
+          font-size: 20px
 
     &_role_confirm
       &:after
@@ -2391,6 +2571,13 @@ $block: ".boss-check"
         content: '\e97f'
         font-size: 22px
         color: map-get($boss-app-palette, primary)
+
+    &_role_details
+      &:after
+        content: '\e954'
+
+        #{$block}_page_users-app-access-venues &
+          font-size: 18px
 
 
   &__dropdown-link
@@ -2567,6 +2754,9 @@ $block: ".boss-check"
     #{$block}_page_clocking-app-page-index &
       margin-top: 15px
 
+    #{$block}_page_user-profile-app-access &
+      margin-top: 20px
+
     @media screen and (max-width: 480px)
       #{$block}_page_clocking-app-page-index &
         flex-direction: column
@@ -2656,6 +2846,13 @@ $block: ".boss-check"
 
       @media screen and (max-width: 640px)
         margin-right: 0
+
+    &_role_key
+      &:not(:last-child)
+        margin-right: 10px
+
+        @media screen and (max-width: 640px)
+          margin-right: 0
 
 
   // $Check block activity list
@@ -2777,7 +2974,7 @@ $block: ".boss-check"
     &:empty
       padding-left: 30px
 
-    // $Common form checkbox input label text MOD: visible label text on s screens
+    // $Check checkbox input label text MOD: visible label text on s screens
     &_visible-s
       padding-left: 40px
 
@@ -2827,3 +3024,11 @@ $block: ".boss-check"
       &:empty
         padding-left: 0
         padding-right: 30px
+
+
+  // $Check block text placeholder
+  &__text-placeholder
+    +text-normalizer()
+    font-size: 16px
+    line-height: 1
+    color: #808080

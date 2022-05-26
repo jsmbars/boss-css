@@ -308,6 +308,16 @@ $block: ".boss-overview"
     &_adjust_gallery
       margin-bottom: 5px
 
+    // $Overview group MOD: adjust details
+    &_adjust_level
+      padding-left: 40px
+
+      @media screen and (max-width: 960px)
+        padding-left: 20px
+
+      @media screen and (max-width: 480px)
+        padding-left: 0
+
     // $Overview group MOD: position last
     &_position_last
       margin-bottom: 0
@@ -342,6 +352,11 @@ $block: ".boss-overview"
 
     #{$block}_page_kpi &
       color: $boss-dark-gray
+
+    #{$block}_page_app-access-venues &,
+    #{$block}_page_app-access-venue-details &
+      color: $boss-dark-gray
+      text-transform: none
 
     // $Overview label text MOD: role key
     &_role_key
@@ -541,7 +556,9 @@ $block: ".boss-overview"
 
     &_role_edit,
     &_role_save,
-    &_role_details
+    &_role_details,
+    &_role_prev,
+    &_role_next
       padding-left: 20px
 
       &:before
@@ -569,6 +586,14 @@ $block: ".boss-overview"
     &_role_details
       &:before
         content: '\e921'
+
+    &_role_prev
+      &:before
+        content: '\e953'
+
+    &_role_next
+      &:before
+        content: '\e954'
 
     &_position_after
       margin-left: 20px
@@ -1160,6 +1185,10 @@ $block: ".boss-overview"
 
     #{$block}_page_kpi &
       text-align: center
+
+    #{$block}_page_app-access-venues &,
+    #{$block}_page_app-access-venue-details &
+      margin-top: 40px
 
 
   // $Overview action

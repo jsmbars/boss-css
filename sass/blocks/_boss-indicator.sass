@@ -150,17 +150,31 @@ $block: ".boss-indicator"
     text-align: center
     vertical-align: middle
 
-    // $Indicator badge MODE: size s
+    // $Indicator badge MOD: size s
     &_size_s
       width: 25px
       height: 25px
       line-height: 25px
 
-    // $Indicator badge MODE: size xs
+    // $Indicator badge MOD: size xs
     &_size_xs
       width: 20px
       height: 20px
       line-height: 20px
+
+    // $Indicator badge MOD: size xxs
+    &_size_xxs
+      width: 16px
+      height: 16px
+      line-height: 16px
+
+    // $Indicator badge MOD: color accent green
+    &_color_accent-green
+      background-color: map-get($boss-app-palette, secondary)
+
+    // $Indicator badge MOD: color light gray
+    &_color_light-gray
+      background-color: #ccc
 
 
   // $Indicator icon
@@ -172,6 +186,9 @@ $block: ".boss-indicator"
     #{$block}__badge &
       color: #fff
       line-height: inherit
+
+    #{$block}_color_accent-blue &
+      color: map-get($boss-app-palette, primary)
 
     #{$block}_color_accent-green &
       color: map-get($boss-app-palette, secondary)
@@ -383,6 +400,10 @@ $block: ".boss-indicator"
       &:before
         font-size: 14px
 
+    &_check-bold#{&}_size_xxs
+      &:before
+        font-size: 10px
+
     &_check-bold
       &:before
         content: '\e914'
@@ -391,6 +412,10 @@ $block: ".boss-indicator"
       &:before
         content: '\e96a'
         font-size: 14px
+
+    &_close-bold#{&}_size_xxs
+      &:before
+        font-size: 8px
 
     &_hour-glass
       &:before
@@ -467,6 +492,34 @@ $block: ".boss-indicator"
     &_book
       &:before
         content: '\e9a2'
+
+    &_chain
+      &:before
+        content: '\e9a3'
+
+    &_pin
+      &:before
+        content: '\e958'
+
+    &_pin#{&}_size_s
+      &:before
+        font-size: 16px
+
+    &_pin-solid
+      &:before
+        content: '\e9a4'
+
+    &_pin-solid#{&}_size_s
+      &:before
+        font-size: 16px
+
+    &_ai-chip
+      &:before
+        content: '\e9a5'
+
+    &_user-solid
+      &:before
+        content: '\e9a6'
 
 
   // $Indicator marker
@@ -620,6 +673,14 @@ $block: ".boss-indicator"
     #{$block}_status_logged-out &
       color: map-get($boss-app-palette, pending)
 
+    // $Indicator label MOD: color gray
+    &_color_gray
+      color: #808080
+
+    // $Indicator label MOD: color light gray
+    &_color_light-gray
+      color: #aaa
+
     // $Indicator label MOD: type regular
     &_type_regular
       font-weight: 400
@@ -627,6 +688,11 @@ $block: ".boss-indicator"
     // $Indicator label MOD: type light
     &_type_light
       font-weight: 300
+
+    // $Indicator label MOD: size xxl
+    &_size_xxl
+      font-size: 24px
+      line-height: 24px
 
     // $Indicator label MOD: size xl
     &_size_xl

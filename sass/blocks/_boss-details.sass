@@ -122,6 +122,21 @@ $block: ".boss-details"
     margin-top: 0
     margin-bottom: 20px
 
+    &_adjust_isle
+      width: calc((100% - 60px)/2)
+
+      @media screen and (max-width: 1280px)
+        width: calc((100% - 50px)/2)
+
+      @media screen and (max-width: 960px)
+        width: 100%
+
+    &_adjust_flow
+      width: 100%
+
+      @media screen and (max-width: 1280px)
+        display: block
+
     &:last-of-type
       margin-bottom: 0
 
@@ -137,8 +152,20 @@ $block: ".boss-details"
     padding-right: 20px
     font-weight: 600
 
+    #{$block}__item_adjust_flow &
+      width: 250px
+
     @media screen and (max-width: 1280px)
       width: 200px
+
+      #{$block}__item_adjust_flow &
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        padding-right: 0
+        margin-bottom: 20px
 
     @media screen and (max-width: 960px)
       width: 150px
@@ -173,6 +200,20 @@ $block: ".boss-details"
         width: 50px
 
 
+  // $Details label part
+  &__label-part
+    #{$block}__item_adjust_flow &
+      display: block
+
+    &:not(:last-child)
+      #{$block}__item_adjust_flow &
+        margin-bottom: 10px
+
+      @media screen and (max-width: 1280px)
+        #{$block}__item_adjust_flow &
+          margin-bottom: 0
+
+
   // $Details value
   &__value
     +text-normalizer()
@@ -182,6 +223,11 @@ $block: ".boss-details"
     padding-right: 20px
     width: 40%
     margin: 0
+
+    #{$block}__item_adjust_flow &
+      flex-shrink: 1
+      width: 100%
+      padding-right: 0
 
     @media screen and (max-width: 480px)
       padding-right: 0
