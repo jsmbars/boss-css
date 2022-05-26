@@ -255,7 +255,8 @@ $block: ".boss-table"
       padding: 25px
       background-color: #fbfbfb
 
-    #{$block}_page_app-access-venue-details &
+    #{$block}_page_app-access-venue-details &,
+    #{$block}_page_app-access-temporary &
       padding: 0 10px 5px
 
     @media screen and (max-width: 960px)
@@ -554,7 +555,8 @@ $block: ".boss-table"
     #{$block}_page_modulr-reports-venue-wages &
       min-width: 2150px
 
-    #{$block}_page_app-access-venue-details #{$block}__column &
+    #{$block}_page_app-access-venue-details #{$block}__column &,
+    #{$block}_page_app-access-temporary #{$block}__column &
       justify-content: flex-start
       border-bottom: none
 
@@ -672,7 +674,8 @@ $block: ".boss-table"
       #{$block}_page_security-pay-rate-exceptions &,
       #{$block}_page_modulr-reports-venue-wages &,
       #{$block}_page_clocking-app-multiple-matches &,
-      #{$block}_page_app-access-venue-details &
+      #{$block}_page_app-access-venue-details &,
+      #{$block}_page_app-access-temporary &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -682,6 +685,12 @@ $block: ".boss-table"
       #{$block}_page_bonai-venue &,
       #{$block}_page_bonai-venue-hour-data &
         flex-wrap: wrap
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_app-access-temporary #{$block}__column &
+        display: block
+        padding-top: 10px
+        padding-bottom: 10px
 
     @media screen and (max-width: 640px)
       #{$block}_page_clocking-app-page-api-keys-card &
@@ -748,6 +757,10 @@ $block: ".boss-table"
       #{$block}_page_payslip-totals &,
       #{$block}_page_payslip-summary &
         background-color: $boss-light-gray
+
+      @media screen and (max-width: 800px)
+        #{$block}_page_app-access-temporary &
+          display: none
 
       @media screen and (max-width: 640px)
         #{$block}_page_app-access-venue-details &
@@ -977,21 +990,29 @@ $block: ".boss-table"
       #{$block}_page_payslip &
         width: 45%
 
-      #{$block}_page_app-access-venue-details &
+      #{$block}_page_app-access-venue-details &,
+      #{$block}_page_app-access-temporary &
         flex-grow: 0
         flex-shrink: 0
         width: 40px
 
       @media screen and (max-width: 640px)
-        #{$block}_page_app-access-venue-details &
+        #{$block}_page_app-access-venue-details &,
+        #{$block}_page_app-access-temporary &
           width: 30px
 
     &:nth-child(2)
       #{$block}_page_payslip &
         width: 27.5%
 
-      #{$block}_page_app-access-venue-details &
+      #{$block}_page_app-access-venue-details &,
+      #{$block}_page_app-access-temporary &
         width: calc(100% - 40px)
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_app-access-venue-details &,
+        #{$block}_page_app-access-temporary &
+          width: calc(100% - 30px)
 
     &:nth-child(3)
       #{$block}_page_payslip &
@@ -1098,7 +1119,8 @@ $block: ".boss-table"
     #{$block}_page_security-pay-rate-exceptions &,
     #{$block}_page_modulr-reports-venue-notes &,
     #{$block}_page_clocking-app-multiple-matches &,
-    #{$block}_page_app-access-venue-details &
+    #{$block}_page_app-access-venue-details &,
+    #{$block}_page_app-access-temporary &
       min-height: 0
 
     #{$block}_page_payslip-payments &,
@@ -1145,7 +1167,8 @@ $block: ".boss-table"
     #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &,
     #{$block}_page_security-pay-rate-exceptions &,
-    #{$block}_page_app-access-venue-details &
+    #{$block}_page_app-access-venue-details &,
+    #{$block}_page_app-access-temporary &
       padding: 10px
 
     #{$block}_page_security-pay-rate-rules &
@@ -1217,12 +1240,14 @@ $block: ".boss-table"
       width: 140px
       border-right: 1px solid #eee
 
-    #{$block}_page_app-access-venue-details #{$block}__row_role_header &
+    #{$block}_page_app-access-venue-details #{$block}__row_role_header &,
+    #{$block}_page_app-access-temporary #{$block}__row_role_header &
       font-size: 14px
       text-transform: none
       color: #808080
 
-    #{$block}_page_app-access-venue-details #{$block}__column:nth-child(1) &
+    #{$block}_page_app-access-venue-details #{$block}__column:nth-child(1) &,
+    #{$block}_page_app-access-temporary #{$block}__column:nth-child(1) &
       padding-right: 10px
       padding-left: 10px
 
@@ -1309,7 +1334,8 @@ $block: ".boss-table"
         justify-content: flex-start
         align-items: center
 
-      #{$block}_page_app-access-venue-details &
+      #{$block}_page_app-access-venue-details &,
+      #{$block}_page_app-access-temporary &
         flex-direction: row
         justify-content: flex-start
         align-items: flex-start
@@ -1355,6 +1381,13 @@ $block: ".boss-table"
       #{$block}_page_csv-upload &
         width: 140px
         min-height: 60px
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_app-access-temporary #{$block}__column:nth-child(2) &
+        flex-grow: 1
+        flex-shrink: 1
+        width: 100%
+        padding: 0 10px
 
     @media screen and (max-width: 640px)
       #{$block}_page_api-keys &,
@@ -1784,15 +1817,22 @@ $block: ".boss-table"
         width: calc(100% - 130px)
         padding-left: 0
 
-      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(1) &
+      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(1) &,
+      #{$block}_page_app-access-temporary #{$block}__column:nth-child(1) &
         width: 100%
         padding-right: 10px
         padding-left: 10px
 
-      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
+      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &,
         flex-grow: 0
         flex-shrink: 0
-        width: 200px
+        width: 180px
+        padding-left: 10px
+
+      #{$block}_page_app-access-temporary #{$block}__column:nth-child(2) &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 150px
         padding-left: 10px
 
       @media screen and (max-width: 1280px)
@@ -1970,6 +2010,16 @@ $block: ".boss-table"
       @media screen and (max-width: 800px)
         #{$block}_page_bonai-venue-hour-data &
           width: 50%
+
+        #{$block}_page_app-access-temporary #{$block}__column:nth-child(1) &
+          padding-left: 5px
+          padding-right: 5px
+
+        #{$block}_page_app-access-temporary #{$block}__column:nth-child(2) &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
+          margin-bottom: 10px
 
       @media screen and (max-width: 640px)
         #{$block}_page_clocking-app-page-api-keys-card &
@@ -2332,10 +2382,11 @@ $block: ".boss-table"
         width: 130px
         padding-right: 0
 
-      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
+      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &,
+      #{$block}_page_app-access-temporary #{$block}__column:nth-child(2) &
         flex-grow: 0
         flex-shrink: 0
-        width: 200px
+        width: 180px
         padding-right: 10px
 
       @media screen and (max-width: 1280px)
@@ -2452,6 +2503,12 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue-hour-data &
           width: 50%
           padding-right: 20px
+
+      @media screen and (max-width: 800px)
+        #{$block}_page_app-access-temporary #{$block}__column:nth-child(2) &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}_page_accessory-requests-card &
@@ -2760,6 +2817,15 @@ $block: ".boss-table"
         width: 40%
         justify-content: center
 
+      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
+      #{$block}_page_app-access-temporary #{$block}__column:nth-child(2) &,
+        flex-grow: 0
+        flex-shrink: 0
+        width: 180px
+
+      #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
+        padding-right: 10px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -2880,6 +2946,11 @@ $block: ".boss-table"
           padding-left: 20px
           padding-right: 5px
           padding-top: 10px
+
+        #{$block}_page_app-access-temporary #{$block}__column:nth-child(2) &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
 
       @media screen and (max-width: 640px)
         #{$block}_page_accessory-requests-card &
@@ -3131,6 +3202,10 @@ $block: ".boss-table"
         width: 20%
         justify-content: center
 
+      #{$block}_page_app-access-temporary #{$block}__column:nth-child(2) &
+        width: calc(100% - 530px)
+        padding-right: 10px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3236,6 +3311,15 @@ $block: ".boss-table"
           padding-left: 5px
           padding-right: 20px
           padding-bottom: 10px
+
+        #{$block}_page_app-access-temporary #{$block}__column:nth-child(2) &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
+          margin-top: 10px
+
+          &:empty
+            margin-top: 0
 
       @media screen and (max-width: 640px)
         #{$block}_page_accessory-requests-card &
@@ -4661,7 +4745,8 @@ $block: ".boss-table"
       font-weight: 600
       font-size: 14px
 
-    #{$block}_page_app-access-venue-details &
+    #{$block}_page_app-access-venue-details &,
+    #{$block}_page_app-access-temporary &
       text-transform: none
       font-size: 14px
       color: #808080
@@ -4723,8 +4808,16 @@ $block: ".boss-table"
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
       #{$block}_page_security-payroll-report-week-details &,
-      #{$block}_page_app-access-venue-details &
+      #{$block}_page_app-access-venue-details &,
+      #{$block}_page_app-access-temporary &
         display: none
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_app-access-temporary &
+        display: block
+        width: 60px
+        padding-right: 20px
+        text-align: left
 
     @media screen and (max-width: 640px)
       padding-right: 40px
@@ -4739,7 +4832,6 @@ $block: ".boss-table"
       #{$block}_page_security-payroll-report-week-details &
         display: block
 
-    @media screen and (max-width: 640px)
       #{$block}_page_app-access-venue-details &
         display: block
         width: 60px
@@ -4986,7 +5078,8 @@ $block: ".boss-table"
       flex-shrink: 1
 
     #{$block}_page_payslip-summary &,
-    #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) #{$block}__row &
+    #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) #{$block}__row &,
+    #{$block}_page_app-access-temporary #{$block}__column:nth-child(2) #{$block}__row &
       font-size: 16px
 
     #{$block}_page_native-app-links &,
@@ -5107,8 +5200,13 @@ $block: ".boss-table"
       #{$block}_page_security-payroll-report-week-details &,
       #{$block}_page_security-pay-rate-rules &,
       #{$block}_page_security-pay-rate-exceptions &,
-      #{$block}_page_app-access-venue-details #{$block}__column &
+      #{$block}_page_app-access-venue-details #{$block}__column &,
+      #{$block}_page_app-access-temporary #{$block}__column &
         width: 100%
+
+    @media screen and (max-width: 800px)
+      #{$block}_page_app-access-temporary #{$block}__column &
+        width: calc(100% - 60px)
 
     @media screen and (max-width: 640px)
       #{$block}_page_fruit-order-history &,
@@ -5503,7 +5601,8 @@ $block: ".boss-table"
   &__note
     margin-top: 15px
 
-    #{$block}_page_app-access-venue-details &
+    #{$block}_page_app-access-venue-details &,
+    #{$block}_page_app-access-temporary &
       margin-top: 0
       padding: 0 10px 5px
 
@@ -5539,6 +5638,11 @@ $block: ".boss-table"
   &__meta-item
     display: inline-block
 
+    @media screen and (max-width: 800px)
+      #{$block}_page_app-access-temporary &
+        display: block
+        width: 100%
+
     @media screen and (max-width: 640px)
       #{$block}_page_app-access-venue-details &
         display: block
@@ -5546,6 +5650,10 @@ $block: ".boss-table"
 
     &:not(:last-child)
       margin-right: 20px
+
+      @media screen and (max-width: 800px)
+        #{$block}_page_app-access-temporary &
+          margin-right: 0
 
       @media screen and (max-width: 640px)
         #{$block}_page_app-access-venue-details &
@@ -5580,7 +5688,8 @@ $block: ".boss-table"
       justify-content: flex-end
       align-items: center
 
-    #{$block}_page_holidays-report &
+    #{$block}_page_holidays-report &,
+    #{$block}_page_app-access-temporary &
       text-align: right
 
     #{$block}_page_ssr-completed &,
@@ -5634,6 +5743,8 @@ $block: ".boss-table"
     #{$block}_page_finance-reports #{$block}__cell:nth-child(22) &:only-child
       margin-top: 24px
 
+    #{$block}_page_app-access-temporary &
+      width: 100%
 
     @media screen and (max-width: 1120px)
       #{$block}_page_safe-checks-index &,
@@ -5699,6 +5810,10 @@ $block: ".boss-table"
         flex-direction: column
         align-items: stretch
 
+    @media screen and (max-width: 800px)
+      #{$block}_page_app-access-temporary &
+        text-align: left
+
     @media screen and (max-width: 640px)
       #{$block}_page_fruit-order-history &
         width: 60%
@@ -5734,7 +5849,8 @@ $block: ".boss-table"
     #{$block}_page_ssr-pending &:not(:last-of-type),
     #{$block}_page_ssr-admin-pending &:not(:last-of-type),
     #{$block}_page_pay-rates &:not(:last-of-type),
-    #{$block}_page_security-pay-rate-exceptions &:not(:last-of-type)
+    #{$block}_page_security-pay-rate-exceptions &:not(:last-of-type),
+    #{$block}_page_app-access-temporary &:not(:last-of-type)
       margin-right: 10px
 
     #{$block}_page_fruit-order-history &:not(:last-of-type)

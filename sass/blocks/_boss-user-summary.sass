@@ -749,7 +749,6 @@ $block: ".boss-user-summary"
 
     // $User summary name CONTEXT: $User summary MOD: role user profile
     #{$block}_role_user-profile &
-      display: block
       font-weight: 400
 
     // $User summary name CONTEXT: $User summary MOD: role rotas daily
@@ -871,6 +870,9 @@ $block: ".boss-user-summary"
 
       #{$block}_role_ssr-assign-confirmation &
         margin-right: 0
+
+      #{$block}_role_user-profile &
+        margin-right: 10px
 
       @media screen and (max-width: 960px)
         margin-right: 0
@@ -1028,6 +1030,12 @@ $block: ".boss-user-summary"
 
     @media screen and (max-width: 960px)
       text-align: center
+
+
+  // $User summary indicator
+  &__indicator
+    display: inline-block
+    vertical-align: middle
 
 
   // $User summary link
