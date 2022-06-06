@@ -124,6 +124,7 @@ $block: ".boss-modal-window"
   &_role_wtl-ev-success,
   &_role_wtl-ev-error,
   &_role_wtl-ev-almost-done,
+  &_role_almost-done,
   &_role_multiple-matches
     width: 90%
     max-width: 640px
@@ -169,6 +170,7 @@ $block: ".boss-modal-window"
   &_role_wtl-ev-success,
   &_role_wtl-ev-error,
   &_role_wtl-ev-almost-done,
+  &_role_almost-done,
   &_role_payslip,
   &_role_quiz-overview,
   &_role_staff-members-review,
@@ -382,6 +384,15 @@ $block: ".boss-modal-window"
       #{$block}_role_venue-notes &
         right: 15px
 
+  // $Modal window spinner inner
+  &__spinner-inner
+    position: absolute
+    top: 20px
+    right: 20px
+    z-index: 9002
+    display: block
+    outline: none
+
   // $Modal window header
   &__header
     position: relative
@@ -464,6 +475,7 @@ $block: ".boss-modal-window"
     #{$block}_role_history &,
     #{$block}_role_wtl-card-history &,
     #{$block}_role_wtl-ev-almost-done &,
+    #{$block}_role_almost-done &,
     #{$block}_role_action-details &,
     #{$block}_role_week-details &,
     #{$block}_role_attendance &,
@@ -638,6 +650,7 @@ $block: ".boss-modal-window"
     #{$block}_role_wtl-ev-success &,
     #{$block}_role_wtl-ev-error &,
     #{$block}_role_wtl-ev-almost-done &,
+    #{$block}_role_almost-done &,
     #{$block}_role_accept-invite &
       text-align: center
 
@@ -645,7 +658,8 @@ $block: ".boss-modal-window"
     #{$block}_role_accept-invite &
       margin-bottom: 10px
 
-    #{$block}_role_wtl-ev-almost-done &
+    #{$block}_role_wtl-ev-almost-done &,
+    #{$block}_role_almost-done &
       font-size: 36px
 
     &:not(:last-child)
