@@ -779,7 +779,8 @@ $block: ".boss-button"
   // $Common button MOD: role undo
   &_role_move,
   &_role_recover,
-  &_role_undo
+  &_role_undo,
+  &_role_add-linked-user
     $background-color: map-get($boss-app-palette, warning)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -790,6 +791,9 @@ $block: ".boss-button"
   &_role_recover,
   &_role_undo
     +button-with-icon-left($icon: '\e950')
+
+  &_role_add-linked-user
+    +button-with-icon-left($icon: '\e97d', $size: 12px)
 
 
   // $Common button MOD: role view assignments

@@ -903,6 +903,9 @@ $block: ".boss-user-summary"
         #{$block}_role_contact-details &
           margin-bottom: 0
 
+    &:nth-last-child(3):not(:last-child)
+      margin-right: 10px
+
     &_role_alert
       color: map-get($boss-app-palette, alert)
 
@@ -934,6 +937,15 @@ $block: ".boss-user-summary"
 
     &_role_alert
       color: map-get($boss-app-palette, alert)
+
+
+  // $User summary indicator
+  &__indicator
+    display: inline-block
+    vertical-align: middle
+
+    &:nth-last-child(2)
+      margin-right: 35px
 
 
   // $User summary label box
