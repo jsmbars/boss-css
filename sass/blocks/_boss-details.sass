@@ -131,7 +131,7 @@ $block: ".boss-details"
       @media screen and (max-width: 960px)
         width: 100%
 
-    &_adjust_flow
+    &_adjust_full
       width: 100%
 
       @media screen and (max-width: 1280px)
@@ -152,23 +152,26 @@ $block: ".boss-details"
     padding-right: 20px
     font-weight: 600
 
-    #{$block}__item_adjust_flow &
-      width: 250px
+    #{$block}__item_adjust_full &
+      width: 245px
 
     @media screen and (max-width: 1280px)
       width: 200px
 
-      #{$block}__item_adjust_flow &
+      #{$block}__item_adjust_full &
         display: flex
         flex-direction: row
-        justify-content: space-between
+        justify-content: flex-start
         align-items: center
-        width: 100%
+        width: calc((100% - 50px)/2)
         padding-right: 0
         margin-bottom: 20px
 
     @media screen and (max-width: 960px)
       width: 150px
+
+      #{$block}__item_adjust_full &
+        width: 100%
 
     @media screen and (max-width: 640px)
       width: 125px
@@ -179,6 +182,10 @@ $block: ".boss-details"
 
     @media screen and (max-width: 400px)
       width: 50px
+
+      @media screen and (max-width: 400px)
+        #{$block}__item_adjust_full &
+          justify-content: space-between
 
     // $Details label MOD: size small
     &_size_small
@@ -202,15 +209,72 @@ $block: ".boss-details"
 
   // $Details label part
   &__label-part
-    #{$block}__item_adjust_flow &
+
+    #{$block}__item_adjust_full &
       display: block
 
+    &:nth-child(1)
+      @media screen and (max-width: 1280px)
+        #{$block}__item_adjust_full &
+          flex-grow: 1
+          flex-shrink: 0
+          width: 200px
+          padding-right: 20px
+
+        #{$block}__item_adjust_full #{$block}__label_size_small &
+          width: 100px
+
+      @media screen and (max-width: 960px)
+        #{$block}__item_adjust_full &
+          width: 150px
+
+        #{$block}__item_adjust_full #{$block}__label_size_small &
+          width: 160px
+
+      @media screen and (max-width: 640px)
+        #{$block}__item_adjust_full &
+          width: 125px
+          padding-right: 15px
+
+        #{$block}__item_adjust_full #{$block}__label_size_small &
+          width: 140px
+
+      @media screen and (max-width: 480px)
+        #{$block}__item_adjust_full &
+          width: 100px
+
+        #{$block}__item_adjust_full #{$block}__label_size_small &
+          width: 100px
+
+      @media screen and (max-width: 400px)
+        #{$block}__item_adjust_full &
+          flex-grow: 0
+          width: auto
+          padding-right: 0
+
+        #{$block}__item_adjust_full #{$block}__label_size_small &
+          width: auto
+
+    &:nth-child(2)
+      @media screen and (max-width: 1280px)
+        #{$block}__item_adjust_full &
+          flex-grow: 1
+          flex-shrink: 0
+          width: 40%
+          padding-right: 20px
+
+      @media screen and (max-width: 400px)
+        #{$block}__item_adjust_full &
+          flex-grow: 0
+          width: auto
+          padding-right: 0
+
     &:not(:last-child)
-      #{$block}__item_adjust_flow &
+      #{$block}__item_adjust_full &
         margin-bottom: 10px
 
       @media screen and (max-width: 1280px)
-        #{$block}__item_adjust_flow &
+        #{$block}__item_adjust_full &
           margin-bottom: 0
 
 
@@ -224,7 +288,7 @@ $block: ".boss-details"
     width: 40%
     margin: 0
 
-    #{$block}__item_adjust_flow &
+    #{$block}__item_adjust_full &
       flex-shrink: 1
       width: 100%
       padding-right: 0
@@ -257,7 +321,7 @@ $block: ".boss-details"
         text-decoration: none
 
     &_adjust_wrap
-      overflow-wrap: break-word
+      overfull-wrap: break-word
       word-wrap: break-word
       word-break: break-word
       hyphens: auto
