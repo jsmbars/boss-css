@@ -50,8 +50,11 @@ $block: ".boss-check"
 
   // $Check block MOD: page safe check index
   &_page_safe-checks-index,
-  &_page_invites-index,
   &_page_venues-index
+    @media screen and (min-width: 1121px)
+      display: none
+
+  @at-root .boss-page-main__group_adjust_invites-table > .boss-table_page_invites-index ~ .boss-check_page_invites-index
     @media screen and (min-width: 1121px)
       display: none
 
@@ -269,7 +272,8 @@ $block: ".boss-check"
     #{$block}_page_venue-alert-levels &,
     #{$block}_page_handover-planner-event &,
     #{$block}_page_handover-planner-reminder &,
-    #{$block}_page_handover-planner-task &
+    #{$block}_page_handover-planner-task &,
+    #{$block}_page_invites-index &
       min-height: 0
       padding: 15px 15px 10px
 
@@ -365,7 +369,8 @@ $block: ".boss-check"
       #{$block}_page_quiz-rank &,
       #{$block}_page_smp-quizzes-history &,
       #{$block}_page_smp-quizzes-category &,
-      #{$block}_page_contact-details &
+      #{$block}_page_contact-details &,
+      #{$block}_page_invites-index &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
@@ -377,7 +382,8 @@ $block: ".boss-check"
       #{$block}_page_quiz-category &,
       #{$block}_page_quiz-rank &,
       #{$block}_page_smp-quizzes-history &,
-      #{$block}_page_vhcq &
+      #{$block}_page_vhcq &,
+      #{$block}_page_invites-index &
         padding: 15px 10px
 
     @media screen and (max-width: 480px)
@@ -437,13 +443,15 @@ $block: ".boss-check"
     @media screen and (max-width: 640px)
       #{$block}_page_maintenance-index &,
       #{$block}_page_ops-diary-index &,
-      #{$block}_page_sv-missattributed-logins &
+      #{$block}_page_sv-missattributed-logins &,
+      #{$block}_page_invites-index &
         width: calc(100% - 50px)
 
       #{$block}_page_marketing-index &,
       #{$block}_page_handover-planner-event &,
       #{$block}_page_handover-planner-reminder &,
-      #{$block}_page_handover-planner-task &
+      #{$block}_page_handover-planner-task &,
+      #{$block}_page_invites-index &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
@@ -532,6 +540,9 @@ $block: ".boss-check"
     @media screen and (max-width: 640px)
       width: 100%
       margin-top: 10px
+
+      #{$block}_page_invites-index &
+        width: 100%
 
       #{$block}_page_ssr-requests &,
       #{$block}_page_profile-disciplinary &,
@@ -959,7 +970,8 @@ $block: ".boss-check"
     #{$block}_page_design-showcases &,
     #{$block}_page_design-showcases-admin &,
     #{$block}_page_security-pay-rate-base &,
-    #{$block}_page_security-pay-rate-special &
+    #{$block}_page_security-pay-rate-special &,
+    #{$block}_page_invites-index &
       display: flex
       flex-direction: row
       justify-content: flex-start
@@ -1000,7 +1012,8 @@ $block: ".boss-check"
       #{$block}_page_venue-alert-levels &,
       #{$block}_page_contacts-admin &,
       #{$block}_page_vhcq &,
-      #{$block}_page_design-showcases-admin &
+      #{$block}_page_design-showcases-admin &,
+      #{$block}_page_invites-index &
         flex-direction: column
         align-items: stretch
 
@@ -1044,7 +1057,8 @@ $block: ".boss-check"
         align-items: flex-start
         justify-content: center
 
-      #{$block}_page_quiz-category &
+      #{$block}_page_quiz-category &,
+      #{$block}_page_invites-index &
         order: 99
         flex-grow: 1
         flex-shrink: 1
@@ -1058,6 +1072,9 @@ $block: ".boss-check"
         padding-top: 15px
         text-align: center
         border-top: 1px solid #eee
+
+      #{$block}_page_invites-index &
+        justify-content: flex-start
 
       #{$block}_page_vhcq &
         padding-left: 10px
@@ -1143,6 +1160,12 @@ $block: ".boss-check"
 
   // $Check block header action
   &__header-action
+    @media screen and (max-width: 640px)
+      #{$block}_page_invites-index &
+        flex-grow: 1
+        flex-shrink: 1
+        width: calc(50% - 8px)
+
     @media screen and (max-width: 480px)
       #{$block}_page_contacts-admin &,
       #{$block}_page_vhcq &,
@@ -1152,6 +1175,10 @@ $block: ".boss-check"
 
       #{$block}_page_security-pay-rate-base &
         width: calc(50% - 8px)
+
+    @media screen and (max-width: 400px)
+      #{$block}_page_invites-index &
+        width: auto
 
     &:not(:first-child)
       #{$block}_page_ssr-requests &,
@@ -1163,7 +1190,8 @@ $block: ".boss-check"
       #{$block}_page_vhcq &,
       #{$block}_page_design-showcases-admin &,
       #{$block}_page_security-pay-rate-base &,
-      #{$block}_page_security-pay-rate-special &
+      #{$block}_page_security-pay-rate-special &,
+      #{$block}_page_invites-index &
         margin-left: 15px
 
       #{$block}_page_quiz-category &
@@ -1175,7 +1203,8 @@ $block: ".boss-check"
         #{$block}_page_venue-alert-levels &,
         #{$block}_page_contacts-admin &,
         #{$block}_page_vhcq &,
-        #{$block}_page_design-showcases-admin &
+        #{$block}_page_design-showcases-admin &,
+        #{$block}_page_invites-index &
           margin-left: 0
           margin-top: 10px
 
@@ -1183,7 +1212,8 @@ $block: ".boss-check"
         #{$block}_page_ssr-requests &,
         #{$block}_page_profile-disciplinary &,
         #{$block}_page_venue-alert-levels &,
-        #{$block}_page_quiz-category &
+        #{$block}_page_quiz-category &,
+        #{$block}_page_invites-index &
           margin-left: 15px
           margin-top: 0
 
@@ -1302,6 +1332,9 @@ $block: ".boss-check"
     #{$block}_page_smp-quizzes-category &
       padding: 15px 20px
 
+    #{$block}_page_invites-index &
+      padding: 15px 15px 15px 70px
+
     @media screen and (max-width: 960px)
       padding: 15px 10px
 
@@ -1309,6 +1342,10 @@ $block: ".boss-check"
       #{$block}_page_quiz-rank &,
       #{$block}_page_smp-quizzes-history &,
       #{$block}_page_smp-quizzes-category &
+        padding: 15px 10px
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_invites-index &
         padding: 15px 10px
 
     &:not(:last-child)
@@ -2137,6 +2174,12 @@ $block: ".boss-check"
       &:hover
         color: $boss-medium-gray
 
+    &_size_s
+      font-size: 12px
+
+    &_size_l
+      font-size: 16px
+
     & code
       font-family: Consolas, "Liberation Mono", Courier, monospace
       font-weight: normal
@@ -2383,7 +2426,9 @@ $block: ".boss-check"
         margin-left: 10px
 
     // $Check marker MOD: status completed
-    &_status_completed
+    // $Check marker MOD: status accepted
+    &_status_completed,
+    &_status_accepted
       color: map-get($boss-app-palette, secondary)
 
       &:before
@@ -2391,7 +2436,9 @@ $block: ".boss-check"
         background-color: map-get($boss-app-palette, secondary)
 
     // $Check marker MOD: status pending
-    &_status_pending
+    // $Check marker MOD: status open
+    &_status_pending,
+    &_status_open
       color: map-get($boss-app-palette, pending)
 
       &:before
@@ -2405,6 +2452,15 @@ $block: ".boss-check"
       &:before
         content: '\e94d'
         font-size: 16px
+        background-color: map-get($boss-app-palette, alert)
+
+    // $Check marker MOD: status revoked
+    &_status_revoked
+      color: map-get($boss-app-palette, alert)
+
+      &:before
+        content: '\e96a'
+        font-size: 14px
         background-color: map-get($boss-app-palette, alert)
 
     // $Check marker MOD: role edit action
@@ -2425,11 +2481,13 @@ $block: ".boss-check"
     font-weight: 600
     vertical-align: middle
 
-    #{$block}_page_marketing-index &
+    #{$block}_page_marketing-index &,
+    #{$block}_page_invites-index &
       display: none
 
     @media screen and (max-width: 640px)
-      #{$block}_page_marketing-index &
+      #{$block}_page_marketing-index &,
+      #{$block}_page_invites-index &
         display: inline-block
 
     @media screen and (max-width: 400px)
@@ -2642,6 +2700,9 @@ $block: ".boss-check"
     display: block
     width: 100%
     padding: 10px 0
+
+    #{$block}_page_invites-index &
+      padding-bottom: 0
 
 
   // $Check block info
