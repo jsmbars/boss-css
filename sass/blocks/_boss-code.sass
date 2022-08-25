@@ -1,0 +1,314 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Code
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-code"
+
+#{$block}
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: flex-start
+  width: 100%
+
+  @media screen and (max-width: 400px)
+    flex-direction: column
+
+  // $Code MOD: state processing
+  &_state_processing
+
+  // $Code MOD: state available
+  &_state_available
+
+  // $Code MOD: state unavailable
+  &_state_unavailable
+
+  // $Code MOD: state error
+  &_state_error
+
+
+  // $Code control
+  &__control
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 100%
+
+
+  // $Code field
+  &__field
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+
+    // $Code field CONTEXT: $Code MOD: state processing
+    #{$block}_state_processing &
+      &:before
+        content: ''
+        position: absolute
+        top: 50%
+        right: 15px
+        margin-top: -15px
+        display: block
+        width: 30px
+        height: 30px
+        background-image: url("../icons/spinner.svg")
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center center
+        vertical-align: middle
+
+    // $Code field CONTEXT: $Code MOD: state available
+    #{$block}_state_available &
+      outline: 1px solid map-get($boss-app-palette, secondary)
+
+    // $Code field CONTEXT: $Code MOD: state unavailable
+    #{$block}_state_unavailable &
+      outline: 1px solid map-get($boss-app-palette, alert-border)
+
+
+  // $Code action
+  &__action
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 50px
+    height: 50px
+    padding: 0 5px
+    text-align: center
+    font-size: 0
+    line-height: 0
+    color: transparent
+    background-color: map-get($boss-app-palette, primary)
+    border: 1px solid $boss-very-light-gray
+    border-right: none
+    cursor: pointer
+      outline: none
+    transition: all .3s
+
+    &:after
+      content: "\e948"
+      flex-grow: 0
+      flex-shrink: 0
+      display: block
+      font-family: icons
+      font-size: 15px
+      line-height: 1
+      font-weight: 400
+      color: #4c4c4c
+
+    &:hover
+      opacity: 0.8
+
+    &:disabled
+      background-color: map-get($boss-app-palette, inactive)
+      cursor: not-allowed
+
+    &:disabled:hover
+      opacity: 1
+
+
+  // $Code input
+  &__input
+    +text-normalizer()
+    box-sizing: border-box
+    display: block
+    width: 100%
+    max-width: 100%
+    height: 50px
+    padding: 0 20px
+    font-size: 16px
+    line-height: 50px
+    background-color: #fff
+    border: 1px solid $boss-very-light-gray
+    border-radius: 2px
+    box-shadow: none
+    appearance: none
+    -moz-appearance: none
+    -webkit-appearance: none
+
+    // $Code input CONTEXT: $Code MOD: state available
+    #{$block}_state_available &
+      color: map-get($boss-app-palette, secondary)
+
+    // $Code input CONTEXT: $Code MOD: state unavailable
+    #{$block}_state_unavailable &
+      color: map-get($boss-app-palette, alert-border)
+
+    &:focus
+      outline: none
+      box-shadow: 0 0 5px 0 $boss-very-light-gray
+      border-color: $boss-very-light-gray
+
+    &[type=text]::-ms-clear
+      display: none
+
+    &[readonly]
+      background-color: #fff
+      cursor: text
+
+    &:invalid
+      box-shadow: none
+
+    &:disabled
+      background-color: #fff
+      border-color: $boss-very-light-gray
+      color: $boss-dark-gray
+      cursor: default
+
+    &::-webkit-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:-moz-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::-moz-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:-ms-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::-ms-input-placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &::placeholder
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+    &:placeholder-shown
+      color: $boss-input-placeholder-color !important
+      opacity:  1 !important
+
+
+  // $Code message
+  &__message
+    +text-normalizer()
+    position: relative
+    display: block
+    margin-top: 10px
+    padding: 10px
+    background-color: map-get($boss-app-palette, primary)
+    border-radius: $boss-global-border-radius
+
+    // $Code message CONTEXT: $Code MOD: state available
+    #{$block}_state_available &
+      background-color: map-get($boss-app-palette, secondary)
+
+    // $Code message CONTEXT: $Code MOD: state unavailable
+    #{$block}_state_unavailable &
+      background-color: map-get($boss-app-palette, error-background)
+
+    &:before
+      content: '\e9a1'
+      position: absolute
+      top: 50%
+      left: 20px
+      display: block
+      margin-top: -10px
+      font-family: icons
+      font-size: 20px
+      line-height: 1
+      font-weight: 400
+      color: #fff
+
+      #{$block}_state_available &
+        content: '\e9a9'
+
+      #{$block}_state_unavailable &
+        content: '\e99e'
+
+
+  // $Code message text
+  &__message-text
+    +text-normalizer()
+    position: relative
+    display: block
+    padding-left: 40px
+    font-weight: 300
+    color: #fff
+
+
+  // $Code preview
+  &__preview
+    display: block
+    width: 150px
+    padding-top: 40px
+
+    @media screen and (max-width: 400px)
+      padding-top: 30px
+
+
+  // $Code preview content
+  &__preview-content
+    display: block
+    width: 150px
+    height: 150px
+    padding: 10px
+    background-image: url(../icons/scan-frame.svg)
+    background-size: contain
+    background-repeat: no-repeat
+
+    // $Code preview content CONTEXT: $Code MOD: state available
+    #{$block}_state_available &
+      background-image: url(../icons/scan-frame-available.svg)
+
+    // $Code preview content CONTEXT: $Code MOD: state unavailable
+    #{$block}_state_unavailable &
+      background-image: url(../icons/scan-frame-unavailable.svg)
+
+
+  // $Code preview image
+  &__preview-image
+    display: block
+    width: 100%
+    height: 100%
+
+
+  // $Code preview label
+  &__preview-label
+    +text-normalizer()
+    display: block
+    width: 100%
+    padding-top: 5px
+    font-size: 16px
+    font-weight: 300
+    text-align: center
+
+
+  // $Code buttons
+  &__buttons
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    padding: 7px 0 0 20px
+
+    @media screen and (max-width: 400px)
+      order: -99
+      flex-grow: 1
+      flex-shrink: 1
+      padding: 0 0 10px
+
+
+  // $Code button
+  &__button
