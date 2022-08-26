@@ -315,7 +315,8 @@ $block: ".boss-button"
   &_role_back,
   &_role_enabled,
   &_role_ok,
-  &_role_accepted
+  &_role_accepted,
+  &_role_code-check
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -732,7 +733,8 @@ $block: ".boss-button"
   &_role_block_reverse,
   &_role_pdf-download,
   &_role_force-password-change,
-  &_role_lock
+  &_role_lock,
+  &_role_code-clear
     $background-color: map-get($boss-app-palette, alert)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -772,6 +774,9 @@ $block: ".boss-button"
 
   &_role_lock
     +button-with-icon-left($icon: '\e930')
+
+  &_role_code-clear
+    +button-with-icon-left($icon: '\e99f')
 
 
   // $Common button MOD: role move

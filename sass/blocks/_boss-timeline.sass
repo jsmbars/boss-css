@@ -75,32 +75,6 @@ $block: ".boss-timeline"
       &:after
         display: none
 
-    // $Timeline item MOD: adjust count
-    &_adjust_count
-      margin-bottom: 50px
-
-      @media screen and (max-width: 480px)
-        margin-bottom: 30px
-
-      &:before
-        display: none
-
-      &:after
-        left: 20px
-
-        @media screen and (max-width: 480px)
-          left: 18px
-
-    // $Timeline item MOD: adjust card
-    &_adjust_card
-      &:before
-        top: 15px
-        left: 0
-
-      &:after
-        top: 30px
-        bottom: -60px
-
     // $Timeline item MOD: role card
     &_role_card
       &:before
@@ -117,11 +91,6 @@ $block: ".boss-timeline"
         @media screen and (max-width: 480px)
           top: 30px
           bottom: -50px
-
-    // $Timeline item MOD: state alert
-    &_state_alert
-      &:before
-        color: map-get($boss-app-palette, alert)
 
     // $Timeline item MOD: role initial
     &_role_initial
@@ -168,7 +137,63 @@ $block: ".boss-timeline"
         border-width: 1px
         background-color: map-get($boss-app-palette, alert)
 
+    // $Timeline item MOD: adjust card
+    &_adjust_card
+      &:before
+        top: 15px
+        left: 0
 
+      &:after
+        top: 30px
+        bottom: -60px
+
+    // $Timeline item MOD: adjust count
+    &_adjust_count
+      margin-bottom: 50px
+
+      @media screen and (max-width: 480px)
+        margin-bottom: 30px
+
+      &:before
+        display: none
+
+      &:after
+        left: 20px
+        bottom: -70px
+
+        @media screen and (max-width: 480px)
+          left: 18px
+          bottom: -68px
+
+    // $Timeline item MOD: adjust time
+    &_adjust_time
+      margin-bottom: 50px
+      padding: 5px 0
+
+      @media screen and (max-width: 480px)
+        margin-bottom: 30px
+        padding: 0
+
+      &:before
+        display: none
+
+      &:after
+        top: 85px
+        left: 40px
+        bottom: -45px
+
+        @media screen and (max-width: 480px)
+          top: 65px
+          left: 30px
+          bottom: -25px
+
+    // $Timeline item MOD: state alert
+    &_state_alert
+      &:before
+        color: map-get($boss-app-palette, alert)
+
+
+  // $Timeline count
   &__count
     +text-normalizer()
     position: absolute
@@ -196,6 +221,31 @@ $block: ".boss-timeline"
       background-color: map-get($boss-app-palette, alert)
 
 
+  // $Timeline time
+  &__time
+    +text-normalizer()
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    display: block
+    width: 80px
+    height: 80px
+    font-size: 16px
+    line-height: 80px
+    font-weight: 600
+    text-align: center
+    color: #4c4c4c
+    background-color: #eee
+    border-radius: 50%
+
+    @media screen and (max-width: 480px)
+      width: 60px
+      height: 60px
+      font-size: 14px
+      line-height: 60px
+
+
   // $Timeline inner container
   &__inner
     display: block
@@ -215,6 +265,15 @@ $block: ".boss-timeline"
       @media screen and (max-width: 480px)
         width: calc(100% - 45px)
         margin-left: 45px
+
+    // $Timeline inner container MOD: adjust time
+    &_adjust_time
+      width: calc(100% - 110px)
+      margin-left: 110px
+
+      @media screen and (max-width: 480px)
+        width: calc(100% - 80px)
+        margin-left: 80px
 
     // $Timeline inner container MOD: role card
     &_role_card

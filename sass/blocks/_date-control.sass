@@ -117,7 +117,8 @@ $block: ".date-control"
   & .SingleDatePickerInput__disabled
     background-color: #e6e6e6
 
-  &_type_inline
+  &_type_inline,
+  &_type_narrow
     & .DateInput
       min-height: 25px
       padding: 0 10px
@@ -266,7 +267,8 @@ $block: ".date-control"
         @media screen and (max-width: 480px)
           left: 15px
 
-  &_type_icon#{&}_type_inline
+  &_type_icon#{&}_type_inline,
+  &_type_icon#{&}_type_narrow
     & .DateInput
       &:after
         left: 10px

@@ -98,7 +98,8 @@ $block: ".boss-table"
   &_page_modulr-reports-accounts,
   &_page_modulr-reports-venue-wages,
   &_page_modulr-reports-venue-notes,
-  &_page_invites-index-app-access
+  &_page_invites-index-app-access,
+  &_page_venue-collections-type
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -679,7 +680,9 @@ $block: ".boss-table"
       #{$block}_page_clocking-app-multiple-matches &,
       #{$block}_page_app-access-venue-details &,
       #{$block}_page_app-access-temporary &,
-      #{$block}_page_invites-index-app-access &
+      #{$block}_page_invites-index-app-access &,
+      #{$block}_page_venue-collections-data &,
+      #{$block}_page_venue-collections-type &
         display: flex
 
       #{$block}_page_maintenance-index-card &,
@@ -697,7 +700,8 @@ $block: ".boss-table"
         padding-bottom: 10px
 
     @media screen and (max-width: 640px)
-      #{$block}_page_clocking-app-page-api-keys-card &
+      #{$block}_page_clocking-app-page-api-keys-card &,
+      #{$block}_page_venue-collections-data &
         flex-wrap: wrap
 
       #{$block}_page_api-keys &
@@ -709,7 +713,8 @@ $block: ".boss-table"
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
       #{$block}_page_security-payroll-report-week-details &,
-      #{$block}_page_app-access-venue-details #{$block}__column &
+      #{$block}_page_app-access-venue-details #{$block}__column &,
+      #{$block}_page_venue-collections-type &
         display: block
         padding-top: 10px
         padding-bottom: 10px
@@ -826,7 +831,8 @@ $block: ".boss-table"
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
         #{$block}_page_pay-rates-admin-staff-members &,
-        #{$block}_page_security-payroll-report-week-details &
+        #{$block}_page_security-payroll-report-week-details &,
+        #{$block}_page_venue-collections-type &
           display: flex
 
       @media screen and (max-width: 640px)
@@ -834,7 +840,8 @@ $block: ".boss-table"
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
         #{$block}_page_pay-rates-admin-staff-members &,
-        #{$block}_page_security-payroll-report-week-details &
+        #{$block}_page_security-payroll-report-week-details &,
+        #{$block}_page_venue-collections-type &
           display: none
 
       @media screen and (min-width: 1120px)
@@ -1081,7 +1088,8 @@ $block: ".boss-table"
     #{$block}_page_native-app-links &,
     #{$block}_page_payslip-summary &,
     #{$block}_page_bonai-staff-member-data &,
-    #{$block}_page_modulr-reports-venue-wages &
+    #{$block}_page_modulr-reports-venue-wages &,
+    #{$block}_page_venue-collections-data &
       justify-content: center
 
     #{$block}_page_payslip-payments &,
@@ -1126,7 +1134,8 @@ $block: ".boss-table"
     #{$block}_page_modulr-reports-venue-notes &,
     #{$block}_page_clocking-app-multiple-matches &,
     #{$block}_page_app-access-venue-details &,
-    #{$block}_page_app-access-temporary &
+    #{$block}_page_app-access-temporary &,
+    #{$block}_page_venue-collections-type &
       min-height: 0
 
     #{$block}_page_payslip-payments &,
@@ -1240,7 +1249,8 @@ $block: ".boss-table"
     #{$block}_page_modulr-reports-accounts &,
     #{$block}_page_modulr-reports-venue-wages &,
     #{$block}_page_modulr-reports-venue-notes &,
-    #{$block}_page_clocking-app-multiple-matches &
+    #{$block}_page_clocking-app-multiple-matches &,
+    #{$block}_page_venue-collections-type &
       padding: 15px 10px
 
     #{$block}_page_csv-upload &
@@ -1340,7 +1350,8 @@ $block: ".boss-table"
       #{$block}_page_clocking-app-multiple-matches &
         padding: 10px 0
 
-      #{$block}_page_clocking-app-page-api-keys-card &
+      #{$block}_page_clocking-app-page-api-keys-card &,
+      #{$block}_page_venue-collections-data &
         justify-content: flex-start
         align-items: center
 
@@ -1376,7 +1387,8 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
-      #{$block}_page_security-payroll-report-week-details &
+      #{$block}_page_security-payroll-report-week-details &,
+      #{$block}_page_venue-collections-type &
         flex-direction: row
         justify-content: flex-start
         min-height: 0
@@ -1409,7 +1421,8 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
-      #{$block}_page_security-payroll-report-week-details &
+      #{$block}_page_security-payroll-report-week-details &,
+      #{$block}_page_venue-collections-type &
         min-height: 0
         padding: 5px 10px
 
@@ -1485,7 +1498,8 @@ $block: ".boss-table"
       #{$block}_page_security-payroll-report &,
       #{$block}_page_modulr-reports-accounts &,
       #{$block}_page_modulr-reports-venue-notes &,
-      #{$block}_page_invites-index-app-access &
+      #{$block}_page_invites-index-app-access &,
+      #{$block}_page_venue-collections-data &
         border-right: 1px solid #eee
 
       @media screen and (max-width: 1280px)
@@ -1515,7 +1529,8 @@ $block: ".boss-table"
           border-right: none
 
       @media screen and (max-width: 640px)
-        #{$block}_page_security-payroll-report &
+        #{$block}_page_security-payroll-report &,
+        #{$block}_page_venue-collections-data &
           border-right: none
 
     // $Common table cell first column
@@ -1868,6 +1883,14 @@ $block: ".boss-table"
         width: 200px
         padding-left: 15px
 
+      #{$block}_page_venue-collections-data &
+        width: 25%
+
+      #{$block}_page_venue-collections-type &
+        width: 20%
+        min-width: 95px
+        padding-left: 10px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -1977,7 +2000,8 @@ $block: ".boss-table"
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
         #{$block}_page_pay-rates-admin-staff-members &,
-        #{$block}_page_yearly-reports-hour-report &
+        #{$block}_page_yearly-reports-hour-report &,
+        #{$block}_page_venue-collections-type &
           padding-left: 10px
 
         #{$block}_page_finance-reports-overview &,
@@ -2075,7 +2099,8 @@ $block: ".boss-table"
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
         #{$block}_page_pay-rates-admin-staff-members &,
-        #{$block}_page_security-payroll-report-week-details &
+        #{$block}_page_security-payroll-report-week-details &,
+        #{$block}_page_venue-collections-type &
           width: 100%
 
         #{$block}_page_app-access-venue-details #{$block}__column:nth-child(1) &
@@ -2092,6 +2117,11 @@ $block: ".boss-table"
           flex-shrink: 0
           width: 100px
           padding-left: 10px
+
+        #{$block}_page_venue-collections-data &
+          width: 50%
+          border-right: 1px solid #eee
+          border-bottom: 1px solid #eee
 
       @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index &,
@@ -2122,6 +2152,10 @@ $block: ".boss-table"
 
         #{$block}_page_clocking-app-multiple-matches &
           width: 100%
+
+        #{$block}_page_venue-collections-data &
+          width: 100%
+          border-right: none
 
       @media screen and (max-width: 400px)
         #{$block}_page_clocking-app-page-api-keys-card &
@@ -2448,6 +2482,12 @@ $block: ".boss-table"
         width: calc(100% - 200px)
         padding-right: 15px
 
+      #{$block}_page_venue-collections-data &
+        width: 25%
+
+      #{$block}_page_venue-collections-type &
+        width: 20%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -2600,7 +2640,8 @@ $block: ".boss-table"
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
         #{$block}_page_pay-rates-admin-staff-members &,
-        #{$block}_page_security-payroll-report-week-details &
+        #{$block}_page_security-payroll-report-week-details &,
+        #{$block}_page_venue-collections-type &
           width: 100%
 
         #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
@@ -2608,9 +2649,13 @@ $block: ".boss-table"
           flex-shrink: 1
           width: 100%
 
-      #{$block}_page_invites-index-app-access &
-        width: calc(100% - 100px)
-        padding-right: 10px
+        #{$block}_page_invites-index-app-access &
+          width: calc(100% - 100px)
+          padding-right: 10px
+
+        #{$block}_page_venue-collections-data &
+          width: 50%
+          border-bottom: 1px solid #eee
 
       @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index-card &
@@ -2629,6 +2674,9 @@ $block: ".boss-table"
         #{$block}_page_clocking-app-multiple-matches &
           flex-grow: 1
           flex-shrink: 1
+          width: 100%
+
+        #{$block}_page_venue-collections-data &
           width: 100%
 
       @media screen and (max-width: 400px)
@@ -2910,6 +2958,13 @@ $block: ".boss-table"
       #{$block}_page_app-access-venue-details #{$block}__column:nth-child(2) &
         padding-right: 10px
 
+      #{$block}_page_venue-collections-data &
+        width: 25%
+
+      #{$block}_page_venue-collections-type &
+        width: 20%
+        min-width: 95px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -2994,7 +3049,8 @@ $block: ".boss-table"
         #{$block}_page_api-keys &,
         #{$block}_page_pay-rates-admin-staff-members &,
         #{$block}_page_yearly-reports-hour-report &,
-        #{$block}_page_security-payroll-report-week-details &
+        #{$block}_page_security-payroll-report-week-details &,
+        #{$block}_page_venue-collections-type &
           padding-right: 10px
 
         #{$block}_page_finance-reports-overview &,
@@ -3064,8 +3120,19 @@ $block: ".boss-table"
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
         #{$block}_page_pay-rates-admin-staff-members &,
-        #{$block}_page_security-payroll-report-week-details &
+        #{$block}_page_security-payroll-report-week-details &,
+        #{$block}_page_venue-collections-type &
           width: 100%
+
+        #{$block}_page_venue-collections-data &
+          width: 50%
+          border-right: 1px solid #eee
+
+      @media screen and (max-width: 480px)
+        #{$block}_page_venue-collections-data &
+          width: 100%
+          border-bottom: 1px solid #eee
+          border-right: none
 
       @media screen and (max-width: 400px)
         #{$block}_page_clocking-app-page-api-keys-card &
@@ -3313,6 +3380,12 @@ $block: ".boss-table"
         width: calc(100% - 530px)
         padding-right: 10px
 
+      #{$block}_page_venue-collections-data &
+        width: 25%
+
+      #{$block}_page_venue-collections-type &
+        width: 20%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3388,7 +3461,8 @@ $block: ".boss-table"
         #{$block}_page_id-scanner-keys &,
         #{$block}_page_pay-rates-staff-members &,
         #{$block}_page_training-failures &,
-        #{$block}_page_security-payroll-report-week-details &
+        #{$block}_page_security-payroll-report-week-details &,
+        #{$block}_page_venue-collections-type &
           padding-right: 10px
 
         #{$block}_page_fruit-order-history &
@@ -3455,13 +3529,20 @@ $block: ".boss-table"
         #{$block}_page_pay-rates &,
         #{$block}_page_pay-rates-staff-members &,
         #{$block}_page_pay-rates-admin-staff-members &,
-        #{$block}_page_security-payroll-report-week-details &
+        #{$block}_page_security-payroll-report-week-details &,
+        #{$block}_page_venue-collections-type &
           width: 100%
+
+        #{$block}_page_venue-collections-data &
+          width: 50%
 
       @media screen and (max-width: 480px)
         #{$block}_page_bonai-venue-hour-data &
           width: 100%
           padding-left: 20px
+
+        #{$block}_page_venue-collections-data &
+          width: 100%
 
     // $Common table cell fifth column
     &:nth-child(5)
@@ -3632,6 +3713,10 @@ $block: ".boss-table"
         width: 4%
         min-width: 100px
 
+      #{$block}_page_venue-collections-type &
+        width: 10%
+        min-width: 80px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3729,7 +3814,8 @@ $block: ".boss-table"
 
       @media screen and (max-width: 640px)
         #{$block}_page_pay-rates &,
-        #{$block}_page_security-payroll-report-week-details &
+        #{$block}_page_security-payroll-report-week-details &,
+        #{$block}_page_venue-collections-type &
           flex-grow: 1
           flex-shrink: 1
           width: 100%
@@ -3840,6 +3926,12 @@ $block: ".boss-table"
         width: 4%
         min-width: 100px
 
+      #{$block}_page_venue-collections-type &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 115px
+        padding-right: 10px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3908,6 +4000,12 @@ $block: ".boss-table"
       @media screen and (max-width: 800px)
         #{$block}_page_bonai-venue-hour-data &
           width: 50%
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_venue-collections-type &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
 
       @media screen and (max-width: 480px)
         #{$block}_page_maintenance-index &
@@ -4458,7 +4556,8 @@ $block: ".boss-table"
       #{$block}_page_training-failures &,
       #{$block}_page_modulr-reports-accounts &,
       #{$block}_page_modulr-reports-venue-wages &,
-      #{$block}_page_modulr-reports-venue-notes &
+      #{$block}_page_modulr-reports-venue-notes &,
+      #{$block}_page_venue-collections-type &
         font-size: 14px
         text-transform: none
         font-weight: 600
@@ -4845,7 +4944,8 @@ $block: ".boss-table"
       #{$block}_page_pay-rates-admin-staff-members &,
       #{$block}_page_security-payroll-report-week-details &,
       #{$block}_page_security-pay-rate-rules &,
-      #{$block}_page_security-pay-rate-exceptions &
+      #{$block}_page_security-pay-rate-exceptions &,
+      #{$block}_page_venue-collections-type &
         display: block
 
       #{$block}_page_holidays-report &
@@ -4857,7 +4957,8 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
-      #{$block}_page_security-payroll-report-week-details &
+      #{$block}_page_security-payroll-report-week-details &,
+      #{$block}_page_venue-collections-type &
         display: flex
 
 
@@ -4952,7 +5053,8 @@ $block: ".boss-table"
       #{$block}_page_pay-rates-admin-staff-members &,
       #{$block}_page_security-payroll-report-week-details &,
       #{$block}_page_app-access-venue-details &,
-      #{$block}_page_app-access-temporary &
+      #{$block}_page_app-access-temporary &,
+      #{$block}_page_venue-collections-type &
         display: none
 
     @media screen and (max-width: 800px)
@@ -4972,7 +5074,8 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
-      #{$block}_page_security-payroll-report-week-details &
+      #{$block}_page_security-payroll-report-week-details &,
+      #{$block}_page_venue-collections-type &
         display: block
 
       #{$block}_page_app-access-venue-details &
@@ -4997,7 +5100,8 @@ $block: ".boss-table"
       #{$block}_page_ssr-completed &,
       #{$block}_page_ssr-admin-pending &,
       #{$block}_page_ssr-admin-completed &,
-      #{$block}_page_modulr-reports-venue-notes &
+      #{$block}_page_modulr-reports-venue-notes &,
+      #{$block}_page_venue-collections-type &
         padding-right: 20px
 
       #{$block}_page_holidays-report &
@@ -5354,7 +5458,8 @@ $block: ".boss-table"
       #{$block}_page_security-pay-rate-rules &,
       #{$block}_page_security-pay-rate-exceptions &,
       #{$block}_page_app-access-venue-details #{$block}__column &,
-      #{$block}_page_app-access-temporary #{$block}__column &
+      #{$block}_page_app-access-temporary #{$block}__column &,
+      #{$block}_page_venue-collections-type &
         width: 100%
 
     @media screen and (max-width: 800px)
@@ -5372,7 +5477,8 @@ $block: ".boss-table"
       #{$block}_page_pay-rates &,
       #{$block}_page_pay-rates-staff-members &,
       #{$block}_page_pay-rates-admin-staff-members &,
-      #{$block}_page_security-payroll-report-week-details &
+      #{$block}_page_security-payroll-report-week-details &,
+      #{$block}_page_venue-collections-type &
         width: 50%
 
     @media screen and (max-width: 480px)
@@ -5955,7 +6061,8 @@ $block: ".boss-table"
       #{$block}_page_smp-quizzes-history &,
       #{$block}_page_smp-quizzes-category &,
       #{$block}_page_pay-rates &,
-      #{$block}_page_security-pay-rate-exceptions &
+      #{$block}_page_security-pay-rate-exceptions &,
+      #{$block}_page_venue-collections-type &
         width: 100%
 
       #{$block}_page_pay-rates &
@@ -5978,7 +6085,8 @@ $block: ".boss-table"
         flex-direction: column
         align-items: flex-start
 
-      #{$block}_page_pay-rates &
+      #{$block}_page_pay-rates &,
+      #{$block}_page_venue-collections-type &
         flex-direction: row
         align-items: flex-start
         width: 50%

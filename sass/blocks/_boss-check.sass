@@ -265,6 +265,10 @@ $block: ".boss-check"
     padding: 20px 30px
     border-bottom: 1px solid #eee
 
+    #{$block}_page_venue-collections &
+      min-height: 70px
+      padding: 20px 30px 15px
+
     #{$block}_page_marketing-index &,
     #{$block}_page_ops-diary-index &,
     #{$block}_page_ssr-requests &,
@@ -372,7 +376,8 @@ $block: ".boss-check"
       #{$block}_page_smp-quizzes-history &,
       #{$block}_page_smp-quizzes-category &,
       #{$block}_page_contact-details &,
-      #{$block}_page_invites-index &
+      #{$block}_page_invites-index &,
+      #{$block}_page_venue-collections &
         flex-wrap: wrap
 
       #{$block}_page_ops-diary-index &
@@ -724,9 +729,20 @@ $block: ".boss-check"
     #{$block}_page_users-app-access-venues &
       width: 50%
 
+    #{$block}_page_venue-collections &
+      margin-left: 20px
+
     @media screen and (max-width: 800px)
       #{$block}_page_users-app-access-venues &
         width: 100%
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_venue-collections &
+        order: -99
+        width: 100%
+        margin-left: 0
+        padding-bottom: 10px
+        border-bottom: 1px solid #eee
 
 
   // $Check block header number
@@ -1655,7 +1671,9 @@ $block: ".boss-check"
     &_role_details,
     &_role_edit,
     &_role_email,
-    &_role_phone
+    &_role_phone,
+    &_role_barcode,
+    &_role_case
 
       &:before
         content: ""
@@ -1735,6 +1753,14 @@ $block: ".boss-check"
     &_role_phone
       &:before
         content: '\e952'
+
+    &_role_barcode
+      &:before
+        content: '\e9a7'
+
+    &_role_case
+      &:before
+        content: '\e9a8'
 
     &_role_alert
       color: map-get($boss-app-palette, alert)
@@ -1960,7 +1986,9 @@ $block: ".boss-check"
     &_role_details,
     &_role_edit,
     &_role_email,
-    &_role_phone
+    &_role_phone,
+    &_role_barcode,
+    &_role_case
 
       &:before
         font-size: 18px
@@ -2098,7 +2126,9 @@ $block: ".boss-check"
     &_role_details,
     &_role_edit,
     &_role_email,
-    &_role_phone
+    &_role_phone,
+    &_role_barcode,
+    &_role_case
 
       &:before
         font-size: 14px
@@ -2126,6 +2156,16 @@ $block: ".boss-check"
     &_role_location
       &:before
         font-size: 16px
+
+    &_role_barcode
+      &:before
+        font-size: 18px
+        vertical-align: middle
+
+    &_role_case
+      &:before
+        font-size: 16px
+        vertical-align: middle
 
     // $Check block text MOD: marked
     &_marked
