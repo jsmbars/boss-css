@@ -299,7 +299,8 @@ $block: ".boss-button"
   // $Common button MOD: role submit
   &_role_primary,
   &_role_submit,
-  &_role_aasigned
+  &_role_assigned,
+  &_role_co-accepted
     $background-color: map-get($boss-app-palette, primary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -316,7 +317,8 @@ $block: ".boss-button"
   &_role_enabled,
   &_role_ok,
   &_role_accepted,
-  &_role_code-check
+  &_role_code-check,
+  &_role_co-completed
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -353,7 +355,8 @@ $block: ".boss-button"
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
-  &_role_pending
+  &_role_pending,
+  &_role_co-submitted
     $background-color: map-get($boss-app-palette, pending)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -549,7 +552,8 @@ $block: ".boss-button"
   &_role_repeat,
   &_role_unlock,
   &_role_rate,
-  &_role_download-door-book-in-progress
+  &_role_download-door-book-in-progress,
+  &_role_back-alt
     $background-color: map-get($boss-app-palette, primary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -599,7 +603,8 @@ $block: ".boss-button"
     +button-with-icon-left($icon: '\e969')
 
   &_role_reload,
-  &_role_reload-page
+  &_role_reload-page,
+  &_role_back-alt
     +button-with-icon-left($icon: '\e950', $size: 13px)
 
   &_role_repeat

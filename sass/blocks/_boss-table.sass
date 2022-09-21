@@ -41,7 +41,8 @@ $block: ".boss-table"
       display: none
 
   &_page_message-board,
-  &_page_holidays-report-details
+  &_page_holidays-report-details,
+  &_page_change-orders-history-details
     position: relative
     z-index: 10
     overflow: hidden
@@ -99,7 +100,8 @@ $block: ".boss-table"
   &_page_modulr-reports-venue-wages,
   &_page_modulr-reports-venue-notes,
   &_page_invites-index-app-access,
-  &_page_venue-collections-type
+  &_page_venue-collections-type,
+  &_page_change-orders-history
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -254,7 +256,8 @@ $block: ".boss-table"
       padding: 15px 25px
       background-color: #fbfbfb
 
-    #{$block}_page_holidays-report &
+    #{$block}_page_holidays-report &,
+    #{$block}_page_change-orders-history &
       padding: 25px
       background-color: #fbfbfb
 
@@ -630,7 +633,9 @@ $block: ".boss-table"
       #{$block}_page_smp-quizzes-overview &,
       #{$block}_page_training-failures &,
       #{$block}_page_modulr-reports-accounts &,
-      #{$block}_page_modulr-reports-venue-notes &
+      #{$block}_page_modulr-reports-venue-notes &,
+      #{$block}_page_change-orders-history &,
+      #{$block}_page_change-orders-history-details &
         padding-top: 15px
         padding-bottom: 15px
 
@@ -824,7 +829,9 @@ $block: ".boss-table"
         #{$block}_page_smp-quizzes-overview &,
         #{$block}_page_training-failures &,
         #{$block}_page_modulr-reports-accounts &,
-        #{$block}_page_modulr-reports-venue-notes &
+        #{$block}_page_modulr-reports-venue-notes &,
+        #{$block}_page_change-orders-history > &,
+        #{$block}_page_change-orders-history-details &
           display: none
 
         #{$block}_page_api-keys &,
@@ -1089,7 +1096,8 @@ $block: ".boss-table"
     #{$block}_page_payslip-summary &,
     #{$block}_page_bonai-staff-member-data &,
     #{$block}_page_modulr-reports-venue-wages &,
-    #{$block}_page_venue-collections-data &
+    #{$block}_page_venue-collections-data &,
+    #{$block}_page_change-orders-history-details &
       justify-content: center
 
     #{$block}_page_payslip-payments &,
@@ -1154,7 +1162,9 @@ $block: ".boss-table"
     #{$block}_page_payroll-reports-overview &,
     #{$block}_page_modulr-reports-accounts &,
     #{$block}_page_modulr-reports-venue-wages &,
-    #{$block}_page_invites-index-app-access &
+    #{$block}_page_invites-index-app-access &,
+    #{$block}_page_change-orders-history &,
+    #{$block}_page_change-orders-history-details &
       min-height: 60px
 
     #{$block}_page_weekly-reports &,
@@ -1250,7 +1260,9 @@ $block: ".boss-table"
     #{$block}_page_modulr-reports-venue-wages &,
     #{$block}_page_modulr-reports-venue-notes &,
     #{$block}_page_clocking-app-multiple-matches &,
-    #{$block}_page_venue-collections-type &
+    #{$block}_page_venue-collections-type &,
+    #{$block}_page_change-orders-history &,
+    #{$block}_page_change-orders-history-details &
       padding: 15px 10px
 
     #{$block}_page_csv-upload &
@@ -1309,7 +1321,9 @@ $block: ".boss-table"
         text-align: center
         border-bottom: none
 
-      #{$block}_page_modulr-reports-accounts &
+      #{$block}_page_modulr-reports-accounts &,
+      #{$block}_page_change-orders-history &,
+      #{$block}_page_change-orders-history-details &
         min-height: 0
 
       #{$block}_page_holidays-report &
@@ -1335,7 +1349,9 @@ $block: ".boss-table"
       #{$block}_page_bonai &,
       #{$block}_page_bonai-staff-member-data &,
       #{$block}_page_modulr-reports-accounts &,
-      #{$block}_page_modulr-reports-venue-notes &
+      #{$block}_page_modulr-reports-venue-notes &,
+      #{$block}_page_change-orders-history &,
+      #{$block}_page_change-orders-history-details &
         padding: 10px
 
       #{$block}_page_maintenance-index &,
@@ -1451,7 +1467,9 @@ $block: ".boss-table"
       #{$block}_page_security-pay-rate-rules &,
       #{$block}_page_security-pay-rate-exceptions &,
       #{$block}_page_modulr-reports-accounts &,
-      #{$block}_page_modulr-reports-venue-notes &
+      #{$block}_page_modulr-reports-venue-notes &,
+      #{$block}_page_change-orders-history &,
+      #{$block}_page_change-orders-history-details &
         padding-left: 10px
 
       @media screen and (max-width: 960px)
@@ -1467,7 +1485,9 @@ $block: ".boss-table"
       #{$block}_page_security-pay-rate-rules &,
       #{$block}_page_security-pay-rate-exceptions &,
       #{$block}_page_modulr-reports-accounts &,
-      #{$block}_page_modulr-reports-venue-notes &
+      #{$block}_page_modulr-reports-venue-notes &,
+      #{$block}_page_change-orders-history &,
+      #{$block}_page_change-orders-history-details &
         padding-right: 10px
 
       @media screen and (max-width: 960px)
@@ -1499,7 +1519,9 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-accounts &,
       #{$block}_page_modulr-reports-venue-notes &,
       #{$block}_page_invites-index-app-access &,
-      #{$block}_page_venue-collections-data &
+      #{$block}_page_venue-collections-data &,
+      #{$block}_page_change-orders-history &,
+      #{$block}_page_change-orders-history-details &
         border-right: 1px solid #eee
 
       @media screen and (max-width: 1280px)
@@ -1525,7 +1547,9 @@ $block: ".boss-table"
         #{$block}_page_smp-quizzes-category &,
         #{$block}_page_smp-quizzes-overview &,
         #{$block}_page_training-failures &,
-        #{$block}_page_modulr-reports-venue-notes &
+        #{$block}_page_modulr-reports-venue-notes &,
+        #{$block}_page_change-orders-history &,
+        #{$block}_page_change-orders-history-details &
           border-right: none
 
       @media screen and (max-width: 640px)
@@ -1891,6 +1915,12 @@ $block: ".boss-table"
         min-width: 95px
         padding-left: 10px
 
+      #{$block}_page_change-orders-history &
+        width: 20%
+
+      #{$block}_page_change-orders-history-details &
+        width: 16.5%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -1971,7 +2001,9 @@ $block: ".boss-table"
         #{$block}_page_staff-types-index &,
         #{$block}_page_training-failures &,
         #{$block}_page_modulr-reports-accounts &,
-        #{$block}_page_modulr-reports-venue-notes &
+        #{$block}_page_modulr-reports-venue-notes &,
+        #{$block}_page_change-orders-history &,
+        #{$block}_page_change-orders-history-details &
           width: 100%
           padding-left: 10px
 
@@ -2488,6 +2520,12 @@ $block: ".boss-table"
       #{$block}_page_venue-collections-type &
         width: 20%
 
+      #{$block}_page_change-orders-history &
+        width: 25%
+
+      #{$block}_page_change-orders-history-details &
+        width: 16.5%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -2549,7 +2587,9 @@ $block: ".boss-table"
         #{$block}_page_native-app-links &,
         #{$block}_page_training-failures &,
         #{$block}_page_modulr-reports-accounts &,
-        #{$block}_page_modulr-reports-venue-notes &
+        #{$block}_page_modulr-reports-venue-notes &,
+        #{$block}_page_change-orders-history &,
+        #{$block}_page_change-orders-history-details &
           width: 100%
 
         #{$block}_page_ssr-pending &
@@ -2965,6 +3005,12 @@ $block: ".boss-table"
         width: 20%
         min-width: 95px
 
+      #{$block}_page_change-orders-history &
+        width: 20%
+
+      #{$block}_page_change-orders-history-details &
+        width: 16.5%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3024,7 +3070,9 @@ $block: ".boss-table"
         #{$block}_page_staff-types-index &,
         #{$block}_page_training-failures &,
         #{$block}_page_modulr-reports-accounts &,
-        #{$block}_page_modulr-reports-venue-notes &
+        #{$block}_page_modulr-reports-venue-notes &,
+        #{$block}_page_change-orders-history &,
+        #{$block}_page_change-orders-history-details &
           width: 100%
 
         #{$block}_page_maintenance-index &,
@@ -3386,6 +3434,13 @@ $block: ".boss-table"
       #{$block}_page_venue-collections-type &
         width: 20%
 
+      #{$block}_page_change-orders-history &
+        justify-content: center
+        width: 20%
+
+      #{$block}_page_change-orders-history-details &
+        width: 16.5%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3443,7 +3498,9 @@ $block: ".boss-table"
         #{$block}_page_staff-types-index &,
         #{$block}_page_training-failures &,
         #{$block}_page_modulr-reports-accounts &,
-        #{$block}_page_modulr-reports-venue-notes &
+        #{$block}_page_modulr-reports-venue-notes &,
+        #{$block}_page_change-orders-history &,
+        #{$block}_page_change-orders-history-details &
           width: 100%
 
         #{$block}_page_ssr-pending &,
@@ -3717,6 +3774,13 @@ $block: ".boss-table"
         width: 10%
         min-width: 80px
 
+      #{$block}_page_change-orders-history &
+        justify-content: center
+        width: 15%
+
+      #{$block}_page_change-orders-history-details &
+        width: 16.5%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3759,7 +3823,9 @@ $block: ".boss-table"
         #{$block}_page_bonai &,
         #{$block}_page_bonai-staff-member-data &,
         #{$block}_page_smp-quizzes-history &,
-        #{$block}_page_smp-quizzes-category &
+        #{$block}_page_smp-quizzes-category &,
+        #{$block}_page_change-orders-history &,
+        #{$block}_page_change-orders-history-details &
           width: 100%
 
         #{$block}_page_ssr-completed &,
@@ -3932,6 +3998,9 @@ $block: ".boss-table"
         width: 115px
         padding-right: 10px
 
+      #{$block}_page_change-orders-history-details &
+        width: 16.5%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3965,7 +4034,8 @@ $block: ".boss-table"
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_smp-holidays &,
         #{$block}_page_bonai &,
-        #{$block}_page_bonai-staff-member-data &
+        #{$block}_page_bonai-staff-member-data &,
+        #{$block}_page_change-orders-history &
           width: 100%
 
         #{$block}_page_checklist-review &,
@@ -4513,6 +4583,9 @@ $block: ".boss-table"
         min-height: 40px
         color: #FFF
 
+      #{$block}_page_change-orders-history-details &
+        min-height: 40px
+
       #{$block}_page_weekly-reports &,
       #{$block}_page_staff-tracking-staff-added &,
       #{$block}_page_staff-tracking-staff-disabled &,
@@ -4557,10 +4630,15 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-accounts &,
       #{$block}_page_modulr-reports-venue-wages &,
       #{$block}_page_modulr-reports-venue-notes &,
-      #{$block}_page_venue-collections-type &
+      #{$block}_page_venue-collections-type &,
+      #{$block}_page_change-orders-history &,
+      #{$block}_page_change-orders-history-details &
         font-size: 14px
         text-transform: none
         font-weight: 600
+
+      #{$block}_page_change-orders-history-details &
+        font-weight: 800
 
       #{$block}_page_safe-checks-index &,
       #{$block}_page_smp-owed-hours &,
@@ -4585,7 +4663,8 @@ $block: ".boss-table"
       #{$block}_page_staff-tracking-accessories-payments &,
       #{$block}_page_yearly-reports-hour-report &,
       #{$block}_payslip-summary &,
-      #{$block}_page_modulr-reports-venue-wages &
+      #{$block}_page_modulr-reports-venue-wages &,
+      #{$block}_page_change-orders-history-details &
         text-align: center
 
       #{$block}_page_payslip-payments,
@@ -4680,7 +4759,8 @@ $block: ".boss-table"
         #{$block}_page_holiday-requests &,
         #{$block}_page_smp-quizzes-history &,
         #{$block}_page_smp-quizzes-category &,
-        #{$block}_page_smp-quizzes-overview &
+        #{$block}_page_smp-quizzes-overview &,
+        #{$block}_page_change-orders-history &
           text-align: center
 
         #{$block}_page_message-board &
@@ -5296,7 +5376,9 @@ $block: ".boss-table"
     #{$block}_page_modulr-reports-accounts #{$block}__cell:nth-child(3) &,
     #{$block}_page_modulr-reports-venue-notes #{$block}__cell:nth-child(2) &,
     #{$block}_page_modulr-reports-venue-notes #{$block}__cell:nth-child(4) &,
-    #{$block}_page_modulr-reports-venue-wages &
+    #{$block}_page_modulr-reports-venue-wages &,
+    #{$block}_page_change-orders-history #{$block}__cell:nth-child(4) &,
+    #{$block}_page_change-orders-history-details &
       text-align: center
 
     #{$block}_page_payslip-payments &,
@@ -5436,7 +5518,9 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-accounts #{$block}__cell:nth-child(2) &,
       #{$block}_page_modulr-reports-accounts #{$block}__cell:nth-child(3) &,
       #{$block}_page_modulr-reports-venue-notes #{$block}__cell:nth-child(2) &,
-      #{$block}_page_modulr-reports-venue-notes #{$block}__cell:nth-child(4) &
+      #{$block}_page_modulr-reports-venue-notes #{$block}__cell:nth-child(4) &,
+      #{$block}_page_change-orders-history #{$block}__cell:nth-child(4) &,
+      #{$block}_page_change-orders-history-details &
         text-align: left
 
       #{$block}_page_accessory-requests-card &,
@@ -5961,7 +6045,8 @@ $block: ".boss-table"
     #{$block}_page_smp-quizzes-category &,
     #{$block}_page_staff-types-index &,
     #{$block}_page_bonai &,
-    #{$block}_page_bonai-staff-member-data &
+    #{$block}_page_bonai-staff-member-data &,
+    #{$block}_page_change-orders-history #{$block}__cell:nth-child(5) &
       text-align: center
 
     #{$block}_page_change-order-report &,
