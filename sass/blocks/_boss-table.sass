@@ -42,7 +42,8 @@ $block: ".boss-table"
 
   &_page_message-board,
   &_page_holidays-report-details,
-  &_page_change-orders-history-details
+  &_page_change-orders-history-details,
+  &_page_change-order-reports-history-details
     position: relative
     z-index: 10
     overflow: hidden
@@ -103,7 +104,9 @@ $block: ".boss-table"
   &_page_venue-collections-type,
   &_page_change-orders-history,
   &_page_change-order-reports-pending,
-  &_page_change-order-reports-accepted
+  &_page_change-order-reports-accepted,
+  &_page_change-order-reports-history,
+  &_page_change-order-reports-history-overview
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -259,7 +262,8 @@ $block: ".boss-table"
       background-color: #fbfbfb
 
     #{$block}_page_holidays-report &,
-    #{$block}_page_change-orders-history &
+    #{$block}_page_change-orders-history &,
+    #{$block}_page_change-order-reports-history &
       padding: 25px
       background-color: #fbfbfb
 
@@ -268,7 +272,9 @@ $block: ".boss-table"
       padding: 0 10px 5px
 
     @media screen and (max-width: 960px)
-      #{$block}_page_holidays-report &
+      #{$block}_page_holidays-report &,
+      #{$block}_page_change-orders-history &,
+      #{$block}_page_change-order-reports-history &
         padding: 15px 15px 25px
 
     // $Common table dropdown MOD: state closed
@@ -543,7 +549,8 @@ $block: ".boss-table"
     #{$block}_page_finance-reports-overview &,
     #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
-    #{$block}_page_payroll-reports-overview &
+    #{$block}_page_payroll-reports-overview &,
+    #{$block}_page_change-order-reports-history-overview &
         background-color: #fbfbfb
 
     #{$block}_page_marketing-index-card &,
@@ -575,7 +582,8 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-overview &,
       #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
-      #{$block}_page_payroll-reports-overview &
+      #{$block}_page_payroll-reports-overview &,
+      #{$block}_page_change-order-reports-history-overview &
         display: block
 
     @media screen and (max-width: 1120px)
@@ -639,7 +647,9 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-accounts &,
       #{$block}_page_modulr-reports-venue-notes &,
       #{$block}_page_change-orders-history &,
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-history &,
+      #{$block}_page_change-order-reports-history-details &
         padding-top: 15px
         padding-bottom: 15px
 
@@ -839,7 +849,9 @@ $block: ".boss-table"
         #{$block}_page_modulr-reports-accounts &,
         #{$block}_page_modulr-reports-venue-notes &,
         #{$block}_page_change-orders-history > &,
-        #{$block}_page_change-orders-history-details &
+        #{$block}_page_change-orders-history-details &,
+        #{$block}_page_change-order-reports-history > &,
+        #{$block}_page_change-order-reports-history-details &
           display: none
 
         #{$block}_page_api-keys &,
@@ -1109,7 +1121,9 @@ $block: ".boss-table"
     #{$block}_page_bonai-staff-member-data &,
     #{$block}_page_modulr-reports-venue-wages &,
     #{$block}_page_venue-collections-data &,
-    #{$block}_page_change-orders-history-details &
+    #{$block}_page_change-orders-history-details &,
+    #{$block}_page_change-order-reports-history-details &,
+    #{$block}_page_change-order-reports-history-overview &
       justify-content: center
 
     #{$block}_page_payslip-payments &,
@@ -1178,7 +1192,10 @@ $block: ".boss-table"
     #{$block}_page_change-orders-history &,
     #{$block}_page_change-orders-history-details &,
     #{$block}_page_change-order-reports-pending &,
-    #{$block}_page_change-order-reports-accepted &
+    #{$block}_page_change-order-reports-accepted &,
+    #{$block}_page_change-order-reports-history &,
+    #{$block}_page_change-order-reports-history-details &,
+    #{$block}_page_change-order-reports-history-overview &
       min-height: 60px
 
     #{$block}_page_weekly-reports &,
@@ -1209,7 +1226,8 @@ $block: ".boss-table"
     #{$block}_page_security-pay-rate-exceptions &,
     #{$block}_page_app-access-venue-details &,
     #{$block}_page_app-access-temporary &,
-    #{$block}_page_invites-index-app-access &
+    #{$block}_page_invites-index-app-access &,
+    #{$block}_page_change-order-reports-history-overview &
       padding: 10px
 
     #{$block}_page_security-pay-rate-rules &
@@ -1278,7 +1296,9 @@ $block: ".boss-table"
     #{$block}_page_change-orders-history &,
     #{$block}_page_change-orders-history-details &,
     #{$block}_page_change-order-reports-pending &,
-    #{$block}_page_change-order-reports-accepted &
+    #{$block}_page_change-order-reports-accepted &,
+    #{$block}_page_change-order-reports-history &,
+    #{$block}_page_change-order-reports-history-details &
       padding: 15px 10px
 
     #{$block}_page_csv-upload &
@@ -1302,7 +1322,8 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-overview &,
       #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
-      #{$block}_page_payroll-reports-overview &
+      #{$block}_page_payroll-reports-overview &,
+      #{$block}_page_change-order-reports-history-overview &
         min-height: 0
         padding: 10px 20px
 
@@ -1341,7 +1362,9 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history &,
       #{$block}_page_change-orders-history-details &,
       #{$block}_page_change-order-reports-pending &,
-      #{$block}_page_change-order-reports-accepted &
+      #{$block}_page_change-order-reports-accepted &,
+      #{$block}_page_change-order-reports-history &,
+      #{$block}_page_change-order-reports-history-details &
         min-height: 0
 
       #{$block}_page_holidays-report &
@@ -1371,7 +1394,9 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history &,
       #{$block}_page_change-orders-history-details &,
       #{$block}_page_change-order-reports-pending &,
-      #{$block}_page_change-order-reports-accepted &
+      #{$block}_page_change-order-reports-accepted &,
+      #{$block}_page_change-order-reports-history &,
+      #{$block}_page_change-order-reports-history-details &
         padding: 10px
 
       #{$block}_page_maintenance-index &,
@@ -1477,7 +1502,8 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-overview &,
       #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
-      #{$block}_page_payroll-reports-overview &
+      #{$block}_page_payroll-reports-overview &,
+      #{$block}_page_change-order-reports-history-overview &
         padding: 10px
 
     &:first-child
@@ -1491,7 +1517,9 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history &,
       #{$block}_page_change-orders-history-details &,
       #{$block}_page_change-order-reports-pending &,
-      #{$block}_page_change-order-reports-accepted &
+      #{$block}_page_change-order-reports-accepted &,
+      #{$block}_page_change-order-reports-history &,
+      #{$block}_page_change-order-reports-history-details &
         padding-left: 10px
 
       @media screen and (max-width: 960px)
@@ -1511,7 +1539,9 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history &,
       #{$block}_page_change-orders-history-details &,
       #{$block}_page_change-order-reports-pending &,
-      #{$block}_page_change-order-reports-accepted &
+      #{$block}_page_change-order-reports-accepted &,
+      #{$block}_page_change-order-reports-history &,
+      #{$block}_page_change-order-reports-history-details &
         padding-right: 10px
 
       @media screen and (max-width: 960px)
@@ -1544,17 +1574,21 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-venue-notes &,
       #{$block}_page_invites-index-app-access &,
       #{$block}_page_venue-collections-data &,
-      #{$block}_page_change-orders-history &
+      #{$block}_page_change-orders-history &,
+      #{$block}_page_change-order-reports-history &,
+      #{$block}_page_change-order-reports-history-overview &
         border-right: 1px solid #eee
 
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-history-details &
           border-right: none
 
       @media screen and (max-width: 1280px)
         #{$block}_page_finance-reports-overview &,
         #{$block}_page_finance-reports-payslip-counts &,
         #{$block}_page_security-payroll-report-overview &,
-        #{$block}_page_payroll-reports-overview &
+        #{$block}_page_payroll-reports-overview &,
+        #{$block}_page_change-order-reports-history-overview &
           border-bottom: 1px solid #eee
           border-right: none
 
@@ -1575,7 +1609,9 @@ $block: ".boss-table"
         #{$block}_page_training-failures &,
         #{$block}_page_modulr-reports-venue-notes &,
         #{$block}_page_change-orders-history &,
-        #{$block}_page_change-orders-history-details &
+        #{$block}_page_change-orders-history-details &,
+        #{$block}_page_change-order-reports-history &,
+        #{$block}_page_change-order-reports-history-details &
           border-right: none
 
       @media screen and (max-width: 640px)
@@ -1953,6 +1989,16 @@ $block: ".boss-table"
       #{$block}_page_change-order-reports-accepted &
         width: 10%
 
+      #{$block}_page_change-order-reports-history &
+        width: 18.5%
+
+      #{$block}_page_change-order-reports-history-details &
+        width: 16.5%
+
+      #{$block}_page_change-order-reports-history-overview &
+        width: 16.5%
+        padding-left: 10px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -1960,7 +2006,8 @@ $block: ".boss-table"
 
         #{$block}_page_finance-reports-overview &,
         #{$block}_page_finance-reports-payslip-counts &,
-        #{$block}_page_payroll-reports-overview &
+        #{$block}_page_payroll-reports-overview &,
+        #{$block}_page_change-order-reports-history-overview &
           width: 100%
           padding-left: 20px
 
@@ -2037,7 +2084,9 @@ $block: ".boss-table"
         #{$block}_page_modulr-reports-accounts &,
         #{$block}_page_modulr-reports-venue-notes &,
         #{$block}_page_change-orders-history &,
-        #{$block}_page_change-orders-history-details &
+        #{$block}_page_change-orders-history-details &,
+        #{$block}_page_change-order-reports-history &,
+        #{$block}_page_change-order-reports-history-details &
           width: 100%
           padding-left: 10px
 
@@ -2231,7 +2280,8 @@ $block: ".boss-table"
 
         #{$block}_page_finance-reports-overview &,
         #{$block}_page_finance-reports-payslip-counts &,
-        #{$block}_page_payroll-reports-overview &
+        #{$block}_page_payroll-reports-overview &,
+        #{$block}_page_change-order-reports-history-overview &
           padding-left: 10px
 
         #{$block}_page_security-payroll-report-overview &
@@ -2566,6 +2616,15 @@ $block: ".boss-table"
       #{$block}_page_change-order-reports-accepted &
         width: 10%
 
+      #{$block}_page_change-order-reports-history &
+        width: 18.5%
+
+      #{$block}_page_change-order-reports-history-details &
+        width: 16.5%
+
+      #{$block}_page_change-order-reports-history-overview &
+        width: 16.5%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -2573,7 +2632,8 @@ $block: ".boss-table"
 
         #{$block}_page_finance-reports-overview &,
         #{$block}_page_payroll-reports-overview &,
-        #{$block}_page_finance-reports-payslip-counts &
+        #{$block}_page_finance-reports-payslip-counts &,
+        #{$block}_page_change-order-reports-history-overview &
           width: 100%
 
       @media screen and (max-width: 1120px)
@@ -2631,7 +2691,9 @@ $block: ".boss-table"
         #{$block}_page_modulr-reports-accounts &,
         #{$block}_page_modulr-reports-venue-notes &,
         #{$block}_page_change-orders-history &,
-        #{$block}_page_change-orders-history-details &
+        #{$block}_page_change-orders-history-details &,
+        #{$block}_page_change-order-reports-history &,
+        #{$block}_page_change-order-reports-history-details &
           width: 100%
 
         #{$block}_page_ssr-pending &
@@ -3059,6 +3121,15 @@ $block: ".boss-table"
       #{$block}_page_change-order-reports-accepted &
         width: 10%
 
+      #{$block}_page_change-order-reports-history &
+        width: 18.5%
+
+      #{$block}_page_change-order-reports-history-details &
+        width: 16.5%
+
+      #{$block}_page_change-order-reports-history-overview &
+        width: 16.5%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3070,6 +3141,9 @@ $block: ".boss-table"
         #{$block}_page_finance-reports-payslip-counts &
           width: 100%
           padding-right: 20px
+
+        #{$block}_page_change-order-reports-history-overview &
+          width: 100%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
@@ -3122,7 +3196,9 @@ $block: ".boss-table"
         #{$block}_page_modulr-reports-accounts &,
         #{$block}_page_modulr-reports-venue-notes &,
         #{$block}_page_change-orders-history &,
-        #{$block}_page_change-orders-history-details &
+        #{$block}_page_change-orders-history-details &,
+        #{$block}_page_change-order-reports-history &,
+        #{$block}_page_change-order-reports-history-details &
           width: 100%
 
         #{$block}_page_maintenance-index &,
@@ -3497,11 +3573,23 @@ $block: ".boss-table"
       #{$block}_page_change-order-reports-accepted &
         width: 10%
 
+      #{$block}_page_change-order-reports-history &
+        width: 18.5%
+
+      #{$block}_page_change-order-reports-history-details &
+        width: 16.5%
+
+      #{$block}_page_change-order-reports-history-overview &
+        width: 16.5%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
           padding-left: 20px
           padding-top: 10px
+
+        #{$block}_page_change-order-reports-history-overview &
+          width: 100%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
@@ -3558,7 +3646,9 @@ $block: ".boss-table"
         #{$block}_page_modulr-reports-accounts &,
         #{$block}_page_modulr-reports-venue-notes &,
         #{$block}_page_change-orders-history &,
-        #{$block}_page_change-orders-history-details &
+        #{$block}_page_change-orders-history-details &,
+        #{$block}_page_change-order-reports-history &,
+        #{$block}_page_change-order-reports-history-details &
           width: 100%
 
         #{$block}_page_ssr-pending &,
@@ -3845,10 +3935,22 @@ $block: ".boss-table"
       #{$block}_page_change-order-reports-accepted &
         width: 10%
 
+      #{$block}_page_change-order-reports-history &
+        width: 12%
+
+      #{$block}_page_change-order-reports-history-details &
+        width: 16.5%
+
+      #{$block}_page_change-order-reports-history-overview &
+        width: 16.5%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
           padding-top: 10px
+
+        #{$block}_page_change-order-reports-history-overview &
+          width: 100%
 
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
@@ -3891,7 +3993,9 @@ $block: ".boss-table"
         #{$block}_page_smp-quizzes-history &,
         #{$block}_page_smp-quizzes-category &,
         #{$block}_page_change-orders-history &,
-        #{$block}_page_change-orders-history-details &
+        #{$block}_page_change-orders-history-details &,
+        #{$block}_page_change-order-reports-history &,
+        #{$block}_page_change-order-reports-history-details &
           width: 100%
 
         #{$block}_page_ssr-completed &,
@@ -4073,10 +4177,24 @@ $block: ".boss-table"
       #{$block}_page_change-order-reports-accepted &
         width: 10%
 
+      #{$block}_page_change-order-reports-history &
+        width: 13%
+
+      #{$block}_page_change-order-reports-history-details &
+        width: 16.5%
+
+      #{$block}_page_change-order-reports-history-overview &
+        width: 16.5%
+        padding-right: 10px
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
           padding-top: 10px
+
+        #{$block}_page_change-order-reports-history-overview &
+          width: 100%
+          padding-right: 20px
 
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
@@ -4109,7 +4227,10 @@ $block: ".boss-table"
         #{$block}_page_smp-holidays &,
         #{$block}_page_bonai &,
         #{$block}_page_bonai-staff-member-data &,
-        #{$block}_page_change-orders-history &
+        #{$block}_page_change-orders-history &,
+        #{$block}_page_change-orders-history-details &,
+        #{$block}_page_change-order-reports-history &,
+        #{$block}_page_change-order-reports-history-details &
           width: 100%
 
         #{$block}_page_checklist-review &,
@@ -4159,6 +4280,9 @@ $block: ".boss-table"
         #{$block}_page_bonai-venue-hour-data &
           width: 100%
           padding-left: 20px
+
+        #{$block}_page_change-order-reports-history-overview &
+          padding-right: 10px
 
     // $Common table cell seventh column
     &:nth-child(7)
@@ -4694,7 +4818,8 @@ $block: ".boss-table"
         min-height: 40px
         color: #FFF
 
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-history-details &
         min-height: 40px
 
       #{$block}_page_weekly-reports &,
@@ -4745,12 +4870,15 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history &,
       #{$block}_page_change-orders-history-details &,
       #{$block}_page_change-order-reports-pending &,
-      #{$block}_page_change-order-reports-accepted &
+      #{$block}_page_change-order-reports-accepted &,
+      #{$block}_page_change-order-reports-history &,
+      #{$block}_page_change-order-reports-history-details &
         font-size: 14px
         text-transform: none
         font-weight: 600
 
       #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-history-details &,
       #{$block}_page_change-order-reports-pending &,
       #{$block}_page_change-order-reports-accepted &
         font-weight: 800
@@ -4779,7 +4907,8 @@ $block: ".boss-table"
       #{$block}_page_yearly-reports-hour-report &,
       #{$block}_payslip-summary &,
       #{$block}_page_modulr-reports-venue-wages &,
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-history-details &
         text-align: center
 
       #{$block}_page_payslip-payments,
@@ -5093,14 +5222,16 @@ $block: ".boss-table"
     #{$block}_page_finance-reports-overview &,
     #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
-    #{$block}_page_payroll-reports-overview &
+    #{$block}_page_payroll-reports-overview &,
+    #{$block}_page_change-order-reports-history-overview &
       text-align: center
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports-overview &,
       #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
-      #{$block}_page_payroll-reports-overview &
+      #{$block}_page_payroll-reports-overview &,
+      #{$block}_page_change-order-reports-history-overview &
         text-align: left
 
     @media screen and (max-width: 1120px)
@@ -5493,7 +5624,8 @@ $block: ".boss-table"
     #{$block}_page_modulr-reports-venue-notes #{$block}__cell:nth-child(4) &,
     #{$block}_page_modulr-reports-venue-wages &,
     #{$block}_page_change-orders-history #{$block}__cell:nth-child(4) &,
-    #{$block}_page_change-orders-history-details &
+    #{$block}_page_change-orders-history-details &,
+    #{$block}_page_change-order-reports-history-details &
       text-align: center
 
     #{$block}_page_payslip-payments &,
@@ -5635,7 +5767,8 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-venue-notes #{$block}__cell:nth-child(2) &,
       #{$block}_page_modulr-reports-venue-notes #{$block}__cell:nth-child(4) &,
       #{$block}_page_change-orders-history #{$block}__cell:nth-child(4) &,
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-history-details &
         text-align: left
 
       #{$block}_page_accessory-requests-card &,
@@ -6161,7 +6294,8 @@ $block: ".boss-table"
     #{$block}_page_staff-types-index &,
     #{$block}_page_bonai &,
     #{$block}_page_bonai-staff-member-data &,
-    #{$block}_page_change-orders-history #{$block}__cell:nth-child(5) &
+    #{$block}_page_change-orders-history #{$block}__cell:nth-child(5) &,
+    #{$block}_page_change-order-reports-history #{$block}__cell:nth-child(6) &
       text-align: center
 
     #{$block}_page_change-order-report &,
