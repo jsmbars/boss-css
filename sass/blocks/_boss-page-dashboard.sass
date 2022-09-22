@@ -62,14 +62,12 @@ $block: ".boss-page-dashboard"
     width: 100%
 
     // $Page dashboard group CONTEXT: $Page dashboard group MOD: staff member profile disabled page
+    // $Page dashboard group CONTEXT: $Page dashboard group MOD: change order reports history page
     #{$block}_page_profile-disabled &
       align-items: flex-start
 
-    // $Page dashboard group CONTEXT: $Page dashboard MOD: add staff member page
-    // $Page dashboard group CONTEXT: $Page dashboard MOD: kpi page
-    #{$block}_page_add-staff-member &,
-    #{$block}_page_kpi &
-      margin-bottom: 20px
+    #{$block}_page_change-order-reports-history &:last-child
+      justify-content: flex-start
 
     // $Page dashboard group CONTEXT: $Page dashboard group MOD: vouchers index page
     // $Page dashboard group CONTEXT: $Page dashboard group MOD: profile reduced page
@@ -81,13 +79,19 @@ $block: ".boss-page-dashboard"
     #{$block}_page_security-pay-rates &:nth-child(2)
       justify-content: flex-end
 
+    #{$block}_page_finance-reports &:last-child,
+    #{$block}_page_change-order-reports-history &:last-child
+      flex-wrap: wrap
+
+    // $Page dashboard group CONTEXT: $Page dashboard MOD: add staff member page
+    // $Page dashboard group CONTEXT: $Page dashboard MOD: kpi page
+    #{$block}_page_add-staff-member &,
+    #{$block}_page_kpi &,
+    #{$block}_page_change-order-reports-history &,
     #{$block}_page_finance-reports &:not(:last-child),
     #{$block}_page_payroll-reports &:not(:last-child),
-    #{$block}_page_security-payroll-report &:not(:last-child),
+    #{$block}_page_security-payroll-report &:not(:last-child)
       margin-bottom: 20px
-
-    #{$block}_page_finance-reports &:last-child
-      flex-wrap: wrap
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports &:last-child,
@@ -121,6 +125,9 @@ $block: ".boss-page-dashboard"
       #{$block}_page_payroll-reports &:last-child,
       #{$block}_page_security-payroll-report &:last-child
         align-items: center
+
+      #{$block}_page_change-order-reports-history &:last-child
+        flex-direction: row
 
     @media screen and (max-width: 640px)
       #{$block}_page_rotas-daily &:first-child
@@ -410,7 +417,8 @@ $block: ".boss-page-dashboard"
         display: none
 
     @media screen and (max-width: 640px)
-      #{$block}_page_vhcq &
+      #{$block}_page_vhcq &,
+      #{$block}_page_change-orders &
         flex-direction: column
         justify-content: center
         align-items: stretch
@@ -516,7 +524,8 @@ $block: ".boss-page-dashboard"
       #{$block}_page_vhcq &,
       #{$block}_page_quiz-category &,
       #{$block}_page_training-materials &,
-      #{$block}_page_hours-confirmation &
+      #{$block}_page_hours-confirmation &,
+      #{$block}_page_change-orders &
         margin-right: 15px
 
       @media screen and (max-width: 1120px)
@@ -533,7 +542,8 @@ $block: ".boss-page-dashboard"
 
       @media screen and (max-width: 640px)
         #{$block}_page_profile &,
-        #{$block}_page_vhcq &
+        #{$block}_page_vhcq &,
+        #{$block}_page_change-orders &
           margin-right: 0
           margin-bottom: 15px
 
@@ -806,6 +816,21 @@ $block: ".boss-page-dashboard"
 
     &:not(:last-of-type)
       margin-right: 15px
+
+
+  // $Page dashboard number
+  &__meta-number
+
+
+  // $Page dashboard action
+  &__meta-action
+
+    &:first-child
+      margin-right: 10px
+
+    &:last-child
+      margin-left: 10px
+
 
 
   // $Page dashboard filter
