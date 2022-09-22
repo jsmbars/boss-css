@@ -663,10 +663,14 @@ $block: ".boss-button"
   &_role_manage-categories,
   &_role_manage-areas,
   &_role_mark-finished,
-  &_role_download-door-book-complete
+  &_role_download-door-book-complete,
+  &_role_complete-all-orders
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
+
+  &_role_complete-all-orders
+    font-size: 24px
 
   &_role_view-order,
   &_role_update,
@@ -739,7 +743,8 @@ $block: ".boss-button"
   &_role_pdf-download,
   &_role_force-password-change,
   &_role_lock,
-  &_role_code-clear
+  &_role_code-clear,
+  &_role_unaccept
     $background-color: map-get($boss-app-palette, alert)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -756,7 +761,8 @@ $block: ".boss-button"
   &_role_fail_reverse
     +button-with-icon-right($icon: '\e943')
 
-  &_role_cancel
+  &_role_cancel,
+  &_role_unaccept
     +button-with-icon-left($icon: '\e96a', $size: 10px)
 
   &_role_disable

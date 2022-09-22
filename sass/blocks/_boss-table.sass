@@ -101,7 +101,9 @@ $block: ".boss-table"
   &_page_modulr-reports-venue-notes,
   &_page_invites-index-app-access,
   &_page_venue-collections-type,
-  &_page_change-orders-history
+  &_page_change-orders-history,
+  &_page_change-order-reports-pending,
+  &_page_change-order-reports-accepted
     border: 1px solid #eee
 
   &_page_maintenance-index-card,
@@ -601,7 +603,9 @@ $block: ".boss-table"
         border-bottom: 1px solid #eee
 
       #{$block}_page_fruit-order-history &,
-      #{$block}_page_change-order-report &
+      #{$block}_page_change-order-report &,
+      #{$block}_page_change-order-reports-pending &,
+      #{$block}_page_change-order-reports-accepted &
         padding-bottom: 20px
         padding-top: 20px
 
@@ -742,6 +746,8 @@ $block: ".boss-table"
 
     &:nth-child(even)
       #{$block}_page_change-order-report &,
+      #{$block}_page_change-order-reports-pending &,
+      #{$block}_page_change-order-reports-accepted &,
       #{$block}_page_safe-checks-index &,
       #{$block}_page_checklist-review &,
       #{$block}_page_vhci &,
@@ -801,6 +807,8 @@ $block: ".boss-table"
         #{$block}_type_common &,
         #{$block}_page_fruit-order-history &,
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_change-order-history &,
         #{$block}_page_checklist-review &,
         #{$block}_page_vhci &,
@@ -876,7 +884,9 @@ $block: ".boss-table"
     // $Common table second row
     &:nth-child(2)
       @media screen and (max-width: 960px)
-        #{$block}_page_change-order-report &
+        #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &
           padding-top: 0
 
     // $Common table row MOD: state success
@@ -899,6 +909,8 @@ $block: ".boss-table"
 
       &:nth-child(even)
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_safe-checks-index &,
         #{$block}_page_checklist-review &,
         #{$block}_page_vhci &,
@@ -1164,7 +1176,9 @@ $block: ".boss-table"
     #{$block}_page_modulr-reports-venue-wages &,
     #{$block}_page_invites-index-app-access &,
     #{$block}_page_change-orders-history &,
-    #{$block}_page_change-orders-history-details &
+    #{$block}_page_change-orders-history-details &,
+    #{$block}_page_change-order-reports-pending &,
+    #{$block}_page_change-order-reports-accepted &
       min-height: 60px
 
     #{$block}_page_weekly-reports &,
@@ -1262,7 +1276,9 @@ $block: ".boss-table"
     #{$block}_page_clocking-app-multiple-matches &,
     #{$block}_page_venue-collections-type &,
     #{$block}_page_change-orders-history &,
-    #{$block}_page_change-orders-history-details &
+    #{$block}_page_change-orders-history-details &,
+    #{$block}_page_change-order-reports-pending &,
+    #{$block}_page_change-order-reports-accepted &
       padding: 15px 10px
 
     #{$block}_page_csv-upload &
@@ -1323,7 +1339,9 @@ $block: ".boss-table"
 
       #{$block}_page_modulr-reports-accounts &,
       #{$block}_page_change-orders-history &,
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-pending &,
+      #{$block}_page_change-order-reports-accepted &
         min-height: 0
 
       #{$block}_page_holidays-report &
@@ -1351,7 +1369,9 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-accounts &,
       #{$block}_page_modulr-reports-venue-notes &,
       #{$block}_page_change-orders-history &,
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-pending &,
+      #{$block}_page_change-order-reports-accepted &
         padding: 10px
 
       #{$block}_page_maintenance-index &,
@@ -1469,7 +1489,9 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-accounts &,
       #{$block}_page_modulr-reports-venue-notes &,
       #{$block}_page_change-orders-history &,
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-pending &,
+      #{$block}_page_change-order-reports-accepted &
         padding-left: 10px
 
       @media screen and (max-width: 960px)
@@ -1487,7 +1509,9 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-accounts &,
       #{$block}_page_modulr-reports-venue-notes &,
       #{$block}_page_change-orders-history &,
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-pending &,
+      #{$block}_page_change-order-reports-accepted &
         padding-right: 10px
 
       @media screen and (max-width: 960px)
@@ -1520,9 +1544,11 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-venue-notes &,
       #{$block}_page_invites-index-app-access &,
       #{$block}_page_venue-collections-data &,
-      #{$block}_page_change-orders-history &,
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history &
         border-right: 1px solid #eee
+
+      #{$block}_page_change-orders-history-details &
+          border-right: none
 
       @media screen and (max-width: 1280px)
         #{$block}_page_finance-reports-overview &,
@@ -1921,6 +1947,12 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history-details &
         width: 16.5%
 
+      #{$block}_page_change-order-reports-pending &
+        width: 11%
+
+      #{$block}_page_change-order-reports-accepted &
+        width: 10%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -1972,6 +2004,8 @@ $block: ".boss-table"
         #{$block}_page_fruit-order-history &,
         #{$block}_page_holidays-report &,
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_change-order-history &,
         #{$block}_page_checklist-review &,
         #{$block}_page_vhci &,
@@ -2526,6 +2560,12 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history-details &
         width: 16.5%
 
+      #{$block}_page_change-order-reports-pending &
+        width: 11%
+
+      #{$block}_page_change-order-reports-accepted &
+        width: 10%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -2558,6 +2598,8 @@ $block: ".boss-table"
         #{$block}_page_fruit-order-history &,
         #{$block}_page_holidays-report &,
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_change-order-history &,
         #{$block}_page_checklist-review &,
         #{$block}_page_vhci &,
@@ -3011,6 +3053,12 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history-details &
         width: 16.5%
 
+      #{$block}_page_change-order-reports-pending &
+        width: 11%
+
+      #{$block}_page_change-order-reports-accepted &
+        width: 10%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3042,6 +3090,8 @@ $block: ".boss-table"
         #{$block}_page_fruit-order-history &,
         #{$block}_page_holidays-report &,
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_change-order-history &,
         #{$block}_page_checklist-review &,
         #{$block}_page_vhci &,
@@ -3441,6 +3491,12 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history-details &
         width: 16.5%
 
+      #{$block}_page_change-order-reports-pending &
+        width: 11%
+
+      #{$block}_page_change-order-reports-accepted &
+        width: 10%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3472,6 +3528,8 @@ $block: ".boss-table"
         #{$block}_page_fruit-order-history &,
         #{$block}_page_holidays-report &,
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_change-order-history &,
         #{$block}_page_checklist-review &,
         #{$block}_page_vhci &,
@@ -3781,6 +3839,12 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history-details &
         width: 16.5%
 
+      #{$block}_page_change-order-reports-pending &
+        width: 11%
+
+      #{$block}_page_change-order-reports-accepted &
+        width: 10%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -3807,6 +3871,8 @@ $block: ".boss-table"
 
         #{$block}_page_holidays-report &,
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_change-order-history &,
         #{$block}_page_checklist-review &,
         #{$block}_page_vouchers-index &,
@@ -4001,6 +4067,12 @@ $block: ".boss-table"
       #{$block}_page_change-orders-history-details &
         width: 16.5%
 
+      #{$block}_page_change-order-reports-pending &
+        width: 11%
+
+      #{$block}_page_change-order-reports-accepted &
+        width: 10%
+
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
           width: 33%
@@ -4030,6 +4102,8 @@ $block: ".boss-table"
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_message-board &,
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_change-order-history &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_smp-holidays &,
@@ -4162,6 +4236,12 @@ $block: ".boss-table"
         width: 8%
         min-width: 200px
 
+      #{$block}_page_change-order-reports-pending &
+        width: 11%
+
+      #{$block}_page_change-order-reports-accepted &
+        width: 10%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -4183,6 +4263,8 @@ $block: ".boss-table"
         width: 100%
 
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_change-order-history &,
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
@@ -4261,6 +4343,12 @@ $block: ".boss-table"
         width: 8%
         min-width: 200px
 
+      #{$block}_page_change-order-reports-pending &
+        width: 11%
+
+      #{$block}_page_change-order-reports-accepted &
+        width: 10%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -4280,6 +4368,8 @@ $block: ".boss-table"
         width: 100%
 
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_bonai &,
         #{$block}_page_bonai-staff-member-data &
           width: 100%
@@ -4352,6 +4442,14 @@ $block: ".boss-table"
         width: 8%
         min-width: 200px
 
+      #{$block}_page_change-order-reports-pending &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 130px
+
+      #{$block}_page_change-order-reports-accepted &
+        width: 10%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -4368,6 +4466,8 @@ $block: ".boss-table"
         width: 100%
 
         #{$block}_page_change-order-report &,
+        #{$block}_page_change-order-reports-pending &,
+        #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_bonai &,
         #{$block}_page_bonai-staff-member-data &
@@ -4403,6 +4503,17 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-venue-wages &
         width: 6%
         min-width: 150px
+
+      #{$block}_page_change-order-reports-accepted &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 130px
+
+      @media screen and (max-width: 960px)
+        #{$block}_page_change-order-reports-accepted &
+          flex-grow: 1
+          flex-shrink: 1
+          width: 100%
 
     // $Common table cell eleventh column
     &:nth-child(11)
@@ -4632,12 +4743,16 @@ $block: ".boss-table"
       #{$block}_page_modulr-reports-venue-notes &,
       #{$block}_page_venue-collections-type &,
       #{$block}_page_change-orders-history &,
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-pending &,
+      #{$block}_page_change-order-reports-accepted &
         font-size: 14px
         text-transform: none
         font-weight: 600
 
-      #{$block}_page_change-orders-history-details &
+      #{$block}_page_change-orders-history-details &,
+      #{$block}_page_change-order-reports-pending &,
+      #{$block}_page_change-order-reports-accepted &
         font-weight: 800
 
       #{$block}_page_safe-checks-index &,
@@ -6050,6 +6165,8 @@ $block: ".boss-table"
       text-align: center
 
     #{$block}_page_change-order-report &,
+    #{$block}_page_change-order-reports-pending &,
+    #{$block}_page_change-order-reports-accepted &,
     #{$block}_page_smp-owed-hours &,
     #{$block}_page_smp-holidays &,
     #{$block}_page_smp-holiday-requests &,
@@ -6132,6 +6249,12 @@ $block: ".boss-table"
         flex-direction: row
         align-items: flex-start
 
+      #{$block}_page_change-order-reports-pending &,
+      #{$block}_page_change-order-reports-accepted &
+        flex-direction: row
+        justify-content: center
+        align-items: center
+
       #{$block}_page_vhci &,
       #{$block}_page_checklist-review &,
       #{$block}_page_vouchers-index &,
@@ -6212,6 +6335,8 @@ $block: ".boss-table"
       margin-right: 20px
 
     #{$block}_page_change-order-report &:not(:last-of-type),
+    #{$block}_page_change-order-reports-pending &:not(:last-of-type),
+    #{$block}_page_change-order-reports-accepted &:not(:last-of-type),
     #{$block}_page_smp-owed-hours &:not(:last-of-type),
     #{$block}_page_smp-holidays &:not(:last-of-type),
     #{$block}_page_smp-holiday-requests &:not(:last-of-type),
@@ -6240,6 +6365,8 @@ $block: ".boss-table"
 
     @media screen and (max-width: 960px)
       #{$block}_page_change-order-report &:not(:last-of-type),
+      #{$block}_page_change-order-reports-pending &:not(:last-of-type),
+      #{$block}_page_change-order-reports-accepted &:not(:last-of-type),
       #{$block}_page_smp-owed-hours &:not(:last-of-type)
         margin-bottom: 0
         margin-right: 10px
