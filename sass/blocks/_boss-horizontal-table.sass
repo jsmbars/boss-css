@@ -33,13 +33,15 @@ $block: ".boss-horizontal-table"
     &:nth-child(1)
       width: 33%
 
-      #{$block}_page_fruit-order-report &
+      #{$block}_page_fruit-order-report &,
+      #{$block}_page_fruit-order-reports &
         flex-shrink: 1
         width: 280px
         background-color: #FFF
 
       @media screen and (max-width: 800px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           flex-grow: 1
           width: 100%
 
@@ -47,67 +49,81 @@ $block: ".boss-horizontal-table"
     &:nth-child(2)
       width: 33%
 
-      #{$block}_page_fruit-order-report &
+      #{$block}_page_fruit-order-report &,
+      #{$block}_page_fruit-order-reports &
         flex-grow: 1
         flex-shrink: 1
         width: 50%
 
       @media screen and (max-width: 1120px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           width: 40%
 
       @media screen and (max-width: 1120px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           width: 35%
 
       @media screen and (max-width: 800px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           flex-grow: 0
           flex-shrink: 0
           width: 160px
 
       @media screen and (max-width: 640px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           width: 120px
 
       @media screen and (max-width: 480px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           width: 100px
 
       @media screen and (max-width: 400px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           width: 80px
 
     // $Horizontal table third column
     &:nth-child(3)
       width: 33%
 
-      #{$block}_page_fruit-order-report &
+      #{$block}_page_fruit-order-report &,
+      #{$block}_page_fruit-order-reports &
         width: 220px
 
       @media screen and (max-width: 1120px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           width: 180px
 
       @media screen and (max-width: 960px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           width: 160px
 
       @media screen and (max-width: 640px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           width: 120px
 
       @media screen and (max-width: 480px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           width: 80px
 
   // $Horizontal table group
   &__group
-    #{$block}_page_fruit-order-report &
+    #{$block}_page_fruit-order-report &,
+    #{$block}_page_fruit-order-reports &
       border-left: 2px solid $boss-extra-light-gray
 
     @media screen and (max-width: 640px)
-      #{$block}_page_fruit-order-report &
+      #{$block}_page_fruit-order-report &,
+      #{$block}_page_fruit-order-reports &
         border-left: none
 
   // $Horizontal table scroll
@@ -132,11 +148,13 @@ $block: ".boss-horizontal-table"
     padding: 15px
     height: 60px
 
-    #{$block}_page_fruit-order-report &
+    #{$block}_page_fruit-order-report &,
+    #{$block}_page_fruit-order-reports &
       padding: 15px 25px
 
     @media screen and (max-width: 960px)
-      #{$block}_page_fruit-order-report &
+      #{$block}_page_fruit-order-report &,
+      #{$block}_page_fruit-order-reports &
         padding-left: 0
         padding-right: 0
 
@@ -152,17 +170,20 @@ $block: ".boss-horizontal-table"
       text-align: left
 
       @media screen and (max-width: 960px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           padding-left: 15px
           padding-right: 15px
 
       @media screen and (max-width: 640px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           padding-left: 0
           padding-right: 0
 
       @media screen and (max-width: 480px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           font-size: 13px
 
     &_role_footer
@@ -181,14 +202,16 @@ $block: ".boss-horizontal-table"
   // $Horizontal table actions
   &__actions
 
-    #{$block}_page_fruit-order-report &
+    #{$block}_page_fruit-order-report &,
+    #{$block}_page_fruit-order-reports &
       display: flex
       flex-direction: row
       justify-content: flex-start
       align-items: center
 
     @media screen and (max-width: 400px)
-      #{$block}_page_fruit-order-report &
+      #{$block}_page_fruit-order-report &,
+      #{$block}_page_fruit-order-reports &
         flex-direction: column
         width: 100%
 
@@ -198,28 +221,34 @@ $block: ".boss-horizontal-table"
 
   // $Horizontal table action
   &__action
-    #{$block}_page_fruit-order-report &
+    #{$block}_page_fruit-order-report &,
+    #{$block}_page_fruit-order-reports &
       margin-right: 15px
 
     @media screen and (max-width: 1120px)
-      #{$block}_page_fruit-order-report &
+      #{$block}_page_fruit-order-report &,
+      #{$block}_page_fruit-order-reports &
         margin-right: 10px
 
     @media screen and (max-width: 400px)
-      #{$block}_page_fruit-order-report &
+      #{$block}_page_fruit-order-report &,
+      #{$block}_page_fruit-order-reports &
         margin-right: 0
         margin-bottom: 10px
 
     &:last-of-type
-      #{$block}_page_fruit-order-report &
+      #{$block}_page_fruit-order-report &,
+      #{$block}_page_fruit-order-reports &
         margin-right: 0
 
       @media screen and (max-width: 1120px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           margin-right: 0
 
       @media screen and (max-width: 400px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           margin-bottom: 0
 
     // $Horizontal table action MOD: desktop visible
@@ -227,7 +256,8 @@ $block: ".boss-horizontal-table"
       display: inline-block
 
       @media screen and (max-width: 1120px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           display: none
 
     // $Horizontal table action MOD: mobile visible
@@ -235,7 +265,8 @@ $block: ".boss-horizontal-table"
       display: none
 
       @media screen and (max-width: 1120px)
-        #{$block}_page_fruit-order-report &
+        #{$block}_page_fruit-order-report &,
+        #{$block}_page_fruit-order-reports &
           display: inline-block
 
     // $Horizontal table action MOD: complete all button
@@ -290,7 +321,7 @@ $block: ".boss-horizontal-table"
       .owl-controls
         position: absolute
         right: -220px
-        top: -70px
+        top: -80px
         white-space: nowrap
         vertical-align: middle
 

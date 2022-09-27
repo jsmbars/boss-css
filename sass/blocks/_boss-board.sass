@@ -1602,15 +1602,7 @@ $block: ".boss-board"
 
   // $Board orders area
   &__orders
-    padding: 10px 40px
-
-    @media screen and (max-width: 1280px)
-      padding-left: 30px
-      padding-right: 30px
-
-    @media screen and (max-width: 1120px)
-      padding-left: 20px
-      padding-right: 20px
+    padding: 10px 20px
 
     @media screen and (max-width: 640px)
       padding: 40px 10px 10px 15px
@@ -1692,6 +1684,9 @@ $block: ".boss-board"
 
     #{$block}_role_bonai &
       padding: 20px
+
+    #{$block}__orders &
+      padding-bottom: 20px
 
 
   // $Board tactions
