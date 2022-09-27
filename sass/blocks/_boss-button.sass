@@ -300,7 +300,8 @@ $block: ".boss-button"
   &_role_primary,
   &_role_submit,
   &_role_assigned,
-  &_role_co-accepted
+  &_role_co-accepted,
+  &_role_fo-accepted
     $background-color: map-get($boss-app-palette, primary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -318,7 +319,8 @@ $block: ".boss-button"
   &_role_ok,
   &_role_accepted,
   &_role_code-check,
-  &_role_co-completed
+  &_role_co-completed,
+  &_role_fo-completed
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -356,7 +358,8 @@ $block: ".boss-button"
     +button-common-hover($background-color: $background-color)
 
   &_role_pending,
-  &_role_co-submitted
+  &_role_co-submitted,
+  &_role_fo-submitted
     $background-color: map-get($boss-app-palette, pending)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
