@@ -284,16 +284,43 @@ $block: ".boss-form"
       @media screen and(min-width: 481px)
         display: none
 
+
+  &__group-header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+
+    @media screen and(max-width: 480px)
+      flex-direction: column
+      align-items: flex-start
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
   &__group-title
     +text-normalizer()
     font-size: 20px
     margin-bottom: 20px
+
+    #{$block}__group-header &
+      margin-bottom: 0
+
+    @media screen and(max-width: 480px)
+      #{$block}__group-header &
+        margin-bottom: 5px
+
 
   &__group-subtitle
     +text-normalizer()
     font-size: 16px
     font-weight: 600
     margin-bottom: 20px
+
+
+  &__group-action
 
 
   // $Common form row
