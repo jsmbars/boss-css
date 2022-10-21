@@ -155,9 +155,30 @@ $block: ".boss-message"
     border: none
     background-color: transparent
 
+  // $Message MOD: role form note success
+  &_role_form-note-success
+    padding: 10px 15px
+    border: 2px solid map-get($boss-app-palette, secondary)
+    background-color: #dbfddb
+
+  // $Message MOD: role form note error
+  &_role_form-note-error
+    padding: 10px 15px
+    border: 2px solid map-get($boss-app-palette, alert)
+    background-color: #feeeee
+
   // $Message MOD: status success
   &_status_success
     background-color: map-get($boss-app-palette, secondary)
+
+  &_space_small-before
+    margin-top: 15px
+
+  &_space_small-after
+    margin-bottom: 15px
+
+  &_space_small
+    margin: 15px 0
 
   &_space_regular-before
     margin-top: 30px
@@ -235,7 +256,9 @@ $block: ".boss-message"
       padding-right: 20px
 
     // $Message title CONTEXT: $Message MOD: role form-note
-    #{$block}_role_form-note &
+    #{$block}_role_form-note &,
+    #{$block}_role_form-note-success &,
+    #{$block}_role_form-note-error &
       margin-bottom: 5px
       font-size: 18px
 
@@ -330,7 +353,9 @@ $block: ".boss-message"
 
     // $Message text CONTEXT: $Message MOD: role form-note
     #{$block}_role_form-note &,
-    #{$block}_role_form-warning
+    #{$block}_role_form-note-success &,
+    #{$block}_role_form-note-error &,
+    #{$block}_role_form-warning &
       font-size: 16px
 
     @media screen and (max-width: 480px)
@@ -356,6 +381,17 @@ $block: ".boss-message"
 
   &__text-marked
     font-weight: 600
+
+
+  &__text-action
+    display: inline-block
+    margin: 0 10px
+
+    &:first-child
+      margin-left: 0
+
+    &:last-child
+      margin-right: 0
 
 
   // $Message List
