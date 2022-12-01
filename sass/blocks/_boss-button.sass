@@ -667,7 +667,8 @@ $block: ".boss-button"
   &_role_manage-areas,
   &_role_mark-finished,
   &_role_download-door-book-complete,
-  &_role_complete-all-orders
+  &_role_complete-all-orders,
+  &_role_inactive-devices
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -692,7 +693,8 @@ $block: ".boss-button"
   &_role_manage-areas
     +button-with-icon-left($icon: '\e958')
 
-  &_role_view-details-alt
+  &_role_view-details-alt,
+  &_role_inactive-devices
     +button-with-icon-left($icon: '\e921', $size: 12px)
 
   &_role_add-secondary,
@@ -747,7 +749,9 @@ $block: ".boss-button"
   &_role_force-password-change,
   &_role_lock,
   &_role_code-clear,
-  &_role_unaccept
+  &_role_unaccept,
+  &_role_banned-devices,
+  &_role_unban
     $background-color: map-get($boss-app-palette, alert)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -774,7 +778,8 @@ $block: ".boss-button"
   &_role_cancel_reverse
     +button-with-icon-right($icon: '\e96a', $size: 10px)
 
-  &_role_unblock
+  &_role_unblock,
+  &_role_unban
     +button-with-icon-left($icon: '\e97e')
 
   &_role_block
@@ -791,6 +796,9 @@ $block: ".boss-button"
 
   &_role_code-clear
     +button-with-icon-left($icon: '\e99f')
+
+  &_role_banned-devices
+    +button-with-icon-left($icon: '\e921', $size: 12px)
 
 
   // $Common button MOD: role move

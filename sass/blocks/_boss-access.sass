@@ -1,0 +1,244 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Access
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-access"
+
+#{$block}
+  display: block
+  width: 100%
+
+
+  // $Access header
+  &__header
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 15px
+      padding-bottom: 15px
+      border-bottom: 1px solid #ddd
+
+
+  // $Access header actions
+  &__header-actions
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  // $Access action
+  &__header-action
+
+
+  // $Access title
+  &__title
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 1
+    display: block
+    font-size: 18px
+    font-weight: 600
+
+    &:not(:last-child)
+      margin-right: 15px
+
+
+  // $Access permissions
+  &__permissions
+    display: block
+    width: 100%
+
+
+  // $Access permission
+  &__permission
+    display: block
+    width: 100%
+    padding: 15px
+
+    @media screen and (max-width: 640px)
+      padding-left: 10px
+      padding-right: 10px
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    // $Access permission MOD: role pending
+    &_role_pending
+      background-color: #ffedda
+
+    // $Access permission MOD: role granted
+    &_role_granted
+      background-color: #dbfddb
+
+
+  // $Access permission header
+  &__permission-header
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    margin-bottom: 10px
+
+    @media screen and (max-width: 640px)
+      margin-bottom: 15px
+
+
+  // $Access permission title
+  &__permission-title
+    +text-normalizer()
+    font-size: 18px
+    line-height: 1.2
+    font-weight: 600
+
+    &:not(:only-child)
+      @media screen and (max-width: 640px)
+        flex-grow: 0
+        flex-shrink: 0
+
+
+  // $Access permission select
+  &__permission-select
+    display: block
+    width: 240px
+    margin-left: 5px
+
+    @media screen and (max-width: 640px)
+      flex-grow: 1
+      flex-shrink: 1
+      width: 100%
+
+    & .Select-control
+      height: 30px
+      border-radius: 2px
+      border-color: #d8d8d8
+
+    & .Select-multi-value-wrapper
+      line-height: 28px
+
+    & .Select-placeholder,
+    & .Select--single > .Select-control .Select-value
+      line-height: 28px
+      padding-left: 20px
+      padding-right: 10px
+      color: #aaa
+
+    & .has-value.Select--single > .Select-control .Select-value .Select-value-label,
+    & .has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label
+      color: #4c4c4c
+
+    & .Select-input
+      vertical-align: middle
+      line-height: 1
+      height: auto
+
+      & input
+        line-height: 1
+        height: 30px
+        padding: 0
+
+    & .Select-option
+      padding: 10px 10px 10px 20px
+
+    & .Select-menu-outer
+      border-color: #d8d8d8
+      margin-top: 0
+      border-top: none
+
+    &_state_error
+      & .Select-control,
+      & .Select-menu-outer
+        border-color: map-get($boss-app-palette, alert)
+
+
+  // $Access permission group
+  &__permission-group
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+
+    @media screen and (max-width: 640px)
+      align-items: flex-start
+
+
+  // $Access permission info
+  &__permission-info
+    flex-grow: 1
+    flex-shrink: 1
+    padding-right: 20px
+
+
+  // $Access permission meta
+  &__permission-meta
+    display: block
+    width: 100%
+
+
+  // $Access permission meta item
+  &__permission-meta-item
+    display: inline-block
+    margin-bottom: 5px
+
+    @media screen and (max-width: 640px)
+      display: block
+      width: 100%
+
+    &:not(:last-child)
+      margin-right: 20px
+
+
+  // $Access permission meta text
+  &__permission-meta-text
+    +text-normalizer()
+    max-width: 100%
+    text-align: inherit
+
+
+  // $Access permission meta text light
+  &__permission-meta-text-light
+    font-weight: 300
+
+
+  // $Access permission meta text bold
+  &__permission-meta-text-bold
+    font-weight: 600
+
+
+  // $Access permission actions
+  &__permission-actions
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+
+    @media screen and (max-width: 400px)
+      flex-direction: column
+
+
+  // $Access permission action
+  &__permission-action
+    &:not(:last-child)
+      margin-right: 20px
+
+      @media screen and (max-width: 400px)
+        margin-right: 0
+        margin-bottom: 15px
+
+
