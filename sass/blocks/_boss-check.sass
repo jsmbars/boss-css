@@ -311,7 +311,8 @@ $block: ".boss-check"
 
     #{$block}_page_quiz-category &,
     #{$block}_page_quiz-rank &,
-    #{$block}_page_smp-quizzes-history &
+    #{$block}_page_smp-quizzes-history &,
+    #{$block}_page_devices &
       padding: 15px 20px
 
     #{$block}_page_smp-quizzes-category &
@@ -390,7 +391,8 @@ $block: ".boss-check"
       #{$block}_page_quiz-rank &,
       #{$block}_page_smp-quizzes-history &,
       #{$block}_page_vhcq &,
-      #{$block}_page_invites-index &
+      #{$block}_page_invites-index &,
+      #{$block}_page_devices &
         padding: 15px 10px
 
     @media screen and (max-width: 480px)
@@ -409,7 +411,8 @@ $block: ".boss-check"
 
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &,
-      #{$block}_page_users-app-access-venues &
+      #{$block}_page_users-app-access-venues &,
+      #{$block}_page_devices &
         flex-wrap: wrap
 
 
@@ -577,7 +580,8 @@ $block: ".boss-check"
       #{$block}_page_design-showcases-admin &,
       #{$block}_page_training-failures &,
       #{$block}_page_security-pay-rate-base &,
-      #{$block}_page_security-pay-rate-special &
+      #{$block}_page_security-pay-rate-special &,
+      #{$block}_page_devices &
         margin-top: 0
 
       #{$block}_page_quiz-category &,
@@ -1169,7 +1173,8 @@ $block: ".boss-check"
         flex-wrap: wrap
 
     @media screen and (max-width: 400px)
-      #{$block}_page_clocking-app-page-api-keys &
+      #{$block}_page_clocking-app-page-api-keys &,
+      #{$block}_page_devices &
         order: 99
         flex-grow: 1
         flex-shrink: 1
@@ -1293,7 +1298,9 @@ $block: ".boss-check"
       #{$block}_state_warning-faded &,
       #{$block}_state_success &,
       #{$block}_state_frozen &,
-      #{$block}_state_disabled &
+      #{$block}_state_disabled &,
+      #{$block}_state_inactive &,
+      #{$block}_state_inactive-faded &
         background-color: transparent
 
 
@@ -1867,7 +1874,8 @@ $block: ".boss-check"
     #{$block}_page_smp-quizzes-history &,
     #{$block}_page_smp-quizzes-category &,
     #{$block}_page_staff-types-index &,
-    #{$block}_page_design-showcases &
+    #{$block}_page_design-showcases &,
+    #{$block}_page_devices &
       font-size: 20px
 
     #{$block}_page_security-venues &
@@ -2071,12 +2079,17 @@ $block: ".boss-check"
     text-decoration: none
     transition: all .4s
 
+    #{$block}_page_devices &
+      margin-left: 20px
+      font-size: 14px
+
     &:hover,
     &:focus
       color: #4c4c4c
       text-decoration: none
 
-    &_role_details
+    &_role_details,
+    &_role_edit
       &:before
         content: ""
         display: inline-block
@@ -2091,6 +2104,10 @@ $block: ".boss-check"
     &_role_details
       &:before
         content: '\e921'
+
+    &_role_edit
+      &:before
+        content: '\e96b'
 
 
   // $Check block sub title
