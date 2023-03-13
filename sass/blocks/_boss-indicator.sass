@@ -29,6 +29,12 @@ $block: ".boss-indicator"
   &_position_after
     margin-left: 20px
 
+  &_adjust_row
+    vertical-align: top
+
+    &:not(:last-child)
+      margin-right: 5px
+
   &_adjust_flow
     margin-bottom: 10px
     vertical-align: top
@@ -524,6 +530,14 @@ $block: ".boss-indicator"
     &_calculator
       &:before
         content: '\e963'
+
+    &_comment
+      &:before
+        content: '\e9aa'
+
+    &_attachment
+      &:before
+        content: '\e9cd'
 
 
   // $Indicator marker

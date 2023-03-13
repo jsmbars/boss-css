@@ -48,6 +48,12 @@ $block: ".boss-check"
   &_page_vhcq
     padding-left: 20px
 
+  &_page_marketing-task
+    box-shadow: 0 5px 10px -5px rgba(0,0,0,.3)
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
   // $Check block MOD: page safe check index
   &_page_safe-checks-index,
   &_page_venues-index
@@ -338,6 +344,11 @@ $block: ".boss-check"
       border: none
       padding: 0
 
+    #{$block}_page_marketing-task &
+      display: block
+      min-height: 0
+      padding: 15px
+
     @media screen and (max-width: 960px)
       min-height: 60px
       padding: 20px
@@ -415,6 +426,10 @@ $block: ".boss-check"
       #{$block}_page_devices &
         flex-wrap: wrap
 
+    &:last-child
+      #{$block}_page_marketing-task &
+        border-bottom: none
+
 
   // $Check block header information
   &__header-info
@@ -438,6 +453,10 @@ $block: ".boss-check"
     #{$block}_page_contacts &,
     #{$block}_page_contacts-admin &
       flex-wrap: wrap
+
+    #{$block}_page_marketing-task &
+      justify-content: space-between
+      align-items: flex-start
 
     @media screen and (max-width: 800px)
       #{$block}_page_users-app-access-venues &
@@ -511,6 +530,13 @@ $block: ".boss-check"
         order: 99
         width: 100%
         margin-top: 5px
+
+      #{$block}_page_marketing-task &
+        flex-wrap: wrap
+
+    &:not(:last-child)
+      #{$block}_page_marketing-task &
+        margin-bottom: 20px
 
     &:not(:only-child)
       @media screen and (max-width: 640px)
@@ -612,6 +638,9 @@ $block: ".boss-check"
       margin-top: 0
       padding-right: 15px
 
+    #{$block}_page_marketing-task &
+      margin-top: 0
+
     @media screen and (max-width: 800px)
       #{$block}_page_user-profile-app-access &,
       #{$block}_page_smp-linked-user-app-access &
@@ -621,6 +650,13 @@ $block: ".boss-check"
       #{$block}_page_contacts-admin &
         text-align: center
 
+      #{$block}_page_marketing-task &
+        width: 100%
+
+    @media screen and (max-width: 400px)
+      #{$block}_page_marketing-task &
+        width: 100%
+
     &:not(:last-child)
       @media screen and (max-width: 640px)
         border-bottom: 1px solid #eee
@@ -628,7 +664,8 @@ $block: ".boss-check"
         #{$block}_page_quiz-category &,
         #{$block}_page_training-materials &,
         #{$block}_page_user-profile-app-access &,
-        #{$block}_page_smp-linked-user-app-access &
+        #{$block}_page_smp-linked-user-app-access &,
+        #{$block}_page_marketing-task &
           border-bottom: none
 
 
@@ -650,7 +687,8 @@ $block: ".boss-check"
       width: 100%
 
       #{$block}_page_user-profile-app-access &,
-      #{$block}_page_smp-linked-user-app-access &
+      #{$block}_page_smp-linked-user-app-access &,
+      #{$block}_page_marketing-task &
         display: inline-block
         width: auto
 
@@ -661,7 +699,8 @@ $block: ".boss-check"
         margin-right: 0
 
         #{$block}_page_user-profile-app-access &,
-        #{$block}_page_smp-linked-user-app-access &
+        #{$block}_page_smp-linked-user-app-access &,
+        #{$block}_page_marketing-task &
           margin-right: 10px
 
     &_role_actions
@@ -829,6 +868,12 @@ $block: ".boss-check"
         padding-top: 10px
 
 
+  // $Check block header badges
+  &__header-badges
+    flex-grow: 0
+    flex-shrink: 0
+
+
   // $Check block header badge
   &__header-badge
     flex-grow: 0
@@ -852,6 +897,23 @@ $block: ".boss-check"
         padding-left: 0
 
 
+  // $Check block header statuses
+  &__header-statuses
+    flex-grow: 0
+    flex-shrink: 0
+
+    #{$block}_page_marketing-task &
+      padding-left: 10px
+
+    @media screen and (max-width: 400px)
+      #{$block}_page_marketing-task &
+        order: -99
+        width: 100%
+        padding-left: 0
+        margin-bottom: 10px
+        text-align: center
+
+
   // $Check block header status
   &__header-status
     flex-grow: 0
@@ -873,6 +935,9 @@ $block: ".boss-check"
         padding: 20px 0 0
         border-top: 1px solid #d8d8d8
 
+      #{$block}_page_marketing-task &
+        display: block
+
       #{$block}_page_marketing-index &
         flex-grow: 1
         flex-shrink: 1
@@ -884,9 +949,28 @@ $block: ".boss-check"
         flex-shrink: 1
         width: 100%
 
-        &:not(:empty)
-          padding: 0 0 15px
-          border-bottom: 1px solid #ccc
+    @media screen and (max-width: 400px)
+      #{$block}_page_marketing-task &
+        display: inline-block
+
+    &:not(:empty)
+      #{$block}_page_ops-diary-index &
+        padding: 0 0 15px
+        border-bottom: 1px solid #ccc
+
+    &:not(:last-child)
+      #{$block}_page_marketing-task &
+        margin-right: 10px
+
+      @media screen and (max-width: 640px)
+        #{$block}_page_marketing-task &
+          margin-right: 0
+          margin-bottom: 10px
+
+      @media screen and (max-width: 400px)
+        #{$block}_page_marketing-task &
+          margin-bottom: 0
+          margin-right: 10px
 
 
   // $Check block header tags
@@ -1021,6 +1105,9 @@ $block: ".boss-check"
 
     #{$block}_page_vhcq &
       padding-left: 15px
+
+    #{$block}_page_marketing-task &
+      padding-left: 10px
 
     #{$block}_page_clocking-app-page-index &,
     #{$block}_page_sv-missattributed-logins &
@@ -1182,6 +1269,12 @@ $block: ".boss-check"
         margin-top: 10px
         text-align: center
 
+      #{$block}_page_marketing-task &
+        width: 100%
+        margin-top: 5px
+        padding-left: 0
+        text-align: center
+
 
   // $Check block header action
   &__header-action
@@ -1221,6 +1314,10 @@ $block: ".boss-check"
 
       #{$block}_page_quiz-category &
         margin-top: 15px
+
+    &:not(:last-child)
+      #{$block}_page_marketing-task &
+        margin-right: 10px
 
       @media screen and (max-width: 960px)
         #{$block}_page_ssr-requests &,
@@ -1302,6 +1399,9 @@ $block: ".boss-check"
       #{$block}_state_inactive &,
       #{$block}_state_inactive-faded &
         background-color: transparent
+
+    &_role_requests
+      background-color: #fceddb
 
 
   // $Check block group header
@@ -1887,6 +1987,10 @@ $block: ".boss-check"
       line-height: 1.2
       padding-right: 10px
 
+    #{$block}_page_marketing-task &
+      font-size: 16px
+      line-height: 1.2
+
     #{$block}_page_training-materials &,
     #{$block}_page_users-app-access-venues &,
     #{$block}_page_user-profile-app-access &,
@@ -1976,6 +2080,10 @@ $block: ".boss-check"
 
       #{$block}_page_users-app-access-venues &
         width: calc(100% - 50px)
+
+      #{$block}_page_marketing-task &
+        width: 100%
+        line-height: 1
 
     &_role_date,
     &_role_date-calendar,
@@ -2184,6 +2292,10 @@ $block: ".boss-check"
         font-size: 16px
         vertical-align: middle
 
+    &_role_request
+      &:not(:last-child)
+        margin-bottom: 5px
+
     // $Check block text MOD: marked
     &_marked
       font-size: 16px
@@ -2290,6 +2402,17 @@ $block: ".boss-check"
     display: inline-block
     margin-left: 3px
     vertical-align: middle
+
+
+  // $Check block text indicator
+  &__text-indicator
+
+    #{$block}_page_marketing-task &
+      display: inline-block
+      margin-right: 5px
+      font-size: 16px
+      font-weight: 800
+      vertical-align: middle
 
 
   &__status

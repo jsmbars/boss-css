@@ -371,6 +371,20 @@ $block: ".boss-button"
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
 
+  // $Common button MOD: new request
+  &_role_new-request
+    $background-color: #fceddb
+    $color: #4c4c4c
+    +button-common($color: $color, $background-color: $background-color)
+    +button-common-hover($color: $color, $background-color: $background-color)
+
+  // $Common button MOD: new answer
+  &_role_new-answer
+    $background-color: #e6f2fc
+    $color: #4c4c4c
+    +button-common($color: $color, $background-color: $background-color)
+    +button-common-hover($color: $color, $background-color: $background-color)
+
 
   // $Common button MOD: label floor manager
   &_role_floor
@@ -668,7 +682,8 @@ $block: ".boss-button"
   &_role_mark-finished,
   &_role_download-door-book-complete,
   &_role_complete-all-orders,
-  &_role_inactive-devices
+  &_role_inactive-devices,
+  &_role_accepted-tasks
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -687,7 +702,8 @@ $block: ".boss-button"
   &_role_view-submissions,
   &_role_view-notes,
   &_role_view-history,
-  &_role_manage-categories
+  &_role_manage-categories,
+  &_role_accepted-tasks
     +button-with-icon-left($icon: '\e927')
 
   &_role_manage-areas
