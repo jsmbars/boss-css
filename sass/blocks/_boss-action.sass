@@ -46,6 +46,12 @@ $block: ".boss-action"
   &:empty:hover
     opacity: .8
 
+  &_adjust_row
+    vertical-align: top
+
+    &:not(:last-child)
+      margin-right: 10px
+
   &_size_s
     font-size: 14px
 
@@ -90,6 +96,17 @@ $block: ".boss-action"
     &:focus
       color: map-get($boss-app-palette, primary)
 
+  &_role_add
+    color: map-get($boss-app-palette, primary)
+
+    &:before
+      content: '\e97d'
+      font-size: 14px
+
+    &:hover,
+    &:focus
+      color: map-get($boss-app-palette, primary)
+
   &_role_edit
     color: map-get($boss-app-palette, primary)
 
@@ -99,6 +116,16 @@ $block: ".boss-action"
     &:hover,
     &:focus
       color: map-get($boss-app-palette, primary)
+
+  &_role_edit-admin
+    color: map-get($boss-app-palette, warning)
+
+    &:before
+      content: '\e96b'
+
+    &:hover,
+    &:focus
+      color: map-get($boss-app-palette, warning)
 
   &_role_remove
     color: map-get($boss-app-palette, alert)
@@ -124,6 +151,17 @@ $block: ".boss-action"
 
   &_role_form
     color: map-get($boss-app-palette, primary)
+
+    &:hover,
+    &:focus
+      color: map-get($boss-app-palette, primary)
+
+  &_role_activity,
+  &_role_history
+    color: map-get($boss-app-palette, primary)
+
+    &:before
+      content: '\e927'
 
     &:hover,
     &:focus

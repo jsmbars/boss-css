@@ -58,7 +58,8 @@ $block: ".boss-modal-window"
 
   &_role_payslip,
   &_role_week-details,
-  &_role_bag-type-details
+  &_role_bag-type-details,
+  &_role_task-details
     width: 90%
     max-width: 1200px
 
@@ -180,7 +181,8 @@ $block: ".boss-modal-window"
   &_role_staff-members-review,
   &_role_venue-notes,
   &_role_multiple-matches,
-  &_role_bag-type-details
+  &_role_bag-type-details,
+  &_role_task-details
     margin-top: 100px
 
     @media screen and (max-width: 960px)
@@ -307,7 +309,8 @@ $block: ".boss-modal-window"
     #{$block}_role_venue-notes &,
     #{$block}_role_bag-type-details &,
     #{$block}_role_accept-order &,
-    #{$block}_role_edit-order &
+    #{$block}_role_edit-order &,
+    #{$block}_role_task-details &
       top: 30px
       right: 30px
 
@@ -355,7 +358,8 @@ $block: ".boss-modal-window"
       #{$block}_role_venue-notes &,
       #{$block}_role_bag-type-details &,
       #{$block}_role_accept-order &,
-      #{$block}_role_edit-order &
+      #{$block}_role_edit-order &,
+      #{$block}_role_task-details &
         font-size: 16px
         color: #808080
 
@@ -394,6 +398,10 @@ $block: ".boss-modal-window"
       #{$block}_role_publish-payment-week &,
       #{$block}_role_venue-notes &,
       #{$block}_role_bag-type-details &
+        right: 15px
+
+      #{$block}_role_task-details &
+        top: 15px
         right: 15px
 
   // $Modal window spinner inner
@@ -785,13 +793,15 @@ $block: ".boss-modal-window"
     #{$block}_role_venue-notes &,
     #{$block}_role_bag-type-details &,
     #{$block}_role_accept-order &,
-    #{$block}_role_edit-order &
+    #{$block}_role_edit-order &,
+    #{$block}_role_task-details &
       padding: 0
 
     #{$block}_role_attendance &
       padding: 30px 30px 0
 
-    #{$block}_role_rota &
+    #{$block}_role_rota &,
+    #{$block}_role_task-details &
       border-top-right-radius: $border-radius !important
       border-top-left-radius: $border-radius !important
 
@@ -836,7 +846,8 @@ $block: ".boss-modal-window"
       #{$block}_role_venue-notes &,
       #{$block}_role_bag-type-details &,
       #{$block}_role_accept-order &,
-      #{$block}_role_edit-order &
+      #{$block}_role_edit-order &,
+      #{$block}_role_task-details &
         padding: 0
 
       #{$block}_role_shift-details &

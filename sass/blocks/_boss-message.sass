@@ -105,6 +105,11 @@ $block: ".boss-message"
     padding: 10px 15px
     background-color: map-get($boss-app-palette, alert)
 
+  // $Message MOD: role task note
+  &_role_task-note
+    padding: 10px 15px
+    background-color: map-get($boss-app-palette, alert)
+
   // $Message MOD: form warning
   &_role_form-warning
     padding: 10px 15px
@@ -331,7 +336,8 @@ $block: ".boss-message"
     #{$block}_role_sc-details &,
     #{$block}_role_checklist-note &,
     #{$block}_role_form-warning &,
-    #{$block}_status_success &
+    #{$block}_status_success &,
+    #{$block}_role_task-note &
       color: #fff
 
     #{$block}_role_calendar-note &,
@@ -355,7 +361,8 @@ $block: ".boss-message"
     #{$block}_role_form-note &,
     #{$block}_role_form-note-success &,
     #{$block}_role_form-note-error &,
-    #{$block}_role_form-warning &
+    #{$block}_role_form-warning &,
+    #{$block}_role_task-note &
       font-size: 16px
 
     @media screen and (max-width: 480px)

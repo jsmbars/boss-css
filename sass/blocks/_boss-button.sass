@@ -683,7 +683,8 @@ $block: ".boss-button"
   &_role_download-door-book-complete,
   &_role_complete-all-orders,
   &_role_inactive-devices,
-  &_role_accepted-tasks
+  &_role_accepted-tasks,
+  &_role_complete-task
     $background-color: map-get($boss-app-palette, secondary)
     +button-common($background-color: $background-color)
     +button-common-hover($background-color: $background-color)
@@ -1043,13 +1044,18 @@ $block: ".boss-button"
   &_role_quizzes
     +button-with-icon-left($icon: '\e983', $size: 14px)
 
-
   // $Common button MOD: role contacts tag
-  &_role_contacts-tag
-    +button-bordered($color: #808080, $border-color: #aaa, $background-color: transparent)
+  // $Common button MOD: task group load more
+  &_role_contacts-tag,
+  &_role_task-group-load-more
+    +button-bordered($color: #808080, $border-color: #aaa, $background-color: #fff)
     +button-bordered-hover($color: #fff, $border-color: #aaa, $background-color: #aaa)
+
+  &_role_contacts-tag
     font-weight: 600
 
+  &_role_task-group-load-more
+    font-weight: 300
 
   &__action
     position: absolute
