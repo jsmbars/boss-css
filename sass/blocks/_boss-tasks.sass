@@ -17,197 +17,152 @@ $block: ".boss-tasks"
 #{$block}
   +box-model-normalizer()
 
-  display: block
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
   width: 100%
+  max-height: 100%
+  border-radius: 4px
+  white-space: normal
+  overflow: hidden
+
+  &_role_marketing
+    max-height: 100%
+
+  &_role_review
+    background-color: #feeeee
 
 
-  // $Tasks list
-  &__list
-    display: block
-    width: 100%
-    list-style: none
-    list-style-position: inside
-    margin: 0
-
-
-  // $Tasks item
-  &__item
-    display: flex
-    flex-direction: row
-    justify-content: flex-start
-    align-items: flex-start
-    width: 100%
-    margin-bottom: 30px
-
-    &_role_edit
-      padding: 20px
-      background-color: #f8f8f8
-
-
-  // $Tasks item content
-  &__item-content
-    flex-grow: 1
-    flex-shrink: 1
-
-
-  // $Tasks form
-  &__form
-
-    // $Tasks form MOD: role edit
-    &_role_edit
-
-
-  // $Tasks item meta
-  &__item-meta
+  // $Tasks header
+  &__header
     flex-grow: 0
     flex-shrink: 0
+    display: block
+    width: 100%
+    padding: 15px 10px
+    background-color: #fff
+    border-bottom: 1px solid #ddd
 
-    // $Tasks item meta MOD: space before
-    &_space_before
-      padding-left: 20px
-
-    // $Tasks item meta MOD: space after
-    &_space_after
-      padding-right: 20px
-
-
-  // $Tasks actions
-  &__actions
-
-    // $Tasks actions MOD: nowrap
-    &_nowrap-fluid
-      white-space: nowrap
-
-      @media screen and (max-width: 640px)
-        white-space: normal
+    // $Tasks header CONTEXT: $Tasks MOD: role review
+    #{$block}_role_review &
+      background-color: #feeeee
 
 
-
-  // $Tasks action
-  &__action
-    +text-normalizer()
-    position: relative
-    display: inline-block
-    padding-left: 20px
-    padding-top: 2px
-    outline: none
-    cursor: pointer
-    text-decoration: none
-    vertical-align: top
-
-    @media screen and (max-width: 640px)
-      display: block
-
-    &:hover,
-    &:focus
-      color: transparent
-      outline: none
-      text-decoration: underline
-
-    &:before
-      content: ""
-      position: absolute
-      top: 50%
-      left: 0
-      display: block
-      font-family: icons
-      font-size: 10px
-      line-height: 10px
-      font-weight: 400
-      color: inherit
-      transform: translateY(-50%)
-
-    &:not(:last-child)
-      margin-right: 20px
-
-      @media screen and (max-width: 640px)
-        margin-right: 0
-        margin-bottom: 10px
-
-    // $Tasks action MOD: type icon
-    &_type_icon
-      min-height: 24px
-      font-size: 0
-      line-height: 0
-      color: transparent
-
-    // $Tasks action MOD: role confirm
-    &_role_confirm
-      color: map-get($boss-app-palette, primary)
-      &:before
-        content: '\e969'
-        font-size: 16px
-        line-height: 16px
-
-    &_role_confirm#{&}_type_icon
-      padding-left: 16px
-
-    // $Tasks action MOD: role edit
-    &_role_edit
-      color: map-get($boss-app-palette, primary)
-      &:before
-        content: '\e96b'
-        font-size: 14px
-        line-height: 14px
-
-    &_role_edit#{&}_type_icon
-      padding-left: 14px
-
-    // $Tasks action MOD: role delete
-    &_role_delete
-      color: map-get($boss-app-palette, alert)
-      &:before
-        content: '\e911'
-        font-size: 12px
-        line-height: 12px
-
-    &_role_delete#{&}_type_icon
-      padding-left: 12px
+  // $Tasks info
+  &__info
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: flex-start
+    width: 100%
 
 
   // $Tasks title
   &__title
     +text-normalizer()
     font-size: 18px
+    line-height: 1
     font-weight: 600
+    color: #4c4c4c
+    overflow: hidden
+    padding-right: 10px
 
-    &:not(:last-child)
-      margin-bottom: 10px
 
+  // $Tasks title status
+  &__title-status
+    font-weight: 400
 
-  &__title-text
-    &:not(:last-child)
-      margin-right: 15px
+    @media screen and (max-width: 400px)
+      display: block
+      margin-top: 5px
+      font-size: 16px
 
-    &_role_time,
+    // $Tasks title status MOD: role alert
     &_role_alert
-      white-space: nowrap
-      &:before
-        content: ""
-        display: inline-block
-        margin-right: 7px
-        font-family: icons
-        font-size: 14px
-        line-height: 14px
-        font-weight: 400
-        color: inherit
-        vertical-align: middle
-
-    &_role_time
-      color: $boss-medium-gray
-      &:before
-        content: '\e961'
-
-    &_role_alert
-      color: map-get($boss-app-palette, alert)
-      &:before
-        content: '\e911'
+      color: #ed7f7e
 
 
-  // $Tasks extra
-  &__extra
+  // $Tasks filter
+  &__filter
+    display: block
+    width: 100%
+
+
+  // $Tasks filter switch
+  &__filter-switch
     +text-normalizer()
-    padding-left: 20px
-    border-left: 5px solid #eee
-    color: $boss-medium-gray
+    display: inline-block
+    cursor: pointer
+    white-space: nowrap
 
+    &:before
+      content: '\e923'
+      display: inline-block
+      margin-right: 8px
+      font-family: icons
+      font-size: 15px
+      line-height: 1
+      font-weight: 400
+      color: #4c4c4c
+
+    &:after
+      content: '\e917'
+      display: inline-block
+      margin-left: 5px
+      font-family: icons
+      font-size: 16px
+      line-height: 8px
+      font-weight: 400
+      color: #4c4c4c
+      vertical-align: middle
+
+    &:hover,
+    &:focus
+      color: $boss-global-font-color
+
+    // $Tasks filter action MOD: state closed
+    &_state_closed
+      &:after
+        content: '\e918'
+
+
+  // $Tasks filter content
+  &__filter-content
+    display: block
+    width: 100%
+    margin-top: 15px
+    padding-top: 15px
+    border-top: 1px solid #ddd
+
+    // $Tasks filter content MOD: state closed
+    &_state_closed
+      display: none
+
+
+  // $Tasks content
+  &__content
+    flex-grow: 1
+    flex-shrink: 1
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    width: 100%
+    padding: 10px 5px
+    overflow: hidden
+    background-color: #efefef
+
+    // $Tasks content CONTEXT: $Tasks MOD: role review
+    #{$block}_role_review &
+      background-color: #feeeee
+
+
+  // $Tasks cards
+  &__cards
+    flex-grow: 1
+    flex-shrink: 1
+    width: 100%
+    overflow-x: hidden
+    overflow-y: auto
+    padding: 0 5px

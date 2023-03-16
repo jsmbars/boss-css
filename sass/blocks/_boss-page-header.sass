@@ -40,7 +40,8 @@ $block: ".boss-page-header"
   @media screen and (max-width: 480px)
     padding: 0 15px
 
-  &_adjust_notifications
+  &_adjust_notifications,
+  &_adjust_marketing-tasks
     flex-grow: 0
     flex-shrink: 1
 
@@ -62,7 +63,8 @@ $block: ".boss-page-header"
     #{$block}_adjust_payroll-reports &,
     #{$block}_adjust_security-payroll-report &,
     #{$block}_adjust_csv-upload &,
-    #{$block}_adjust_modulr-reports &
+    #{$block}_adjust_modulr-reports &,
+    #{$block}_adjust_marketing-tasks &
       max-width: 100%
 
     @media screen and (max-width: 480px)

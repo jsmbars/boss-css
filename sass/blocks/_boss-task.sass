@@ -1,0 +1,982 @@
+@import '../helpers/settings'
+@import '../helpers/mixins'
+
+////////////////////////////////////////
+// $Task
+////////////////////////////////////////
+
+//////////////////////////////////////// Block variables
+
+
+//////////////////////////////////////// Block mixins and functions
+
+
+//////////////////////////////////////// Block styles
+$block: ".boss-task"
+
+#{$block}
+  +box-model-normalizer()
+  width: 100%
+
+  // $Task MOD: role marketing
+  &_role_marketing
+
+
+  // $Task header
+  &__header
+    display: block
+    width: 100%
+    background-color: #f0f0f0
+    border-top-left-radius: 5px
+    border-top-right-radius: 5px
+
+
+  // $Task header group
+  &__header-group
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 20px 30px
+
+    @media screen and (max-width: 960px)
+      padding: 15px
+
+    &:nth-child(1)
+      padding-right: 50px
+
+      @media screen and (max-width: 960px)
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+        padding-right: 35px
+
+    &:nth-child(2)
+      align-items: flex-start
+      padding-top: 15px
+      padding-bottom: 15px
+
+      @media screen and (max-width: 960px)
+        padding-top: 10px
+        padding-bottom: 10px
+
+    &:not(:last-child)
+      border-bottom: 1px solid #ddd
+
+
+  // $Task title
+  &__title
+    +text-normalizer()
+    flex-grow: 1
+    flex-shrink: 1
+    max-width: 100%
+    font-size: 24px
+    line-height: 1.2
+    padding-right: 20px
+
+    @media screen and (max-width: 960px)
+      order: 99
+      margin-top: 10px
+      padding-right: 0
+
+
+  // $Task status
+  &__status
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    padding-right: 20px
+    font-size: 16px
+    line-height: 35px
+    white-space: nowrap
+
+    @media screen and (max-width: 960px)
+      padding-right: 0
+      line-height: 1
+
+
+  // $Task status label
+  &__status-label
+
+
+  // $Task status text
+  &__status-text
+    font-weight: 600
+    text-transform: uppercase
+
+
+  // $Task actions
+  &__actions
+    flex-grow: 0
+    flex-shrink: 0
+    padding-right: 20px
+
+    @media screen and (max-width: 960px)
+      padding-right: 0
+      padding-top: 10px
+
+
+  // $Task action
+  &__action
+    padding: 10px 20px
+    font-size: 20px
+
+    @media screen and (max-width: 960px)
+      padding: 5px 10px
+      font-size: 18px
+
+
+  // $Task meta
+  &__meta
+    flex-grow: 1
+    flex-shrink: 1
+    padding-right: 20px
+
+
+  // $Task meta group
+  &__meta-group
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+
+  // $Task meta item
+  &__meta-item
+    display: inline-block
+    margin-top: 5px
+    margin-bottom: 5px
+    color: #4c4c4c
+
+    @media screen and (max-width: 640px)
+      display: block
+
+    &:not(:last-child)
+      margin-right: 20px
+
+      @media screen and (max-width: 640px)
+        margin-right: 0
+
+
+  // $Task meta text
+  &__meta-text
+    +text-normalizer()
+    max-width: 100%
+    text-align: inherit
+    color: inherit
+
+    // $Task meta text MOD: role date
+    // $Task meta text MOD: role user
+    // $Task meta text MOD: role venue
+    &_role_date,
+    &_role_user,
+    &_role_venue
+      &:before
+        content: ""
+        display: inline-block
+        margin-right: 7px
+        font-size: 14px
+        font-family: icons
+        font-size: inherit
+        line-height: inherit
+        color: inherit
+        font-weight: 400
+        vertical-align: baseline
+
+    &_role_date
+      &:before
+        content: '\e900'
+
+    &_role_user
+      &:before
+        content: '\e904'
+
+    &_role_venue
+      &:before
+        content: '\e901'
+
+    // $Task meta text MOD: state alert
+    &_state_alert
+      color: map-get($boss-app-palette, alert)
+
+
+  // $Task meta text light
+  &__meta-text-light
+    font-weight: 300
+
+
+  // $Task meta text bold
+  &__meta-text-bold
+    font-weight: 600
+
+
+  // $Task meta link
+  &__meta-link
+    +text-normalizer()
+    display: block
+    color: #1585cf
+    text-decoration: none
+    transition: color .3s
+
+    &:hover,
+    &:focus
+      color: $boss-medium-gray
+      text-decoration: none
+
+
+  // $Task service
+  &__service
+    flex-grow: 0
+    flex-shrink: 0
+    padding-top: 5px
+
+
+  // $Task service switch
+  &__service-switch
+    +text-normalizer()
+    display: block
+    font-size: 0
+    line-height: 0
+    color: transparent
+    transition: .4s
+    opacity: 1
+
+    &:after
+      content: '\e913'
+      display: block
+      width: 20px
+      height: 20px
+      font-family: icons
+      font-size: 25px
+      line-height: 20px
+      color: #808080
+      text-align: center
+      margin-left: 0
+      vertical-align: middle
+
+    &:hover
+      opacity: .8
+
+    &:focus
+      color: #808080
+
+
+  // $Task content
+  &__content
+    display: block
+    width: 100%
+    padding: 20px 30px
+
+    @media screen and (max-width: 960px)
+      padding: 15px
+
+
+  // $Task group
+  &__group
+    position: relative
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 30px
+
+    // $Task group MOD: role description
+    &_role_description
+
+    // $Task group MOD: role requests
+    &_role_requests
+
+    // $Task group MOD: role review
+    &_role_review
+
+
+  // $Task group header
+  &__group-header
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    padding-bottom: 20px
+
+    @media screen and (max-width: 960px)
+      align-items: flex-end
+
+
+  // $Task group info
+  &__group-info
+    flex-grow: 1
+    flex-shrink: 1
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    padding-right: 10px
+
+    @media screen and (max-width: 960px)
+      flex-direction: column
+      align-items: flex-start
+
+
+  // $Task group title
+  &__group-title
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    font-size: 20px
+    line-height: 1
+    font-weight: 600
+    white-space: nowrap
+    text-transform: uppercase
+    color: #808080
+
+    &:not(:last-child)
+      padding-right: 20px
+
+      @media screen and (max-width: 960px)
+        padding-right: 0
+        padding-bottom: 10px
+
+    // $Task group title MOD: state alert
+    &_state_alert
+      color: #fd554f
+
+
+  // $Task group title number
+  &__group-title-number
+
+
+  // $Task group tags
+  &__group-tags
+    flex-grow: 0
+    flex-shrink: 0
+
+    @media screen and (max-width: 960px)
+      flex-grow: 1
+      flex-shrink: 1
+      width: 100%
+
+    @media screen and (max-width: 640px)
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+
+
+  // $Task group tag
+  &__group-tag
+
+    &:not(:only-child)
+      margin-right: 0
+      margin-bottom: 0
+
+    &:not(:last-child)
+      margin-right: 10px
+
+      @media screen and (max-width: 640px)
+        margin-right: 0
+        margin-bottom: 10px
+
+
+  // $Task group actions
+  &__group-actions
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  // $Task group action
+  &__group-action
+
+
+  // $Task group content
+  &__group-content
+    position: relative
+
+    // $Task group content MOD: state collapsed
+    &_state_collapsed
+      height: 150px
+      overflow: hidden
+
+
+  // $Task group overlay
+  &__group-overlay
+    position: absolute
+    bottom: 0
+    right: 0
+    left: 0
+    z-index: 100
+    display: block
+    height: 100px
+    box-shadow: inset 0 -50px 30px -10px #fff
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: flex-end
+
+
+  // $Task group overlay button
+  &__group-overlay-button
+
+
+  // $Task dropdown
+  &__dropdown
+    display: block
+    width: 100%
+
+
+  // $Task dropdown header
+  &__dropdown-header
+    display: block
+    width: 100%
+
+
+  // $Task dropdown switch
+  &__dropdown-switch
+    +text-normalizer()
+    display: inline-block
+    cursor: pointer
+    white-space: nowrap
+
+    &:after
+      content: '\e917'
+      display: inline-block
+      margin-left: 5px
+      font-family: icons
+      font-size: 16px
+      line-height: 8px
+      font-weight: 400
+      color: #4c4c4c
+      vertical-align: middle
+
+    &:hover,
+    &:focus
+      color: $boss-global-font-color
+
+    // $Task dropdown action MOD: state closed
+    &_state_closed
+      &:after
+        content: '\e918'
+
+
+  // $Task dropdown content
+  &__dropdown-content
+    display: block
+    width: 100%
+    margin-top: 10px
+    padding-top: 20px
+    border-top: 1px solid #ddd
+
+    // $Task dropdown content MOD: state closed
+    &_state_closed
+      display: none
+
+
+  // $Task request
+  &__request
+    position: relative
+    display: block
+    width: 100%
+    border: 1px solid #e1e1e1
+    border-radius: 5px
+    background-color: #fff
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    // $Task request MOD: state requiring answer
+    &_state_requiring-answer
+      background-color: #fceddb
+      border-color: #fae1c3
+
+    // $Task request MOD: state requiring review
+    &_state_requiring-review
+      background-color: #e6f2fc
+      border-color: #cfe6f9
+
+    // $Task request MOD: state removed
+    &_state_removed
+      background-color: #feeeee
+      border-color: #fdd6d6
+
+
+
+  // $Task request service
+  &__request-service
+    position: absolute
+    top: 15px
+    right: 15px
+
+
+  // $Task request service switch
+  &__request-service-switch
+    +text-normalizer()
+    display: block
+    font-size: 0
+    line-height: 0
+    color: transparent
+    transition: .4s
+    opacity: 1
+
+    &:after
+      content: '\e913'
+      display: block
+      width: 15px
+      height: 15px
+      font-family: icons
+      font-size: 20px
+      line-height: 15px
+      color: #808080
+      text-align: center
+      margin-left: 0
+      vertical-align: middle
+
+    &:hover
+      opacity: .8
+
+    &:focus
+      color: #808080
+
+
+  // $Task request group
+  &__request-group
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: flex-start
+    padding: 15px
+
+    // $Task request group MOD: role question
+    &_role_question
+      padding-right: 45px
+
+    // $Task request group MOD: role answer
+    &_role_answer
+      padding-top: 10px
+
+    // $Task request group MOD: role clarification
+    &_role_clarification
+      display: block
+      padding-top: 10px
+
+    // $Task request group MOD: role confirmation
+    &_role_confirmation
+      justify-content: flex-end
+      align-items: center
+      border-top: 1px solid #e1e1e1
+
+      #{$block}__request_state_requiring-answer &
+        border-top: 1px solid #f8d5ac
+
+      #{$block}__request_state_requiring-review &
+        border-top: 1px solid #b8daf7
+
+      #{$block}__request_state_removed &
+        border-top: 1px solid #fbbebe
+
+      @media screen and (max-width: 640px)
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-end
+
+
+  // $Task request indicator
+  &__request-indicator
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    padding-right: 10px
+    font-size: 24px
+    line-height: 22px
+    font-weight: 800
+    color: #fd554f
+
+
+  // $Task request info
+  &__request-info
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 100%
+
+    #{$block}__request-group_role_question &
+      padding-top: 2px
+
+
+  // $Task request text
+  &__request-text
+    +text-normalizer()
+    max-width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+    // $Task request text MOD: role primary
+    &_role_primary
+      font-size: 18px
+      line-height: 1.2
+      font-weight: 800
+
+    // $Task request text MOD: role secondary
+    &_role_secondary
+      font-size: 18px
+      line-height: 1.2
+      color: #808080
+
+    // $Task request text MOD: role meta
+    &_role_meta
+      max-width: 100%
+      font-size: 12px
+      font-weight: 300
+      color: #808080
+
+
+  // $Task request attachments
+  &__request-attachments
+    display: block
+    width: 100%
+    margin-top: 10px
+
+
+  // $Task request label
+  &__request-label
+    +text-normalizer()
+    flex-grow: 1
+    flex-shrink: 1
+    max-width: 100%
+    padding-right: 20px
+    font-size: 16px
+    line-height: 1.2
+    font-weight: 600
+    text-align: right
+
+    @media screen and (max-width: 640px)
+      padding-right: 0
+      padding-bottom: 10px
+
+
+  // $Task request actions
+  &__request-actions
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  // $Task request action
+  &__request-action
+    &:not(:last-child)
+      margin-right: 10px
+
+
+  // $Task message
+  &__message
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Task result
+  &__result
+    display: block
+    width: 100%
+    border: 1px solid #ddd
+    border-radius: 5px
+    background-color: #eee
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.3);
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+
+  // $Task result content
+  &__result-content
+    display: block
+    width: 100%
+    padding: 10px 15px
+
+
+  // $Task result note
+  &__result-note
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+
+  // $Task result text
+  &__result-text
+    +text-normalizer()
+    max-width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+    // $Task result text MOD: role meta
+    &_role_meta
+      max-width: 100%
+      font-size: 12px
+      font-weight: 300
+      color: #808080
+
+
+  // $Task result attachments
+  &__result-attachments
+    display: block
+    width: 100%
+
+
+  // $Task confirmation
+  &__confirmation
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    align-items: center
+    width: 100%
+
+    @media screen and (max-width: 640px)
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-end
+
+
+  // $Task confirmation label
+  &__confirmation-label
+    +text-normalizer()
+    flex-grow: 1
+    flex-shrink: 1
+    max-width: 100%
+    padding-right: 20px
+    font-size: 20px
+    line-height: 1.2
+    font-weight: 600
+    text-align: right
+
+    @media screen and (max-width: 640px)
+      padding-right: 0
+      padding-bottom: 10px
+
+
+  // $Task confirmation actions
+  &__confirmation-actions
+    flex-grow: 0
+    flex-shrink: 0
+
+
+  // $Task confirmation action
+  &__confirmation-action
+    &:not(:last-child)
+      margin-right: 10px
+
+
+  // $Task attachment
+  &__attachment
+    position: relative
+    display: inline-block
+    width: 200px
+    margin-bottom: 15px
+    background-color: #f0f0f0
+    border: 1px solid #ddd
+    vertical-align: top
+
+    &:not(:last-child)
+      margin-right: 10px
+
+    &_role_action
+      cursor: pointer
+      transition: all .3s
+
+      &:hover
+        background-color: #ddd
+
+
+  // $Task attachment link
+  &__attachment-link
+    display: block
+    width: 100%
+
+
+  // $Task attachment preview
+  &__attachment-preview
+    position: relative
+    display: block
+    width: 100%
+    height: 150px
+    text-align: center
+
+    // $Task attachment preview MOD: role image
+    // $Task attachment preview MOD: role file
+    &_role_image,
+    &_role_file
+      &:before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        z-index: 0
+        display: block
+        font-family: icons
+        font-size: 60px
+        line-height: 150px
+        font-weight: 400
+        color: #ccc
+        text-align: center
+
+    &_role_image
+      &:before
+        content: '\e934'
+
+    &_role_file
+      &:before
+        content: '\e927'
+
+
+  // $Task attachment image
+  &__attachment-image
+    position: relative
+    z-index: 1
+    display: inline-block
+    max-width: 100%
+    max-height: 100%
+
+
+  // $Task attachment caption
+  &__attachment-caption
+    +text-normalizer()
+    padding: 5px
+    overflow-wrap: break-word
+    word-wrap: break-word
+    word-break: break-word
+    hyphens: auto
+
+
+  // $Task description wysiwyg-generated content
+  &__description
+
+    h1, h2, h3
+      +text-normalizer()
+      line-height: 1.2
+      font-weight: 600
+
+      &:not(:last-child)
+        margin-bottom: 15px
+
+    // wysiwyg-generated h1
+    h1
+      font-size: 20px
+
+    // wysiwyg-generated h2
+    h2
+      font-size: 18px
+
+    // wysiwyg-generated h3
+    h3
+      font-size: 16px
+
+    // wysiwyg-generated paragraph
+    p
+      +text-normalizer()
+
+      &:not(:last-child)
+        margin-bottom: 15px
+
+    // wysiwyg-generated link
+    a
+      +text-normalizer()
+      display: block
+      color: #1585cf
+      text-decoration: none
+      transition: color .3s
+
+      &:hover,
+      &:focus
+        color: $boss-medium-gray
+        text-decoration: none
+
+      &:not(:last-child)
+        margin-bottom: 15px
+
+    p a, li a, figcaption a
+      display: inline-block
+      margin-bottom: 0 !important
+
+    // wysiwyg-generated lists
+    & ul,
+    & ol
+      list-style: none
+      margin: 0
+      padding: 0
+
+      &:not(:last-child)
+        margin-bottom: 15px
+
+      & li
+        +text-normalizer()
+        position: relative
+
+        &:not(:last-child)
+          margin-bottom: 5px
+
+    & ul
+      & li
+        padding-left: 12px
+
+        &:before
+          content: "-"
+          position: absolute
+          left: 0
+          top: 0
+          display: inline-block
+
+    & ol
+      counter-reset: item
+
+      & li
+        padding-left: 20px
+
+        &:before
+          content: counter(item) ". "
+          counter-increment: item
+          position: absolute
+          left: 0
+          top: 0
+          display: inline-block
+
+    // wysiwyg-generated sublists
+    & ul ul,
+    & ol ol
+      padding-left: 30px
+      margin-bottom: 0
+
+    // wysiwyg-generated figure
+    & figure
+      display: inline-block
+      max-width: 200px
+      margin: 0 0 15px
+      background-color: #f0f0f0
+      border: 1px solid #ddd
+      text-align: center
+      vertical-align: top
+
+      &:not(:last-child)
+        margin-right: 10px
+
+    & figure img
+      display: inline-block
+      max-width: 100%
+      height: 150px
+
+    & figure figcaption
+      +text-normalizer()
+      max-width: 100%
+      padding: 5px
+      text-align: left
+      overflow-wrap: break-word
+      word-wrap: break-word
+      word-break: break-word
+      hyphens: auto

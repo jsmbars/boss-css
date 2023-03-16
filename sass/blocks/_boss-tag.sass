@@ -152,6 +152,9 @@ $block: ".boss-tag"
       margin-bottom: 10px
       margin-right: 5px
 
+  &_role_task-counter
+    background-color: #eee
+
 
   // $Common tag color modifiers
   &_color_accent-red
@@ -256,6 +259,30 @@ $block: ".boss-tag"
       padding: 5px 10px
       font-size: 12px
       text-transform: uppercase
+
+    #{$block}_role_task-counter &
+      padding: 5px 10px
+      font-size: 16px
+      color: #4c4c4c
+
+
+  // $Common tag text light
+  &__text-light
+    font-weight: 300
+
+
+  // $Common tag text bold
+  &__text-bold
+    font-weight: 600
+
+
+  // $Common tag text number
+  &__text-number
+    display: inline-block
+    font-size: inherit
+    line-height: inherit
+    color: inherit
+    font-weight: 800
 
 
   // $Common tag text icon
