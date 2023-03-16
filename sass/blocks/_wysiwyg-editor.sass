@@ -19,9 +19,9 @@ $block: ".wysiwyg-editor"
   width: 100%
 
   &_state_error
-    outline: 1px solid map-get($boss-app-palette, alert-border)
 
 
+  // RTE
   &__toolbar
     margin: 0
     padding: 10px 15px 5px
@@ -41,7 +41,6 @@ $block: ".wysiwyg-editor"
     &:not(:disabled):hover,
     &_state_active:not(:disabled)
       background: $boss-extra-light-gray !important
-
 
   & .DraftEditor-root,
   & .DraftEditor-editorContainer,
@@ -122,5 +121,33 @@ $block: ".wysiwyg-editor"
     display: inline-block
     width: auto
     text-align: right
+
+
+  // Trix
+  & trix-toolbar
+    .trix-button-group
+      border-color: #d8d8d8
+
+    .trix-button
+      border-radius: 2px
+      border-bottom: none
+      font-size: 18px
+      transition: all .3s
+
+      &:hover
+        background-color: #eee
+
+  & trix-editor
+    display: block
+    width: 100%
+    min-height: 200px
+    border-radius: 2px
+    border-color: #d8d8d8
+
+  &_state_error
+    & trix-editor
+      outline: 1px solid map-get($boss-app-palette, alert-border)
+
+
 
 
