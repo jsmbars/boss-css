@@ -647,11 +647,20 @@ $block: ".boss-overview"
     display: block
     width: 100%
 
+    #{$block}__activity &
+      margin-top: 5px
+
     @media screen and (max-width: 960px)
       margin-bottom: 5px
 
+      #{$block}__activity &
+        margin-bottom: 0
+
     @media screen and (max-width: 479px)
       margin-bottom: 10px
+
+      #{$block}__activity &
+        margin-bottom: 0
 
 
   // $Overview gallery flow area
@@ -671,6 +680,10 @@ $block: ".boss-overview"
     vertical-align: top
     background-color: $boss-extra-light-gray
     transition: opacity .4s
+
+    #{$block}__activity &
+      margin-right: 10px
+      margin-bottom: 10px
 
     @media screen and (max-width: 960px)
       width: 135px
@@ -743,6 +756,12 @@ $block: ".boss-overview"
     text-align: center
 
 
+  // $Overview gallery meta text
+  &__gallery-meta-text
+    +text-normalizer()
+    text-align: center
+
+
   // $Overview gallery link
   &__gallery-link
     +text-normalizer()
@@ -751,6 +770,10 @@ $block: ".boss-overview"
     right: 0
     bottom: 0
     left: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
     overflow: hidden
 
 
@@ -758,6 +781,32 @@ $block: ".boss-overview"
   &__gallery-image
     display: block
     width: 100%
+
+
+  // $Overview gallery caption
+  &__preview-caption
+    flex-grow: 0
+    flex-shrink: 0
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    display: block
+    padding: 5px
+    background-color: rgba(0,0,0,.6)
+
+
+  // $Overview gallery caption text
+  &__preview-caption-text
+    +text-normalizer()
+    color: #fff
+    font-size: 12px
+    font-weight: 400
+    text-align: center
+    overflow-wrap: break-word
+    word-wrap: break-word
+    word-break: break-word
+    hyphens: auto
 
 
   // $Overview previews
@@ -921,6 +970,10 @@ $block: ".boss-overview"
   &__meta
     +text-normalizer()
 
+  // $Overview meta information line
+  &__meta-line
+    display: block
+
   &__meta-light
     font-weight: 300
 
@@ -988,8 +1041,10 @@ $block: ".boss-overview"
 
     // $Overview activity item MOD: role updated
     // $Overview activity item MOD: role assigned
+    // $Overview activity item MOD: role attached
     &_role_updated,
-    &_role_assigned
+    &_role_assigned,
+    &_role_attached
       &:before
         background-color: map-get($boss-app-palette, primary)
 

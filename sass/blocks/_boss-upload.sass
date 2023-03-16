@@ -28,6 +28,7 @@ $block: ".boss-upload"
     display: block
     width: 100%
     max-width: 100%
+
     @media screen and (max-width: 960px)
       margin-bottom: 5px
 
@@ -36,6 +37,21 @@ $block: ".boss-upload"
 
     @media screen and (max-width: 400px)
       margin-bottom: 15px
+
+    // $Upload control flow MOD: adjust form
+    &_adjust_form
+
+      &:not(:first-child)
+        margin-top: 20px
+
+      @media screen and (max-width: 960px)
+        margin-bottom: 5px
+
+      @media screen and (max-width: 480px)
+        margin-bottom: 10px
+
+      @media screen and (max-width: 400px)
+        margin-bottom: 15px
 
 
   // $Upload control full width preview
@@ -49,6 +65,12 @@ $block: ".boss-upload"
 
     @media screen and (max-width: 480px)
       padding: 35px 12px 20px
+
+    // $Upload control flow MOD: adjust form
+    &_adjust_form
+
+      &:not(:first-child)
+        margin-top: 20px
 
 
   // $Upload control full width preview image
@@ -93,7 +115,10 @@ $block: ".boss-upload"
   // $Upload control preview area
   &__preview
     position: relative
-    display: inline-block
+    display: inline-flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
     width: 150px
     height: 150px
     vertical-align: top
@@ -157,12 +182,36 @@ $block: ".boss-upload"
         @media screen and (max-width: 400px)
           margin-right: 0
 
-    &_state_broken,
-    &_state_loading
-      display: inline-flex
-      flex-direction: column
-      justify-content: center
-      align-items: center
+    // $Upload control preview area MOD: role file
+    // $Upload control preview area MOD: role image
+    &_role_image,
+    &_role_file
+      &:before
+        content: ''
+        display: block
+        font-family: icons
+        font-size: 60px
+        line-height: 1
+        font-weight: 400
+        color: $boss-very-light-gray
+        text-align: center
+
+        @media screen and (max-width: 960px)
+          font-size: 55px
+
+        @media screen and (max-width: 480px)
+          font-size: 50px
+
+        @media screen and (max-width: 400px)
+          font-size: 45px
+
+    &_role_image
+      &:before
+        content: '\e934'
+
+    &_role_file
+      &:before
+        content: '\e927'
 
     &_state_broken#{&}_adjust_form,
     &_state_loading#{&}_adjust_form
@@ -231,7 +280,13 @@ $block: ".boss-upload"
     right: 0
     bottom: 0
     left: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
     overflow: hidden
+    cursor: pointer
+    text-align: center
     transition: opacity .4s
 
     &:hover
@@ -241,7 +296,8 @@ $block: ".boss-upload"
   // $Upload control preview image
   &__preview-image
     display: block
-    width: 100%
+    max-width: 100%
+    max-height: 100%
     margin: 0 auto
 
     &_size_xxs
@@ -264,6 +320,32 @@ $block: ".boss-upload"
 
     &_size_xxl
       max-width: 640px
+
+
+  // $Upload control preview caption
+  &__preview-caption
+    flex-grow: 0
+    flex-shrink: 0
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    display: block
+    padding: 5px
+    background-color: rgba(0,0,0,.6)
+
+
+  // $Upload control preview caption text
+  &__preview-caption-text
+    +text-normalizer()
+    color: #fff
+    font-size: 12px
+    font-weight: 400
+    text-align: center
+    overflow-wrap: break-word
+    word-wrap: break-word
+    word-break: break-word
+    hyphens: auto
 
 
   // $Upload control preview actions area

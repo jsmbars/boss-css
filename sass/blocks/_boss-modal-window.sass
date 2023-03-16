@@ -102,6 +102,10 @@ $block: ".boss-modal-window"
   &_role_task-create,
   &_role_task-edit,
   &_role_task-overview,
+  &_role_task-activity,
+  &_role_request-history,
+  &_role_request-clarification,
+  &_role_request-answer,
   &_role_history,
   &_role_venue-details,
   &_role_app-access-venues,
@@ -114,6 +118,8 @@ $block: ".boss-modal-window"
   &_role_disciplinary-details,
   &_role_edit,
   &_role_add,
+  &_role_complete,
+  &_role_reject,
   &_role_restore,
   &_role_question-move,
   &_role_attendance,
@@ -163,6 +169,10 @@ $block: ".boss-modal-window"
   &_role_task-create,
   &_role_task-edit,
   &_role_task-overview,
+  &_role_task-activity,
+  &_role_request-history,
+  &_role_request-clarification,
+  &_role_request-answer,
   &_role_history,
   &_role_shift-details,
   &_role_login,
@@ -278,11 +288,17 @@ $block: ".boss-modal-window"
     // $Modal window close inner CONTEXT: $Modal window MOD: role task overview
     #{$block}_role_edit &,
     #{$block}_role_add &,
+    #{$block}_role_complete &,
+    #{$block}_role_reject &,
     #{$block}_role_restore &,
     #{$block}_role_image-preview &,
     #{$block}_role_task-create &,
     #{$block}_role_task-edit &,
     #{$block}_role_task-overview &,
+    #{$block}_role_task-activity &,
+    #{$block}_role_request-history &,
+    #{$block}_role_request-clarification &,
+    #{$block}_role_request-answer &,
     #{$block}_role_bounced-email &,
     #{$block}_role_offences &,
     #{$block}_role_reviews &,
@@ -327,11 +343,17 @@ $block: ".boss-modal-window"
 
       #{$block}_role_edit &,
       #{$block}_role_add &,
+      #{$block}_role_complete &,
+      #{$block}_role_reject &,
       #{$block}_role_restore &,
       #{$block}_role_image-preview &,
       #{$block}_role_task-create &,
       #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
+      #{$block}_role_task-activity &,
+      #{$block}_role_request-history &,
+      #{$block}_role_request-clarification &,
+      #{$block}_role_request-answer &,
       #{$block}_role_bounced-email &,
       #{$block}_role_offences &,
       #{$block}_role_reviews &,
@@ -369,6 +391,8 @@ $block: ".boss-modal-window"
     @media screen and (max-width: 960px)
       #{$block}_role_edit &,
       #{$block}_role_add &,
+      #{$block}_role_complete &,
+      #{$block}_role_reject &,
       #{$block}_role_restore &,
       #{$block}_role_venue-details &,
       #{$block}_role_app-access-venues &,
@@ -384,6 +408,10 @@ $block: ".boss-modal-window"
       #{$block}_role_task-create &,
       #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
+      #{$block}_role_task-activity &,
+      #{$block}_role_request-history &,
+      #{$block}_role_request-clarification &,
+      #{$block}_role_request-answer &,
       #{$block}_role_bounced-email &,
       #{$block}_role_offences &,
       #{$block}_role_reviews &,
@@ -459,6 +487,7 @@ $block: ".boss-modal-window"
     // $Modal window header CONTEXT: $Modal window MOD: role add new
     // $Modal window header CONTEXT: $Modal window MOD: role details
     #{$block}_role_add-new &,
+    #{$block}_role_complete-new &,
     #{$block}_role_details &
       background-color: map-get($boss-app-palette, primary)
       text-transform: none
@@ -471,11 +500,17 @@ $block: ".boss-modal-window"
     // $Modal window header CONTEXT: $Modal window MOD: role task overview
     #{$block}_role_edit &,
     #{$block}_role_add &,
+    #{$block}_role_complete &,
+    #{$block}_role_reject &,
     #{$block}_role_restore &,
     #{$block}_role_image-preview &,
     #{$block}_role_task-create &,
     #{$block}_role_task-edit &,
     #{$block}_role_task-overview &,
+    #{$block}_role_task-activity &,
+    #{$block}_role_request-history &,
+    #{$block}_role_request-clarification &,
+    #{$block}_role_request-answer &,
     #{$block}_role_bounced-email &,
     #{$block}_role_offences &,
     #{$block}_role_reviews &,
@@ -555,11 +590,17 @@ $block: ".boss-modal-window"
     @media screen and (max-width: 960px)
       #{$block}_role_edit &,
       #{$block}_role_add &,
+      #{$block}_role_complete &,
+      #{$block}_role_reject &,
       #{$block}_role_restore &,
       #{$block}_role_image-preview &,
       #{$block}_role_task-create &,
       #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
+      #{$block}_role_task-activity &,
+      #{$block}_role_request-history &,
+      #{$block}_role_request-clarification &,
+      #{$block}_role_request-answer &,
       #{$block}_role_bounced-email &,
       #{$block}_role_offences &,
       #{$block}_role_reviews &,
@@ -604,10 +645,16 @@ $block: ".boss-modal-window"
     @media screen and (max-width: 400px)
       #{$block}_role_edit &,
       #{$block}_role_add &,
+      #{$block}_role_complete &,
+      #{$block}_role_reject &,
       #{$block}_role_restore &,
       #{$block}_role_task-create &,
       #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
+      #{$block}_role_task-activity &,
+      #{$block}_role_request-history &,
+      #{$block}_role_request-clarification &,
+      #{$block}_role_request-answer &,
       #{$block}_role_bounced-email &,
       #{$block}_role_offences &,
       #{$block}_role_reviews &,
@@ -757,10 +804,16 @@ $block: ".boss-modal-window"
 
     #{$block}_role_edit &,
     #{$block}_role_add &,
+    #{$block}_role_complete &,
+    #{$block}_role_reject &,
     #{$block}_role_restore &,
     #{$block}_role_task-create &,
     #{$block}_role_task-edit &,
     #{$block}_role_task-overview &,
+    #{$block}_role_task-activity &,
+    #{$block}_role_request-history &,
+    #{$block}_role_request-clarification &,
+    #{$block}_role_request-answer &,
     #{$block}_role_login &,
     #{$block}_role_reset &,
     #{$block}_role_change &,
@@ -811,10 +864,16 @@ $block: ".boss-modal-window"
 
       #{$block}_role_edit &,
       #{$block}_role_add &,
+      #{$block}_role_complete &,
+      #{$block}_role_reject &,
       #{$block}_role_restore &,
       #{$block}_role_task-create &,
       #{$block}_role_task-edit &,
       #{$block}_role_task-overview &,
+      #{$block}_role_task-activity &,
+      #{$block}_role_request-history &,
+      #{$block}_role_request-clarification &,
+      #{$block}_role_request-answer &,
       #{$block}_role_login &,
       #{$block}_role_reset &,
       #{$block}_role_change &,
@@ -1001,7 +1060,13 @@ $block: ".boss-modal-window"
     color: $boss-medium-gray
     font-size: 18px
 
-    #{$block}_role_note &
+    #{$block}_role_note &,
+    #{$block}_role_add &,
+    #{$block}_role_edit &,
+    #{$block}_role_complete &,
+    #{$block}_role_reject &,
+    #{$block}_role_request-clarification &,
+    #{$block}_role_request-answer &
       text-align: left
 
     #{$block}_role_unban &
@@ -1015,6 +1080,9 @@ $block: ".boss-modal-window"
     #{$block}_role_ok &
       color: map-get($boss-app-palette, secondary)
       font-size: 24px
+
+    #{$block}__message-image + &
+      margin-top: 10px
 
     &:not(:last-child)
       #{$block}_role_note &
