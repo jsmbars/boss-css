@@ -521,6 +521,9 @@ $block: ".boss-check"
       #{$block}_page_users-app-access-venues &
         width: calc(60% - 30px)
 
+      #{$block}_page_marketing-task &
+        flex-wrap: wrap
+
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
         width: 100%
@@ -531,12 +534,13 @@ $block: ".boss-check"
         width: 100%
         margin-top: 5px
 
-      #{$block}_page_marketing-task &
-        flex-wrap: wrap
-
     &:not(:last-child)
       #{$block}_page_marketing-task &
         margin-bottom: 20px
+
+      @media screen and (max-width: 480px)
+        #{$block}_page_marketing-task &
+          margin-bottom: 15px
 
     &:not(:only-child)
       @media screen and (max-width: 640px)
@@ -650,10 +654,6 @@ $block: ".boss-check"
       #{$block}_page_contacts-admin &
         text-align: center
 
-      #{$block}_page_marketing-task &
-        width: 100%
-
-    @media screen and (max-width: 400px)
       #{$block}_page_marketing-task &
         width: 100%
 
@@ -905,7 +905,7 @@ $block: ".boss-check"
     #{$block}_page_marketing-task &
       padding-left: 10px
 
-    @media screen and (max-width: 400px)
+    @media screen and (max-width: 480px)
       #{$block}_page_marketing-task &
         order: -99
         width: 100%
@@ -949,7 +949,7 @@ $block: ".boss-check"
         flex-shrink: 1
         width: 100%
 
-    @media screen and (max-width: 400px)
+    @media screen and (max-width: 480px)
       #{$block}_page_marketing-task &
         display: inline-block
 
@@ -967,7 +967,7 @@ $block: ".boss-check"
           margin-right: 0
           margin-bottom: 10px
 
-      @media screen and (max-width: 400px)
+      @media screen and (max-width: 480px)
         #{$block}_page_marketing-task &
           margin-bottom: 0
           margin-right: 10px
@@ -1259,6 +1259,12 @@ $block: ".boss-check"
       #{$block}_page_security-pay-rate-special &
         flex-wrap: wrap
 
+      #{$block}_page_marketing-task &
+        width: 100%
+        margin-top: 5px
+        padding-left: 0
+        text-align: center
+
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &,
       #{$block}_page_devices &
@@ -1267,12 +1273,6 @@ $block: ".boss-check"
         flex-shrink: 1
         width: 100%
         margin-top: 10px
-        text-align: center
-
-      #{$block}_page_marketing-task &
-        width: 100%
-        margin-top: 5px
-        padding-left: 0
         text-align: center
 
 
@@ -2074,16 +2074,16 @@ $block: ".boss-check"
       #{$block}_page_smp-linked-user-app-access &
         font-size: 18px
 
+      #{$block}_page_marketing-task &
+        width: 100%
+        line-height: 1
+
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys &
         text-align: center
 
       #{$block}_page_users-app-access-venues &
         width: calc(100% - 50px)
-
-      #{$block}_page_marketing-task &
-        width: 100%
-        line-height: 1
 
     &_role_date,
     &_role_date-calendar,
