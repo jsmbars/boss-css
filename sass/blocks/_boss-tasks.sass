@@ -30,8 +30,14 @@ $block: ".boss-tasks"
   &_role_marketing
     max-height: 100%
 
+  &_role_up-for-grabs
+    outline: 2px solid #84bef0
+
+  &_role_in-progress
+    outline: 2px solid #f4a84f
+
   &_role_review
-    background-color: #feeeee
+    outline: 2px solid #ed7f7e
 
 
   // $Tasks header
@@ -43,10 +49,6 @@ $block: ".boss-tasks"
     padding: 15px 10px
     background-color: #fff
     border-bottom: 1px solid #ddd
-
-    // $Tasks header CONTEXT: $Tasks MOD: role review
-    #{$block}_role_review &
-      background-color: #feeeee
 
 
   // $Tasks info
@@ -152,10 +154,7 @@ $block: ".boss-tasks"
     padding: 10px 5px
     overflow: hidden
     background-color: #efefef
-
-    // $Tasks content CONTEXT: $Tasks MOD: role review
-    #{$block}_role_review &
-      background-color: #feeeee
+    border: 1px solid transparent
 
 
   // $Tasks cards
