@@ -33,6 +33,11 @@ $block: ".boss-page-main"
     align-items: flex-start
     overflow: hidden
 
+  &_adjust_marketing-tasks
+    @media screen and (max-width: 960px)
+      display: block
+      overflow: auto
+
 
   // $Page main container dashboard
   &__dashboard
@@ -169,6 +174,16 @@ $block: ".boss-page-main"
       overflow-y: hidden
       overflow-x: auto
 
+    @media screen and (max-width: 960px)
+      #{$block}_adjust_marketing-tasks &
+        position: relative
+        top: auto
+        right: auto
+        bottom: auto
+        left: auto
+        display: block
+        overflow-y: auto
+
 
   // $Page main container inner
   &__inner
@@ -258,6 +273,12 @@ $block: ".boss-page-main"
       padding: 20px 15px
 
 
+  &__tasks
+    @media screen and (max-width: 960px)
+      height: auto
+      white-space: normal
+
+
   // $Page main notifications column
   &__notifications-column
     display: inline-block
@@ -277,15 +298,27 @@ $block: ".boss-page-main"
     height: 100%
     vertical-align: top
 
+    @media screen and (max-width: 960px)
+      display: block
+      min-width: 0
+      width: calc(100vw - 60px)
+      height: auto
+
+    @media screen and (max-width: 800px)
+      width: calc(100vw - 50px)
+
     @media screen and (max-width: 640px)
       width: calc(100vw - 40px)
-      min-width: 0
 
     @media screen and (max-width: 480px)
       width: calc(100vw - 30px)
 
     &:not(:last-child)
       margin-right: 20px
+
+      @media screen and (max-width: 960px)
+        margin-right: 0
+        margin-bottom: 20px
 
 
   // $Page main container tabs
