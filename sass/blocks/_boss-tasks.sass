@@ -30,6 +30,11 @@ $block: ".boss-tasks"
   &_role_marketing
     max-height: 100%
 
+    @media screen and (max-width: 960px)
+      display: block
+      max-height: none
+      overflow: auto
+
   &_role_up-for-grabs
     outline: 2px solid #84bef0
 
@@ -70,19 +75,31 @@ $block: ".boss-tasks"
     overflow: hidden
     padding-right: 10px
 
+    @media screen and (max-width: 960px)
+      margin-top: 5px
+
 
   // $Tasks title status
   &__title-status
     font-weight: 400
 
-    @media screen and (max-width: 400px)
+    @media screen and (max-width: 640px)
+      letter-spacing: -1px
+
+    @media screen and (max-width: 480px)
       display: block
       margin-top: 5px
       font-size: 16px
+      letter-spacing: normal
 
     // $Tasks title status MOD: role alert
     &_role_alert
       color: #ed7f7e
+
+
+  // $Tasks actions
+  &__actions
+    white-space: nowrap
 
 
   // $Tasks filter
@@ -97,6 +114,8 @@ $block: ".boss-tasks"
     display: inline-block
     cursor: pointer
     white-space: nowrap
+    vertical-align: middle
+    transition: all .3s
 
     &:before
       content: '\e923'
@@ -121,9 +140,10 @@ $block: ".boss-tasks"
 
     &:hover,
     &:focus
-      color: $boss-global-font-color
+      color: #4c4c4c
+      opacity: .8
 
-    // $Tasks filter action MOD: state closed
+    // $Tasks filter switch MOD: state closed
     &_state_closed
       &:after
         content: '\e918'
@@ -142,6 +162,52 @@ $block: ".boss-tasks"
       display: none
 
 
+  // $Tasks content switch
+  &__content-switch
+    +text-normalizer()
+    display: none
+    cursor: pointer
+    font-size: 0
+    line-height: 0
+    color: transparent
+    white-space: nowrap
+    vertical-align: middle
+    transition: all .4s
+    opacity: 0.8
+
+    @media screen and (max-width: 960px)
+      display: inline-block
+
+    &:before
+      content: '\e91a'
+      display: inline-block
+      width: 30px
+      height: 30px
+      border: 2px solid #808080
+      border-radius: 50%
+      font-family: icons
+      font-size: 30px
+      line-height: 22px
+      font-weight: 400
+      color: #4c4c4c
+      text-align: center
+
+    &:hover,
+    &:focus
+      color: #4c4c4c
+      opacity: 1
+
+    // $Tasks content switch MOD: state closed
+    &_state_closed
+      &:before
+        content: '\e919'
+        line-height: 27px
+
+
+  &__filter-switch + &__content-switch
+    margin-left: 20px
+
+
   // $Tasks content
   &__content
     flex-grow: 1
@@ -155,6 +221,18 @@ $block: ".boss-tasks"
     overflow: hidden
     background-color: #efefef
     border: 1px solid transparent
+
+    @media screen and (max-width: 960px)
+      display: block
+      overflow: auto
+
+    @media screen and (min-width: 961px)
+      display: flex !important
+
+    // $Tasks content MOD: state closed
+    &_state_closed
+      @media screen and (max-width: 960px)
+        display: none
 
 
   // $Tasks cards

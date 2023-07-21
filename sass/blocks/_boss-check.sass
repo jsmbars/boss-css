@@ -88,6 +88,9 @@ $block: ".boss-check"
   &_state_success
     background-color: #dbfddb
 
+  &_state_success#{&}_page_marketing-task
+    background-color: #f1f8e3
+
   // $Check block MOD: state alert
   &_state_warning
     background-color: #ffe3bd
@@ -534,7 +537,17 @@ $block: ".boss-check"
         width: 100%
         margin-top: 5px
 
-    &:not(:last-child)
+    &:nth-child(1):nth-last-child(3)
+      #{$block}_page_marketing-task &
+        justify-content: flex-start
+        margin-bottom: 10px
+
+      @media screen and (max-width: 480px)
+        #{$block}_page_marketing-task &
+          justify-content: center
+
+    &:nth-child(1):nth-last-child(2),
+    &:nth-child(2):nth-last-child(2),
       #{$block}_page_marketing-task &
         margin-bottom: 20px
 
@@ -912,6 +925,15 @@ $block: ".boss-check"
         padding-left: 0
         margin-bottom: 10px
         text-align: center
+
+    &:empty
+      #{$block}_page_marketing-task &
+        padding-left: 0
+
+      @media screen and (max-width: 480px)
+        #{$block}_page_marketing-task &
+          padding-left: 0
+          margin-bottom: 0
 
 
   // $Check block header status
