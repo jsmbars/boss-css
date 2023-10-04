@@ -91,6 +91,10 @@ $block: ".boss-check"
   &_state_success#{&}_page_marketing-task
     background-color: #f1f8e3
 
+  // $Check block MOD: state access granted
+  &_state_access-granted
+    background-color: #dbfddb
+
   // $Check block MOD: state alert
   &_state_warning
     background-color: #ffe3bd
@@ -103,6 +107,10 @@ $block: ".boss-check"
 
     &:hover
       opacity: 1
+
+  // $Check block MOD: state access pending
+  &_state_access-pending
+    background-color: #ffedda
 
   // $Check block MOD: state alert
   &_state_alert
@@ -1419,7 +1427,9 @@ $block: ".boss-check"
       #{$block}_state_frozen &,
       #{$block}_state_disabled &,
       #{$block}_state_inactive &,
-      #{$block}_state_inactive-faded &
+      #{$block}_state_inactive-faded &,
+      #{$block}_state_access-pending &,
+      #{$block}_state_access-granted &
         background-color: transparent
 
     &_role_requests

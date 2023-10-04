@@ -18,6 +18,9 @@ $block: ".boss-access"
   display: block
   width: 100%
 
+  // $Access MOD: type general
+  &_type_general
+
 
   // $Access header
   &__header
@@ -31,6 +34,11 @@ $block: ".boss-access"
       margin-bottom: 15px
       padding-bottom: 15px
       border-bottom: 1px solid #ddd
+
+      #{$block}_type_general &
+        margin-bottom: 0
+        padding-bottom: 0
+        border: none
 
 
   // $Access header actions
@@ -68,9 +76,15 @@ $block: ".boss-access"
     width: 100%
     padding: 15px
 
+    #{$block}_type_general &
+      padding: 0
+
     @media screen and (max-width: 640px)
       padding-left: 10px
       padding-right: 10px
+
+      #{$block}_type_general &
+        padding: 0
 
     &:not(:last-child)
       margin-bottom: 20px

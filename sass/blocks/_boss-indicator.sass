@@ -559,7 +559,9 @@ $block: ".boss-indicator"
     vertical-align: middle
 
     // $Indicator marker CONTEXT: $Indicator MOD: role info primary
-    #{$block}_role_info-primary &
+    // $Indicator marker CONTEXT: $Indicator MOD: access granted
+    #{$block}_role_info-primary &,
+    #{$block}_access_granted &
       background-color: map-get($boss-app-palette, primary)
 
     // $Indicator marker CONTEXT: $Indicator MOD: role info secondary
@@ -584,7 +586,9 @@ $block: ".boss-indicator"
 
 
     // $Indicator marker CONTEXT: $Indicator MOD: level amber
-    #{$block}_level_amber &
+    // $Indicator marker CONTEXT: $Indicator MOD: access pending
+    #{$block}_level_amber &,
+    #{$block}_access_pending &
       background-color: map-get($boss-app-palette, warning)
 
     // $Indicator marker CONTEXT: $Indicator MOD: role info
