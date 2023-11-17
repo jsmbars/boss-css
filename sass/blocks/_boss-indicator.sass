@@ -249,6 +249,12 @@ $block: ".boss-indicator"
         font-size: 35px
         line-height: 35px
 
+    &_adjust_paginator
+      &:before
+        @media screen and (max-width: 640px)
+          font-size: 14px
+          line-height: 14px
+
     &_spinner
       width: 25px
       height: 25px
@@ -538,6 +544,14 @@ $block: ".boss-indicator"
     &_attachment
       &:before
         content: '\e9cd'
+
+    &_not-trading
+      &:before
+        content: '\e9ac'
+
+    &_delivery
+      &:before
+        content: '\e9ab'
 
 
   // $Indicator marker

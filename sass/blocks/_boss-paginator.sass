@@ -252,6 +252,14 @@ $block: ".boss-paginator"
         background-color: #ced9df
         color: #4c4c4c
 
+    // $Paginator action MOD: adjust status
+    &_adjust_status
+      padding-top: 20px
+
+      @media screen and (max-width: 640px)
+        #{$block}_size_full &
+          padding-top: 20px
+
     // $Paginator action MOD: role delimiter
     &_role_delimiter
       cursor: default
@@ -354,3 +362,28 @@ $block: ".boss-paginator"
 
       #{$block}__action_state_active &
         color: #fff
+
+
+  // $Paginator action status
+  &__action-status
+    position: absolute
+    top: 2px
+    right: 5px
+    left: 5px
+    text-align: right
+    overflow: hidden
+
+    @media screen and (max-width: 640px)
+      right: 2px
+      left: 2px
+      text-align: center
+
+
+  // $Paginator action indicator
+  &__action-indicator
+    display: inline-block
+    vertical-align: middle
+    line-height: 1
+
+    &:not(:last-child)
+      margin-right: 5px

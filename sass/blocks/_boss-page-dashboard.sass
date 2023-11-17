@@ -66,6 +66,9 @@ $block: ".boss-page-dashboard"
     #{$block}_page_profile-disabled &
       align-items: flex-start
 
+    #{$block}_page_rotas-daily &:first-child
+      align-items: flex-start
+
     #{$block}_page_change-order-reports-history &:last-child
       justify-content: flex-start
 
@@ -90,7 +93,8 @@ $block: ".boss-page-dashboard"
     #{$block}_page_change-order-reports-history &,
     #{$block}_page_finance-reports &:not(:last-child),
     #{$block}_page_payroll-reports &:not(:last-child),
-    #{$block}_page_security-payroll-report &:not(:last-child)
+    #{$block}_page_security-payroll-report &:not(:last-child),
+    #{$block}_page_rotas-daily &:not(:last-child)
       margin-bottom: 20px
 
     @media screen and (max-width: 1280px)
@@ -133,6 +137,7 @@ $block: ".boss-page-dashboard"
       #{$block}_page_rotas-daily &:first-child
         flex-direction: column
         justify-content: center
+        align-items: center
 
     @media screen and (max-width: 480px)
       #{$block}_page_profile-edit &:first-child
@@ -183,7 +188,8 @@ $block: ".boss-page-dashboard"
       width: 100%
 
       #{$block}_page_holidays-report &,
-      #{$block}_page_weekly-reports &
+      #{$block}_page_weekly-reports &,
+      #{$block}_page_rotas-daily &
         width: auto
 
       #{$block}_page_finance-reports &,
@@ -205,12 +211,22 @@ $block: ".boss-page-dashboard"
     color: $boss-global-font-color
     margin-bottom: 20px
 
+    #{$block}_page_rotas-daily &
+      margin-bottom: 0
+
     @media screen and (max-width: 1120px)
       #{$block}_page_vhcq &
         text-align: center
 
     @media screen and (max-width: 960px)
       text-align: center
+
+      #{$block}_page_rotas-daily &
+        text-align: left
+
+    @media screen and (max-width: 640px)
+      #{$block}_page_rotas-daily &
+        margin-bottom: 20px
 
 
   // $Page dashboard title text
@@ -268,6 +284,15 @@ $block: ".boss-page-dashboard"
     justify-content: flex-start
     align-items: center
     margin-bottom: 25px
+
+    #{$block}_page_rotas-daily &
+      justify-content: flex-end
+      margin-bottom: 0
+
+    &:not(:last-child)
+      #{$block}_page_rotas-daily &
+        margin-bottom: 10px
+
 
 
   // $Page dashboard status indicator
@@ -335,13 +360,6 @@ $block: ".boss-page-dashboard"
       flex-grow: 1
       flex-shrink: 1
       width: 100%
-
-      #{$block}_page_rotas-daily &
-        margin-right: 25px
-
-    @media screen and (max-width: 640px)
-      #{$block}_page_rotas-daily &
-        margin-right: 0
 
     &:empty
       margin-bottom: 0
