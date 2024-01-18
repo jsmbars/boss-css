@@ -68,9 +68,9 @@ $block: ".time-control"
       +text-normalizer()
       display: block
       width: 100%
-      height: 50px
+      height: 100%
       line-height: 1
-      padding: 15px 20px
+      padding: 5px 20px
       border: none
       box-shadow: none
       background: none
@@ -78,6 +78,9 @@ $block: ".time-control"
 
       #{$block}_type_icon &
         padding-left: 45px
+
+      #{$block}_state_error &
+        color: map-get($boss-app-palette, alert)
 
       &:focus
         border: none
@@ -121,49 +124,6 @@ $block: ".time-control"
         opacity:  1 !important
 
 
-  // $Time control input value
-  &__input-value
-    +text-normalizer()
-    display: block
-    width: 100%
-    height: 50px
-    padding: 15px 20px
-    line-height: 1
-    cursor: text
-    user-select: none
-
-    // $Time control input value CONTEXT: $Time control MOD: type icon
-    #{$block}_type_icon &
-      padding-left: 45px
-
-
-  // $Time control input value part
-  &__input-value-part
-    display: inline-block
-    padding: 2px 0
-
-    // $Time control input value part MOD: state selected
-    &_state_selected
-      background-color: #4c4c4c
-      color: #fff
-      padding: 2px
-
-
-  // $Time control input value delimiter
-  &__input-value-delimiter
-    display: inline-block
-    padding: 0 2px
-
-
-  // $Time control input underscore
-  &__input-value-underscore
-    display: inline-block
-    animation-name: underscore-blink
-    animation-duration: .8s
-    animation-iteration-count: infinite
-    opacity: 1
-
-
   // $Time control input clear
   &__input-clear
     +text-normalizer()
@@ -203,13 +163,81 @@ $block: ".time-control"
     top: calc(100% - 1px)
     left: 0
     z-index: 9999
+    border: 1px solid $boss-very-light-gray
+    background-color: #fff
+
+
+  // $Time control value
+  &__value
+    +text-normalizer()
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 60px
+    font-size: 24px
+    line-height: 1
+    font-weight: 600
+    cursor: text
+    user-select: none
+    border-bottom: 1px solid #eee
+    text-align: center
+
+    @media screen and (max-width: 480px)
+      height: 40px
+      font-size: 20px
+
+
+  // $Time control value part
+  &__value-part
+    flex-grow: 0
+    flex-shrink: 0
+    display: inline-block
+    padding: 4px 0 8px
+
+    @media screen and (max-width: 480px)
+      padding: 4px 0 6px
+
+    // $Time control value part MOD: state selected
+    &_state_selected
+      background-color: #4c4c4c
+      color: #fff
+      padding: 4px 4px 8px
+
+      @media screen and (max-width: 480px)
+        padding: 4px 4px 6px
+
+
+  // $Time control value delimiter
+  &__value-delimiter
+    flex-grow: 0
+    flex-shrink: 0
+    display: inline-block
+    padding: 4px 4px 8px
+
+    @media screen and (max-width: 480px)
+      padding: 4px 4px 6px
+
+
+  // $Time control value underscore
+  &__value-underscore
+    display: inline-block
+    animation-name: underscore-blink
+    animation-duration: .8s
+    animation-iteration-count: infinite
+    opacity: 1
+
+
+  // $Time control swipers
+  &__swipers
+    position: relative
     display: flex
     flex-direction: row
     justify-content: flex-start
     align-items: flex-start
     padding: 10px
-    border: 1px solid $boss-very-light-gray
-    background-color: #fff
 
     &:before,
     &:after
@@ -221,10 +249,16 @@ $block: ".time-control"
       border-bottom: 1px solid #aaa
 
     &:before
-      top: 70px
+      top: 50px
+
+      @media screen and (max-width: 480px)
+        top: 70px
 
     &:after
-      bottom: 70px
+      bottom: 50px
+
+      @media screen and (max-width: 480px)
+        bottom: 70px
 
 
   // $Time control swiper
@@ -238,15 +272,14 @@ $block: ".time-control"
       &:after
         content: ':'
         position: absolute
-        right: 0
+        right: -1px
         top: 50%
         z-index: 0
         display: block
-        width: 2px
-        height: 24px
+        height: 20px
         margin-top: -12px
-        font-size: 24px
-        line-height: 24px
+        font-size: 20px
+        line-height: 20px
         color: #808080
 
     & .swiper,
@@ -254,8 +287,12 @@ $block: ".time-control"
       position: relative
       display: block
       width: 60px
-      height: 180px
+      height: 120px
       overflow: hidden
+
+      @media screen and (max-width: 480px)
+        width: 80px
+        height: 180px
 
       &:before,
       &:after
@@ -285,13 +322,17 @@ $block: ".time-control"
       display: flex
       justify-content: center
       align-items: center
-      font-size: 24px
+      font-size: 20px
+      line-height: 1
       font-weight: 600
       -webkit-tap-highlight-color: transparent
       cursor: default
       color: #ddd
       transition: opacity 0.3s ease
       user-select: none
+
+      @media screen and (max-width: 480px)
+        font-size: 24px
 
     & .swiper-slide-prev,
     & .swiper-slide-next
