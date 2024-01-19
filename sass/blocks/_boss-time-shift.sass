@@ -432,7 +432,7 @@ $block: ".boss-time-shift"
 
       &:focus
         outline: none
-        border: 1px solid $boss-very-light-gray
+        border-color: $boss-very-light-gray
         box-shadow: 0 0 5px 0 $boss-very-light-gray
 
       &[type=text]::-ms-clear
@@ -497,6 +497,9 @@ $block: ".boss-time-shift"
     line-height: 0
     text-align: center
     cursor: pointer
+    border: none
+    outline: none
+    background: none
     overflow: hidden
 
     &:before
@@ -512,6 +515,9 @@ $block: ".boss-time-shift"
     &:hover
       &:before
         color: #4c4c4c
+
+    &:focus
+      outline: none
 
 
   &__select

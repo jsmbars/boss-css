@@ -23,9 +23,6 @@ $block: ".time-control"
   display: block
   width: 100%
 
-  // $Time control MOD: state focused
-  &_state_focused
-
   // $Time control MOD: state error
   &_state_error
 
@@ -36,13 +33,6 @@ $block: ".time-control"
     display: block
     width: 100%
     height: 50px
-    background-color: #FFF
-    border: 1px solid $boss-very-light-gray
-    border-radius: 2px
-
-    // $Time control input CONTEXT: $Time control MOD: state focused
-    #{$block}_state_focused &
-      box-shadow: 0 0 5px 0 $boss-very-light-gray
 
     // $Time control input CONTEXT: $Time control MOD: state error
     #{$block}_state_error &
@@ -71,9 +61,13 @@ $block: ".time-control"
       height: 100%
       line-height: 1
       padding: 5px 20px
-      border: none
+      background-color: #FFF
+      border: 1px solid #d8d8d8
+      border-radius: 2px
       box-shadow: none
-      background: none
+      appearance: none
+      -moz-appearance: none
+      -webkit-appearance: none
       transition: none
 
       #{$block}_type_icon &
@@ -83,10 +77,9 @@ $block: ".time-control"
         color: map-get($boss-app-palette, alert)
 
       &:focus
-        border: none
         outline: none
-        box-shadow: none
-        background: none
+        border-color: #d8d8d8
+        box-shadow: 0 0 5px 0 #d8d8d8
 
       &[type=text]::-ms-clear
         display: none
@@ -140,6 +133,9 @@ $block: ".time-control"
     line-height: 0
     text-align: center
     cursor: pointer
+    border: none
+    outline: none
+    background: none
     overflow: hidden
 
     &:before
@@ -156,37 +152,66 @@ $block: ".time-control"
       &:before
         color: #4c4c4c
 
+    &:focus
+      outline: none
 
-  // $Time control picker
-  &__picker
+
+  // $Time control panel
+  &__panel
     position: absolute
     top: calc(100% - 1px)
     left: 0
     z-index: 9999
-    border: 1px solid $boss-very-light-gray
+    border: 1px solid #d8d8d8
     background-color: #fff
 
 
-  // $Time control value
-  &__value
-    +text-normalizer()
+  // $Time control picker
+  &__picker
     position: relative
+    display: block
+    width: 140px
+
+    @media screen and (max-width: 480px)
+      width: 180px
+
+
+  // $Time control info
+  &__info
     display: flex
     flex-direction: row
     justify-content: center
     align-items: center
     width: 100%
     height: 60px
+    padding: 0 10px
+    background-color: #f8f8f8
+    border-bottom: 1px solid #eee
+
+    @media screen and (max-width: 480px)
+      justify-content: space-between
+      height: 40px
+
+
+  // $Time control value
+  &__value
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: auto
     font-size: 24px
     line-height: 1
     font-weight: 600
     cursor: text
     user-select: none
-    border-bottom: 1px solid #eee
     text-align: center
 
     @media screen and (max-width: 480px)
-      height: 40px
       font-size: 20px
 
 
@@ -228,6 +253,60 @@ $block: ".time-control"
     animation-duration: .8s
     animation-iteration-count: infinite
     opacity: 1
+
+
+  // $Time control actions
+  &__actions
+    flex-grow: 0
+    flex-shrink: 0
+    display: none
+
+    @media screen and (max-width: 480px)
+      display: block
+
+
+  // $Time control action
+  &__action
+    +text-normalizer()
+    display: inline-block
+    width: 20px
+    height: 20px
+    color: transparent
+    font-size: 0
+    line-height: 0
+    text-align: center
+    cursor: pointer
+    border: none
+    outline: none
+    background: none
+    overflow: hidden
+
+    &:before
+      content: ""
+      display: inline-block
+      color: #aaa
+      font-family: icons
+      font-size: 12px
+      line-height: 20px
+      text-align: center
+      transition: color .4s
+
+    &:hover
+      &:before
+        color: #4c4c4c
+
+    &:focus
+      outline: none
+
+    // $Time control action MOD: role cancel
+    &_role_cancel
+      &:before
+        content: "\e96a"
+        color: map-get($boss-app-palette, alert)
+
+      &:hover
+        &:before
+          color: darken(map-get($boss-app-palette, alert), 10%)
 
 
   // $Time control swipers
@@ -340,4 +419,3 @@ $block: ".time-control"
 
     & .swiper-slide-active
       color: #4c4c4c
-
