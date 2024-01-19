@@ -412,11 +412,112 @@ $block: ".boss-time-shift"
         #{$block}__time &
           left: 8px
 
+    & input
+      +text-normalizer()
+      display: block
+      width: 100%
+      height: 45px
+      line-height: 1
+      padding: 5px 20px
+      color: #808080
+      border: 1px solid $boss-very-light-gray
+      box-shadow: none
+
+      #{$block}__time &
+        padding-left: 40px
+
+      @media screen and (max-width: 400px)
+        #{$block}__time &
+          padding-left: 30px
+
+      &:focus
+        outline: none
+        border-color: $boss-very-light-gray
+        box-shadow: 0 0 5px 0 $boss-very-light-gray
+
+      &[type=text]::-ms-clear
+        display: none
+
+      &[readonly]
+        background-color: #FFF
+        cursor: text
+
+      &::selection
+        background: #4c4c4c
+        color: #fff
+
+      &::-moz-selection
+        background: #4c4c4c
+        color: #fff
+
+      ::-webkit-input-placeholder
+        color: #808080
+        opacity:  1 !important
+
+      :-moz-placeholder
+        color: #808080
+        opacity:  1 !important
+
+      ::-moz-placeholder
+        color: #808080
+        opacity:  1 !important
+
+      :-ms-input-placeholder
+        color: #808080
+        opacity:  1 !important
+
+      :placeholder-shown
+        color: #808080
+        opacity:  1 !important
+
 
     // $Time shift MOD: error
     &_state_error
       &:before
         color: map-get($boss-app-palette, alert)
+
+      & input
+        color: map-get($boss-app-palette, alert)
+        border: 1px solid map-get($boss-app-palette, alert)
+
+
+  // $Time control select clear
+  &__select-clear
+    +text-normalizer()
+    position: absolute
+    top: 50%
+    right: 10px
+    z-index: 10
+    display: block
+    width: 20px
+    height: 20px
+    margin-top: -10px
+    color: transparent
+    font-size: 0
+    line-height: 0
+    text-align: center
+    cursor: pointer
+    border: none
+    outline: none
+    background: none
+    overflow: hidden
+
+    &:before
+      content: "\e96a"
+      display: inline-block
+      color: #aaa
+      font-family: icons
+      font-size: 12px
+      line-height: 20px
+      text-align: center
+      transition: color .4s
+
+    &:hover
+      &:before
+        color: #4c4c4c
+
+    &:focus
+      outline: none
 
 
   &__select
