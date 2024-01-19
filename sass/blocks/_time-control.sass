@@ -23,6 +23,12 @@ $block: ".time-control"
   display: block
   width: 100%
 
+  // $Time control MOD: type icon
+  &_type_icon
+
+  // $Time control MOD: adjust touch
+  &_adjust_touch
+
   // $Time control MOD: state error
   &_state_error
 
@@ -188,8 +194,11 @@ $block: ".time-control"
     background-color: #f8f8f8
     border-bottom: 1px solid #eee
 
-    @media screen and (max-width: 480px)
+    // $Time control info CONTEXT: $Time control MOD: adjust touch
+    #{$block}_adjust_touch &
       justify-content: space-between
+
+    @media screen and (max-width: 480px)
       height: 40px
 
 
@@ -261,7 +270,8 @@ $block: ".time-control"
     flex-shrink: 0
     display: none
 
-    @media screen and (max-width: 480px)
+    // $Time control actions CONTEXT: $Time control MOD: adjust touch
+    #{$block}_adjust_touch &
       display: block
 
 
