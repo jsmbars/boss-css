@@ -49,6 +49,9 @@ $block: ".boss-board"
       @media screen and (max-width: 960px)
         margin-bottom: 30px
 
+  // $Board MOD: role hours-tags
+  &_role_hours-tags
+
   // $Board MOD: role finance-report
   &_role_finance-report
 
@@ -687,6 +690,10 @@ $block: ".boss-board"
     flex-shrink: 1
     width: auto
 
+    #{$block}_role_hours-tags &
+      width: 100%
+      margin-bottom: 30px
+
     @media screen and (max-width: 640px)
       #{$block}_role_profile-quizzes-categories &
         flex-grow: 1
@@ -994,11 +1001,15 @@ $block: ".boss-board"
 
   // $Board main content area group
   &__main-group
+    position: relative
     display: block
     width: 100%
 
     &:not(:last-child)
       padding-bottom: 10px
+
+      #{$block}_role_finance-report-overview &
+        padding-bottom: 20px
 
 
   // $Board footer area
@@ -1675,6 +1686,23 @@ $block: ".boss-board"
     @media screen and (max-width: 400px)
       padding-left: 15px
       padding-right: 15px
+
+
+  // $Board tags area
+  &__tags
+    display: block
+    width: 100%
+
+
+  // $Board tags group
+  &__tags-group
+    display: block
+    width: 100%
+
+    &:not(:last-child)
+      margin-bottom: 25px
+      padding-bottom: 10px
+      border-bottom: 1px solid #ddd
 
 
   // $Board details link
