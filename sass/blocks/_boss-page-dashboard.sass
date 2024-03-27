@@ -66,7 +66,8 @@ $block: ".boss-page-dashboard"
     #{$block}_page_profile-disabled &
       align-items: flex-start
 
-    #{$block}_page_rotas-daily &:first-child
+    #{$block}_page_rotas-daily &:first-child,
+    #{$block}_page_finance-reports-hours-tags &:first-child
       align-items: flex-start
 
     #{$block}_page_change-order-reports-history &:last-child
@@ -387,6 +388,10 @@ $block: ".boss-page-dashboard"
       flex-direction: column
       align-items: stretch
 
+    #{$block}_page_finance-reports-hours-tags #{$block}__group:first-child &
+      justify-content: flex-end
+      margin-bottom: 0
+
     #{$block}_page_finance-reports #{$block}__group:last-child &
       margin-right: auto
 
@@ -428,6 +433,9 @@ $block: ".boss-page-dashboard"
 
       #{$block}_page_finance-reports #{$block}__group:last-child &
         margin-right: 0
+
+      #{$block}_page_finance-reports-hours-tags #{$block}__group:first-child &
+        justify-content: center
 
     @media screen and (min-width: 961px)
       #{$block}_page_rotas-daily &,
@@ -632,6 +640,9 @@ $block: ".boss-page-dashboard"
       flex-shrink: 0
       margin-right: 20px
 
+    #{$block}_page_finance-reports-hours-tags #{$block}__group:first-child &
+      margin-top: 10px
+
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports #{$block}__group > &,
       #{$block}_page_payroll-reports #{$block}__group > &,
@@ -643,7 +654,8 @@ $block: ".boss-page-dashboard"
       text-align: center
 
       #{$block}_page_holidays-report &,
-      #{$block}_page_weekly-reports &
+      #{$block}_page_weekly-reports &,
+      #{$block}_page_finance-reports-hours-tags &
         display: block
         width: 100%
 

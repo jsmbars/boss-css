@@ -145,6 +145,7 @@ $block: ".boss-tag"
     &:hover
       opacity: 1
 
+  // $Common tag MOD: role label
   &_role_label
     min-height: 15px
 
@@ -152,9 +153,56 @@ $block: ".boss-tag"
       margin-bottom: 10px
       margin-right: 5px
 
+  // $Common tag MOD: role task counter
   &_role_task-counter
     background-color: #eee
 
+  // $Common tag MOD: role hours tag
+  &_role_hours-tag
+    background-color: #fdc4e6
+    color: #4c4c4c
+    cursor: default
+    transition: all .3s
+
+    &:hover
+      background-color: #fc98d4
+
+  // $Common tag MOD: role hours tag MOD: role action
+  &_role_hours-tag#{&}_role_action
+    cursor: pointer
+
+  // $Common tag MOD: role hours tag MOD: state disabled
+  &_role_hours-tag#{&}_state_disabled
+    background-color: #eee
+    box-shadow: inset 0 0 0 2px #fdc4e6
+
+    &:hover
+      background-color: #fc98d4
+      box-shadow: none
+
+  // $Common tag MOD: role hours tag MOD: state selected
+  &_role_hours-tag#{&}_state_selected
+    background-color: #c8569a
+    color: #eee
+
+    &:hover
+      background-color: #c8569a
+
+  // $Common tag MOD: role hours tag MOD: state show-alone-active
+  &_role_hours-tag#{&}_state_show-alone-active
+    background-color: #fdc4e6
+    color: #4c4c4c
+
+    &:hover
+      background-color: #fdc4e6
+
+  // $Common tag MOD: role hours tag MOD: state not-show-alone
+  &_role_hours-tag#{&}_state_show-alone-inactive
+    background-color: #eee
+    color: #808080
+
+    &:hover
+      background-color: #eee
 
   // $Common tag color modifiers
   &_color_accent-red
@@ -494,6 +542,16 @@ $block: ".boss-tag"
       min-height: 25px
       font-size: 16px
 
+    &:not(last-child)
+      border-right: 1px solid #eee
+
+    // $Common tag service area MOD: type hidden
+    &_type_hidden
+      display: none
+
+      #{$block}:hover &
+        display: flex
+
     // $Common tag service area MOD: role action
     &_role_action
       cursor: pointer
@@ -507,13 +565,18 @@ $block: ".boss-tag"
         color: #fff
 
     // $Common tag service area MOD: icon close
-    &_icon_close
-
+    &_icon_close,
+    &_icon_show,
+    &_icon_hide
       &:before
-        content: "\e909"
+        content: ''
         font-family: icons
-        font-size: 24px
         line-height: 1
+
+    &_icon_close
+      &:before
+        content: '\e909'
+        font-size: 24px
 
         #{$block}_size_xxl &
           font-size: 30px
@@ -535,6 +598,56 @@ $block: ".boss-tag"
 
         #{$block}_size_xxs &
           font-size: 18px
+
+    &_icon_show
+      &:before
+        content: '\e99d'
+
+      #{$block}_size_xxl &
+        font-size: 24px
+
+      #{$block}_size_xl &
+        font-size: 22px
+
+      #{$block}_size_l &
+        font-size: 20px
+
+      #{$block}_size_m &
+        font-size: 18px
+
+      #{$block}_size_s &
+        font-size: 18px
+
+      #{$block}_size_xs &
+        font-size: 16px
+
+      #{$block}_size_xxs &
+        font-size: 14px
+
+    &_icon_hide
+      &:before
+        content: '\e99c'
+
+      #{$block}_size_xxl &
+        font-size: 24px
+
+      #{$block}_size_xl &
+        font-size: 22px
+
+      #{$block}_size_l &
+        font-size: 20px
+
+      #{$block}_size_m &
+        font-size: 18px
+
+      #{$block}_size_s &
+        font-size: 18px
+
+      #{$block}_size_xs &
+        font-size: 16px
+
+      #{$block}_size_xxs &
+        font-size: 14px
 
     // $Common tag service area MOD: icon spinner
     &_icon_spinner

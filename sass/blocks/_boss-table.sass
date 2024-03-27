@@ -75,6 +75,7 @@ $block: ".boss-table"
   &_page_ssr-pending,
   &_page_ssr-completed,
   &_page_finance-reports,
+  &_page_finance-reports-hours-tags,
   &_page_payroll-reports,
   &_page_security-payroll-report,
   &_page_security-payroll-report-week-details,
@@ -95,6 +96,7 @@ $block: ".boss-table"
   &_page_yearly-reports,
   &_page_yearly-reports-hour-report,
   &_page_finance-reports-overview,
+  &_page_finance-reports-hours-tags-overview,
   &_page_finance-reports-payslip-counts,
   &_page_security-payroll-report-overview,
   &_page_payroll-reports-overview,
@@ -201,6 +203,7 @@ $block: ".boss-table"
     // $Common table group MOD: role header
     &_role_header
       #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-hours-tags &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_security-payroll-report &,
       #{$block}_page_modulr-reports-venue-wages &
@@ -213,6 +216,7 @@ $block: ".boss-table"
       // Set default position in Edge
       @supports (-ms-ime-align: auto)
         #{$block}_page_finance-reports &,
+        #{$block}_page_finance-reports-hours-tags &,
         #{$block}_page_payroll-reports &,
         #{$block}_page_security-payroll-report &,
         #{$block}_page_modulr-reports-venue-wages &
@@ -223,6 +227,7 @@ $block: ".boss-table"
       // Set default position in IE11
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
         #{$block}_page_finance-reports &,
+        #{$block}_page_finance-reports-hours-tags &,
         #{$block}_page_payroll-reports &,
         #{$block}_page_security-payroll-report &,
         #{$block}_page_modulr-reports-venue-wages &
@@ -233,6 +238,7 @@ $block: ".boss-table"
     // $Common table group MOD: role main
     &_role_main
       #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-hours-tags &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_security-payroll-report &,
       #{$block}_page_modulr-reports-venue-wages &
@@ -245,6 +251,7 @@ $block: ".boss-table"
     overflow: auto
 
     #{$block}_page_finance-reports #{$block}__group_role_header &,
+    #{$block}_page_finance-reports-hours-tags #{$block}__group_role_header &,
     #{$block}_page_payroll-reports #{$block}__group_role_header &,
     #{$block}_page_security-payroll-report #{$block}__group_role_header &,
     #{$block}_page_modulr-reports-venue-wages #{$block}__group_role_header &
@@ -252,6 +259,7 @@ $block: ".boss-table"
       scrollbar-width: none
 
     #{$block}_page_finance-reports #{$block}__group_role_header &::-webkit-scrollbar,
+    #{$block}_page_finance-reports-hours-tags #{$block}__group_role_header &::-webkit-scrollbar,
     #{$block}_page_payroll-reports #{$block}__group_role_header &::-webkit-scrollbar,
     #{$block}_page_security-payroll-report #{$block}__group_role_header &::-webkit-scrollbar,
     #{$block}_page_modulr-reports-venue-wages #{$block}__group_role_header &::-webkit-scrollbar
@@ -545,6 +553,7 @@ $block: ".boss-table"
     #{$block}_page_marketing-managers-index-card &,
     #{$block}_page_holiday-requests &,
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-payroll-report &,
     #{$block}_page_security-payroll-report-week-details &,
@@ -555,6 +564,7 @@ $block: ".boss-table"
       background-color: transparent
 
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_finance-reports-hours-tags-overview &,
     #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &,
@@ -571,6 +581,7 @@ $block: ".boss-table"
       background-color: #ffe3bd
 
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-payroll-report &
       min-width: 1760px
@@ -592,6 +603,7 @@ $block: ".boss-table"
           flex-wrap: wrap
 
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_finance-reports-hours-tags-overview &,
       #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &,
@@ -689,6 +701,7 @@ $block: ".boss-table"
       #{$block}_page_marketing-managers-index-card &,
       #{$block}_page_ssr-assign &,
       #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-hours-tags &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_security-payroll-report &,
       #{$block}_page_security-payroll-report-week-details &,
@@ -1129,6 +1142,7 @@ $block: ".boss-table"
     #{$block}_page_venues-index &,
     #{$block}_page_daily-reports &,
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-rota-shift-requests &,
     #{$block}_page_ssr-pending &,
@@ -1158,6 +1172,7 @@ $block: ".boss-table"
 
     #{$block}_page_weekly-reports &,
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-payroll-report &,
     #{$block}_page_staff-tracking-staff-added &,
@@ -1208,6 +1223,7 @@ $block: ".boss-table"
       min-height: 40px
 
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_finance-reports-hours-tags-overview &,
     #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &,
@@ -1234,6 +1250,7 @@ $block: ".boss-table"
       min-height: 90px
 
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-payroll-report &
       min-height: 100px
@@ -1249,6 +1266,7 @@ $block: ".boss-table"
     #{$block}_page_marketing-index-card &,
     #{$block}_page_marketing-managers-index-card &,
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_finance-reports-hours-tags-overview &,
     #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &,
@@ -1265,7 +1283,8 @@ $block: ".boss-table"
     #{$block}_page_security-payroll-report &
       padding: 0
 
-    #{$block}_page_finance-reports &
+    #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &
       padding: 0 3px
 
     #{$block}_page_payroll-reports &,
@@ -1359,6 +1378,7 @@ $block: ".boss-table"
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_finance-reports-hours-tags-overview &,
       #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &,
@@ -1548,6 +1568,7 @@ $block: ".boss-table"
     @media screen and (max-width: 400px)
       #{$block}_page_clocking-app-page-api-keys-card &,
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_finance-reports-hours-tags-overview &,
       #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &,
@@ -1622,6 +1643,7 @@ $block: ".boss-table"
       #{$block}_page_smp-quizzes-overview &,
       #{$block}_page_training-failures &,
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_finance-reports-hours-tags-overview &,
       #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &,
@@ -1645,6 +1667,7 @@ $block: ".boss-table"
 
       @media screen and (max-width: 1280px)
         #{$block}_page_finance-reports-overview &,
+        #{$block}_page_finance-reports-hours-tags-overview &,
         #{$block}_page_finance-reports-payslip-counts &,
         #{$block}_page_security-payroll-report-overview &,
         #{$block}_page_payroll-reports-overview &,
@@ -1826,6 +1849,11 @@ $block: ".boss-table"
         width: 9%
         padding-left: 15px
 
+      #{$block}_page_finance-reports-hours-tags &
+        align-items: flex-start
+        width: 9%
+        padding-left: 15px
+
       #{$block}_page_payroll-reports &
         align-items: flex-start
         width: 10%
@@ -1848,6 +1876,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports-payslip-counts &
         width: 33%
         padding-left: 10px
+
+      #{$block}_page_finance-reports-hours-tags-overview &
+        width: 50%
 
       #{$block}_page_security-payroll-report-overview &
         width: 100%
@@ -2075,6 +2106,7 @@ $block: ".boss-table"
           padding-bottom: 10px
 
         #{$block}_page_finance-reports-overview &,
+        #{$block}_page_finance-reports-hours-tags-overview &,
         #{$block}_page_finance-reports-payslip-counts &,
         #{$block}_page_payroll-reports-overview &,
         #{$block}_page_change-order-reports-history-overview &
@@ -2192,6 +2224,7 @@ $block: ".boss-table"
           padding-left: 10px
 
         #{$block}_page_finance-reports-overview &,
+        #{$block}_page_finance-reports-hours-tags-overview &,
         #{$block}_page_finance-reports-payslip-counts &,
         #{$block}_page_payroll-reports-overview &
           padding-left: 20px
@@ -2351,6 +2384,7 @@ $block: ".boss-table"
           padding-right: 20px
 
         #{$block}_page_finance-reports-overview &,
+        #{$block}_page_finance-reports-hours-tags-overview &,
         #{$block}_page_finance-reports-payslip-counts &,
         #{$block}_page_payroll-reports-overview &,
         #{$block}_page_change-order-reports-history-overview &
@@ -2510,6 +2544,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 4%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -2526,6 +2563,9 @@ $block: ".boss-table"
       #{$block}_page_payroll-reports-overview &,
       #{$block}_page_finance-reports-payslip-counts &
         width: 33%
+
+      #{$block}_page_finance-reports-hours-tags-overview &
+        width: 50%
 
       #{$block}_page_wages-index &
         width: 20%
@@ -2709,6 +2749,7 @@ $block: ".boss-table"
           padding-bottom: 10px
 
         #{$block}_page_finance-reports-overview &,
+        #{$block}_page_finance-reports-hours-tags-overview &,
         #{$block}_page_payroll-reports-overview &,
         #{$block}_page_finance-reports-payslip-counts &,
         #{$block}_page_change-order-reports-history-overview &
@@ -3051,6 +3092,9 @@ $block: ".boss-table"
         min-width: 160px
 
       #{$block}_page_finance-reports &
+        width: 4.5%
+
+      #{$block}_page_finance-reports-hours-tags &
         width: 4.5%
 
       #{$block}_page_payroll-reports &
@@ -3548,6 +3592,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4.5%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 4.5%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -3956,6 +4003,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 5%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 5%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -4238,6 +4288,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4.5%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 4.5%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -4435,6 +4488,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4.5%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 4.5%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -4551,6 +4607,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4.5%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 4.5%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -4646,6 +4705,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4.5%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 4.5%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -4714,6 +4776,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 4%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -4744,6 +4809,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 4%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -4766,6 +4834,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 5%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 6%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -4785,6 +4856,9 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 6%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 3.5%
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -4798,6 +4872,9 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &
         width: 3.5%
+
+      #{$block}_page_finance-reports-hours-tags &
+        width: 4.5%
 
       #{$block}_page_payroll-reports &
         width: 4.5%
@@ -4815,6 +4892,11 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &
         width: 4.5%
+
+      #{$block}_page_finance-reports-hours-tags &
+        width: 8%
+        max-width: 300px
+        min-width: 150px
 
       #{$block}_page_payroll-reports &
         width: 4.5%
@@ -4834,6 +4916,10 @@ $block: ".boss-table"
       #{$block}_page_finance-reports &
         width: 4%
 
+      #{$block}_page_finance-reports-hours-tags &
+        width: 5%
+        min-width: 90px
+
       #{$block}_page_payroll-reports &
         width: 6%
 
@@ -4847,6 +4933,11 @@ $block: ".boss-table"
 
       #{$block}_page_finance-reports &
         width: 4%
+
+      #{$block}_page_finance-reports-hours-tags &
+        width: 3.5%
+        min-width: 90px
+        padding-right: 15px
 
       #{$block}_page_payroll-reports &
         width: 6%
@@ -4905,6 +4996,7 @@ $block: ".boss-table"
       text-transform: uppercase
 
       #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-hours-tags &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_security-payroll-report &
         align-items: stretch
@@ -4938,6 +5030,7 @@ $block: ".boss-table"
       #{$block}_page_ssr-completed &,
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-hours-tags &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_security-payroll-report &,
       #{$block}_page_security-payroll-report-week-details &,
@@ -5000,6 +5093,7 @@ $block: ".boss-table"
       #{$block}_page_ssr-completed &,
       #{$block}_page_ssr-admin-completed &,
       #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-hours-tags &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_security-payroll-report &,
       #{$block}_page_wages-index &,
@@ -5032,6 +5126,7 @@ $block: ".boss-table"
 
       @media screen and (max-width: 1920px)
         #{$block}_page_finance-reports &,
+        #{$block}_page_finance-reports-hours-tags &,
         #{$block}_page_payroll-reports &
           font-size: 13px
 
@@ -5050,6 +5145,7 @@ $block: ".boss-table"
 
         #{$block}_page_weekly-reports &,
         #{$block}_page_finance-reports &,
+        #{$block}_page_finance-reports-hours-tags &,
         #{$block}_page_payroll-reports &,
         #{$block}_page_security-payroll-report &,
         #{$block}_page_staff-tracking-staff-added &,
@@ -5329,6 +5425,7 @@ $block: ".boss-table"
       width: auto
 
     #{$block}_page_finance-reports-overview &,
+    #{$block}_page_finance-reports-hours-tags-overview &,
     #{$block}_page_finance-reports-payslip-counts &,
     #{$block}_page_security-payroll-report-overview &,
     #{$block}_page_payroll-reports-overview &,
@@ -5337,6 +5434,7 @@ $block: ".boss-table"
 
     @media screen and (max-width: 1280px)
       #{$block}_page_finance-reports-overview &,
+      #{$block}_page_finance-reports-hours-tags-overview &,
       #{$block}_page_finance-reports-payslip-counts &,
       #{$block}_page_security-payroll-report-overview &,
       #{$block}_page_payroll-reports-overview &,
@@ -5658,6 +5756,7 @@ $block: ".boss-table"
       text-align: left
 
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-payroll-report &,
     #{$block}_page_modulr-reports-venue-wages &
@@ -5707,6 +5806,7 @@ $block: ".boss-table"
     #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(3) &,
     #{$block}_page_ssr-admin-completed #{$block}__cell:nth-child(4) &,
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-payroll-report &,
     #{$block}_page_wages-index &,
@@ -5748,7 +5848,9 @@ $block: ".boss-table"
 
     #{$block}_page_smp-owed-hours #{$block}__cell:nth-child(7) &,
     #{$block}_page_finance-reports #{$block}__cell:nth-child(1) &,
+    #{$block}_page_finance-reports-hours-tags #{$block}__cell:nth-child(1) &,
     #{$block}_page_finance-reports #{$block}__cell:nth-child(2) &,
+    #{$block}_page_finance-reports-hours-tags #{$block}__cell:nth-child(2) &,
     #{$block}_page_payroll-reports #{$block}__cell:nth-child(1) &,
     #{$block}_page_security-payroll-report #{$block}__cell:nth-child(1) &,
     #{$block}_page_staff-tracking-staff-added #{$block}__cell:nth-child(1) &,
@@ -5817,6 +5919,7 @@ $block: ".boss-table"
         width: auto
 
       #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-hours-tags &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_security-payroll-report &,
       #{$block}_page_staff-tracking-staff-added &,
@@ -5954,6 +6057,7 @@ $block: ".boss-table"
       margin-bottom: 10px
 
       #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-hours-tags &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_security-payroll-report &,
       #{$block}_page_staff-tracking-staff-added &,
@@ -6271,6 +6375,7 @@ $block: ".boss-table"
 
   &__text-indicator
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-payroll-report &
       position: absolute
@@ -6288,6 +6393,7 @@ $block: ".boss-table"
 
   &__text-underline
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-payroll-report &
       position: absolute
@@ -6456,6 +6562,7 @@ $block: ".boss-table"
       text-align: center
 
     #{$block}_page_finance-reports #{$block}__cell:nth-child(22) &:only-child
+    #{$block}_page_finance-reports-hours-tags #{$block}__cell:nth-child(17) &:only-child
       margin-top: 24px
 
     #{$block}_page_app-access-temporary &
@@ -6489,6 +6596,7 @@ $block: ".boss-table"
 
       #{$block}_page_holidays-report &,
       #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-hours-tags &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_security-payroll-report &,
       #{$block}_page_modulr-reports-venue-wages &
@@ -6601,18 +6709,21 @@ $block: ".boss-table"
       width: 120px
 
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-payroll-report &
       padding: 4px
       font-size: 12px
       font-weight: 600
 
-    #{$block}_page_finance-reports #{$block}__cell_state_alert &
+    #{$block}_page_finance-reports #{$block}__cell_state_alert &,
+    #{$block}_page_finance-reports-hours-tags #{$block}__cell_state_alert &
       color: #fff
       border-color: #fff
 
     &:hover
-      #{$block}_page_finance-reports #{$block}__cell_state_alert &
+      #{$block}_page_finance-reports #{$block}__cell_state_alert &,
+      #{$block}_page_finance-reports-hours-tags #{$block}__cell_state_alert &
         color: #ff8587
         background-color: #fff
 
@@ -6731,6 +6842,7 @@ $block: ".boss-table"
 
     #{$block}_page_venues-index &,
     #{$block}_page_finance-reports &,
+    #{$block}_page_finance-reports-hours-tags &,
     #{$block}_page_payroll-reports &,
     #{$block}_page_security-payroll-report &,
     #{$block}_page_wtl-clients-index &,
@@ -6774,6 +6886,7 @@ $block: ".boss-table"
       color: map-get($boss-app-palette, alert)
 
       #{$block}_page_finance-reports &,
+      #{$block}_page_finance-reports-hours-tags &,
       #{$block}_page_payroll-reports &,
       #{$block}_page_security-payroll-report &
         color: map-get($boss-app-palette, alert)
