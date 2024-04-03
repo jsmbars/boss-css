@@ -1505,6 +1505,36 @@ $block: ".boss-form"
       background-color: #e6e6e6
 
 
+  // $Common form input clear
+  &__input-clear
+    +text-normalizer()
+    position: absolute
+    top: 50%
+    right: 10px
+    z-index: 10
+    display: block
+    width: 20px
+    height: 20px
+    margin-top: -10px
+    color: transparent
+    font-size: 0
+    line-height: 0
+    text-align: center
+    cursor: pointer
+    overflow: hidden
+
+    &:before
+      content: "\00D7"
+      display: inline-block
+      color: #999
+      font-size: 18px
+      line-height: 20px
+      text-align: center
+
+    &:hover:before
+      color: #D0021B
+
+
   // $Common form textarea
   &__textarea
     +text-normalizer()
@@ -1592,7 +1622,9 @@ $block: ".boss-form"
       vertical-align: middle
 
     &_type_light
-      border: none
+      border-top: none
+      border-right: none
+      border-left: none
 
       &:before
         left: 0
@@ -1618,7 +1650,7 @@ $block: ".boss-form"
         vertical-align: middle
 
 
-  // $Checklist search-clear
+  // $Common form search clear
   &__search-clear
     +text-normalizer()
     position: absolute

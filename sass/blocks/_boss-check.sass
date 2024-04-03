@@ -1733,6 +1733,7 @@ $block: ".boss-check"
       border: none
 
 
+  // $Check block cell content
   &__cell-content
     flex-grow: 0
     flex-shrink: 1
@@ -1741,7 +1742,11 @@ $block: ".boss-check"
     max-width: 100%
     text-align: left
 
+    #{$block}_page_smp-owed-hours &
+      text-align: center
 
+
+  // $Check block cell group
   &__cell-group
     display: block
     width: auto
