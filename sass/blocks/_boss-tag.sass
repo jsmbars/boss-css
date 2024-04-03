@@ -164,45 +164,37 @@ $block: ".boss-tag"
     cursor: default
     transition: all .3s
 
-    &:hover
-      background-color: #fc98d4
-
   // $Common tag MOD: role hours tag MOD: role action
   &_role_hours-tag#{&}_role_action
     cursor: pointer
+
+    &:hover
+      box-shadow: none
+      background-color: #fc98d4
+
+  // $Common tag MOD: role hours tag MOD: role label
+  &_role_hours-tag#{&}_role_label
+    cursor: default
 
   // $Common tag MOD: role hours tag MOD: state disabled
   &_role_hours-tag#{&}_state_disabled
     background-color: #eee
     box-shadow: inset 0 0 0 2px #fdc4e6
 
-    &:hover
-      background-color: #fc98d4
-      box-shadow: none
-
-  // $Common tag MOD: role hours tag MOD: state selected
-  &_role_hours-tag#{&}_state_selected
+  // $Common tag MOD: role hours tag MOD: state active
+  &_role_hours-tag#{&}_state_active
     background-color: #c8569a
     color: #eee
-
-    &:hover
-      background-color: #c8569a
 
   // $Common tag MOD: role hours tag MOD: state show-alone-active
   &_role_hours-tag#{&}_state_show-alone-active
     background-color: #fdc4e6
     color: #4c4c4c
 
-    &:hover
-      background-color: #fdc4e6
-
   // $Common tag MOD: role hours tag MOD: state not-show-alone
   &_role_hours-tag#{&}_state_show-alone-inactive
     background-color: #eee
     color: #808080
-
-    &:hover
-      background-color: #eee
 
   // $Common tag color modifiers
   &_color_accent-red
@@ -547,10 +539,10 @@ $block: ".boss-tag"
 
     // $Common tag service area MOD: type hidden
     &_type_hidden
-      display: none
+      visibility: hidden
 
       #{$block}:hover &
-        display: flex
+        visibility: visible
 
     // $Common tag service area MOD: role action
     &_role_action

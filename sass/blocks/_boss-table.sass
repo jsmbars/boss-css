@@ -190,6 +190,9 @@ $block: ".boss-table"
       #{$block}_page_bonai-staff-member-data &
         border-bottom: 1px solid #eee
 
+      #{$block}_page_smp-owed-hours &
+        border-bottom: 2px solid #ddd
+
       #{$block}_page_payslip &
         margin-bottom: 20px
 
@@ -316,6 +319,9 @@ $block: ".boss-table"
     #{$block}_page_bonai &,
     #{$block}_page_bonai-staff-member-data &
       padding: 10px 20px 20px
+
+    #{$block}_page_smp-owed-hours &
+      padding: 10px 20px
 
     @media screen and (max-width: 960px)
       #{$block}_page_bonai &,
@@ -837,8 +843,9 @@ $block: ".boss-table"
       #{$block}_page_change-order-history &
         background-color: $boss-dark-gray
 
-      #{$block}_page_smp-owed-hours &
+      #{$block}_page_smp-owed-hours > &
         background-color: #fbfbfb
+        border-bottom: 2px solid #ddd
 
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
