@@ -109,6 +109,7 @@ $block: ".boss-modal-window"
   &_role_request-answer,
   &_role_history,
   &_role_venue-details,
+  &_role_hours-tag-details,
   &_role_app-access-venues,
   &_role_app-access-venue-details,
   &_role_staff-type-details,
@@ -193,7 +194,8 @@ $block: ".boss-modal-window"
   &_role_venue-notes,
   &_role_multiple-matches,
   &_role_bag-type-details,
-  &_role_task-details
+  &_role_task-details,
+  &_role_hours-tag-details
     margin-top: 100px
 
     @media screen and (max-width: 960px)
@@ -342,6 +344,7 @@ $block: ".boss-modal-window"
     #{$block}_role_offences &,
     #{$block}_role_reviews &,
     #{$block}_role_venue-details &,
+    #{$block}_role_hours-tag-details &,
     #{$block}_role_app-access-venues &,
     #{$block}_role_app-access-venue-details &,
     #{$block}_role_staff-type-details &,
@@ -398,6 +401,7 @@ $block: ".boss-modal-window"
       #{$block}_role_offences &,
       #{$block}_role_reviews &,
       #{$block}_role_venue-details &,
+      #{$block}_role_hours-tag-details &,
       #{$block}_role_app-access-venues &,
       #{$block}_role_app-access-venue-details &,
       #{$block}_role_staff-type-details &,
@@ -436,6 +440,7 @@ $block: ".boss-modal-window"
       #{$block}_role_reject &,
       #{$block}_role_restore &,
       #{$block}_role_venue-details &,
+      #{$block}_role_hours-tag-details &,
       #{$block}_role_app-access-venues &,
       #{$block}_role_app-access-venue-details &,
       #{$block}_role_staff-type-details &,
@@ -578,6 +583,7 @@ $block: ".boss-modal-window"
     #{$block}_role_offences &,
     #{$block}_role_reviews &,
     #{$block}_role_venue-details &,
+    #{$block}_role_hours-tag-details &,
     #{$block}_role_app-access-venues &,
     #{$block}_role_app-access-venue-details &,
     #{$block}_role_staff-type-details &,
@@ -672,6 +678,7 @@ $block: ".boss-modal-window"
       #{$block}_role_offences &,
       #{$block}_role_reviews &,
       #{$block}_role_venue-details &,
+      #{$block}_role_hours-tag-details &,
       #{$block}_role_app-access-venues &,
       #{$block}_role_app-access-venue-details &,
       #{$block}_role_staff-type-details &,
@@ -730,6 +737,7 @@ $block: ".boss-modal-window"
       #{$block}_role_offences &,
       #{$block}_role_reviews &,
       #{$block}_role_venue-details &,
+      #{$block}_role_hours-tag-details &,
       #{$block}_role_app-access-venues &,
       #{$block}_role_app-access-venue-details &,
       #{$block}_role_staff-type-details &,
@@ -815,13 +823,23 @@ $block: ".boss-modal-window"
       margin-bottom: 10px
 
 
+  &__marked
+    font-weight: 600
+
+    #{$block}_role_hours-tag-details &
+      margin-right: 5px
+
+
   &__tooltip
     display: inline-block
     vertical-align: middle
 
 
-  &__marked
-    font-weight: 600
+  &__status
+    display: inline-block
+
+    #{$block}_role_hours-tag-details &
+      margin-right: 15px
 
 
   &__subtitle
@@ -898,6 +916,7 @@ $block: ".boss-modal-window"
     #{$block}_role_offences &,
     #{$block}_role_reviews &,
     #{$block}_role_venue-details &,
+    #{$block}_role_hours-tag-details &,
     #{$block}_role_app-access-venues &,
     #{$block}_role_app-access-venue-details &,
     #{$block}_role_staff-type-details &,
@@ -959,6 +978,7 @@ $block: ".boss-modal-window"
       #{$block}_role_offences &,
       #{$block}_role_reviews &,
       #{$block}_role_venue-details &,
+      #{$block}_role_hours-tag-details &,
       #{$block}_role_app-access-venues &,
       #{$block}_role_app-access-venue-details &,
       #{$block}_role_staff-type-details &,
@@ -1423,6 +1443,10 @@ $block: ".boss-modal-window"
 
   // $Modal window button
   &__button
+
+    #{$block}__header &
+      margin-bottom: 2px
+      vertical-align: middle
 
     &:not(:last-child)
       margin-right: 15px
