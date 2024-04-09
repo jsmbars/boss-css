@@ -359,6 +359,9 @@ $block: ".boss-page-main"
       @media screen and (max-width: 960px)
         padding-bottom: 40px
 
+    &_adjust_hours-tags
+      padding: 25px 20px 30px
+
     // $Page main container group MOD: adjust safe checks form
     // $Page main container group MOD: adjust redeem vouchers form
     // $Page main container group MOD: adjust incident reports form
@@ -460,6 +463,10 @@ $block: ".boss-page-main"
       margin-bottom: 30px
       padding-bottom: 30px
       border-bottom: 1px solid #eee
+
+      #{$block}__group_adjust_hours-tags &
+        padding-bottom: 10px
+        margin-bottom: 25px
 
 
   // $Page main container scroll area
@@ -785,8 +792,15 @@ $block: ".boss-page-main"
     padding: 25px 20px 30px
     background-color: #FFF
 
+    #{$block}__group &
+      padding: 0
+      background-color: transparent
+
     @media screen and (max-width: 400px)
       padding: 20px 15px 30px
+
+      #{$block}__group &
+        padding: 0
 
     // $Page main container note MOD: context stack
     &_context_stack
@@ -817,6 +831,11 @@ $block: ".boss-page-main"
     font-weight: 600
 
 
+  // $Page main container note title important
+  &__note-title-important
+    font-weight: 800
+
+
   // $Page main container note text
   &__note-text
     +text-normalizer()
@@ -824,7 +843,7 @@ $block: ".boss-page-main"
     font-size: 16px
 
     &_role_important
-      font-weight: 600
+      font-weight: 800
       margin-top: 5px
       margin-bottom: 5px
 
@@ -838,6 +857,20 @@ $block: ".boss-page-main"
 
     &:only-child
       margin-top: 5px
+
+
+  // $Page main container note action
+  // $Page main container note spinner
+  &__note-action,
+  &__note-spinner
+    display: inline-block
+    vertical-align: middle
+
+    &:not(:last-child)
+      margin-right: 10px
+
+    &:last-child
+      margin-left: 10px
 
 
   // $Page main container text placeholder

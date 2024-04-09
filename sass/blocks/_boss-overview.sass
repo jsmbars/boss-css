@@ -33,6 +33,9 @@ $block: ".boss-overview"
     align-items: flex-start
     width: 100%
 
+    #{$block}_page_hours-tags-details &
+      margin-bottom: 10px
+
     #{$block}_page_change-order-history &
       margin-bottom: 20px
 
@@ -77,6 +80,11 @@ $block: ".boss-overview"
       margin-bottom: 10px
       font-size: 16px
       text-align: center
+
+    #{$block}_page_hours-tags-details &
+      font-size: 16px
+      text-transform: uppercase
+      color: $boss-medium-gray
 
 
   // $Overview dropdown
@@ -1175,6 +1183,15 @@ $block: ".boss-overview"
       &:nth-of-type(even)
         background-color: transparent
 
+    &_role_tag-reports
+
+      @media screen and (max-width: 480px)
+        flex-direction: column
+        align-items: flex-start
+
+      &:nth-of-type(even)
+        background-color: transparent
+
     &_state_alert,
     &_state_alert:nth-of-type(even)
       background-color: #feeeee
@@ -1248,10 +1265,26 @@ $block: ".boss-overview"
     border-radius: 50%
     vertical-align: middle
 
+  // $Overview list info
+  &__list-info
+
+    @media screen and (max-width: 480px)
+      width: 100%
+      margin-bottom: 5px
+
+
+  // $Overview list actions
+  &__list-actions
+
+    @media screen and (max-width: 480px)
+      width: 100%
+
 
   // $Overview list action
   &__list-action
-    margin-left: 10px
+
+    &:not(:first-child)
+      margin-left: 10px
 
 
   // $Overview actions
