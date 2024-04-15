@@ -661,6 +661,14 @@ $block: ".boss-page-main"
     @media screen and (max-width: 640px)
       margin-bottom: 30px
 
+    // $Page main container controls MOD: justify center
+    &_justify_center
+      text-align: center
+
+    // $Page main container controls MOD: justify end
+    &_justify_end
+      text-align: right
+
     // $Page main container controls MOD: layout row
     &_layout_row
       display: flex
@@ -699,16 +707,6 @@ $block: ".boss-page-main"
     @media screen and (max-width: 400px)
       white-space: normal
 
-    &:before
-      content: ""
-      display: none
-      margin-right: 15px
-      font-family: icons
-      font-size: 16px
-      line-height: 16px
-      font-weight: 400
-      color: inherit
-
     &:hover,
     &:focus
       outline: none
@@ -718,35 +716,71 @@ $block: ".boss-page-main"
       @media (hover: hover)
         background-color: #eee
 
+    &[disabled],
+      background-color: map-get($boss-app-palette, inactive)
+      cursor: not-allowed
+
+      &:hover,
+      &:focus
+        background-color: map-get($boss-app-palette, inactive)
+
+    &:only-child
+      margin-right: 0
+
     // $Page main container control MOD: role view history
+    // $Page main container control MOD: role venue
+    // $Page main container control MOD: role staff-type
+    // $Page main container control MOD: role trends
+    // $Page main container control MOD: role tags
+    // $Page main container control MOD: role report
+    &_role_view-history,
+    &_role_venue,
+    &_role_staff-type,
+    &_role_trends,
+    &_role_tags,
+    &_role_report
+      &:before
+        content: ""
+        display: inline-block
+        margin-right: 15px
+        font-family: icons
+        font-size: 16px
+        line-height: 16px
+        font-weight: 400
+        color: inherit
+
     &_role_view-history
       color: map-get($boss-app-palette, primary)
 
       &:before
         content: '\e927'
-        display: inline-block
 
       &:hover,
       &:focus
         color: map-get($boss-app-palette, primary)
 
-    // $Page main container control MOD: role venue
     &_role_venue
       &:before
         content: '\e901'
-        display: inline-block
 
-    // $Page main container control MOD: role staff-type
     &_role_staff-type
       &:before
         content: '\e904'
-        display: inline-block
 
-    // $Page main container control MOD: role trends
     &_role_trends
       &:before
         content: '\e99b'
-        display: inline-block
+
+    &_role_tags
+      &:before
+        content: '\e9ad'
+        font-size: 18px
+        line-height: 18px
+        vertical-align: middle
+
+    &_role_report
+      &:before
+        content: '\e927'
 
     // $Page main container control MOD: state active
     &_state_active
