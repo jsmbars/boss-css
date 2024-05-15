@@ -41,8 +41,7 @@ $block: ".boss-time-shift"
       flex-direction: column
       justify-content: flex-start
       align-items: flex-start
-      padding-left: 10px
-      padding-right: 10px
+      padding: 10px
 
 
   // $Time shift title
@@ -51,6 +50,7 @@ $block: ".boss-time-shift"
     flex-grow: 1
     flex-shrink: 1
     font-size: 14px
+    line-height: 1
     color: $boss-dark-gray
 
     &:not(:last-child)
@@ -192,8 +192,7 @@ $block: ".boss-time-shift"
     padding: 10px 15px 15px
 
     @media screen and (max-width: 480px)
-      padding-left: 10px
-      padding-right: 10px
+      padding: 10px
 
 
   // $Time shift log
@@ -208,6 +207,9 @@ $block: ".boss-time-shift"
     @media screen and (max-width: 960px)
       flex-direction: column
       margin-bottom: 20px
+
+    @media screen and (max-width: 480px)
+      margin-bottom: 10px
 
     // $Time shift log MOD: layout break
     // $Time shift log MOD: layout head doorman hours
@@ -309,9 +311,14 @@ $block: ".boss-time-shift"
         flex-shrink: 1
         width: 100%
         max-width: none
-        padding-bottom: 10px
+        padding-bottom: 15px
 
     @media screen and (max-width: 480px)
+      padding-bottom: 10px
+
+      #{$block}__log_layout_hdh &
+        padding-bottom: 10px
+
       #{$block}__log_layout_break &,
       #{$block}__log_layout_hdh &
         padding-right: 15px
@@ -525,9 +532,13 @@ $block: ".boss-time-shift"
   // $Time shift label
   &__label
     +text-normalizer()
-    margin-bottom: 5px
+    margin-bottom: 10px
     font-size: 14px
+    line-height: 1
     color: $boss-medium-gray
+
+    @media screen and (max-width: 480px)
+      margin-bottom: 5px
 
 
   // $Time shift label text
@@ -542,6 +553,7 @@ $block: ".boss-time-shift"
     height: 45px
 
     @media screen and (max-width: 800px)
+      #{$block}__time &,
       #{$block}__rate &
         height: auto
 
@@ -747,6 +759,9 @@ $block: ".boss-time-shift"
       padding: 12px 0 12px 25px
 
     @media screen and (max-width: 800px)
+      #{$block}__time &
+        padding: 0 0 0 25px
+
       #{$block}__rate &
         padding: 0
 
@@ -954,9 +969,15 @@ $block: ".boss-time-shift"
     border: 1px solid map-get($boss-app-palette, alert-border)
     border-radius: $boss-global-border-radius
 
+    @media screen and (max-width: 480px)
+      margin-top: 10px
+
     &_role_general
       margin-top: 0
       margin-bottom: 10px
+
+      @media screen and (max-width: 480px)
+        margin-top: 0
 
 
   // $Time shift error text
@@ -1017,12 +1038,16 @@ $block: ".boss-time-shift"
         width: auto
         padding-top: 25px
 
-    @media screen and (max-width: 400px)
-      flex-direction: column
+    @media screen and (max-width: 480px)
+      #{$block}__log_state_deleted &
+        padding-top: 0
 
       #{$block}__log_layout_break &,
       #{$block}__log_layout_hdh &
-        padding-top: 30px
+        padding-top: 20px
+
+    @media screen and (max-width: 400px)
+      flex-direction: column
 
 
   // $Time shift button
@@ -1036,8 +1061,11 @@ $block: ".boss-time-shift"
       text-align: center
 
     @media screen and (max-width: 480px)
-      padding-left: 10px
-      padding-right: 10px
+      padding: 10px
+
+      #{$block}__log_layout_break &,
+      #{$block}__log_layout_hdh &
+        padding: 15px 10px
 
     @media screen and (max-width: 400px)
       width: 100%
@@ -1099,6 +1127,7 @@ $block: ".boss-time-shift"
   // $Time shift status
   &__status
     +text-normalizer()
+    line-height: 1
     width: auto
 
     #{$block}__log_state_deleted &
@@ -1119,7 +1148,6 @@ $block: ".boss-time-shift"
 
     @media screen and (max-width: 400px)
       margin-right: 0
-      text-align: center
 
     &:not(:last-child)
       margin-right: 20px
@@ -1152,6 +1180,9 @@ $block: ".boss-time-shift"
     font-size: 16px
     font-weight: 600
     color: map-get($boss-app-palette, secondary)
+
+    &:not(:last-child)
+      margin-bottom: 5px
 
     // $Time shift status count MOD: role head doorman hours
     &_role_hdh
@@ -1257,6 +1288,9 @@ $block: ".boss-time-shift"
     width: 100%
     padding-top: 30px
 
+    @media screen and (max-width: 480px)
+      padding-top: 20px
+
     &:before
       content: ""
       position: absolute
@@ -1267,6 +1301,9 @@ $block: ".boss-time-shift"
       width: 100%
       border-top: 1px solid map-get($boss-app-palette, inactive)
 
+      @media screen and (max-width: 480px)
+        top: 10px
+
 
   // $Time shift break-item
   &__break-item
@@ -1275,6 +1312,9 @@ $block: ".boss-time-shift"
 
     &:not(:last-child)
       margin-bottom: 20px
+
+      @media screen and (max-width: 480px)
+        margin-bottom: 15px
 
 
   // $Time shift hours tags
@@ -1499,6 +1539,9 @@ $block: ".boss-time-shift"
     width: 100%
     padding-top: 30px
 
+    @media screen and (max-width: 480px)
+      padding-top: 20px
+
     &:before
       content: ""
       position: absolute
@@ -1509,6 +1552,9 @@ $block: ".boss-time-shift"
       width: 100%
       border-top: 1px solid map-get($boss-app-palette, inactive)
 
+      @media screen and (max-width: 480px)
+        top: 10px
+
 
   // $Time shift head doorman hours item
   &__hdh-item
@@ -1517,3 +1563,6 @@ $block: ".boss-time-shift"
 
     &:not(:last-child)
       margin-bottom: 20px
+
+      @media screen and (max-width: 480px)
+        margin-bottom: 15px
