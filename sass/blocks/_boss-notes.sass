@@ -25,16 +25,64 @@ $block: ".boss-notes"
 
   &_role_overtime-reasons
 
+
+  // $Notes header
+  &__header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    margin-bottom: 10px
+
+    @media screen and (max-width: 480px)
+      margin-bottom: 5px
+
+
   // $Notes label
   &__label
     +text-normalizer()
-    margin-bottom: 10px
+    flex-grow: 1
+    flex-shrink: 1
     font-size: 14px
     line-height: 1
     font-weight: 600
 
-    @media screen and (max-width: 480px)
-      margin-bottom: 5px
+
+  // $Notes button
+  &__button
+    +text-normalizer()
+    flex-grow: 0
+    flex-shrink: 0
+    display: block
+    line-height: 1
+    color: map-get($boss-app-palette, primary)
+    vertical-align: middle
+
+    &:after
+      content: '\e919'
+      display: inline-block
+      margin-left: 5px
+      font-family: icons
+      font-size: 24px
+      line-height: 12px
+      font-weight: 400
+      color: map-get($boss-app-palette, primary)
+      vertical-align: middle
+
+    &:hover,
+    &:focus
+      outline: none
+      text-decoration: none
+      color: map-get($boss-app-palette, primary)
+
+    // $Notes button MOD: state hidden
+    &_state_hidden
+      display: none
+
+
+  // $Notes button notes count
+  &__button-count
 
 
   // $Notes content
@@ -42,7 +90,6 @@ $block: ".boss-notes"
     position: relative
     display: block
     width: 100%
-    margin-bottom: 10px
     max-height: 200px
     overflow: hidden
 
@@ -76,6 +123,12 @@ $block: ".boss-notes"
       #{$block}_page_hrc &,
       #{$block}_role_clock-in &
         max-height: 100px
+
+    &:not(:last-child)
+      margin-bottom: 10px
+
+      @media screen and (max-width: 480px)
+        margin-bottom: 5px
 
 
   // $Notes content inner container
@@ -202,40 +255,3 @@ $block: ".boss-notes"
 
   &__text-light
     font-weight: 300
-
-  // $Notes button
-  &__button
-    position: relative
-    display: block
-    width: 100%
-    padding: 10px
-    background-color: #F3F3F3
-    text-align: center
-    color: $boss-dark-gray
-    text-decoration: underline
-    vertical-align: middle
-
-    &:after
-      content: '\e919'
-      display: inline-block
-      margin-left: 5px
-      font-family: icons
-      font-size: 24px
-      line-height: 12px
-      font-weight: 400
-      color: #4c4c4c
-      vertical-align: middle
-
-    &:hover,
-    &:focus
-      outline: none
-      text-decoration: none
-      color: $boss-dark-gray
-
-    // $Notes button MOD: state hidden
-    &_state_hidden
-      display: none
-
-
-  // $Notes button notes count
-  &__button-count

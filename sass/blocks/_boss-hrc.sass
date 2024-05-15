@@ -54,7 +54,7 @@ $block: ".boss-hrc"
       margin-bottom: 20px
 
     @media screen and (max-width: 480px)
-      margin-bottom: 10px
+      margin-bottom: 0
 
 
   // $HRC form user-info
@@ -115,6 +115,7 @@ $block: ".boss-hrc"
       padding: 15px
 
     @media screen and (max-width: 480px)
+      display: none
       flex-direction: column
       justify-content: center
       padding: 10px
@@ -123,9 +124,6 @@ $block: ".boss-hrc"
   // $HRC form status
   &__status
     +text-normalizer()
-
-    @media screen and (max-width: 480px)
-      display: none
 
 
   // $HRC form text
@@ -174,13 +172,9 @@ $block: ".boss-hrc"
       color: #4c4c4c
       vertical-align: middle
 
-      @media screen and (max-width: 640px)
-        display: none
-
 
   // $HRC form date
   &__date
-
     &:before
       content: '\e900'
 
@@ -190,9 +184,9 @@ $block: ".boss-hrc"
 
   // $HRC form venue
   &__venue
-
     &:before
       content: '\e901'
+
 
   // $HRC form date-text
   // $HRC form venue-text
@@ -258,6 +252,137 @@ $block: ".boss-hrc"
       margin-bottom: 10px
 
 
+  // $HRC form summary
+  &__summary
+    display: none
+    flex-direction: row
+    justify-content: space-between
+    align-items: flex-end
+    width: 100%
+
+    @media screen and (max-width: 480px)
+      display: flex
+
+
+  // $HRC form stats
+  &__stats
+    flex-grow: 1
+    flex-shrink: 1
+    display: block
+    width: 100%
+
+
+  // $HRC form stats list
+  &__stats-list
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: stretch
+    width: auto
+    list-style: none
+    margin: 0
+    padding: 0
+
+
+  // $HRC form stats item
+  &__stats-item
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    width: auto
+    padding: 0 10px
+
+    @media screen and (max-width: 400px)
+      padding-left: 5px
+      padding-right: 5px
+
+    @media screen and (max-width: 360px)
+      padding-left: 3px
+      padding-right: 3px
+
+    &:first-child
+      padding-left: 0
+
+    &:last-child
+      padding-right: 0
+
+    &:not(:last-child)
+      border-right: 1px solid #d3d3d3
+
+
+  // $HRC form stats time
+  &__stats-time
+    +text-normalizer()
+    display: block
+    margin-bottom: 5px
+    text-align: center
+    font-size: 20px
+    line-height: 1
+    font-weight: 600
+
+    @media screen and (max-width: 400px)
+      font-size: 18px
+
+    @media screen and (max-width: 360px)
+      font-size: 16px
+
+    // $HRC form stats time MOD: rotaed
+    &_role_rotaed
+      color: map-get($boss-app-palette, primary)
+
+    // $HRC form stats time MOD: clocked
+    &_role_clocked
+      color: map-get($boss-app-palette, secondary)
+
+    // $HRC form stats time MOD: accepted
+    &_role_accepted
+      color: #000
+
+
+  // $HRC form stats time value
+  &__stats-time-value
+
+
+  // $HRC form stats time units
+  &__stats-time-units
+
+
+  // $HRC form stats time note
+  &__stats-time-note
+    color: #E2B42A
+    font-weight: normal
+
+
+  // $HRC form stats time sign
+  &__stats-time-sign
+
+
+  // $HRC form stats time label
+  &__stats-time-label
+    +text-normalizer()
+    display: block
+    text-align: center
+    font-size: 14px
+    line-height: 1
+    color: #808080
+
+    @media screen and (max-width: 360px)
+      font-size: 13px
+
+
+  // $HRC form scans
+  &__scans
+    flex-grow: 0
+    flex-shrink: 0
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+
   // $HRC form scan
   &__scan
     flex-grow: 0
@@ -269,7 +394,21 @@ $block: ".boss-hrc"
       width: 120px
 
     @media screen and (max-width: 480px)
+      display: none
       width: 60px
+
+      #{$block}__summary &
+        display: block
+        width: 40px
+
+    &:not(:last-child)
+      @media screen and (max-width: 480px)
+        #{$block}__summary &
+          margin-right: 10px
+
+      @media screen and (max-width: 360px)
+        #{$block}__summary &
+          margin-right: 5px
 
 
   // $HRC form scan photo
@@ -291,6 +430,10 @@ $block: ".boss-hrc"
     @media screen and (max-width: 480px)
       width: 60px
       height: 60px
+
+      #{$block}__summary &
+        width: 40px
+        height: 40px
 
     &_role_manager
 
@@ -317,6 +460,13 @@ $block: ".boss-hrc"
         line-height: 30px
         color: #fd554f
 
+        @media screen and (max-width: 480px)
+          #{$block}__summary &
+            top: 6px
+            right: 4px
+            font-size: 15px
+            line-height: 15px
+
 
   // $HRC form scan image
   &__scan-image
@@ -339,6 +489,10 @@ $block: ".boss-hrc"
 
     @media screen and (max-width: 480px)
       margin-top: 5px
+
+    @media screen and (max-width: 360px)
+      #{$block}__summary &
+        font-size: 13px
 
 
   // $HRC form graph

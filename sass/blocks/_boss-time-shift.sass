@@ -38,9 +38,6 @@ $block: ".boss-time-shift"
     border-bottom: 1px solid $boss-very-light-gray
 
     @media screen and (max-width: 480px)
-      flex-direction: column
-      justify-content: flex-start
-      align-items: flex-start
       padding: 10px
 
 
@@ -53,10 +50,6 @@ $block: ".boss-time-shift"
     line-height: 1
     color: $boss-dark-gray
 
-    &:not(:last-child)
-      @media screen and (max-width: 480px)
-        margin-bottom: 10px
-
 
   // $Time shift checkbox
   &__checkbox
@@ -64,17 +57,11 @@ $block: ".boss-time-shift"
     flex-shrink: 0
     display: block
 
-    @media screen and (max-width: 480px)
-      flex-grow: 1
-      flex-shrink: 1
-      width: 100%
-
     &:not(:last-child)
       margin-right: 20px
 
       @media screen and (max-width: 480px)
-        margin-right: 0
-        margin-bottom: 10px
+        margin-right: 10px
 
     &_state_hdh-active
       padding: 5px
