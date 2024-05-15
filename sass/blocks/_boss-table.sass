@@ -2133,10 +2133,10 @@ $block: ".boss-table"
         padding-left: 10px
 
       #{$block}_page_hours-tags-report-summary &
-        width: 20%
+        width: 15%
 
       #{$block}_page_hours-tags-report-details &
-        width: 20%
+        width: 14%
 
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
@@ -2784,10 +2784,10 @@ $block: ".boss-table"
         width: 16.5%
 
       #{$block}_page_hours-tags-report-summary &
-        width: 20%
+        width: 15%
 
       #{$block}_page_hours-tags-report-details &
-        width: 12%
+        width: 8%
 
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
@@ -3310,10 +3310,10 @@ $block: ".boss-table"
         width: 16.5%
 
       #{$block}_page_hours-tags-report-summary &
-        width: 20%
+        width: 15%
 
       #{$block}_page_hours-tags-report-details &
-        width: 15%
+        width: 12%
 
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
@@ -3783,10 +3783,10 @@ $block: ".boss-table"
         width: 16.5%
 
       #{$block}_page_hours-tags-report-summary &
-        width: 20%
+        width: 15%
 
       #{$block}_page_hours-tags-report-details &
-        width: 15%
+        width: 9%
 
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
@@ -4158,12 +4158,10 @@ $block: ".boss-table"
         width: 16.5%
 
       #{$block}_page_hours-tags-report-summary &
-        flex-grow: 0
-        flex-shrink: 0
-        width: 200px
+        width: 12%
 
       #{$block}_page_hours-tags-report-details &
-        width: 18%
+        width: 13%
 
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
@@ -4415,10 +4413,13 @@ $block: ".boss-table"
         width: 16.5%
         padding-right: 10px
 
-      #{$block}_page_hours-tags-report-details &
+      #{$block}_page_hours-tags-report-summary &
         flex-grow: 0
         flex-shrink: 0
-        width: 160px
+        width: 200px
+
+      #{$block}_page_hours-tags-report-details &
+        width: 12%
 
       @media screen and (max-width: 1280px)
         #{$block}_page_bonai-venue-hour-data &
@@ -4464,12 +4465,14 @@ $block: ".boss-table"
         #{$block}_page_change-orders-history-details &,
         #{$block}_page_change-order-reports-history &,
         #{$block}_page_change-order-reports-history-details &,
+        #{$block}_page_hours-tags-report-summary &,
         #{$block}_page_hours-tags-report-details &
           width: 100%
 
         #{$block}_page_checklist-review &,
         #{$block}_page_message-board &,
         #{$block}_page_smp-holidays &,
+        #{$block}_page_hours-tags-report-summary &,
         #{$block}_page_hours-tags-report-details &
           flex-grow: 1
           flex-shrink: 1
@@ -4604,6 +4607,9 @@ $block: ".boss-table"
       #{$block}_page_change-order-reports-accepted &
         width: 10%
 
+      #{$block}_page_hours-tags-report-details &
+        width: 12%
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -4631,10 +4637,12 @@ $block: ".boss-table"
         #{$block}_page_smp-holiday-requests &,
         #{$block}_page_smp-owed-hours &,
         #{$block}_page_bonai &,
-        #{$block}_page_bonai-staff-member-data &
+        #{$block}_page_bonai-staff-member-data &,
+        #{$block}_page_hours-tags-report-details &
           width: 100%
 
-        #{$block}_page_smp-holiday-requests &
+        #{$block}_page_smp-holiday-requests &,
+        #{$block}_page_hours-tags-report-details &
           flex-grow: 1
           flex-shrink: 1
 
@@ -4714,6 +4722,11 @@ $block: ".boss-table"
       #{$block}_page_change-order-reports-accepted &
         width: 10%
 
+      #{$block}_page_hours-tags-report-details &
+        flex-grow: 0
+        flex-shrink: 0
+        width: 160px
+
       @media screen and (max-width: 1120px)
         #{$block}_page_staff-members-index &,
         #{$block}_page_safe-checks-index &,
@@ -4736,8 +4749,13 @@ $block: ".boss-table"
         #{$block}_page_change-order-reports-pending &,
         #{$block}_page_change-order-reports-accepted &,
         #{$block}_page_bonai &,
-        #{$block}_page_bonai-staff-member-data &
+        #{$block}_page_bonai-staff-member-data &,
+        #{$block}_page_hours-tags-report-details &
           width: 100%
+
+        #{$block}_page_hours-tags-report-details &
+          flex-grow: 1
+          flex-shrink: 1
 
         #{$block}_page_smp-owed-hours &
           flex-grow: 1
@@ -6612,8 +6630,8 @@ $block: ".boss-table"
     #{$block}_page_fruit-order-reports-history #{$block}__cell:nth-child(4) &,
     #{$block}_page_change-orders-history #{$block}__cell:nth-child(5) &,
     #{$block}_page_change-order-reports-history #{$block}__cell:nth-child(6) &,
-    #{$block}_page_hours-tags-report-summary #{$block}__cell:nth-child(5) &,
-    #{$block}_page_hours-tags-report-details #{$block}__cell:nth-child(6) &
+    #{$block}_page_hours-tags-report-summary #{$block}__cell:nth-child(6) &,
+    #{$block}_page_hours-tags-report-details #{$block}__cell:nth-child(8) &
       text-align: center
 
     #{$block}_page_change-order-report &,
