@@ -254,7 +254,7 @@ $block: ".boss-user-badge"
       flex-grow: 0
       flex-shrink: 0
       width: auto
-      padding: 0 20px
+      padding: 0 10px
 
     &:first-child
       padding-left: 0
@@ -279,9 +279,6 @@ $block: ".boss-user-badge"
     @media screen and (max-width: 1280px)
       font-size: 18px
 
-    @media screen and (max-width: 1120px)
-      font-size: 20px
-
     // $User badge time MOD: rotaed
     &_role_rotaed
       color: map-get($boss-app-palette, primary)
@@ -305,6 +302,7 @@ $block: ".boss-user-badge"
 
   // $User badge time note
   &__time-note
+    display: block
     color: #E2B42A
     font-weight: normal
 
