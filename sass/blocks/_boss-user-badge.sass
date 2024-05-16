@@ -29,9 +29,6 @@ $block: ".boss-user-badge"
     flex-direction: column
     justify-content: flex-start
 
-  @media screen and (max-width: 480px)
-    align-items: flex-start
-
 
   // $User badge profile
   &__profile
@@ -52,10 +49,7 @@ $block: ".boss-user-badge"
       flex-grow: 0
       flex-shrink: 0
       width: auto
-      margin-bottom: 20px
-
-    @media screen and (max-width: 480px)
-      margin-bottom: 10px
+      margin-bottom: 0
 
 
   // $User badge avatar
@@ -72,6 +66,10 @@ $block: ".boss-user-badge"
       width: 80px
       height: 80px
       margin-bottom: 0
+
+    @media screen and (max-width: 640px)
+      width: 60px
+      height: 60px
 
 
   // $User badge avatar inner
@@ -107,6 +105,10 @@ $block: ".boss-user-badge"
       width: 30px
       height: 30px
 
+    @media screen and (max-width: 640px)
+      width: 25px
+      height: 25px
+
     // $User badge avatar icon MOD: status clocked in
     &_status_clocked-in
       background-color: map-get($boss-sign-palette, clocked-in)
@@ -137,7 +139,7 @@ $block: ".boss-user-badge"
       text-align: left
       padding-left: 20px
 
-    @media screen and (max-width: 400px)
+    @media screen and (max-width: 640px)
       padding-left: 10px
 
 
@@ -154,6 +156,10 @@ $block: ".boss-user-badge"
       margin-bottom: 10px
       text-align: left
 
+    @media screen and (max-width: 640px)
+      margin-bottom: 5px
+      font-size: 18px
+
 
   // $User badge label
   &__label
@@ -161,6 +167,9 @@ $block: ".boss-user-badge"
 
     @media screen and (max-width: 1120px)
       padding: 5px 10px
+
+    @media screen and (max-width: 640px)
+      font-size: 12px
 
     &_role_text
       +text-normalizer()
@@ -170,6 +179,46 @@ $block: ".boss-user-badge"
       @media screen and (max-width: 1120px)
         margin-top: 5px
         text-align: left
+
+      @media screen and (max-width: 640px)
+        font-size: 13px
+        margin-top: 3px
+
+
+  // $User badge date
+  // $User badge venue
+  &__date,
+  &__venue
+    +text-normalizer()
+    font-size: 13px
+    display: none
+    margin-top: 5px
+    white-space: nowrap
+
+    @media screen and (max-width: 640px)
+      display: block
+
+    &:before
+      content: ''
+      display: inline-block
+      margin-right: 5px
+      font-family: icons
+      font-size: 13px
+      line-height: 13px
+      font-weight: 400
+      color: #4c4c4c
+      vertical-align: baseline
+
+  // $User badge date
+  &__date
+    &:before
+      content: '\e900'
+
+
+  // $User badge venue
+  &__venue
+    &:before
+      content: '\e901'
 
 
   // $User badge meta
@@ -185,16 +234,11 @@ $block: ".boss-user-badge"
 
     @media screen and (max-width: 1120px)
       flex-grow: 0
-      flex-shrink: 1
+      flex-shrink: 0
       width: auto
 
     @media screen and (max-width: 640px)
-      flex-grow: 1
-      width: 100%
-
-    @media screen and (max-width: 480px)
-      flex-grow: 0
-      width: auto
+      display: none
 
 
   // $User badge meta item
@@ -212,34 +256,11 @@ $block: ".boss-user-badge"
       width: auto
       padding: 0 20px
 
-    @media screen and (max-width: 640px)
-      flex-grow: 1
-      flex-shrink: 1
-      width: 33%
-      padding: 0
-
-    @media screen and (max-width: 480px)
-      flex-grow: 0
-      flex-shrink: 0
-      width: auto
-      padding: 0 20px
-
-    @media screen and (max-width: 400px)
-      padding: 0 10px
-
     &:first-child
-      @media screen and (max-width: 480px)
-        padding-left: 0
-
-      @media screen and (max-width: 400px)
-        padding-left: 0
+      padding-left: 0
 
     &:last-child
-      @media screen and (max-width: 480px)
-        padding-right: 0
-
-      @media screen and (max-width: 400px)
-        padding-right: 0
+      padding-right: 0
 
     &:not(:last-child)
       border-right: 1px solid #d3d3d3
@@ -260,9 +281,6 @@ $block: ".boss-user-badge"
 
     @media screen and (max-width: 1120px)
       font-size: 20px
-
-    @media screen and (max-width: 640px)
-      margin-bottom: 5px
 
     // $User badge time MOD: rotaed
     &_role_rotaed
@@ -301,5 +319,5 @@ $block: ".boss-user-badge"
     display: block
     text-align: center
     font-size: 14px
+    line-height: 1
     color: #808080
-
