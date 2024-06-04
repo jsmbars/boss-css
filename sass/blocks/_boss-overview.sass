@@ -1192,6 +1192,13 @@ $block: ".boss-overview"
       &:nth-of-type(even)
         background-color: transparent
 
+    &_role_stats-details
+      padding: 0 0 5px
+      margin-bottom: 5px
+
+      &:nth-of-type(even)
+        background-color: transparent
+
     &_state_alert,
     &_state_alert:nth-of-type(even)
       background-color: #feeeee
@@ -1199,6 +1206,12 @@ $block: ".boss-overview"
 
   // $Overview list content
   &__list-content
+
+
+  // $Overview list text
+  &__list-text
+    +text-normalizer()
+    font-weight: 600
 
 
   // $Overview list name

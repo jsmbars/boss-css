@@ -23,6 +23,10 @@ $block: ".boss-count"
   border: 2px solid #c4c4c4
   border-radius: 6px
 
+  @media screen and (max-width: 1280px)
+    padding-left: 10px
+    padding-right: 10px
+
   // $Count MOD: role link
   &_role_link
     color: initial
@@ -40,7 +44,6 @@ $block: ".boss-count"
   &_adjust_row
     flex-grow: 1
     flex-shrink: 1
-    width: 100%
 
   // $Count MOD: adjust flow layout
   &_adjust_flow
@@ -97,6 +100,10 @@ $block: ".boss-count"
     border: none
     padding: 40px 20px
     box-shadow: 0 5px 30px -5px rgba(0,0,0,.3)
+
+    @media screen and (max-width: 1280px)
+      padding-left: 20px
+      padding-right: 20px
 
     @media screen and(max-width: 480px)
       padding: 30px 20px
@@ -378,6 +385,24 @@ $block: ".boss-count"
           color: #fff
 
 
+  // $Count numbers
+  &__numbers
+    display: inline-block
+    white-space: nowrap
+
+    &:first-child
+      margin-right: 15px
+
+      @media screen and (max-width: 1280px)
+        margin-right: 10px
+
+    &:last-child
+      margin-left: 15px
+
+      @media screen and (max-width: 1280px)
+        margin-right: 10px
+
+
   // $Count number
   &__number
     +text-normalizer()
@@ -441,8 +466,34 @@ $block: ".boss-count"
     &:first-child
       margin-right: 15px
 
+      #{$block}__numbers &
+        margin-right: 0
+
     &:last-child
       margin-left: 15px
+
+      #{$block}__numbers &
+        margin-left: 0
+
+    &:not(:last-child)
+      #{$block}__numbers &
+        margin-right: 5px
+
+    // $Count number MOD: role action
+    &_role_action
+      cursor: pointer
+      transition: opacity .4s
+
+      &:hover
+        opacity: 0.8
+
+    // $Count number MOD: role deduction
+    &_role_deduction
+      background-color: map-get($boss-app-palette, alert)
+
+    // $Count number MOD: role addition
+    &_role_addition
+      background-color: map-get($boss-app-palette, secondary)
 
 
   // $Count label
