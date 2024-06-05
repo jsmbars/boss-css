@@ -1185,6 +1185,12 @@ $block: ".boss-board"
         padding-right: 0
         border-bottom: none
 
+    &_role_group-content
+      padding: 20px
+
+      @media screen and (max-width: 960px)
+        padding: 0
+
 
   // $Board manager area group
   &__manager-group
@@ -1200,6 +1206,9 @@ $block: ".boss-board"
 
     @media screen and (max-width: 480px)
       padding: 10px
+
+    &_role_area
+      border: none
 
     &_role_section
       border: none
@@ -1225,8 +1234,27 @@ $block: ".boss-board"
       @media screen and (max-width: 480px)
         padding: 0
 
-    &_role_area
-      border: none
+    &_role_summary
+      position: relative
+      border-width: 1px
+
+      &:not(:last-child)
+        margin-bottom: 40px
+
+        @media screen and (max-width: 960px)
+          margin-bottom: 50px
+
+        &:after
+          content: ''
+          position: absolute
+          right: 0
+          left: 0
+          bottom: -20px
+          display: block
+          border-bottom: 1px solid #eee
+
+          @media screen and (max-width: 960px)
+            bottom: -25px
 
     &_context_stack
       &:not(:last-child)
