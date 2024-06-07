@@ -25,6 +25,7 @@ $block: ".boss-choice-list"
 
   // $Choice list MOD: type required
   &_type_required
+    // ...
 
   &_role_question-preview
     position: relative
@@ -271,15 +272,16 @@ $block: ".boss-choice-list"
 
     // $Choice list control MOD: role text
     &_type_text
+      // ...
 
     // $Choice list control MOD: role text editor
     &_type_text-editor
-
       @media screen and (max-width: 480px)
         flex-wrap: wrap
 
     // $Choice list control MOD: role image
     &_type_image
+      // ...
 
     // $Choice list control MOD: role image editor
     &_type_image-editor
@@ -433,10 +435,10 @@ $block: ".boss-choice-list"
 
   // $Choice list control option value
   &__option-value
+    // ...
 
     // $Choice list control option value MOD: type checked
     &_type_checked
-
       &:before
         background-color: map-get($boss-app-palette, primary)
         border-color: map-get($boss-app-palette, primary)
@@ -446,7 +448,6 @@ $block: ".boss-choice-list"
 
     // $Choice list control option value MOD: type disabled
     &_type_disabled
-
       &:before
         background-color: $boss-very-light-gray
         border-color: $boss-very-light-gray
@@ -456,21 +457,18 @@ $block: ".boss-choice-list"
 
     &_color_accent-red,
     &_color_accent-red#{&}_type_checked
-
       &:before
         background-color: map-get($boss-app-palette, alert)
         border-color: map-get($boss-app-palette, alert)
 
     &_color_accent-amber,
     &_color_accent-amber#{&}_type_checked
-
       &:before
         background-color: map-get($boss-app-palette, warning)
         border-color: map-get($boss-app-palette, warning)
 
     &_color_accent-green,
     &_color_accent-green#{&}_type_checked
-
       &:before
         background-color: map-get($boss-app-palette, secondary)
         border-color: map-get($boss-app-palette, secondary)
