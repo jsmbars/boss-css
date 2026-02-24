@@ -21,7 +21,7 @@ $mediaobject-image-width-stacked: 100% !default;
 /// Adds styles for a media object container.
 @mixin media-object-container {
   margin-bottom: $mediaobject-margin-bottom;
-  display: if($global-flexbox, flex, block);
+  display: zf-if($global-flexbox, flex, block);
 
   @if $global-flexbox {
     flex-wrap: nowrap;

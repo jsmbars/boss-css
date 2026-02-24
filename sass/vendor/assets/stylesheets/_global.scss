@@ -99,8 +99,8 @@ $global-flexbox: false !default;
 }
 
 // Internal variables used for text direction
-$global-left: if($global-text-direction == rtl, right, left);
-$global-right: if($global-text-direction == rtl, left, right);
+$global-left: zf-if($global-text-direction == rtl, right, left);
+$global-right: zf-if($global-text-direction == rtl, left, right);
 
 // Internal variables used for colors
 $primary-color: map-get($foundation-palette, primary);

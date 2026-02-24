@@ -47,11 +47,11 @@ $drilldown-background: $white !default;
     &.is-active {
       z-index: 1;
       display: block;
-      transform: translateX(if($global-text-direction == ltr, -100%, 100%));
+      transform: translateX(zf-if($global-text-direction == ltr, -100%, 100%));
     }
 
     &.is-closing {
-      transform: translateX(if($global-text-direction == ltr, 100%, -100%));
+      transform: translateX(zf-if($global-text-direction == ltr, 100%, -100%));
     }
   }
 

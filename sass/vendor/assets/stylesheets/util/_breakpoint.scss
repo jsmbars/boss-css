@@ -2,6 +2,8 @@
 // foundation.zurb.com
 // Licensed under MIT Open Source
 
+@use 'sass:math';
+
 ////
 /// @group breakpoints
 ////
@@ -40,7 +42,10 @@ $breakpoint-classes: (small medium large) !default;
   // Value for max-width media queries
   $bp-max: 0;
   // Direction of media query (up, down, or only)
-  $dir: if(length($val) > 1, nth($val, 2), up);
+  $dir: up;
+  @if length($val) > 1 {
+    $dir: nth($val, 2);
+  }
   // Eventual output
   $str: '';
   // Is it a named media query?
@@ -73,7 +78,7 @@ $breakpoint-classes: (small medium large) !default;
   // Convert any pixel, rem, or unitless value to em
   $bp: -zf-bp-to-em($bp);
   @if $bp-max {
-    $bp-max: -zf-bp-to-em($bp-max) - (1/16);
+    $bp-max: -zf-bp-to-em($bp-max) - math.div(1, 16);
   }
 
   // Conditions to skip media query creation
@@ -106,7 +111,7 @@ $breakpoint-classes: (small medium large) !default;
 
     // `down` ranges use the format `(max-width: n)`
     @else if $dir == 'down' {
-      $max: if($named, $bp-max, $bp);
+      $max: zf-if($named, $bp-max, $bp);
 
       // Skip media query creation if input value is exactly "0 down",
       // unless the function was called as "small down", in which case it's just "small only"
